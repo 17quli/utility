@@ -1,0 +1,11 @@
+CREATE VIEW lab_fscp_raw_full_access.app_tblrtndwt
+AS SELECT z.flngDocKey, 
+       z.fcurGrossDividends, 
+       z.fcurMultiplyDividends, 
+       z.fcurImpCredits, 
+       z.fcurFdpCredits, 
+       z.fcurTotalCredits, 
+       z.fcurRWTPayable, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblrtndwt z;

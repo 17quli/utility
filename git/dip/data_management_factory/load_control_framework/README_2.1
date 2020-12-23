@@ -1,0 +1,33 @@
+
+
+
+How to Backup 2.1
+
+1.  Backup the tables, triggers, sequences, plsql packages, constraints by following instructions in  lcf_prod_ddl_metadata_backup.sql file. 
+
+
+
+How to deploy 2.1
+
+
+1. Run alter_lcf_2.1. Run the commands manually and verify command successful.
+2. Run object_run_changes.sql
+3. Run lcf_update_body to re-create the PL/SQL code.
+4. Run invoke.sql pass test as parameter for test to verify PL/SQL code validations are ok. 
+
+Enter test for Test db
+Enter prod for Prod db
+
+5. Run gather_stats.sql to generate stats for the lcf schema.
+
+
+
+
+
+How to restore 2.1
+
+If we need to go back to backups of pre-2.1. the following steps need to be followed.
+
+
+1. Follow  lcf_prod_ddl_metadata_restore
+

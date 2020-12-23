@@ -1,0 +1,677 @@
+﻿/************************************************************************************************
+This script builds the security views based on the logic we currently know of.
+
+
+
+
+************************************************************************************************/
+
+
+CREATE VIEW prod_raw_full_access.app_tblaccount
+AS SELECT r.FLNGACCOUNTKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FLNGCUSTOMERKEY, 
+       r.FINTPARENTPROFILENUMBER, 
+       r.FINTPROFILENUMBER, 
+       r.FSTRACCOUNTTYPE, 
+       r.FSTRFILING, 
+       r.FDTMCOMMENCE, 
+       r.FDTMCEASE, 
+       r.FSTRSTATUS, 
+       r.FSTRCLOSUREREASON, 
+       r.FBLNMAILFORM, 
+       r.FLNGDOCKEY, 
+       r.FLNGFOLDERKEY, 
+       r.FDTMCREATED, 
+       r.FSTRWHO, 
+       r.HWM, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblaccount r ;
+
+CREATE VIEW prod_raw_full_access.app_tblaccountinfo 
+AS
+SELECT r.FLNGACCOUNTKEY, 
+       r.FINTPARENTPROFILENUMBER, 
+       r.FINTPROFILENUMBER, 
+       r.FLNGCUSTOMERKEY, 
+       r.FLNGJOINTCUSTOMERKEY, 
+       r.FLNGJOINTACCOUNTKEY, 
+       r.FBLNPRIME, 
+       r.FSTRACCOUNTTYPE, 
+       r.FLNGDOCKEY, 
+       r.FLNGFOLDERKEY, 
+       r.FSTRFILINGFRQ, 
+       r.FDTMCOMMENCE, 
+       r.FDTMCEASE, 
+       r.FDTMCREATED, 
+       r.FI64NAMEKEY, 
+       r.FINTNAMEKEY, 
+       r.FSTRDISPLAY, 
+       r.FBLNFORMATTED, 
+       r.FSTRNAMETYPE, 
+       r.FSTRFAMILYNAME, 
+       r.FSTRMIDDLENAME, 
+       r.FSTRFIRSTNAME, 
+       r.FSTRNAMECONTROL, 
+       r.FSTRTITLE, 
+       r.FSTRSUFFIX, 
+       r.FSTRFREEFORMATNAME, 
+       r.FSTRLISTFORMATNAME, 
+       r.FSTRADDITIONALNAME, 
+       r.FSTRADDITIONALNAME2, 
+       r.FI64ADDRESSKEY, 
+       r.FINTADDRESSKEY, 
+       r.FSTRADDRESSTYPE, 
+       r.FSTRSTREET, 
+       r.FSTRSTREET2, 
+       r.FSTRUNITTYPE, 
+       r.FSTRUNIT, 
+       r.FSTRCITY, 
+       r.FSTRCOUNTY, 
+       r.FSTRSTATE, 
+       r.FSTRZIP, 
+       r.FSTRDISTRICTOFFICE, 
+       r.FSTRCOUNTRY, 
+       r.FSTRATTENTION, 
+       r.FSTRLOCATIONCODE, 
+       r.FSTRURBANIZATION, 
+       r.FSTRMUNICIPALITY, 
+       r.FSTRDISTRICT, 
+       r.FSTRSUBDISTRICT, 
+       r.FSTRSUBPROVINCE, 
+       r.FSTRADDRESSDESCRIPTION, 
+       r.FSTRLISTFORMATADDRESS, 
+       r.FLNGIDKEY, 
+       r.FSTRIDTYPE, 
+       r.FSTRID, 
+       r.FSTRFORMATTEDID, 
+       r.FSTRCOLLECTDISTRICTOFFICE, 
+       r.FSTRCOLLECTCITY, 
+       r.FSTRCUSTOMERTYPE, 
+       r.FSTRREVIEWTYPE, 
+       r.FSTRCUSTOMERLEVEL, 
+       r.FI64PROTECTEDDATASOURCE, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblaccountinfo r ;
+
+CREATE VIEW prod_raw_full_access.app_tblcrmextendedlog 
+AS SELECT r.FLNGCRMKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FSTRCRMSOURCE, 
+       r.FSTRCRMTYPE, 
+       r.FLNGPARENTCRMKEY, 
+       r.FLNGCUSTOMERKEY, 
+       r.FINTPROFILENUMBER, 
+       r.FLNGACCOUNTKEY, 
+       r.FSTRACCOUNTTYPE, 
+       r.FDTMFILINGPERIOD, 
+       r.FLNGBILLITEMKEY, 
+       r.FINTBILLITEM, 
+       r.FLNGFOLDERKEY, 
+       r.FI64SOURCEKEY, 
+       r.FSTRSOURCEID, 
+       r.FSTRSOURCETYPE, 
+       r.FSTRSOURCEDATA, 
+       r.FSTRDATA, 
+       r.FBLNEXTENDED, 
+       r.FBLNPRIVATE, 
+       r.FBLNHASCHILDREN, 
+       r.FBLNHIGHIMPORTANCE, 
+       r.FBLNSYSTEM, 
+       r.FSTREDITEDBY, 
+       r.FDTMEDITED, 
+       r.FSTRCOMMENT, 
+       r.FBLNCOMMENTEXISTS, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+      r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblcrmextendedlog r ;
+
+
+
+
+CREATE VIEW prod_raw_full_access.app_tblcustomer as
+SELECT r.FLNGCUSTOMERKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FSTRCUSTOMERTYPE, 
+       r.FDTMCOMMENCE, 
+       r.FDTMCEASE, 
+       r.FLNGCUSTOMERLEVEL, 
+       r.FLNGDOCKEY, 
+       r.FLNGFOLDERKEY, 
+       r.FLNGREFRESHVER, 
+       r.FLNGCUSTOMERVERSION, 
+       r.FLNGWEBVERSION, 
+       r.FDTMWEBPUBLISHED, 
+       r.FDTMCREATED, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.HWM, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblcustomer r ;
+
+
+
+CREATE VIEW  prod_raw_full_access.app_tblcustomerinfo 
+as
+SELECT r.FLNGCUSTOMERKEY, 
+       r.FLNGJOINTCUSTOMERKEY, 
+       r.FBLNPRIME, 
+       r.FSTRCUSTOMERTYPE, 
+       r.FLNGDOCKEY, 
+       r.FLNGFOLDERKEY, 
+       r.FBLNDEFAULT, 
+       r.FINTPROFILENUMBER, 
+       r.FDTMCOMMENCE, 
+       r.FDTMCEASE, 
+       r.FDTMCREATED, 
+       r.FI64NAMEKEY, 
+       r.FINTNAMEKEY, 
+       r.FSTRDISPLAY, 
+       r.FBLNFORMATTED, 
+       r.FSTRNAMETYPE, 
+       r.FSTRFAMILYNAME, 
+       r.FSTRMIDDLENAME, 
+       r.FSTRFIRSTNAME, 
+       r.FSTRNAMECONTROL, 
+       r.FSTRTITLE, 
+       r.FSTRSUFFIX, 
+       r.FSTRFREEFORMATNAME, 
+       r.FSTRLISTFORMATNAME, 
+       r.FSTRADDITIONALNAME, 
+       r.FSTRADDITIONALNAME2, 
+       r.FI64ADDRESSKEY, 
+       r.FINTADDRESSKEY, 
+       r.FSTRADDRESSTYPE, 
+       r.FSTRSTREET, 
+       r.FSTRSTREET2, 
+       r.FSTRUNITTYPE, 
+       r.FSTRUNIT, 
+       r.FSTRCITY, 
+       r.FSTRCOUNTY, 
+       r.FSTRSTATE, 
+       r.FSTRZIP, 
+       r.FSTRCOUNTRY, 
+       r.FSTRATTENTION, 
+       r.FSTRLOCATIONCODE, 
+       r.FSTRURBANIZATION, 
+       r.FSTRMUNICIPALITY, 
+       r.FSTRDISTRICT, 
+       r.FSTRSUBDISTRICT, 
+       r.FSTRSUBPROVINCE, 
+       r.FSTRADDRESSDESCRIPTION, 
+       r.FSTRLISTFORMATADDRESS, 
+       r.FLNGIDKEY, 
+       r.FSTRIDTYPE, 
+       r.FSTRID, 
+       r.FSTRFORMATTEDID, 
+       r.FSTRDISTRICTOFFICE, 
+       r.FSTRCOLLECTDISTRICTOFFICE, 
+       r.FSTRREVIEWTYPE, 
+       r.FSTRCUSTOMERLEVEL, 
+       r.FI64PROTECTEDDATASOURCE, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblcustomerinfo r ;
+
+CREATE VIEW  prod_raw_full_access.app_tblcustomermail 
+as SELECT r.flngMailItemKey, 
+       r.fstrFormat, 
+       r.flngMailCategoryKey, 
+       r.flngCustomerKey, 
+       r.flngAccountKey, 
+       r.fintAddressKey, 
+       r.fintAddressProfile, 
+       r.fintNameKey, 
+       r.fintNameProfile, 
+       r.flngBillItemKey, 
+       r.fdtmFilingPeriod, 
+       r.flngMailItemTypeKey, 
+       r.flngTemplateKey, 
+       r.fstrLetterId, 
+       r.fstrMailType, 
+       r.fdtmRequest, 
+       r.fdtmReady, 
+       r.fdtmPrinted, 
+       r.fdtmRePrinted, 
+       r.fdtmResend, 
+       r.fdtmEmailed, 
+       r.fblnValid, 
+       r.fstrWho, 
+       r.fdtmWhen 
+FROM prod_raw.app_tblcustomermail r ;
+
+CREATE VIEW  prod_raw_full_access.app_tblcustomerstd
+AS 
+SELECT r.FLNGDOCKEY, 
+       r.FDTMDOB, 
+       r.FDTMDOD, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblcustomerstd r ;
+
+
+
+CREATE VIEW  prod_raw_full_access.app_tbldocposttransaction
+AS
+SELECT r.FLNGINDICATORKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FINTLEVEL, 
+       r.FLNGCUSTOMERKEY, 
+       r.FINTPROFILENUMBER, 
+       r.FLNGACCOUNTKEY, 
+       r.FSTRINDICATOR, 
+       r.FDTMCOMMENCE, 
+       r.FDTMFILINGPERIOD, 
+       r.FDTMFILINGPERIODTO, 
+       r.FCURAMOUNT, 
+       r.FDTMCEASE, 
+       r.FSTRREASON, 
+       r.FDTMCOMMENCE1, 
+       r.FDTMCEASE1, 
+       r.FLNGCRMKEY, 
+       r.FSTRCOMMENT, 
+       r.FSTRUSER, 
+       r.FLNGDOCKEY, 
+       r.FBLNACTIVE, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblindicator r ;
+  
+ 
+ 
+CREATE prod_raw_full_access.app_tblid
+AS
+  SELECT z.FLNGIDKEY, 
+       z.FLNGVER, 
+       z.FLNGCUSTOMERKEY, 
+       z.FSTRIDTYPE, 
+       z.FSTRID, 
+       z.FLNGACCOUNTKEY, 
+       z.FLNGVERLAST, 
+       z.FBLNVALIDATED, 
+       z.FBLNACTIVE, 
+       z.FINTPROFILENUMBER, 
+       z.FBLNDEFAULT, 
+       z.fdtmCommence, 
+       z.fdtmCease, 
+       z.flngImageKey, 
+       z.flngDocKey, 
+       z.flngCrmKey, 
+       z.fi64ProtectedDataSource, 
+       z.fintProtectLevel, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblid z ;
+  
+  
+  
+  
+CREATE prod_raw.app_tblindicator
+AS
+ SELECT r.FLNGINDICATORKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FINTLEVEL, 
+       r.FLNGCUSTOMERKEY, 
+       r.FINTPROFILENUMBER, 
+       r.FLNGACCOUNTKEY, 
+       r.FSTRINDICATOR, 
+       r.FDTMCOMMENCE, 
+       r.FDTMFILINGPERIOD, 
+       r.FDTMFILINGPERIODTO, 
+       r.FCURAMOUNT, 
+       r.FDTMCEASE, 
+       r.FSTRREASON, 
+       r.FDTMCOMMENCE1, 
+       r.FDTMCEASE1, 
+       r.FLNGCRMKEY, 
+       r.FSTRCOMMENT, 
+       r.FSTRUSER, 
+       r.FLNGDOCKEY, 
+       r.FBLNACTIVE, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblindicator r ;
+  
+
+CREATE VIEW prod_raw_full_access.app_tblcustomerstd 
+as 
+SELECT r.FLNGDOCKEY, 
+       r.FDTMDOB, 
+       r.FDTMDOD, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblcustomerstd r ;
+
+
+CREATE VIEW prod_raw_full_access.app_tblnz_custtaxresidency as
+SELECT z.flngDocKey, 
+       z.fintSeq, 
+       z.fstrTaxResidency, 
+       z.fdtmResStart, 
+       z.fdtmResEnd, 
+       z.fblnIsFinancial, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_custtaxresidency z ;
+
+
+CREATE VIEW prod_raw_full_access.app_tblnz_visitmanagedcall 
+as SELECT r.FLNGDOCKEY, 
+       r.FSTRCALLERIRDNUMBER, 
+       r.FSTRAUTHORISEDIRDNUMBER, 
+       r.FSTRTAXAGENTNAME, 
+       r.FSTRVOICEENROLSTATUS, 
+       r.FSTRVOICEOPTOUTSTATUS, 
+       r.FSTRTRANSFERREASON, 
+       r.FSTRCALLERINTENTCORRECT, 
+       r.FSTRCALLERINTENT, 
+       r.FSTRCORRECTEDINTENT, 
+       r.FSTRCALLQUEUE, 
+       r.FSTRSTAGEONEFEEDBACK, 
+       r.FBLNVIRTUALHOLD, 
+       r.FBLNCONTACTDETAILSCHECKED, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblnz_visitmanagedcall r ;
+
+
+
+
+CREATE VIEW  prod_raw_full_access.app_tblvisit 
+as SELECT r.FLNGVISITKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FSTRVISITSOURCE, 
+       r.FSTRVISITCATEGORY, 
+       r.FSTRVISITSUBCATEGORY, 
+       r.FLNGFOLDERKEY, 
+       r.FLNGCUSTOMERKEY, 
+       r.FBLNUNREGISTEREDVISITOR, 
+       r.FI64NAMEKEY, 
+       r.FI64ADDRESSKEY, 
+       r.FSTRVISITID, 
+       r.FSTRTICKETID, 
+       r.FSTREXTERNALID, 
+       r.FSTRIDTYPE, 
+       r.FSTRID, 
+       r.FSTRCOUNTRY, 
+       r.FINTCOUNTRYCODE, 
+       r.FSTRAREACODE, 
+       r.FSTRPHONENUMBER, 
+       r.FBLNVISITORVERIFIED, 
+       r.FSTRVERIFYDOCTYPE, 
+       r.FINTVERIFYDOCVER, 
+       r.FI64VERIFYDOCEDITINPROGRESSKEY, 
+       r.FLNGVERIFYDOCKEY, 
+       r.FSTRDOCTYPE, 
+       r.FINTDOCVER, 
+       r.FI64DOCEDITINPROGRESSKEY, 
+       r.FLNGDOCKEY, 
+       r.FLNGXMLKEY, 
+       r.FSTROWNER, 
+       r.FSTRDISTRICTOFFICE, 
+       r.FBLNHOLD, 
+       r.FDTMVISITSTART, 
+       r.FDTMVISITEND, 
+       r.FLNGDURATION, 
+       r.FLNGWAITTIME, 
+       r.FBLNACTIVE, 
+       r.FDTMREVERSED, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.app_tblvisit r ;
+
+
+
+
+
+
+CREATE VIEW prod_raw_full_access.ref_lancountry 
+SELECT z.fstrLanguage, 
+       z.fstrCountry, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDecode3, 
+       z.fstrDescription, 
+       z.fstrStateDecode, 
+       z.fstrPhoneError, 
+       z.fstrNationality, 
+       z.record_effective_tim
+       estamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancountry z ;
+
+
+CREATE VIEW  prod_raw_full_access.ref_lancustomerlevel
+SELECT z.FSTRLANGUAGE, 
+       z.FSTRCUSTOMERLEVEL, 
+       z.FSTRDECODE1, 
+       z.FSTRDECODE2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancustomerlevel z ;
+
+CREATE VIEW  prod_raw_full_access.ref_lancustomersubtype 
+SELECT z.fstrLanguage, 
+       z.fstrCustomerSubType, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDescription, 
+       z.fstrDecodeWeb, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancustomersubtype z ;
+
+
+CREATE VIEW prod_raw_full_access.ref_lancustomertype 
+AS
+SELECT z.fstrLanguage, 
+       z.fstrCustomerType, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDecodeWeb, 
+       z.FSTRDESCRIPTION, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancustomertype z ;
+
+
+CREAT VIEW prod_raw_full_access.ref_lannz_customerclass 
+AS
+SELECT z.fstrLanguage, 
+       z.fstrCustomerClass, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lannz_customerclass z ;
+
+CREATE VOEW prod_raw_full_access.ref_lannz_customersegments 
+AS
+SELECT z.fstrSegment, 
+       z.fstrLanguage, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lannz_customersegments z ;
+
+
+CREATE VIEW prod_raw_full_access.ref_lanofficelocation 
+AS
+SELECT z.FSTRLANGUAGE, 
+       z.FSTRDISTRICTOFFICE, 
+       z.FSTRDECODE1, 
+       z.FSTRDECODE2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lanofficelocation z ;
+
+
+CREATE VIEW prod_raw_full_access.tblnz_calllog 
+AS
+SELECT z.flngVisitKey, 
+       z.flngVer, 
+       z.flngVerLast, 
+       z.fstrIrdNumber, 
+       z.fstrAuthIRDNumber, 
+       z.flngChildVisitKey, 
+       z.fstrUpdateReason, 
+       z.fstrIvrPath, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       record_effective_timestamp, 
+       record_expiry_timestamp, 
+       record_active_flag, 
+       record_deleted_flag, 
+       insert_object_run_key, 
+       update_object_run_key 
+FROM prod_raw.app_tblnz_calllog z ;
+
+
+CREATE VIEW prod_raw_full_access.wrq_tblwebnotice AS
+SELECT r.FLNGWEBNOTICEKEY, 
+       r.FLNGVER, 
+       r.FLNGVERLAST, 
+       r.FSTRWEBNOTICEAREA, 
+       r.FSTRWEBNOTICECATEGORY, 
+       r.FSTRWEBNOTICETYPE, 
+       r.FSTRWEBNOTICESUBTYPE, 
+       r.FSTRWEBNOTICEREASON, 
+       r.FSTRAPPLICATION, 
+       r.FLNGCUSTOMERKEY, 
+       r.FLNGACCOUNTKEY, 
+       r.FDTMFILINGPERIOD, 
+       r.FLNGWEBLOGONKEY, 
+       r.FLNGPARENTNOTICEKEY, 
+       r.FLNGWEBREQKEY, 
+       r.FSTRSUBJECT, 
+       r.FSTRMESSAGE, 
+       r.FSTRADDITIONALINFO, 
+       r.FBLNURGENT, 
+       r.FBLNUSER, 
+       r.FBLNPRIVATE, 
+       r.FSTRLANGUAGE, 
+       r.FSTRWHO, 
+       r.FDTMWHEN, 
+       r.record_effective_timestamp, 
+       r.record_expiry_timestamp, 
+       r.record_active_flag, 
+       r.record_deleted_flag, 
+       r.insert_object_run_key, 
+       r.update_object_run_key 
+FROM prod_raw.wrq_tblwebnotice r ;
+

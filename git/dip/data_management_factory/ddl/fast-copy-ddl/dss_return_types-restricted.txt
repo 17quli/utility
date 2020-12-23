@@ -1,0 +1,10 @@
+CREATE VIEW ${target_db=Enter the target database name here}.dss_return_types
+AS SELECT 
+z.RETURN_TYPE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED
+ FROM ${source_db=Enter the source database name here}.RETURN_TYPES z
+;

@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.dss_cs_eligible_children AS
+SELECT z.RELATIONSHIP_NUMBER, z.CP_IRD_NUMBER, z.NCP_IRD_NUMBER, z.CHILD_IRD_NUMBER, z.DATE_OF_BIRTH, z.FIRST_NAMES, z.LAST_NAME, z.DATE_START, z.CS_PARENTHOOD_PROOF_CODE, z.SHARED_CUSTODY_INDICATOR, z.CS_CHILD_END_REASON_CODE, z.DATE_END, z.DELETED_INDICATOR, z.DATE_APPLIED, z.DATE_CEASED, z.`TIMESTAMP`, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.dss_cs_eligible_children z;

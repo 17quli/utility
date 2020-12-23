@@ -1,0 +1,10 @@
+create view lab_fcp_raw_restricted_access.dss_return_categories
+as select 
+z.return_category,
+z.date_applied,
+z.description,
+z.date_ceased,
+z.`timestamp`,
+z.validated
+ from lab_fcp_raw.return_categories z
+;

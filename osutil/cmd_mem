@@ -1,0 +1,1 @@
+ssh $1 "date;vmstat;free -m; ps -eo rss,vsz,pid,user,cmd|sort -nk 1 |tail -n 3;top -b -n 1 |head -n 20"

@@ -1,0 +1,20 @@
+CREATE TABLE ${var:target_db}.app_tblrecoveryamount (                                                                               
+flngRecoveryKey INT,                                                                                                                
+flngOffsetKey INT,                                                                                                                  
+flngDataKey INT,                                                                                                                    
+fcurAmount DECIMAL(19,4),                                                                                                           
+fdtmDateTime TIMESTAMP,                                                                                                             
+fdtmDate TIMESTAMP,                                                                                                                 
+fintDay SMALLINT,                                                                                                                   
+fintMonth SMALLINT,                                                                                                                 
+fintQuarter SMALLINT,                                                                                                               
+fintYear SMALLINT,                                                                                                                  
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;             

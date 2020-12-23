@@ -1,0 +1,428 @@
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_owner;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_owner
+AS
+WITH
+single_num as (
+SELECT
+owner_sk,
+owner_name,
+-- Just use the first IRD number from each list. A better solution
+-- Would be to normalise but tha't noe essential right now.
+split_part(ird_num_list, ";",1) as ird_num,
+split_part(ird_num_best_list, ";",1) as ird_best
+from lab_fcp_raw.pty_pd_owner
+)
+ SELECT 
+z.owner_sk,
+z.owner_name,
+z.ird_num,
+z.ird_best
+FROM single_num z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_owner_ird_num;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_owner_ird_num
+AS SELECT 
+z.OWNER_IRD_NUM_SK,
+z.OWNER_SK,
+z.IRD_NUMBER,
+z.BEST_MATCH,
+z.NO_OF_IRDS_MATCHED,
+z.MULTI_IRD_BEST_MATCH
+FROM lab_fcp_raw.pty_pd_owner_ird_num z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_property_address;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_property_address
+AS SELECT 
+z.PROPERTY_ADDRESS_SK,
+z.TITLE_SK,
+z.BUILDING_NAME,
+z.ADDRESS,
+z.SUBURB,
+z.TOWN,
+z.POSTCODE,
+z.TA_CODE,
+z.TA_DESC
+ FROM lab_fcp_raw.pty_pd_property_address z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_property_history;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_property_history
+AS SELECT 
+z.PROPERTY_SK,
+z.QPID,
+z.BUILDING_NAME,
+z.ADDRESS,
+z.SUBURB,
+z.TOWN,
+z.POSTCODE,
+z.CATEGORY_CODE,
+z.CATEGORY_DESC,
+z.LAND_ZONE_CODE,
+z.LAND_ZONE_DESC,
+z.LAND_USE_CODE,
+z.LAND_USE_DESC,
+z.UNITS_OF_USE,
+z.LAND_AREA,
+z.BUILDING_FLOOR_AREA,
+z.BUILDING_AGE,
+z.OWNER_TYPE,
+z.PROPERTY_TYPE,
+z.ACTIVE,
+z.CURRENT_FLAG,
+z.FROM_DATE,
+z.TO_DATE
+ FROM lab_fcp_raw.pty_pd_property_history z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_property_taxyear;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_property_taxyear
+AS SELECT 
+z.PROPERTY_TAXYEAR_SK,
+z.TITLE_SK,
+z.TAXYEAR_SK,
+z.OWNER_SK,
+z.PROPERTY_PURCHASE_DATE,
+z.PROPERTY_START_DATE,
+z.PROPERTY_END_DATE,
+z.TOP_COUNT,
+z.LAST_TOP_OWNER_SK,
+z.BUYER_TAXSTMT_SK,
+z.SELLER_TAXSTMT_SK,
+z.BUYER_CL_OWNER_SK,
+z.SELLER_CL_OWNER_SK,
+z.OWNERSHIP_STATUS_SK,
+z.PROPERTY_DETAIL_SK,
+z.PROPERTY_TYPE_SK,
+z.PROPERTY_ADDRESS_SK,
+z.MORTGAGE_STATUS_SK,
+z.YEAR_START_COUNT,
+z.TITLE_ISSUE_COUNT,
+z.PURCHASE_COUNT,
+z.NOTIONAL_PURCHASE_COUNT,
+z.TITLE_CANCEL_COUNT,
+z.SELL_COUNT,
+z.NOTIONAL_SELL_COUNT,
+z.YEAR_END_COUNT,
+z.TENURE_AT_START,
+z.TENURE_AT_END,
+z.CV_AT_PURCHASE,
+z.CV_AT_START,
+z.CV_AT_END,
+z.MV_AT_PURCHASE,
+z.MV_AT_START,
+z.MV_AT_END,
+z.MORTGAGE_START_COUNT,
+z.MORTGAGE_END_COUNT
+ FROM lab_fcp_raw.pty_pd_property_taxyear z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_sale;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_sale
+AS SELECT 
+z.SALE_SK,
+z.TITLE_SK,
+z.SALE_ID,
+z.SALE_DATE,
+z.SETTLEMENT_DATE,
+z.SALE_TYPE_CODE,
+z.SALE_TYPE_DESC,
+z.SALE_CV,
+z.SALE_CATEGORY_CODE,
+z.CATEGORY_DESC,
+z.SALE_PRICE_GROSS,
+z.SALE_PRICE_NET,
+z.SALE_PRICE_CHATTELS,
+z.SALE_PRICE_OTHER,
+z.SALE_PRICE_GST
+ FROM lab_fcp_raw.pty_pd_sale z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_tax_stmt;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_tax_stmt
+AS SELECT 
+z.TAX_STMT_SK,
+z.TAX_STMT_ID,
+z.TAX_STMT_STATUS,
+z.STATEMENT_DATE,
+z.FULL_NAME,
+z.ROLE_TYPE,
+z.FULL_NAME_ORIG,
+z.TRANSFEROR_OR_TRANSFEREE,
+z.EXEMPTION_CODE,
+z.IRD_NUMBER,
+z.NON_RESIDENT_FLAG,
+z.COUNTRY_CODE,
+z.TAX_INFORMATION_NUMBER,
+z.INSTR_ID,
+z.INSTR_TYPE,
+z.INSTR_NBR,
+z.TAX_STMT_DATE,
+z.COMPLETION_DATE,
+z.DEALING_TYPE,
+z.CERTIFIER_NAME,
+z.CERTIFIER_FIRM,
+z.TINX_ID_SUPERCEDES,
+z.SUPERCEDE_REASON,
+z.COMMENTS,
+z.DWELLING_ON_LAND,
+z.CITIZEN_OR_NZ_VISA,
+z.LIVE_IN_PROPERTY,
+z.SETTLEMENT_DATE,
+z.VALIDATION,
+z.IR_IRD_NUMBER,
+z.IR_ENTITY_TYPE,
+z.STATEMENT_VERSION,
+z.NOMINATOR_IND,
+z.NOMINATOR_PERSON_IND,
+z.NOMINATOR_MULTIPLE_IND,
+z.NOMINATOR_NAME,
+z.REPRESENT_CODE,
+z.CITIZEN_CODE,
+z.FAMCITIZEN_CODE,
+z.COUNTRY_CODE2,
+z.TAX_INFORMATION_NUMBER2,
+z.COUNTRY_CODE3,
+z.TAX_INFORMATION_NUMBER3,
+z.COUNTRY_CODE4,
+z.TAX_INFORMATION_NUMBER4
+ FROM lab_fcp_raw.pty_pd_tax_stmt z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_tax_stmt_owner;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_tax_stmt_owner
+AS SELECT 
+z.TAX_STMT_OWNER_SK,
+z.TITLE_SK,
+z.OWNER_SK,
+z.BUYER_TAX_STMT_ID,
+z.BUYER_IRD_NUMBER,
+z.BUYER_INSTR_ID,
+z.BUYER_INSTR_NBR,
+z.BUYER_TAX_STMT_DATE,
+z.BUYER_SETTLEMENT_DATE,
+z.BUYER_DWELLING_ON_LAND,
+z.BUYER_NON_RESIDENT_FLAG,
+z.BUYER_COUNTRY_CODE,
+z.BUYER_EXEMPTION_CODE,
+z.SELLER_TAX_STMT_ID,
+z.SELLER_IRD_NUMBER,
+z.SELLER_INSTR_ID,
+z.SELLER_INSTR_NBR,
+z.SELLER_TAX_STMT_DATE,
+z.SELLER_SETTLEMENT_DATE,
+z.SELLER_DWELLING_ON_LAND,
+z.SELLER_NON_RESIDENT_FLAG,
+z.SELLER_COUNTRY_CODE,
+z.SELLER_EXEMPTION_CODE,
+z.FALSE_TRANSFER_FLAG,
+z.DISPOSAL_TRANSFER_FLAG,
+z.BUYER_SELLER_FLAG,
+z.LATEST_TAX_STMT_FLAG
+ FROM lab_fcp_raw.pty_pd_tax_stmt_owner z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_tax_stmt_summary;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_tax_stmt_summary
+AS SELECT 
+z.TAX_STMT_SUMMARY_SK,
+z.TAX_STMT_ID,
+z.TITLE_SK,
+z.INSTR_ID,
+z.TRANSFER_TYPE,
+z.TAX_STMT_DATE,
+z.NUM_PARTIES,
+z.EXEMPTION_CODE,
+z.NON_RESIDENT_FLAG,
+z.COUNTRY_CODE,
+z.DWELLING_ON_LAND,
+z.CITIZEN_NZVISA,
+z.LIVE_IN_PROPERTY,
+z.IR_ENTITY_TYPE,
+z.PARTY_NAMES,
+z.TOP_SK,
+z.TOP_SEQ
+ FROM lab_fcp_raw.pty_pd_tax_stmt_summary z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_title;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_title
+AS SELECT 
+z.TITLE_SK,
+z.TITLE_NO,
+z.QPID,
+z.MULTI_QPID_IND,
+z.QPID_COUNT,
+z.ISSUE_DATE,
+z.TITLE_REG_TYPE,
+z.TITLE_TYPE,
+z.STATUS,
+z.QPID_LIST,
+z.MAORI_LAND
+ FROM lab_fcp_raw.pty_pd_title z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_top_owner;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_top_owner
+AS SELECT 
+z.TOP_OWNER_SK,
+z.TOP_SK,
+z.OWNER_SK,
+z.NOM_INDEX_ID,
+z.BUYER_TAXSTMT_SK,
+z.SELLER_TAXSTMT_SK,
+z.BUYER_CL_OWNER_SK,
+z.SELLER_CL_OWNER_SK,
+z.NOTIONAL_PURCHASE_IND,
+z.NOTIONAL_SALE_IND
+ FROM lab_fcp_raw.pty_pd_top_owner z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_pd_title_ownership_period;
+CREATE VIEW lab_fcp_raw_full_access.pty_pd_title_ownership_period
+AS SELECT 
+z.top_sk	,
+z.title_sk	,
+z.period_start	,
+z.period_end	,
+z.owners	,
+z.instr_id	,
+z.top_seq	,
+z.next_instr_id	,
+z.event_type_sk	,
+z.memorial_id	,
+z.ir_entity_types	,
+z.title_issue_ind	,
+z.title_cancel_ind	,
+z.notional_transfer_ind	
+ FROM lab_fcp_raw.pty_pd_title_ownership_period z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_l_tax_statement;
+CREATE VIEW lab_fcp_raw_full_access.pty_l_tax_statement
+AS SELECT 
+z.id	,
+z.status	,
+z.statement_date	,
+z.full_name	,
+z.transferor_or_transferee	,
+z.exemption_code	,
+z.ird_number	,
+z.non_resident_flag	,
+z.country_code	,
+z.tax_information_number	,
+z.tin_id	,
+z.trt_type	,
+z.inst_no	,
+z.lodged_datetime	,
+z.completion_date	,
+z.dealing_type	,
+z.certifier_name	,
+z.certifier_firm	,
+z.tinx_id_supercedes	,
+z.supercede_reason	,
+z.comments	,
+z.dwelling_on_land	,
+z.citizen_or_nz_visa	,
+z.live_in_property	,
+z.settlement_date	,
+z.validation	,
+z.ir_ird_number	,
+z.ir_entity_type	,
+z.statement_version	,
+z.nominator_ind	,
+z.nominator_person_ind	,
+z.nominator_multiple_ind	,
+z.nominator_name	,
+z.represent_code	,
+z.citizen_code	,
+z.famcitizen_code	,
+z.country_code2	,
+z.tax_information_number2	,
+z.country_code3	,
+z.tax_information_number3	,
+z.country_code4	,
+z.tax_information_number4	,
+z.mainhome_ind
+ FROM lab_fcp_raw.pty_l_tax_statement z
+;
+
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_l_title_estate;
+CREATE VIEW lab_fcp_raw_full_access.pty_l_title_estate
+AS SELECT 
+z.id,
+z.act_tin_id_crt,
+z.lgd_id,
+z.ttl_title_no,
+z.original_flag,
+z.type,
+z.status,
+z.estate_share,
+z.tin_id_orig,
+z.term,
+z.timeshare_week_no,
+z.purpose,
+z.act_id_crt,
+z.share	
+ FROM lab_fcp_raw.pty_l_title_estate z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_l_title_hier;
+CREATE VIEW lab_fcp_raw_full_access.pty_l_title_hier
+AS SELECT 
+z.id,
+z.tdr_id,
+z.act_id_crt,
+z.act_tin_id_crt,
+z.ttl_title_no_flw,
+z.ttl_title_no_prior,
+z.status	
+ FROM lab_fcp_raw.pty_l_title_hier z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_l_title_instrument;
+CREATE VIEW lab_fcp_raw_full_access.pty_l_title_instrument
+AS SELECT 
+z.id,
+z.audit_id,
+z.dlg_id,
+z.inst_no,
+z.priority_no,
+z.ldt_loc_id,
+z.lodged_datetime,
+z.status,
+z.trt_grp,
+z.trt_type,
+z.tin_id_parent		
+ FROM lab_fcp_raw.pty_l_title_instrument z
+;
+
+DROP VIEW if exists lab_fcp_raw_full_access.pty_l_title;
+CREATE VIEW lab_fcp_raw_full_access.pty_l_title
+AS SELECT 
+z.title_no,
+z.audit_id,
+z.ldt_loc_id,
+z.register_type,
+z.ste_id,
+z.issue_date,
+z.guarantee_status,
+z.status,
+z.type,
+z.provisional,
+z.sur_wrk_id,
+z.maori_land,
+z.ttl_title_no_srs,
+z.ttl_title_no_head_srs	
+ FROM lab_fcp_raw.pty_l_title z
+;

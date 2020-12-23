@@ -1,0 +1,15 @@
+2020-10-13 08:57:58------start ./dbrestore.sh prod_dw dev_dw prefix lab_analytics_team_ suffix _20201012
+2020-10-13 08:57:59------show tables  like 'lab_analytics_team_*_20201012'
+2020-10-13 08:57:59------12 tables or views
+2020-10-13 08:57:59------show create table
+2020-10-13 08:58:00------12 tables to be restored
+2020-10-13 08:58:00------drop table
+2020-10-13 08:58:11------create table
+2020-10-13 08:58:54------12 tables created
+2020-10-13 08:58:54------hdfs copy
+2020-10-13 08:59:05------complete hdfs copy
+2020-10-13 08:59:05------refresh table
+2020-10-13 08:59:08------12 tables refreshed
+2020-10-13 08:59:08------recover partitions
+2020-10-13 08:59:09------0 table partitions recovered
+2020-10-13 08:59:16------complete ./dbrestore.sh prod_dw dev_dw

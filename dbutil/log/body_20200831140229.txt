@@ -1,0 +1,16 @@
+2020-08-31 14:02:29------start ./tbsbackup.sh prod_raw prod_dw
+2020-08-31 14:02:30------98 tables to backup
+2020-08-31 14:02:30------show create table
+2020-08-31 14:02:33------drop table
+2020-08-31 14:04:14------create table
+2020-08-31 14:04:14------hdfs make directory
+2020-08-31 14:05:37------98 hdfs directories created
+2020-08-31 14:05:37------hdfs copy
+2020-08-31 14:35:54------98 hdfs directories copied
+2020-08-31 14:35:54------98 tables created
+2020-08-31 14:35:59------refresh table
+2020-08-31 14:36:01------94 tables refreshed
+2020-08-31 14:36:01------recover partitions
+2020-08-31 14:36:23------4 table partitions recovered
+2020-08-31 14:36:23------show tables backup expired
+2020-08-31 14:36:31------complete ./tbsbackup.sh prod_raw prod_dw

@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.dss_tax_pay AS
+SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.TAX_TYPE, z.TREG_DATE_START, z.DATE_APPLIED, z.PAYE_EMPLOYER_CLASS_CODE, z.FILING_FREQUENCY, z.`TIMESTAMP`, z.DATE_CEASED, z.FILING_METHOD_CODE, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.dss_tax_pay z;

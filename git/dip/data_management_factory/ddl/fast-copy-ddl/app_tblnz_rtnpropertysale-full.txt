@@ -1,0 +1,22 @@
+CREATE VIEW lab_fcp_raw_full_access.app_tblnz_rtnpropertysale                                                                                
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.fblnBrightLineTest,                                                                                                               
+z.fstrPropertyTitleNumber,                                                                                                          
+z.fstrAddressLine1,                                                                                                                 
+z.fstrAddressLine2,                                                                                                                 
+z.fstrSuburb,                                                                                                                       
+z.fstrCity,                                                                                                                         
+z.fstrPostCode,                                                                                                                     
+z.fdtmDateOfPurchase,                                                                                                               
+z.fdtmDateOfSale,                                                                                                                   
+z.fcurSalePrice,                                                                                                                    
+z.fcurPurchasePrice,                                                                                                                
+z.fcurDeductibleCosts,                                                                                                              
+z.fcurTotalCosts,                                                                                                                   
+z.fcurNetProfitLoss,                                                                                                                
+z.fdblPercentageOwnership,                                                                                                          
+z.fcurShareOfNetProfitLoss,                                                                                                         
+z.fdtmWhen,                                                                                                                         
+z.fstrWho                                                                                                          
+ FROM lab_fcp_raw.tblnz_rtnpropertysale z;            

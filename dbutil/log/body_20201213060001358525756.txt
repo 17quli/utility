@@ -1,0 +1,1 @@
+2020-12-13 06:00:01------start /home/ird0qal/dbutil/snapshot.sh prod_jnl prod_dw

@@ -1,0 +1,1214 @@
+
+ird10119au.vsp.sas.com
+NAME MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0     0   20G  0 disk 
+xvdf 202:80    0   10G  0 disk /var/log
+xvdg 202:96    0   10G  0 disk /var/log/audit
+xvdh 202:112   0   20G  0 disk /var
+xvdi 202:128   0    5G  0 disk /home
+xvdj 202:144   0    8G  0 disk /tmp
+xvdk 202:160   0   10G  0 disk /opt
+xvdl 202:176   0  100G  0 disk /opt/sas
+xvdm 202:192   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdn 202:208   0   20G  0 disk /saswork
+xvdo 202:224   0  130G  0 disk /sso
+xvdp 202:240   0  100G  0 disk /sso/biconfig
+xvdq 202:4096  0   20G  0 disk /sso/monitoring
+xvdr 202:4352  0  100G  0 disk /sso/sfw
+xvds 202:4608  0  100G  0 disk /sso/transport
+xvdt 202:4864  0   50G  0 disk /var/cache
+
+ird10120au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdf    202:80    0   10G  0 disk /var/log
+xvdg    202:96    0   10G  0 disk /var/log/audit
+xvdh    202:112   0   20G  0 disk /var
+xvdi    202:128   0    5G  0 disk /home
+xvdj    202:144   0    8G  0 disk /tmp
+xvdk    202:160   0   10G  0 disk /opt
+xvdl    202:176   0  100G  0 disk /opt/sas
+xvdm    202:192   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdn    202:208   0  130G  0 disk /sso
+xvdo    202:224   0  100G  0 disk /sso/biconfig
+xvdp    202:240   0   20G  0 disk /sso/monitoring
+xvdq    202:4096  0  100G  0 disk /sso/sfw
+xvdr    202:4352  0  100G  0 disk /sso/transport
+xvds    202:4608  0   50G  0 disk /var/cache
+xvdt    202:4864  0   30G  0 disk /ird/projects
+xvdu    202:5120  0  500G  0 disk /ird/warehouse
+nvme0n1 259:0     0  1.7T  0 disk 
+nvme1n1 259:1     0  1.7T  0 disk 
+nvme2n1 259:2     0  1.7T  0 disk 
+nvme3n1 259:3     0  1.7T  0 disk 
+
+ird10131au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:7    0  50G  0 disk /var/log
+nvme2n1 259:4    0  50G  0 disk /var
+nvme3n1 259:5    0  10G  0 disk /opt
+nvme4n1 259:2    0  50G  0 disk /sso/sfw
+nvme5n1 259:1    0  20G  0 disk /sso/monitoring
+nvme6n1 259:0    0  50G  0 disk /sso/hadoop
+nvme7n1 259:8    0  50G  0 disk /sso
+nvme8n1 259:3    0  15G  0 disk /tmp
+nvme9n1 259:6    0   5G  0 disk /home
+
+ird10132au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:2    0   5G  0 disk /home
+nvme0n1  259:10   0  40G  0 disk 
+nvme1n1  259:1    0  50G  0 disk /var/log
+nvme2n1  259:3    0  50G  0 disk /var
+nvme3n1  259:0    0  10G  0 disk /opt
+nvme4n1  259:5    0  50G  0 disk /sso/sfw
+nvme5n1  259:9    0  20G  0 disk /sso/monitoring
+nvme6n1  259:7    0  50G  0 disk /sso/hadoop/kudu
+nvme7n1  259:4    0  50G  0 disk /sso/hadoop
+nvme8n1  259:6    0  50G  0 disk /sso
+nvme9n1  259:8    0  15G  0 disk /tmp
+
+ird10133au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:2    0   5G  0 disk /home
+nvme0n1  259:10   0  40G  0 disk 
+nvme1n1  259:6    0  50G  0 disk /var/log
+nvme2n1  259:8    0  50G  0 disk /var
+nvme3n1  259:7    0  10G  0 disk /opt
+nvme4n1  259:3    0  50G  0 disk /sso/sfw
+nvme5n1  259:9    0  20G  0 disk /sso/monitoring
+nvme6n1  259:1    0  50G  0 disk /sso/hadoop/kudu
+nvme7n1  259:4    0  50G  0 disk /sso/hadoop
+nvme8n1  259:5    0  50G  0 disk /sso
+nvme9n1  259:0    0  15G  0 disk /tmp
+
+ird10134au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:0    0   5G  0 disk /home
+nvme0n1  259:10   0  40G  0 disk 
+nvme1n1  259:2    0  50G  0 disk /var/log
+nvme2n1  259:1    0  50G  0 disk /var
+nvme3n1  259:3    0  10G  0 disk /opt
+nvme4n1  259:6    0  50G  0 disk /sso/sfw
+nvme5n1  259:5    0  20G  0 disk /sso/monitoring
+nvme6n1  259:9    0  50G  0 disk /sso/hadoop/kudu
+nvme7n1  259:8    0  50G  0 disk /sso/hadoop
+nvme8n1  259:4    0  50G  0 disk /sso
+nvme9n1  259:7    0  15G  0 disk /tmp
+
+ird10135au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:8    0  40G  0 disk 
+nvme1n1 259:1    0  50G  0 disk /var/log
+nvme2n1 259:0    0  50G  0 disk /var
+nvme3n1 259:5    0  10G  0 disk /opt
+nvme4n1 259:3    0  50G  0 disk /sso/sfw
+nvme5n1 259:2    0  20G  0 disk /sso/monitoring
+nvme6n1 259:6    0  50G  0 disk /sso/hadoop
+nvme7n1 259:4    0  50G  0 disk /sso
+nvme8n1 259:7    0  15G  0 disk /tmp
+nvme9n1 259:11   0   5G  0 disk /home
+
+ird10136au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:0    0  50G  0 disk /var/log
+nvme2n1 259:5    0  50G  0 disk /var
+nvme3n1 259:1    0  10G  0 disk /opt
+nvme4n1 259:2    0  50G  0 disk /sso/sfw
+nvme5n1 259:3    0  20G  0 disk /sso/monitoring
+nvme6n1 259:4    0  50G  0 disk /sso/hadoop
+nvme7n1 259:6    0  50G  0 disk /sso
+nvme8n1 259:7    0  15G  0 disk /tmp
+nvme9n1 259:8    0   5G  0 disk /home
+
+ird10137au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:0    0  50G  0 disk /var/log
+nvme2n1 259:1    0  50G  0 disk /var
+nvme3n1 259:6    0  10G  0 disk /opt
+nvme4n1 259:2    0  50G  0 disk /sso/sfw
+nvme5n1 259:4    0  20G  0 disk /sso/monitoring
+nvme6n1 259:3    0  50G  0 disk /sso/hadoop
+nvme7n1 259:8    0  50G  0 disk /sso
+nvme8n1 259:5    0  15G  0 disk /tmp
+nvme9n1 259:7    0   5G  0 disk /home
+
+ird10138au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:0    0  50G  0 disk /var/log
+nvme2n1 259:1    0  50G  0 disk /var
+nvme3n1 259:7    0  10G  0 disk /opt
+nvme4n1 259:3    0  50G  0 disk /sso/sfw
+nvme5n1 259:4    0  20G  0 disk /sso/monitoring
+nvme6n1 259:2    0  50G  0 disk /sso/hadoop
+nvme7n1 259:8    0  50G  0 disk /sso
+nvme8n1 259:6    0  15G  0 disk /tmp
+nvme9n1 259:5    0   5G  0 disk /home
+
+ird10139au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:0    0  50G  0 disk /var/log
+nvme2n1 259:1    0  50G  0 disk /var
+nvme3n1 259:4    0  10G  0 disk /opt
+nvme4n1 259:6    0  50G  0 disk /sso/sfw
+nvme5n1 259:3    0  20G  0 disk /sso/monitoring
+nvme6n1 259:2    0  50G  0 disk /sso/hadoop
+nvme7n1 259:5    0  50G  0 disk /sso
+nvme8n1 259:7    0  15G  0 disk /tmp
+nvme9n1 259:8    0   5G  0 disk /home
+
+ird10140au.vsp.sas.com
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme0n1 259:9    0  40G  0 disk 
+nvme1n1 259:0    0  50G  0 disk /var/log
+nvme2n1 259:3    0  50G  0 disk /var
+nvme3n1 259:2    0  10G  0 disk /opt
+nvme4n1 259:1    0  50G  0 disk /sso/sfw
+nvme5n1 259:6    0  20G  0 disk /sso/monitoring
+nvme6n1 259:4    0  50G  0 disk /sso/hadoop
+nvme7n1 259:8    0  50G  0 disk /sso
+nvme8n1 259:7    0  15G  0 disk /tmp
+nvme9n1 259:5    0   5G  0 disk /home
+
+ird10141au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:11   0  50G  0 disk /var
+nvme11n1 259:6    0  10G  0 disk /opt
+nvme12n1 259:7    0  50G  0 disk /sso/sfw
+nvme13n1 259:1    0  20G  0 disk /sso/monitoring
+nvme14n1 259:9    0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:17   0  50G  0 disk /sso/hadoop
+nvme16n1 259:5    0  50G  0 disk /sso
+nvme17n1 259:2    0  15G  0 disk /tmp
+nvme18n1 259:4    0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:15   0   2T  0 disk 
+nvme2n1  259:0    0   2T  0 disk /hadoop/sdg
+nvme3n1  259:8    0   2T  0 disk /hadoop/sdf
+nvme4n1  259:14   0   2T  0 disk /hadoop/sde
+nvme5n1  259:12   0   2T  0 disk /hadoop/sdd
+nvme6n1  259:13   0   2T  0 disk /hadoop/sdc
+nvme7n1  259:16   0   2T  0 disk /hadoop/sdb
+nvme8n1  259:3    0   2T  0 disk /hadoop/sda
+nvme9n1  259:10   0  50G  0 disk /var/log
+
+ird10142au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:11   0  50G  0 disk /var
+nvme11n1 259:16   0  10G  0 disk /opt
+nvme12n1 259:17   0  50G  0 disk /sso/sfw
+nvme13n1 259:5    0  20G  0 disk /sso/monitoring
+nvme14n1 259:8    0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:13   0  50G  0 disk /sso/hadoop
+nvme16n1 259:2    0  50G  0 disk /sso
+nvme17n1 259:6    0  15G  0 disk /tmp
+nvme18n1 259:10   0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:14   0   2T  0 disk 
+nvme2n1  259:15   0   2T  0 disk /hadoop/sdg
+nvme3n1  259:7    0   2T  0 disk /hadoop/sdf
+nvme4n1  259:4    0   2T  0 disk /hadoop/sde
+nvme5n1  259:1    0   2T  0 disk /hadoop/sdd
+nvme6n1  259:9    0   2T  0 disk /hadoop/sdc
+nvme7n1  259:3    0   2T  0 disk /hadoop/sdb
+nvme8n1  259:0    0   2T  0 disk /hadoop/sda
+nvme9n1  259:12   0  50G  0 disk /var/log
+
+ird10143au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:13   0  50G  0 disk /var
+nvme11n1 259:3    0  10G  0 disk /opt
+nvme12n1 259:0    0  50G  0 disk /sso/sfw
+nvme13n1 259:14   0  20G  0 disk /sso/monitoring
+nvme14n1 259:7    0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:10   0  50G  0 disk /sso/hadoop
+nvme16n1 259:5    0  50G  0 disk /sso
+nvme17n1 259:9    0  15G  0 disk /tmp
+nvme18n1 259:1    0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:16   0   2T  0 disk 
+nvme2n1  259:4    0   2T  0 disk /hadoop/sdg
+nvme3n1  259:11   0   2T  0 disk /hadoop/sdf
+nvme4n1  259:2    0   2T  0 disk /hadoop/sde
+nvme5n1  259:12   0   2T  0 disk /hadoop/sdd
+nvme6n1  259:8    0   2T  0 disk /hadoop/sdc
+nvme7n1  259:15   0   2T  0 disk /hadoop/sdb
+nvme8n1  259:17   0   2T  0 disk /hadoop/sda
+nvme9n1  259:6    0  50G  0 disk /var/log
+
+ird10144au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:3    0  50G  0 disk /var
+nvme11n1 259:1    0  10G  0 disk /opt
+nvme12n1 259:16   0  50G  0 disk /sso/sfw
+nvme13n1 259:6    0  20G  0 disk /sso/monitoring
+nvme14n1 259:10   0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:5    0  50G  0 disk /sso/hadoop
+nvme16n1 259:15   0  50G  0 disk /sso
+nvme17n1 259:17   0  15G  0 disk /tmp
+nvme18n1 259:2    0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:7    0   2T  0 disk 
+nvme2n1  259:0    0   2T  0 disk /hadoop/sdg
+nvme3n1  259:12   0   2T  0 disk /hadoop/sdf
+nvme4n1  259:11   0   2T  0 disk /hadoop/sde
+nvme5n1  259:9    0   2T  0 disk /hadoop/sdd
+nvme6n1  259:14   0   2T  0 disk /hadoop/sdc
+nvme7n1  259:13   0   2T  0 disk /hadoop/sdb
+nvme8n1  259:8    0   2T  0 disk /hadoop/sda
+nvme9n1  259:4    0  50G  0 disk /var/log
+
+ird10145au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:15   0  50G  0 disk /var
+nvme11n1 259:3    0  10G  0 disk /opt
+nvme12n1 259:13   0  50G  0 disk /sso/sfw
+nvme13n1 259:16   0  20G  0 disk /sso/monitoring
+nvme14n1 259:7    0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:8    0  50G  0 disk /sso/hadoop
+nvme16n1 259:14   0  50G  0 disk /sso
+nvme17n1 259:5    0  15G  0 disk /tmp
+nvme18n1 259:12   0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:10   0   2T  0 disk 
+nvme2n1  259:4    0   2T  0 disk /hadoop/sdg
+nvme3n1  259:2    0   2T  0 disk /hadoop/sdf
+nvme4n1  259:6    0   2T  0 disk /hadoop/sde
+nvme5n1  259:9    0   2T  0 disk /hadoop/sdd
+nvme6n1  259:1    0   2T  0 disk /hadoop/sdc
+nvme7n1  259:17   0   2T  0 disk /hadoop/sdb
+nvme8n1  259:0    0   2T  0 disk /hadoop/sda
+nvme9n1  259:11   0  50G  0 disk /var/log
+
+ird10146au.vsp.sas.com
+NAME     MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:13   0  50G  0 disk /var
+nvme11n1 259:8    0  10G  0 disk /opt
+nvme12n1 259:0    0  50G  0 disk /sso/sfw
+nvme13n1 259:14   0  20G  0 disk /sso/monitoring
+nvme14n1 259:5    0  50G  0 disk /sso/hadoop/kudu
+nvme15n1 259:10   0  50G  0 disk /sso/hadoop
+nvme16n1 259:4    0  50G  0 disk /sso
+nvme17n1 259:9    0  15G  0 disk /tmp
+nvme18n1 259:2    0   5G  0 disk /home
+nvme0n1  259:18   0  40G  0 disk 
+nvme1n1  259:17   0   2T  0 disk 
+nvme2n1  259:3    0   2T  0 disk /hadoop/sdg
+nvme3n1  259:16   0   2T  0 disk /hadoop/sdf
+nvme4n1  259:7    0   2T  0 disk /hadoop/sde
+nvme5n1  259:11   0   2T  0 disk /hadoop/sdd
+nvme6n1  259:1    0   2T  0 disk /hadoop/sdc
+nvme7n1  259:6    0   2T  0 disk /hadoop/sdb
+nvme8n1  259:15   0   2T  0 disk /hadoop/sda
+nvme9n1  259:12   0  50G  0 disk /var/log
+
+ird10147au.vsp.sas.com
+NAME     MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme10n1 259:10   0   50G  0 disk /sso/sfw
+nvme11n1 259:3    0   50G  0 disk /sso/hadoop
+nvme0n1  259:11   0   40G  0 disk 
+nvme1n1  259:0    0 1000G  0 disk 
+nvme2n1  259:1    0   50G  0 disk /var/log
+nvme3n1  259:8    0   15G  0 disk /tmp
+nvme4n1  259:2    0   20G  0 disk /sso/monitoring
+nvme5n1  259:4    0   50G  0 disk /var
+nvme6n1  259:9    0    5G  0 disk /home
+nvme7n1  259:7    0   50G  0 disk /sso
+nvme8n1  259:6    0   10G  0 disk /opt
+nvme9n1  259:5    0 1000G  0 disk /sso/cdsw_application
+
+ird35au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   20G  0 disk /saswork
+xvdc 202:32   0  130G  0 disk /sso
+xvdd 202:48   0  100G  0 disk /sso/biconfig
+xvde 202:64   0  100G  0 disk /sso/biconfig/940/Lev2
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0  100G  0 disk /sso/sfw
+xvdh 202:112  0  100G  0 disk /sso/sfw/sas_lab
+xvdi 202:128  0    8G  0 disk /var
+xvdj 202:144  0    5G  0 disk /home
+xvdk 202:160  0    8G  0 disk /tmp
+xvdl 202:176  0   10G  0 disk /var/log
+xvdm 202:192  0   10G  0 disk /var/log/audit
+
+ird36au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdf    202:80    0  130G  0 disk /sso
+xvdg    202:96    0  100G  0 disk /sso/biconfig
+xvdh    202:112   0  100G  0 disk /sso/biconfig/940/Lev2
+xvdi    202:128   0   20G  0 disk /sso/monitoring
+xvdj    202:144   0  100G  0 disk /sso/sfw
+xvdk    202:160   0  100G  0 disk /sso/sfw/sas_lab
+xvdl    202:176   0  100G  0 disk /sso/transport
+xvdm    202:192   0   70G  0 disk /var
+xvdn    202:208   0    5G  0 disk /home
+xvdo    202:224   0    8G  0 disk /tmp
+xvdp    202:240   0   30G  0 disk /ird/projects
+xvdq    202:4096  0  500G  0 disk /ird/warehouse
+xvdr    202:4352  0  500G  0 disk /ird/warehouse_lab
+xvds    202:4608  0    8G  0 disk [SWAP]
+xvdt    202:4864  0   50G  0 disk /var/log/audit
+xvdu    202:5120  0   10G  0 disk /var/log
+nvme0n1 259:1     0  1.7T  0 disk 
+nvme1n1 259:2     0  1.7T  0 disk 
+nvme2n1 259:0     0  1.7T  0 disk 
+nvme3n1 259:3     0  1.7T  0 disk 
+
+ird37au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  130G  0 disk /sso
+xvdc 202:32   0  100G  0 disk /sso/biconfig
+xvdd 202:48   0   20G  0 disk /sso/monitoring
+xvde 202:64   0  100G  0 disk /sso/sfw
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   10G  0 disk /var/log
+xvdj 202:144  0   10G  0 disk /var/log/audit
+
+ird38au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  130G  0 disk /sso
+xvdc 202:32   0  100G  0 disk /sso/biconfig
+xvdd 202:48   0  100G  0 disk /sso/biconfig/940/Lev2
+xvde 202:64   0  100G  0 disk /sso/sfw
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0  100G  0 disk /sso/sfw/sas_lab
+xvdh 202:112  0    8G  0 disk /var
+xvdi 202:128  0    5G  0 disk /home
+xvdj 202:144  0    8G  0 disk /tmp
+xvdk 202:160  0   10G  0 disk /var/log
+xvdl 202:176  0   10G  0 disk /var/log/audit
+
+ird39au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  130G  0 disk /sso
+xvdc 202:32   0  100G  0 disk /sso/biconfig
+xvdd 202:48   0   20G  0 disk /sso/monitoring
+xvde 202:64   0  100G  0 disk /sso/sfw
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   10G  0 disk /var/log
+xvdj 202:144  0   10G  0 disk /var/log/audit
+
+ird41au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird42au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird43au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdc    202:32   0   10G  0 disk /opt
+xvdd    202:48   0  100G  0 disk /opt/sas
+xvde    202:64   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0   80G  0 disk /sso
+xvdg    202:96   0   20G  0 disk /sso/monitoring
+xvdh    202:112  0   50G  0 disk /sso/sfw
+xvdi    202:128  0   20G  0 disk /var
+xvdj    202:144  0   50G  0 disk /var/cache
+xvdk    202:160  0   10G  0 disk /var/log
+xvdl    202:176  0  100G  0 disk /sso/transport
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+xvdo    202:224  0   30G  0 disk /ird/projects
+xvdp    202:240  0  500G  0 disk /ird/warehouse
+nvme0n1 259:0    0  1.7T  0 disk 
+
+ird44au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdd    202:48    0   10G  0 disk /opt
+xvde    202:64    0  100G  0 disk /opt/sas
+xvdf    202:80    0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96    0   80G  0 disk /sso
+xvdh    202:112   0   20G  0 disk /sso/monitoring
+xvdi    202:128   0   50G  0 disk /sso/sfw
+xvdj    202:144   0   20G  0 disk /var
+xvdk    202:160   0   50G  0 disk /var/cache
+xvdl    202:176   0   10G  0 disk /var/log
+xvdm    202:192   0  100G  0 disk /sso/transport
+xvdn    202:208   0    5G  0 disk /home
+xvdo    202:224   0    8G  0 disk /tmp
+xvdp    202:240   0   30G  0 disk /ird/projects
+xvdq    202:4096  0  500G  0 disk /ird/warehouse
+nvme0n1 259:0     0  1.7T  0 disk 
+nvme1n1 259:1     0  1.7T  0 disk 
+
+ird45au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdd    202:48    0   10G  0 disk /opt
+xvde    202:64    0  100G  0 disk /opt/sas
+xvdf    202:80    0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96    0   80G  0 disk /sso
+xvdh    202:112   0   20G  0 disk /sso/monitoring
+xvdi    202:128   0   50G  0 disk /sso/sfw
+xvdj    202:144   0   20G  0 disk /var
+xvdk    202:160   0   50G  0 disk /var/cache
+xvdl    202:176   0   10G  0 disk /var/log
+xvdm    202:192   0  100G  0 disk /sso/transport
+xvdn    202:208   0    5G  0 disk /home
+xvdo    202:224   0    8G  0 disk /tmp
+xvdp    202:240   0   30G  0 disk /ird/projects
+xvdq    202:4096  0  500G  0 disk /ird/warehouse
+nvme0n1 259:0     0  1.7T  0 disk 
+nvme1n1 259:1     0  1.7T  0 disk 
+
+ird46au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird47au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird48au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird49au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird50au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:1    0  1.7T  0 disk 
+nvme1n1 259:0    0  1.7T  0 disk 
+
+ird51au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird52au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird53au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  100G  0 disk /sso/transport
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird54au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   20G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird55au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdd    202:48    0   10G  0 disk /opt
+xvde    202:64    0  100G  0 disk /opt/sas
+xvdf    202:80    0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96    0   80G  0 disk /sso
+xvdh    202:112   0   20G  0 disk /sso/monitoring
+xvdi    202:128   0   50G  0 disk /sso/sfw
+xvdj    202:144   0   20G  0 disk /var
+xvdk    202:160   0   50G  0 disk /var/cache
+xvdl    202:176   0   10G  0 disk /var/log
+xvdm    202:192   0  100G  0 disk /sso/transport
+xvdn    202:208   0    5G  0 disk /home
+xvdo    202:224   0    8G  0 disk /tmp
+xvdp    202:240   0   30G  0 disk /ird/projects
+xvdq    202:4096  0  500G  0 disk /ird/warehouse
+xvdr    202:4352  0  100G  0 disk /opt/sas/viya/config/var/lib/evmsvrops/new_evdm
+nvme0n1 259:1     0  1.7T  0 disk 
+nvme1n1 259:0     0  1.7T  0 disk 
+
+ird56au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdd    202:48    0   10G  0 disk /opt
+xvde    202:64    0  100G  0 disk /opt/sas
+xvdf    202:80    0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96    0   80G  0 disk /sso
+xvdh    202:112   0   20G  0 disk /sso/monitoring
+xvdi    202:128   0   50G  0 disk /sso/sfw
+xvdj    202:144   0   20G  0 disk /var
+xvdk    202:160   0   50G  0 disk /var/cache
+xvdl    202:176   0   10G  0 disk /var/log
+xvdm    202:192   0    5G  0 disk /home
+xvdn    202:208   0    8G  0 disk /tmp
+xvdo    202:224   0   30G  0 disk /ird/projects
+xvdp    202:240   0  500G  0 disk /ird/warehouse
+xvdq    202:4096  0  100G  0 disk /sso/transport
+nvme0n1 259:2     0  1.7T  0 disk 
+nvme1n1 259:1     0  1.7T  0 disk 
+nvme2n1 259:3     0  1.7T  0 disk 
+nvme3n1 259:0     0  1.7T  0 disk 
+
+ird57au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:2    0  1.7T  0 disk 
+nvme2n1 259:3    0  1.7T  0 disk 
+nvme3n1 259:1    0  1.7T  0 disk 
+
+ird58au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+nvme2n1 259:2    0  1.7T  0 disk 
+nvme3n1 259:3    0  1.7T  0 disk 
+
+ird59au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdd    202:48   0   10G  0 disk /opt
+xvde    202:64   0  100G  0 disk /opt/sas
+xvdf    202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg    202:96   0   80G  0 disk /sso
+xvdh    202:112  0   20G  0 disk /sso/monitoring
+xvdi    202:128  0   50G  0 disk /sso/sfw
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:2    0  1.7T  0 disk 
+nvme2n1 259:3    0  1.7T  0 disk 
+nvme3n1 259:1    0  1.7T  0 disk 
+
+ird60au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  500G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird61au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  100G  0 disk /sso/transport
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird66au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   80G  0 disk /sso
+xvdd 202:48   0    8G  0 disk /var
+xvde 202:64   0    5G  0 disk /home
+xvdf 202:80   0    8G  0 disk /tmp
+xvdg 202:96   0  100G  0 disk /sso/sftp
+xvdh 202:112  0   10G  0 disk /var/log
+xvdi 202:128  0   10G  0 disk /var/log/audit
+
+ird67au.vsp.sas.com
+NAME    MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0     0   20G  0 disk 
+xvdj    202:144   0   10G  0 disk /opt
+xvdk    202:160   0  500G  0 disk /opt/sas
+xvdl    202:176   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdm    202:192   0   80G  0 disk /sso
+xvdn    202:208   0   20G  0 disk /sso/monitoring
+xvdo    202:224   0   50G  0 disk /sso/sfw
+xvdp    202:240   0  100G  0 disk /sso/transport
+xvdq    202:4096  0   20G  0 disk /var
+xvdr    202:4352  0   50G  0 disk /var/cache
+xvds    202:4608  0   10G  0 disk /var/log
+xvdt    202:4864  0    5G  0 disk /home
+xvdu    202:5120  0    8G  0 disk /tmp
+xvdv    202:5376  0   30G  0 disk /ird/projects
+xvdw    202:5632  0  500G  0 disk /ird/warehouse
+nvme0n1 259:7     0  1.7T  0 disk 
+nvme1n1 259:4     0  1.7T  0 disk 
+nvme2n1 259:3     0  1.7T  0 disk 
+nvme3n1 259:1     0  1.7T  0 disk 
+nvme4n1 259:0     0  1.7T  0 disk 
+nvme5n1 259:2     0  1.7T  0 disk 
+nvme6n1 259:5     0  1.7T  0 disk 
+nvme7n1 259:6     0  1.7T  0 disk 
+
+ird68au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdc    202:32   0   10G  0 disk /opt
+xvdd    202:48   0  100G  0 disk /opt/sas
+xvde    202:64   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0   80G  0 disk /sso
+xvdg    202:96   0   20G  0 disk /sso/monitoring
+xvdh    202:112  0   50G  0 disk /sso/sfw
+xvdi    202:128  0  100G  0 disk /sso/transport
+xvdj    202:144  0   20G  0 disk /var
+xvdk    202:160  0   50G  0 disk /var/cache
+xvdl    202:176  0   10G  0 disk /var/log
+xvdm    202:192  0    5G  0 disk /home
+xvdn    202:208  0    8G  0 disk /tmp
+xvdo    202:224  0   30G  0 disk /ird/projects
+xvdp    202:240  0  500G  0 disk /ird/warehouse
+nvme0n1 259:0    0  1.7T  0 disk 
+
+ird69au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird70au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  100G  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird71au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  100G  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird72au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    2T  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird73au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    2T  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird74au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  2.4T  0 disk /sso/data/oracle/backup
+xvdc 202:32   0  1.5T  0 disk /sso/data/oracle/data01
+xvdd 202:48   0  1.8T  0 disk /sso/data/oracle/flash
+xvde 202:64   0   50G  0 disk /sso/sfw/oracle
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   13G  0 disk 
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0   10G  0 disk /var/log/audit
+xvdl 202:176  0   20G  0 disk /sso/data/export_db_shared
+
+ird75au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0  250G  0 disk /saswork
+xvdf 202:80   0   80G  0 disk /sso
+xvdg 202:96   0   20G  0 disk /sso/monitoring
+xvdh 202:112  0   50G  0 disk /sso/sfw
+xvdi 202:128  0  100G  0 disk /sso/transport
+xvdj 202:144  0   20G  0 disk /var
+xvdk 202:160  0   50G  0 disk /var/cache
+xvdl 202:176  0   10G  0 disk /var/log
+xvdm 202:192  0    5G  0 disk /home
+xvdn 202:208  0    8G  0 disk /tmp
+xvdo 202:224  0   30G  0 disk /ird/projects
+xvdp 202:240  0  500G  0 disk /ird/warehouse
+
+ird76au.vsp.sas.com
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0    20G  0 disk 
+xvdc    202:32   0    10G  0 disk /opt
+xvdd    202:48   0   100G  0 disk /opt/sas
+xvde    202:64   0    50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0    80G  0 disk /sso
+xvdg    202:96   0    20G  0 disk /sso/monitoring
+xvdh    202:112  0    50G  0 disk /sso/sfw
+xvdi    202:128  0   100G  0 disk /sso/transport
+xvdj    202:144  0    20G  0 disk /var
+xvdk    202:160  0    50G  0 disk /var/cache
+xvdl    202:176  0    10G  0 disk /var/log
+xvdm    202:192  0     5G  0 disk /home
+xvdn    202:208  0     8G  0 disk /tmp
+xvdo    202:224  0    30G  0 disk /ird/projects
+xvdp    202:240  0   500G  0 disk /ird/warehouse
+nvme0n1 259:0    0 884.8G  0 disk 
+
+ird77au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird78au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0   50G  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird79au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0   50G  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird80au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  500G  0 disk /opt/sas/viya/config/data
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp
+
+ird81au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  800G  0 disk /sso/data/oracle/backup
+xvdc 202:32   0  500G  0 disk /sso/data/oracle/data01
+xvdd 202:48   0  600G  0 disk /sso/data/oracle/flash
+xvde 202:64   0   50G  0 disk /sso/sfw/oracle
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   13G  0 disk 
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0   10G  0 disk /var/log/audit
+
+ird82au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   20G  0 disk /saswork
+xvdc 202:32   0  130G  0 disk /sso
+xvdd 202:48   0  100G  0 disk /sso/biconfig
+xvde 202:64   0   20G  0 disk /sso/monitoring
+xvdf 202:80   0  100G  0 disk /sso/sfw
+xvdg 202:96   0    8G  0 disk /var
+xvdh 202:112  0    5G  0 disk /home
+xvdi 202:128  0    8G  0 disk /tmp
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0   10G  0 disk /var/log/audit
+
+ird83au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdc    202:32   0  130G  0 disk /sso
+xvdd    202:48   0  100G  0 disk /sso/biconfig
+xvde    202:64   0   20G  0 disk /sso/monitoring
+xvdf    202:80   0  100G  0 disk /sso/sfw
+xvdg    202:96   0  100G  0 disk /sso/transport
+xvdh    202:112  0    8G  0 disk /var
+xvdi    202:128  0    5G  0 disk /home
+xvdj    202:144  0    8G  0 disk /tmp
+xvdk    202:160  0   30G  0 disk /ird/projects
+xvdl    202:176  0  500G  0 disk /ird/warehouse
+xvdm    202:192  0   10G  0 disk /var/log
+xvdn    202:208  0   10G  0 disk /var/log/audit
+nvme0n1 259:2    0  1.7T  0 disk 
+nvme1n1 259:0    0  1.7T  0 disk 
+nvme2n1 259:3    0  1.7T  0 disk 
+nvme3n1 259:1    0  1.7T  0 disk 
+
+ird84au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  130G  0 disk /sso
+xvdc 202:32   0  100G  0 disk /sso/biconfig
+xvdd 202:48   0   20G  0 disk /sso/monitoring
+xvde 202:64   0  100G  0 disk /sso/sfw
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   10G  0 disk /var/log
+xvdj 202:144  0   10G  0 disk /var/log/audit
+
+ird85au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0  130G  0 disk /sso
+xvdc 202:32   0  100G  0 disk /sso/biconfig
+xvdd 202:48   0   20G  0 disk /sso/monitoring
+xvde 202:64   0  100G  0 disk /sso/sfw
+xvdf 202:80   0    8G  0 disk /var
+xvdg 202:96   0    5G  0 disk /home
+xvdh 202:112  0    8G  0 disk /tmp
+xvdi 202:128  0   10G  0 disk /var/log
+xvdj 202:144  0   10G  0 disk /var/log/audit
+
+ird86au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird87au.vsp.sas.com
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0    20G  0 disk 
+xvdc    202:32   0    10G  0 disk /opt
+xvdd    202:48   0   100G  0 disk /opt/sas
+xvde    202:64   0    50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0    80G  0 disk /sso
+xvdg    202:96   0    20G  0 disk /sso/monitoring
+xvdh    202:112  0    50G  0 disk /sso/sfw
+xvdi    202:128  0    20G  0 disk /var
+xvdj    202:144  0    50G  0 disk /var/cache
+xvdk    202:160  0    10G  0 disk /var/log
+xvdl    202:176  0   100G  0 disk /sso/transport
+xvdm    202:192  0     5G  0 disk /home
+xvdn    202:208  0     8G  0 disk /tmp
+xvdo    202:224  0    30G  0 disk /ird/projects
+xvdp    202:240  0   500G  0 disk /ird/warehouse
+nvme0n1 259:0    0 884.8G  0 disk 
+
+ird88au.vsp.sas.com
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0    20G  0 disk 
+xvdc    202:32   0    10G  0 disk /opt
+xvdd    202:48   0   100G  0 disk /opt/sas
+xvde    202:64   0    50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0    80G  0 disk /sso
+xvdg    202:96   0    20G  0 disk /sso/monitoring
+xvdh    202:112  0    50G  0 disk /sso/sfw
+xvdi    202:128  0    20G  0 disk /var
+xvdj    202:144  0    50G  0 disk /var/cache
+xvdk    202:160  0    10G  0 disk /var/log
+xvdl    202:176  0   100G  0 disk /sso/transport
+xvdm    202:192  0     5G  0 disk /home
+xvdn    202:208  0     8G  0 disk /tmp
+xvdo    202:224  0    30G  0 disk /ird/projects
+xvdp    202:240  0   500G  0 disk /ird/warehouse
+nvme0n1 259:0    0 884.8G  0 disk 
+
+ird89au.vsp.sas.com
+NAME    MAJ:MIN RM   SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0    20G  0 disk 
+xvdc    202:32   0    10G  0 disk /opt
+xvdd    202:48   0   100G  0 disk /opt/sas
+xvde    202:64   0    50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0    80G  0 disk /sso
+xvdg    202:96   0    20G  0 disk /sso/monitoring
+xvdh    202:112  0    50G  0 disk /sso/sfw
+xvdi    202:128  0    20G  0 disk /var
+xvdj    202:144  0    50G  0 disk /var/cache
+xvdk    202:160  0    10G  0 disk /var/log
+xvdl    202:176  0     5G  0 disk /home
+xvdm    202:192  0     8G  0 disk /tmp
+nvme0n1 259:0    0 884.8G  0 disk 
+
+ird90au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0    5G  0 disk /home
+xvdl 202:176  0    8G  0 disk /tmp
+
+ird91au.vsp.sas.com
+NAME    MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   20G  0 disk 
+xvdc    202:32   0   10G  0 disk /opt
+xvdd    202:48   0  100G  0 disk /opt/sas
+xvde    202:64   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdf    202:80   0   80G  0 disk /sso
+xvdg    202:96   0   20G  0 disk /sso/monitoring
+xvdh    202:112  0   50G  0 disk /sso/sfw
+xvdi    202:128  0   20G  0 disk /var
+xvdj    202:144  0   50G  0 disk /var/cache
+xvdk    202:160  0   10G  0 disk /var/log
+xvdl    202:176  0    5G  0 disk /home
+xvdm    202:192  0    8G  0 disk /tmp
+nvme0n1 259:0    0  1.7T  0 disk 
+nvme1n1 259:1    0  1.7T  0 disk 
+
+ird92au.vsp.sas.com
+NAME MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda 202:0    0   20G  0 disk 
+xvdb 202:16   0   10G  0 disk /opt
+xvdc 202:32   0  100G  0 disk /opt/sas
+xvdd 202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde 202:64   0   80G  0 disk /sso
+xvdf 202:80   0   20G  0 disk /sso/monitoring
+xvdg 202:96   0   50G  0 disk /sso/sfw
+xvdh 202:112  0   20G  0 disk /var
+xvdi 202:128  0   50G  0 disk /var/cache
+xvdj 202:144  0   10G  0 disk /var/log
+xvdk 202:160  0  100G  0 disk /sso/transport
+xvdl 202:176  0    5G  0 disk /home
+xvdm 202:192  0    8G  0 disk /tmp

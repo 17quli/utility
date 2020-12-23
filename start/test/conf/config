@@ -1,0 +1,8 @@
+source_db=test_dw
+target_db=test_raw
+lab_db=test_dw
+journal_db=test_jnl
+backup_db=test_dw
+view_db_full=test_raw_full_access
+view_db_restricted=test_raw_restricted_access
+db_env=test

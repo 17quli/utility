@@ -1,0 +1,43 @@
+2020-11-28 18:00:01------start /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw
+2020-11-28 18:00:02------14 tables to backup
+2020-11-28 18:00:02------show create table
+2020-11-28 18:00:03------drop table
+2020-11-28 18:00:08------create table
+2020-11-28 18:00:08------hdfs make directory
+2020-11-28 18:00:19------12 hdfs directories created
+2020-11-28 18:00:19------hdfs copy
+2020-11-28 18:00:34------12 hdfs directories copied
+2020-11-28 18:01:23------14 tables created
+2020-11-28 18:01:28------refresh table
+2020-11-28 18:01:29------12 tables refreshed
+2020-11-28 18:01:29------recover partitions
+2020-11-28 18:01:30------0 table partitions recovered
+2020-11-28 18:01:30------start ./tbsvalidation.sh ./stg/tgttbllist_prod_dw_20201128180001297329115.lst
+"row count of prod_dw.lab_analytics_team_cmp_programme_20201128 ###################0
+"
+"row count of prod_dw.lab_analytics_team_cmp_campaign_20201128 ####################29
+"
+"row count of prod_dw.lab_analytics_team_cmp_communication_20201128 ###############55
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_20201128 ######################125445
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_control_20201128 ##############393
+"
+"row count of prod_dw.lab_analytics_team_cmp_ring_fenced_20201128 #################139
+"
+"row count of prod_dw.lab_analytics_team_cmp_list_wash_20201128 ###################0
+"
+"row count of prod_dw.lab_analytics_team_cmp_dropped_leads_20201128 ###############1195
+"
+"row count of prod_dw.lab_analytics_team_cmp_list_wash_category_20201128 ##########13
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_detail_20201128 ###############126550
+"
+"row count of prod_dw.lab_analytics_team_cmp_marketing_job_20201128 ###############0
+"
+"row count of prod_dw.lab_analytics_team_cmp_marketing_20201128 ###################0
+"
+2020-11-28 18:01:40------show tables backup expired
+2020-11-28 18:02:07------drop tables backup expired
+2020-11-28 18:02:14------12 expired tables dropped
+2020-11-28 18:02:14------complete /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw

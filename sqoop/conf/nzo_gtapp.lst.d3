@@ -1,0 +1,13 @@
+tblnz_ksslineitem       app_tblnz_ksslineitem_lq        fullreplacement        16       flngreturnkey
+tblreturn       app_tblreturn_lq        fullreplacement        12       flngreturnkey
+tblperiod       app_tblperiod_lq        fullreplacement        12       flngAccountKey
+tblnz_rtnattributes     app_tblnz_rtnattributes_lq      fullreplacement        8       flngDocKey
+tblpayment      app_tblpayment_lq       fullreplacement        4       flngPaymentKey
+tbldoctrn       app_tbldoctrn_lq        fullreplacement 3     flngTransKey
+tblnz_bankfile  app_tblnz_bankfile_lq   fullreplacement        2       default
+tbldocsource    app_tbldocsource_lq     fullreplacement 2       flngDocKey
+tblnz_rtnpsoemployeesummary     app_tblnz_rtnpsoemployeesmry_lq fullreplacement        2       default
+tblrecoveryamount       app_tblrecoveryamount_lq        fullreplacement        2    default
+tblvisitaction  app_tblvisitaction_lq   fullreplacement        1       default
+tblnz_rtnprovisional    app_tblnz_rtnprovisional_lq     fullreplacement        1       default
+tblnz_rtnnrteincomeinfo app_tblnz_rtnnrteincomeinfo_lq  fullreplacement        1       default

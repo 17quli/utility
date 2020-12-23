@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblnz_studylinkceaselog (                                                                         
+fi64CeaseLogKey BIGINT,                                                                                                             
+flngDocKey INT,                                                                                                                     
+fstrIRDNumber VARCHAR(18),                                                                                                          
+fstrFamilyName VARCHAR(100),                                                                                                        
+fstrMiddleName VARCHAR(100),                                                                                                        
+fstrFirstName VARCHAR(100),                                                                                                         
+fstrDLN VARCHAR(28),                                                                                                                
+fdtmCease TIMESTAMP,                                                                                                                
+fstrCeaseReason VARCHAR(4000),                                                                                                      
+fstrAccountType VARCHAR(12),                                                                                                        
+fstrStudyLinkAction VARCHAR(100),                                                                                                   
+fdtmResponse TIMESTAMP,                                                                                                             
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;     

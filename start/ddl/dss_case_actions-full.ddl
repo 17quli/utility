@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.dss_case_actions AS
+SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.CASE_TYPE_CODE, z.CASE_NUMBER, z.CASE_KEY, z.SEQUENCE_NUMBER, z.LAST_ACTION_INDICATOR, z.CASE_ACTION_TYPE_CODE, z.ACTION_DATE, z.NEXT_ACTION_INDICATOR, z.STEP_CODE, z.TOTAL_ARREARS_AMOUNT, z.MAINFRAME_USER_ID, z.`TIMESTAMP`, z.ACTION_CEASED_DATE, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.dss_case_actions z;

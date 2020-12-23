@@ -1,0 +1,1185 @@
+/**************************************************************************************************
+5/12/19  ird0dxm Initial script
+06/23/19 ird0sxd  Added TDW tables, tblrtniit
+6/12/19  ird0dxm Changed the two frd tables from action to rule 
+06/12/19 ird0sxd Commented out cm_audit_Cases and add dss_cases
+10/12/19 ird0sxd Added int_crm_text_data 
+10/12/19 ird0sxd Update app_tblcollectpymentplan to be app_tblcollectpaymentplan
+11/12/19 ird0sxd Commented incorrect table name tblaccountstd under tblnz_accountstd
+11/12/19 ird0sxd Updated dss_elements tablestructure post column order change at source
+11/12/19 ird0sxd Added cm_audit_periods
+ 
+**************************************************************************************************/
+
+--- tblCOLLECT
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblcollect;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblcollect (
+flngCollectKey INT,
+flngVer INT,
+flngVerLast INT,
+fstrCategory VARCHAR(12),
+fstrCollectType VARCHAR(12),
+flngCustomerKey INT,
+flngCustomerKey2 INT,
+flngAccountKey INT,
+fintCollectProfileNumber SMALLINT,
+flngJournalKey INT,
+flngIndicatorKey INT,
+flngFolderKey INT,
+fcurTax DECIMAL(19,4),
+fcurPenalty DECIMAL(19,4),
+fcurInterest DECIMAL(19,4),
+fcurBalance DECIMAL(19,4),
+fstrCollectDistrictOffice VARCHAR(12),
+fstrAccountType VARCHAR(12),
+fdtmWorkDate TIMESTAMP,
+fdtmWorkDateTime TIMESTAMP,
+fdtmCreationDate TIMESTAMP,
+fdtmClosedDate TIMESTAMP,
+fblnAutomated SMALLINT,
+fdtmNextStage TIMESTAMP,
+fstrStageFlow VARCHAR(12),
+fstrStage VARCHAR(12),
+fstrOwner VARCHAR(20),
+flngRisk INT,
+fstrLastCompletedStage VARCHAR(12),
+flngTeamKey INT,
+flngDocKey INT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- tblCOLLECTPERIOD
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblcollectperiod;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblcollectperiod (
+flngCollectKey INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+flngBillItemKey INT,
+flngVer INT,
+flngVerLast INT,
+flngJointIndicatorKey INT,
+fdtmBegin TIMESTAMP,
+fdtmEnd TIMESTAMP,
+fblnActive SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- tblCOLLECTPYMENTPLAN
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblcollectpaymentplan;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblcollectpaymentplan (
+flngPaymentPlanKey INT,
+flngVer INT,
+flngVerLast INT,
+flngCollectKey INT,
+fstrPaymentPlanId VARCHAR(60),
+fintScheduleVersion SMALLINT,
+flngCustomerKey INT,
+flngCustomerKey2 INT,
+flngAccountKey INT,
+flngFolderKey INT,
+flngIndicatorKey INT,
+fstrPaymentPlanType VARCHAR(12),
+fstrStatus VARCHAR(12),
+fstrOwner VARCHAR(20),
+fdtmCreated TIMESTAMP,
+fstrCreatedBy VARCHAR(20),
+fstrFrequency VARCHAR(12),
+fstrInstallType VARCHAR(12),
+fintInstallments SMALLINT,
+fcurInstallmentAmount DECIMAL(19,4),
+fdtmNextInstallmentDue TIMESTAMP,
+fstrBillMethod VARCHAR(12),
+flngBankAccountKey INT,
+fstrBankAccountType VARCHAR(12),
+fstrTransitNumber VARCHAR(60),
+fstrAccountNumber VARCHAR(68),
+fcurPlanAmount DECIMAL(19,4),
+fcurDownPayment DECIMAL(19,4),
+fdtmDownPayDue TIMESTAMP,
+flngPenaltyTransKey INT,
+fcurPlanPenalty DECIMAL(19,4),
+fdtmNextEval TIMESTAMP,
+fdtmApproved TIMESTAMP,
+fstrChangeReason VARCHAR(24),
+fdtmChangeEvaluated TIMESTAMP,
+fblnActive SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+----tblLEAD
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tbllead;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tbllead (
+flngLeadKey INT,
+flngVer INT,
+flngVerLast INT,
+fstrLeadCategory VARCHAR(24),
+fstrLeadType VARCHAR(24),
+fstrLeadWorkArea VARCHAR(24),
+fstrManager VARCHAR(20),
+flngCustomerKey INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+fstrAccountType VARCHAR(12),
+flngSourceDiscoveryKey INT,
+fstrRecordKey VARCHAR(60),
+flngTeamKey INT,
+flngDocKey INT,
+flngCRMKey INT,
+fstrNextAction VARCHAR(24),
+flngNextActionTaskKey INT,
+fstrNextActionWho VARCHAR(20),
+fdtmNextActionDue TIMESTAMP,
+fstrNextActionLogEntry VARCHAR(510),
+fblnNextActionInError SMALLINT,
+fstrLastAction VARCHAR(24),
+fstrLastActionOutCome VARCHAR(12),
+fstrLastActionWho VARCHAR(20),
+fdtmLastActionDue TIMESTAMP,
+fdtmLastActionActual TIMESTAMP,
+fdtmCreated TIMESTAMP,
+fdtmExpires TIMESTAMP,
+fstrCreatedWho VARCHAR(20),
+fdtmClosed TIMESTAMP,
+fstrClosedWho VARCHAR(20),
+fstrCloseReason VARCHAR(12),
+fcurAmount DECIMAL(19,4),
+fcurProbability DECIMAL(19,4),
+fcurRecoverability DECIMAL(19,4),
+fstrIdType VARCHAR(12),
+fstrId VARCHAR(60),
+fstrFormattedId VARCHAR(60),
+fstrName VARCHAR(510),
+fstrFamilyName VARCHAR(510),
+fstrFirstName VARCHAR(100),
+fstrMiddleName VARCHAR(100),
+fstrTitleName VARCHAR(100),
+fstrSuffixName VARCHAR(100),
+fstrAddress VARCHAR(510),
+fstrStreet VARCHAR(510),
+fstrStreet2 VARCHAR(510),
+fstrUnit VARCHAR(60),
+fstrUnitType VARCHAR(100),
+fstrCity VARCHAR(200),
+fstrCounty VARCHAR(12),
+fstrState VARCHAR(12),
+fstrZip VARCHAR(60),
+fstrLocationCode VARCHAR(60),
+fstrMunicipality VARCHAR(60),
+fstrUrbanization VARCHAR(100),
+fstrDistrict VARCHAR(60),
+fstrSubDistrict VARCHAR(60),
+fstrSubProvince VARCHAR(100),
+fstrAddressDescription VARCHAR(510),
+fstrCountry VARCHAR(12),
+fstrAttention VARCHAR(510),
+fstrDistrictOffice VARCHAR(12),
+fi64LeadParametersKey BIGINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+
+
+
+--- tblPERIODBILLITEM
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblperiodbillitem;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblperiodbillitem (
+flngBillItemKey INT,
+flngVer INT,
+flngVerLast INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+fintBillItem SMALLINT,
+fstrBillType VARCHAR(12),
+fdtmCreated TIMESTAMP,
+fdtmDue TIMESTAMP,
+fstrStage VARCHAR(12),
+fdtmStaged TIMESTAMP,
+fstrPriorStage VARCHAR(12),
+fdtmPriorStaged TIMESTAMP,
+fdtmNextStageEval TIMESTAMP,
+fdtmClosed TIMESTAMP,
+fdtmProtest TIMESTAMP,
+fdtmFinalized TIMESTAMP,
+fcurTax DECIMAL(19,4),
+fcurTaxBalance DECIMAL(19,4),
+fcurTaxDelta DECIMAL(19,4),
+fcurInterest DECIMAL(19,4),
+fcurInterestBalance DECIMAL(19,4),
+fcurInterestDelta DECIMAL(19,4),
+fcurPenalty DECIMAL(19,4),
+fcurPenaltyBalance DECIMAL(19,4),
+fcurPenaltyDelta DECIMAL(19,4),
+fcurOther DECIMAL(19,4),
+fcurOtherBalance DECIMAL(19,4),
+fcurOtherDelta DECIMAL(19,4),
+fcurCredit DECIMAL(19,4),
+fcurCreditDelta DECIMAL(19,4),
+fcurBalance DECIMAL(19,4),
+fdtmBillActivity TIMESTAMP,
+fdtmPenalty TIMESTAMP,
+fdtmDelta TIMESTAMP,
+flngCollectKey INT,
+fintTransactionCount SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- tblPERIOD
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblperiod;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblperiod (
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+flngVer INT,
+flngVerLast INT,
+flngLinkedAccountKey INT,
+flngJointAccountKey INT,
+fblnPrime SMALLINT,
+fdtmPeriodBegin TIMESTAMP,
+fdtmPeriodEnd TIMESTAMP,
+fstrFiling VARCHAR(12),
+fcurTax DECIMAL(19,4),
+fcurTaxBalance DECIMAL(19,4),
+fcurTaxDelta DECIMAL(19,4),
+fcurInterest DECIMAL(19,4),
+fcurInterestBalance DECIMAL(19,4),
+fcurInterestDelta DECIMAL(19,4),
+fcurPenalty DECIMAL(19,4),
+fcurPenaltyBalance DECIMAL(19,4),
+fcurPenaltyDelta DECIMAL(19,4),
+fcurOther DECIMAL(19,4),
+fcurOtherBalance DECIMAL(19,4),
+fcurOtherDelta DECIMAL(19,4),
+fcurCredit DECIMAL(19,4),
+fcurCreditBalance DECIMAL(19,4),
+fcurCreditDelta DECIMAL(19,4),
+fcurBalance DECIMAL(19,4),
+fdtmActivity TIMESTAMP,
+fdtmPenalty TIMESTAMP,
+fdtmEffectMax TIMESTAMP,
+fdtmDelta TIMESTAMP,
+fdtmStatute TIMESTAMP,
+fdtmSystemStatute TIMESTAMP,
+fdtmUserStatute TIMESTAMP,
+fblnSBAExists SMALLINT,
+fblnRA SMALLINT,
+fblnPNI SMALLINT,
+flngDocKey INT,
+fblnActive SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+/*--- tblnz_ACCOUNTSTD
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblaccountstd;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblaccountstd (
+FLNGDOCKEY INT,
+FDTMCOMMENCE TIMESTAMP,
+FDTMCEASE TIMESTAMP,
+FSTRSTATUS VARCHAR(60),
+FSTRCLOSUREREASON VARCHAR(60),
+FSTRFILINGFRQ VARCHAR(12),
+fblnMailForm SMALLINT,
+FBLNREGISTERED SMALLINT,
+FSTRCITY VARCHAR(60),
+FSTRDISTRICT VARCHAR(60),
+FSTRGOVTAGENT VARCHAR(60),
+FINTPROCESSINGDAY SMALLINT,
+fstrSIC VARCHAR(12),
+fblnNoRtnPnlInt SMALLINT,
+FSTRWHO VARCHAR(20),
+FDTMWHEN TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;*/
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblnz_accountstd;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblnz_accountstd (
+flngDocKey INT,
+fblnUnpoliced SMALLINT,
+fintSMSCountryCode SMALLINT,
+fstrSMSAreaCode VARCHAR(10),
+fstrSMSPhoneNumber VARCHAR(30),
+fblnPublish SMALLINT,
+fintHeritageLocationNumber SMALLINT,
+fdtmReopened TIMESTAMP,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+
+
+
+--- tblnz_CAMPAIGN
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblnz_campaign;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblnz_campaign (
+flngDocKey INT,
+flngTreatmentPathway INT,
+fstrCampaignName VARCHAR(510),
+flngCollectKey INT,
+fstrGroup VARCHAR(510),
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- tblnz_INSTLMENTAGMTDFLT
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblnz_instlmentagmtdflt;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblnz_instlmentagmtdflt (
+flngPaymentPlanKey INT,
+flngVer INT,
+flngVerLast INT,
+flngWorkKey INT,
+fdtmNextPolice TIMESTAMP,
+fcurDifference DECIMAL(19,4),
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- tblprofile
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblprofile;
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblprofile (
+flngCustomerKey INT,
+fintProfileNumber SMALLINT,
+flngVer INT,
+flngVerLast INT,
+fstrProfileType VARCHAR(12),
+fblnDefault SMALLINT,
+fintParentProfileNumber SMALLINT,
+flngDocKey INT,
+fdtmCommence TIMESTAMP,
+fdtmCease TIMESTAMP,
+fdtmCreated TIMESTAMP,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- CASE_ACTIONS
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_case_actions;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_case_actions (
+IRD_NUMBER INT,
+LOCATION_NUMBER INT,
+CASE_TYPE_CODE VARCHAR(6),
+CASE_NUMBER INT,
+CASE_KEY INT,
+SEQUENCE_NUMBER INT,
+LAST_ACTION_INDICATOR VARCHAR(2),
+CASE_ACTION_TYPE_CODE VARCHAR(8),
+ACTION_DATE TIMESTAMP,
+NEXT_ACTION_INDICATOR VARCHAR(2),
+STEP_CODE INT,
+TOTAL_ARREARS_AMOUNT DECIMAL(16,2),
+MAINFRAME_USER_ID VARCHAR(16),
+`TIMESTAMP` TIMESTAMP,
+ACTION_CEASED_DATE TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+
+--- CASES
+
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_cases; 
+
+
+CREATE TABLE ${target_db=Enter the target database name here}.dss_cases
+ ( 
+
+
+ IRD_NUMBER INT, 
+
+
+ LOCATION_NUMBER INT, 
+
+
+ CASE_TYPE_CODE VARCHAR(6), 
+
+
+ CASE_NUMBER INT,
+ DATE_APPLIED TIMESTAMP,
+ DATE_CEASED TIMESTAMP, 
+
+
+ CASE_KEY INT, 
+
+
+ DATE_BEGIN TIMESTAMP, 
+
+
+ DATE_END TIMESTAMP,
+
+
+ CASE_CATEGORY_CODE VARCHAR(6), 
+
+
+ CASE_TYPE_GROUP_CODE VARCHAR(2), 
+
+
+ TOTAL_DEBT_AMOUNT DECIMAL(16,2), 
+
+
+ TOTAL_DISCREPANCY_AMT DECIMAL(16,2), 
+
+
+ TOTAL_HOURS_EFFORT DECIMAL(9,2), 
+
+
+ MANUAL_CASE_INDICATOR VARCHAR(2), 
+
+
+ OPEN_CASE_REASON_CODE VARCHAR(6), 
+
+
+ CLOSE_CASE_REASON_CODE VARCHAR(6), 
+
+
+ CASE_STATUS_CODE VARCHAR(4),
+ 
+
+AUDIT_RISK_RATING_CODE INT, 
+
+
+ AUDIT_CASE_AUTH_CODE INT, 
+
+
+ AUDIT_PROJECT_ID VARCHAR(16), 
+
+
+ OFFICE_UNIT_CODE VARCHAR(6),
+ 
+
+`TIMESTAMP` TIMESTAMP,
+ 
+
+AUDIT_TEAM_LEADER_ID VARCHAR(16),
+ 
+
+AUDIT_CASE_LEADER_ID VARCHAR(16), 
+
+
+ DISPUTE_DATE TIMESTAMP, 
+
+
+ INACTIVATED_DATE TIMESTAMP, 
+
+
+ record_effective_timestamp TIMESTAMP,
+ 
+
+record_expiry_timestamp TIMESTAMP, 
+
+
+ record_active_flag VARCHAR(1), 
+
+
+ record_deleted_flag VARCHAR(1),
+ 
+
+insert_object_run_key INT, 
+
+
+ update_object_run_key INT 
+
+ ) STORED AS PARQUET; 
+
+
+
+
+
+--- CROSS_REFERENCES
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_cross_references;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_cross_references (
+REFERENCE_TYPE VARCHAR(6),
+IRD_NUMBER_FROM INT,
+IRD_NUMBER_TO INT,
+LATEST_YEAR INT,
+DATE_APPLIED TIMESTAMP,
+CONFIRMED_IND VARCHAR(2),
+FIRST_YEAR INT,
+DATE_CEASED TIMESTAMP,
+`TIMESTAMP` TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- ELEMENTS
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_elements;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_elements (
+IRD_NUMBER INT,
+LOCATION_NUMBER INT,
+CASE_TYPE_CODE VARCHAR(6),
+CASE_NUMBER INT,
+CASE_KEY BIGINT,
+SYSTEM_PLAINT_NUMBER INT,
+TAX_TYPE VARCHAR(6),
+RETURN_PERIOD_DATE TIMESTAMP,
+DATE_APPLIED TIMESTAMP,
+DATE_CEASED TIMESTAMP,
+ELEMENT_TYPE VARCHAR(2),
+ASSESSMENT_AMOUNT DECIMAL(16,2),
+PENALTY_AND_INTEREST_AMOUNT DECIMAL(16,2),
+TOTAL_PAYMENTS_AMOUNT DECIMAL(16,2),
+COURT_FEE DECIMAL(16,2),
+BALANCE DECIMAL(16,2),
+MISC_AMOUNT DECIMAL(16,2),
+PENAL_ASSESSMENT_INDICATOR VARCHAR(2),
+DATE_START TIMESTAMP,
+DATE_END TIMESTAMP,
+DEFAULT_ASSESSMENT_INDICATOR VARCHAR(2),
+LATE_FILING_PENALTY_AMT DECIMAL(16,2),
+SOLICITORS_COSTS_PAID DECIMAL(16,2),
+PLAINT_CREDIT_AMOUNT DECIMAL(16,2),
+SOLICITORS_COSTS_AWRD DECIMAL(16,2),
+`TIMESTAMP` TIMESTAMP,
+ARRANGEMENT_INDICATOR VARCHAR(2),
+ORIGINAL_ARRANGEMENT_AMOUNT DECIMAL(16,2),
+SUMMARY_FLAG VARCHAR(2),
+CORE_DEBT DECIMAL(16,2),
+OTHER_ASSESSMENT_AMT DECIMAL(16,2),
+ELEMENT_TYPE_CODE VARCHAR(4),
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT 
+) STORED AS PARQUET;
+
+
+
+--- POLICING_PROFILES
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_policing_profiles;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_policing_profiles (                                               
+IRD_NUMBER INT,                                                                                                                     
+LOCATION_NUMBER INT,                                                                                                                
+RETURN_TYPE VARCHAR(10),                                                                                                            
+RETURN_PERIOD_DATE TIMESTAMP,                                                                                                       
+DATE_APPLIED TIMESTAMP,                                                                                                             
+DATE_CREATED TIMESTAMP,                                                                                                             
+CREATED_BY VARCHAR(16),                                                                                                             
+EXTENSION_IND VARCHAR(2),                                                                                                           
+EXTENSION_CODE VARCHAR(4),                                                                                                          
+EXTENDED_BY VARCHAR(16),                                                                                                            
+DATE_EXTENSION_GRANTED TIMESTAMP,                                                                                                   
+FINALISATION_CODE VARCHAR(4),                                                                                                       
+FINALISED_BY VARCHAR(16),                                                                                                           
+DATE_ORIGINALLY_DUE TIMESTAMP,                                                                                                      
+DATE_ACTUALLY_DUE TIMESTAMP,                                                                                                        
+DATE_LODGED TIMESTAMP,                                                                                                              
+DATE_FINALISED TIMESTAMP,                                                                                                           
+FILING_FREQUENCY VARCHAR(4),                                                                                                        
+NO_DAYS_TO_FILE INT,                                                                                                                
+DATE_CEASED TIMESTAMP,                                                                                                              
+`TIMESTAMP` TIMESTAMP,                                                                                                              
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;   
+
+--- TAX_CSA
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_tax_csa;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_tax_csa (
+IRD_NUMBER INT,
+LOCATION_NUMBER INT,
+TAX_TYPE VARCHAR(6),
+TREG_DATE_START TIMESTAMP,
+TREG_DATE_END TIMESTAMP,
+OFFICER_USER_ID VARCHAR(16),
+DATE_APPLIED TIMESTAMP,
+DATE_CEASED TIMESTAMP,
+`TIMESTAMP` TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+
+--- FRD_TBLFRDRULERESULT
+
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.frd_tblfrdruleresult;                                         
+CREATE TABLE ${target_db=Enter the target database name here}.frd_tblfrdruleresult (                                                
+flngFraudPlanKey INT,                                                                                                               
+flngReturnKey INT,                                                                                                                  
+flngRuleKey INT,                                                                                                                    
+flngChangeCounter INT,                                                                                                              
+fblnResult SMALLINT,                                                                                                                
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;                                                                                                               
+
+--- FRD_TBLFRDRULES
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.frd_tblfrdrules;                                              
+CREATE TABLE ${target_db=Enter the target database name here}.frd_tblfrdrules (                                                     
+flngFraudPlanKey INT,                                                                                                               
+flngRuleKey INT,                                                                                                                    
+flngVer INT,                                                                                                                        
+flngVerLast INT,                                                                                                                    
+flngChangeCounter INT,                                                                                                              
+fstrRuleName VARCHAR(60),                                                                                                           
+fstrRuleCategory VARCHAR(60),                                                                                                       
+fstrDescription VARCHAR(2000),                                                                                                      
+fcurScoreValue DECIMAL(19,4),                                                                                                       
+fcurAdjustmentFactor DECIMAL(19,4),                                                                                                 
+fstrAdjustmentSource VARCHAR(60),                                                                                                   
+flngReturnsIdentified INT,                                                                                                          
+fcurReturnsIdentifiedValue DECIMAL(19,4),                                                                                           
+flngReturnDisplay INT,                                                                                                              
+fblnActive SMALLINT,                                                                                                                
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;  
+
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.app_tblnz_rtniit;                                              
+CREATE TABLE ${target_db=Enter the target database name here}.app_tblnz_rtniit (                                                     
+flngDocKey INT,                                                                                                                      
+fblnIR215Attached SMALLINT,                                                                                                          
+fcurTotalFamilyTaxCredit DECIMAL(19,4),                                                                                              
+fcurTotalPAYEDeducted DECIMAL(19,4),                                                                                                 
+fcurTotalAdjPAYEDeducted DECIMAL(19,4),                                                                                              
+fcurTotalGrossIncome DECIMAL(19,4),                                                                                                  
+fcurIncomeNotLiableForACC DECIMAL(19,4),                                                                                             
+fcurACCEarnerLevy DECIMAL(19,4),                                                                                                     
+fcurTotalIncomeWithTaxDeducted DECIMAL(19,4),                                                                                        
+fcurTotalSchedularPymtTaxDed DECIMAL(19,4),                                                                                          
+fcurTotalGrossSchedularPayment DECIMAL(19,4),                                                                                        
+fcurExpensesSchedularPayments DECIMAL(19,4),                                                                                         
+fcurNetSchedularPayments DECIMAL(19,4),                                                                                              
+fcurTotalRWT DECIMAL(19,4),                                                                                                          
+fcurTotalGrossInterest DECIMAL(19,4),                                                                                                
+fblnIntPshpLTC SMALLINT,                                                                                                             
+fcurTotalImputationCredits DECIMAL(19,4),                                                                                            
+fcurTotalDividendRWT DECIMAL(19,4),                                                                                                  
+fcurTotalGrossDividends DECIMAL(19,4),                                                                                               
+fblnDivPshpLTC SMALLINT,                                                                                                             
+fcurTotalMaoriCredits DECIMAL(19,4),                                                                                                 
+fcurTotalMaoriDistributions DECIMAL(19,4),                                                                                           
+fcurTotalTaxPaidByTrustees DECIMAL(19,4),                                                                                            
+fcurTotalEstateOrTrusteeIncome DECIMAL(19,4),                                                                                        
+fcurTotalTaxableDistributions DECIMAL(19,4),                                                                                         
+fcurTotalOverseasTaxPaid DECIMAL(19,4),                                                                                              
+fcurTotalOverseasIncome DECIMAL(19,4),                                                                                               
+fblnOverseasSuper SMALLINT,                                                                                                          
+fcurTotalPartnershipTaxCredits DECIMAL(19,4),                                                                                        
+fcurTotalActivePtshpIncome DECIMAL(19,4),                                                                                            
+fcurTotalLTCTaxCredits DECIMAL(19,4),                                                                                                
+fcurTotalActiveLTCIncome DECIMAL(19,4),                                                                                              
+fcurNonAllowableDeductions DECIMAL(19,4),                                                                                            
+fcurNonAllowableDedClaimed DECIMAL(19,4),                                                                                            
+fcurAdjustedLTCIncome DECIMAL(19,4),                                                                                                 
+fcurTaxCreditSubtotal DECIMAL(19,4),                                                                                                 
+fcurIncomeSubtotal DECIMAL(19,4),                                                                                                    
+fcurShareholderEmployeeSalary DECIMAL(19,4),                                                                                         
+fblnFutureShrSalary SMALLINT,                                                                                                        
+fblnWithoutPayCloseCompany SMALLINT,                                                                                                 
+fcurNetRents DECIMAL(19,4),                                                                                                          
+fcurSelfEmployedNetIncome DECIMAL(19,4),                                                                                             
+fcurTotalOtherNetIncome DECIMAL(19,4),                                                                                               
+fcurRLWTCredit DECIMAL(19,4),                                                                                                        
+fcurTotalIncome DECIMAL(19,4),                                                                                                       
+fcurTotalOtherExpenses DECIMAL(19,4),                                                                                                
+fcurIncomeAfterExpenses DECIMAL(19,4),                                                                                               
+fcurAmountBroughtForward DECIMAL(19,4),                                                                                              
+fcurAmountClaimedThisYear DECIMAL(19,4),                                                                                             
+fcurTaxableIncome DECIMAL(19,4),                                                                                                     
+fblnEligibleForIETC SMALLINT,                                                                                                        
+fdtmExOverseasIncomeStart TIMESTAMP,                                                                                                 
+fdtmExcOverseasIncomeEnd TIMESTAMP,                                                                                                  
+fintExcOverseasMonths SMALLINT,                                                                                                      
+fcurIETC DECIMAL(19,4),                                                                                                              
+fcurAllowableImpCredits DECIMAL(19,4),                                                                                               
+fcurExcessImputationCredits DECIMAL(19,4),                                                                                           
+fcurTotalExtTCPD DECIMAL(19,4),                                                                                                      
+fcurTotalTCPD DECIMAL(19,4),                                                                                                         
+fcurTaxOnTaxableIncome DECIMAL(19,4),                                                                                                
+fcurResidualIncomeTax DECIMAL(19,4),                                                                                                 
+fcurTaxCalcResult DECIMAL(19,4),                                                                                                     
+fcurImputationToCarryForward DECIMAL(19,4),                                                                                          
+fblnEarlyPymtDiscount SMALLINT,                                                                                                      
+fcurOverpaymentProvRefund DECIMAL(19,4),                                                                                             
+fcurRefundAndProvOverpayment DECIMAL(19,4),                                                                                          
+fcurRefundCalc DECIMAL(19,4),                                                                                                        
+fcurProvisionalTax DECIMAL(19,4),                                                                                                    
+fcurLossToCarryForward DECIMAL(19,4),                                                                                                
+fcurAllowableRLWTCredits DECIMAL(19,4),                                                                                              
+fcurProvisionalTaxPaid DECIMAL(19,4),                                                                                                
+fcurRefund DECIMAL(19,4),                                                                                                            
+fblnDisclosureRequired SMALLINT,                                                                                                     
+fstrPTSStatus VARCHAR(12),                                                                                                           
+flngSelectGroup INT,                                                                                                                 
+fdtmSelectDate TIMESTAMP,                                                                                                            
+fblnGroup2Suspend SMALLINT,                                                                                                          
+fstrWho VARCHAR(20),                                                                                                                 
+fdtmWhen TIMESTAMP,                                                                                                                  
+record_effective_timestamp TIMESTAMP,                                                                                                
+record_expiry_timestamp TIMESTAMP,                                                                                                   
+record_active_flag VARCHAR(1),                                                                                                       
+record_deleted_flag VARCHAR(1),                                                                                                      
+insert_object_run_key INT,                                                                                                           
+update_object_run_key INT                                                                                                            
+
+ ) STORED AS PARQUET; 
+
+ DROP TABLE if exists ${target_db=Enter the target database name here}.tdw_tbl_collect;                                              
+CREATE TABLE ${target_db=Enter the target database name here}.tdw_tbl_collect (                                                     
+FLNGCOLLECTKEY BIGINT,                                                                                                              
+FLNGVER BIGINT,                                                                                                                     
+FLNGVERLAST BIGINT,                                                                                                                 
+FSTRCATEGORY VARCHAR(12),                                                                                                           
+FSTRCOLLECTTYPE VARCHAR(12),                                                                                                        
+FLNGCUSTOMERKEY BIGINT,                                                                                                             
+FLNGCUSTOMERKEY2 BIGINT,                                                                                                            
+FLNGACCOUNTKEY BIGINT,                                                                                                              
+FINTCOLLECTPROFILENUMBER INT,                                                                                                       
+FLNGJOURNALKEY BIGINT,                                                                                                              
+FLNGINDICATORKEY BIGINT,                                                                                                            
+FLNGFOLDERKEY BIGINT,                                                                                                               
+FCURTAX DECIMAL(24,4),                                                                                                              
+FCURPENALTY DECIMAL(24,4),                                                                                                          
+FCURINTEREST DECIMAL(24,4),                                                                                                         
+FCURBALANCE DECIMAL(24,4),                                                                                                          
+FSTRCOLLECTDISTRICTOFFICE VARCHAR(12),                                                                                              
+FSTRACCOUNTTYPE VARCHAR(12),                                                                                                        
+FDTMWORKDATE TIMESTAMP,                                                                                                             
+FDTMWORKDATETIME TIMESTAMP,                                                                                                         
+FDTMCREATIONDATE TIMESTAMP,                                                                                                         
+FDTMCLOSEDDATE TIMESTAMP,                                                                                                           
+FBLNAUTOMATED INT,                                                                                                                  
+FDTMNEXTSTAGE TIMESTAMP,                                                                                                            
+FSTRSTAGEFLOW VARCHAR(12),                                                                                                          
+FSTRSTAGE VARCHAR(12),                                                                                                              
+FSTROWNER VARCHAR(20),                                                                                                              
+FLNGRISK BIGINT,                                                                                                                    
+FSTRLASTCOMPLETEDSTAGE VARCHAR(12),                                                                                                 
+FLNGTEAMKEY BIGINT,                                                                                                                 
+FLNGDOCKEY BIGINT,                                                                                                                  
+FSTRWHO VARCHAR(20),                                                                                                                
+EFFECTIVE_FROM TIMESTAMP,                                                                                                           
+EFFECTIVE_TO TIMESTAMP,                                                                                                             
+CURRENT_REC_FLAG VARCHAR(2),                                                                                                        
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+) STORED AS PARQUET;                                                                       
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.tdw_tbl_period;                                               
+CREATE TABLE ${target_db=Enter the target database name here}.tdw_tbl_period (                                                      
+FLNGACCOUNTKEY BIGINT,                                                                                                              
+FDTMFILINGPERIOD TIMESTAMP,                                                                                                         
+FLNGVER BIGINT,                                                                                                                     
+FLNGVERLAST BIGINT,                                                                                                                 
+FLNGLINKEDACCOUNTKEY BIGINT,                                                                                                        
+FLNGJOINTACCOUNTKEY BIGINT,                                                                                                         
+FBLNPRIME INT,                                                                                                                      
+FDTMPERIODBEGIN TIMESTAMP,                                                                                                          
+FDTMPERIODEND TIMESTAMP,                                                                                                            
+FSTRFILING VARCHAR(12),                                                                                                             
+FCURTAX DECIMAL(24,4),                                                                                                              
+FCURTAXBALANCE DECIMAL(24,4),                                                                                                       
+FCURTAXDELTA DECIMAL(24,4),                                                                                                         
+FCURINTEREST DECIMAL(24,4),                                                                                                         
+FCURINTERESTBALANCE DECIMAL(24,4),                                                                                                  
+FCURINTERESTDELTA DECIMAL(24,4),                                                                                                    
+FCURPENALTY DECIMAL(24,4),                                                                                                          
+FCURPENALTYBALANCE DECIMAL(24,4),                                                                                                   
+FCURPENALTYDELTA DECIMAL(24,4),                                                                                                     
+FCUROTHER DECIMAL(24,4),                                                                                                            
+FCUROTHERBALANCE DECIMAL(24,4),                                                                                                     
+FCUROTHERDELTA DECIMAL(24,4),                                                                                                       
+FCURCREDIT DECIMAL(24,4),                                                                                                           
+FCURCREDITBALANCE DECIMAL(24,4),                                                                                                    
+FCURCREDITDELTA DECIMAL(24,4),                                                                                                      
+FCURBALANCE DECIMAL(24,4),                                                                                                          
+FDTMACTIVITY TIMESTAMP,                                                                                                             
+FDTMPENALTY TIMESTAMP,                                                                                                              
+FDTMEFFECTMAX TIMESTAMP,                                                                                                            
+FDTMDELTA TIMESTAMP,                                                                                                                
+FDTMSTATUTE TIMESTAMP,                                                                                                              
+FDTMSYSTEMSTATUTE TIMESTAMP,                                                                                                        
+FDTMUSERSTATUTE TIMESTAMP,                                                                                                          
+FBLNSBAEXISTS INT,                                                                                                                  
+FBLNRA INT,                                                                                                                         
+FBLNPNI INT,                                                                                                                        
+FLNGDOCKEY BIGINT,                                                                                                                  
+FBLNACTIVE INT,                                                                                                                     
+FSTRWHO VARCHAR(20),                                                                                                                
+EFFECTIVE_FROM TIMESTAMP,                                                                                                           
+EFFECTIVE_TO TIMESTAMP,                                                                                                             
+CURRENT_REC_FLAG VARCHAR(2),                                                                                                        
+CUSTOMER_KEY BIGINT,                                                                                                                
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;  
+
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.tdw_tbl_nz_rtniit;                                            
+CREATE TABLE ${target_db=Enter the target database name here}.tdw_tbl_nz_rtniit (                                                   
+FLNGDOCKEY BIGINT,                                                                                                                  
+FBLNIR215ATTACHED INT,                                                                                                              
+FCURTOTALFAMILYTAXCREDIT DECIMAL(24,4),                                                                                             
+FCURTOTALPAYEDEDUCTED DECIMAL(24,4),                                                                                                
+FCURTOTALADJPAYEDEDUCTED DECIMAL(24,4),                                                                                             
+FCURTOTALGROSSINCOME DECIMAL(24,4),                                                                                                 
+FCURINCOMENOTLIABLEFORACC DECIMAL(24,4),                                                                                            
+FCURACCEARNERLEVY DECIMAL(24,4),                                                                                                    
+FCURTOTALINCOMEWITHTAXDEDUCTED DECIMAL(24,4),                                                                                       
+FCURTOTALSCHEDULARPYMTTAXDED DECIMAL(24,4),                                                                                         
+FCURTOTALGROSSSCHEDULARPAYMENT DECIMAL(24,4),                                                                                       
+FCUREXPENSESSCHEDULARPAYMENTS DECIMAL(24,4),                                                                                        
+FCURNETSCHEDULARPAYMENTS DECIMAL(24,4),                                                                                             
+FCURTOTALRWT DECIMAL(24,4),                                                                                                         
+FCURTOTALGROSSINTEREST DECIMAL(24,4),                                                                                               
+FBLNINTPSHPLTC INT,                                                                                                                 
+FCURTOTALIMPUTATIONCREDITS DECIMAL(24,4),                                                                                           
+FCURTOTALDIVIDENDRWT DECIMAL(24,4),                                                                                                 
+FCURTOTALGROSSDIVIDENDS DECIMAL(24,4),                                                                                              
+FBLNDIVPSHPLTC INT,                                                                                                                 
+FCURTOTALMAORICREDITS DECIMAL(24,4),                                                                                                
+FCURTOTALMAORIDISTRIBUTIONS DECIMAL(24,4),                                                                                          
+FCURTOTALTAXPAIDBYTRUSTEES DECIMAL(24,4),                                                                                           
+FCURTOTALESTATEORTRUSTEEINCOME DECIMAL(24,4),                                                                                       
+FCURTOTALTAXABLEDISTRIBUTIONS DECIMAL(24,4),                                                                                        
+FCURTOTALOVERSEASTAXPAID DECIMAL(24,4),                                                                                             
+FCURTOTALOVERSEASINCOME DECIMAL(24,4),                                                                                              
+FBLNOVERSEASSUPER INT,                                                                                                              
+FCURTOTALPARTNERSHIPTAXCREDITS DECIMAL(24,4),                                                                                       
+FCURTOTALACTIVEPTSHPINCOME DECIMAL(24,4),                                                                                           
+FCURTOTALLTCTAXCREDITS DECIMAL(24,4),                                                                                               
+FCURTOTALACTIVELTCINCOME DECIMAL(24,4),                                                                                             
+FCURNONALLOWABLEDEDUCTIONS DECIMAL(24,4),                                                                                           
+FCURNONALLOWABLEDEDCLAIMED DECIMAL(24,4),                                                                                           
+FCURADJUSTEDLTCINCOME DECIMAL(24,4),                                                                                                
+FCURTAXCREDITSUBTOTAL DECIMAL(24,4),                                                                                                
+FCURINCOMESUBTOTAL DECIMAL(24,4),                                                                                                   
+FCURSHAREHOLDEREMPLOYEESALARY DECIMAL(24,4),                                                                                        
+FBLNFUTURESHRSALARY INT,                                                                                                            
+FBLNWITHOUTPAYCLOSECOMPANY INT,                                                                                                     
+FCURNETRENTS DECIMAL(24,4),                                                                                                         
+FCURSELFEMPLOYEDNETINCOME DECIMAL(24,4),                                                                                            
+FCURTOTALOTHERNETINCOME DECIMAL(24,4),                                                                                              
+FCURRLWTCREDIT DECIMAL(24,4),                                                                                                       
+FCURTOTALINCOME DECIMAL(24,4),                                                                                                      
+FCURTOTALOTHEREXPENSES DECIMAL(24,4),                                                                                               
+FCURINCOMEAFTEREXPENSES DECIMAL(24,4),                                                                                              
+FCURAMOUNTBROUGHTFORWARD DECIMAL(24,4),                                                                                             
+FCURAMOUNTCLAIMEDTHISYEAR DECIMAL(24,4),                                                                                            
+FCURTAXABLEINCOME DECIMAL(24,4),                                                                                                    
+FBLNELIGIBLEFORIETC INT,                                                                                                            
+FDTMEXOVERSEASINCOMESTART TIMESTAMP,                                                                                                
+FDTMEXCOVERSEASINCOMEEND TIMESTAMP,                                                                                                 
+FINTEXCOVERSEASMONTHS INT,                                                                                                          
+FCURIETC DECIMAL(24,4),                                                                                                             
+FCURALLOWABLEIMPCREDITS DECIMAL(24,4),                                                                                              
+FCUREXCESSIMPUTATIONCREDITS DECIMAL(24,4),                                                                                          
+FCURTOTALEXTTCPD DECIMAL(24,4),                                                                                                     
+FCURTOTALTCPD DECIMAL(24,4),                                                                                                        
+FCURTAXONTAXABLEINCOME DECIMAL(24,4),                                                                                               
+FCURRESIDUALINCOMETAX DECIMAL(24,4),                                                                                                
+FCURTAXCALCRESULT DECIMAL(24,4),                                                                                                    
+FCURIMPUTATIONTOCARRYFORWARD DECIMAL(24,4),                                                                                         
+FBLNEARLYPYMTDISCOUNT INT,                                                                                                          
+FCUROVERPAYMENTPROVREFUND DECIMAL(24,4),                                                                                            
+FCURREFUNDANDPROVOVERPAYMENT DECIMAL(24,4),                                                                                         
+FCURREFUNDCALC DECIMAL(24,4),                                                                                                       
+FCURPROVISIONALTAX DECIMAL(24,4),                                                                                                   
+FCURLOSSTOCARRYFORWARD DECIMAL(24,4),                                                                                               
+FCURALLOWABLERLWTCREDITS DECIMAL(24,4),                                                                                             
+FCURPROVISIONALTAXPAID DECIMAL(24,4),                                                                                               
+FCURREFUND DECIMAL(24,4),                                                                                                           
+FBLNDISCLOSUREREQUIRED INT,                                                                                                         
+FSTRPTSSTATUS VARCHAR(12),                                                                                                          
+FLNGSELECTGROUP BIGINT,                                                                                                             
+FDTMSELECTDATE TIMESTAMP,                                                                                                           
+FBLNGROUP2SUSPEND INT,                                                                                                              
+FSTRWHO VARCHAR(20),                                                                                                                
+EFFECTIVE_FROM TIMESTAMP,                                                                                                           
+EFFECTIVE_TO TIMESTAMP,                                                                                                             
+CURRENT_REC_FLAG VARCHAR(2),                                                                                                        
+DOCSETKEY BIGINT,                                                                                                                   
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+) STORED AS PARQUET;  
+
+
+CREATE TABLE ${target_db=Enter the target database name here}.int_crm_text_data 
+(   flngcrmkey DOUBLE,   
+    flngver BIGINT,  
+    flngverlast BIGINT,  
+    fstrcrmsource VARCHAR(40),   
+    fstrcrmtype VARCHAR(40), 
+    flngparentcrmkey DOUBLE,  
+    flngcustomerkey BIGINT,  
+    fintprofilenumber DOUBLE,   
+    flngaccountkey DOUBLE,  
+    fstraccounttype VARCHAR(12),  
+    fdtmfilingperiod TIMESTAMP,   
+    flngbillitemkey DOUBLE,  
+    fintbillitem DOUBLE,  
+    flngfolderkey BIGINT,  
+    fi64sourcekey DOUBLE,   
+    fstrsourceid VARCHAR(100),  
+    fstrsourcetype VARCHAR(60), 
+    fstrsourcedata VARCHAR(510),   
+    fstrdata VARCHAR(32767),   
+    fblnextended DOUBLE, 
+    fblnprivate DOUBLE,  
+    fblnhaschildren DOUBLE,  
+    fblnhighimportance DOUBLE, 
+    fblnsystem DOUBLE,  
+    fstreditedby VARCHAR(20),   
+    fdtmedited TIMESTAMP,
+    fstrcomment VARCHAR(2000),   
+    fblncommentexists DOUBLE,   
+    fstrwho VARCHAR(20),   
+    fdtmwhen TIMESTAMP,   
+    insert_object_run_key BIGINT,   
+    flngvisitkey BIGINT,   
+    fstrirdnumber VARCHAR(20), 
+    fstrauthirdnumber VARCHAR(20),  
+    flngchildvisitkey BIGINT,   
+    fstrivrpath VARCHAR(4000),  
+    fstrphonenumber VARCHAR(30),  
+    fblnhold INT,  
+    fstrupdatereason VARCHAR(40),  
+    record_effective_timestamp TIMESTAMP,   
+    record_expiry_timestamp TIMESTAMP,   
+    update_object_run_key BIGINT, 
+    flngdockey BIGINT,  
+    fstrcallerirdnumber VARCHAR(20),   
+    fstrauthorisedirdnumber VARCHAR(20), 
+    fstrtaxagentname VARCHAR(100),  
+    fstrvoiceenrolstatus VARCHAR(2),  
+    fstrvoiceoptoutstatus VARCHAR(2),   
+    fstrtransferreason VARCHAR(510),  
+    fstrcallerintentcorrect VARCHAR(6),  
+    fstrcorrectedintent VARCHAR(100),  
+    fstrcallqueue VARCHAR(100),  
+    fstrstageonefeedback VARCHAR(24),
+    fblnvirtualhold INT,  
+    fblncontactdetailschecked INT, 
+    fstrvisitsource VARCHAR(24), 
+    fstrvisitcategory VARCHAR(24),  
+    fstrvisitsubcategory VARCHAR(24),   
+    fblnunregisteredvisitor INT,   
+    fi64namekey DECIMAL(20,0),  
+    fi64addresskey DECIMAL(20,0),  
+    fstrvisitid VARCHAR(60),  
+    fstrticketid VARCHAR(60),   
+    fstrexternalid VARCHAR(60), 
+    fstridtype VARCHAR(12),  
+    fstrid VARCHAR(60), 
+    fstrcountry VARCHAR(12), 
+    fintcountrycode INT,  
+    fstrareacode VARCHAR(10),  
+    fblnvisitorverified INT,  
+    fstrverifydoctype VARCHAR(24),   
+    fintverifydocver INT,   
+    fi64verifydoceditinprogresskey DECIMAL(20,0),   
+    flngverifydockey BIGINT,  
+    fstrdoctype VARCHAR(24),  
+    fintdocver INT,   
+    fi64doceditinprogresskey DECIMAL(20,0),  
+    flngxmlkey BIGINT,   
+    fstrowner VARCHAR(20),  
+    fstrdistrictoffice VARCHAR(12),  
+    fdtmvisitstart TIMESTAMP,   
+    fdtmvisitend TIMESTAMP,   
+    flngduration BIGINT,  
+    flngwaittime BIGINT ) STORED AS PARQUET ;
+
+
+DROP TABLE if exists ${target_db=Enter the target database name here}.dss_cm_audit_periods;
+CREATE TABLE ${target_db=Enter the target database name here}.dss_cm_audit_periods (
+PERIOD_ROWID VARCHAR(30),
+CASE_IDENTIFIER VARCHAR(200),
+PERIOD_IRD_NUMBER INT,
+PERIOD_LOCATION_NUMBER INT,
+TAX_TYPE VARCHAR(6),
+RETURN_PERIOD_DATE TIMESTAMP,
+CASE_TYPE_DESC VARCHAR(60),
+PERIOD_STATUS_DESC VARCHAR(60),
+OUTCOME_TYPE VARCHAR(60),
+LOSS_ADJUSTMENT_AMOUNT DECIMAL(30,7),
+ORIGINAL_TAX_AMOUNT DECIMAL(30,7),
+REASSESSED_TAX_AMOUNT DECIMAL(30,7),
+SHORTFALL_PENALTY_AMOUNT DECIMAL(30,7),
+TOTAL_GROSS_DISCREPANCIES_AMT DECIMAL(30,7),
+TOTAL_AGREED_DISCREPANCIES_AMT DECIMAL(30,7),
+TOTAL_ESTIM_DISCREPANCIES_AMT DECIMAL(30,7),
+NOT_AGREED_DISCREPANCIES_AMT DECIMAL(30,7),
+TOTAL_TAX_ADJUSTMENT_AMOUNT DECIMAL(30,7),
+UOMI_AMOUNT DECIMAL(30,7),
+LATE_FILING_PENALTY_AMOUNT DECIMAL(30,7),
+LATE_PAYMENT_PENALTY_AMOUNT DECIMAL(30,7),
+RETURN_PERIOD_VALIDATED VARCHAR(2),
+TAXPAYER_ADJUSTMENT_AMOUNT DECIMAL(30,7),
+PAYMENT_ADJUSTMENT_AMOUNT DECIMAL(30,7),
+APPROVED_IND VARCHAR(2),
+FORCED_VALIDATION_IND VARCHAR(2),
+CASE_ROWID VARCHAR(30),
+PERIOD_CREATED_DATE TIMESTAMP,
+PERIOD_CREATED_BY VARCHAR(30),
+PERIOD_LAST_UPDATED_DATE TIMESTAMP,
+PERIOD_LAST_UPDATED_BY VARCHAR(30),
+DATE_APPLIED TIMESTAMP,
+DATE_CEASED TIMESTAMP,
+`TIMESTAMP` TIMESTAMP,
+LEGISLATION_ACTS VARCHAR(200),
+BUSINESS_PROCESS VARCHAR(200),
+RECORD_OWNER VARCHAR(60),
+DATE_ALLOCATED TIMESTAMP,
+DUE_DATE TIMESTAMP,
+DIARY_DATE TIMESTAMP,
+DATE_COMPLETED TIMESTAMP,
+HEARING_DATE TIMESTAMP,
+REFERRING_OFFICER VARCHAR(100),
+REFERRING_OFFICE VARCHAR(100),
+COURT_LOCATION VARCHAR(100),
+CTA_STATUS VARCHAR(100),
+NATURE_OF_LITIGATION VARCHAR(100),
+SECTIONS VARCHAR(100),
+COURT_MATTER_NUMBER VARCHAR(100),
+NATIONAL_ADVISOR VARCHAR(100),
+RECORD_SUB_TYPE VARCHAR(100),
+PRIORITY_RATING VARCHAR(100),
+KEYWORDS VARCHAR(200),
+TYPE_OF_ISSUE VARCHAR(200),
+EXPOSURE_DRAFT VARCHAR(200),
+SPS_OS_QWBA VARCHAR(510),
+TS_STATUS VARCHAR(30),
+RECORD_TYPE VARCHAR(60),
+COMMENTS VARCHAR(4000),
+ISSUE VARCHAR(4000),
+OFFICER_TEAM_LEADER VARCHAR(200),
+TEAM_MEMBER VARCHAR(30),
+LTS_TEAM_LEADER_ID VARCHAR(30),
+SOURCE_OF_WORK VARCHAR(60),
+SOLICITOR_NAME VARCHAR(200),
+TEAM_LEADER_FULL_NAME VARCHAR(200),
+TEAM_MEMBER_FULL_NAME VARCHAR(200),
+CASE_RECORD_TYPE VARCHAR(60),
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+

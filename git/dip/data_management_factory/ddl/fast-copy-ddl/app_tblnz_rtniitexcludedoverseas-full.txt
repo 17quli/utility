@@ -1,0 +1,8 @@
+CREATE VIEW lab_fcp_raw_full_access.app_tblnz_rtniitexcludedoverseas
+AS SELECT z.flngDocKey, 
+       z.fintSeq, 
+       z.fdtmExcludedOverseasStart, 
+       z.fdtmExcludedOverseasEnd, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblnz_rtniitexcludedoverseas z ;

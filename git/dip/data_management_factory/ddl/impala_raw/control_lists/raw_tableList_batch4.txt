@@ -1,0 +1,17 @@
+dss_cross_reference_types
+dss_cs_rel_co_end_reasons
+dss_cs_rel_end_reasons
+dss_cs_relationship_status
+dss_cs_relationship_types
+dss_cs_relationships
+dss_cs_ncp_assessments
+dss_gst_filing_grp_members
+dss_gst_filing_grp_reps
+dss_nominated_persons
+dss_addresses
+dss_client_contacts
+app_tbllink
+app_tblnz_ledccactions
+app_tbladdressrecord
+app_tblnz_relationshipchild
+app_tblnz_rtniitincomeselect

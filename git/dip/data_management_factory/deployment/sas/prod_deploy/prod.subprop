@@ -1,0 +1,13 @@
+[Connections: Other Server]
+OtherServer[1].SourceName=DIP Oracle Management Dev
+OtherServer[1].TargetName=DIP Oracle Management Prod
+
+OtherServer[2].SourceName=START Operation
+OtherServer[2].TargetName=START Prod
+
+OtherServer[3].SourceName=START Qual
+OtherServer[3].TargetName=START Prod
+
+[Connections: Scheduling Server]
+SchedulingServer[1].SourceName=Platform Process Manager - ird10120au
+SchedulingServer[1].TargetName=Platform Process Manager - ird36au

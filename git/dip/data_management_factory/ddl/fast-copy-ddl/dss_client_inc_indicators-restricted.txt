@@ -1,0 +1,46 @@
+create view lab_fcp_raw_restricted_access.dss_client_inc_indicators
+as select
+z.ird_number,
+z.location_number,
+z.tax_type,
+z.return_period_date,
+z.return_type,
+z.account_no,
+z.provisional_tax_ind_code,
+z.balance_date,
+z.`timestamp`,
+z.first_ks_contribution_date,
+z.total_assessment_amt,
+z.total_penalty_amt,
+z.total_interest_amt,
+z.total_payment_amt,
+z.total_refund_amt,
+z.total_balance_amt,
+z.total_active_disbursement_amt,
+z.total_oth_miscellaneous_amt,
+z.total_auto_writeoff_amt,
+z.total_credit_xfer_amt,
+z.total_os_xfer_amt,
+z.total_gross_earning_amt,
+z.total_late_filing_penalty_amt,
+z.total_shortfall_penalty_amt,
+z.total_credit_hold_amt,
+z.total_returned_credit_amt,
+z.tot_oth_pty_unrecoverable_amt,
+z.tot_crown_unrecoverable_amt,
+z.total_non_payment_penalty_amt,
+z.non_payment_penalty_indicator,
+z.non_payment_penalty_date,
+z.arrangement_begin_date,
+z.last_penalty_and_interest_date,
+z.manual_p_and_i_indicator,
+z.deferral_indicator,
+z.last_used_sequence_number,
+z.student_loan_summary_amt
+ from lab_fcp_raw.client_inc_indicators z
+left outer join prod_raw.dss_special_clients_all sc
+on sc.ird_number= z.ird_number
+where nvl(sc.special_classification, 'STD')='STD'
+and nvl( sc.record_active_flag,'Y')='Y'
+and nvl(sc.record_deleted_flag, 'N') = 'N'
+;

@@ -1,0 +1,3 @@
+#source_database	target_database	backup_rention_days
+prod_raw	prod_dw 3
+prod_refined	prod_dw	5

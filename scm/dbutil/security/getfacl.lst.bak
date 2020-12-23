@@ -1,0 +1,1273 @@
+# file: hdfs://nameservice1/user/hive/warehouse
+# owner: hive
+# group: hive
+# flags: --t
+user::rwx
+group::rwx
+other::rwx
+
+# file: hdfs://nameservice1/env/1_dev/hive/cas_views
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+other::r-x
+
+# file: hdfs://nameservice1/env/1_dev/hive/dw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+group:irdsasauth:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:group:irdsasauth:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/dw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/dw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/jnl
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/raw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/raw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/raw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/refined
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/refined_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/refined_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/silver_publish
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/silver_work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/staging
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:appsudo:rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:appsudo:rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/1_dev/hive/work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/analytics
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_at:rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_at:rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/bir
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_birt:rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_birt:rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/cie
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_ciet:rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_ciet:rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/cora
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_corat:rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_corat:rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/daf
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_daft:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_daft:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/data_science
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_dst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_dst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/daur
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_daurp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_daurp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/fcp_raw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/fcp_raw_cas_views
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/fcp_raw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_fdq:r-x
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::r-x
+default:user::rwx
+default:group::r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_fdq:r-x
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::r-x
+
+# file: hdfs://nameservice1/env/4_lab/hive/fcp_raw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_ops:r-x
+group:ird_pr_r_rdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_ops:r-x
+default:group:ird_pr_r_rdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/gst
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_gstp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_gstp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/hec
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_hecp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_hecp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/heritage2dip
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_h2dp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_h2dp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/intall
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_intallt:rwx
+group:ird_pr_r_intsent:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_intallt:rwx
+default:group:ird_pr_r_intsent:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/intsen
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_intsent:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_intsent:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/kyc
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_kycp:rwx
+group:irdsasauth:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_kycp:rwx
+default:group:irdsasauth:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/nzsr4_raw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/nzsr4_raw_cas_views
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/nzsr4_raw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_fdq:r-x
+group:ird_pr_r_ops:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_fdq:r-x
+default:group:ird_pr_r_ops:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/nzsr4_raw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_ops:r-x
+group:ird_pr_r_rdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_ops:r-x
+default:group:ird_pr_r_rdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/pff
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_pfft:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_pfft:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/platform
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_ptp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_ptp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/platform
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_pt:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_pt:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/property
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_prop:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_prop:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/public
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+other::r-x
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/r3_assurance
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_r3ap:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_r3ap:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/teams/rf
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_rft:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_rft:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/sfd
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_sfdp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_sfdp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/4_lab/hive/projects/slmrk
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_slmrkp:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_slmrkp:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/cas_views
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+other::r-x
+
+# file: hdfs://nameservice1/env/3_prod/hive/dw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/dw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_fdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_fdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/dw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_rdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_rdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/jnl
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/raw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/raw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_fdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_fdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/raw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_rdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_rdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/refined
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/refined_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_fdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_fdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/refined_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_rdq:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_rdq:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/silver_publish
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/silver_work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/staging
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/3_prod/hive/work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/cas_views
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_tst:r-x
+mask::rwx
+other::r-x
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_tst:r-x
+default:mask::rwx
+default:other::r-x
+
+# file: hdfs://nameservice1/env/2_test/hive/dw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/dw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/dw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/jnl
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:rwx
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:rwx
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/raw
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/raw_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/raw_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/refined
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/refined_full_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/refined_restricted_access
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/silver_publish
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/silver_work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_bid:r-x
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_bid:r-x
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/staging
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_test:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_test:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+
+# file: hdfs://nameservice1/env/2_test/hive/work
+# owner: hive
+# group: hive
+user::rwx
+group::rwx
+group:ird_pr_r_dadm:rwx
+group:ird_pr_r_did:r-x
+group:ird_pr_r_tst:rwx
+mask::rwx
+other::---
+default:user::rwx
+default:group::rwx
+default:group:ird_pr_r_dadm:rwx
+default:group:ird_pr_r_did:r-x
+default:group:ird_pr_r_tst:rwx
+default:mask::rwx
+default:other::---
+

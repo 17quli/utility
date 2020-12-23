@@ -1,0 +1,25 @@
+alter table <environment>_<raw/jnl>.wrq_tblnz_employeremployees change
+fstremployeename fstremployeename varchar(510);
+
+alter table <environment>_<raw/jnl>.wrq_tblnz_employeremployees ADD COLUMNS
+(
+flngemployeekssaccountkey int,
+flngemployeeslsaccountkey int,
+fdtmkiwisaverenddate timestamp,
+fdtmkiwisaveroptindate timestamp,
+fdtmkiwisaveroptoutdate timestamp,
+fdtmkiwisaveroptoutdeclined timestamp,
+fblnautoenrolled smallint,
+fblnnondistributionemployee smallint,
+fstrdistrict varchar(60),
+fstrsubdistrict varchar(60),
+fstrsubprovince varchar(100),
+fstrurbanization varchar(100),
+fstrstreetaddress1 varchar(510),
+fstrstreetaddress2 varchar(510),
+fstrcounty varchar(12),
+fstrattention varchar(510),
+fstraddressdescription varchar(510),
+fblnaddressverified smallint,
+fdtmcreated timestamp
+)

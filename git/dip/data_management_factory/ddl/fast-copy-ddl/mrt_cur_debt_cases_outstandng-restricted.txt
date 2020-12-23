@@ -1,0 +1,40 @@
+CREATE VIEW ${target_db=Enter the target database name here}.mrt_cur_debt_cases_outstandng
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.ENTITY_TYPE,
+z.ENTITY_CLASS,
+z.CLIENT_STATUS,
+z.SIC_CODE,
+z.ADDRESS_STATUS,
+z.DATE_ADVISORY_VISIT,
+z.CASE_NUMBER,
+z.DATE_BEGIN,
+z.CASE_CATEGORY_CODE,
+z.TOTAL_DEBT_AMOUNT,
+z.SEQUENCE_NUMBER,
+z.ACTION_DATE,
+z.NEXT_ACTION_INDICATOR,
+z.MAINFRAME_USER_ID,
+z.CASE_ACTION_TYPE_CODE,
+z.SEGMENT_ID,
+z.MICRO_SEGMENT,
+z.DISTRICT_OFFICE,
+z.SERVICE_CENTRE,
+z.DAYS_IN_DEBT,
+z.AGENT_IRD_NUMBER,
+z.AGENT_LOCATION_NUMBER,
+z.GROUP_ID,
+z.MEMBER_TYPE,
+z.NAME,
+z.FIRST_NAMES
+ FROM ${source_db=Enter the source database name here}.CURRENT_DEBT_CASES_OUTSTANDING z
+
+left outer join 
+${source_db1}.app_tblcustomerinfo ci
+on cast(ci.fstrid  as INT)= cast(z.IRD_NUMBER as INT)
+ where 
+  ci.fstridtype = 'IRD'
+  and ci.record_active_flag = 'Y'
+  and ci.record_deleted_flag = 'N'
+  and nvl(ci.fstrCustomerLevel, 'STD') = 'STD' ;

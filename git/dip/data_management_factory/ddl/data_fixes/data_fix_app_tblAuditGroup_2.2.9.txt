@@ -1,0 +1,55 @@
+--******************************************************************* 
+--******************************************************************* 
+--One-off Data Fix for app_tblAuditGroup table: 
+--There are records missing in Production table (there are 67 missing flngAuditGroupKey)
+--due to the fact that this table was first loaded from TDW table and there were missing records in the TDW table.
+--Therefore, we need to re-load this table again from START (i.e. do another initial load from START).
+--The following steps need to be completed:  
+--Back up Raw and Journal table. 
+--Truncate Raw and Journal table. 
+--Let the job to run normally. It should do an initial load into the Journal and Raw tables. 
+--After the Job ran – check that the missing keys are now present (Nataliya to do)    
+ --******************************************************************* 
+--******************************************************************* 
+  
+  
+--******************************************************************* 
+--Take backups, truncate table, count records 
+--******************************************************************* 
+  
+--Create backup table for app_tblAuditGroup Raw table 
+create table ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date} stored as parquet as select * from ${env}_raw.app_tblAuditGroup; 
+compute stats ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date}; 
+  
+--Confirm number of records
+select count(*) from ${env}_raw.app_tblAuditGroup 
+union all 
+select count(*) from ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date}; 
+  
+--Create backup table for app_tblAuditGroup Journal table 
+create table ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date}_jnl stored as parquet as select * from ${env}_jnl.app_tblAuditGroup; 
+compute stats ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date}_jnl; 
+  
+--Confirm number of records 
+select count(*) from ${env}_jnl.app_tblAuditGroup 
+union all 
+select count(*) from ${env}_dw.app_tblAuditGroup_ird0nxa_${backup_date}_jnl; 
+  
+  
+--Truncate Raw table 
+truncate table ${env}_raw.app_tblAuditGroup; 
+
+--Truncate Journal table 
+truncate table ${env}_jnl.app_tblAuditGroup; 
+
+--Confirm number of records 
+select count(*) from ${env}_raw.app_tblAuditGroup 
+union all 
+select count(*) from ${env}_jnl.app_tblAuditGroup; 
+
+
+  
+
+  
+  
+  

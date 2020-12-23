@@ -1,0 +1,28 @@
+CREATE VIEW ${var:view_db}.app_tblnz_rtnmacama                                                                                      
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.fcurAuthOpeningBalance,                                                                                                           
+z.fcurAuthIncomeTaxCredit,                                                                                                          
+z.fcurAuthFDPCredit,                                                                                                                
+z.fcurAuthRWTCredit,                                                                                                                
+z.fcurAuthImputationCredit,                                                                                                         
+z.fcurAuthOtherCredits,                                                                                                             
+z.fcurAuthTotalCredits,                                                                                                             
+z.fcurAuthIncomeTaxDebit,                                                                                                           
+z.fcurAuthFDPDebit,                                                                                                                 
+z.fcurAuthMaoriDebit,                                                                                                               
+z.fcurAuthOtherDebits,                                                                                                              
+z.fcurAuthTotalDebits,                                                                                                              
+z.fcurAuthFurtherIncomeTax,                                                                                                         
+z.fcurAuthClosingBalance,                                                                                                           
+z.fcurAuthPenaltyTax,                                                                                                               
+z.fcurAuthTotalPayable,                                                                                                             
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${var:source_db}.app_tblnz_rtnmacama z; 

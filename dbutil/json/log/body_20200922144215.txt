@@ -1,0 +1,35 @@
+2020-09-22 14:42:15------start getting json file from 2020-09-22T01:42:15Z to 2020-09-22T01:45:15Z offset 0
+2020-09-22 14:42:15------start converting 45 queries from json to text file 20200922134515_0.txt
+2020-09-22 14:42:20------start uploading text file ./stg/20200922134515_0.txt to HDFS
+2020-09-22 14:42:23------refresh mquery_all_queries_stg
+2020-09-22 14:42:24------start getting json file from 2020-09-22T01:45:15Z to 2020-09-22T01:48:15Z offset 0
+2020-09-22 14:42:24------start converting 105 queries from json to text file 20200922134815_0.txt
+2020-09-22 14:42:36------start uploading text file ./stg/20200922134815_0.txt to HDFS
+2020-09-22 14:42:39------refresh mquery_all_queries_stg
+2020-09-22 14:42:40------start getting json file from 2020-09-22T01:48:15Z to 2020-09-22T01:51:15Z offset 0
+2020-09-22 14:42:40------start converting 73 queries from json to text file 20200922135115_0.txt
+2020-09-22 14:42:48------start uploading text file ./stg/20200922135115_0.txt to HDFS
+2020-09-22 14:42:50------refresh mquery_all_queries_stg
+2020-09-22 14:42:51------start getting json file from 2020-09-22T01:51:15Z to 2020-09-22T01:54:15Z offset 0
+2020-09-22 14:42:51------start converting 87 queries from json to text file 20200922135415_0.txt
+2020-09-22 14:43:01------start uploading text file ./stg/20200922135415_0.txt to HDFS
+2020-09-22 14:43:04------refresh mquery_all_queries_stg
+2020-09-22 14:43:04------start getting json file from 2020-09-22T01:54:15Z to 2020-09-22T01:57:15Z offset 0
+2020-09-22 14:43:05------start converting 205 queries from json to text file 20200922135715_0.txt
+2020-09-22 14:43:27------start uploading text file ./stg/20200922135715_0.txt to HDFS
+2020-09-22 14:43:29------refresh mquery_all_queries_stg
+2020-09-22 14:43:30------start getting json file from 2020-09-22T01:57:15Z to 2020-09-22T02:00:15Z offset 0
+2020-09-22 14:43:30------start converting 101 queries from json to text file 20200922140015_0.txt
+2020-09-22 14:43:42------start uploading text file ./stg/20200922140015_0.txt to HDFS
+2020-09-22 14:43:44------refresh mquery_all_queries_stg
+2020-09-22 14:43:45------start getting json file from 2020-09-22T02:00:15Z to 2020-09-22T02:03:15Z offset 0
+2020-09-22 14:43:45------start converting 114 queries from json to text file 20200922140315_0.txt
+2020-09-22 14:43:59------start uploading text file ./stg/20200922140315_0.txt to HDFS
+2020-09-22 14:44:01------refresh mquery_all_queries_stg
+2020-09-22 14:44:02------start getting json file from 2020-09-22T02:03:15Z to 2020-09-22T02:06:15Z offset 0
+2020-09-22 14:44:02------start converting 184 queries from json to text file 20200922140615_0.txt
+2020-09-22 14:44:23------start uploading text file ./stg/20200922140615_0.txt to HDFS
+2020-09-22 14:44:25------refresh mquery_all_queries_stg
+2020-09-22 14:44:26------start getting json file from 2020-09-22T02:06:15Z to 2020-09-22T02:09:15Z offset 0
+2020-09-22 14:44:26------start converting 162 queries from json to text file 20200922140915_0.txt
+2020-09-22 14:44:43------start uploading text file ./stg/20200922140915_0.txt to HDFS

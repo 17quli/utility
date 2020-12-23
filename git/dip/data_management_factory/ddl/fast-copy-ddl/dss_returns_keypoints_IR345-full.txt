@@ -1,0 +1,23 @@
+create view lab_fcp_raw_full_access.dss_returns_keypoints_ir345
+as select 
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,
+z.return_status,
+z.form_version_no,
+z.number_of_error_items,
+z.`timestamp`,
+z.child_support_deductions_857,
+z.other_tax_deductions_801,
+z.spec_super_withholding_tax_722,
+z.student_loans_deductions_851,
+z.ks_contribution_100612,
+z.ks_deduction_100613,
+z.paye_deductions_801,
+z.etc_account_review_flag_100677,
+z.les_etc_for_cmplng_fund_100675,
+z.les_etc_for_kiwisaver_100675
+ from lab_fcp_raw.returns_keypoints_ir345 z
+;

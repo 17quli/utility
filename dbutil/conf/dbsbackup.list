@@ -1,0 +1,4 @@
+#sequence source_database	target_database	backup_rention_days
+1 prod_raw	prod_dw 1
+2 prod_refined	prod_dw	3
+1 prod_jnl	prod_dw	3

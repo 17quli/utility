@@ -1,0 +1,28 @@
+CREATE VIEW ${var:view_db}.app_tblitemassociation
+AS SELECT
+z.fi64AssociationKey,
+z.fintSequence,
+z.flngVer,
+z.flngVerLast,
+z.fstrItemAssociationType,
+z.fstrSource,
+z.fi64SourceKey,
+z.fstrSourceType,
+z.fstrSourceId,
+z.fstrDestination,
+z.fi64Destinationkey,
+z.fstrDestinationType,
+z.fstrDestinationId,
+z.fdtmCreated,
+z.fstrCreatedBy,
+z.fdtmReversed,
+z.fstrReversedWho,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag,
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${var:source_db}.app_tblitemassociation z;

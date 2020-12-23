@@ -1,0 +1,32 @@
+
+CREATE VIEW ${var:view_db}.app_tblbcmfund
+AS SELECT
+z.flngFundKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrCreditType,
+z.fdtmRequestFrom,
+z.fdtmRequestTo,
+z.fdtmClaimFrom,
+z.fdtmClaimTo,
+z.fcurMaxClaim,
+z.fcurApproved,
+z.fcurClaimed,
+z.fcurRemainingApproved,
+z.fcurRemainingClaimed,
+z.fblnMultipleClaimants,
+z.fblnTransferable,
+z.fblnSplittable,
+z.fblnRefundable,
+z.fblnCapOnApprove,
+z.fblnCapOnClaim,
+z.flngDocKey,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag,
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${var:source_db}.app_tblbcmfund z;

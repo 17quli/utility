@@ -1,0 +1,21 @@
+CREATE TABLE ${var:target_db}.tdw_tbl_nz_rtnrwt (
+FLNGDOCKEY BIGINT,                                                                                                                  
+FSTRPAYEEIRDNUMBER VARCHAR(18),                                                                                                     
+FDTMPERIOD TIMESTAMP,                                                                                                               
+FBLNJOINTOWNERSHIP INT,                                                                                                             
+FCURGROSSDIVIDENDS DECIMAL(24,4),                                                                                                   
+FCURIMPUTATIONCREDITS DECIMAL(24,4),                                                                                                
+FCURFDPCREDITS DECIMAL(24,4),                                                                                                       
+FCURRWTDEDUCTED DECIMAL(24,4),                                                                                                      
+FSTRPAYERIRDNUMBER VARCHAR(18),                                                                                                     
+FSTRWHO VARCHAR(20),                                                                                                                
+EFFECTIVE_FROM TIMESTAMP,                                                                                                           
+EFFECTIVE_TO TIMESTAMP,                                                                                                             
+CURRENT_REC_FLAG VARCHAR(2),                                                                                                        
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET; 

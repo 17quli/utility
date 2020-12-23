@@ -1,0 +1,8 @@
+source_db=prod_dw
+target_db=prod_raw
+lab_db=prod_dw
+journal_db=prod_jnl
+backup_db=prod_dw
+view_db_full=prod_raw_full_access
+view_db_restricted=prod_raw_restricted_access
+db_env=prod

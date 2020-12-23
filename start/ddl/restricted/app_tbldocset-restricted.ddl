@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.app_tbldocset AS
+SELECT z.fi64DocSetKey, z.flngVer, z.flngVerLast, z.fstrDocSetType, z.fintDocSetVer, z.fintVersion, z.flngDocKey, z.fstrDocType, z.fintDocVer, z.fblnPreliminary, z.flngCount, z.flngErrorCount, z.flngWarningCount, z.flngInformationCount, z.fdtmReversed, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.app_tbldocset z;

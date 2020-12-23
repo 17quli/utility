@@ -1,0 +1,20 @@
+find a directory with 777: find / -type d -perm 777 2>/dev/null
+cd <777dir>
+mkdir explain 
+chmod 755 explain
+cd explain
+mkdir log
+chmod 700 log
+cp ~/dbutil/security/explain.sh .
+chmod 700 explain.sh
+cp ~/dbutil/security/explain .
+chmod 4511 explain
+mkdir tmp
+chmod 775 tmp
+cd tmp
+mkdir impala-shell-python-egg-cache-ird0qal
+chmod 775 impala-shell-python-egg-cache-ird0qal
+cd /tmp
+ln -s /sso/tmp/explain/tmp/impala-shell-python-egg-cache-ird0qal impala-shell-python-egg-cache-ird0qal
+
+

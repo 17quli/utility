@@ -1,0 +1,28 @@
+CREATE VIEW ${var:view_db}.app_tbltaskqueue                                                                                         
+AS SELECT                                                                                                                           
+z.flngQueueKey,                                                                                                                     
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.flngQueueId,                                                                                                                      
+z.flngOrder,                                                                                                                        
+z.fstrName,                                                                                                                         
+z.fstrOwner,                                                                                                                        
+z.fstrDescription,                                                                                                                  
+z.flngCrmKey,                                                                                                                       
+z.fintNotificationType,                                                                                                             
+z.fblnInteractive,                                                                                                                  
+z.flngWeight,                                                                                                                       
+z.flngReminderDelay,                                                                                                                
+z.fstrUnitType,                                                                                                                     
+z.fdtmCommence,                                                                                                                     
+z.fdtmCease,                                                                                                                        
+z.fblnActive,                                                                                                                       
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${var:source_db}.app_tbltaskqueue z;

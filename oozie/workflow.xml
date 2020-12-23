@@ -1,0 +1,26 @@
+<!-- This is a comment -->
+<workflow-app xmlns = "uri:oozie:workflow:0.4" name = "simple-Workflow">
+   <start to = "backup" />
+   <action name = "backup">
+	<shell xmlns="uri:oozie:shell:0.1">
+         <job-tracker>${jobTracker}</job-tracker>
+         <name-node>${nameNode}</name-node>
+	 <configuration>
+	 <property>
+	 <name>mapred.job.queue.name</name>
+	 <value>${queueName}</value>
+         </property>
+         </configuration>
+	 <exec>helloworld.sh</exec>
+         <file>${nameNode}/user/ird0qal/oozie/helloworld.sh</file>
+	 <argument>Quan Lian</argument>
+	</shell>
+	 <ok to="end"/>
+	 <error to="f"/>
+    </action>
+	 <kill name="f">
+		<message> job failed </message>
+	 </kill>
+	 <end name="end"/>
+</workflow-app>
+   

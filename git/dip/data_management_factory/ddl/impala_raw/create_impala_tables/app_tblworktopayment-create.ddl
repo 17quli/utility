@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblworktopayment (                                                                                
+FLNGPAYMENTKEY INT,                                                                                                                 
+FLNGWORKKEY INT,                                                                                                                    
+FBLNOPEN SMALLINT,                                                                                                                  
+FSTRDATA VARCHAR(510),                                                                                                              
+FLNGBATCHKEY INT,                                                                                                                   
+FSTRBATCHID VARCHAR(60),                                                                                                            
+FINTSEQUENCE SMALLINT,                                                                                                              
+FDTMCOMPOSED TIMESTAMP,                                                                                                             
+FCURAMOUNT DECIMAL(19,4),                                                                                                           
+FINTITEMS SMALLINT,                                                                                                                 
+FSTRACCOUNTTYPE VARCHAR(12),                                                                                                        
+FSTRSOURCE VARCHAR(12),                                                                                                             
+FSTRWHO VARCHAR(20),                                                                                                                
+FDTMWHEN TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;  

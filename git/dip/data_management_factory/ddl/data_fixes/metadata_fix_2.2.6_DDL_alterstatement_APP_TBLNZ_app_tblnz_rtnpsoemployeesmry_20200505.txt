@@ -1,0 +1,163 @@
+alter table prod_raw/jnl.app_tblnz_rtnpsoemployeesmry ADD COLUMNS
+(fcurTotalCompEmployerCont decimal(19,4),
+fcurTotalVoluntaryEmployerCont decimal(19,4),
+fcurTotalSLCIRDeductions decimal(19,4),
+fcurTotalSLBORDeductions decimal(19,4),
+fcurTotalESSEarnings decimal(19,4),
+fcurTotalPriorPeriodGrossAdj decimal(19,4),
+fcurTotalPriorPeriodPAYEAdj decimal(19,4),
+fblnProxyFieldsExpected smallint,
+fblnDefaultAssessment smallint,
+fstrEmployerGroup varchar(4))
+
+describe ${env}_raw_full_access.app_tblnz_rtnpsoemployeesmry;
+describe ${env}_raw_restricted_access.app_tblnz_rtnpsoemployeesmry;
+
+drop view ${env}_raw_full_access.app_tblnz_rtnpsoemployeesmry;
+drop view ${env}_raw_restricted_access.app_tblnz_rtnpsoemployeesmry;
+
+select count(*) from  ${env}_raw_full_access.app_tblnz_rtnpsoemployeesmry;
+select count(*) from ${env}_raw_restricted_access.app_tblnz_rtnpsoemployeesmry;
+
+CREATE VIEW ${env}_raw_full_access.app_tblnz_rtnpsoemployeesmry                                                                             
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.flngSubmissionKey,                                                                                                                
+z.flngFileKey,                                                                                                                      
+z.flngHeaderNumber,                                                                                                                 
+z.fstrDLN,                                                                                                                          
+z.fdtmSentToFIRST,                                                                                                                  
+z.fdtmOriginalSentToFIRST,                                                                                                          
+z.fdtmLastSentToFIRST,                                                                                                              
+z.fblnFIRSTCnvError,                                                                                                                
+z.fblnFIRSTCnvErrorWorkItem,                                                                                                        
+z.fblnFIRSTCnvErrorComplete,                                                                                                        
+z.fcurTotalGross,                                                                                                                   
+z.fcurTotalEarnings,                                                                                                                
+z.fcurTotalPAYE,                                                                                                                    
+z.fcurTotalChildSupport,                                                                                                            
+z.fcurTotalStudentLoan,                                                                                                             
+z.fcurTotalKiwiSaverDeductions,                                                                                                     
+z.fcurTotalKiwiSaverContribution,                                                                                                   
+z.fcurTotalESCTDeductions,                                                                                                          
+z.fcurTotalAmountPayable,                                                                                                           
+z.fcurTotalTaxCreditsDonations,                                                                                                     
+z.fcurTotalTaxCreditsExtinguish,                                                                                                    
+z.fcurTotalFamilyTaxCredits,                                                                                                        
+z.fcurESCTAdjustments,                                                                                                              
+z.fcurESCTKiwiSaver,                                                                                                                
+z.fcurTotalCompEmployerCont,                                                                                                        
+z.fcurTotalVoluntaryEmployerCont,                                                                                                   
+z.fcurTotalSLCIRDeductions,                                                                                                         
+z.fcurTotalSLBORDeductions,                                                                                                         
+z.fcurTotalESSEarnings,                                                                                                             
+z.fcurTotalPriorPeriodGrossAdj,                                                                                                     
+z.fcurTotalPriorPeriodPAYEAdj,                                                                                                      
+z.fcurMaximumEarnings,                                                                                                              
+z.fstrPIIRDNumber,                                                                                                                  
+z.fstrContactPhoneNumber,                                                                                                           
+z.fstrContactName,                                                                                                                  
+z.fstrPayrollPackage,                                                                                                               
+z.fstrPayrollContactEmail,                                                                                                          
+z.fblnCorrespondence,                                                                                                               
+z.fblnPaymentAttached,                                                                                                              
+z.fblnPayDayFiler,                                                                                                                  
+z.fdtmPayDayPeriod,                                                                                                                 
+z.fdtmPayDayDueDate,                                                                                                                
+z.fdtmMonthlyDueDate,                                                                                                               
+z.fdtmConsolidationDate,                                                                                                            
+z.fblnMSD,                                                                                                                          
+z.fblnDuplicate,                                                                                                                    
+z.fblnDuplicateLineItems,                                                                                                           
+z.fblnLineItemsProcessed,                                                                                                           
+z.fblnProxyFieldsExpected,                                                                                                          
+z.fblnDefaultAssessment,                                                                                                            
+z.fstrEmployerGroup,                                                                                                                
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${env}_raw.app_tblnz_rtnpsoemployeesmry z;
+
+
+CREATE VIEW ${env}_raw_restricted_access.app_tblnz_rtnpsoemployeesmry
+AS SELECT
+z.flngDocKey,                                                                                                                       
+z.flngSubmissionKey,                                                                                                                
+z.flngFileKey,                                                                                                                      
+z.flngHeaderNumber,                                                                                                                 
+z.fstrDLN,                                                                                                                          
+z.fdtmSentToFIRST,                                                                                                                  
+z.fdtmOriginalSentToFIRST,                                                                                                          
+z.fdtmLastSentToFIRST,                                                                                                              
+z.fblnFIRSTCnvError,                                                                                                                
+z.fblnFIRSTCnvErrorWorkItem,                                                                                                        
+z.fblnFIRSTCnvErrorComplete,                                                                                                        
+z.fcurTotalGross,                                                                                                                   
+z.fcurTotalEarnings,                                                                                                                
+z.fcurTotalPAYE,                                                                                                                    
+z.fcurTotalChildSupport,                                                                                                            
+z.fcurTotalStudentLoan,                                                                                                             
+z.fcurTotalKiwiSaverDeductions,                                                                                                     
+z.fcurTotalKiwiSaverContribution,                                                                                                   
+z.fcurTotalESCTDeductions,                                                                                                          
+z.fcurTotalAmountPayable,                                                                                                           
+z.fcurTotalTaxCreditsDonations,                                                                                                     
+z.fcurTotalTaxCreditsExtinguish,                                                                                                    
+z.fcurTotalFamilyTaxCredits,                                                                                                        
+z.fcurESCTAdjustments,                                                                                                              
+z.fcurESCTKiwiSaver,                                                                                                                
+z.fcurTotalCompEmployerCont,                                                                                                        
+z.fcurTotalVoluntaryEmployerCont,                                                                                                   
+z.fcurTotalSLCIRDeductions,                                                                                                         
+z.fcurTotalSLBORDeductions,                                                                                                         
+z.fcurTotalESSEarnings,                                                                                                             
+z.fcurTotalPriorPeriodGrossAdj,                                                                                                     
+z.fcurTotalPriorPeriodPAYEAdj,                                                                                                      
+z.fcurMaximumEarnings,                                                                                                              
+z.fstrPIIRDNumber,                                                                                                                  
+z.fstrContactPhoneNumber,                                                                                                           
+z.fstrContactName,                                                                                                                  
+z.fstrPayrollPackage,                                                                                                               
+z.fstrPayrollContactEmail,                                                                                                          
+z.fblnCorrespondence,                                                                                                               
+z.fblnPaymentAttached,                                                                                                              
+z.fblnPayDayFiler,                                                                                                                  
+z.fdtmPayDayPeriod,                                                                                                                 
+z.fdtmPayDayDueDate,                                                                                                                
+z.fdtmMonthlyDueDate,                                                                                                               
+z.fdtmConsolidationDate,                                                                                                            
+z.fblnMSD,                                                                                                                          
+z.fblnDuplicate,                                                                                                                    
+z.fblnDuplicateLineItems,                                                                                                           
+z.fblnLineItemsProcessed,                                                                                                           
+z.fblnProxyFieldsExpected,                                                                                                          
+z.fblnDefaultAssessment,                                                                                                            
+z.fstrEmployerGroup,                                                                                                                
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key 
+FROM ${env}_raw.app_tblnz_rtnpsoemployeesmry z
+WHERE z.flngDocKey IN
+(SELECT DISTINCT rtn.flngDocKey
+FROM ${env}_raw.app_tblreturn rtn
+INNER JOIN ${env}_raw.app_tblaccount ac
+ON rtn.flngAccountKey = ac.flngAccountKey
+INNER JOIN ${env}_raw.app_tblcustomerinfo cl ON ac.flngcustomerkey = cl.flngcustomerkey
+WHERE
+nvl(ac.record_active_flag, 'Y') = 'Y'
+AND nvl(ac.record_deleted_flag, 'N') = 'N'
+AND nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+)
+;

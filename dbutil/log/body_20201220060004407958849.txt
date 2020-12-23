@@ -1,0 +1,1 @@
+2020-12-20 06:00:04------start /home/ird0qal/dbutil/snapshot.sh prod_refined prod_dw

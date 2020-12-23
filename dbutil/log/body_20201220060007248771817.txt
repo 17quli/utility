@@ -1,0 +1,17 @@
+2020-12-20 06:00:07------start /home/ird0qal/dbutil/snapshot.sh prod_raw prod_dw
+2020-12-20 06:00:10------show tables
+2020-12-20 06:00:13------769 tables or views
+2020-12-20 06:00:13------show create table
+2020-12-20 06:00:27------762 tables excluding views
+2020-12-20 06:00:28------drop table
+2020-12-20 06:00:28------0 tables dropped
+2020-12-20 06:00:33------create table
+2020-12-20 08:07:33------762 tables created
+2020-12-20 08:07:38------refresh table
+2020-12-20 08:08:30------756 tables refreshed
+2020-12-20 08:08:30------recover partitions
+2020-12-20 08:08:57------6 table partitions recovered
+2020-12-20 08:08:57------show tables backup expired
+2020-12-20 08:10:02------drop tables backup expired
+2020-12-20 08:21:58------762 expired tables dropped
+2020-12-20 08:21:58------complete /home/ird0qal/dbutil/snapshot.sh prod_raw prod_dw

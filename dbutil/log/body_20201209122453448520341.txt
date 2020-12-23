@@ -1,0 +1,15 @@
+2020-12-09 12:24:53------start ./snapshot.sh prod_jnl dev_dw
+2020-12-09 12:24:56------show tables
+2020-12-09 12:25:01------708 tables or views
+2020-12-09 12:25:01------show create table
+2020-12-09 12:25:16------708 tables excluding views
+2020-12-09 12:25:17------drop table
+2020-12-09 12:25:17------0 tables dropped
+2020-12-09 12:25:22------create table
+2020-12-09 13:43:14------708 tables created
+2020-12-09 13:43:19------refresh table
+2020-12-09 13:43:34------708 tables refreshed
+2020-12-09 13:43:34------recover partitions
+2020-12-09 13:43:34------0 table partitions recovered
+2020-12-09 13:43:34------show tables backup expired
+2020-12-09 13:44:10------complete ./snapshot.sh prod_jnl dev_dw

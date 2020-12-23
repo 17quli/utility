@@ -1,0 +1,30 @@
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtngsd
+AS SELECT 
+z.flngDocKey,
+z.fdtmFilingPeriod,
+z.fstrFilingFreq,
+z.fstrRegistrationNo,
+z.fstrSourceType,
+z.fstrSoldFirstname,
+z.fstrSoldFamilyName,
+z.fstrBusinessName,
+z.fstrSoldRegistration,
+z.fcurTotalSales,
+z.fcurGSTPayable,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db1}.TBLNZ_RTNGSD z
+ WHERE z.flngDocKey IN
+    (SELECT DISTINCT rtn.flngDocKey
+     FROM ${source_db}.app_tblreturn rtn
+     INNER JOIN ${source_db}.app_tblaccount ac
+     ON rtn.flngAccountKey = ac.flngAccountKey
+     INNER JOIN ${source_db}.app_tblcustomerinfo cl ON ac.flngcustomerkey = cl.flngcustomerkey
+     WHERE
+     nvl(ac.record_active_flag, 'Y') = 'Y'
+     AND nvl(ac.record_deleted_flag, 'N') = 'N'
+     AND nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+     AND nvl(cl.record_active_flag, 'Y') = 'Y'
+     AND nvl(cl.record_deleted_flag, 'N') = 'N'
+     )
+;

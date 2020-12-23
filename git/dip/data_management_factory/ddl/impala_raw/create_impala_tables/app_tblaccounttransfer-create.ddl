@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblaccounttransfer (                                                                              
+flngTransferKey INT,                                                                                                                
+flngFromCustomerKey INT,                                                                                                            
+flngAccountKey INT,                                                                                                                 
+flngToCustomerKey INT,                                                                                                              
+fstrData VARCHAR(1000),                                                                                                             
+flngSourceCrmKey INT,                                                                                                               
+flngTargetCrmKey INT,                                                                                                               
+fstrComment VARCHAR(512),                                                                                                           
+fcurBalance DECIMAL(19,4),                                                                                                          
+fstrFrq VARCHAR(12),                                                                                                                
+fintFromProfile SMALLINT,                                                                                                           
+fintToProfile SMALLINT,                                                                                                             
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;

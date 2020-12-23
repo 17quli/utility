@@ -1,0 +1,44 @@
+Path,Name,TypeName,Type,Description,Created,CreatedBy,Modified,ModifiedBy
+/IRD/DIP Data Management/1000 Libraries/ALCZAR COMPANIES (alccmp)(Library),ALCZAR COMPANIES (alccmp),Library,Library,,14/08/2019 12:03:51 PM,ird0sxd,3/04/2020 8:09:49 AM,ird0axs
+/IRD/DIP Data Management/1000 Libraries/ALCZAR DIA DEATHS (alcdth)(Library),ALCZAR DIA DEATHS (alcdth),Library,Library,,21/08/2019 2:20:59 PM,ird0sxd,9/10/2019 9:29:46 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/ALCZAR EFTPOS (alcefp)(Library),ALCZAR EFTPOS (alcefp),Library,Library,,23/10/2019 8:26:29 PM,ird0sxd,23/10/2019 8:26:29 PM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/ALCZAR INFO_COLLECT (alcinc)(Library),ALCZAR INFO_COLLECT (alcinc),Library,Library,,18/06/2020 10:53:57 AM,ird0sxd,18/06/2020 10:53:57 AM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/ALCZAR PROPERTY (alcpty)(Library),ALCZAR PROPERTY (alcpty),Library,Library,,21/08/2019 2:18:51 PM,ird0sxd,9/10/2019 9:30:23 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/ALCZAR SPECIAL_AUDIT (alcsau)(Library),ALCZAR SPECIAL_AUDIT (alcsau),Library,Library,,18/06/2020 10:53:49 AM,ird0sxd,18/06/2020 10:53:49 AM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/ALCZAR_MODELLING (alcmod)(Library),ALCZAR_MODELLING (alcmod),Library,Library,,26/02/2020 8:35:08 AM,ird0sxd,26/02/2020 8:35:08 AM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/DIP CAS Factory Silver Publish (casfsilp)(Library),DIP CAS Factory Silver Publish (casfsilp),Library,Library,,10/02/2020 2:06:59 PM,ird0mxw,14/02/2020 9:58:17 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP CAS Factory Silver Work (casfsilw)(Library),DIP CAS Factory Silver Work (casfsilw),Library,Library,,7/02/2020 11:32:07 AM,ird0mxw,13/02/2020 9:03:33 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP CAS Factory Views (casfvws)(Library),DIP CAS Factory Views (casfvws),Library,Library,,7/02/2020 11:31:03 AM,ird0mxw,13/02/2020 9:03:01 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP CAS Lab Views (caslvws)(Library),DIP CAS Lab Views (caslvws),Library,Library,,13/06/2019 2:47:45 PM,ird0mxw,24/02/2020 2:49:43 PM,ird0nxa
+/IRD/DIP Data Management/1000 Libraries/DIP Hive Staging (hivestg)(Library),DIP Hive Staging (hivestg),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,14/01/2020 3:29:13 PM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/DIP Impala CAS Views (impcsv)(Library),DIP Impala CAS Views (impcsv),Library,Library,,23/10/2019 1:30:41 PM,ird0mxw,14/02/2020 9:57:38 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP Impala DW (impdw)(Library),DIP Impala DW (impdw),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,9/10/2019 9:30:32 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/DIP Impala Journal (impjnl)(Library),DIP Impala Journal (impjnl),Library,Library,,21/11/2019 7:56:14 AM,ird0lxf,16/01/2020 9:57:46 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/DIP Impala Prod Journal (imppjnl)(Library),DIP Impala Prod Journal (imppjnl),Library,Library,,21/11/2019 7:56:14 AM,ird0lxf,16/01/2020 9:57:46 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/DIP Impala RAW (impraw)(Library),DIP Impala RAW (impraw),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,24/06/2020 9:39:45 AM,ird0sxw
+/IRD/DIP Data Management/1000 Libraries/DIP Impala Refined (imprfn)(Library),DIP Impala Refined (imprfn),Library,Library,,13/06/2019 2:59:27 PM,ird0mxw,24/06/2020 9:40:00 AM,ird0sxw
+/IRD/DIP Data Management/1000 Libraries/DIP Impala Staging (impstg)(Library),DIP Impala Staging (impstg),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,23/10/2019 11:33:16 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP Impala Work (impwrk)(Library),DIP Impala Work (impwrk),Library,Library,,27/07/2019 4:16:09 PM,ird0mxw,24/06/2020 9:40:13 AM,ird0sxw
+/IRD/DIP Data Management/1000 Libraries/DIP LCF (lcf)(Library),DIP LCF (lcf),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,12/05/2020 10:49:30 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/DIP SAS Dataflux Exchange(Library),DIP SAS Dataflux Exchange,Library,Library,,20/02/2020 2:37:00 PM,ird0mxw,6/04/2020 4:15:01 PM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/EDW 17THHO(edwhho)(Library),EDW 17THHO(edwhho),Library,Library,,16/08/2019 12:04:48 PM,ird0sxd,9/10/2019 9:31:22 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW 67AWCH (edwwch)(Library),EDW 67AWCH (edwwch),Library,Library,,16/08/2019 11:53:43 AM,ird0sxd,9/10/2019 9:31:32 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW BESSOWN (edwown)(Library),EDW BESSOWN (edwown),Library,Library,,16/08/2019 11:58:29 AM,ird0sxd,9/10/2019 9:31:40 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW CMEOWN  (edwcme)(Library),EDW CMEOWN  (edwcme),Library,Library,,23/10/2019 8:39:52 PM,ird0sxd,12/11/2019 6:40:03 AM,ird0axs
+/IRD/DIP Data Management/1000 Libraries/EDW DSS (edwdss)(Library),EDW DSS (edwdss),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,9/10/2019 9:31:48 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW KXT5  (edwxt5)(Library),EDW KXT5  (edwxt5),Library,Library,,23/10/2019 8:39:05 PM,ird0sxd,23/10/2019 8:39:05 PM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/EDW MRT (edwmrt)(Library),EDW MRT (edwmrt),Library,Library,,12/08/2019 5:21:31 PM,ird0sxd,9/10/2019 9:31:56 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW SMRY (edwsmy)(Library),EDW SMRY (edwsmy),Library,Library,,1/10/2019 2:08:30 PM,ird0sxd,9/10/2019 9:32:05 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/EDW SXT4  (edwxt4)(Library),EDW SXT4  (edwxt4),Library,Library,,16/08/2019 11:55:44 AM,ird0sxd,8/10/2019 1:50:43 PM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/EDW TDW (edwtdw)(Library),EDW TDW (edwtdw),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,9/10/2019 9:32:32 AM,ird0lxf
+/IRD/DIP Data Management/1000 Libraries/START GTAPP (strapp)(Library),START GTAPP (strapp),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,28/06/2020 5:06:27 AM,ird0sxd
+/IRD/DIP Data Management/1000 Libraries/START GTFRD (strfrd)(Library),START GTFRD (strfrd),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,9/10/2019 9:32:48 AM,ird0nxa
+/IRD/DIP Data Management/1000 Libraries/START GTREF (strref)(Library),START GTREF (strref),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,14/04/2020 10:13:37 AM,ird0nxa
+/IRD/DIP Data Management/1000 Libraries/START GTSTC (strstc)(Library),START GTSTC (strstc),Library,Library,,7/08/2019 1:00:44 PM,ird0sxd,26/02/2020 10:12:00 AM,ird0mxw
+/IRD/DIP Data Management/1000 Libraries/START GTWEB (strweb)(Library),START GTWEB (strweb),Library,Library,,28/11/2019 4:39:34 PM,ird0mxw,28/11/2019 4:40:15 PM,ird0nxa
+/IRD/DIP Data Management/1000 Libraries/START GTWRQ (strwrq)(Library),START GTWRQ (strwrq),Library,Library,,29/05/2019 2:24:51 PM,ird0mxw,9/10/2019 9:33:12 AM,ird0nxa
+/IRD/DIP Data Management/5000 Processes/50 CAS Upload/CAS Upload Loop Job Factory Views(Job),CAS Upload Loop Job Factory Views,Job,Job,,23/06/2020 3:04:07 PM,ird0nxa,23/06/2020 3:04:07 PM,ird0nxa
+/IRD/DIP Data Management/5000 Processes/50 CAS Upload/CAS Upload Loop Job Lab Views(Job),CAS Upload Loop Job Lab Views,Job,Job,,23/06/2020 3:04:07 PM,ird0nxa,23/06/2020 3:04:07 PM,ird0nxa
+/IRD/DIP Data Management/6000 Deployment/50 CAS Upload/CAS_Upload_Loop_Job_Factory_Views(DeployedJob),CAS_Upload_Loop_Job_Factory_Views,DeployedJob,Deployed job,,23/06/2020 3:06:03 PM,ird0nxa,23/06/2020 3:06:03 PM,ird0nxa
+/IRD/DIP Data Management/6000 Deployment/50 CAS Upload/CAS_Upload_Loop_Job_Lab_Views(DeployedJob),CAS_Upload_Loop_Job_Lab_Views,DeployedJob,Deployed job,,23/06/2020 3:05:00 PM,ird0nxa,23/06/2020 3:05:00 PM,ird0nxa
+/IRD/DIP Data Management/8000 Transformations/50 CAS Upload/CAS Upload(GeneratedTransform),CAS Upload,GeneratedTransform,Generated transformation,,12/11/2019 4:20:17 PM,ird0mxw,27/11/2019 11:48:27 AM,ird0nxa

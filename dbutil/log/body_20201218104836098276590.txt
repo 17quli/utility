@@ -1,0 +1,15 @@
+2020-12-18 10:48:36------start ./dbcopy.sh prod_jnl test_jnl
+2020-12-18 10:48:36------show tables
+2020-12-18 10:48:43------725 tables or views
+2020-12-18 10:48:43------show create table
+2020-12-18 10:48:57------725 tables excluding views
+2020-12-18 10:48:57------drop table
+2020-12-18 11:01:38------create table
+2020-12-18 11:01:38------hdfs copy
+2020-12-18 14:46:40------complete hdfs copy
+2020-12-18 14:46:40------725 tables created
+2020-12-18 14:46:40------recover partitions
+2020-12-18 14:46:41------0 table partitions recovered
+2020-12-18 14:46:41------refresh table
+2020-12-18 15:13:49------725 tables refreshed
+2020-12-18 15:13:49------complete ./dbcopy.sh prod_jnl test_jnl

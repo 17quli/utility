@@ -1,0 +1,35 @@
+CREATE TABLE ${var:target_db}.app_tblauditdetail (
+flngAuditkey INT,
+flngVer INT,
+flngVerLast INT,
+fstrExternalID VARCHAR(60),
+fstrAuditStatus VARCHAR(12),
+fstrAuditStage VARCHAR(12),
+fstrAuditProgram VARCHAR(12),
+fstrAuditSource VARCHAR(12),
+fdtmPostingPeriod TIMESTAMP,
+fstrManager VARCHAR(20),
+fstrApprovedBy VARCHAR(20),
+fdtmApprovedWhen TIMESTAMP,
+fstrDescription VARCHAR(32767),
+fblnApprovalReq SMALLINT,
+fdtmFilingPeriodFrom TIMESTAMP,
+fdtmFilingPeriodTo TIMESTAMP,
+fdtmAuditFrom TIMESTAMP,
+fdtmAuditTo TIMESTAMP,
+fdtmEffective TIMESTAMP,
+fdtmWorkDate TIMESTAMP,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+fblnActive SMALLINT,
+fdtmStatuteDate TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;
+
+

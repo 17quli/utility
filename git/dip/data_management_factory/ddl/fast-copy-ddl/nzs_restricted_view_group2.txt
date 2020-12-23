@@ -1,0 +1,512 @@
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tbldoctrn;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tbldoctrn
+AS SELECT
+z.flngTransKey,
+z.flngDocKey,
+z.flngVerLast,
+z.flngAccountKey,
+z.fdtmFilingPeriod
+ FROM ${source_db=Enter the source database name here}.TBLDOCTRN z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblrecoveryamount;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblrecoveryamount
+AS SELECT
+z.flngRecoveryKey,
+z.flngOffsetKey,
+z.flngDataKey,
+z.fcurAmount,
+z.fdtmDateTime,
+z.fdtmDate,
+z.fintDay,
+z.fintMonth,
+z.fintQuarter,
+z.fintYear,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLRECOVERYAMOUNT z
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblrfnrefund;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblrfnrefund
+AS SELECT
+z.flngRefundKey,
+z.flngVerLast,
+z.flngFolderKey,
+z.flngBatchKey,
+z.fstrRefundId,
+z.fstrOwner,
+z.flngAccountKey,
+z.flngTrusteeCustomerKey,
+z.flngTrusteeAccountKey,
+z.fdtmFilingPeriod,
+z.fstrRefundType,
+z.fstrApprovalLevel,
+z.fcurRange,
+z.fstrRefundStage,
+z.fdtmStageDate,
+z.fstrRefundStatus,
+z.fdtmStatusDate,
+z.fstrStatusChangedBy,
+z.fstrAccountType,
+z.fstrRefundChannel,
+z.fdtmRequested,
+z.fdtmCreated,
+z.fstrCreatedBy,
+z.fblnSystemCreated,
+z.fcurRequestedAmount,
+z.fdtmVerified,
+z.fstrVerifiedBy,
+z.fdtmExternalInterceptSent,
+z.fdtmApproved,
+z.fstrApprovedBy,
+z.fblnAutoApproved,
+z.fcurPostedAmount,
+z.fcurMinimumAmount,
+z.fdtmRejected,
+z.fstrRejectedBy,
+z.fdtmReversed,
+z.fstrReversedBy,
+z.fdtmReleased,
+z.fstrReleasedBy,
+z.fdtmFileCreated,
+z.fdtmIssued,
+z.fstrCheckNumber,
+z.fdtmReturned,
+z.fdtmPaperIssued,
+z.fdtmReconciled,
+z.fdtmRedeemed,
+z.fdtmUnclaimedProperty,
+z.fstrBankAccountType,
+z.flngBankAccountKey,
+z.flngBankAccountVerLast,
+z.flngBankAccountRefundKey,
+z.fstrRoutingTransit,
+z.fstrAccountNumber,
+z.flngSourceRefundKey,
+z.flngDocKey,
+z.fstrExternalId,
+z.fdtmWorkDate,
+z.fstrScheduleNumber,
+z.fdtmAvailable,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLRFNREFUND z
+;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tbltransoffsetdetail;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tbltransoffsetdetail
+AS SELECT
+z.flngOffsetKey,
+z.fintSeq,
+z.FLNGVER,
+z.FLNGVERLAST,
+z.FLNGACCOUNTKEY,
+z.FLNGCREDITTRANSKEY,
+z.flngCreditBillItemKey,
+z.fcurCreditAmount,
+z.fstrCreditTransType,
+z.fstrCreditImpact,
+z.fdtmCreditPeriod,
+z.fdtmCreditEffect,
+z.FLNGDEBITTRANSKEY,
+z.flngDebitBillItemKey,
+z.fcurDebitAmount,
+z.fstrDebitTransType,
+z.fstrDebitImpact,
+z.fdtmDebitPeriod,
+z.fdtmDebitEffect,
+z.FCURAMOUNT,
+z.FDTMEFFECTIVE,
+z.FBLNMANUALOFFSET,
+z.fblnTransReversed,
+z.fblnOffsetReversed,
+z.fcurDebitBalanceDelta,
+z.fcurDebitBalance,
+z.fcurCreditBalanceDelta,
+z.fcurCreditBalance,
+z.fdtmProcess,
+z.FSTRWHO,
+z.FDTMWHEN
+ FROM ${source_db=Enter the source database name here}.TBLTRANSOFFSETDETAIL z
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnrebrcp;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnrebrcp
+AS SELECT
+z.flngDocKey,
+z.fintSeq,
+z.flngCustomerKey,
+z.flngCaseKey,
+z.fcurReceiptAmount,
+z.fcurApprovedAmount,
+z.fdtmReceiptDate,
+z.fdtmFilingPeriod,
+z.fstrDonationType,
+z.fstrOrganisationName,
+z.fstrOrganisationIRD,
+z.fstrOrganisationCharityNum,
+z.fstrPartnerIRD,
+z.flngPartnerCustomerKey,
+z.fcurPartnerAmount,
+z.fstrRejectedWho,
+z.flngWebReqKey,
+z.fblnTaxAgentClaim,
+z.fstrAuditRejectionRating,
+z.fstrRejectionReason,
+z.fstrOtherRejectionReason,
+z.flngOCRPage,
+z.fstrOCRSourceType,
+z.flngOCRSourceKey,
+z.fstrOCRStatus,
+z.fstrOCRText,
+z.fblnOCRKeyerConfirm,
+z.fblnOCRDonee,
+z.fstrOCRReceiptID,
+z.fstrOCRAddressName,
+z.fstrOCRAddress,
+z.fstrOCREmail,
+z.fstrOCRWebSite,
+z.fstrOCRCharityNumber,
+z.fstrOCRName,
+z.fstrOCRIRD,
+z.fcurOCRReceiptAmount,
+z.fdtmOCRReceiptDate,
+z.fstrOCRType,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNREBRCP z
+LEFT OUTER JOIN dev_raw.app_tblcustomerlevel cl ON z.flngcustomerkey = cl.flngcustomerkey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+  AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblrfnrefundtransaction;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblrfnrefundtransaction
+AS SELECT
+z.flngRefundKey,
+z.flngSourceTransKey,
+z.flngVerLast,
+z.flngRefundTransKey,
+z.fstrSourceTransType,
+z.fstrRefundTransType,
+z.flngRefundReturnedTransKey,
+z.fstrRefundReturnedTransType,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.fstrAccountType,
+z.fdtmEffect,
+z.fcurRequestedAmount,
+z.fcurRefundPosted,
+z.fcurInterestPosted,
+z.fcurTotalPosted,
+z.fdtmApproved,
+z.flngInterestTransKey,
+z.fstrInterestTransType,
+z.flngIntDebitTransKey,
+z.fstrIntDebitTransType,
+z.fcurIntDebitAmount,
+z.flngInterestReturnedTransKey,
+z.fstrInterestReturnedTransType,
+z.flngExcessRfnTransKey,
+z.fstrExcessRfnTransType,
+z.fcurExcessRfnAmount,
+z.flngExcessRfnReturnedTransKey,
+z.fstrExcessRfnReturnedTransType,
+z.flngExcessIntTransKey,
+z.fstrExcessIntTransType,
+z.fcurExcessIntAmount,
+z.flngExcessIntReturnedTransKey,
+z.fstrExcessIntReturnedTransType,
+z.fdtmRejected,
+z.fdtmReversed,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLRFNREFUNDTRANSACTION z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_tailoredtax;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_tailoredtax
+AS SELECT
+z.flngEmployeeAccountKey,
+z.flngEmployerAccountKey,
+z.fintTaxYear,
+z.flngVer,
+z.flngVerLast,
+z.flngCaseKey,
+z.fblnTailoredTaxCode,
+z.fblnTailoredTaxRate,
+z.fdblRate,
+z.fdtmCommence,
+z.fdtmCease,
+z.flngEmployerMailItemKey,
+z.fstrWorkAndIncome,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_TAILOREDTAX z
+;
+ FROM ${source_db=Enter the source database name here}.TBLNZ_LINKMAILDIRECT z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_incorrectdedcasedetail;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_incorrectdedcasedetail
+AS SELECT
+z.flngDocKey,
+z.flngCaseKey,
+z.flngAccountKey,
+z.flngGarnishKey,
+z.fdtmPaymentFrom,
+z.fdtmPaymentTo,
+z.fstrEmployerIRD,
+z.fstrEmployerName,
+z.fstrInterventionReason,
+z.fblnUnderDeduction,
+z.fcurUnderDeductionAmount,
+z.fcurUnderDeductionExpected,
+z.fcurUnderDeductionReceived,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_INCORRECTDEDCASEDETAILS z
+LEFT OUTER JOIN dev_raw.app_tblcustomerlevel cl ON z.flngDocKey = cl.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+  AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligations;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligations
+AS SELECT
+z.flngDocKey,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.fblnAssessmentLimited,
+z.fcurNZBAmount,
+z.fcurOBBAssessment,
+z.fblnCnv,
+z.fi64IncDocSetKey,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNSLSOBLIGATIONS z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligations2013;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligations2013
+AS SELECT
+z.flngDocKey,
+z.fcurTotalIncome,
+z.fcurPreviouslyAssessedIncome,
+z.fcurNZBAssessment,
+z.fcurOBBInstalmentAmount1,
+z.fcurOBBInstalmentAmount2,
+z.fcurBracket,
+z.fdtmObbBegin2,
+z.fcurBracket2,
+z.fblnCnv,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNSLSOBLIGATIONS2013 z
+
+
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligationsobb;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnslsobligationsobb
+AS SELECT
+z.flngDocKey,
+z.fcurTotalLoanBalance,
+z.fdtmObbBegin,
+z.fcurBalanceAtObbBegin,
+z.fcurFullYearObligation,
+z.fcurAdjustedObligation,
+z.fdtmInstalment1Due,
+z.fdtmInstalment2Due,
+z.fcurBracket,
+z.fdtmObbBegin2,
+z.fcurBracket2,
+z.fcurBalanceAtObbBegin2,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNSLSOBLIGATIONSOBB z
+;
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNSLSOBLIGATONSNZB z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_slscustomsmovement;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_slscustomsmovement
+AS SELECT
+z.flngCustomsMovementKey,
+z.flngAccountKey,
+z.fintSeq,
+z.flngVer,
+z.flngVerLast,
+z.fi64MovementID,
+z.fi64GatewayKey,
+z.fstrFirstName,
+z.fstrLastName,
+z.fdtmDOB,
+z.fstrSex,
+z.fstrPassportNumber,
+z.fstrCitizenship,
+z.fdtmTravelDate,
+z.fstrDirection,
+z.fstrFlightNumber,
+z.fstrPort,
+z.fstrOverseasPort,
+z.fcurMatchPercent,
+z.fstrSource,
+z.fstrIRDNumber,
+z.fdtmReceived,
+z.flngCaseKey,
+z.fblnActive,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_SLSCUSTOMSMOVEMENT z
+LEFT OUTER JOIN dev_raw.dss_special_clients_all sc ON cast(z.fstrIRDNumber as int) = CAST(sc.IRD_NUMBER as INT)
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_atooverseasresponse;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_atooverseasresponse
+AS SELECT
+z.fi64FileLoadItemKey,
+z.fi64FileKey,
+z.flngATOSequence,
+z.flngCaseKey,
+z.fblnATOMatch,
+z.fstrIRD,
+z.fstrEmail,
+z.fdtmDOB,
+z.fdtmDOD,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_ATOOVERSEASRESPONSE z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_atooverseasresponseid;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_atooverseasresponseid
+AS SELECT
+z.fi64FileLoadItemKey,
+z.fi64FileKey,
+z.flngATOSequence,
+z.fdtmCreated,
+z.fstrID,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_ATOOVERSEASRESPONSEID z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_ksscontributionbalance;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_ksscontributionbalance
+AS SELECT
+z.flngCustomerKey,
+z.flngAccountKey,
+z.fstrContributionType,
+z.fintYear,
+z.fcurContributionBalance,
+z.fcurPending,
+z.fdtmNextEval,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_KSSCONTRIBUTIONBALANCE z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tbltransstage;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tbltransstage
+AS SELECT
+z.flngTransKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrStage,
+z.fdtmStage,
+z.flngBillItemKey,
+z.fintBillItem,
+z.flngLockTransKey,
+z.fblnLockTrans,
+z.fstrLockType,
+z.fblnManualUnlock,
+z.fstrPeriodImpact,
+z.fblnReversed,
+z.fdtmReversed,
+z.fstrComment,
+z.fdtmRADay,
+z.fstrPostedWho,
+z.fdtmPosted,
+z.fdtmPenaltyThru,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.fcurAmount,
+z.fcurBalance,
+z.fdtmEffect,
+z.flngLinkTrans,
+z.fstrTransType,
+z.fstrAccountType,
+z.fstrSourceRAType,
+z.fstrBaseRAType,
+z.flngPaymentKey,
+z.fdtmReport,
+z.FSTRWHO,
+z.FDTMWHEN
+ FROM ${source_db=Enter the source database name here}.TBLTRANSSTAGE z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblbalance;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblbalance
+AS SELECT
+z.flngAccountKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrAccountType,
+z.fcurBalance,
+z.fcurBalanceDelta,
+z.fcurDisplayBalance,
+z.fcurDisplayBalanceDelta,
+z.fdtmInBalance,
+z.fdtmBackEnd,
+z.fdtmImpact,
+z.fdtmPenalty,
+z.fdtmDelta,
+z.fdtmInspect,
+z.fdtmLastStatement,
+z.fcurLastStatementBal,
+z.fblnPNIRecalc,
+z.fblnHoldCredits,
+z.fintTransStateCount,
+z.flngTransStageCount,
+z.fdtmTransStageNext,
+z.fdtmCycledThru,
+z.fdtmEvaluateAccount,
+z.fdtmNextStatement,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLBALANCE z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtninterim;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtninterim
+AS SELECT
+z.flngDocKey,
+z.fcurSLSObligation,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNINTERIM z
+;
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblrecovery;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblrecovery
+AS SELECT
+z.flngRecoveryKey,
+z.fstrRecoveryGroup,
+z.flngParentKey,
+z.flngBillItemKey,
+z.fdtmBegin,
+z.fdtmEnd,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLRECOVERY z
+;
+
+
+
+

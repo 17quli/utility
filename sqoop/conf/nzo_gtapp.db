@@ -1,0 +1,5 @@
+connect="jdbc:sqlserver://10.239.250.75:14350;databaseName=NZO_GTAPP"
+username="SVC_Start_Nzo_Dip_AI"
+mappers=2
+parallel=13
+database_type=mssql

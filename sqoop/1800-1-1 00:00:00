@@ -1,0 +1,2 @@
+Warning: /sso/sfw/cloudera/parcels/CDH-6.3.2-1.cdh6.3.2.p4054.4568991/bin/../lib/sqoop/../accumulo does not exist! Accumulo imports will fail.
+Please set $ACCUMULO_HOME to the root of your Accumulo installation.

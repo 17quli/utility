@@ -1,0 +1,32 @@
+CREATE TABLE ${var:target_db}.dss_cs_children (                                                     
+PARENT_CARER_IRD_NUMBER INT,                                                                                                        
+CHILD_IRD_NUMBER INT,                                                                                                               
+DATE_BEGIN TIMESTAMP,                                                                                                               
+DATE_END TIMESTAMP,                                                                                                                 
+CS_END_REASON_CODE VARCHAR(4),                                                                                                      
+CS_PARENTHOOD_PROOF_CODE VARCHAR(4),                                                                                                
+CHILD_TYPE VARCHAR(2),                                                                                                              
+CARER_TYPE VARCHAR(2),                                                                                                              
+UCB_INDICATOR VARCHAR(2),                                                                                                           
+PARENT_APPLIED_INDICATOR VARCHAR(2),                                                                                                
+ONE_PARENT_REASON_CODE VARCHAR(2),                                                                                                  
+PROPORTION_OF_CARE INT,                                                                                                             
+PROPORTION_OF_CARE_TYPE VARCHAR(2),                                                                                                 
+PROPORTION_OF_CARE_SOURCE VARCHAR(4),                                                                                               
+DOC_LODGE_NUMBER_PREFIX INT,                                                                                                        
+DOC_LODGE_NUMBER INT,                                                                                                               
+DELETED_INDICATOR VARCHAR(2),                                                                                                       
+DATE_APPLIED TIMESTAMP,                                                                                                             
+DATE_CEASED TIMESTAMP,                                                                                                              
+`TIMESTAMP` TIMESTAMP,                                                                                                              
+SCHOOL_INDICATOR VARCHAR(2),                                                                                                        
+OVERSEAS_CHILD_INDICATOR VARCHAR(2),                                                                                                
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                         
+ ) STORED AS PARQUET;                                                                                                               
+
+

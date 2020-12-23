@@ -1,0 +1,32 @@
+--Sample code to execute in Hue to verify the results of the P1 Data Fix
+
+--after the data fix the only value for min_record_effective_timestamp_per_key should be '1800-01-01 00:00:00'   
+select distinct t.min_record_effective_timestamp_per_key from  
+(select min(record_effective_timestamp) as min_record_effective_timestamp_per_key, ${natural_key} from ${env}_jnl.${table_name} group by ${natural_key} order by ${natural_key}) as t 
+order by t.min_record_effective_timestamp_per_key 
+
+--check that there is only one record per each Natural Key where record_effective_timestamp = '1800-01-01 00:00:00' - the output should be just one observation with value 1  
+select distinct t.record_count from  
+(select ${natural_key}, count(*) as record_count from ${env}_jnl.${table_name} where record_effective_timestamp = '1800-01-01 00:00:00' group by ${natural_key}) as t 
+  
+--Sanity check by looking at the records   
+select ${natural_key}, record_effective_timestamp, record_expiry_timestamp, * from ${env}_jnl.${table_name} order by ${natural_key}, record_effective_timestamp 
+  
+  
+--Raw table should not be yet changed and so it should have different values for min_record_effective_timestamp_per_key 
+select distinct t.min_record_effective_timestamp_per_key from  
+(select min(record_effective_timestamp) as min_record_effective_timestamp_per_key, ${natural_key} from ${env}_raw.${table_name} group by ${natural_key} order by ${natural_key}) as t 
+order by t.min_record_effective_timestamp_per_key 
+  
+--Sanity check by looking at the records   
+select ${natural_key}, record_effective_timestamp, record_expiry_timestamp, * from ${env}_raw.${table_name} order by ${natural_key}, record_effective_timestamp 
+ 
+ 
+Examples: 
+REF_LANADDRESSTYPE,  NK:  FSTRLANGUAGE,FSTRADDRESSTYPE 
+REF_LANACCOUNTTYPE,  NK:  FSTRLANGUAGE,FSTRACCOUNTTYPE 
+REF_RFRPROFILETYPE,  NK:  FSTRPROFILETYPE 
+DSS_SPECIAL_CLIENTS_ALL,   NK:  IRD_NUMBER 
+
+
+ 

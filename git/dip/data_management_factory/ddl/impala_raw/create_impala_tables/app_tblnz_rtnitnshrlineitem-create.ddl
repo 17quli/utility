@@ -1,0 +1,20 @@
+CREATE TABLE ${var:target_db}.app_tblnz_rtnitnshrlineitem (                                                                         
+fi64LineItemKey BIGINT,                                                                                                             
+flngVer INT,                                                                                                                        
+flngVerLast INT,                                                                                                                    
+fstrShareholderIRD VARCHAR(18),                                                                                                     
+fcurAIMShareholderTaxCredits DECIMAL(19,4),                                                                                         
+fcurShareholderRemuneration DECIMAL(19,4),                                                                                          
+fcurShareholderLoans DECIMAL(19,4),                                                                                                 
+fcurShareholderBalance DECIMAL(19,4),                                                                                               
+fcurShareholderOffsets DECIMAL(19,4),                                                                                               
+fcurShareholderSubventions DECIMAL(19,4),                                                                                           
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET; 

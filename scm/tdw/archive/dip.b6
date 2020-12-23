@@ -1,0 +1,8 @@
+select count(1) from app_tblnz_rtnlineitem where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_bcmpayerinfo where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_sms where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_rtnnit where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_rtnfinanstmts where fdtmwhen='1800-1-1';
+select count(1) from app_tblauditgroup where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_rtnfamsquareup where fdtmwhen='1800-1-1';
+select count(1) from app_tblnz_audselectionatt where fdtmwhen='1800-1-1';

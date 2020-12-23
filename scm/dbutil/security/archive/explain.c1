@@ -1,0 +1,45 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <libgen.h>
+#include <string.h>
+
+int main(int argc, char ** argv)
+{
+	const char explain_exe_name[] = ";./explain.sh";
+	const char chmod_exe_name[] = ";./chmod.sh";
+	const char cd[] = "cd ";
+	char* dir_name = dirname(argv[0]);
+	//const char exp[] = "; export PYTHON_EGG_CACHE=/sso/hadoop/loadtests-log";
+	char * explain_cmd;
+	char * chmod_cmd;
+	char msg[30];
+	chmod_cmd=malloc(strlen(cd) + strlen(dir_name) + strlen(chmod_exe_name) + 1);
+	if (!chmod_cmd) {
+		fprintf(stderr,"malloc() failed for chmod: insufficient memory!\n");
+		return EXIT_FAILURE;
+	}
+	strcpy(chmod_cmd,cd);
+	strcat(chmod_cmd,dir_name);
+	strcat(chmod_cmd,chmod_exe_name);
+	system( chmod_cmd );
+	free(chmod_cmd);
+
+	sprintf(msg, ";echo 'real user id is %d'", getuid());
+	explain_cmd=malloc(strlen(cd) + strlen(dir_name) + strlen(msg) + strlen(explain_exe_name) + 1);
+	if (!explain_cmd) {
+		fprintf(stderr,"malloc() failed for explain: insufficient memory!\n");
+		return EXIT_FAILURE;
+	}
+	strcpy(explain_cmd,cd);
+	strcat(explain_cmd,dir_name);
+	strcat(explain_cmd,msg);
+	strcat(explain_cmd,explain_exe_name);
+	//printf(" Executable Name: %s\n", explain_exe_name);
+	//setuid(geteuid());   
+	setreuid(geteuid(),geteuid());   
+	system( explain_cmd );
+	free(explain_cmd);
+	return 0;
+ }

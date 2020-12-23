@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.app_tblnz_recleaddata AS
+SELECT z.flngDataKey, z.flngParentKey, z.fdtmBegin, z.fdtmEnd, z.fstrRecoveryGroup, z.fstrOwner, z.fstrManager, z.fstrDistrictOffice, z.fstrType, z.fstrStage, z.fstrLeadCategory, z.fstrLeadWorkArea, z.flngCustomerKey, z.flngAccountKey, z.fdtmFilingPeriod, z.fstrNextAction, z.fdtmNextActionDue, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.app_tblnz_recleaddata z;

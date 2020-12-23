@@ -1,0 +1,1590 @@
+  /**************************************************************************************************
+17/10/19  ird0sxd Initial script from Test
+06/11/19  ird0sxd Added 3 new views app_tblcustomerhistory, app_tblnz_customerstd, ref_lanIndicator 
+06/11/19  ird0sxd Parameterised the view creation
+06/11/19  ird0sxd Removed tblcustomerlevel from the join condition in tbldocposttransaction and tblwebrequest
+13/12/19  ird0sxd updated the join for wrq.webnotice (incorrect join)
+13/12/19  ird0sxd updated the restricted view def from master doc for tbldocposttransacton
+13/12/19  ird0sxd realign view definitions to match the master doc for view definitions
+17/12/2019 ird0sxr1 Reworked completely all Batch1 CAS views as we have had issues with CAS view definition not matching Restricted view definitions.
+           E.g., flngdockey being used to join directly with customerlevel and this is incorrect.
+**************************************************************************************************/
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccount; 
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccount
+AS SELECT  
+z.flngAccountKey, 
+z.flngVer, 
+z.flngVerLast, 
+z.flngcustomerkey, 
+z.fintParentProfileNumber, 
+z.fintProfileNumber, 
+z.fstrAccountType, 
+z.fstrFiling, 
+z.fdtmCommence, 
+z.fdtmCease, 
+z.fstrStatus, 
+z.fstrClosureReason, 
+z.fblnMailForm, 
+z.flngDocKey, 
+z.flngFolderKey, 
+z.fdtmCreated, 
+z.fstrWho, 
+z.fdtmWhen,
+--z.fdtmwhen_info, 
+z.record_effective_timestamp, 
+z.record_expiry_timestamp, 
+z.record_active_flag,  
+z.record_deleted_flag, 
+z.insert_object_run_key, 
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblaccount z 
+; 
+ 
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccountinfo;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccountinfo
+AS SELECT 
+z.flngAccountKey,
+z.fintParentProfileNumber,
+z.fintProfileNumber,
+z.flngcustomerkey,
+z.flngJointCustomerKey,
+z.flngJointAccountKey,
+z.fblnPrime,
+z.fstrAccountType,
+z.flngDocKey,
+z.flngFolderKey,
+z.fstrFilingFrq,
+z.fdtmCommence,
+z.fdtmCease,
+z.fdtmCreated,
+z.fi64NameKey,
+z.fintNameKey,
+z.fstrDisplay,
+z.fblnFormatted,
+z.fstrNameType,
+z.fstrFamilyName,
+z.fstrMiddleName,
+z.fstrFirstName,
+z.fstrNameControl,
+z.fstrTitle,
+z.fstrSuffix,
+z.fstrFreeFormatName,
+z.fstrListFormatName,
+z.fstrAdditionalName,
+z.fstrAdditionalName2,
+z.fi64AddressKey,
+z.fintAddressKey,
+z.fstrAddressType,
+z.fstrStreet,
+z.fstrStreet2,
+z.fstrUnitType,
+z.fstrUnit,
+z.fstrCity,
+z.fstrCounty,
+z.fstrState,
+z.fstrZip,
+z.fstrDistrictOffice,
+z.fstrCountry,
+z.fstrAttention,
+z.fstrLocationCode,
+z.fstrUrbanization,
+z.fstrMunicipality,
+z.fstrDistrict,
+z.fstrSubDistrict,
+z.fstrSubProvince,
+z.fstrAddressDescription,
+z.fstrListFormatAddress,
+z.flngIDKey,
+z.fstrIDType,
+z.fstrID,
+z.fstrFormattedID,
+z.fstrCollectDistrictOffice,
+z.fstrCollectCity,
+z.fstrCustomerType,
+z.fstrReviewType,
+z.fstrCustomerLevel,
+z.fi64ProtectedDataSource,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblaccountinfo z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z.flngcustomerkey = cl.flngcustomerkey
+--WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--  AND 
+WHERE nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcrmextendedlog; 
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcrmextendedlog 
+AS SELECT  
+z.flngCrmKey, 
+z.flngVer, 
+z.flngVerLast, 
+z.fstrCrmSource, 
+z.fstrCrmType, 
+z.flngParentCrmKey, 
+z.flngcustomerkey, 
+z.fintProfileNumber, 
+z.flngAccountKey, 
+z.fstrAccountType, 
+z.fdtmFilingPeriod, 
+z.flngBillItemKey, 
+z.fintBillItem, 
+z.flngFolderKey, 
+z.fi64SourceKey, 
+z.fstrSourceId, 
+z.fstrSourceType, 
+z.fstrSourceData, 
+z.fstrData, 
+z.fblnExtended, 
+z.fblnPrivate, 
+z.fblnHasChildren, 
+z.fblnHighImportance, 
+z.fblnSystem, 
+z.fstrEditedBy, 
+z.fdtmEdited, 
+z.fstrComment, 
+z.fblnCommentExists, 
+z.fstrWho, 
+z.fdtmWhen, 
+--z.change_capture, 
+z.record_effective_timestamp, 
+z.record_expiry_timestamp, 
+z.record_active_flag,  
+z.record_deleted_flag, 
+z.insert_object_run_key, 
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblcrmextendedlog z 
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}_raw.app_tblCustomerLevel cl 
+on    z.flngcustomerkey=cl.flngcustomerkey  
+--WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'  
+--AND 
+WHERE nvl(cl.record_active_flag, 'Y') = 'Y'  
+AND nvl(cl.record_deleted_flag, 'N') = 'N'  
+; 
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomer; 
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomer 
+AS SELECT  
+z.flngcustomerkey, 
+z.flngVer, 
+z.flngVerLast, 
+z.fstrCustomerType, 
+z.fdtmCommence, 
+z.fdtmCease, 
+z.flngCustomerLevel, 
+z.flngDocKey, 
+z.flngFolderKey, 
+z.flngRefreshVer, 
+z.flngCustomerVersion, 
+z.flngWebVersion, 
+z.fdtmWebPublished, 
+z.fdtmCreated, 
+z.fstrWho, 
+z.fdtmWhen, 
+--z.fdtmwhen_info, 
+z.record_effective_timestamp, 
+z.record_expiry_timestamp, 
+z.record_active_flag,  
+z.record_deleted_flag, 
+z.insert_object_run_key, 
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblcustomer z 
+; 
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerinfo;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerinfo
+AS SELECT 
+z.flngcustomerkey,
+z.flngJointCustomerKey,
+z.fblnPrime,
+z.fstrCustomerType,
+z.flngDocKey,
+z.flngFolderKey,
+z.fblnDefault,
+z.fintProfileNumber,
+z.fdtmCommence,
+z.fdtmCease,
+z.fdtmCreated,
+z.fi64NameKey,
+z.fintNameKey,
+z.fstrDisplay,
+z.fblnFormatted,
+z.fstrNameType,
+z.fstrFamilyName,
+z.fstrMiddleName,
+z.fstrFirstName,
+z.fstrNameControl,
+z.fstrTitle,
+z.fstrSuffix,
+z.fstrFreeFormatName,
+z.fstrListFormatName,
+z.fstrAdditionalName,
+z.fstrAdditionalName2,
+z.fi64AddressKey,
+z.fintAddressKey,
+z.fstrAddressType,
+z.fstrStreet,
+z.fstrStreet2,
+z.fstrUnitType,
+z.fstrUnit,
+z.fstrCity,
+z.fstrCounty,
+z.fstrState,
+z.fstrZip,
+z.fstrCountry,
+z.fstrAttention,
+z.fstrLocationCode,
+z.fstrUrbanization,
+z.fstrMunicipality,
+z.fstrDistrict,
+z.fstrSubDistrict,
+z.fstrSubProvince,
+z.fstrAddressDescription,
+z.fstrListFormatAddress,
+z.flngIDKey,
+z.fstrIDType,
+z.fstrID,
+z.fstrFormattedID,
+z.fstrDistrictOffice,
+z.fstrCollectDistrictOffice,
+z.fstrReviewType,
+z.fstrCustomerLevel,
+z.fi64ProtectedDataSource,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblcustomerinfo z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z.flngcustomerkey = cl.flngcustomerkey
+--WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+WHERE nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomermail;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomermail
+AS SELECT 
+z.flngMailItemKey,
+z.fstrFormat,
+z.flngMailCategoryKey,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fintAddressKey,
+z.fintAddressProfile,
+z.fintNameKey,
+z.fintNameProfile,
+z.flngBillItemKey,
+z.fdtmFilingPeriod,
+z.flngMailItemTypeKey,
+z.flngTemplateKey,
+z.fstrLetterId,
+z.fstrMailType,
+z.fdtmRequest,
+z.fdtmReady,
+z.fdtmPrinted,
+z.fdtmRePrinted,
+z.fdtmResend,
+z.fdtmEmailed,
+z.fblnValid,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblcustomermail z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerstd;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerstd
+AS SELECT 
+z.FLNGDOCKEY,
+z.FDTMDOB,
+z.FDTMDOD,
+z.FSTRWHO,
+z.FDTMWHEN,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblcustomerstd z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z.flngDocKey = cl.flngDocKey
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tbldocposttransaction;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tbldocposttransaction
+AS SELECT 
+z.flngDocKey,
+z.fstrField,
+z.flngTableRow,
+z.flngDocVerLast,
+z.flngVer,
+z.flngVerLast,
+z.fintPosting,
+z.fi64SourceKey,
+z.fstrSource,
+z.fstrIdType,
+z.fstrId,
+z.fstrNameControl,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fstrAccountType,
+z.fdtmFilingPeriod,
+z.flngBillItemKey,
+z.fstrBillType,
+z.fdtmBillDue,
+z.fstrGroup,
+z.flngTransKey,
+z.fstrTransType,
+z.fdtmEffect,
+z.fdtmReport,
+z.fcurAmount,
+z.fintWorkStatus,
+z.fblnProcessed,
+z.fdtmReviewed,
+z.fdtmPosted,
+z.fdtmReversed,
+z.fblnUpdatePeriod,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tbldocposttransaction z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblid;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblid
+AS SELECT 
+z.FLNGIDKEY,
+z.FLNGVER,
+z.FLNGCUSTOMERKEY,
+z.FSTRIDTYPE,
+z.FSTRID,
+z.FLNGACCOUNTKEY,
+z.FLNGVERLAST,
+z.FBLNVALIDATED,
+z.FBLNACTIVE,
+z.FINTPROFILENUMBER,
+z.FBLNDEFAULT,
+z.fdtmCommence,
+z.fdtmCease,
+z.flngImageKey,
+z.flngDocKey,
+z.flngCrmKey,
+z.fi64ProtectedDataSource,
+z.fintProtectLevel,
+z.FSTRWHO,
+z.FDTMWHEN,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblid z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z. flngcustomerkey = cl. flngcustomerkey
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblindicator;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblindicator
+AS SELECT 
+z.FLNGINDICATORKEY,
+z.FLNGVER,
+z.FLNGVERLAST,
+z.FINTLEVEL,
+z.FLNGCUSTOMERKEY,
+z.FINTPROFILENUMBER,
+z.FLNGACCOUNTKEY,
+z.FSTRINDICATOR,
+z.FDTMCOMMENCE,
+z.FDTMFILINGPERIOD,
+z.FDTMFILINGPERIODTO,
+z.FCURAMOUNT,
+z.FDTMCEASE,
+z.FSTRREASON,
+z.FDTMCOMMENCE1,
+z.FDTMCEASE1,
+z.flngCrmKey,
+z.FSTRCOMMENT,
+z.FSTRUSER,
+z.flngDockey,
+z.fblnActive,
+z.FSTRWHO,
+z.FDTMWHEN,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblindicator z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblmailitem;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblmailitem
+AS SELECT 
+z.flngMailItemKey,
+z.flngVerLast,
+z.flngMailTypeKey,
+z.flngTemplateKey,
+z.flngCRMKey,
+z.fstrRecipientKey,
+z.flngNameAddressHash,
+z.fstrSortKey,
+z.fdtmSortDate,
+z.fintMailTypeSort,
+z.fstrLanguage,
+z.fstrAddressBlock,
+z.fstrEmailTo,
+z.fstrName,
+z.fstrDLN,
+z.fstrCity,
+z.fstrCountry,
+z.fstrZip,
+z.fblnValidAddress,
+z.fdtmCreated,
+z.fstrCreatedWho,
+z.fdtmBatched,
+z.fdtmPrinted,
+z.fstrPrintedWho,
+z.fstrPrinter,
+z.fdtmRePrinted,
+z.fstrReprintedWho,
+z.fstrRePrintPrinter,
+z.fdtmReady,
+z.fstrReadyWho,
+z.fdtmEmailedOn,
+z.flngPrintGroupKey,
+z.fblnValid,
+z.fstrValidatedWho,
+z.fdtmValidatedWhen,
+z.fblnElectronicOnly,
+z.fstrRenderType,
+z.fstrDatabase,
+z.flngImageKey,
+z.fblnLock,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+cmcl.CustomerLevel as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblmailitem z
+inner join 
+(
+SELECT DISTINCT cm.flngMailItemKey,nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevel
+FROM ${source_db=Enter the source database name here}_raw.APP_tblCustomerMail cm
+INNER JOIN ${source_db=Enter the source database name here}_raw.APP_tblCustomerLevel cl
+ON cl.flngcustomerkey = cm.flngcustomerkey
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+)cmcl
+on z.flngMailItemKey=cmcl.flngMailItemKey;
+
+ 
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnaics;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnaics
+AS SELECT 
+z.flngNAICSKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrNAICSVersion,
+z.fstrNAICS,
+z.fstrLevel1,
+z.fstrLevel2,
+z.fstrLevel3,
+z.fstrLevel4,
+z.fstrLevel5,
+z.fstrLevel6,
+z.flngcustomerkey,
+z.fintProfileNumber,
+z.flngAccountKey,
+z.fdtmCommence,
+z.fdtmCease,
+z.fcurBusinessMakeup,
+z.fblnDefault,
+z.fblnActive,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnaics z
+; 
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnamerecord;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnamerecord
+AS SELECT 
+z.fi64NameKey,
+z.flngVer,
+z.flngVerLast,
+z.fdtmEffectiveFrom,
+z.fdtmEffectiveTo,
+z.fdtmSystemFrom,
+z.fdtmSystemTo,
+z.fstrSource,
+z.flngcustomerkey,
+z.fintProfileNumber,
+z.fi64SourceKey,
+z.fstrNameType,
+z.fstrDisplay,
+z.fblnFormatted,
+z.fstrLastName,
+z.fintLastModifier,
+z.fstrFirstName,
+z.fintFirstModifier,
+z.fstrMiddleName,
+z.fintMiddleModifier,
+z.fstrTitle,
+z.fintTitleModifier,
+z.fstrSuffix,
+z.fintSuffixModifier,
+z.fstrFreeFormatName,
+z.fintFreeFormatModifier,
+z.fstrAdditionalName,
+z.fintAdditionalModifier,
+z.fstrAdditionalName2,
+z.fintAdditionalModifier2,
+z.fstrListFormatName,
+z.fi64ProtectedDataSource,
+z.flngCrmKey,
+z.fblnBlank,
+z.fblnCurrent,
+z.fblnActive,
+z.fintProtectLevel,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblnamerecord z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z. flngcustomerkey = cl. flngcustomerkey
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgedu;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgedu
+AS SELECT 
+z.flngDockey,
+z.fstrEducationProvider,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_accidgedu z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgovr;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgovr
+AS SELECT 
+z.flngDockey,
+z.fstrIssuingCountry,
+z.fblnTranslationReceived,
+z.flngEntryNumber,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_accidgovr z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_calllog;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_calllog
+AS SELECT 
+z.flngVisitKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrIrdNumber,
+z.fstrAuthIRDNumber,
+z.flngChildVisitKey,
+z.fstrUpdateReason,
+z.fstrIvrPath,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+CASE 
+WHEN nvl(i1.fstrCustomerLevel, 'STD')='STD' and nvl(i2.fstrCustomerLevel, 'STD')='STD' THEN 'STD'
+WHEN nvl(i1.fstrCustomerLevel, 'STD')<>'STD' and nvl(i2.fstrCustomerLevel, 'STD')='STD' THEN nvl(i1.fstrCustomerLevel, 'STD')
+WHEN nvl(i1.fstrCustomerLevel, 'STD')='STD' and nvl(i2.fstrCustomerLevel, 'STD')<>'STD' THEN nvl(i2.fstrCustomerLevel, 'STD')
+WHEN nvl(i1.fstrCustomerLevel, 'STD')<>'STD' and nvl(i2.fstrCustomerLevel, 'STD')<>'STD' THEN nvl(i1.fstrCustomerLevel, 'STD')
+ELSE NULL
+END as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblnz_calllog z
+left outer join 
+(
+ select distinct fstrid,fstrCustomerLevel from ${source_db=Enter the source database name here}_raw.app_tblcustomerinfo
+ where 
+  fstridtype = 'IRD'
+  and record_active_flag = 'Y'
+  and record_deleted_flag = 'N'
+  --and (fstrCustomerLevel is NULL or fstrCustomerLevel = 'STD')
+ ) i1
+on i1.fstrid = z.fstrIrdNumber
+left outer join
+(
+ select distinct fstrid,fstrCustomerLevel from ${source_db=Enter the source database name here}_raw.app_tblcustomerinfo
+ where fstridtype = 'IRD'
+ and record_active_flag = 'Y'
+ and record_deleted_flag = 'N'
+ --and (fstrCustomerLevel is NULL or fstrCustomerLevel = 'STD')
+) i2
+on i2.fstrid = z.fstrAuthIRDNumber
+where 
+(z.fstrIrdNumber is NULL and i1.fstrid is not NULL) or 
+(z.fstrAuthIRDNumber is NULL and i1.fstrid is not NULL) or 
+(i1.fstrid is not NULL and i2.fstrid is not NULL) or 
+(z.fstrIrdNumber is NULL and z.fstrAuthIRDNumber is NULL)
+;
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_cstcominfo;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_cstcominfo
+AS SELECT 
+z.flngDockey,
+z.fstrURL,
+z.fblnNilCompany,
+z.fblnDonee,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_cstcominfo z
+;
+
+ 
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custsegmenthist;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custsegmenthist
+AS SELECT 
+z.flngDockey,
+z.flngVerLast,
+z.fstrCustomerSegment,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_custsegmenthist z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custtaxresidency;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custtaxresidency
+AS SELECT 
+z.flngDockey,
+z.fintSeq,
+z.fstrTaxResidency,
+z.fdtmResStart,
+z.fdtmResEnd,
+z.fblnIsFinancial,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_custtaxresidency z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_visitmanagedcall;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_visitmanagedcall
+AS SELECT 
+z.flngDockey,
+z.fstrCallerIrdNumber,
+z.fstrAuthorisedIrdNumber,
+z.fstrTaxAgentName,
+z.fstrVoiceEnrolStatus,
+z.fstrVoiceOptOutStatus,
+z.fstrTransferReason,
+z.fstrCallerIntentCorrect,
+z.fstrCallerIntent,
+z.fstrCorrectedIntent,
+z.fstrCallQueue,
+z.fstrStageOneFeedback,
+z.fblnVirtualHold,
+z.fblnContactDetailsChecked,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+CASE 
+	   
+WHEN nvl(i1.fstrCustomerLevel, 'STD')='STD' and nvl(i2.fstrCustomerLevel, 'STD')='STD' THEN 'STD'
+	   
+WHEN nvl(i1.fstrCustomerLevel, 'STD')<>'STD' and nvl(i2.fstrCustomerLevel, 'STD')='STD' THEN nvl(i1.fstrCustomerLevel, 'STD')
+	   
+WHEN nvl(i1.fstrCustomerLevel, 'STD')='STD' and nvl(i2.fstrCustomerLevel, 'STD')<>'STD' THEN nvl(i2.fstrCustomerLevel, 'STD')
+	   
+WHEN nvl(i1.fstrCustomerLevel, 'STD')<>'STD' and nvl(i2.fstrCustomerLevel, 'STD')<>'STD' THEN nvl(i1.fstrCustomerLevel, 'STD')
+	   
+ELSE NULL
+	   
+END as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblnz_visitmanagedcall z
+left outer join 
+(
+ select distinct fstrid,fstrCustomerLevel from ${source_db=Enter the source database name here}_raw.app_tblcustomerinfo
+ where 
+  fstridtype = 'IRD'
+  and record_active_flag = 'Y'
+  and record_deleted_flag = 'N'
+  --and (fstrCustomerLevel is NULL or fstrCustomerLevel = 'STD')
+ ) i1
+on i1.fstrid = z.fstrcallerirdnumber
+left outer join
+(
+ select distinct fstrid,fstrCustomerLevel from ${source_db=Enter the source database name here}_raw.app_tblcustomerinfo
+ where fstridtype = 'IRD'
+ and record_active_flag = 'Y'
+ and record_deleted_flag = 'N'
+ --and (fstrCustomerLevel is NULL or fstrCustomerLevel = 'STD')
+) i2
+on i2.fstrid = z.fstrAuthorisedIrdNumber
+where 
+(z.fstrcallerirdnumber is NULL and i1.fstrid is not NULL) or 
+(z.fstrauthorisedirdnumber is NULL and i1.fstrid is not NULL) or 
+(i1.fstrid is not NULL and i2.fstrid is not NULL) or 
+(z.fstrcallerirdnumber is NULL and z.fstrAuthorisedIrdNumber is NULL)
+;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblvisit;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblvisit
+AS SELECT 
+z.flngVisitKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrVisitSource,
+z.fstrVisitCategory,
+z.fstrVisitSubCategory,
+z.flngFolderKey,
+z.flngcustomerkey,
+z.fblnUnregisteredVisitor,
+z.fi64NameKey,
+z.fi64AddressKey,
+z.fstrVisitId,
+z.fstrTicketId,
+z.fstrExternalId,
+z.fstrIdType,
+z.fstrId,
+z.fstrCountry,
+z.fintCountryCode,
+z.fstrAreaCode,
+z.fstrPhoneNumber,
+z.fblnVisitorVerified,
+z.fstrVerifyDocType,
+z.fintVerifyDocVer,
+z.fi64VerifyDocEditInProgressKey,
+z.flngVerifyDocKey,
+z.fstrDocType,
+z.fintDocVer,
+z.fi64DocEditInProgressKey,
+z.flngDockey,
+z.flngXmlKey,
+z.fstrOwner,
+z.fstrDistrictOffice,
+z.fblnHold,
+z.fdtmVisitStart,
+z.fdtmVisitEnd,
+z.flngDuration,
+z.flngWaitTime,
+z.fblnActive,
+z.fdtmReversed,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.app_tblvisit z
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}_raw.app_tblCustomerLevel cl 
+on z.flngcustomerkey=cl.flngcustomerkey 
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_agents;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_agents
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.DATE_APPLIED,
+z.AGT_DATE_START,
+z.AGT_DATE_END,
+z.AGENT_TYPE,
+z.OLD_SYSTEM_NUMBER,
+z.AGENCY_IRD_NUMBER,
+z.AGENCY_LOCATION_NUMBER,
+z.AGENT_TIME_EXTENSION,
+z.WITHDRAW_DATE,
+z.OFFICE_NUMBER,
+z.SEGMNT,
+z.MICRO_SEGMNT,
+z.ACCOUNT_MANAGER_ID,
+z.EFILE_ACCESS,
+z.EFILE_TARGET,
+z.`TIMESTAMP`,
+z.DATE_CEASED,
+z.PROFESSIONAL_ORG_CODE,
+z.PUBLIC_PRACTICE_CERT_IND,
+z.EMPLOYER_RETURNS_IND,
+z.OTHER_RETURN_IND,
+z.EMAIL_ADDRESS,
+z.EFILE_IRD_NUMBER,
+z.EFILE_LOCATION_NUMBER,
+z.EFILE_REPORT_OPTION,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+CASE
+WHEN nvl(sc1.special_classification, 'STD')='STD' and nvl(sc2.special_classification, 'STD')='STD' THEN 'STD'
+WHEN nvl(sc1.special_classification, 'STD')<>'STD' and nvl(sc2.special_classification, 'STD')='STD' THEN nvl(sc1.special_classification, 'STD')
+WHEN nvl(sc1.special_classification, 'STD')='STD' and nvl(sc2.special_classification, 'STD')<>'STD' THEN nvl(sc2.special_classification, 'STD')
+WHEN nvl(sc1.special_classification, 'STD')<>'STD' and nvl(sc2.special_classification, 'STD')<>'STD' THEN nvl(sc1.special_classification, 'STD')
+ELSE NULL
+END as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_agents z
+left OUTER JOIN
+(
+ select distinct IRD_NUMBER,special_classification from ${source_db=Enter the source database name here}_raw.dss_special_clients_all  
+ where 
+  record_active_flag = 'Y'
+  and record_deleted_flag = 'N'
+  --and (special_classification is NULL or special_classification = 'STD')
+ ) sc1
+on CAST(sc1.IRD_NUMBER AS INT) = CAST(z.IRD_NUMBER AS INT) 
+left outer join
+(
+ select distinct IRD_NUMBER,special_classification from ${source_db=Enter the source database name here}_raw.dss_special_clients_all  
+ where 
+  record_active_flag = 'Y'
+  and record_deleted_flag = 'N'
+  --and (special_classification is NULL or special_classification = 'STD')
+ ) sc2
+on CAST(sc2.IRD_NUMBER AS INT) = CAST(z.AGENCY_IRD_NUMBER AS INT) 
+where 
+(z.IRD_NUMBER is NULL and sc1.IRD_NUMBER is not NULL) or 
+(z.AGENCY_IRD_NUMBER is NULL and sc1.IRD_NUMBER is not NULL) or 
+(sc1.IRD_NUMBER is not NULL and sc2.IRD_NUMBER is not NULL) or 
+(z.IRD_NUMBER is NULL and z.AGENCY_IRD_NUMBER is NULL);
+
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_client_codes;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_client_codes
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.CLIENT_CODE_TYPE,
+z.CLIENT_CODE_VALUE,
+z.DATE_START,
+z.DATE_APPLIED,
+z.DATE_END,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.USER_ID,
+z.DATE_PROCESSED,
+z.CLIENT_CODE_KEY,
+z.BEGIN_CHANGE_REASON_CODE,
+z.END_CHANGE_REASON_CODE,
+z.INBOUND_DOC_LODGE_NBR_PREFIX,
+z.INBOUND_DOC_LODGE_NBR,
+z.OUTBOUND_DOC_LODGE_NBR_PREFIX,
+z.OUTBOUND_DOC_LODGE_NBR,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_client_codes z
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND 
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+;
+
+
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_client_names;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_client_names
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.CLIENT_NAME_TYPE,
+z.SEQUENCE_NUMBER,
+z.DATE_APPLIED,
+z.FIRST_NAMES,
+z.SURNAME,
+z.TITLE,
+z.ORGANISATION_NAME,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_client_names z
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND 
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_clients;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_clients
+AS SELECT 
+z.IRD_NUMBER,
+z.ENTITY_TYPE,
+z.DATE_APPLIED,
+z.ENTITY_CLASS,
+z.CUST_TYPE,
+z.MASTER_LOCATION,
+z.DATE_CREATED,
+z.DATE_OF_BIRTH,
+z.ORG_COMMENCEMENT_DATE,
+z.CLIENT_STATUS,
+z.RESIDENT_IND,
+z.SIC_SOURCE,
+z.LOAN_IND,
+z.SECURE_IND,
+z.CLIENT_PASSWORD,
+z.RWT_RATE,
+z.IDENTIFICATION_TYPE_CODE,
+z.ID_SERIAL_NUMBER,
+z.PHONE_NUMBER,
+z.WORK_PHONE_NUMBER,
+z.CELL_PHONE_NUMBER,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.GENDER,
+z.NOMINATED_GST_IRD_NUMBER,
+z.NOMINATED_GST_LOCATION_NUMBER,
+z.LATEST_INC_PERIOD_ASSESSED,
+z.BALANCE_DATE,
+z.PROVISIONAL_IND_CODE,
+z.RATIO_PERCENTAGE,
+z.RATIO_STATUS_CODE,
+z.RATIO_BASE_PERIOD_DATE,
+z.CURRENT_CAL_RATIO_START_DATE,
+z.RATIO_PENDING_INDICATOR,
+z.INTERVIEW_REQUIRED_IND,
+z.NZ_CITIZEN_IND,
+z.VERIFIER_ORGANISATION_ID,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_clients z
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND 
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_customers;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_customers
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.ENTITY_TYPE,
+z.ENTITY_CLASS,
+z.CLIENT_STATUS,
+z.SEGMENT_ID,
+z.MICRO_SEGMENT,
+z.DISTRICT_OFFICE,
+z.SERVICE_CENTRE,
+z.DATE_APPLIED,
+z.DATE_CEASED,
+z.DATE_OF_BIRTH,
+z.ORG_COMMENCEMENT_DATE,
+z.LOAN_INDICATOR,
+z.RESIDENT_INDICATOR,
+z.SIC_CODE,
+z.DATE_ADVISORY_VISIT,
+z.ADDRESS_STATUS,
+z.CUST_TYPE,
+z.DATE_CREATED,
+z.SIC_SOURCE,
+z.IDENTIFICATION_TYPE_CODE,
+z.ID_SERIAL_NUMBER,
+z.PHONE_NUMBER,
+z.WORK_PHONE_NUMBER,
+z.CELL_PHONE_NUMBER,
+z.NATURE_OF_BUSINESS,
+z.MESH_BLOCK,
+z.GENDER,
+z.INTERVIEW_REQUIRED_IND,
+z.NZ_CITIZEN_IND,
+z.VERIFIER_ORGANISATION_ID,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_customers z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND 
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_classes;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_classes
+AS SELECT 
+z.ENTITY_CLASS_CODE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_entity_classes z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_types;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_types
+AS SELECT 
+z.ENTITY_TYPE_CODE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_entity_types z
+;
+
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_external_references;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_external_references
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.EXTERNAL_ORG_CODE,
+z.EXTERNAL_ID,
+z.DATE_START,
+z.DATE_APPLIED,
+z.DATE_END,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.COUNTRY_CODE,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_external_references z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_offices;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_offices
+AS SELECT 
+z.OFFICE_CODE,
+z.DESCRIPTION,
+z.SERVICE_CENTRE_CODE,
+z.DATE_APPLIED,
+z.DATE_CEASED,
+z.VALIDATED,
+z.`TIMESTAMP`,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_offices z
+;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_old_system_numbers;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_dss_old_system_numbers
+AS SELECT 
+z.OLD_SYSTEM_NUMBER,
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.DATE_APPLIED,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(sc.special_classification, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.dss_old_system_numbers z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+--nvl(sc.special_classification, 'STD')='STD'
+--AND 
+nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancountry;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lancountry
+AS SELECT 
+z.fstrLanguage,
+z.fstrCountry,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDecode3,
+z.fstrDescription,
+z.fstrStateDecode,
+z.fstrPhoneError,
+z.fstrNationality,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lancountry z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomerlevel;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomerlevel
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRCUSTOMERLEVEL,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lancustomerlevel z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomersubtype;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomersubtype
+AS SELECT 
+z.fstrLanguage,
+z.fstrCustomerSubType,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.fstrDecodeWeb,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lancustomersubtype z
+;
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomertype;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomertype
+AS SELECT 
+z.fstrLanguage,
+z.fstrCustomerType,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDecodeWeb,
+z.FSTRDESCRIPTION,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lancustomertype z
+;
+
+
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customerclass;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customerclass
+AS SELECT 
+z.fstrLanguage,
+z.fstrCustomerClass,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lannz_customerclass z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customersegments;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customersegments
+AS SELECT 
+z.fstrSegment,
+z.fstrLanguage,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lannz_customersegments z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lanofficelocation;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lanofficelocation
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRDISTRICTOFFICE,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lanofficelocation z
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_wrq_tblwebnotice;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_wrq_tblwebnotice
+AS SELECT 
+z.flngWebNoticeKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrWebNoticeArea,
+z.fstrWebNoticeCategory,
+z.fstrWebNoticeType,
+z.fstrWebNoticeSubType,
+z.fstrWebNoticeReason,
+z.fstrApplication,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.flngWebLogonKey,
+z.flngParentNoticeKey,
+z.flngWebReqKey,
+z.fstrSubject,
+z.fstrMessage,
+z.fstrAdditionalInfo,
+z.fblnUrgent,
+z.fblnUser,
+z.fblnPrivate,
+z.fstrLanguage,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrcustomerlevel, 'STD') as CustomerLevelFilter
+ FROM ${source_db=Enter the source database name here}_raw.wrq_tblwebnotice z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON cl.flngcustomerkey = z.flngcustomerkey
+WHERE 
+--(nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N');
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerstd;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerstd
+AS SELECT 
+z.FLNGDOCKEY,
+z.FDTMDOB,
+z.FDTMDOD,
+z.FSTRWHO,
+z.FDTMWHEN,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+nvl(cl.fstrCustomerLevel, 'STD') as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblcustomerstd z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}_raw.app_tblcustomerlevel cl 
+ON z.flngDocKey = cl.flngDocKey
+WHERE 
+--nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+--AND 
+nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+;
+
+  
+  
+  
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lanindicator;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_ref_lanindicator
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRINDICATOR,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.ref_lanindicator z
+;
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerhistory;
+CREATE VIEW ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerhistory
+AS SELECT 
+z.flngcustomerkey,
+z.flngVerLast,
+z.fstrCustomerTypeFrom,
+z.fstrCustomerTypeTo,
+z.flngDocKeyFrom,
+z.flngDocKeyTo,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key,
+'STD' as CustomerLevelFilter
+FROM ${source_db=Enter the source database name here}_raw.app_tblcustomerhistory z
+;
+
+
+

@@ -1,0 +1,1 @@
+alter table dip_object_run add records_written number(10);

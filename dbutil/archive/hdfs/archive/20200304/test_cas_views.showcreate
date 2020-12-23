@@ -1,0 +1,837 @@
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_crm_text_data (                                                        |
+|   flngcrmkey DOUBLE,                                                                                   |
+|   flngver BIGINT,                                                                                      |
+|   flngverlast BIGINT,                                                                                  |
+|   fstrcrmsource VARCHAR(40),                                                                           |
+|   fstrcrmtype VARCHAR(40),                                                                             |
+|   flngparentcrmkey DOUBLE,                                                                             |
+|   flngcustomerkey BIGINT,                                                                              |
+|   fintprofilenumber DOUBLE,                                                                            |
+|   flngaccountkey DOUBLE,                                                                               |
+|   fstraccounttype VARCHAR(12),                                                                         |
+|   fdtmfilingperiod TIMESTAMP,                                                                          |
+|   flngbillitemkey DOUBLE,                                                                              |
+|   fintbillitem DOUBLE,                                                                                 |
+|   flngfolderkey BIGINT,                                                                                |
+|   fi64sourcekey DOUBLE,                                                                                |
+|   fstrsourceid VARCHAR(100),                                                                           |
+|   fstrsourcetype VARCHAR(60),                                                                          |
+|   fstrsourcedata VARCHAR(510),                                                                         |
+|   fstrdata VARCHAR(32767),                                                                             |
+|   fblnextended DOUBLE,                                                                                 |
+|   fblnprivate DOUBLE,                                                                                  |
+|   fblnhaschildren DOUBLE,                                                                              |
+|   fblnhighimportance DOUBLE,                                                                           |
+|   fblnsystem DOUBLE,                                                                                   |
+|   fstreditedby VARCHAR(20),                                                                            |
+|   fdtmedited TIMESTAMP,                                                                                |
+|   fstrcomment VARCHAR(2000),                                                                           |
+|   fblncommentexists DOUBLE,                                                                            |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   insert_object_run_key BIGINT,                                                                        |
+|   flngvisitkey BIGINT,                                                                                 |
+|   fstrirdnumber VARCHAR(20),                                                                           |
+|   fstrauthirdnumber VARCHAR(20),                                                                       |
+|   flngchildvisitkey BIGINT,                                                                            |
+|   fstrivrpath VARCHAR(4000),                                                                           |
+|   fstrphonenumber VARCHAR(30),                                                                         |
+|   fblnhold INT,                                                                                        |
+|   fstrupdatereason VARCHAR(40),                                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   update_object_run_key BIGINT,                                                                        |
+|   flngdockey BIGINT,                                                                                   |
+|   fstrcallerirdnumber VARCHAR(20),                                                                     |
+|   fstrauthorisedirdnumber VARCHAR(20),                                                                 |
+|   fstrtaxagentname VARCHAR(100),                                                                       |
+|   fstrvoiceenrolstatus VARCHAR(2),                                                                     |
+|   fstrvoiceoptoutstatus VARCHAR(2),                                                                    |
+|   fstrtransferreason VARCHAR(510),                                                                     |
+|   fstrcallerintentcorrect VARCHAR(6),                                                                  |
+|   fstrcorrectedintent VARCHAR(100),                                                                    |
+|   fstrcallqueue VARCHAR(100),                                                                          |
+|   fstrstageonefeedback VARCHAR(24),                                                                    |
+|   fblnvirtualhold INT,                                                                                 |
+|   fblncontactdetailschecked INT,                                                                       |
+|   fstrvisitsource VARCHAR(24),                                                                         |
+|   fstrvisitcategory VARCHAR(24),                                                                       |
+|   fstrvisitsubcategory VARCHAR(24),                                                                    |
+|   fblnunregisteredvisitor INT,                                                                         |
+|   fi64namekey DECIMAL(20,0),                                                                           |
+|   fi64addresskey DECIMAL(20,0),                                                                        |
+|   fstrvisitid VARCHAR(60),                                                                             |
+|   fstrticketid VARCHAR(60),                                                                            |
+|   fstrexternalid VARCHAR(60),                                                                          |
+|   fstridtype VARCHAR(12),                                                                              |
+|   fstrid VARCHAR(60),                                                                                  |
+|   fstrcountry VARCHAR(12),                                                                             |
+|   fintcountrycode INT,                                                                                 |
+|   fstrareacode VARCHAR(10),                                                                            |
+|   fblnvisitorverified INT,                                                                             |
+|   fstrverifydoctype VARCHAR(24),                                                                       |
+|   fintverifydocver INT,                                                                                |
+|   fi64verifydoceditinprogresskey DECIMAL(20,0),                                                        |
+|   flngverifydockey BIGINT,                                                                             |
+|   fstrdoctype VARCHAR(24),                                                                             |
+|   fintdocver INT,                                                                                      |
+|   fi64doceditinprogresskey DECIMAL(20,0),                                                              |
+|   flngxmlkey BIGINT,                                                                                   |
+|   fstrowner VARCHAR(20),                                                                               |
+|   fstrdistrictoffice VARCHAR(12),                                                                      |
+|   fdtmvisitstart TIMESTAMP,                                                                            |
+|   fdtmvisitend TIMESTAMP,                                                                              |
+|   flngduration BIGINT,                                                                                 |
+|   flngwaittime BIGINT,                                                                                 |
+|   filtercustomerlevel VARCHAR(12)                                                                      |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_crm_text_data'                             |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='4062211', 'totalSize'='1397696618') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblaccount (                                                            |
+|   flngaccountkey INT,                                                                                   |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   flngcustomerkey INT,                                                                                  |
+|   fintparentprofilenumber SMALLINT,                                                                     |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fstraccounttype VARCHAR(12),                                                                          |
+|   fstrfiling VARCHAR(12),                                                                               |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fstrstatus VARCHAR(60),                                                                               |
+|   fstrclosurereason VARCHAR(60),                                                                        |
+|   fblnmailform SMALLINT,                                                                                |
+|   flngdockey INT,                                                                                       |
+|   flngfolderkey INT,                                                                                    |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblaccount'                                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='30020487', 'totalSize'='1289716695') |
++---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| result                                                                                                   |
++----------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblaccountinfo (                                                         |
+|   flngaccountkey INT,                                                                                    |
+|   fintparentprofilenumber SMALLINT,                                                                      |
+|   fintprofilenumber SMALLINT,                                                                            |
+|   flngcustomerkey INT,                                                                                   |
+|   flngjointcustomerkey INT,                                                                              |
+|   flngjointaccountkey INT,                                                                               |
+|   fblnprime SMALLINT,                                                                                    |
+|   fstraccounttype VARCHAR(12),                                                                           |
+|   flngdockey INT,                                                                                        |
+|   flngfolderkey INT,                                                                                     |
+|   fstrfilingfrq VARCHAR(60),                                                                             |
+|   fdtmcommence TIMESTAMP,                                                                                |
+|   fdtmcease TIMESTAMP,                                                                                   |
+|   fdtmcreated TIMESTAMP,                                                                                 |
+|   fi64namekey BIGINT,                                                                                    |
+|   fintnamekey SMALLINT,                                                                                  |
+|   fstrdisplay VARCHAR(24),                                                                               |
+|   fblnformatted SMALLINT,                                                                                |
+|   fstrnametype VARCHAR(40),                                                                              |
+|   fstrfamilyname VARCHAR(510),                                                                           |
+|   fstrmiddlename VARCHAR(100),                                                                           |
+|   fstrfirstname VARCHAR(100),                                                                            |
+|   fstrnamecontrol VARCHAR(20),                                                                           |
+|   fstrtitle VARCHAR(20),                                                                                 |
+|   fstrsuffix VARCHAR(20),                                                                                |
+|   fstrfreeformatname VARCHAR(510),                                                                       |
+|   fstrlistformatname VARCHAR(510),                                                                       |
+|   fstradditionalname VARCHAR(510),                                                                       |
+|   fstradditionalname2 VARCHAR(510),                                                                      |
+|   fi64addresskey BIGINT,                                                                                 |
+|   fintaddresskey SMALLINT,                                                                               |
+|   fstraddresstype VARCHAR(40),                                                                           |
+|   fstrstreet VARCHAR(510),                                                                               |
+|   fstrstreet2 VARCHAR(510),                                                                              |
+|   fstrunittype VARCHAR(100),                                                                             |
+|   fstrunit VARCHAR(60),                                                                                  |
+|   fstrcity VARCHAR(200),                                                                                 |
+|   fstrcounty VARCHAR(12),                                                                                |
+|   fstrstate VARCHAR(12),                                                                                 |
+|   fstrzip VARCHAR(60),                                                                                   |
+|   fstrdistrictoffice VARCHAR(12),                                                                        |
+|   fstrcountry VARCHAR(12),                                                                               |
+|   fstrattention VARCHAR(510),                                                                            |
+|   fstrlocationcode VARCHAR(60),                                                                          |
+|   fstrurbanization VARCHAR(100),                                                                         |
+|   fstrmunicipality VARCHAR(60),                                                                          |
+|   fstrdistrict VARCHAR(60),                                                                              |
+|   fstrsubdistrict VARCHAR(60),                                                                           |
+|   fstrsubprovince VARCHAR(100),                                                                          |
+|   fstraddressdescription VARCHAR(510),                                                                   |
+|   fstrlistformataddress VARCHAR(510),                                                                    |
+|   flngidkey INT,                                                                                         |
+|   fstridtype VARCHAR(12),                                                                                |
+|   fstrid VARCHAR(60),                                                                                    |
+|   fstrformattedid VARCHAR(60),                                                                           |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                                 |
+|   fstrcollectcity VARCHAR(200),                                                                          |
+|   fstrcustomertype VARCHAR(12),                                                                          |
+|   fstrreviewtype VARCHAR(12),                                                                            |
+|   fstrcustomerlevel VARCHAR(12),                                                                         |
+|   fi64protecteddatasource BIGINT,                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                                  |
+|   record_expiry_timestamp TIMESTAMP,                                                                     |
+|   record_active_flag VARCHAR(1),                                                                         |
+|   record_deleted_flag VARCHAR(1),                                                                        |
+|   insert_object_run_key INT,                                                                             |
+|   update_object_run_key INT,                                                                             |
+|   customerlevelfilter STRING                                                                             |
+| )                                                                                                        |
+| STORED AS PARQUET                                                                                        |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblaccountinfo'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='84061262', 'totalSize'='10371819711') |
++----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblcustomerinfo (                                                       |
+|   flngcustomerkey INT,                                                                                  |
+|   flngjointcustomerkey INT,                                                                             |
+|   fblnprime SMALLINT,                                                                                   |
+|   fstrcustomertype VARCHAR(12),                                                                         |
+|   flngdockey INT,                                                                                       |
+|   flngfolderkey INT,                                                                                    |
+|   fblndefault SMALLINT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fi64namekey BIGINT,                                                                                   |
+|   fintnamekey SMALLINT,                                                                                 |
+|   fstrdisplay VARCHAR(24),                                                                              |
+|   fblnformatted SMALLINT,                                                                               |
+|   fstrnametype VARCHAR(40),                                                                             |
+|   fstrfamilyname VARCHAR(510),                                                                          |
+|   fstrmiddlename VARCHAR(100),                                                                          |
+|   fstrfirstname VARCHAR(100),                                                                           |
+|   fstrnamecontrol VARCHAR(20),                                                                          |
+|   fstrtitle VARCHAR(20),                                                                                |
+|   fstrsuffix VARCHAR(20),                                                                               |
+|   fstrfreeformatname VARCHAR(510),                                                                      |
+|   fstrlistformatname VARCHAR(510),                                                                      |
+|   fstradditionalname VARCHAR(510),                                                                      |
+|   fstradditionalname2 VARCHAR(510),                                                                     |
+|   fi64addresskey BIGINT,                                                                                |
+|   fintaddresskey SMALLINT,                                                                              |
+|   fstraddresstype VARCHAR(40),                                                                          |
+|   fstrstreet VARCHAR(510),                                                                              |
+|   fstrstreet2 VARCHAR(510),                                                                             |
+|   fstrunittype VARCHAR(100),                                                                            |
+|   fstrunit VARCHAR(60),                                                                                 |
+|   fstrcity VARCHAR(200),                                                                                |
+|   fstrcounty VARCHAR(12),                                                                               |
+|   fstrstate VARCHAR(12),                                                                                |
+|   fstrzip VARCHAR(60),                                                                                  |
+|   fstrcountry VARCHAR(12),                                                                              |
+|   fstrattention VARCHAR(510),                                                                           |
+|   fstrlocationcode VARCHAR(60),                                                                         |
+|   fstrurbanization VARCHAR(100),                                                                        |
+|   fstrmunicipality VARCHAR(60),                                                                         |
+|   fstrdistrict VARCHAR(60),                                                                             |
+|   fstrsubdistrict VARCHAR(60),                                                                          |
+|   fstrsubprovince VARCHAR(100),                                                                         |
+|   fstraddressdescription VARCHAR(510),                                                                  |
+|   fstrlistformataddress VARCHAR(510),                                                                   |
+|   flngidkey INT,                                                                                        |
+|   fstridtype VARCHAR(12),                                                                               |
+|   fstrid VARCHAR(60),                                                                                   |
+|   fstrformattedid VARCHAR(60),                                                                          |
+|   fstrdistrictoffice VARCHAR(12),                                                                       |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                                |
+|   fstrreviewtype VARCHAR(12),                                                                           |
+|   fstrcustomerlevel VARCHAR(12),                                                                        |
+|   fi64protecteddatasource BIGINT,                                                                       |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblcustomerinfo'                            |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='52718754', 'totalSize'='5263095845') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblcustomermail (                                                       |
+|   flngmailitemkey INT,                                                                                  |
+|   fstrformat VARCHAR(12),                                                                               |
+|   flngmailcategorykey INT,                                                                              |
+|   flngcustomerkey INT,                                                                                  |
+|   flngaccountkey INT,                                                                                   |
+|   fintaddresskey SMALLINT,                                                                              |
+|   fintaddressprofile SMALLINT,                                                                          |
+|   fintnamekey SMALLINT,                                                                                 |
+|   fintnameprofile SMALLINT,                                                                             |
+|   flngbillitemkey INT,                                                                                  |
+|   fdtmfilingperiod TIMESTAMP,                                                                           |
+|   flngmailitemtypekey INT,                                                                              |
+|   flngtemplatekey INT,                                                                                  |
+|   fstrletterid VARCHAR(60),                                                                             |
+|   fstrmailtype VARCHAR(24),                                                                             |
+|   fdtmrequest TIMESTAMP,                                                                                |
+|   fdtmready TIMESTAMP,                                                                                  |
+|   fdtmprinted TIMESTAMP,                                                                                |
+|   fdtmreprinted TIMESTAMP,                                                                              |
+|   fdtmresend TIMESTAMP,                                                                                 |
+|   fdtmemailed TIMESTAMP,                                                                                |
+|   fblnvalid SMALLINT,                                                                                   |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblcustomermail'                            |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='38753460', 'totalSize'='1906514002') |
++---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| result                                                                                                   |
++----------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tbldocposttransaction (                                                  |
+|   flngdockey INT,                                                                                        |
+|   fstrfield VARCHAR(200),                                                                                |
+|   flngtablerow INT,                                                                                      |
+|   flngdocverlast INT,                                                                                    |
+|   flngver INT,                                                                                           |
+|   flngverlast INT,                                                                                       |
+|   fintposting SMALLINT,                                                                                  |
+|   fi64sourcekey BIGINT,                                                                                  |
+|   fstrsource VARCHAR(40),                                                                                |
+|   fstridtype VARCHAR(12),                                                                                |
+|   fstrid VARCHAR(60),                                                                                    |
+|   fstrnamecontrol VARCHAR(8),                                                                            |
+|   flngcustomerkey INT,                                                                                   |
+|   flngaccountkey INT,                                                                                    |
+|   fstraccounttype VARCHAR(12),                                                                           |
+|   fdtmfilingperiod TIMESTAMP,                                                                            |
+|   flngbillitemkey INT,                                                                                   |
+|   fstrbilltype VARCHAR(12),                                                                              |
+|   fdtmbilldue TIMESTAMP,                                                                                 |
+|   fstrgroup VARCHAR(24),                                                                                 |
+|   flngtranskey INT,                                                                                      |
+|   fstrtranstype VARCHAR(12),                                                                             |
+|   fdtmeffect TIMESTAMP,                                                                                  |
+|   fdtmreport TIMESTAMP,                                                                                  |
+|   fcuramount DECIMAL(19,4),                                                                              |
+|   fintworkstatus SMALLINT,                                                                               |
+|   fblnprocessed SMALLINT,                                                                                |
+|   fdtmreviewed TIMESTAMP,                                                                                |
+|   fdtmposted TIMESTAMP,                                                                                  |
+|   fdtmreversed TIMESTAMP,                                                                                |
+|   fblnupdateperiod SMALLINT,                                                                             |
+|   fstrwho VARCHAR(20),                                                                                   |
+|   fdtmwhen TIMESTAMP,                                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                                  |
+|   record_expiry_timestamp TIMESTAMP,                                                                     |
+|   record_active_flag VARCHAR(1),                                                                         |
+|   record_deleted_flag VARCHAR(1),                                                                        |
+|   insert_object_run_key INT,                                                                             |
+|   update_object_run_key INT,                                                                             |
+|   customerlevelfilter STRING                                                                             |
+| )                                                                                                        |
+| STORED AS PARQUET                                                                                        |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tbldocposttransaction'                       |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='129605427', 'totalSize'='8256358279') |
++----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblindicator (                                                          |
+|   flngindicatorkey INT,                                                                                 |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fintlevel SMALLINT,                                                                                   |
+|   flngcustomerkey INT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   flngaccountkey INT,                                                                                   |
+|   fstrindicator VARCHAR(12),                                                                            |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmfilingperiod TIMESTAMP,                                                                           |
+|   fdtmfilingperiodto TIMESTAMP,                                                                         |
+|   fcuramount DECIMAL(19,4),                                                                             |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fstrreason VARCHAR(12),                                                                               |
+|   fdtmcommence1 TIMESTAMP,                                                                              |
+|   fdtmcease1 TIMESTAMP,                                                                                 |
+|   flngcrmkey INT,                                                                                       |
+|   fstrcomment VARCHAR(510),                                                                             |
+|   fstruser VARCHAR(20),                                                                                 |
+|   flngdockey INT,                                                                                       |
+|   fblnactive SMALLINT,                                                                                  |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblindicator'                               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='90570905', 'totalSize'='4003839591') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblmailitem (                                                           |
+|   flngmailitemkey INT,                                                                                  |
+|   flngverlast INT,                                                                                      |
+|   flngmailtypekey INT,                                                                                  |
+|   flngtemplatekey INT,                                                                                  |
+|   flngcrmkey INT,                                                                                       |
+|   fstrrecipientkey VARCHAR(60),                                                                         |
+|   flngnameaddresshash INT,                                                                              |
+|   fstrsortkey VARCHAR(60),                                                                              |
+|   fdtmsortdate TIMESTAMP,                                                                               |
+|   fintmailtypesort SMALLINT,                                                                            |
+|   fstrlanguage VARCHAR(6),                                                                              |
+|   fstraddressblock VARCHAR(4000),                                                                       |
+|   fstremailto VARCHAR(510),                                                                             |
+|   fstrname VARCHAR(510),                                                                                |
+|   fstrdln VARCHAR(60),                                                                                  |
+|   fstrcity VARCHAR(510),                                                                                |
+|   fstrcountry VARCHAR(200),                                                                             |
+|   fstrzip VARCHAR(60),                                                                                  |
+|   fblnvalidaddress SMALLINT,                                                                            |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fstrcreatedwho VARCHAR(20),                                                                           |
+|   fdtmbatched TIMESTAMP,                                                                                |
+|   fdtmprinted TIMESTAMP,                                                                                |
+|   fstrprintedwho VARCHAR(20),                                                                           |
+|   fstrprinter VARCHAR(510),                                                                             |
+|   fdtmreprinted TIMESTAMP,                                                                              |
+|   fstrreprintedwho VARCHAR(20),                                                                         |
+|   fstrreprintprinter VARCHAR(510),                                                                      |
+|   fdtmready TIMESTAMP,                                                                                  |
+|   fstrreadywho VARCHAR(20),                                                                             |
+|   fdtmemailedon TIMESTAMP,                                                                              |
+|   flngprintgroupkey INT,                                                                                |
+|   fblnvalid SMALLINT,                                                                                   |
+|   fstrvalidatedwho VARCHAR(20),                                                                         |
+|   fdtmvalidatedwhen TIMESTAMP,                                                                          |
+|   fblnelectroniconly SMALLINT,                                                                          |
+|   fstrrendertype VARCHAR(24),                                                                           |
+|   fstrdatabase VARCHAR(40),                                                                             |
+|   flngimagekey INT,                                                                                     |
+|   fblnlock SMALLINT,                                                                                    |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblmailitem'                                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='38810035', 'totalSize'='5745800319') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.app_tblnz_customerstd (                                                     |
+|   flngdockey INT,                                                                                       |
+|   fstrcustomersubtypeclass VARCHAR(12),                                                                 |
+|   fstrcustomersubtype VARCHAR(12),                                                                      |
+|   fstrcustomersegment VARCHAR(100),                                                                     |
+|   fstrspecialfiletype VARCHAR(12),                                                                      |
+|   fblnspecialtaxresidency SMALLINT,                                                                     |
+|   fstrnonresidenttype VARCHAR(100),                                                                     |
+|   fstrcurrenttaxresidency VARCHAR(100),                                                                 |
+|   fstrclosurereason VARCHAR(12),                                                                        |
+|   fintsmscountrycode SMALLINT,                                                                          |
+|   fstrsmsareacode VARCHAR(10),                                                                          |
+|   fstrsmsphonenumber VARCHAR(30),                                                                       |
+|   fdtmincomebalancedate TIMESTAMP,                                                                      |
+|   fstrcustomerclass VARCHAR(12),                                                                        |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/app_tblnz_customerstd'                          |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='43034765', 'totalSize'='1131922139') |
++---------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CREATE VIEW test_cas_views.dss_case_actions AS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.CASE_TYPE_CODE, z.CASE_NUMBER, z.CASE_KEY, z.SEQUENCE_NUMBER, z.LAST_ACTION_INDICATOR, z.CASE_ACTION_TYPE_CODE, z.ACTION_DATE, z.NEXT_ACTION_INDICATOR, z.STEP_CODE, z.TOTAL_ARREARS_AMOUNT, z.MAINFRAME_USER_ID, z.`TIMESTAMP`, z.ACTION_CEASED_DATE, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key, s.special_classification CustomerLevelFilter FROM test_raw.dss_case_actions z INNER JOIN test_raw.dss_special_clients_all s ON CAST(s.IRD_NUMBER AS INT) = CAST(z.IRD_NUMBER AS INT) WHERE s.record_active_flag = 'Y' |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CREATE VIEW test_cas_views.dss_elements AS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.CASE_TYPE_CODE, z.CASE_NUMBER, z.CASE_KEY, z.SYSTEM_PLAINT_NUMBER, z.TAX_TYPE, z.RETURN_PERIOD_DATE, z.DATE_APPLIED, z.DATE_CEASED, z.ELEMENT_TYPE, z.ASSESSMENT_AMOUNT, z.PENALTY_AND_INTEREST_AMOUNT, z.TOTAL_PAYMENTS_AMOUNT, z.COURT_FEE, z.BALANCE, z.MISC_AMOUNT, z.PENAL_ASSESSMENT_INDICATOR, z.DATE_START, z.DATE_END, z.DEFAULT_ASSESSMENT_INDICATOR, z.LATE_FILING_PENALTY_AMT, z.SOLICITORS_COSTS_PAID, z.PLAINT_CREDIT_AMOUNT, z.SOLICITORS_COSTS_AWRD, z.`TIMESTAMP`, z.ARRANGEMENT_INDICATOR, z.ORIGINAL_ARRANGEMENT_AMOUNT, z.SUMMARY_FLAG, z.CORE_DEBT, z.OTHER_ASSESSMENT_AMT, z.ELEMENT_TYPE_CODE, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key, s.special_classification CustomerLevelFilter FROM test_raw.dss_elements z INNER JOIN test_raw.dss_special_clients_all s ON CAST(s.IRD_NUMBER AS INT) = CAST(z.IRD_NUMBER AS INT) WHERE s.record_active_flag = 'Y' |
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| result                                                                                                                                                                                                                                                                                                                                      |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CREATE VIEW test_cas_views.frd_tblfrdruleresult AS                                                                                                                                                                                                                                                                                          |
+| SELECT z.flngFraudPlanKey, z.flngReturnKey, z.flngRuleKey, z.flngChangeCounter, z.fblnResult, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key, 'STD' CustomerLevelFilter FROM test_raw.frd_tblfrdruleresult z |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CREATE VIEW test_cas_views.frd_tblfrdrules AS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| SELECT z.flngFraudPlanKey, z.flngRuleKey, z.flngVer, z.flngVerLast, z.flngChangeCounter, z.fstrRuleName, z.fstrRuleCategory, z.fstrDescription, z.fcurScoreValue, z.fcurAdjustmentFactor, z.fstrAdjustmentSource, z.flngReturnsIdentified, z.fcurReturnsIdentifiedValue, z.flngReturnDisplay, z.fblnActive, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key, 'STD' CustomerLevelFilter FROM test_raw.frd_tblfrdrules z |
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.individual_dim (                                                            |
+|   dip_party_sk BIGINT,                                                                                  |
+|   dip_party_id VARCHAR(30),                                                                             |
+|   common_dip_party_id VARCHAR(30),                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   party_origin VARCHAR(10),                                                                             |
+|   customer_key VARCHAR(10),                                                                             |
+|   ird_number VARCHAR(10),                                                                               |
+|   customer_no VARCHAR(10),                                                                              |
+|   record_active_flag CHAR(1),                                                                           |
+|   legal_name VARCHAR(255),                                                                              |
+|   trading_name VARCHAR(255),                                                                            |
+|   party_start_date TIMESTAMP,                                                                           |
+|   party_ceased_date TIMESTAMP,                                                                          |
+|   party_ceased_flag CHAR(1),                                                                            |
+|   insolvency_reason VARCHAR(30),                                                                        |
+|   insolvency_code VARCHAR(10),                                                                          |
+|   insolvency_flag CHAR(1),                                                                              |
+|   party_type VARCHAR(255),                                                                              |
+|   party_type_code VARCHAR(10),                                                                          |
+|   party_subtype VARCHAR(255),                                                                           |
+|   party_subtype_code VARCHAR(10),                                                                       |
+|   party_class VARCHAR(30),                                                                              |
+|   party_class_code VARCHAR(10),                                                                         |
+|   party_segment VARCHAR(255),                                                                           |
+|   party_segment_code VARCHAR(10),                                                                       |
+|   bic_code VARCHAR(30),                                                                                 |
+|   bic_desc VARCHAR(255),                                                                                |
+|   anzsic_level4_code VARCHAR(10),                                                                       |
+|   anzsic_level4_desc VARCHAR(255),                                                                      |
+|   anzsic_level3_code VARCHAR(10),                                                                       |
+|   anzsic_level3_desc VARCHAR(255),                                                                      |
+|   anzsic_level2_code VARCHAR(10),                                                                       |
+|   anzsic_level2_desc VARCHAR(255),                                                                      |
+|   anzsic_level1_code VARCHAR(10),                                                                       |
+|   anzsic_level1_desc VARCHAR(255),                                                                      |
+|   security_level VARCHAR(255),                                                                          |
+|   security_level_code VARCHAR(10),                                                                      |
+|   district_office VARCHAR(30),                                                                          |
+|   nz_firearms_licence_id VARCHAR(30),                                                                   |
+|   os_taxpayer_id VARCHAR(30),                                                                           |
+|   os_taxpayer_id_issuer VARCHAR(30),                                                                    |
+|   acc_id VARCHAR(30),                                                                                   |
+|   mbie_client_id VARCHAR(30),                                                                           |
+|   credit_reported_flag CHAR(1),                                                                         |
+|   comm_compliance_watch_flag CHAR(1),                                                                   |
+|   suspected_bank_fraud_flag CHAR(1),                                                                    |
+|   suspected_fraud_flag CHAR(1),                                                                         |
+|   security_incident_rptd_flag CHAR(1),                                                                  |
+|   safety_risk_level VARCHAR(30),                                                                        |
+|   pref_title VARCHAR(10),                                                                               |
+|   pref_given_name VARCHAR(50),                                                                          |
+|   pref_other_given_name VARCHAR(50),                                                                    |
+|   pref_family_name VARCHAR(50),                                                                         |
+|   date_of_birth TIMESTAMP,                                                                              |
+|   date_of_death TIMESTAMP,                                                                              |
+|   birth_cert_id VARCHAR(30),                                                                            |
+|   birth_cert_issuer VARCHAR(30),                                                                        |
+|   nz_passport_id VARCHAR(30),                                                                           |
+|   os_passport_id VARCHAR(30),                                                                           |
+|   os_passport_issuer VARCHAR(30),                                                                       |
+|   nz_cert_identity_dia VARCHAR(30),                                                                     |
+|   nz_cert_identity_mbie VARCHAR(30),                                                                    |
+|   nz_refugee_id_dia VARCHAR(30),                                                                        |
+|   nz_refugee_id_mbie VARCHAR(30),                                                                       |
+|   nz_emergency_travel_id VARCHAR(30),                                                                   |
+|   driver_license_id VARCHAR(30),                                                                        |
+|   driver_license_issuer VARCHAR(30),                                                                    |
+|   intl_driver_permit_id VARCHAR(30),                                                                    |
+|   nz_hospitality_18over_id VARCHAR(30),                                                                 |
+|   nz_student_id VARCHAR(30),                                                                            |
+|   nz_student_issuer VARCHAR(50),                                                                        |
+|   nz_social_welfare_id VARCHAR(30),                                                                     |
+|   us_social_security_no VARCHAR(30),                                                                    |
+|   foreign_employment_id VARCHAR(30),                                                                    |
+|   ncp_id VARCHAR(30),                                                                                   |
+|   ministry_of_children_id VARCHAR(30),                                                                  |
+|   emigrated_flag CHAR(1),                                                                               |
+|   border_alert_flag CHAR(1),                                                                            |
+|   in_prison_flag CHAR(1),                                                                               |
+|   undischarged_bankrupt_flag CHAR(1),                                                                   |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT                                                                             |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/individual_dim'                                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='47002317', 'totalSize'='3415177178') |
++---------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.int_crm_text_data (                                                        |
+|   flngcrmkey INT,                                                                                      |
+|   flngver INT,                                                                                         |
+|   flngverlast INT,                                                                                     |
+|   fstrcrmsource VARCHAR(40),                                                                           |
+|   fstrcrmtype VARCHAR(40),                                                                             |
+|   flngparentcrmkey INT,                                                                                |
+|   flngcustomerkey INT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   flngaccountkey INT,                                                                                  |
+|   fstraccounttype VARCHAR(12),                                                                         |
+|   fdtmfilingperiod TIMESTAMP,                                                                          |
+|   flngbillitemkey INT,                                                                                 |
+|   fintbillitem SMALLINT,                                                                               |
+|   flngfolderkey INT,                                                                                   |
+|   fi64sourcekey BIGINT,                                                                                |
+|   fstrsourceid VARCHAR(100),                                                                           |
+|   fstrsourcetype VARCHAR(60),                                                                          |
+|   fstrsourcedata VARCHAR(510),                                                                         |
+|   fstrdata VARCHAR(32767),                                                                             |
+|   fblnextended SMALLINT,                                                                               |
+|   fblnprivate SMALLINT,                                                                                |
+|   fblnhaschildren SMALLINT,                                                                            |
+|   fblnhighimportance SMALLINT,                                                                         |
+|   fblnsystem SMALLINT,                                                                                 |
+|   fstreditedby VARCHAR(20),                                                                            |
+|   fdtmedited TIMESTAMP,                                                                                |
+|   fstrcomment VARCHAR(2000),                                                                           |
+|   fblncommentexists SMALLINT,                                                                          |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   insert_object_run_key INT,                                                                           |
+|   flngvisitkey INT,                                                                                    |
+|   fstrirdnumber VARCHAR(20),                                                                           |
+|   fstrauthirdnumber VARCHAR(20),                                                                       |
+|   flngchildvisitkey INT,                                                                               |
+|   fstrivrpath VARCHAR(4000),                                                                           |
+|   fstrphonenumber VARCHAR(30),                                                                         |
+|   fblnhold SMALLINT,                                                                                   |
+|   fstrupdatereason VARCHAR(40),                                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   update_object_run_key INT,                                                                           |
+|   flngdockey INT,                                                                                      |
+|   fstrcallerirdnumber VARCHAR(20),                                                                     |
+|   fstrauthorisedirdnumber VARCHAR(20),                                                                 |
+|   fstrtaxagentname VARCHAR(100),                                                                       |
+|   fstrvoiceenrolstatus VARCHAR(2),                                                                     |
+|   fstrvoiceoptoutstatus VARCHAR(2),                                                                    |
+|   fstrtransferreason VARCHAR(510),                                                                     |
+|   fstrcallerintentcorrect VARCHAR(6),                                                                  |
+|   fstrcorrectedintent VARCHAR(100),                                                                    |
+|   fstrcallqueue VARCHAR(100),                                                                          |
+|   fstrstageonefeedback VARCHAR(24),                                                                    |
+|   fblnvirtualhold SMALLINT,                                                                            |
+|   fblncontactdetailschecked SMALLINT,                                                                  |
+|   fstrvisitsource VARCHAR(24),                                                                         |
+|   fstrvisitcategory VARCHAR(24),                                                                       |
+|   fstrvisitsubcategory VARCHAR(24),                                                                    |
+|   fblnunregisteredvisitor SMALLINT,                                                                    |
+|   fi64namekey BIGINT,                                                                                  |
+|   fi64addresskey BIGINT,                                                                               |
+|   fstrvisitid VARCHAR(60),                                                                             |
+|   fstrticketid VARCHAR(60),                                                                            |
+|   fstrexternalid VARCHAR(60),                                                                          |
+|   fstridtype VARCHAR(12),                                                                              |
+|   fstrid VARCHAR(60),                                                                                  |
+|   fstrcountry VARCHAR(12),                                                                             |
+|   fintcountrycode SMALLINT,                                                                            |
+|   fstrareacode VARCHAR(10),                                                                            |
+|   fblnvisitorverified SMALLINT,                                                                        |
+|   fstrverifydoctype VARCHAR(24),                                                                       |
+|   fintverifydocver SMALLINT,                                                                           |
+|   fi64verifydoceditinprogresskey BIGINT,                                                               |
+|   flngverifydockey INT,                                                                                |
+|   fstrdoctype VARCHAR(24),                                                                             |
+|   fintdocver SMALLINT,                                                                                 |
+|   fi64doceditinprogresskey BIGINT,                                                                     |
+|   flngxmlkey INT,                                                                                      |
+|   fstrowner VARCHAR(20),                                                                               |
+|   fstrdistrictoffice VARCHAR(12),                                                                      |
+|   fdtmvisitstart TIMESTAMP,                                                                            |
+|   fdtmvisitend TIMESTAMP,                                                                              |
+|   flngduration INT,                                                                                    |
+|   flngwaittime INT,                                                                                    |
+|   customerlevelfilter STRING                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/int_crm_text_data'                             |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='4387165', 'totalSize'='1554824669') |
++--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.organisation_dim (                                                         |
+|   dip_party_sk BIGINT,                                                                                 |
+|   dip_party_id VARCHAR(30),                                                                            |
+|   common_dip_party_id VARCHAR(30),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   party_origin VARCHAR(10),                                                                            |
+|   customer_key VARCHAR(10),                                                                            |
+|   ird_number VARCHAR(10),                                                                              |
+|   customer_no VARCHAR(10),                                                                             |
+|   record_active_flag CHAR(1),                                                                          |
+|   legal_name VARCHAR(255),                                                                             |
+|   trading_name VARCHAR(255),                                                                           |
+|   party_start_date TIMESTAMP,                                                                          |
+|   party_ceased_date TIMESTAMP,                                                                         |
+|   party_ceased_flag CHAR(1),                                                                           |
+|   insolvency_reason VARCHAR(30),                                                                       |
+|   insolvency_code VARCHAR(10),                                                                         |
+|   insolvency_flag CHAR(1),                                                                             |
+|   party_type VARCHAR(255),                                                                             |
+|   party_type_code VARCHAR(10),                                                                         |
+|   party_subtype VARCHAR(255),                                                                          |
+|   party_subtype_code VARCHAR(10),                                                                      |
+|   party_class VARCHAR(30),                                                                             |
+|   party_class_code VARCHAR(10),                                                                        |
+|   party_segment VARCHAR(255),                                                                          |
+|   party_segment_code VARCHAR(10),                                                                      |
+|   bic_code VARCHAR(30),                                                                                |
+|   bic_desc VARCHAR(255),                                                                               |
+|   anzsic_level4_code VARCHAR(10),                                                                      |
+|   anzsic_level4_desc VARCHAR(255),                                                                     |
+|   anzsic_level3_code VARCHAR(10),                                                                      |
+|   anzsic_level3_desc VARCHAR(255),                                                                     |
+|   anzsic_level2_code VARCHAR(10),                                                                      |
+|   anzsic_level2_desc VARCHAR(255),                                                                     |
+|   anzsic_level1_code VARCHAR(10),                                                                      |
+|   anzsic_level1_desc VARCHAR(255),                                                                     |
+|   security_level VARCHAR(255),                                                                         |
+|   security_level_code VARCHAR(10),                                                                     |
+|   district_office VARCHAR(30),                                                                         |
+|   os_taxpayer_id VARCHAR(30),                                                                          |
+|   os_taxpayer_id_issuer VARCHAR(30),                                                                   |
+|   credit_reported_flag CHAR(1),                                                                        |
+|   comm_compliance_watch_flag CHAR(1),                                                                  |
+|   suspected_bank_fraud_flag CHAR(1),                                                                   |
+|   suspected_fraud_flag CHAR(1),                                                                        |
+|   security_incident_rptd_flag CHAR(1),                                                                 |
+|   safety_risk_level VARCHAR(30),                                                                       |
+|   org_incorp_date TIMESTAMP,                                                                           |
+|   org_cease_date TIMESTAMP,                                                                            |
+|   struck_off_flag CHAR(1),                                                                             |
+|   amalgamated_flag CHAR(1),                                                                            |
+|   amalgamating_flag CHAR(1),                                                                           |
+|   nz_cert_incorp_id VARCHAR(30),                                                                       |
+|   os_cert_incorp_id VARCHAR(30),                                                                       |
+|   os_cert_incorp_issuer VARCHAR(30),                                                                   |
+|   nzbn VARCHAR(30),                                                                                    |
+|   nz_society_actuaries_id VARCHAR(30),                                                                 |
+|   financial_institution_giin VARCHAR(30),                                                              |
+|   sponsoring_entity_giin VARCHAR(30),                                                                  |
+|   nil_company_flag CHAR(1),                                                                            |
+|   charity_org_flag CHAR(1),                                                                            |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT                                                                            |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/organisation_dim'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='12038505', 'totalSize'='793904187') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE test_cas_views.party_dim (                                                                 |
+|   dip_party_sk BIGINT,                                                                                  |
+|   dip_party_id VARCHAR(30),                                                                             |
+|   common_dip_party_id VARCHAR(30),                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   party_origin VARCHAR(10),                                                                             |
+|   customer_key VARCHAR(10),                                                                             |
+|   ird_number VARCHAR(10),                                                                               |
+|   customer_no VARCHAR(10),                                                                              |
+|   record_active_flag CHAR(1),                                                                           |
+|   legal_name VARCHAR(255),                                                                              |
+|   trading_name VARCHAR(255),                                                                            |
+|   party_start_date TIMESTAMP,                                                                           |
+|   party_ceased_date TIMESTAMP,                                                                          |
+|   party_ceased_flag CHAR(1),                                                                            |
+|   insolvency_reason VARCHAR(30),                                                                        |
+|   insolvency_code VARCHAR(10),                                                                          |
+|   insolvency_flag CHAR(1),                                                                              |
+|   party_type VARCHAR(255),                                                                              |
+|   party_type_code VARCHAR(10),                                                                          |
+|   party_subtype VARCHAR(255),                                                                           |
+|   party_subtype_code VARCHAR(10),                                                                       |
+|   party_class VARCHAR(30),                                                                              |
+|   party_class_code VARCHAR(10),                                                                         |
+|   party_segment VARCHAR(255),                                                                           |
+|   party_segment_code VARCHAR(10),                                                                       |
+|   bic_code VARCHAR(30),                                                                                 |
+|   bic_desc VARCHAR(255),                                                                                |
+|   anzsic_level4_code VARCHAR(10),                                                                       |
+|   anzsic_level4_desc VARCHAR(255),                                                                      |
+|   anzsic_level3_code VARCHAR(10),                                                                       |
+|   anzsic_level3_desc VARCHAR(255),                                                                      |
+|   anzsic_level2_code VARCHAR(10),                                                                       |
+|   anzsic_level2_desc VARCHAR(255),                                                                      |
+|   anzsic_level1_code VARCHAR(10),                                                                       |
+|   anzsic_level1_desc VARCHAR(255),                                                                      |
+|   security_level VARCHAR(255),                                                                          |
+|   security_level_code VARCHAR(10),                                                                      |
+|   district_office VARCHAR(30),                                                                          |
+|   os_taxpayer_id VARCHAR(30),                                                                           |
+|   os_taxpayer_id_issuer VARCHAR(30),                                                                    |
+|   credit_reported_flag CHAR(1),                                                                         |
+|   comm_compliance_watch_flag CHAR(1),                                                                   |
+|   suspected_bank_fraud_flag CHAR(1),                                                                    |
+|   suspected_fraud_flag CHAR(1),                                                                         |
+|   security_incident_rptd_flag CHAR(1),                                                                  |
+|   safety_risk_level VARCHAR(30),                                                                        |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT                                                                             |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/2_test/hive/cas_views/party_dim'                                      |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='59040820', 'totalSize'='3141720406') |
++---------------------------------------------------------------------------------------------------------+

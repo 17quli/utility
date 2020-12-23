@@ -1,0 +1,27 @@
+CREATE TABLE ${var:target_db}.app_tblnz_rtnkssgvc (
+flngDocKey INT,
+fintClaimType SMALLINT,
+fblnFirstClaim SMALLINT,
+fdtmClaimStartDate TIMESTAMP,
+fblnFinalClaim SMALLINT,
+fintFinalClaimEligibleDays SMALLINT,
+fstrSchemeIRDNumber VARCHAR(60),
+fblnAlternativeScheme SMALLINT,
+fcurGVCContributionAmount DECIMAL(19,4),
+fcurDirectMemberContributions DECIMAL(19,4),
+fintActualEligibleDays SMALLINT,
+fblnOverrideActualEligibleDays SMALLINT,
+fcurContributionsThroughIR DECIMAL(19,4),
+fblnTransferred SMALLINT,
+fintSTARTFirstEligibleDays SMALLINT,
+fblnClaimedFullEntitlement SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

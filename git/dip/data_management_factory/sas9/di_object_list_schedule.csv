@@ -1,0 +1,72 @@
+Path,Name,TypeName,Type,Description,Created,CreatedBy,Modified,ModifiedBy
+/IRD/DIP Data Management/5000 Processes/90 General/Back Up Prod_Raw(Job),Back Up Prod_Raw,Job,Job,,18/02/2020 3:26:08 PM,ird0nxa,19/02/2020 12:10:01 PM,ird0nxa
+/IRD/DIP Data Management/5000 Processes/90 General/Change Hadoop environment prod(Job),Change Hadoop environment prod,Job,Job,,21/06/2019 1:46:27 PM,ird0mxw,21/06/2019 1:47:01 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/90 General/Change Hadoop environment test(Job),Change Hadoop environment test,Job,Job,,14/06/2019 8:19:29 AM,ird0lxf,21/06/2019 1:46:24 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/90 General/DM Daily Email(Job),DM Daily Email,Job,Job,,11/03/2020 8:44:01 AM,ird0mxw,21/05/2020 6:17:06 AM,ird0dxm
+/IRD/DIP Data Management/5000 Processes/90 General/Restore Prod_Raw from Back Up(Job),Restore Prod_Raw from Back Up,Job,Job,,19/02/2020 12:27:16 PM,ird0nxa,19/02/2020 12:37:51 PM,ird0nxa
+/IRD/DIP Data Management/6000 Deployment/90 General/Change_Hadoop_environment_prod(DeployedJob),Change_Hadoop_environment_prod,DeployedJob,Deployed job,,21/06/2019 2:20:35 PM,ird0mxw,21/06/2019 2:20:35 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/90 General/Change_Hadoop_environment_test(DeployedJob),Change_Hadoop_environment_test,DeployedJob,Deployed job,,21/06/2019 2:20:35 PM,ird0mxw,21/06/2019 2:20:35 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/90 General/DM_Daily_Email(DeployedJob),DM_Daily_Email,DeployedJob,Deployed job,,11/03/2020 9:26:34 AM,,12/03/2020 11:07:07 AM,ird0mxw
+/IRD/DIP Data Management/8000 Transformations/90 General/Change Hadoop environment(GeneratedTransform),Change Hadoop environment,GeneratedTransform,Generated transformation,,14/06/2019 8:19:29 AM,ird0lxf,17/06/2019 9:33:58 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion(Folder),10 Raw Ingestion,Folder,Folder,,4/12/2019 12:04:02 PM,ird0dxm,9/01/2020 12:03:13 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined(Folder),20 Refined,Folder,Folder,,4/12/2019 12:04:41 PM,ird0dxm,14/01/2020 11:20:22 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/30 Silver(Folder),30 Silver,Folder,Folder,,12/02/2020 4:15:27 PM,ird0mxw,12/02/2020 4:15:27 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload(Folder),50 CAS Upload,Folder,Folder,,30/03/2020 5:20:01 PM,ird0mxw,30/03/2020 5:20:01 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/80 Workflow Monitoring(Folder),80 Workflow Monitoring,Folder,Folder,,21/05/2020 1:32:25 PM,ird0mxw,21/05/2020 1:32:25 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/90 General(Folder),90 General,Folder,Folder,,9/01/2020 12:05:30 PM,ird0mxw,9/01/2020 12:05:30 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account(Folder),Account,Folder,Folder,,25/02/2020 3:27:46 PM,ird0sxw,27/02/2020 4:03:57 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party(Folder),Party,Folder,Folder,,14/02/2020 1:58:50 PM,ird0mxw,14/02/2020 1:58:52 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload/CAS_Upload_Factory_Restart(DeployedFlow),CAS_Upload_Factory_Restart,DeployedFlow,Deployed flow,,2/04/2020 7:55:54 AM,ird0nxa,23/06/2020 3:08:10 PM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload/CAS_Upload_Lab_Restart(DeployedFlow),CAS_Upload_Lab_Restart,DeployedFlow,Deployed flow,,2/04/2020 7:51:54 AM,ird0nxa,23/06/2020 3:08:35 PM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/30 Silver/CCSi_Text_Analytics_Dashboard(DeployedFlow),CCSi_Text_Analytics_Dashboard,DeployedFlow,Deployed flow,,18/12/2019 4:07:00 PM,ird0nxk,9/04/2020 10:46:50 AM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload/DM_Daily_CAS(DeployedFlow),DM_Daily_CAS,DeployedFlow,Deployed flow,,17/06/2019 11:17:48 AM,ird0mxw,9/04/2020 10:59:16 AM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload/DM_Daily_CAS_Upload_Factory(DeployedFlow),DM_Daily_CAS_Upload_Factory,DeployedFlow,Deployed flow,,2/04/2020 7:44:43 AM,ird0nxa,23/06/2020 3:09:04 PM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/50 CAS Upload/DM_Daily_CAS_Upload_Lab(DeployedFlow),DM_Daily_CAS_Upload_Lab,DeployedFlow,Deployed flow,,2/04/2020 7:41:32 AM,ird0nxa,23/06/2020 3:09:19 PM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch1(DeployedFlow),DM_Daily_EDW_Batch1,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,1/04/2020 10:58:32 AM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch11(DeployedFlow),DM_Daily_EDW_Batch11,DeployedFlow,Deployed flow,,6/06/2020 10:21:32 PM,ird0dxm,15/06/2020 5:04:28 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch12(DeployedFlow),DM_Daily_EDW_Batch12,DeployedFlow,Deployed flow,,24/06/2020 3:46:05 PM,ird0dxm,24/06/2020 3:46:05 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch2(DeployedFlow),DM_Daily_EDW_Batch2,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 11:18:07 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch3(DeployedFlow),DM_Daily_EDW_Batch3,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 11:55:50 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch4(DeployedFlow),DM_Daily_EDW_Batch4,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 11:18:07 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch5(DeployedFlow),DM_Daily_EDW_Batch5,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 12:09:09 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch6(DeployedFlow),DM_Daily_EDW_Batch6,DeployedFlow,Deployed flow,,3/03/2020 1:47:14 PM,ird0axs,3/03/2020 1:47:50 PM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch7(DeployedFlow),DM_Daily_EDW_Batch7,DeployedFlow,Deployed flow,,23/03/2020 8:28:07 PM,ird0dxm,9/04/2020 11:26:11 AM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_EDW_Batch9(DeployedFlow),DM_Daily_EDW_Batch9,DeployedFlow,Deployed flow,,12/05/2020 7:54:14 PM,ird0dxm,12/05/2020 7:54:14 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/90 General/DM_Daily_Final(DeployedFlow),DM_Daily_Final,DeployedFlow,Deployed flow,,11/03/2020 11:46:42 AM,ird0mxw,15/04/2020 5:24:48 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/90 General/DM_Daily_Master(DeployedFlow),DM_Daily_Master,DeployedFlow,Deployed flow,,25/05/2020 3:52:28 PM,ird0mxw,1/07/2020 6:28:34 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_Raw_Ingestion_EDW(DeployedFlow),DM_Daily_Raw_Ingestion_EDW,DeployedFlow,Deployed flow,,30/10/2019 10:16:41 AM,ird0mxw,24/06/2020 4:04:47 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_Raw_Ingestion_START(DeployedFlow),DM_Daily_Raw_Ingestion_START,DeployedFlow,Deployed flow,,17/06/2019 11:25:00 AM,ird0mxw,24/06/2020 4:05:28 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/20 Refined/DM_Daily_Refined_EDW(DeployedFlow),DM_Daily_Refined_EDW,DeployedFlow,Deployed flow,,25/05/2020 1:54:13 PM,ird0mxw,23/06/2020 8:49:01 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/DM_Daily_Refined_START(DeployedFlow),DM_Daily_Refined_START,DeployedFlow,Deployed flow,,9/01/2020 1:08:48 PM,ird0mxw,23/06/2020 8:42:07 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch1(DeployedFlow),DM_Daily_START_Batch1,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,23/03/2020 8:15:11 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch10(DeployedFlow),DM_Daily_START_Batch10,DeployedFlow,Deployed flow,,22/05/2020 12:59:14 PM,ird0dxm,24/05/2020 7:57:24 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch11(DeployedFlow),DM_Daily_START_Batch11,DeployedFlow,Deployed flow,,6/06/2020 10:20:18 PM,ird0dxm,15/06/2020 12:54:50 PM,ird0axs
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch12(DeployedFlow),DM_Daily_START_Batch12,DeployedFlow,Deployed flow,,24/06/2020 4:03:10 PM,ird0dxm,24/06/2020 4:39:39 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch2(DeployedFlow),DM_Daily_START_Batch2,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 11:18:07 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch3(DeployedFlow),DM_Daily_START_Batch3,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,6/05/2020 10:18:14 AM,ird0nxa
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch4(DeployedFlow),DM_Daily_START_Batch4,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,14/02/2020 12:31:36 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch5(DeployedFlow),DM_Daily_START_Batch5,DeployedFlow,Deployed flow,,14/02/2020 11:18:07 AM,ird0axs,25/06/2020 6:25:49 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch6(DeployedFlow),DM_Daily_START_Batch6,DeployedFlow,Deployed flow,,3/03/2020 1:49:51 PM,ird0axs,24/03/2020 8:28:28 AM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch7(DeployedFlow),DM_Daily_START_Batch7,DeployedFlow,Deployed flow,,23/03/2020 8:23:15 PM,ird0dxm,24/03/2020 10:21:16 AM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch8(DeployedFlow),DM_Daily_START_Batch8,DeployedFlow,Deployed flow,,17/04/2020 9:43:46 AM,ird0axs,13/05/2020 3:14:20 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/DM_Daily_START_Batch9(DeployedFlow),DM_Daily_START_Batch9,DeployedFlow,Deployed flow,,7/05/2020 1:39:27 AM,ird0dxm,13/05/2020 12:29:34 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_CleanRaw_EDW(DeployedFlow),DM_RA_CleanRaw_EDW,DeployedFlow,Deployed flow,,5/12/2019 10:39:54 AM,ird0sxw,26/05/2020 10:47:19 AM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_CleanRaw_START(DeployedFlow),DM_RA_CleanRaw_START,DeployedFlow,Deployed flow,,4/11/2019 3:31:15 PM,ird0sxw,6/05/2020 12:38:16 PM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_Final(DeployedFlow),DM_RA_Final,DeployedFlow,Deployed flow,,18/02/2020 9:15:20 AM,ird0sxw,13/05/2020 12:18:51 PM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_Initial(DeployedFlow),DM_RA_Initial,DeployedFlow,Deployed flow,,18/02/2020 1:55:44 PM,ird0sxw,18/06/2020 11:11:35 AM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_Merge_EDW(DeployedFlow),DM_RA_Merge_EDW,DeployedFlow,Deployed flow,,12/02/2020 4:38:06 PM,ird0sxw,15/05/2020 8:36:03 AM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Account/DM_RA_Merge_START(DeployedFlow),DM_RA_Merge_START,DeployedFlow,Deployed flow,,12/02/2020 3:59:50 PM,ird0sxw,13/05/2020 8:54:28 AM,ird0sxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party/DM_RP_ALL(DeployedFlow),DM_RP_ALL,DeployedFlow,Deployed flow,,24/09/2019 3:42:28 PM,ird0mxw,17/12/2019 7:10:45 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party/DM_RP_ALL_Merge(DeployedFlow),DM_RP_ALL_Merge,DeployedFlow,Deployed flow,,3/06/2020 12:44:40 PM,ird0mxw,3/06/2020 12:45:38 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party/DM_RP_CleanRaw_EDW(DeployedFlow),DM_RP_CleanRaw_EDW,DeployedFlow,Deployed flow,,13/09/2019 9:55:14 AM,ird0mxw,17/12/2019 7:10:45 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party/DM_RP_CleanRaw_START(DeployedFlow),DM_RP_CleanRaw_START,DeployedFlow,Deployed flow,,26/09/2019 11:43:03 PM,ird0mxw,1/05/2020 4:44:17 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/20 Refined/Party/DM_RP_Merge_START(DeployedFlow),DM_RP_Merge_START,DeployedFlow,Deployed flow,,17/10/2019 12:25:46 PM,ird0mxw,14/01/2020 11:21:02 AM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/80 Workflow Monitoring/LCF_Workflow_Monitoring(DeployedFlow),LCF_Workflow_Monitoring,DeployedFlow,Deployed flow,,13/05/2020 3:21:11 PM,ird0mxw,19/06/2020 9:12:15 AM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/Metadata_Comparison(DeployedFlow),Metadata_Comparison,DeployedFlow,Deployed flow,,11/07/2019 1:04:29 PM,ird0lxf,2/03/2020 5:36:24 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/Raw_Ingestion_Manual_NZAD(DeployedFlow),Raw_Ingestion_Manual_NZAD,DeployedFlow,Deployed flow,,2/06/2020 4:12:18 PM,ird0mxw,2/06/2020 4:15:33 PM,ird0mxw
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch10(DeployedFlow),TDW_Manual_Batch10,DeployedFlow,Deployed flow,,24/05/2020 8:05:49 PM,ird0dxm,24/05/2020 8:08:02 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch11(DeployedFlow),TDW_Manual_Batch11,DeployedFlow,Deployed flow,,6/06/2020 10:24:20 PM,ird0dxm,8/06/2020 10:22:49 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch12(DeployedFlow),TDW_Manual_Batch12,DeployedFlow,Deployed flow,,24/06/2020 4:14:54 PM,ird0dxm,25/06/2020 4:17:30 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch6(DeployedFlow),TDW_Manual_Batch6,DeployedFlow,Deployed flow,,4/03/2020 5:50:40 AM,ird0axs,4/03/2020 8:56:27 AM,ird0axs
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch7(DeployedFlow),TDW_Manual_Batch7,DeployedFlow,Deployed flow,,23/03/2020 8:57:24 PM,ird0dxm,12/05/2020 8:03:29 PM,ird0dxm
+/IRD/DIP Data Management/9000 Workflows/10 Raw Ingestion/TDW_Manual_Batch9(DeployedFlow),TDW_Manual_Batch9,DeployedFlow,Deployed flow,,7/05/2020 7:02:35 AM,ird0dxm,12/05/2020 8:06:18 PM,ird0dxm

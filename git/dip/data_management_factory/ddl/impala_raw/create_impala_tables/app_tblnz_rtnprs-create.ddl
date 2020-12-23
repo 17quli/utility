@@ -1,0 +1,33 @@
+
+CREATE TABLE ${var:target_db}.app_tblnz_rtnprs (
+flngReturnKey INT,
+flngItemNumber INT,
+flngVer INT,
+flngVerLast INT,
+fblnInError SMALLINT,
+fstrEmployerIRD VARCHAR(18),
+fstrEmployerName VARCHAR(40),
+fstrEmployeeIRD VARCHAR(18),
+fstrEmployeeName VARCHAR(510),
+flngTimesPaid INT,
+fblnOverrideValidation SMALLINT,
+fblnInvalidFilingHistory SMALLINT,
+fblnDuplicate SMALLINT,
+fblnInvalidNumberEmployees SMALLINT,
+fblnNoPILink SMALLINT,
+fblnNoReturn SMALLINT,
+fblnNoPayment SMALLINT,
+fblnLateReturn SMALLINT,
+fblnLargeEmployer SMALLINT,
+fdtmDeleted TIMESTAMP,
+fdtmProcessed TIMESTAMP,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

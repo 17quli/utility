@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML Jobflow definition -->
+<!--This file has been generated with Process Manager. 
+    Modify at your own risk.  Changes may render the definition unusable.   
+    The definition format may change in future versions of Process Manager.    -->
+<!DOCTYPE JobFlowReq SYSTEM "JobFlowDef30.dtd"><JobFlowReq  DTDVersion="3.0"  MainEntry="irdrun:LCF_Workflow_Monitoring"  EndBehaviour="FlowContinueDelay"  FlowStateMailWhen="None"  ExitCodeRule="FromSumOfItems"  ClientVersion="10.201"  Description=""  ExitConditionIgnoreWaitingActivities=""  Exclusive="Yes"  APP_AUTH="8fU15PiJ4Q+/qtU7uqx/UT51QJqDL40KpFl+cZ9i9xXBdXutaaUuICu0DrsYTG+zlOiOChDRoOI="  Operation="Schedule" >
+<JobDef ExecutionType="lsf" Name="irdrun:LCF_Workflow_Monitoring:LCF_WORKFLOW_JOB_RUN">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev2/SASApp/BatchServer/sasbatch.sh -noprint -log /sso/biconfig/940/Lev2/Logs/LCF_Workflow_Monitoring_LCF_WORKFLOW_JOB_RUN_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev2/SASApp/SASEnvironment/SASCode/Jobs/LCF_WORKFLOW_JOB_RUN.sas"/>
+  <QueueSelect  Value="1_Parallel"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:LCF_Workflow_Monitoring:LCF_V_WORKFLOW_STATUS_10DAYS_Copy">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev2/SASApp/BatchServer/sasbatch.sh -noprint -log /sso/biconfig/940/Lev2/Logs/LCF_Workflow_Monitoring_LCF_V_WORKFLOW_STATUS_10DAYS_Copy_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev2/SASApp/SASEnvironment/SASCode/Jobs/LCF_V_WORKFLOW_STATUS_10DAYS_Copy.sas"/>
+  <QueueSelect  Value="1_Parallel"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="link" Name="irdrun:LCF_Workflow_Monitoring:Link_Inst_0">
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:LCF_Workflow_Monitoring:LCF_Workflow_Monitoring_Email">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev2/SASApp/BatchServer/sasbatch.sh -noprint -log /sso/biconfig/940/Lev2/Logs/LCF_Workflow_Monitoring_LCF_Workflow_Monitoring_Email_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev2/SASApp/SASEnvironment/SASCode/Jobs/LCF_Workflow_Monitoring_Email.sas"/>
+  <QueueSelect  Value="1_Parallel"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:LCF_Workflow_Monitoring:LSF_EVENT_LOG">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev2/SASApp/BatchServer/sasbatch.sh -noprint -log /sso/biconfig/940/Lev2/Logs/LCF_Workflow_Monitoring_LSF_EVENT_LOG_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev2/SASApp/SASEnvironment/SASCode/Jobs/LSF_EVENT_LOG.sas"/>
+  <QueueSelect  Value="1_Parallel"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="link" Name="irdrun:LCF_Workflow_Monitoring:Link_Inst_2">
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="link" Name="irdrun:LCF_Workflow_Monitoring:Terminal_Link_Inst_1">
+  <ExitCodeValue  Value="irdrun:LCF_Workflow_Monitoring:LCF_V_WORKFLOW_STATUS_10DAYS_Copy,irdrun:LCF_Workflow_Monitoring:LCF_Workflow_Monitoring_Email"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobFlowDef  Name="irdrun:LCF_Workflow_Monitoring"><Events CombinationType="And"><Event GeneratorType="CalendarTime_v1"  ClientTZoffset="43200"  TimeZone="GMT+12:00"  TimeZoneType="3" >Not_third_friday_saturday_of_month:*:0,5,10,15,20,25,30,35,40,45,50,55%1+Pacific/Auckland@Sys</Event></Events>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:LCF_WORKFLOW_JOB_RUN" Description="" ><Events CombinationType="And"><Event GeneratorType="lsf"  IsProxy="No" >Done(irdrun:LCF_Workflow_Monitoring:LSF_EVENT_LOG)</Event></Events><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:LCF_V_WORKFLOW_STATUS_10DAYS_Copy" Description="" ><Events CombinationType="And"><Event GeneratorType="lsf"  IsProxy="No" >Done(irdrun:LCF_Workflow_Monitoring:LCF_WORKFLOW_JOB_RUN)</Event></Events><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:Link_Inst_0" Description="null" ><Events CombinationType="Or"><Event GeneratorType="lsf"  IsProxy="No" >Exit(irdrun:LCF_Workflow_Monitoring:LCF_WORKFLOW_JOB_RUN,!=,0)</Event><Event GeneratorType="lsf"  IsProxy="No" >Exit(irdrun:LCF_Workflow_Monitoring:LSF_EVENT_LOG,!=,0)</Event><Event GeneratorType="lsf"  IsProxy="No" >Exit(irdrun:LCF_Workflow_Monitoring:LCF_V_WORKFLOW_STATUS_10DAYS_Copy,!=,0)</Event></Events><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:LCF_Workflow_Monitoring_Email" Description="" ><Events CombinationType="And"><Event GeneratorType="link" >Done(irdrun:LCF_Workflow_Monitoring:Link_Inst_0)</Event></Events><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:LSF_EVENT_LOG" Description="" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:Link_Inst_2" Description="null" ><Events CombinationType="Or"><Event GeneratorType="lsf"  IsProxy="No" >End(irdrun:LCF_Workflow_Monitoring:LCF_V_WORKFLOW_STATUS_10DAYS_Copy)</Event><Event GeneratorType="lsf"  IsProxy="No" >End(irdrun:LCF_Workflow_Monitoring:LCF_Workflow_Monitoring_Email)</Event></Events><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:LCF_Workflow_Monitoring:Terminal_Link_Inst_1" Description="null" ><Events CombinationType="And"><Event GeneratorType="link" >Done(irdrun:LCF_Workflow_Monitoring:Link_Inst_2)</Event></Events><Exceptions></Exceptions></ActivityDef>
+</JobFlowDef>
+</JobFlowReq>

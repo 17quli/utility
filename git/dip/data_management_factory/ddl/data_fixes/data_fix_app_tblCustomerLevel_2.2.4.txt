@@ -1,0 +1,190 @@
+--******************************************************************* 
+--******************************************************************* 
+--One-off Data Fix for app_tblCustomerLevel table: 
+--populate missing values for flngCustomerKey from app_tblCustomer   
+  
+--This data fix will be applied to the Journal table. 
+--Target Raw table will be truncated and reloaded from the Journal 
+--when the Job runs next time. 
+--******************************************************************* 
+--******************************************************************* 
+  
+  
+--******************************************************************* 
+--Part 1: Preparartion - take backups, truncate table, count records 
+--******************************************************************* 
+  
+--Create backup table for app_tblCustomerLevel Raw table 
+create table ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date} stored as parquet as select * from ${env}_raw.app_tblCustomerLevel; 
+compute stats ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}; 
+  
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_raw.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}; 
+  
+--Create backup table for app_tblCustomerLevel Journal table 
+create table ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl stored as parquet as select * from ${env}_jnl.app_tblCustomerLevel; 
+compute stats ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl; 
+  
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_jnl.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl; 
+  
+--Sanity check - check one particualr flngCustomerKey that has the issue of multiple Active records 
+--there should be two Active record for that flngCustomerKey: 
+select * from ${env}_raw.app_tblCustomerLevel where flngCustomerKey = 1784035840 order by fdtmwhen; 
+  
+--Truncate Raw table as we will apply a data fix to the Journal table and the Raw table will be re-created from the Journal table.  
+truncate table ${env}_raw.app_tblCustomerLevel; 
+  
+--Check number of records where flngCustomerKey is Null and take a note of it 
+select count(*) from ${env}_jnl.app_tblCustomerLevel where flngCustomerKey is Null; 
+  
+--app_tblCustomer table - Check instances of duplicate records - we want to see zero records  
+select count(*) from ( 
+select flngdockey, count(*) as count_rec from ${env}_raw.app_tblCustomer 
+where record_active_flag = 'Y' 
+and record_deleted_flag = 'N' 
+group by flngdockey) as a 
+where a.count_rec <> 1; 
+
+--Check that for all instances of Null values there is a record in app_tblCustomer for a fix   
+select count(*) from ${env}_raw.app_tblCustomer where flngdockey in (  
+select flngdockey from ${env}_jnl.app_tblCustomerLevel where flngCustomerKey is Null) 
+and record_active_flag = 'Y' 
+and record_deleted_flag = 'N'; 
+  
+  
+--******************************************************************* 
+--Part 2: Data Fix 
+--******************************************************************* 
+  
+drop table if exists ${env}_jnl.app_tblCustomerLevel_NEW; 
+  
+create table ${env}_jnl.app_tblCustomerLevel_NEW as 
+select       
+_l.flngdockey,     
+coalesce(_l.flngcustomerkey, _r.flngcustomerkey) as flngcustomerkey, 
+_l.fstrcustomerlevel,     
+_l.fstrwho,     
+_l.fdtmwhen,     
+_l.batch_key 
+from ${env}_jnl.app_tblCustomerLevel as _l 
+left join ${env}_raw.app_tblCustomer as _r 
+on _l.flngdockey = _r.flngdockey 
+and _l.flngcustomerkey is Null 
+and _r.record_active_flag = 'Y' 
+and _r.record_deleted_flag = 'N' 
+; 
+  
+invalidate metadata ${env}_jnl.app_tblCustomerLevel_NEW; 
+refresh ${env}_jnl.app_tblCustomerLevel_NEW; 
+compute stats ${env}_jnl.app_tblCustomerLevel_NEW; 
+  
+--Check that no extra records have been introduced as a result of the data fix join 
+select count(*) from ${env}_jnl.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_jnl.app_tblCustomerLevel_NEW; 
+  
+--Check number of records where flngCustomerKey is Null before and after the fix and take a note of it 
+--THIS SHOULD BE ZERO after the fix! 
+select count(*) from ${env}_jnl.app_tblCustomerLevel where flngCustomerKey is Null 
+union all 
+select count(*) from ${env}_jnl.app_tblCustomerLevel_NEW where flngCustomerKey is Null; 
+  
+--Check few random records 
+select * from ${env}_jnl.app_tblCustomerLevel_NEW limit 100; 
+--Check the structure of the table 
+describe ${env}_jnl.app_tblCustomerLevel_NEW; 
+  
+--If the above checks are satisfactory then proceed 
+alter table ${env}_jnl.app_tblCustomerLevel 
+rename to ${env}_jnl.app_tblCustomerLevel_OLD; 
+                         
+alter table ${env}_jnl.app_tblCustomerLevel_NEW 
+rename to ${env}_jnl.app_tblCustomerLevel; 
+                
+refresh ${env}_jnl.app_tblCustomerLevel; 
+compute stats ${env}_jnl.app_tblCustomerLevel; 
+  
+drop table ${env}_jnl.app_tblCustomerLevel_OLD; 
+  
+  
+--******************************************************************* 
+--Part 3: Review the results - Journal Table 
+--******************************************************************* 
+--Check number of records where flngCustomerKey is Null and take a note of it 
+--THIS SHOULD BE ZERO! 
+select count(*) from ${env}_jnl.app_tblCustomerLevel where flngCustomerKey is Null 
+  
+--Check total number of records is the same as it was before the data fix 
+select count(*) from ${env}_jnl.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl;  
+  
+--Check few random records 
+select * from ${env}_jnl.app_tblCustomerLevel limit 100; 
+  
+--Check the structure of the table 
+describe ${env}_jnl.app_tblCustomerLevel; 
+
+--Check that Target Raw table has zero records as it was truncated:
+select count(*) from ${env}_raw.app_tblCustomerLevel;
+  
+  
+--******************************************************************* 
+--Part 4: Review the results - Target Raw Table - after running the Job in Schedule 
+--******************************************************************* 
+--Check number of records where flngCustomerKey is Null and take a note of it 
+--THIS SHOULD BE ZERO! 
+select count(*) from ${env}_raw.app_tblCustomerLevel where flngCustomerKey is Null 
+  
+--Sanity check - check one particualr flngCustomerKey that had the issue of multiple Active records 
+--there should only now be one Active record for that flngCustomerKey: 
+select * from ${env}_raw.app_tblCustomerLevel where flngCustomerKey = 1784035840 order by fdtmwhen; 
+  
+--******************************************************************* 
+--The END! 
+--******************************************************************* 
+
+
+--******************************************************************* 
+--Rollback - restore from Backups if required
+--******************************************************************* 
+--Create backup table for app_tblCustomerLevel Raw table 
+create table ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW} stored as parquet as select * from ${env}_raw.app_tblCustomerLevel; 
+compute stats ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW}; 
+  
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_raw.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW}; 
+  
+--Create backup table for app_tblCustomerLevel Journal table 
+create table ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW}_jnl stored as parquet as select * from ${env}_jnl.app_tblCustomerLevel; 
+compute stats ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW}_jnl; 
+  
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_jnl.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date_NEW}_jnl; 
+
+--Restore from back up - Raw table
+drop table ${env}_raw.app_tblCustomerLevel;
+create table ${env}_raw.app_tblCustomerLevel stored as parquet as select * from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}; 
+compute stats ${env}_raw.app_tblCustomerLevel; 
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_raw.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}; 
+
+--Restore from back up - Journal table
+drop table ${env}_jnl.app_tblCustomerLevel;
+create table ${env}_jnl.app_tblCustomerLevel stored as parquet as select * from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl; 
+compute stats ${env}_jnl.app_tblCustomerLevel; 
+--Confirm number of records and take a note of it 
+select count(*) from ${env}_jnl.app_tblCustomerLevel 
+union all 
+select count(*) from ${env}_dw.app_tblCustomerLevel_ird0nxa_${backup_date}_jnl; 

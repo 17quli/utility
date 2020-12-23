@@ -1,0 +1,14 @@
+2020-06-02 10:41:58------start ./tbsrestore.sh prod_dw lab_fcp_raw_cas_views prefix prod_refined_ suffix _20200531 tbllist t1.lst
+2020-06-02 10:41:59------29 tables or views
+2020-06-02 10:41:59------show create table
+2020-06-02 10:41:59------0 tables to be restored
+2020-06-02 10:41:59------drop table
+2020-06-02 10:42:04------create table
+2020-06-02 10:42:04------0 tables created
+2020-06-02 10:42:04------hdfs copy
+2020-06-02 10:42:04------complete hdfs copy
+2020-06-02 10:42:04------refresh table
+2020-06-02 10:42:04------0 tables refreshed
+2020-06-02 10:42:04------recover partitions
+2020-06-02 10:42:04------0 table partitions recovered
+2020-06-02 10:42:04------complete ./tbsrestore.sh prod_dw lab_fcp_raw_cas_views

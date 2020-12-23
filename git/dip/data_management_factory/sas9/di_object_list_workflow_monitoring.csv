@@ -1,0 +1,52 @@
+Path,Name,TypeName,Type,Description,Created,CreatedBy,Modified,ModifiedBy
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/Check Depedency Refined Account EDW(Job),Check Depedency Refined Account EDW,Job,Job,,18/06/2020 10:43:24 AM,ird0sxw,18/06/2020 11:48:09 AM,ird0sxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/Check Depedency Refined Account START(Job),Check Depedency Refined Account START,Job,Job,,18/06/2020 10:43:24 AM,ird0sxw,23/06/2020 8:38:04 AM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/Check Depedency Refined Party START(Job),Check Depedency Refined Party START,Job,Job,,5/06/2020 2:16:21 PM,ird0mxw,9/06/2020 5:13:09 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/LCF V_WORKFLOW_STATUS_10DAYS Copy(Job),LCF V_WORKFLOW_STATUS_10DAYS Copy,Job,Job,,14/05/2020 1:37:51 PM,ird0mxw,9/06/2020 9:20:47 AM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/LCF Workflow Monitoring Email(Job),LCF Workflow Monitoring Email,Job,Job,,19/05/2020 2:15:47 PM,ird0mxw,19/05/2020 2:15:47 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/LCF WORKFLOW_JOB(Job),LCF WORKFLOW_JOB,Job,Job,,30/04/2020 11:20:01 AM,ird0mxw,13/05/2020 12:26:21 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/LCF WORKFLOW_JOB_RUN(Job),LCF WORKFLOW_JOB_RUN,Job,Job,,30/04/2020 11:20:01 AM,ird0mxw,10/06/2020 9:08:33 PM,ird0mxw
+/IRD/DIP Data Management/5000 Processes/80 Workflow Monitoring/LSF EVENT_LOG(Job),LSF EVENT_LOG,Job,Job,,20/04/2020 3:55:07 PM,ird0mxw,15/06/2020 3:41:43 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/Check_Depedency_Refined_Account_EDW(DeployedJob),Check_Depedency_Refined_Account_EDW,DeployedJob,Deployed job,,23/06/2020 8:37:46 AM,ird0mxw,23/06/2020 8:37:46 AM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/Check_Depedency_Refined_Account_START(DeployedJob),Check_Depedency_Refined_Account_START,DeployedJob,Deployed job,,23/06/2020 8:37:46 AM,,23/06/2020 8:38:15 AM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/Check_Depedency_Refined_Party_START(DeployedJob),Check_Depedency_Refined_Party_START,DeployedJob,Deployed job,,9/06/2020 4:56:15 PM,,10/06/2020 9:08:44 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/LCF_V_WORKFLOW_STATUS_10DAYS_Copy(DeployedJob),LCF_V_WORKFLOW_STATUS_10DAYS_Copy,DeployedJob,Deployed job,,18/05/2020 1:57:52 PM,,9/06/2020 9:21:17 AM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/LCF_WORKFLOW_JOB(DeployedJob),LCF_WORKFLOW_JOB,DeployedJob,Deployed job,,13/05/2020 3:08:55 PM,,9/06/2020 3:57:07 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/LCF_WORKFLOW_JOB_RUN(DeployedJob),LCF_WORKFLOW_JOB_RUN,DeployedJob,Deployed job,,13/05/2020 3:37:21 PM,,9/06/2020 3:57:08 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/LCF_Workflow_Monitoring_Email(DeployedJob),LCF_Workflow_Monitoring_Email,DeployedJob,Deployed job,,19/05/2020 2:17:36 PM,ird0mxw,19/05/2020 2:17:36 PM,ird0mxw
+/IRD/DIP Data Management/6000 Deployment/80 Workflow Monitoring/LSF_EVENT_LOG(DeployedJob),LSF_EVENT_LOG,DeployedJob,Deployed job,,19/05/2020 2:22:49 PM,,11/06/2020 5:09:54 PM,ird0mxw
+/IRD/DIP Data Management/8000 Transformations/80 Workflow Monitoring/Check Run Status(GeneratedTransform),Check Run Status,GeneratedTransform,Generated transformation,,5/06/2020 2:16:21 PM,ird0mxw,9/06/2020 5:17:43 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/DIP_CONFIG(Table),DIP_CONFIG,Table,Table,,15/07/2019 12:45:36 PM,ird0lxf,15/07/2019 12:45:36 PM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/DIP_OBJECT_RUN(Table),DIP_OBJECT_RUN,Table,Table,,10/06/2019 11:12:01 AM,ird0lxf,15/04/2020 12:56:59 PM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/DOMAIN(Table),DOMAIN,Table,Table,,5/09/2019 12:54:55 PM,ird0dxi,5/09/2019 12:54:55 PM,ird0dxi
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/FAMILY_RANKS(Table),FAMILY_RANKS,Table,Table,,23/06/2020 6:47:28 AM,ird0dxi,23/06/2020 6:47:28 AM,ird0dxi
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/LARGE_OBJECT_STRATIFY_LEVELS(Table),LARGE_OBJECT_STRATIFY_LEVELS,Table,Table,,3/04/2020 1:54:06 PM,ird0lxf,2/06/2020 1:16:14 PM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/lcf_z_test_p2(Table),lcf_z_test_p2,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,13/01/2020 8:40:19 AM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/lcf_z_test_p3(Table),lcf_z_test_p3,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,24/07/2019 9:06:51 AM,ird0sxd
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/MD_TEST_CUSTOMSQL_P2(Table),MD_TEST_CUSTOMSQL_P2,Table,Table,,26/06/2019 11:58:24 AM,ird0sxd,26/06/2019 11:58:24 AM,ird0sxd
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/MP_SOURCE_CODE(Table),MP_SOURCE_CODE,Table,Table,,23/06/2020 6:47:28 AM,ird0dxi,23/06/2020 6:47:28 AM,ird0dxi
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/OBJECT(Table),OBJECT,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,9/06/2020 8:48:30 AM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/OBJECT_CONTROL(Table),OBJECT_CONTROL,Table,Table,,9/04/2020 6:56:06 AM,ird0nxa,9/04/2020 6:56:06 AM,ird0nxa
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/OBJECT_RUN(Table),OBJECT_RUN,Table,Table,,29/01/2020 12:14:29 PM,ird0sxd,12/02/2020 11:13:14 AM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/OBJECT_RUN_old(Table),OBJECT_RUN_old,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,29/01/2020 12:12:46 PM,ird0sxd
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/OBJECT_TEMP_CAS_TESTING(Table),OBJECT_TEMP_CAS_TESTING,Table,Table,,30/03/2020 3:24:59 PM,ird0nxa,30/03/2020 3:24:59 PM,ird0nxa
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/RETENTION_PERIOD(Table),RETENTION_PERIOD,Table,Table,,5/09/2019 12:54:55 PM,ird0dxi,5/09/2019 12:54:55 PM,ird0dxi
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/STG_LSF_EVENT_LOG(Table),STG_LSF_EVENT_LOG,Table,Table,,20/04/2020 3:55:07 PM,ird0mxw,9/06/2020 1:47:21 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/SUB_DOMAIN(Table),SUB_DOMAIN,Table,Table,,5/09/2019 12:54:55 PM,ird0dxi,5/09/2019 12:54:55 PM,ird0dxi
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/SYSTEM_SCHEMA(Table),SYSTEM_SCHEMA,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,5/07/2019 1:01:55 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/V_DOMAIN_INFO(Table),V_DOMAIN_INFO,Table,Table,,25/09/2019 11:34:44 AM,ird0dxm,25/09/2019 11:34:44 AM,ird0dxm
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/V_LSF_WORKFLOW_JOB(Table),V_LSF_WORKFLOW_JOB,Table,Table,,30/04/2020 11:20:01 AM,ird0mxw,8/05/2020 4:17:43 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/V_WORKFLOW_ALL(Table),V_WORKFLOW_ALL,Table,Table,,3/06/2020 1:34:59 PM,ird0mxw,3/06/2020 2:46:11 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/V_WORKFLOW_JOB_RUN_DELTA(Table),V_WORKFLOW_JOB_RUN_DELTA,Table,Table,,30/04/2020 11:20:01 AM,ird0mxw,15/05/2020 8:26:38 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/V_WORKFLOW_STATUS_10DAYS(Table),V_WORKFLOW_STATUS_10DAYS,Table,Table,,14/05/2020 2:18:56 PM,ird0mxw,9/06/2020 9:20:25 AM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/WORKFLOW_JOB(Table),WORKFLOW_JOB,Table,Table,,30/04/2020 11:20:01 AM,ird0mxw,8/05/2020 4:20:24 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/WORKFLOW_JOB_RUN(Table),WORKFLOW_JOB_RUN,Table,Table,,30/04/2020 11:20:01 AM,ird0mxw,15/05/2020 8:26:45 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P1(Table),Z_TEST$_P1,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,23/07/2019 7:39:09 PM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P1_CS(Table),Z_TEST$_P1_CS,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,4/06/2019 3:50:09 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P2(Table),Z_TEST$_P2,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,13/01/2020 8:40:03 AM,ird0lxf
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P2_CS(Table),Z_TEST$_P2_CS,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,4/06/2019 3:50:09 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P2H1(Table),Z_TEST$_P2H1,Table,Table,,24/07/2019 11:50:08 AM,ird0sxd,25/07/2019 5:40:18 AM,ird0sxd
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P2H3(Table),Z_TEST$_P2H3,Table,Table,,24/07/2019 11:50:20 AM,ird0sxd,24/07/2019 1:06:31 PM,ird0sxd
+/IRD/DIP Data Management/3000 Repositories/DIP/DIP LCF/Z_TEST$_P3(Table),Z_TEST$_P3,Table,Table,,31/05/2019 5:24:30 PM,ird0mxw,24/06/2019 11:56:04 AM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/External Files/LSF/LSF_EVENT_LOG(ExternalFile),LSF_EVENT_LOG,ExternalFile,External file,,20/04/2020 3:55:07 PM,ird0mxw,20/04/2020 3:55:07 PM,ird0mxw
+/IRD/DIP Data Management/3000 Repositories/External Files/LSF/LSF_EVENT_LOG_1(ExternalFile),LSF_EVENT_LOG_1,ExternalFile,External file,,20/04/2020 3:55:07 PM,ird0mxw,20/04/2020 3:55:07 PM,ird0mxw

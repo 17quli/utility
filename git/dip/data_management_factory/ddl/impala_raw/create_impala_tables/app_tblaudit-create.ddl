@@ -1,0 +1,28 @@
+CREATE TABLE ${var:target_db}.app_tblaudit (
+flngAuditkey INT,
+fstrAuditType VARCHAR(12),
+fstrAuditId VARCHAR(100),
+fstrExternalID VARCHAR(60),
+flngAccountKey INT,
+flngFolderKey INT,
+flngTeamKey INT,
+flngJournalKey INT,
+fblnPosted SMALLINT,
+fdtmPosted TIMESTAMP,
+fcurTotal DECIMAL(19,4),
+fdblHours DOUBLE,
+flngIndicatorKey INT,
+flngPeriodIndKey INT,
+flngDocKey INT,
+fdtmWorkDate TIMESTAMP,
+flngAuditGroupKey INT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;
+

@@ -1,0 +1,2 @@
+echo $UID
+echo $EUID

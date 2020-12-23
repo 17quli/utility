@@ -1,0 +1,13 @@
+CREATE VIEW lab_fcp_raw_full_access.wrq_tblweblogontocustomer                                                                                
+AS SELECT                                                                                                                           
+z.flngWebLogonKey,                                                                                                                  
+z.flngCustomerKey,                                                                                                                  
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.fstrAccessType,                                                                                                                   
+z.fblnElectronicCorrespondence,                                                                                                     
+z.fblnHidden,                                                                                                                       
+z.fblnActive,                                                                                                                       
+z.fstrWho,                                                                                                                          
+z.fdtmWhen                                                                                          
+FROM lab_fcp_raw.tblweblogontocustomer z;  

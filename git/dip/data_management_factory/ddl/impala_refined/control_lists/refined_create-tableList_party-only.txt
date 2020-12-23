@@ -1,0 +1,12 @@
+party_dim
+individual_dim
+organisation_dim
+rfn_party_sk_map
+rfn_ps_organisation_d
+rfn_ps_individual_d
+rfn_pe_organisation_d
+rfn_pe_individual_d
+local_start_bankruptcy
+mp_source_code
+snz_bic_anzsic2006
+drd_code_family_ranks

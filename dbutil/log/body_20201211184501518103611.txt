@@ -1,0 +1,19 @@
+2020-12-11 18:45:01------start /home/ird0qal/dbutil/dbbackup.sh lab_analytics_team dev_dw
+2020-12-11 18:45:02------show tables
+2020-12-11 18:45:12------613 tables or views
+2020-12-11 18:45:12------show create table
+2020-12-11 18:45:35------598 tables excluding views
+2020-12-11 18:45:42------drop table
+2020-12-11 18:50:46------590 tables dropped
+2020-12-11 18:50:51------create table
+2020-12-11 18:50:51------hdfs make directory
+2020-12-11 18:57:25------600 hdfs directories created
+2020-12-11 18:57:25------hdfs copy
+2020-12-11 19:09:32------600 hdfs directories copied
+2020-12-11 19:55:17------598 tables created
+2020-12-11 19:55:22------refresh table
+2020-12-11 19:56:07------598 tables refreshed
+2020-12-11 19:56:07------recover partitions
+2020-12-11 19:56:07------0 table partitions recovered
+2020-12-11 19:56:07------show tables backup expired
+2020-12-11 19:56:26------complete /home/ird0qal/dbutil/dbbackup.sh lab_analytics_team dev_dw

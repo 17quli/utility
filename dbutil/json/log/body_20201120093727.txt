@@ -1,0 +1,18 @@
+2020-11-20 09:37:31------start getting json file from 2020-11-18T08:37:27Z to 2020-11-18T09:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:31------load from staging into mquery
+2020-11-20 09:37:32------start getting json file from 2020-11-18T09:37:27Z to 2020-11-18T10:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:32------load from staging into mquery
+2020-11-20 09:37:33------start getting json file from 2020-11-18T10:37:27Z to 2020-11-18T11:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:33------load from staging into mquery
+2020-11-20 09:37:35------start getting json file from 2020-11-18T11:37:27Z to 2020-11-18T12:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:35------load from staging into mquery
+2020-11-20 09:37:36------start getting json file from 2020-11-18T12:37:27Z to 2020-11-18T13:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:36------load from staging into mquery
+2020-11-20 09:37:37------start getting json file from 2020-11-18T13:37:27Z to 2020-11-18T14:37:27Z offset 0
+empty json file!
+2020-11-20 09:37:37------load from staging into mquery

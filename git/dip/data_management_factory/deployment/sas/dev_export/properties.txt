@@ -1,0 +1,6 @@
+cmdPath=H:\sso\sfw\sas_factory\940\
+exportHost=ird10119au.vsp.sas.com
+exportPort=8561
+exportPkgName=di_export
+exportPath=..\..\..\sas9\
+categories=raw_ingestion=Y,party=N,account=N,relationships=N,silver=Y,cas_upload=Y,workflow_monitoring=Y,schedule=Y

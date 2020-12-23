@@ -1,0 +1,27 @@
+CREATE VIEW lab_fcp_raw_full_access.app_tblnz_rtnprs                                                                                         
+AS SELECT                                                                                                                           
+z.flngReturnKey,                                                                                                                    
+z.flngItemNumber,                                                                                                                   
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.fblnInError,                                                                                                                      
+z.fstrEmployerIRD,                                                                                                                  
+z.fstrEmployerName,                                                                                                                 
+z.fstrEmployeeIRD,                                                                                                                  
+z.fstrEmployeeName,                                                                                                                 
+z.flngTimesPaid,                                                                                                                    
+z.fblnOverrideValidation,                                                                                                           
+z.fblnInvalidFilingHistory,                                                                                                         
+z.fblnDuplicate,                                                                                                                    
+z.fblnInvalidNumberEmployees,                                                                                                       
+z.fblnNoPILink,                                                                                                                     
+z.fblnNoReturn,                                                                                                                     
+z.fblnNoPayment,                                                                                                                    
+z.fblnLateReturn,                                                                                                                   
+z.fblnLargeEmployer,                                                                                                                
+z.fdtmDeleted,                                                                                                                      
+z.fdtmProcessed,                                                                                                                    
+z.fstrWho,                                                                                                                          
+z.fdtmWhen                                                                                                            
+FROM lab_fcp_raw.tblnz_rtnprs z
+);

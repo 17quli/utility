@@ -1,0 +1,25 @@
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnips
+AS SELECT 
+z.flngDockey,
+z.fdtmPeriod,
+z.fstrPayeeIRDNumber,
+z.fstrPayeeName,
+z.fstrPayeeAddress1,
+z.fstrPayeeAddress2,
+z.fcurInterestLiableTotal,
+z.fcurRWTDeductedTotal,
+z.fblnJointAccountIndicator,
+z.fstrPayerIRDNumber,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_RTNIPS z
+left outer join 
+${source_db1}.app_tblcustomerinfo ci
+on ci.fstrid = z.fstrPayeeIRDNumber
+ where 
+  ci.fstridtype = 'IRD'
+  and ci.record_active_flag = 'Y'
+  and ci.record_deleted_flag = 'N'
+  and nvl(ci.fstrCustomerLevel, 'STD') = 'STD' 
+
+;

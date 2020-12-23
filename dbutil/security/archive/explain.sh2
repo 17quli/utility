@@ -1,0 +1,20 @@
+#!/bin/bash
+
+logfile=./log/`basename ${0} .sh`.log
+exec> >(tee -a $logfile)
+exec 2>&1
+
+ruid=$1
+dfmt="%Y-%m-%d %H:%M:%S------"
+export USER=`whoami`
+export PYTHON_EGG_CACHE="/tmp/impala-shell-python-egg-cache-$USER"
+
+dfmt="%Y-%m-%d %H:%M:%S------"
+#echo "please enter or paste SQL, type enter and then Ctrl+D to finish"
+echo "please enter or paste SQL, terminated by ;"
+#SQL="$(</dev/stdin)"
+SQL=$(read -erd ";" v; echo "$v")
+SQL="explain `echo "$SQL" |sed -e 's/;//g' -e 's/^ *explain *//g'`"
+echo `date +"$dfmt"`"user $1 run $SQL" 
+
+impala-shell --quiet -i ird26au.vsp.sas.com:25003  -q "${SQL}" -k --ssl --ca_cert=/sso/hadoop/cloudera-certs/CACerts/DigiAndSAS-CA.pem

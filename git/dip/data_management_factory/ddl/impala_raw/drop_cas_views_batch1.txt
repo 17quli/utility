@@ -1,0 +1,47 @@
+  /***************************************************************************       
+04112019 		Initial Draft
+05112019 ird0sxd	replace ${target_db=Enter the target database name here} with a parameter
+
+***************************************************************************/     
+        drop view if exists      ${target_db=Enter the target database name here}_cas_views.vw_dss_tax_cessation_reasons ;
+        drop view if exists      ${target_db=Enter the target database name here}_cas_views.vw_dss_client_codes ;
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblid	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccount	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblaccountinfo	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcrmextendedlog	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomer	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerinfo	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerlevel	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomermail	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblcustomerstd	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tbldocposttransaction	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblindicator	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblmailitem	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnaics	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnamerecord	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgedu	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_accidgovr	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_calllog	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_cstcominfo	;		
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custsegmenthist	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_custtaxresidency	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_visitmanagedcall	;
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblnz_customerstd	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_app_tblvisit	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_agents	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_client_names	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_clients	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_customers	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_classes	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_entity_types	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_external_references	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_offices	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_dss_old_system_numbers	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancountry	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomerlevel	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomersubtype	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lancustomertype	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customerclass	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lannz_customersegments	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_ref_lanofficelocation	;	
+	drop view if exists ${target_db=Enter the target database name here}_cas_views.vw_wrq_tblwebnotice	;	

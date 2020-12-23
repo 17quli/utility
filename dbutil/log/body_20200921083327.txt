@@ -1,0 +1,1 @@
+2020-09-21 08:33:27------start ./tbsbackup.sh lab_team_analytics prod_dw

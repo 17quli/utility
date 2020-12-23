@@ -1,0 +1,41 @@
+2020-12-13 18:00:01------start /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw
+2020-12-13 18:00:02------14 tables to backup
+2020-12-13 18:00:02------show create table
+2020-12-13 18:00:03------drop table
+2020-12-13 18:00:08------create table
+2020-12-13 18:00:08------hdfs make directory
+2020-12-13 18:00:20------12 hdfs directories created
+2020-12-13 18:00:20------hdfs copy
+2020-12-13 18:00:37------12 hdfs directories copied
+2020-12-13 18:02:11------14 tables created
+2020-12-13 18:02:16------refresh table
+2020-12-13 18:02:16------12 tables refreshed
+2020-12-13 18:02:16------recover partitions
+2020-12-13 18:02:17------0 table partitions recovered
+2020-12-13 18:02:17------start ./tbsvalidation.sh ./stg/tgttbllist_prod_dw_20201213180001251310799.lst
+"row count of prod_dw.lab_analytics_team_cmp_programme_20201213 ###################0
+"
+"row count of prod_dw.lab_analytics_team_cmp_campaign_20201213 ####################40
+"
+"row count of prod_dw.lab_analytics_team_cmp_communication_20201213 ###############72
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_20201213 ######################191325
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_control_20201213 ##############393
+"
+"row count of prod_dw.lab_analytics_team_cmp_ring_fenced_20201213 #################139
+"
+"row count of prod_dw.lab_analytics_team_cmp_list_wash_20201213 ###################0
+"
+"row count of prod_dw.lab_analytics_team_cmp_dropped_leads_20201213 ###############1207
+"
+"row count of prod_dw.lab_analytics_team_cmp_list_wash_category_20201213 ##########13
+"
+"row count of prod_dw.lab_analytics_team_cmp_master_detail_20201213 ###############192430
+"
+"row count of prod_dw.lab_analytics_team_cmp_marketing_job_20201213 ###############0
+"
+"row count of prod_dw.lab_analytics_team_cmp_marketing_20201213 ###################0
+"
+2020-12-13 18:02:28------show tables backup expired
+2020-12-13 18:03:02------complete /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw

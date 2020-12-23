@@ -1,0 +1,1426 @@
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_name_reservation_details
+AS SELECT
+z.name_reservation_details_pk,
+z.company_id,
+z.name,
+z.status_desc,
+z.body_type_desc,
+z.reserved_date,
+z.end_date,
+z.approved_date,
+z.approved_name,
+z.rejected_name,
+z.extn_permitted_yn,
+z.extn_prev_permitted_yn,
+z.probrestrictedword_yn,
+z.extd_payment_yn,
+z.presenter_match_confidence,
+z.presenter_best_match_count,
+z.presenter_ird_number1,
+z.presenter_ird_number2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.presenter_best_ird_numbers, ";",2) as presenter_best_ird_number,
+-- z.presenter_best_ird_numbers,
+z.presenter_org_match_confidence,
+z.presenter_org_best_match_count,
+z.presenter_org_ird_number1,
+z.presenter_org_ird_number2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.presenter_org_best_ird_numbers, ";",2) as presenter_org_best_ird_number,
+-- z.presenter_org_best_ird_numbers,
+z.ir_load_id
+FROM lab_fcp_raw.coy_com_name_reservation_details z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.presenter_ird_number1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.presenter_ird_number2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.presenter_best_ird_numbers, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc4
+    ON CAST(z.presenter_org_ird_number1 AS INT) = CAST(sc4.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc5
+    ON CAST(z.presenter_org_ird_number2 AS INT) = CAST(sc5.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc6
+    ON CAST(split_part(z.presenter_org_best_ird_numbers, ";",2) AS INT) = CAST(sc6.IRD_NUMBER as INT) 		
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+AND nvl(sc4.special_classification, 'STD')='STD'
+AND nvl(sc5.special_classification, 'STD')='STD'
+AND nvl(sc6.special_classification, 'STD')='STD'
+AND nvl( sc4.record_active_flag,'Y')='Y'
+AND nvl( sc5.record_active_flag,'Y')='Y'
+AND nvl( sc6.record_active_flag,'Y')='Y'
+AND nvl(sc4.record_deleted_flag, 'N') = 'N'
+AND nvl(sc5.record_deleted_flag, 'N') = 'N'
+AND nvl(sc6.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_irdcustomer_snapshot_mul
+AS SELECT
+z.ird_number,
+z.snapshot_date,
+z.company_ind,
+z.ir_customer_name_count,
+z.ir_customer_names,
+z.companies_office_name_count,
+z.companies_office_names,
+z.may_include_multi_matched_ind,
+z.multi_matched_customer_ind,
+z.multi_matched_company_ind,
+z.multi_matched_director_ind,
+z.multi_matched_shareholder_ind,
+z.multi_matched_presenter_ind,
+z.multi_matched_appointee_ind,
+z.all_associations_co_count,
+z.all_associations_co_ids,
+z.is_company_count,
+z.is_company_co_ids,
+z.director_current_co_count,
+z.director_current_co_ids,
+z.director_ever_co_count,
+z.director_ever_co_ids,
+z.director_earliest_start_date,
+z.director_latest_end_date,
+z.shareholder_current_co_count,
+z.shareholder_current_co_ids,
+z.dir_and_sh_current_co_count,
+z.dir_and_sh_current_co_ids,
+z.presenter_co_count,
+z.presenter_co_ids,
+z.presenter_doc_co_count,
+z.presenter_annreturn_co_count,
+z.presenter_removal_co_count,
+z.presenter_nameres_co_count,
+z.insolv_apptee_co_count,
+z.insolv_apptee_co_ids,
+z.co_count_1_pct_share,
+z.co_count_5_pct_share,
+z.co_count_20_pct_share,
+z.co_count_50_pct_share,
+z.co_count_100_pct_share,
+z.co_count_1_pct_alloc,
+z.co_count_5_pct_alloc,
+z.co_count_20_pct_alloc,
+z.co_count_50_pct_alloc,
+z.co_count_100_pct_alloc,
+z.co_count_1_pct_share_direct,
+z.co_count_5_pct_share_direct,
+z.co_count_20_pct_share_direct,
+z.co_count_50_pct_share_direct,
+z.co_count_100_pct_share_direct,
+z.co_count_1_pct_alloc_direct,
+z.co_count_5_pct_alloc_direct,
+z.co_count_20_pct_alloc_direct,
+z.co_count_50_pct_alloc_direct,
+z.co_count_100_pct_alloc_direct,
+z.co_count_dir_insolvency_start,
+z.co_count_dir_insolvency_dur,
+z.co_count_dir_receivship_start,
+z.co_count_dir_receivship_dur,
+z.co_count_dir_liquidation_start,
+z.co_count_dir_liquidation_dur,
+z.co_count_dir_voladmin_start,
+z.co_count_dir_voladmin_dur,
+z.co_count_dir_statmgt_start,
+z.co_count_dir_statmgt_dur,
+z.ir_load_id
+FROM lab_fcp_raw.coy_com_irdcustomer_snapshot_mul z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;	
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_company_to_irdcustomer
+AS SELECT
+z.company_id,
+z.companies_office_url,
+z.ird_number,
+z.snapshot_date,
+z.is_company_ind,
+z.company_single_best_match,
+z.director_ever_ind,
+z.director_current_ind,
+z.director_single_best_match,
+z.director_appointment_count,
+z.director_earliest_start_date,
+z.director_latest_end_date,
+z.director_prior_co_exper_count,
+z.dir_nomulti_prior_co_exper_cnt,
+z.shareholder_current_ind,
+z.shareholder_single_best_match,
+z.owned_allocation_pct,
+z.owned_allocation_rto,
+z.owned_shareholder_pct,
+z.owned_shareholder_rto,
+z.directly_owned_ind,
+z.directly_owned_allocation_pct,
+z.directly_owned_allocation_rto,
+z.directly_owned_shareholder_pct,
+z.directly_owned_shareholder_rto,
+z.director_insolvency_ever_ind,
+z.dir_during_insolvency_count,
+z.dir_during_receivship_count,
+z.dir_during_liquidation_count,
+z.dir_during_voladmin_count,
+z.dir_during_statmgt_count,
+z.dir_at_start_insolvency_count,
+z.dir_at_start_receivship_count,
+z.dir_at_start_liquidation_count,
+z.dir_at_start_voladmin_count,
+z.dir_at_start_statmgt_count,
+z.presenter_ever_ind,
+z.presenter_single_best_match,
+z.pres_annret_single_best_match,
+z.pres_annret_ent_type,
+z.pres_annret_count,
+z.pres_annret_earliest,
+z.pres_annret_latest,
+z.pres_removal_single_best_match,
+z.pres_removal_ent_type,
+z.pres_removal_count,
+z.pres_removal_earliest,
+z.pres_removal_latest,
+z.pres_nameres_single_best_match,
+z.pres_nameres_ent_type,
+z.pres_nameres_count,
+z.pres_nameres_earliest,
+z.pres_nameres_latest,
+z.pres_doc_single_best_match,
+z.pres_doc_ent_type,
+z.pres_doc_count,
+z.pres_doc_earliest,
+z.pres_doc_latest,
+z.insolv_apptee_ever_ind,
+z.appointee_single_best_match,
+z.appointee_ent_type,
+z.appointee_apptmnt_count,
+z.appointee_earliest_start_date,
+z.appointee_latest_start_date,
+z.ir_load_id
+FROM lab_fcp_raw.coy_com_company_to_irdcustomer z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;	
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_company_snapshot
+AS SELECT
+z.company_id,
+z.snapshot_date,
+z.company_name,
+z.companies_office_url,
+z.company_name_count,
+z.company_names_all,
+z.company_name_last_change_date,
+z.same_name_company_count,
+z.same_name_company_id,
+z.ir_rec_id,
+z.nzbn,
+z.match_confidence,
+z.best_match_multiple_ind,
+z.best_match_count,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) as BEST_MATCH_IRD_NUMBER,
+-- z.best_match_ird_numbers,
+z.ird_number1,
+z.ird_number2,
+-- Filtering out all_matches for this lab view
+-- z.all_matches_count,
+-- z.all_matches_ird_numbers,
+z.reg_code,
+z.country,
+z.australian_company_number,
+z.body_type,
+z.incorporation_date,
+z.removal_date,
+z.registered_days,
+z.reinstatement_count,
+z.reinstatement_latest_date,
+z.status_current,
+z.register_state_current,
+z.status_current_registered_ind,
+z.status_current_removed_ind,
+z.status_current_incorp_ind,
+z.not_incorporated_reason,
+z.status_current_start_date,
+z.status_previous,
+z.status_previous_start_date,
+z.private_ind,
+z.constitution_ind,
+z.bic_code,
+z.bic_code_desc,
+z.is_ult_holding_co_ind,
+z.has_ult_holding_co_ind,
+z.ult_holding_company_id,
+z.ult_holding_ir_rec_id,
+z.ult_holding_co_name,
+z.ult_holding_co_reg_num,
+z.ult_holding_co_type,
+z.ult_holding_co_category,
+z.ult_holding_co_country,
+z.insolvency_current_start_date,
+z.insolvency_current_ind,
+z.liquidation_current_ind,
+z.voluntary_admin_current_ind,
+z.receivership_current_ind,
+z.statutory_mgt_current_ind,
+z.insolvency_earliest_start_date,
+z.insolvency_latest_end_date,
+z.insolvency_ever_ind,
+z.insolvency_periods_count,
+z.liquidation_periods_count,
+z.voluntary_admin_periods_count,
+z.receivership_periods_count,
+z.statutory_mgt_periods_count,
+z.comp_act_section_liquidation,
+z.comp_act_section_receivership,
+z.comp_act_section_vol_admin,
+z.riet_monitored_ind,
+z.riet_monitored_reason_desc,
+z.fra_required_ind,
+z.fra_exempt_ind,
+z.fra_status_s18_issuer_ind,
+z.fra_status_s19_1a_large_ind,
+z.fra_status_s19_1b_large_ind,
+z.fra_status_s19_1c_large_ind,
+z.fra_status_latest_date,
+z.note_of_warning_ind,
+z.note_of_warning_desc,
+z.director_row_count,
+z.director_curntly_active_count,
+z.aust_dir_curntly_active_count,
+z.director_active_count,
+z.director_historical_count,
+z.wholly_directed_1_surname_ind,
+z.director_matched_ird_count,
+z.director_matched_one_ird_count,
+z.director_resident_ind,
+z.dir_activ_earlst_appoint_date,
+z.dir_activ_latest_appoint_date,
+z.director_earliest_appoint_date,
+z.director_latest_appoint_date,
+z.extensive_shareholding_ind,
+z.shares_total_derived_ind,
+z.shares_total,
+z.shares_to_named_shareholders,
+z.shares_to_unnamed_shareholders,
+z.shares_to_named_sh_ratio,
+z.shares_to_unnamed_sh_ratio,
+z.shareholder_count,
+z.shareholder_ird_match_count,
+z.shareholder_distnct_name_count,
+z.share_allocation_count,
+z.shareholders_per_alloc_largest,
+z.wholly_owned_1_surname_ind,
+z.shareholder_individual_count,
+z.shareholder_company_count,
+z.shareholder_other_count,
+z.shareholder_earliest_strt_date,
+z.shareholder_latest_strt_date,
+z.wholly_dir_own_1_surname_ind,
+z.removal_count,
+z.removal_earliest_date,
+z.removal_latest_date,
+z.removal_types,
+z.removal_liquidation_count,
+z.removal_voluntary_count,
+z.removal_informal_count,
+z.removal_ar_compliance_count,
+z.removal_no_fees_count,
+z.removal_statuses,
+z.removal_removed_count,
+z.removal_completed_count,
+z.removal_current_count,
+z.removal_other_count,
+z.removal_grounds,
+z.removal_latest_publ_notfn_date,
+z.removal_latest_objcn_ends_date,
+z.removal_suspension_count,
+z.annual_reporting_month,
+z.annreturn_filing_month,
+z.annreturn_count,
+z.annreturn_year_earliest,
+z.annreturn_year_latest,
+z.annreturn_filed_count,
+z.annreturn_late_file_count,
+z.annreturn_ontime_filing_count,
+z.annreturn_latefile_latest_date,
+z.annreturn_latefile_due_date,
+z.annreturn_notice_count,
+z.annreturn_notice_latest_date,
+z.annreturn_last_objectn_count,
+z.annreturn_latest_objectn_date,
+z.annreturn_presenter_roles,
+z.annreturn_pres_director_count,
+z.annreturn_pres_acctnt_count,
+z.annreturn_pres_agent_count,
+z.annreturn_pres_taxagent_count,
+z.annreturn_pres_solicitor_count,
+z.annreturn_pres_other_count,
+z.doc_count,
+z.doc_public_count,
+z.doc_private_count,
+z.doc_archived_count,
+z.earliest_doc_date,
+z.latest_doc_date,
+z.doc_annual_return_count,
+z.doc_shareholder_count,
+z.doc_director_count,
+z.doc_incorporation_count,
+z.doc_name_reservation_count,
+z.doc_charge_count,
+z.doc_registered_office_count,
+z.doc_satisfaction_count,
+z.doc_change_of_name_count,
+z.doc_key_request_count,
+z.doc_constitution_count,
+z.doc_uhc_count,
+z.doc_financial_state_count,
+z.doc_insolvency_count,
+z.doc_shares_count,
+z.doc_deregistration_count,
+z.doc_address_count,
+z.reservd_name_count,
+z.reservd_names,
+z.reservd_name_body_types,
+z.reservd_name_statuses,
+z.reservd_name_earliest_date,
+z.reservd_name_latest_date,
+z.reservd_name_extn_count,
+z.reservd_name_prev_extn_count,
+z.reservd_name_extn_pay_count,
+z.reservd_name_restrct_wrd_count,
+z.address_service_curr_count,
+z.address_records_curr_count,
+z.address_comms_curr_count,
+z.address_share_reg_curr_count,
+z.address_reg_office_curr_count,
+z.phone_comms_curr_count,
+z.fax_comms_curr_count,
+z.mobile_comms_curr_count,
+z.email_comms_curr_count,
+z.ir_load_id
+FROM lab_fcp_raw.coy_com_company_snapshot z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.ird_number2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_company_owner_snapshot
+AS SELECT
+z.snapshot_date,
+z.company_id,
+z.company_name,
+z.companies_office_url,
+z.relationship_instance,
+z.active_relationship_ind,
+z.active_relationship_details,
+z.owning_entity_id,
+z.owning_entity_name,
+z.owning_entity_type,
+z.owning_entity_ir_rec_id,
+z.final_owner,
+z.owned_by_allocation_pct,
+z.owned_by_shareholder_pct,
+z.owned_by_allocation_ratio,
+z.owned_by_shareholder_ratio,
+z.extensive_sharehold_chain_ind,
+z.extensive_sharehold_chain,
+z.company_circular_ref_ind,
+z.owner_chain_size,
+z.owner_chain,
+z.percentage_owned_alloc_details,
+z.percentage_owned_sh_details,
+z.owning_entity_names,
+z.has_ult_holding_company_ind,
+z.ult_holding_company_id,
+z.ult_holding_company_name,
+z.ult_holding_company_ir_rec_id,
+z.uhc_in_owner_chain_ind,
+z.uhc_position_in_owner_chain,
+z.is_uhc_relationship_ind,
+z.uhc_reg_num,
+z.uhc_type,
+z.uhc_category,
+z.uhc_country,
+z.matched_ind,
+z.match_confidence,
+z.best_match_multiple_ind,
+z.BEST_MATCH_COUNT,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) as BEST_MATCH_IRD_NUMBER,
+-- z.best_match_ird_numbers,
+z.IRD_NUMBER1,
+z.IRD_NUMBER2,
+z.ir_load_id
+FROM lab_fcp_raw.coy_com_company_owner_snapshot z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.ird_number2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_address
+AS SELECT
+z.IR_ADDRESS_WID,
+z.IR_ENTITY_LKP_WID,
+z.IR_ADDRESS_TYPE,
+z.PRIVATE_YN,
+z.PAF_ID,
+z.ADDRESS_ADS_ID,
+z.CARE_OF,
+z.ADDRESS_1,
+z.ADDRESS_2,
+z.ADDRESS_3,
+z.ADDRESS_4,
+z.POST_CODE,
+z.COUNTRY_NAME,
+z.START_DATE,
+z.END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_address z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_entity
+AS SELECT
+z.IR_ENTITY_WID,
+z.IR_ENTITY_LKP_WID,
+z.IR_ENTITY_TYPE,
+z.ORG_NAME,
+z.FIRST_NAME,
+z.MIDDLE_NAMES,
+z.LAST_NAME,
+z.FULL_NAME,
+z.INDIVIDUAL_ID,
+z.ORG_ID,
+z.IR_REC_ID,
+z.TAX_NO,
+z.DATE_OF_BIRTH,
+z.PLACE_OF_BIRTH,
+z.CO_ID,
+z.REG_NUMBER,
+z.MED_SEC_ID,
+z.SH_ID,
+z.PRESENTER_ID,
+z.SOURCE_REGISTER_DESC,
+z.AUSTRALIAN_COMPANY_NUMBER,
+z.ROLE_ID,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_entity z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+ON CAST(z.TAX_NO AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_coy_entity_match_results
+AS SELECT
+z.SESSION_NUM,
+z.REC_ID,
+z.NAME,
+z.DOB,
+z.ADDRESS,
+z.ADDRESS_2,
+z.ADDRESS_3,
+z.ADDRESS_4,
+z.SCORE,
+z.IRD_NUMBER,
+z.ID_SERIAL_NUMBER,
+z.IDENTIFICATION_TYPE_CODE,
+z.SYSTEM_NAME,
+z.SEARCH_NAME,
+z.ENTITY_TYPE,
+z.EMAIL,
+z.PHONE,
+z.MATCH_DATE,
+z.MATCH_CONFIDENCE
+FROM lab_fcp_raw.coy_coy_entity_match_results z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_irdcustomer_snapshot
+AS SELECT
+z.IRD_NUMBER,
+z.SNAPSHOT_DATE,
+z.COMPANY_IND,
+z.IR_CUSTOMER_NAME_COUNT,
+z.IR_CUSTOMER_NAMES,
+z.COMPANIES_OFFICE_NAME_COUNT,
+z.COMPANIES_OFFICE_NAMES,
+z.MAY_INCLUDE_MULTI_MATCHED_IND,
+z.ALL_ASSOCIATIONS_CO_COUNT,
+z.ALL_ASSOCIATIONS_CO_IDS,
+z.IS_COMPANY_COUNT,
+z.IS_COMPANY_CO_IDS,
+z.DIRECTOR_CURRENT_CO_COUNT,
+z.DIRECTOR_CURRENT_CO_IDS,
+z.DIRECTOR_EVER_CO_COUNT,
+z.DIRECTOR_EVER_CO_IDS,
+z.DIRECTOR_EARLIEST_START_DATE,
+z.DIRECTOR_LATEST_END_DATE,
+z.SHAREHOLDER_CURRENT_CO_COUNT,
+z.SHAREHOLDER_CURRENT_CO_IDS,
+z.DIR_AND_SH_CURRENT_CO_COUNT,
+z.DIR_AND_SH_CURRENT_CO_IDS,
+z.PRESENTER_CO_COUNT,
+z.PRESENTER_CO_IDS,
+z.PRESENTER_DOC_CO_COUNT,
+z.PRESENTER_ANNRETURN_CO_COUNT,
+z.PRESENTER_REMOVAL_CO_COUNT,
+z.PRESENTER_NAMERES_CO_COUNT,
+z.INSOLV_APPTEE_CO_COUNT,
+z.INSOLV_APPTEE_CO_IDS,
+z.CO_COUNT_1_PCT_SHARE,
+z.CO_COUNT_5_PCT_SHARE,
+z.CO_COUNT_20_PCT_SHARE,
+z.CO_COUNT_50_PCT_SHARE,
+z.CO_COUNT_100_PCT_SHARE,
+z.CO_COUNT_1_PCT_ALLOC,
+z.CO_COUNT_5_PCT_ALLOC,
+z.CO_COUNT_20_PCT_ALLOC,
+z.CO_COUNT_50_PCT_ALLOC,
+z.CO_COUNT_100_PCT_ALLOC,
+z.CO_COUNT_1_PCT_SHARE_DIRECT,
+z.CO_COUNT_5_PCT_SHARE_DIRECT,
+z.CO_COUNT_20_PCT_SHARE_DIRECT,
+z.CO_COUNT_50_PCT_SHARE_DIRECT,
+z.CO_COUNT_100_PCT_SHARE_DIRECT,
+z.CO_COUNT_1_PCT_ALLOC_DIRECT,
+z.CO_COUNT_5_PCT_ALLOC_DIRECT,
+z.CO_COUNT_20_PCT_ALLOC_DIRECT,
+z.CO_COUNT_50_PCT_ALLOC_DIRECT,
+z.CO_COUNT_100_PCT_ALLOC_DIRECT,
+z.CO_COUNT_DIR_INSOLVENCY_START,
+z.CO_COUNT_DIR_INSOLVENCY_DUR,
+z.CO_COUNT_DIR_RECEIVSHIP_START,
+z.CO_COUNT_DIR_RECEIVSHIP_DUR,
+z.CO_COUNT_DIR_LIQUIDATION_START,
+z.CO_COUNT_DIR_LIQUIDATION_DUR,
+z.CO_COUNT_DIR_VOLADMIN_START,
+z.CO_COUNT_DIR_VOLADMIN_DUR,
+z.CO_COUNT_DIR_STATMGT_START,
+z.CO_COUNT_DIR_STATMGT_DUR,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_irdcustomer_snapshot z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_shareholder_snapshot
+AS SELECT
+z.SHAREHOLDER_SNAPSHOT_PK,
+z.SNAPSHOT_DATE,
+z.COMPANY_ID,
+z.COMPANY_NAME,
+z.COMPANIES_OFFICE_URL,
+z.COMPANY_ACTIVE_IND,
+z.COMPANY_REMOVED_IND,
+z.SHAREHOLDER_STATUS,
+z.SHAREHOLDER_ACTIVE_IND,
+z.COMPANY_SHARES,
+z.COMPANY_SHARES_DERIVED_IND,
+z.EXTENSIVE_SHAREHOLDING_IND,
+z.ALLOCATION,
+z.ALLOCATION_NUMBER,
+z.ALLOCATION_SHARES,
+z.ALLOCATION_SHARES_PCT,
+z.ALLOCATION_SHARES_RATIO,
+z.ALLOCATION_SHAREHOLDER,
+z.ALLOCATION_SHAREHOLDER_NUMBER,
+z.SHAREHOLDER_TYPE,
+z.SHAREHOLDER_NAME,
+z.SHAREHOLDER_FIRST_NAME,
+z.SHAREHOLDER_MIDDLE_NAMES,
+z.SHAREHOLDER_LAST_NAME,
+z.WHOLLY_OWNED_1_SURNAME_IND,
+z.SHAREHOLDER_SHARES_PCT,
+z.SHAREHOLDER_SHARES_RATIO,
+z.SHAREHOLDER_IR_REC_ID,
+z.SHAREHOLDER_COMPANY_ID,
+z.START_DATE,
+z.END_DATE,
+z.END_DATE_RAW,
+z.MATCHED_IND,
+z.MATCH_CONFIDENCE,
+z.BEST_MATCH_MULTIPLE_IND,
+z.BEST_MATCH_COUNT,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) as BEST_MATCH_IRD_NUMBER,
+z.IRD_NUMBER1,
+z.IRD_NUMBER2,
+-- Filtering out all_matches for this lab view
+--z.ALL_MATCHES_COUNT,
+--z.ALL_MATCHES_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_shareholder_snapshot z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.ird_number2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_removal_details
+AS SELECT
+z.REMOVAL_DETAILS_PK,
+z.COMPANY_ID,
+z.ANRT_YEAR,
+z.RMVL_CREATED,
+z.TYPE,
+z.STATUS,
+z.GROUNDS,
+z.PUBLIC_NOTIFICATION,
+z.OBJECTION_ENDS,
+z.INWARD_CLAIM_EFT_ID,
+z.UPDATED,
+z.PN_WATCH_EVENT_CREATED,
+z.PROPOSED_FORMAL_PN,
+z.SUSPENSION_YN,
+z.PRESENTER_MATCH_CONFIDENCE,
+z.PRESENTER_BEST_MATCH_COUNT,
+z.PRESENTER_IRD_NUMBER1,
+z.PRESENTER_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) as PRESENTER_BEST_IRD_NUMBER,
+--z.PRESENTER_BEST_IRD_NUMBERS,
+z.PRESENTER_ORG_MATCH_CONFIDENCE,
+z.PRESENTER_ORG_BEST_MATCH_COUNT,
+z.PRESENTER_ORG_IRD_NUMBER1,
+z.PRESENTER_ORG_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.PRESENTER_ORG_BEST_IRD_NUMBERS, ";",2) as PRESENTER_ORG_BEST_IRD_NUMBER,
+--z.PRESENTER_ORG_BEST_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_removal_details z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.PRESENTER_IRD_NUMBER1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.PRESENTER_IRD_NUMBER2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all scp
+    ON CAST(z.PRESENTER_ORG_IRD_NUMBER1 AS INT) = CAST(scp.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2p
+    ON CAST(z.PRESENTER_ORG_IRD_NUMBER2 AS INT) = CAST(sc2p.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3p
+    ON CAST(split_part(z.PRESENTER_ORG_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3p.IRD_NUMBER as INT)		
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+AND
+nvl(scp.special_classification, 'STD')='STD'
+AND nvl(sc2p.special_classification, 'STD')='STD'
+AND nvl(sc3p.special_classification, 'STD')='STD'
+AND nvl( scp.record_active_flag,'Y')='Y'
+AND nvl( sc2p.record_active_flag,'Y')='Y'
+AND nvl( sc3p.record_active_flag,'Y')='Y'
+AND nvl(scp.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2p.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3p.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_insolvency_appointee
+AS SELECT
+z.INSOLVENCY_APPOINTEE_PK,
+z.INSOLVENCY_ID,
+z.APPOINTEE_ID,
+z.COMPANIES_ACT_SECTION,
+z.APPOINTEE_START_DATE,
+z.APPOINTEE_END_DATE,
+z.APPOINTEE_IR_REC_ID,
+z.APPOINTEE_MATCH_CONFIDENCE,
+z.APPOINTEE_BEST_MATCH_COUNT,
+z.APPOINTEE_IRD_NUMBER1,
+z.APPOINTEE_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.APPOINTEE_BEST_IRD_NUMBERS, ";",2) as APPOINTEE_BEST_IRD_NUMBER,
+--z.APPOINTEE_BEST_IRD_NUMBERS,
+z.APPOINTEE_ORG_IR_REC_ID,
+z.APPOINTEE_ORG_MATCH_CONFIDENCE,
+z.APPOINTEE_ORG_BEST_MATCH_COUNT,
+z.APPOINTEE_ORG_IRD_NUMBER1,
+z.APPOINTEE_ORG_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.APPOINTEE_ORG_BEST_IRD_NUMBERS, ";",2) as APPOINTEE_ORG_BEST_IRD_NUMBER,
+--z.APPOINTEE_ORG_BEST_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_insolvency_appointee z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.APPOINTEE_IRD_NUMBER1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.APPOINTEE_IRD_NUMBER2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.APPOINTEE_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all scp
+    ON CAST(z.APPOINTEE_ORG_IRD_NUMBER1 AS INT) = CAST(scp.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2p
+    ON CAST(z.APPOINTEE_ORG_IRD_NUMBER2 AS INT) = CAST(sc2p.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3p
+    ON CAST(split_part(z.APPOINTEE_ORG_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3p.IRD_NUMBER as INT)		
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+AND
+nvl(scp.special_classification, 'STD')='STD'
+AND nvl(sc2p.special_classification, 'STD')='STD'
+AND nvl(sc3p.special_classification, 'STD')='STD'
+AND nvl( scp.record_active_flag,'Y')='Y'
+AND nvl( sc2p.record_active_flag,'Y')='Y'
+AND nvl( sc3p.record_active_flag,'Y')='Y'
+AND nvl(scp.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2p.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3p.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_document_details
+AS SELECT
+z.DOCUMENT_DETAILS_PK,
+z.COMPANIES_OFFICE_URL,
+z.COMPANY_ID,
+z.TYPE_DESC,
+z.TYPE_CODE,
+z.BARCODE,
+z.SUBMITTED_DATE,
+z.STATUS_DESC,
+z.STATUS_CHANGED_DATE,
+z.PRIVATE_YN,
+z.ARCHIVED_YN,
+z.FRA_YEAR_NO,
+z.FRA_MONTH_NO,
+z.FFS_STATUS_DESC,
+z.FFS_LAST_CHANGED_DATE,
+z.SIZE_BYTES,
+z.SIZE_DESC,
+z.PRESENTER_MATCH_CONFIDENCE,
+z.PRESENTER_BEST_MATCH_COUNT,
+z.PRESENTER_IRD_NUMBER1,
+z.PRESENTER_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) as PRESENTER_BEST_IRD_NUMBER,
+--z.PRESENTER_BEST_IRD_NUMBERS,
+z.PRESENTER_ORG_MATCH_CONFIDENCE,
+z.PRESENTER_ORG_BEST_MATCH_COUNT,
+z.PRESENTER_ORG_IRD_NUMBER1,
+z.PRESENTER_ORG_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.PRESENTER_ORG_BEST_IRD_NUMBERS, ";",2) as PRESENTER_ORG_BEST_IRD_NUMBER,
+--z.PRESENTER_ORG_BEST_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_document_details z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.PRESENTER_IRD_NUMBER1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.PRESENTER_IRD_NUMBER2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all scp
+    ON CAST(z.PRESENTER_ORG_IRD_NUMBER1 AS INT) = CAST(scp.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2p
+    ON CAST(z.PRESENTER_ORG_IRD_NUMBER2 AS INT) = CAST(sc2p.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3p
+    ON CAST(split_part(z.PRESENTER_ORG_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3p.IRD_NUMBER as INT)		
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+AND
+nvl(scp.special_classification, 'STD')='STD'
+AND nvl(sc2p.special_classification, 'STD')='STD'
+AND nvl(sc3p.special_classification, 'STD')='STD'
+AND nvl( scp.record_active_flag,'Y')='Y'
+AND nvl( sc2p.record_active_flag,'Y')='Y'
+AND nvl( sc3p.record_active_flag,'Y')='Y'
+AND nvl(scp.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2p.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3p.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_director_history
+AS SELECT
+z.COMPANY_ID,
+z.COMPANIES_OFFICE_URL,
+z.IR_REC_ID,
+z.FIRST_NAME,
+z.MIDDLE_NAMES,
+z.LAST_NAME,
+z.FULL_NAME,
+z.COMPANY_REMOVAL_DATE,
+z.START_DATE,
+z.END_DATE,
+z.END_DATE_RAW,
+z.AUSTRALIAN_DIRECTOR_IND,
+z.AUSTRALIAN_COMPANY_NUMBER,
+z.AUSTRALIAN_COMPANY_NAME,
+z.MATCHED_IND,
+z.MATCH_CONFIDENCE,
+z.BEST_MATCH_MULTIPLE_IND,
+z.BEST_MATCH_COUNT,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) as BEST_MATCH_IRD_NUMBER,
+z.IRD_NUMBER1,
+z.IRD_NUMBER2,
+-- Filtering out all_matches for this lab view
+--z.ALL_MATCHES_COUNT,
+--z.ALL_MATCHES_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_director_history z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.ird_number1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.ird_number2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.BEST_MATCH_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_annual_return_details
+AS SELECT
+z.ANNUAL_RETURN_DETAILS_PK,
+z.COMPANY_ID,
+z.COMPANIES_OFFICE_URL,
+z.YEAR,
+z.FILING_MONTH_NO,
+z.FILED_DATE,
+z.NOTICE_DATE,
+z.LAST_OBJECTION_DATE,
+z.PRESENTER_ROLE,
+z.PRESENTER_MATCH_CONFIDENCE,
+z.PRESENTER_BEST_MATCH_COUNT,
+z.PRESENTER_IRD_NUMBER1,
+z.PRESENTER_IRD_NUMBER2,
+-- Only show the best match IRD number, then we can special files filter it.
+split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) as PRESENTER_BEST_IRD_NUMBER,
+--z.PRESENTER_BEST_IRD_NUMBERS,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_annual_return_details z
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc
+    ON CAST(z.PRESENTER_IRD_NUMBER1 AS INT) = CAST(sc.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc2
+    ON CAST(z.PRESENTER_IRD_NUMBER2 AS INT) = CAST(sc2.IRD_NUMBER as INT) 
+LEFT OUTER JOIN prod_raw.dss_special_clients_all sc3
+    ON CAST(split_part(z.PRESENTER_BEST_IRD_NUMBERS, ";",2) AS INT) = CAST(sc3.IRD_NUMBER as INT) 
+WHERE 
+nvl(sc.special_classification, 'STD')='STD'
+AND nvl(sc2.special_classification, 'STD')='STD'
+AND nvl(sc3.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl( sc2.record_active_flag,'Y')='Y'
+AND nvl( sc3.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+AND nvl(sc2.record_deleted_flag, 'N') = 'N'
+AND nvl(sc3.record_deleted_flag, 'N') = 'N'
+;
+------------------------------------------
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_ultimate_holding
+AS SELECT
+z.IR_UHC_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_UHC_ENTITY_LKP_WID,
+z.UHC_YN,
+z.UHC_TYPE,
+z.UHC_CATEGORY,
+z.COUNTRY_CODE,
+z.COUNTRY_NAME,
+z.LAST_CHANGED_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_ultimate_holding z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_shareholding
+AS SELECT
+z.IR_SH_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_SH_ENTITY_LKP_WID,
+z.ALLOCATION_ID,
+z.STATUS_DESC,
+z.TYPE_DESC,
+z.BUNDLE_ID,
+z.SHARE_ALLOCATION_TYPE,
+z.SHARES_NO,
+z.EXTENSIVE_SHAREHOLDING_YN,
+z.START_DATE,
+z.END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_shareholding z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_rlva_report
+AS SELECT
+z.IR_RLVA_REPORT_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.RLVA_ID,
+z.RLVA_REPORT_DOC_ID,
+z.RLVA_REPORT_TYPE_CODE,
+z.RLVA_REPORT_TYPE_DESC,
+z.RLVA_REPORT_FILED_DATE,
+z.RLVA_REPORT_UPDATED_DATE,
+z.RLVA_REPORT_BIZNET_INT_USER_YN,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_rlva_report z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_rlva
+AS SELECT
+z.IR_RLVA_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_APPTEE_ENTITY_LKP_WID,
+z.IR_APPTEEORG_ENTITY_LKP_WID,
+z.RLVA_ID,
+z.INSOLVENCY_TYPE_CODE,
+z.STATUS_CODE,
+z.CREATE_DATE,
+z.START_DATE,
+z.STRIKE_STATUS_CODE,
+z.AD_STATUS_CODE,
+z.LAST_OBJECTION_DATE,
+z.VACANCY_DATE,
+z.APPTEE_ID,
+z.APPTEE_TYPE_CODE,
+z.APPTEE_START_DATE,
+z.APPTEE_END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_rlva z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_phone
+AS SELECT
+z.IR_PHONE_WID,
+z.IR_ENTITY_LKP_WID,
+z.IR_PHONE_TYPE,
+z.PHONE_NO,
+z.PHONE_ADS_ID,
+z.START_DATE,
+z.END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_phone z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_ipaddress
+AS SELECT
+z.IR_IPADDRESS_WID,
+z.IR_ENTITY_LKP_WID,
+z.IR_IPADDRESS_TYPE,
+z.IPADDRESS,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_ipaddress z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_fmc_reporting_entities
+AS SELECT
+z.COMPANY_ID,
+z.COMPANY_NAME,
+z.COY_OFFICE_EXTRACT_DATRE,
+z.IR_LOAD_DATE
+FROM lab_fcp_raw.coy_co_fmc_reporting_entities z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_entity_lkp
+AS SELECT
+z.IR_ENTITY_LKP_WID,
+z.IR_ENTITY_KEY,
+z.IR_ENTITY_KEY_METHOD,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_entity_lkp z;
+
+
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_email
+AS SELECT
+z.IR_EMAIL_WID,
+z.IR_ENTITY_LKP_WID,
+z.IR_EMAIL_TYPE,
+z.EMAIL_ADS_ID,
+z.EMAIL_ADDRESS,
+z.START_DATE,
+z.END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_email z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_directorship
+AS SELECT
+z.IR_DIR_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_DIR_ENTITY_LKP_WID,
+z.IR_AUSDIR_ENTITY_LKP_WID,
+z.INSTANCE_ID,
+z.STATUS_DESC,
+z.START_DATE,
+z.END_DATE,
+z.LAST_CHANGED_DATE,
+z.ASIC_DIR_YN,
+z.AUSTRALIAN_COMPANY_NUMBER,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_directorship z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_status_hist
+AS SELECT
+z.IR_COY_STATUS_HIST_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.STATUS_CODE,
+z.STATUS_DESC,
+z.STATUS_START_DATE,
+z.STATUS_END_DATE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_status_hist z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_removals
+AS SELECT
+z.IR_COY_RMVL_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_PRES_ENTITY_LKP_WID,
+z.IR_PRESORG_ENTITY_LKP_WID,
+z.ANRT_YEAR,
+z.RMVL_CREATED,
+z.TYPE,
+z.STATUS,
+z.GROUNDS,
+z.PUBLIC_NOTIFICATION,
+z.OBJECTION_ENDS,
+z.INWARD_CLAIM_EFT_ID,
+z.CREATED_BY,
+z.CREATED_NAME,
+z.UPDATED_BY,
+z.UPDATED_NAME,
+z.UPDATED,
+z.PEC_ID,
+z.PN_WATCH_EVENT_CREATED,
+z.PROPOSED_FORMAL_PN,
+z.SUSPENSION_YN,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_removals z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_name_reservation
+AS SELECT
+z.IR_COY_RES_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_PRES_ENTITY_LKP_WID,
+z.IR_PRESORG_ENTITY_LKP_WID,
+z.RES_ID,
+z.NAME,
+z.STATUS_DESC,
+z.BODY_TYPE_DESC,
+z.RESERVED_DATE,
+z.END_DATE,
+z.APPROVED_DATE,
+z.APPROVED_NAME,
+z.REJECTED_NAME,
+z.EXTN_PERMITTED_YN,
+z.EXTN_PREV_PERMITTED_YN,
+z.PROBRESTRICTEDWORD_YN,
+z.EXTD_PAYMENT_YN,
+z.RES_PRESENTER_ORG_ID,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_name_reservation z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_document
+AS SELECT
+z.IR_COY_DOC_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_PRES_ENTITY_LKP_WID,
+z.IR_PRESORG_ENTITY_LKP_WID,
+z.DOC_ID,
+z.FFS_ID,
+z.TYPE_DESC,
+z.TYPE_CODE,
+z.BARCODE,
+z.SUBMITTED_DATE,
+z.STATUS_DESC,
+z.STATUS_CHANGED_DATE,
+z.PRIVATE_YN,
+z.ARCHIVED_YN,
+z.FRA_YEAR_NO,
+z.FRA_MONTH_NO,
+z.FFS_STATUS_DESC,
+z.FFS_LAST_CHANGED_DATE,
+z.SIZE_BYTES,
+z.SIZE_DESC,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_document z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_details
+AS SELECT
+z.IR_COY_DETAILS_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.CO_VERSION_NO,
+z.NZBN,
+z.BODY_TYPE_DESC,
+z.INCORPORATION_DATE,
+z.LAST_CHANGED_DATE,
+z.RIET_MONITORED_YN,
+z.EXTENSIVE_SHAREHOLDING_YN,
+z.TOTAL_SHARES_NO,
+z.FRA_REQUIRED_YN,
+z.FRA_EXEMPT_YN,
+z.CONSTITUTION_YN,
+z.ANNUAL_REPORTING_MONTH_NO,
+z.ANNUAL_FILING_MONTH_NO,
+z.COUNTRY_NAME,
+z.ASIC_ACN,
+z.PRIVATE_YN,
+z.FRA_STATUS_S18_ISSUER_YN,
+z.FRA_STATUS_S19_1B_LARGE_YN,
+z.FRA_STATUS_DATE,
+z.BIC_CODE,
+z.BIC_CODE_DESC,
+z.RIET_MONITORED_REASON_DESC,
+z.FRA_STATUS_S19_1A_LARGE_YN,
+z.FRA_STATUS_S19_1C_LARGE_YN,
+z.RESIDENT_DIR_YN,
+z.NOTE_OF_WARNING_YN,
+z.NOTE_OF_WARNING_DESC,
+z.REG_CODE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_details z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_co_coy_annual_return
+AS SELECT
+z.IR_CO_AR_WID,
+z.IR_CO_ENTITY_LKP_WID,
+z.IR_PRES_ENTITY_LKP_WID,
+z.YEAR,
+z.FILING_MONTH_NO,
+z.FILED_DATE,
+z.NOTICE_DATE,
+z.LAST_OBJECTION_DATE,
+z.PRESENTER_ROLE,
+z.IR_START_DATE,
+z.IR_END_DATE,
+z.IR_CURRENT_IND,
+z.IR_DELETED_IND,
+z.IR_VERSION,
+z.IR_LOAD_LATEST_ID,
+z.IR_LOAD_LATEST_DATE,
+z.IR_LOAD_LATEST_DUP_COUNT,
+z.IR_LOAD_QUERY
+FROM lab_fcp_raw.coy_co_coy_annual_return z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_coy_entity_match_runs
+AS SELECT
+z.RUN,
+z.ENTITY_TYPE,
+z.SEARCH_NAME,
+z.SYSTEM_NAME,
+z.SEARCH_WIDTH,
+z.MATCH_TOLERANCE,
+z.MATCH_CONFIDENCE,
+z.SESSION_NUM,
+z.STATUS
+FROM lab_fcp_raw.coy_coy_entity_match_runs z;
+
+CREATE VIEW lab_fcp_raw_restricted_access.coy_com_insolvency_details
+AS SELECT
+z.INSOLVENCY_ID,
+z.COMPANY_ID,
+z.INSOLVENCY_TYPE_CODE,
+z.INSOLVENCY_TYPE,
+z.STATUS_CODE,
+z.CREATE_DATE,
+z.START_DATE,
+z.STRIKE_STATUS_CODE,
+z.AD_STATUS_CODE,
+z.LAST_OBJECTION_DATE,
+z.VACANCY_DATE,
+z.IR_LOAD_ID
+FROM lab_fcp_raw.coy_com_insolvency_details z;

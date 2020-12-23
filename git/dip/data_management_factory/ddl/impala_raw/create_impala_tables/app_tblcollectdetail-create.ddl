@@ -1,0 +1,25 @@
+CREATE TABLE ${var:target_db}.app_tblcollectdetail (
+flngCollectKey INT,
+flngVer INT,
+flngVerLast INT,
+fdtmWorkDate TIMESTAMP,
+fdtmWorkDateTime TIMESTAMP,
+fdtmCreationDate TIMESTAMP,
+fdtmClosedDate TIMESTAMP,
+fblnAutomated SMALLINT,
+fdtmNextStage TIMESTAMP,
+fstrStageFlow VARCHAR(12),
+fstrStage VARCHAR(12),
+fstrOwner VARCHAR(20),
+flngRisk INT,
+fstrCollectType VARCHAR(12),
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

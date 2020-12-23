@@ -1,0 +1,17 @@
+2020-12-09 09:40:18------start ./snapshot.sh prod_refined dev_dw
+2020-12-09 09:40:21------show tables
+2020-12-09 09:40:24------333 tables or views
+2020-12-09 09:40:24------show create table
+2020-12-09 09:41:35------238 tables excluding views
+2020-12-09 09:41:35------drop table
+2020-12-09 09:41:35------0 tables dropped
+2020-12-09 09:41:41------create table
+2020-12-09 10:17:34------238 tables created
+2020-12-09 10:17:39------refresh table
+2020-12-09 10:17:42------121 tables refreshed
+2020-12-09 10:17:42------recover partitions
+2020-12-09 10:20:14------117 table partitions recovered
+2020-12-09 10:20:14------show tables backup expired
+2020-12-09 10:20:42------drop tables backup expired
+2020-12-09 10:23:27------238 expired tables dropped
+2020-12-09 10:23:27------complete ./snapshot.sh prod_refined dev_dw

@@ -1,0 +1,1741 @@
+
+ird10119au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0     0   20G  0 disk 
+├─xvda1       202:1     0  500M  0 part /boot
+└─xvda2       202:2     0 19.5G  0 part 
+  ├─rhel-root 253:0     0 15.5G  0 lvm  /
+  └─rhel-swap 253:1     0    4G  0 lvm  [SWAP]
+xvdf          202:80    0   10G  0 disk /var/log
+xvdg          202:96    0   10G  0 disk /var/log/audit
+xvdh          202:112   0   20G  0 disk /var
+xvdi          202:128   0    5G  0 disk /home
+xvdj          202:144   0    8G  0 disk /tmp
+xvdk          202:160   0   10G  0 disk /opt
+xvdl          202:176   0  100G  0 disk /opt/sas
+xvdm          202:192   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdn          202:208   0   20G  0 disk /saswork
+xvdo          202:224   0  130G  0 disk /sso
+xvdp          202:240   0  100G  0 disk /sso/biconfig
+xvdq          202:4096  0   20G  0 disk /sso/monitoring
+xvdr          202:4352  0  100G  0 disk /sso/sfw
+xvds          202:4608  0  100G  0 disk /sso/transport
+xvdt          202:4864  0   50G  0 disk /var/cache
+
+ird10120au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdf          202:80    0   10G  0 disk  /var/log
+xvdg          202:96    0   10G  0 disk  /var/log/audit
+xvdh          202:112   0   20G  0 disk  /var
+xvdi          202:128   0    5G  0 disk  /home
+xvdj          202:144   0    8G  0 disk  /tmp
+xvdk          202:160   0   10G  0 disk  /opt
+xvdl          202:176   0  100G  0 disk  /opt/sas
+xvdm          202:192   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdn          202:208   0  130G  0 disk  /sso
+xvdo          202:224   0  100G  0 disk  /sso/biconfig
+xvdp          202:240   0   20G  0 disk  /sso/monitoring
+xvdq          202:4096  0  100G  0 disk  /sso/sfw
+xvdr          202:4352  0  100G  0 disk  /sso/transport
+xvds          202:4608  0   50G  0 disk  /var/cache
+xvdt          202:4864  0   30G  0 disk  /ird/projects
+xvdu          202:5120  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme1n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme2n1       259:2     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme3n1       259:3     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+
+ird10131au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:7    0   50G  0 disk /var/log
+nvme2n1                           259:4    0   50G  0 disk /var
+nvme3n1                           259:5    0   10G  0 disk /opt
+nvme4n1                           259:2    0   50G  0 disk /sso/sfw
+nvme5n1                           259:1    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:0    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:8    0   50G  0 disk /sso
+nvme8n1                           259:3    0   15G  0 disk /tmp
+nvme9n1                           259:6    0    5G  0 disk /home
+
+ird10132au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme10n1                          259:2    0    5G  0 disk /home
+nvme0n1                           259:10   0   40G  0 disk 
+├─nvme0n1p1                       259:11   0  512M  0 part /boot
+└─nvme0n1p2                       259:12   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:1    0   50G  0 disk /var/log
+nvme2n1                           259:3    0   50G  0 disk /var
+nvme3n1                           259:0    0   10G  0 disk /opt
+nvme4n1                           259:5    0   50G  0 disk /sso/sfw
+nvme5n1                           259:9    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:7    0   50G  0 disk /sso/hadoop/kudu
+nvme7n1                           259:4    0   50G  0 disk /sso/hadoop
+nvme8n1                           259:6    0   50G  0 disk /sso
+nvme9n1                           259:8    0   15G  0 disk /tmp
+
+ird10133au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme10n1                          259:2    0    5G  0 disk /home
+nvme0n1                           259:10   0   40G  0 disk 
+├─nvme0n1p1                       259:11   0  512M  0 part /boot
+└─nvme0n1p2                       259:12   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:6    0   50G  0 disk /var/log
+nvme2n1                           259:8    0   50G  0 disk /var
+nvme3n1                           259:7    0   10G  0 disk /opt
+nvme4n1                           259:3    0   50G  0 disk /sso/sfw
+nvme5n1                           259:9    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:1    0   50G  0 disk /sso/hadoop/kudu
+nvme7n1                           259:4    0   50G  0 disk /sso/hadoop
+nvme8n1                           259:5    0   50G  0 disk /sso
+nvme9n1                           259:0    0   15G  0 disk /tmp
+
+ird10134au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme10n1                          259:0    0    5G  0 disk /home
+nvme0n1                           259:10   0   40G  0 disk 
+├─nvme0n1p1                       259:11   0  512M  0 part /boot
+└─nvme0n1p2                       259:12   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:2    0   50G  0 disk /var/log
+nvme2n1                           259:1    0   50G  0 disk /var
+nvme3n1                           259:3    0   10G  0 disk /opt
+nvme4n1                           259:6    0   50G  0 disk /sso/sfw
+nvme5n1                           259:5    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:9    0   50G  0 disk /sso/hadoop/kudu
+nvme7n1                           259:8    0   50G  0 disk /sso/hadoop
+nvme8n1                           259:4    0   50G  0 disk /sso
+nvme9n1                           259:7    0   15G  0 disk /tmp
+
+ird10135au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:8    0   40G  0 disk 
+├─nvme0n1p1                       259:9    0  512M  0 part /boot
+└─nvme0n1p2                       259:10   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:1    0   50G  0 disk /var/log
+nvme2n1                           259:0    0   50G  0 disk /var
+nvme3n1                           259:5    0   10G  0 disk /opt
+nvme4n1                           259:3    0   50G  0 disk /sso/sfw
+nvme5n1                           259:2    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:6    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:4    0   50G  0 disk /sso
+nvme8n1                           259:7    0   15G  0 disk /tmp
+nvme9n1                           259:11   0    5G  0 disk /home
+
+ird10136au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:0    0   50G  0 disk /var/log
+nvme2n1                           259:5    0   50G  0 disk /var
+nvme3n1                           259:1    0   10G  0 disk /opt
+nvme4n1                           259:2    0   50G  0 disk /sso/sfw
+nvme5n1                           259:3    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:4    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:6    0   50G  0 disk /sso
+nvme8n1                           259:7    0   15G  0 disk /tmp
+nvme9n1                           259:8    0    5G  0 disk /home
+
+ird10137au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:0    0   50G  0 disk /var/log
+nvme2n1                           259:1    0   50G  0 disk /var
+nvme3n1                           259:6    0   10G  0 disk /opt
+nvme4n1                           259:2    0   50G  0 disk /sso/sfw
+nvme5n1                           259:4    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:3    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:8    0   50G  0 disk /sso
+nvme8n1                           259:5    0   15G  0 disk /tmp
+nvme9n1                           259:7    0    5G  0 disk /home
+
+ird10138au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:0    0   50G  0 disk /var/log
+nvme2n1                           259:1    0   50G  0 disk /var
+nvme3n1                           259:7    0   10G  0 disk /opt
+nvme4n1                           259:3    0   50G  0 disk /sso/sfw
+nvme5n1                           259:4    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:2    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:8    0   50G  0 disk /sso
+nvme8n1                           259:6    0   15G  0 disk /tmp
+nvme9n1                           259:5    0    5G  0 disk /home
+
+ird10139au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:0    0   50G  0 disk /var/log
+nvme2n1                           259:1    0   50G  0 disk /var
+nvme3n1                           259:4    0   10G  0 disk /opt
+nvme4n1                           259:6    0   50G  0 disk /sso/sfw
+nvme5n1                           259:3    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:2    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:5    0   50G  0 disk /sso
+nvme8n1                           259:7    0   15G  0 disk /tmp
+nvme9n1                           259:8    0    5G  0 disk /home
+
+ird10140au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme0n1                           259:9    0   40G  0 disk 
+├─nvme0n1p1                       259:10   0  512M  0 part /boot
+└─nvme0n1p2                       259:11   0 39.5G  0 part 
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                           259:0    0   50G  0 disk /var/log
+nvme2n1                           259:3    0   50G  0 disk /var
+nvme3n1                           259:2    0   10G  0 disk /opt
+nvme4n1                           259:1    0   50G  0 disk /sso/sfw
+nvme5n1                           259:6    0   20G  0 disk /sso/monitoring
+nvme6n1                           259:4    0   50G  0 disk /sso/hadoop
+nvme7n1                           259:8    0   50G  0 disk /sso
+nvme8n1                           259:7    0   15G  0 disk /tmp
+nvme9n1                           259:5    0    5G  0 disk /home
+
+ird10141au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:11   0   50G  0 disk  /var
+nvme11n1                          259:6    0   10G  0 disk  /opt
+nvme12n1                          259:7    0   50G  0 disk  /sso/sfw
+nvme13n1                          259:1    0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:9    0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:17   0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:5    0   50G  0 disk  /sso
+nvme17n1                          259:2    0   15G  0 disk  /tmp
+nvme18n1                          259:4    0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:15   0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:0    0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:8    0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:14   0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:12   0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:13   0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:16   0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:3    0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:10   0   50G  0 disk  /var/log
+
+ird10142au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:11   0   50G  0 disk  /var
+nvme11n1                          259:16   0   10G  0 disk  /opt
+nvme12n1                          259:17   0   50G  0 disk  /sso/sfw
+nvme13n1                          259:5    0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:8    0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:13   0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:2    0   50G  0 disk  /sso
+nvme17n1                          259:6    0   15G  0 disk  /tmp
+nvme18n1                          259:10   0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:14   0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:15   0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:7    0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:4    0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:1    0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:9    0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:3    0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:0    0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:12   0   50G  0 disk  /var/log
+
+ird10143au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:13   0   50G  0 disk  /var
+nvme11n1                          259:3    0   10G  0 disk  /opt
+nvme12n1                          259:0    0   50G  0 disk  /sso/sfw
+nvme13n1                          259:14   0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:7    0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:10   0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:5    0   50G  0 disk  /sso
+nvme17n1                          259:9    0   15G  0 disk  /tmp
+nvme18n1                          259:1    0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:16   0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:4    0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:11   0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:2    0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:12   0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:8    0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:15   0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:17   0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:6    0   50G  0 disk  /var/log
+
+ird10144au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:3    0   50G  0 disk  /var
+nvme11n1                          259:1    0   10G  0 disk  /opt
+nvme12n1                          259:16   0   50G  0 disk  /sso/sfw
+nvme13n1                          259:6    0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:10   0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:5    0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:15   0   50G  0 disk  /sso
+nvme17n1                          259:17   0   15G  0 disk  /tmp
+nvme18n1                          259:2    0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:7    0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:0    0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:12   0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:11   0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:9    0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:14   0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:13   0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:8    0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:4    0   50G  0 disk  /var/log
+
+ird10145au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:15   0   50G  0 disk  /var
+nvme11n1                          259:3    0   10G  0 disk  /opt
+nvme12n1                          259:13   0   50G  0 disk  /sso/sfw
+nvme13n1                          259:16   0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:7    0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:8    0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:14   0   50G  0 disk  /sso
+nvme17n1                          259:5    0   15G  0 disk  /tmp
+nvme18n1                          259:12   0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:10   0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:4    0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:2    0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:6    0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:9    0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:1    0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:17   0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:0    0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:11   0   50G  0 disk  /var/log
+
+ird10146au.vsp.sas.com
+NAME                              MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+nvme10n1                          259:13   0   50G  0 disk  /var
+nvme11n1                          259:8    0   10G  0 disk  /opt
+nvme12n1                          259:0    0   50G  0 disk  /sso/sfw
+nvme13n1                          259:14   0   20G  0 disk  /sso/monitoring
+nvme14n1                          259:5    0   50G  0 disk  /sso/hadoop/kudu
+nvme15n1                          259:10   0   50G  0 disk  /sso/hadoop
+nvme16n1                          259:4    0   50G  0 disk  /sso
+nvme17n1                          259:9    0   15G  0 disk  /tmp
+nvme18n1                          259:2    0    5G  0 disk  /home
+nvme0n1                           259:18   0   40G  0 disk  
+├─nvme0n1p1                       259:19   0  512M  0 part  /boot
+└─nvme0n1p2                       259:20   0 39.5G  0 part  
+  ├─vg_default-lv_root            253:0    0   30G  0 lvm   /
+  ├─vg_default-lv_swap            253:1    0    4G  0 lvm   [SWAP]
+  └─vg_default-lv_var_log_journal 253:2    0    4G  0 lvm   /var/log/journal
+nvme1n1                           259:17   0    2T  0 disk  
+└─kuduEncrypted                   253:3    0    2T  0 crypt /kuduEncrypted
+nvme2n1                           259:3    0    2T  0 disk  /hadoop/sdg
+nvme3n1                           259:16   0    2T  0 disk  /hadoop/sdf
+nvme4n1                           259:7    0    2T  0 disk  /hadoop/sde
+nvme5n1                           259:11   0    2T  0 disk  /hadoop/sdd
+nvme6n1                           259:1    0    2T  0 disk  /hadoop/sdc
+nvme7n1                           259:6    0    2T  0 disk  /hadoop/sdb
+nvme8n1                           259:15   0    2T  0 disk  /hadoop/sda
+nvme9n1                           259:12   0   50G  0 disk  /var/log
+
+ird10147au.vsp.sas.com
+NAME                                                                                         MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+nvme10n1                                                                                     259:10   0   50G  0 disk /sso/sfw
+nvme11n1                                                                                     259:3    0   50G  0 disk /sso/hadoop
+nvme0n1                                                                                      259:11   0   40G  0 disk 
+├─nvme0n1p1                                                                                  259:12   0  512M  0 part /boot
+└─nvme0n1p2                                                                                  259:13   0 39.5G  0 part 
+  ├─vg_default-lv_root                                                                       253:0    0   30G  0 lvm  /
+  ├─vg_default-lv_swap                                                                       253:1    0    4G  0 lvm  [SWAP]
+  └─vg_default-lv_var_log_journal                                                            253:2    0    4G  0 lvm  /var/log/journal
+nvme1n1                                                                                      259:0    0 1000G  0 disk 
+├─docker-thinpool_tmeta                                                                      253:3    0    5G  0 lvm  
+│ └─docker-thinpool                                                                          253:5    0  475G  0 lvm  
+│   ├─docker-259:4-25228366-ba98882b8cf03057944f4eba7bf63bab8a80bcf82244c49708c295b309a8ba2e 253:6    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ba98882b8cf03057944f4eba7bf63bab8a80bcf82244c49708c295b309a8ba2e
+│   ├─docker-259:4-25228366-213e2ac833feb12d6fedfb2bc8dec09800d91aea2ff5594fe83164d80341dac4 253:7    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/213e2ac833feb12d6fedfb2bc8dec09800d91aea2ff5594fe83164d80341dac4
+│   ├─docker-259:4-25228366-35037b7b387bc3c19dfb5c255a1e661121f349cc6a86756475da677acea39002 253:8    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/35037b7b387bc3c19dfb5c255a1e661121f349cc6a86756475da677acea39002
+│   ├─docker-259:4-25228366-706e345c2227257c4469b93633165c15361ad96f1366ec2035f67aee9916c17b 253:9    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/706e345c2227257c4469b93633165c15361ad96f1366ec2035f67aee9916c17b
+│   ├─docker-259:4-25228366-b2edd7dcb56bf9dba449b774f6fd3600e1923908c56819bfab4d3ef087c1b93b 253:10   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b2edd7dcb56bf9dba449b774f6fd3600e1923908c56819bfab4d3ef087c1b93b
+│   ├─docker-259:4-25228366-96cd83cbeaa21aa8fe5152a2929fedf0a07d5988065a28e2a69338fe0f6dde00 253:11   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/96cd83cbeaa21aa8fe5152a2929fedf0a07d5988065a28e2a69338fe0f6dde00
+│   ├─docker-259:4-25228366-2222665cb0ec102cbaacb0fc7a5e3f39b98301a8a329fad1373978f3d9d055a5 253:12   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/2222665cb0ec102cbaacb0fc7a5e3f39b98301a8a329fad1373978f3d9d055a5
+│   ├─docker-259:4-25228366-b7c038b89055f0364bbdcab48fbba6398dc49eba8cf66a3d502e096f2c87eee0 253:13   0  100G  0 dm   
+│   ├─docker-259:4-25228366-ee198ba4e7b50fb8b63465fa4287ba13713b4c219055cde047475d4cbe43efc2 253:14   0  100G  0 dm   
+│   ├─docker-259:4-25228366-72494ce5776e274185c84a8c8e98a07b0cc15a7cf60de343895d676b36c00a62 253:15   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/72494ce5776e274185c84a8c8e98a07b0cc15a7cf60de343895d676b36c00a62
+│   ├─docker-259:4-25228366-702f46a18b3ab9d9740632e99137505b1d0d601ae9c343f41b875dfad8ad1988 253:16   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/702f46a18b3ab9d9740632e99137505b1d0d601ae9c343f41b875dfad8ad1988
+│   ├─docker-259:4-25228366-952688f6b7c5e884fc8a0d39b3af1f74e94f2485f152b9c7a7e751fc9dd4870e 253:17   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/952688f6b7c5e884fc8a0d39b3af1f74e94f2485f152b9c7a7e751fc9dd4870e
+│   ├─docker-259:4-25228366-ded80e7b8add2707339351577cb20c2bee2ad1e0d3a919253f690ae84ca52aa1 253:18   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ded80e7b8add2707339351577cb20c2bee2ad1e0d3a919253f690ae84ca52aa1
+│   ├─docker-259:4-25228366-4337c0a3293df0a037721c4ac36307784866bd5b8c90e5e219b3af13a7c81b08 253:19   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/4337c0a3293df0a037721c4ac36307784866bd5b8c90e5e219b3af13a7c81b08
+│   ├─docker-259:4-25228366-afbe2e0d8eed3e65d5dae16ffb1a597e2f37cd5b2e70c5126af8a779cc63c0e3 253:20   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/afbe2e0d8eed3e65d5dae16ffb1a597e2f37cd5b2e70c5126af8a779cc63c0e3
+│   ├─docker-259:4-25228366-9b13fe584066307c8ded9d08aec56c867ddb2925bdb07b6edb6bdb067b923315 253:21   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/9b13fe584066307c8ded9d08aec56c867ddb2925bdb07b6edb6bdb067b923315
+│   ├─docker-259:4-25228366-dbbba0f68c3f07993bb57be7842c520b7148181bdf5f918aa82ec67bdb741cb5 253:22   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/dbbba0f68c3f07993bb57be7842c520b7148181bdf5f918aa82ec67bdb741cb5
+│   ├─docker-259:4-25228366-da11f41cbb627e1f3176bfa66d7752c2740a802a4c70081bae62109c6ba6f771 253:23   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/da11f41cbb627e1f3176bfa66d7752c2740a802a4c70081bae62109c6ba6f771
+│   ├─docker-259:4-25228366-bf28155048b9f0656167c7f8e9525474d4d440cc760c53ff34d091299cbabed8 253:24   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/bf28155048b9f0656167c7f8e9525474d4d440cc760c53ff34d091299cbabed8
+│   ├─docker-259:4-25228366-3ff52bfda3825f2cfb77e79575242ef12f232596bfba0d219cb9b4e348ae8608 253:25   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3ff52bfda3825f2cfb77e79575242ef12f232596bfba0d219cb9b4e348ae8608
+│   ├─docker-259:4-25228366-3b507b843e05c471689e6fb11cca2fd07251ae608eb05d445eb46bea620cd696 253:26   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3b507b843e05c471689e6fb11cca2fd07251ae608eb05d445eb46bea620cd696
+│   ├─docker-259:4-25228366-cc1f30a8f396efa12c6b9733bb6399f40fd8622380515655fd4a338f44c50637 253:27   0  100G  0 dm   
+│   ├─docker-259:4-25228366-1d05aaa388075e1f08b2cdd10f9dd172a19dec45a3c4f30c0a6194cf90430eb7 253:28   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1d05aaa388075e1f08b2cdd10f9dd172a19dec45a3c4f30c0a6194cf90430eb7
+│   ├─docker-259:4-25228366-935094a7329eaefcd346d1e2e94a9c70fc3bb68c2079d77c4b7c9eeb88cca1ca 253:29   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/935094a7329eaefcd346d1e2e94a9c70fc3bb68c2079d77c4b7c9eeb88cca1ca
+│   ├─docker-259:4-25228366-7f27ed87dd956d71727d33cf5086c0b4f244c0216da46dcf476f049c26ab73c9 253:30   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/7f27ed87dd956d71727d33cf5086c0b4f244c0216da46dcf476f049c26ab73c9
+│   ├─docker-259:4-25228366-0b3cb58d2e156970e5f2001d88fe434ba43a518a47a9c1962a3e70b5c7f25525 253:31   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0b3cb58d2e156970e5f2001d88fe434ba43a518a47a9c1962a3e70b5c7f25525
+│   ├─docker-259:4-25228366-813bd432538e3237a1c415fae360ecf02ec562a8d396068a2e4c595d1bdbb42e 253:32   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/813bd432538e3237a1c415fae360ecf02ec562a8d396068a2e4c595d1bdbb42e
+│   ├─docker-259:4-25228366-82de845acdd04ad3315ee8f10a0694595ba97dc6c2dcc9fc82cb15f0b15fee69 253:33   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/82de845acdd04ad3315ee8f10a0694595ba97dc6c2dcc9fc82cb15f0b15fee69
+│   ├─docker-259:4-25228366-449ceabad896962d64a574e575a1399f3b0ba903b7d741ad6af9b9347fb8b4e3 253:34   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/449ceabad896962d64a574e575a1399f3b0ba903b7d741ad6af9b9347fb8b4e3
+│   ├─docker-259:4-25228366-5f49b667d17ec516be4081a8c26571b80a69b9f0c01f0a291d4e963242baa85b 253:35   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5f49b667d17ec516be4081a8c26571b80a69b9f0c01f0a291d4e963242baa85b
+│   ├─docker-259:4-25228366-09fcb70b0bd6ad5630464421a32cc8fe6c8249bc8977e11f93372002f1f7df83 253:36   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/09fcb70b0bd6ad5630464421a32cc8fe6c8249bc8977e11f93372002f1f7df83
+│   ├─docker-259:4-25228366-b1a1c420d94fecc481b9025b04e081d4ee3c8ebe77c055fb39a20bba258daa18 253:37   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b1a1c420d94fecc481b9025b04e081d4ee3c8ebe77c055fb39a20bba258daa18
+│   ├─docker-259:4-25228366-3ee334f1b917c18a7d6e29efbc81fded4f0c9d90bd862a619f853edf1d25fe41 253:38   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3ee334f1b917c18a7d6e29efbc81fded4f0c9d90bd862a619f853edf1d25fe41
+│   ├─docker-259:4-25228366-865997ec7293037889f2fa45b02231d88317f82d4758e84a621dd0aaada04ece 253:39   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/865997ec7293037889f2fa45b02231d88317f82d4758e84a621dd0aaada04ece
+│   ├─docker-259:4-25228366-a6b4688fe4cffea0edd286370909793761e1b134985b9626f4ce03b4701194ef 253:40   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/a6b4688fe4cffea0edd286370909793761e1b134985b9626f4ce03b4701194ef
+│   ├─docker-259:4-25228366-69778f45600eaf6dcc75b3bd9ba150444afb7bbdbae2d1a8e6e1cd32edbbce39 253:41   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/69778f45600eaf6dcc75b3bd9ba150444afb7bbdbae2d1a8e6e1cd32edbbce39
+│   ├─docker-259:4-25228366-05636f3b6330d6bbfbd353ddca7d614eb337f78e9b5fe7392860248d5a1b7517 253:42   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/05636f3b6330d6bbfbd353ddca7d614eb337f78e9b5fe7392860248d5a1b7517
+│   ├─docker-259:4-25228366-299c37ebb551e188ae6e509c81b49ae6794395cbaf15abab3953e6f9ec54258f 253:43   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/299c37ebb551e188ae6e509c81b49ae6794395cbaf15abab3953e6f9ec54258f
+│   ├─docker-259:4-25228366-782ad3963e7e61518dfb2a483adb30f841ccc2bd0450e2358ccb2acddc39083b 253:44   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/782ad3963e7e61518dfb2a483adb30f841ccc2bd0450e2358ccb2acddc39083b
+│   ├─docker-259:4-25228366-1c88f31f98f06d721a85b5ffd7936c083aba2919dcf61c3304d6785a9c830fc8 253:45   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1c88f31f98f06d721a85b5ffd7936c083aba2919dcf61c3304d6785a9c830fc8
+│   ├─docker-259:4-25228366-8a9062c1e11dc34cd94c4fc60acfbbe6ebbe5fe57d8219a66c55a6b333c9ddb8 253:46   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8a9062c1e11dc34cd94c4fc60acfbbe6ebbe5fe57d8219a66c55a6b333c9ddb8
+│   ├─docker-259:4-25228366-150f5d28fa3ac6b0a255ec2e40652468e7a229fa819b1073ead4393199fcdc6f 253:47   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/150f5d28fa3ac6b0a255ec2e40652468e7a229fa819b1073ead4393199fcdc6f
+│   ├─docker-259:4-25228366-795aa527a87181318c48bd99015bb8f4e09a62163773a79f27fb8a885c9cd3cc 253:48   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/795aa527a87181318c48bd99015bb8f4e09a62163773a79f27fb8a885c9cd3cc
+│   ├─docker-259:4-25228366-b641f237917eba285ecdaee10b1a4af246832685c4e0fcb21ecef4fa7abd4af7 253:49   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b641f237917eba285ecdaee10b1a4af246832685c4e0fcb21ecef4fa7abd4af7
+│   ├─docker-259:4-25228366-b269a9ff2998884820b99812bf3ee4567e11760eeb395c3c107be951e7b53a8f 253:50   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b269a9ff2998884820b99812bf3ee4567e11760eeb395c3c107be951e7b53a8f
+│   ├─docker-259:4-25228366-47c461442911e632097499f6ac24c4123d225888a144d9d3c2e550aeb148b128 253:51   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/47c461442911e632097499f6ac24c4123d225888a144d9d3c2e550aeb148b128
+│   ├─docker-259:4-25228366-534acb093a281e2ccfdd7f1d095f1e50653af6ac09ce53c3dd4fef7a57f6d779 253:52   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/534acb093a281e2ccfdd7f1d095f1e50653af6ac09ce53c3dd4fef7a57f6d779
+│   ├─docker-259:4-25228366-8710b077c3428ad7a0c453ce0fc4e75afd3eaed79c48546f118ce9e081b9802c 253:53   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8710b077c3428ad7a0c453ce0fc4e75afd3eaed79c48546f118ce9e081b9802c
+│   ├─docker-259:4-25228366-f87f6eb56a2224906e883ec0bbb48d89b77ee311c6db9dc36ff3250c8702719f 253:54   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/f87f6eb56a2224906e883ec0bbb48d89b77ee311c6db9dc36ff3250c8702719f
+│   ├─docker-259:4-25228366-cf66557893e5411ff435ca50072a9989843881ebfb32361e73dac1b54e0cb06b 253:55   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/cf66557893e5411ff435ca50072a9989843881ebfb32361e73dac1b54e0cb06b
+│   ├─docker-259:4-25228366-0ddb169afb31e6b45bdf9c7b5fb2b01f3b197315d726dd5f6a12813fb2bdf863 253:56   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0ddb169afb31e6b45bdf9c7b5fb2b01f3b197315d726dd5f6a12813fb2bdf863
+│   ├─docker-259:4-25228366-b277489ccb36b84e692ea9a75b04e38b658cc089aad4cc29ee7d160c0aef20ce 253:57   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b277489ccb36b84e692ea9a75b04e38b658cc089aad4cc29ee7d160c0aef20ce
+│   ├─docker-259:4-25228366-dd2bd34a1a7218131967a69b7a7a6605722e6eb4adb8fe0a5ed550abda400d8d 253:58   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/dd2bd34a1a7218131967a69b7a7a6605722e6eb4adb8fe0a5ed550abda400d8d
+│   ├─docker-259:4-25228366-00b1efeaac4780db4b0e115b2b21dd7f0a7abcba551532a9049dc4ac592924af 253:59   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/00b1efeaac4780db4b0e115b2b21dd7f0a7abcba551532a9049dc4ac592924af
+│   ├─docker-259:4-25228366-ac9bd569e0ef979e43829064b30dc97380addf99c3c1fb8250d86b091e000f5b 253:60   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ac9bd569e0ef979e43829064b30dc97380addf99c3c1fb8250d86b091e000f5b
+│   ├─docker-259:4-25228366-3a2866c605f91039fa7a3add4c33dbe78cc5dca24c8ae91d6ed9e0be9a8589bc 253:61   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3a2866c605f91039fa7a3add4c33dbe78cc5dca24c8ae91d6ed9e0be9a8589bc
+│   ├─docker-259:4-25228366-cce2c7ded9e014a4ccb6c3b99656f9eed8abf2f2dfd1086ea03cf34ec5bd2f08 253:62   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/cce2c7ded9e014a4ccb6c3b99656f9eed8abf2f2dfd1086ea03cf34ec5bd2f08
+│   ├─docker-259:4-25228366-18f086de4844ce0209d681f26e744bb7926fdf6f79753aa1338e3474bc609bf8 253:63   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/18f086de4844ce0209d681f26e744bb7926fdf6f79753aa1338e3474bc609bf8
+│   ├─docker-259:4-25228366-02c89b9925583c189bff8384c48411b8a21493a65e0c846bea8fb4088f25b0c5 253:64   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/02c89b9925583c189bff8384c48411b8a21493a65e0c846bea8fb4088f25b0c5
+│   ├─docker-259:4-25228366-44ea1c6f199129574f29af12b29f50caa5d3771bc931af651d79ecf1867815dc 253:65   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/44ea1c6f199129574f29af12b29f50caa5d3771bc931af651d79ecf1867815dc
+│   ├─docker-259:4-25228366-865ea95550d6e88f6f403f796e7079c2bf2316cf9d5f68307916d776ff8e0c75 253:66   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/865ea95550d6e88f6f403f796e7079c2bf2316cf9d5f68307916d776ff8e0c75
+│   ├─docker-259:4-25228366-e3927aa4929384735fea7c79ec396e1443b5825d6bcec98d2559c5e541039469 253:67   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/e3927aa4929384735fea7c79ec396e1443b5825d6bcec98d2559c5e541039469
+│   ├─docker-259:4-25228366-fc333c2082feaa79a619fca7bc1373739af6261592a0f549f1ae5a2a8128739f 253:68   0  100G  0 dm   
+│   ├─docker-259:4-25228366-11108cefc845de354b0f79585a7aef3d70592da5d6b7505d54db4c11419b198f 253:69   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/11108cefc845de354b0f79585a7aef3d70592da5d6b7505d54db4c11419b198f
+│   ├─docker-259:4-25228366-c3ad727bf1f276fe22e251edda275fbb400749b7ccd481318cf5bf8f82eafbed 253:70   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/c3ad727bf1f276fe22e251edda275fbb400749b7ccd481318cf5bf8f82eafbed
+│   ├─docker-259:4-25228366-38ecb8e56769d3f9f3b460379612d48508f915fddfa8137a6dc17232b7fd94d6 253:71   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/38ecb8e56769d3f9f3b460379612d48508f915fddfa8137a6dc17232b7fd94d6
+│   ├─docker-259:4-25228366-8351dada463c6b3f39ca6a69b3f75bb839854b9006dad610d012bb8ce3311436 253:72   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8351dada463c6b3f39ca6a69b3f75bb839854b9006dad610d012bb8ce3311436
+│   ├─docker-259:4-25228366-d466b36f411263650c5d57cf815250441e871cd9715ffa79ac6c9cfe7121543c 253:73   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/d466b36f411263650c5d57cf815250441e871cd9715ffa79ac6c9cfe7121543c
+│   ├─docker-259:4-25228366-5d2398f06661eb7c2b3f2d082c9baffff91b86ecd6d444c0d5f0e649c4df86be 253:74   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5d2398f06661eb7c2b3f2d082c9baffff91b86ecd6d444c0d5f0e649c4df86be
+│   ├─docker-259:4-25228366-54bfb9d195678210afa11eafecd4e00dcde203c51a9a78e5487772e6551803e9 253:75   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/54bfb9d195678210afa11eafecd4e00dcde203c51a9a78e5487772e6551803e9
+│   ├─docker-259:4-25228366-495f2eb13870ceb1fd3be7f74971bd27c85c9417c3454c526c0c6ece6e072399 253:76   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/495f2eb13870ceb1fd3be7f74971bd27c85c9417c3454c526c0c6ece6e072399
+│   ├─docker-259:4-25228366-1530876801d8e869de8af452bf2d1da057deaae92d07e9225af0dce607114259 253:77   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1530876801d8e869de8af452bf2d1da057deaae92d07e9225af0dce607114259
+│   ├─docker-259:4-25228366-5485305978ba2520320c19d42f9fce254f596422aa3b9594f4b7ea89709aa87f 253:78   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5485305978ba2520320c19d42f9fce254f596422aa3b9594f4b7ea89709aa87f
+│   ├─docker-259:4-25228366-303ac5258c5d9c1f7c75d4805cfed8116103a5f362ba4012d0682b83f8cdb295 253:80   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/303ac5258c5d9c1f7c75d4805cfed8116103a5f362ba4012d0682b83f8cdb295
+│   ├─docker-259:4-25228366-c65075409ab3e3dd0a250b79a9aec0b2e717df3584f571806713a15b065eb99d 253:81   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/c65075409ab3e3dd0a250b79a9aec0b2e717df3584f571806713a15b065eb99d
+│   └─docker-259:4-25228366-0a8b8671abdbfbb42ce592bdadf604f1ac21d35a496ea12afa61d96395422c95 253:90   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0a8b8671abdbfbb42ce592bdadf604f1ac21d35a496ea12afa61d96395422c95
+└─docker-thinpool_tdata                                                                      253:4    0  475G  0 lvm  
+  └─docker-thinpool                                                                          253:5    0  475G  0 lvm  
+    ├─docker-259:4-25228366-ba98882b8cf03057944f4eba7bf63bab8a80bcf82244c49708c295b309a8ba2e 253:6    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ba98882b8cf03057944f4eba7bf63bab8a80bcf82244c49708c295b309a8ba2e
+    ├─docker-259:4-25228366-213e2ac833feb12d6fedfb2bc8dec09800d91aea2ff5594fe83164d80341dac4 253:7    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/213e2ac833feb12d6fedfb2bc8dec09800d91aea2ff5594fe83164d80341dac4
+    ├─docker-259:4-25228366-35037b7b387bc3c19dfb5c255a1e661121f349cc6a86756475da677acea39002 253:8    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/35037b7b387bc3c19dfb5c255a1e661121f349cc6a86756475da677acea39002
+    ├─docker-259:4-25228366-706e345c2227257c4469b93633165c15361ad96f1366ec2035f67aee9916c17b 253:9    0  100G  0 dm   /var/lib/docker/devicemapper/mnt/706e345c2227257c4469b93633165c15361ad96f1366ec2035f67aee9916c17b
+    ├─docker-259:4-25228366-b2edd7dcb56bf9dba449b774f6fd3600e1923908c56819bfab4d3ef087c1b93b 253:10   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b2edd7dcb56bf9dba449b774f6fd3600e1923908c56819bfab4d3ef087c1b93b
+    ├─docker-259:4-25228366-96cd83cbeaa21aa8fe5152a2929fedf0a07d5988065a28e2a69338fe0f6dde00 253:11   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/96cd83cbeaa21aa8fe5152a2929fedf0a07d5988065a28e2a69338fe0f6dde00
+    ├─docker-259:4-25228366-2222665cb0ec102cbaacb0fc7a5e3f39b98301a8a329fad1373978f3d9d055a5 253:12   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/2222665cb0ec102cbaacb0fc7a5e3f39b98301a8a329fad1373978f3d9d055a5
+    ├─docker-259:4-25228366-b7c038b89055f0364bbdcab48fbba6398dc49eba8cf66a3d502e096f2c87eee0 253:13   0  100G  0 dm   
+    ├─docker-259:4-25228366-ee198ba4e7b50fb8b63465fa4287ba13713b4c219055cde047475d4cbe43efc2 253:14   0  100G  0 dm   
+    ├─docker-259:4-25228366-72494ce5776e274185c84a8c8e98a07b0cc15a7cf60de343895d676b36c00a62 253:15   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/72494ce5776e274185c84a8c8e98a07b0cc15a7cf60de343895d676b36c00a62
+    ├─docker-259:4-25228366-702f46a18b3ab9d9740632e99137505b1d0d601ae9c343f41b875dfad8ad1988 253:16   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/702f46a18b3ab9d9740632e99137505b1d0d601ae9c343f41b875dfad8ad1988
+    ├─docker-259:4-25228366-952688f6b7c5e884fc8a0d39b3af1f74e94f2485f152b9c7a7e751fc9dd4870e 253:17   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/952688f6b7c5e884fc8a0d39b3af1f74e94f2485f152b9c7a7e751fc9dd4870e
+    ├─docker-259:4-25228366-ded80e7b8add2707339351577cb20c2bee2ad1e0d3a919253f690ae84ca52aa1 253:18   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ded80e7b8add2707339351577cb20c2bee2ad1e0d3a919253f690ae84ca52aa1
+    ├─docker-259:4-25228366-4337c0a3293df0a037721c4ac36307784866bd5b8c90e5e219b3af13a7c81b08 253:19   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/4337c0a3293df0a037721c4ac36307784866bd5b8c90e5e219b3af13a7c81b08
+    ├─docker-259:4-25228366-afbe2e0d8eed3e65d5dae16ffb1a597e2f37cd5b2e70c5126af8a779cc63c0e3 253:20   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/afbe2e0d8eed3e65d5dae16ffb1a597e2f37cd5b2e70c5126af8a779cc63c0e3
+    ├─docker-259:4-25228366-9b13fe584066307c8ded9d08aec56c867ddb2925bdb07b6edb6bdb067b923315 253:21   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/9b13fe584066307c8ded9d08aec56c867ddb2925bdb07b6edb6bdb067b923315
+    ├─docker-259:4-25228366-dbbba0f68c3f07993bb57be7842c520b7148181bdf5f918aa82ec67bdb741cb5 253:22   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/dbbba0f68c3f07993bb57be7842c520b7148181bdf5f918aa82ec67bdb741cb5
+    ├─docker-259:4-25228366-da11f41cbb627e1f3176bfa66d7752c2740a802a4c70081bae62109c6ba6f771 253:23   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/da11f41cbb627e1f3176bfa66d7752c2740a802a4c70081bae62109c6ba6f771
+    ├─docker-259:4-25228366-bf28155048b9f0656167c7f8e9525474d4d440cc760c53ff34d091299cbabed8 253:24   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/bf28155048b9f0656167c7f8e9525474d4d440cc760c53ff34d091299cbabed8
+    ├─docker-259:4-25228366-3ff52bfda3825f2cfb77e79575242ef12f232596bfba0d219cb9b4e348ae8608 253:25   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3ff52bfda3825f2cfb77e79575242ef12f232596bfba0d219cb9b4e348ae8608
+    ├─docker-259:4-25228366-3b507b843e05c471689e6fb11cca2fd07251ae608eb05d445eb46bea620cd696 253:26   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3b507b843e05c471689e6fb11cca2fd07251ae608eb05d445eb46bea620cd696
+    ├─docker-259:4-25228366-cc1f30a8f396efa12c6b9733bb6399f40fd8622380515655fd4a338f44c50637 253:27   0  100G  0 dm   
+    ├─docker-259:4-25228366-1d05aaa388075e1f08b2cdd10f9dd172a19dec45a3c4f30c0a6194cf90430eb7 253:28   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1d05aaa388075e1f08b2cdd10f9dd172a19dec45a3c4f30c0a6194cf90430eb7
+    ├─docker-259:4-25228366-935094a7329eaefcd346d1e2e94a9c70fc3bb68c2079d77c4b7c9eeb88cca1ca 253:29   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/935094a7329eaefcd346d1e2e94a9c70fc3bb68c2079d77c4b7c9eeb88cca1ca
+    ├─docker-259:4-25228366-7f27ed87dd956d71727d33cf5086c0b4f244c0216da46dcf476f049c26ab73c9 253:30   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/7f27ed87dd956d71727d33cf5086c0b4f244c0216da46dcf476f049c26ab73c9
+    ├─docker-259:4-25228366-0b3cb58d2e156970e5f2001d88fe434ba43a518a47a9c1962a3e70b5c7f25525 253:31   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0b3cb58d2e156970e5f2001d88fe434ba43a518a47a9c1962a3e70b5c7f25525
+    ├─docker-259:4-25228366-813bd432538e3237a1c415fae360ecf02ec562a8d396068a2e4c595d1bdbb42e 253:32   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/813bd432538e3237a1c415fae360ecf02ec562a8d396068a2e4c595d1bdbb42e
+    ├─docker-259:4-25228366-82de845acdd04ad3315ee8f10a0694595ba97dc6c2dcc9fc82cb15f0b15fee69 253:33   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/82de845acdd04ad3315ee8f10a0694595ba97dc6c2dcc9fc82cb15f0b15fee69
+    ├─docker-259:4-25228366-449ceabad896962d64a574e575a1399f3b0ba903b7d741ad6af9b9347fb8b4e3 253:34   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/449ceabad896962d64a574e575a1399f3b0ba903b7d741ad6af9b9347fb8b4e3
+    ├─docker-259:4-25228366-5f49b667d17ec516be4081a8c26571b80a69b9f0c01f0a291d4e963242baa85b 253:35   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5f49b667d17ec516be4081a8c26571b80a69b9f0c01f0a291d4e963242baa85b
+    ├─docker-259:4-25228366-09fcb70b0bd6ad5630464421a32cc8fe6c8249bc8977e11f93372002f1f7df83 253:36   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/09fcb70b0bd6ad5630464421a32cc8fe6c8249bc8977e11f93372002f1f7df83
+    ├─docker-259:4-25228366-b1a1c420d94fecc481b9025b04e081d4ee3c8ebe77c055fb39a20bba258daa18 253:37   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b1a1c420d94fecc481b9025b04e081d4ee3c8ebe77c055fb39a20bba258daa18
+    ├─docker-259:4-25228366-3ee334f1b917c18a7d6e29efbc81fded4f0c9d90bd862a619f853edf1d25fe41 253:38   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3ee334f1b917c18a7d6e29efbc81fded4f0c9d90bd862a619f853edf1d25fe41
+    ├─docker-259:4-25228366-865997ec7293037889f2fa45b02231d88317f82d4758e84a621dd0aaada04ece 253:39   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/865997ec7293037889f2fa45b02231d88317f82d4758e84a621dd0aaada04ece
+    ├─docker-259:4-25228366-a6b4688fe4cffea0edd286370909793761e1b134985b9626f4ce03b4701194ef 253:40   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/a6b4688fe4cffea0edd286370909793761e1b134985b9626f4ce03b4701194ef
+    ├─docker-259:4-25228366-69778f45600eaf6dcc75b3bd9ba150444afb7bbdbae2d1a8e6e1cd32edbbce39 253:41   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/69778f45600eaf6dcc75b3bd9ba150444afb7bbdbae2d1a8e6e1cd32edbbce39
+    ├─docker-259:4-25228366-05636f3b6330d6bbfbd353ddca7d614eb337f78e9b5fe7392860248d5a1b7517 253:42   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/05636f3b6330d6bbfbd353ddca7d614eb337f78e9b5fe7392860248d5a1b7517
+    ├─docker-259:4-25228366-299c37ebb551e188ae6e509c81b49ae6794395cbaf15abab3953e6f9ec54258f 253:43   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/299c37ebb551e188ae6e509c81b49ae6794395cbaf15abab3953e6f9ec54258f
+    ├─docker-259:4-25228366-782ad3963e7e61518dfb2a483adb30f841ccc2bd0450e2358ccb2acddc39083b 253:44   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/782ad3963e7e61518dfb2a483adb30f841ccc2bd0450e2358ccb2acddc39083b
+    ├─docker-259:4-25228366-1c88f31f98f06d721a85b5ffd7936c083aba2919dcf61c3304d6785a9c830fc8 253:45   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1c88f31f98f06d721a85b5ffd7936c083aba2919dcf61c3304d6785a9c830fc8
+    ├─docker-259:4-25228366-8a9062c1e11dc34cd94c4fc60acfbbe6ebbe5fe57d8219a66c55a6b333c9ddb8 253:46   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8a9062c1e11dc34cd94c4fc60acfbbe6ebbe5fe57d8219a66c55a6b333c9ddb8
+    ├─docker-259:4-25228366-150f5d28fa3ac6b0a255ec2e40652468e7a229fa819b1073ead4393199fcdc6f 253:47   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/150f5d28fa3ac6b0a255ec2e40652468e7a229fa819b1073ead4393199fcdc6f
+    ├─docker-259:4-25228366-795aa527a87181318c48bd99015bb8f4e09a62163773a79f27fb8a885c9cd3cc 253:48   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/795aa527a87181318c48bd99015bb8f4e09a62163773a79f27fb8a885c9cd3cc
+    ├─docker-259:4-25228366-b641f237917eba285ecdaee10b1a4af246832685c4e0fcb21ecef4fa7abd4af7 253:49   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b641f237917eba285ecdaee10b1a4af246832685c4e0fcb21ecef4fa7abd4af7
+    ├─docker-259:4-25228366-b269a9ff2998884820b99812bf3ee4567e11760eeb395c3c107be951e7b53a8f 253:50   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b269a9ff2998884820b99812bf3ee4567e11760eeb395c3c107be951e7b53a8f
+    ├─docker-259:4-25228366-47c461442911e632097499f6ac24c4123d225888a144d9d3c2e550aeb148b128 253:51   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/47c461442911e632097499f6ac24c4123d225888a144d9d3c2e550aeb148b128
+    ├─docker-259:4-25228366-534acb093a281e2ccfdd7f1d095f1e50653af6ac09ce53c3dd4fef7a57f6d779 253:52   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/534acb093a281e2ccfdd7f1d095f1e50653af6ac09ce53c3dd4fef7a57f6d779
+    ├─docker-259:4-25228366-8710b077c3428ad7a0c453ce0fc4e75afd3eaed79c48546f118ce9e081b9802c 253:53   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8710b077c3428ad7a0c453ce0fc4e75afd3eaed79c48546f118ce9e081b9802c
+    ├─docker-259:4-25228366-f87f6eb56a2224906e883ec0bbb48d89b77ee311c6db9dc36ff3250c8702719f 253:54   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/f87f6eb56a2224906e883ec0bbb48d89b77ee311c6db9dc36ff3250c8702719f
+    ├─docker-259:4-25228366-cf66557893e5411ff435ca50072a9989843881ebfb32361e73dac1b54e0cb06b 253:55   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/cf66557893e5411ff435ca50072a9989843881ebfb32361e73dac1b54e0cb06b
+    ├─docker-259:4-25228366-0ddb169afb31e6b45bdf9c7b5fb2b01f3b197315d726dd5f6a12813fb2bdf863 253:56   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0ddb169afb31e6b45bdf9c7b5fb2b01f3b197315d726dd5f6a12813fb2bdf863
+    ├─docker-259:4-25228366-b277489ccb36b84e692ea9a75b04e38b658cc089aad4cc29ee7d160c0aef20ce 253:57   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/b277489ccb36b84e692ea9a75b04e38b658cc089aad4cc29ee7d160c0aef20ce
+    ├─docker-259:4-25228366-dd2bd34a1a7218131967a69b7a7a6605722e6eb4adb8fe0a5ed550abda400d8d 253:58   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/dd2bd34a1a7218131967a69b7a7a6605722e6eb4adb8fe0a5ed550abda400d8d
+    ├─docker-259:4-25228366-00b1efeaac4780db4b0e115b2b21dd7f0a7abcba551532a9049dc4ac592924af 253:59   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/00b1efeaac4780db4b0e115b2b21dd7f0a7abcba551532a9049dc4ac592924af
+    ├─docker-259:4-25228366-ac9bd569e0ef979e43829064b30dc97380addf99c3c1fb8250d86b091e000f5b 253:60   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/ac9bd569e0ef979e43829064b30dc97380addf99c3c1fb8250d86b091e000f5b
+    ├─docker-259:4-25228366-3a2866c605f91039fa7a3add4c33dbe78cc5dca24c8ae91d6ed9e0be9a8589bc 253:61   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/3a2866c605f91039fa7a3add4c33dbe78cc5dca24c8ae91d6ed9e0be9a8589bc
+    ├─docker-259:4-25228366-cce2c7ded9e014a4ccb6c3b99656f9eed8abf2f2dfd1086ea03cf34ec5bd2f08 253:62   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/cce2c7ded9e014a4ccb6c3b99656f9eed8abf2f2dfd1086ea03cf34ec5bd2f08
+    ├─docker-259:4-25228366-18f086de4844ce0209d681f26e744bb7926fdf6f79753aa1338e3474bc609bf8 253:63   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/18f086de4844ce0209d681f26e744bb7926fdf6f79753aa1338e3474bc609bf8
+    ├─docker-259:4-25228366-02c89b9925583c189bff8384c48411b8a21493a65e0c846bea8fb4088f25b0c5 253:64   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/02c89b9925583c189bff8384c48411b8a21493a65e0c846bea8fb4088f25b0c5
+    ├─docker-259:4-25228366-44ea1c6f199129574f29af12b29f50caa5d3771bc931af651d79ecf1867815dc 253:65   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/44ea1c6f199129574f29af12b29f50caa5d3771bc931af651d79ecf1867815dc
+    ├─docker-259:4-25228366-865ea95550d6e88f6f403f796e7079c2bf2316cf9d5f68307916d776ff8e0c75 253:66   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/865ea95550d6e88f6f403f796e7079c2bf2316cf9d5f68307916d776ff8e0c75
+    ├─docker-259:4-25228366-e3927aa4929384735fea7c79ec396e1443b5825d6bcec98d2559c5e541039469 253:67   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/e3927aa4929384735fea7c79ec396e1443b5825d6bcec98d2559c5e541039469
+    ├─docker-259:4-25228366-fc333c2082feaa79a619fca7bc1373739af6261592a0f549f1ae5a2a8128739f 253:68   0  100G  0 dm   
+    ├─docker-259:4-25228366-11108cefc845de354b0f79585a7aef3d70592da5d6b7505d54db4c11419b198f 253:69   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/11108cefc845de354b0f79585a7aef3d70592da5d6b7505d54db4c11419b198f
+    ├─docker-259:4-25228366-c3ad727bf1f276fe22e251edda275fbb400749b7ccd481318cf5bf8f82eafbed 253:70   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/c3ad727bf1f276fe22e251edda275fbb400749b7ccd481318cf5bf8f82eafbed
+    ├─docker-259:4-25228366-38ecb8e56769d3f9f3b460379612d48508f915fddfa8137a6dc17232b7fd94d6 253:71   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/38ecb8e56769d3f9f3b460379612d48508f915fddfa8137a6dc17232b7fd94d6
+    ├─docker-259:4-25228366-8351dada463c6b3f39ca6a69b3f75bb839854b9006dad610d012bb8ce3311436 253:72   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/8351dada463c6b3f39ca6a69b3f75bb839854b9006dad610d012bb8ce3311436
+    ├─docker-259:4-25228366-d466b36f411263650c5d57cf815250441e871cd9715ffa79ac6c9cfe7121543c 253:73   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/d466b36f411263650c5d57cf815250441e871cd9715ffa79ac6c9cfe7121543c
+    ├─docker-259:4-25228366-5d2398f06661eb7c2b3f2d082c9baffff91b86ecd6d444c0d5f0e649c4df86be 253:74   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5d2398f06661eb7c2b3f2d082c9baffff91b86ecd6d444c0d5f0e649c4df86be
+    ├─docker-259:4-25228366-54bfb9d195678210afa11eafecd4e00dcde203c51a9a78e5487772e6551803e9 253:75   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/54bfb9d195678210afa11eafecd4e00dcde203c51a9a78e5487772e6551803e9
+    ├─docker-259:4-25228366-495f2eb13870ceb1fd3be7f74971bd27c85c9417c3454c526c0c6ece6e072399 253:76   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/495f2eb13870ceb1fd3be7f74971bd27c85c9417c3454c526c0c6ece6e072399
+    ├─docker-259:4-25228366-1530876801d8e869de8af452bf2d1da057deaae92d07e9225af0dce607114259 253:77   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/1530876801d8e869de8af452bf2d1da057deaae92d07e9225af0dce607114259
+    ├─docker-259:4-25228366-5485305978ba2520320c19d42f9fce254f596422aa3b9594f4b7ea89709aa87f 253:78   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/5485305978ba2520320c19d42f9fce254f596422aa3b9594f4b7ea89709aa87f
+    ├─docker-259:4-25228366-303ac5258c5d9c1f7c75d4805cfed8116103a5f362ba4012d0682b83f8cdb295 253:80   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/303ac5258c5d9c1f7c75d4805cfed8116103a5f362ba4012d0682b83f8cdb295
+    ├─docker-259:4-25228366-c65075409ab3e3dd0a250b79a9aec0b2e717df3584f571806713a15b065eb99d 253:81   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/c65075409ab3e3dd0a250b79a9aec0b2e717df3584f571806713a15b065eb99d
+    └─docker-259:4-25228366-0a8b8671abdbfbb42ce592bdadf604f1ac21d35a496ea12afa61d96395422c95 253:90   0  100G  0 dm   /var/lib/docker/devicemapper/mnt/0a8b8671abdbfbb42ce592bdadf604f1ac21d35a496ea12afa61d96395422c95
+nvme2n1                                                                                      259:1    0   50G  0 disk /var/log
+nvme3n1                                                                                      259:8    0   15G  0 disk /tmp
+nvme4n1                                                                                      259:2    0   20G  0 disk /sso/monitoring
+nvme5n1                                                                                      259:4    0   50G  0 disk /var
+nvme6n1                                                                                      259:9    0    5G  0 disk /home
+nvme7n1                                                                                      259:7    0   50G  0 disk /sso
+nvme8n1                                                                                      259:6    0   10G  0 disk /opt
+nvme9n1                                                                                      259:5    0 1000G  0 disk /sso/cdsw_application
+
+ird35au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   20G  0 disk /saswork
+xvdc          202:32   0  130G  0 disk /sso
+xvdd          202:48   0  100G  0 disk /sso/biconfig
+xvde          202:64   0  100G  0 disk /sso/biconfig/940/Lev2
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0  100G  0 disk /sso/sfw
+xvdh          202:112  0  100G  0 disk /sso/sfw/sas_lab
+xvdi          202:128  0    8G  0 disk /var
+xvdj          202:144  0    5G  0 disk /home
+xvdk          202:160  0    8G  0 disk /tmp
+xvdl          202:176  0   10G  0 disk /var/log
+xvdm          202:192  0   10G  0 disk /var/log/audit
+
+ird36au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   
+xvdf          202:80    0  130G  0 disk  /sso
+xvdg          202:96    0  100G  0 disk  /sso/biconfig
+xvdh          202:112   0  100G  0 disk  /sso/biconfig/940/Lev2
+xvdi          202:128   0   20G  0 disk  /sso/monitoring
+xvdj          202:144   0  100G  0 disk  /sso/sfw
+xvdk          202:160   0  100G  0 disk  /sso/sfw/sas_lab
+xvdl          202:176   0  100G  0 disk  /sso/transport
+xvdm          202:192   0   70G  0 disk  /var
+xvdn          202:208   0    5G  0 disk  /home
+xvdo          202:224   0    8G  0 disk  /tmp
+xvdp          202:240   0   30G  0 disk  /ird/projects
+xvdq          202:4096  0  500G  0 disk  /ird/warehouse
+xvdr          202:4352  0  500G  0 disk  /ird/warehouse_lab
+xvds          202:4608  0    8G  0 disk  [SWAP]
+xvdt          202:4864  0   50G  0 disk  /var/log/audit
+xvdu          202:5120  0   10G  0 disk  /var/log
+nvme0n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme1n1       259:2     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme2n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+nvme3n1       259:3     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /saswork
+
+ird37au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0  130G  0 disk /sso
+xvdc          202:32   0  100G  0 disk /sso/biconfig
+xvdd          202:48   0   20G  0 disk /sso/monitoring
+xvde          202:64   0  100G  0 disk /sso/sfw
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   10G  0 disk /var/log
+xvdj          202:144  0   10G  0 disk /var/log/audit
+
+ird38au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0  130G  0 disk /sso
+xvdc          202:32   0  100G  0 disk /sso/biconfig
+xvdd          202:48   0  100G  0 disk /sso/biconfig/940/Lev2
+xvde          202:64   0  100G  0 disk /sso/sfw
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0  100G  0 disk /sso/sfw/sas_lab
+xvdh          202:112  0    8G  0 disk /var
+xvdi          202:128  0    5G  0 disk /home
+xvdj          202:144  0    8G  0 disk /tmp
+xvdk          202:160  0   10G  0 disk /var/log
+xvdl          202:176  0   10G  0 disk /var/log/audit
+
+ird39au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0  130G  0 disk /sso
+xvdc          202:32   0  100G  0 disk /sso/biconfig
+xvdd          202:48   0   20G  0 disk /sso/monitoring
+xvde          202:64   0  100G  0 disk /sso/sfw
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   10G  0 disk /var/log
+xvdj          202:144  0   10G  0 disk /var/log/audit
+
+ird41au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird42au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird43au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdc          202:32   0   10G  0 disk  /opt
+xvdd          202:48   0  100G  0 disk  /opt/sas
+xvde          202:64   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0   80G  0 disk  /sso
+xvdg          202:96   0   20G  0 disk  /sso/monitoring
+xvdh          202:112  0   50G  0 disk  /sso/sfw
+xvdi          202:128  0   20G  0 disk  /var
+xvdj          202:144  0   50G  0 disk  /var/cache
+xvdk          202:160  0   10G  0 disk  /var/log
+xvdl          202:176  0  100G  0 disk  /sso/transport
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+xvdo          202:224  0   30G  0 disk  /ird/projects
+xvdp          202:240  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  1.7T  0 raid0 /saswork
+
+ird44au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdd          202:48    0   10G  0 disk  /opt
+xvde          202:64    0  100G  0 disk  /opt/sas
+xvdf          202:80    0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96    0   80G  0 disk  /sso
+xvdh          202:112   0   20G  0 disk  /sso/monitoring
+xvdi          202:128   0   50G  0 disk  /sso/sfw
+xvdj          202:144   0   20G  0 disk  /var
+xvdk          202:160   0   50G  0 disk  /var/cache
+xvdl          202:176   0   10G  0 disk  /var/log
+xvdm          202:192   0  100G  0 disk  /sso/transport
+xvdn          202:208   0    5G  0 disk  /home
+xvdo          202:224   0    8G  0 disk  /tmp
+xvdp          202:240   0   30G  0 disk  /ird/projects
+xvdq          202:4096  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /cascache
+nvme1n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /cascache
+
+ird45au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdd          202:48    0   10G  0 disk  /opt
+xvde          202:64    0  100G  0 disk  /opt/sas
+xvdf          202:80    0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96    0   80G  0 disk  /sso
+xvdh          202:112   0   20G  0 disk  /sso/monitoring
+xvdi          202:128   0   50G  0 disk  /sso/sfw
+xvdj          202:144   0   20G  0 disk  /var
+xvdk          202:160   0   50G  0 disk  /var/cache
+xvdl          202:176   0   10G  0 disk  /var/log
+xvdm          202:192   0  100G  0 disk  /sso/transport
+xvdn          202:208   0    5G  0 disk  /home
+xvdo          202:224   0    8G  0 disk  /tmp
+xvdp          202:240   0   30G  0 disk  /ird/projects
+xvdq          202:4096  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /cascache
+nvme1n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /cascache
+
+ird46au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+nvme1n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+
+ird47au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+nvme1n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+
+ird48au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+nvme1n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+
+ird49au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+nvme1n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+
+ird50au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+nvme1n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  3.5T  0 raid0 /cascache
+
+ird51au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird52au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdd          202:48   0   10G  0 disk /opt
+xvde          202:64   0  100G  0 disk /opt/sas
+xvdf          202:80   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk /sso
+xvdh          202:112  0   20G  0 disk /sso/monitoring
+xvdi          202:128  0   50G  0 disk /sso/sfw
+xvdj          202:144  0   20G  0 disk /var
+xvdk          202:160  0   50G  0 disk /var/cache
+xvdl          202:176  0   10G  0 disk /var/log
+xvdm          202:192  0    5G  0 disk /home
+xvdn          202:208  0    8G  0 disk /tmp
+nvme0n1       259:0    0  1.7T  0 disk 
+nvme1n1       259:1    0  1.7T  0 disk 
+
+ird53au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  100G  0 disk /sso/transport
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird54au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   20G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird55au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdd          202:48    0   10G  0 disk  /opt
+xvde          202:64    0  100G  0 disk  /opt/sas
+xvdf          202:80    0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96    0   80G  0 disk  /sso
+xvdh          202:112   0   20G  0 disk  /sso/monitoring
+xvdi          202:128   0   50G  0 disk  /sso/sfw
+xvdj          202:144   0   20G  0 disk  /var
+xvdk          202:160   0   50G  0 disk  /var/cache
+xvdl          202:176   0   10G  0 disk  /var/log
+xvdm          202:192   0  100G  0 disk  /sso/transport
+xvdn          202:208   0    5G  0 disk  /home
+xvdo          202:224   0    8G  0 disk  /tmp
+xvdp          202:240   0   30G  0 disk  /ird/projects
+xvdq          202:4096  0  500G  0 disk  /ird/warehouse
+xvdr          202:4352  0  100G  0 disk  /opt/sas/viya/config/var/lib/evmsvrops/new_evdm
+nvme0n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /saswork
+nvme1n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  3.5T  0 raid0 /saswork
+
+ird56au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdd          202:48    0   10G  0 disk  /opt
+xvde          202:64    0  100G  0 disk  /opt/sas
+xvdf          202:80    0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96    0   80G  0 disk  /sso
+xvdh          202:112   0   20G  0 disk  /sso/monitoring
+xvdi          202:128   0   50G  0 disk  /sso/sfw
+xvdj          202:144   0   20G  0 disk  /var
+xvdk          202:160   0   50G  0 disk  /var/cache
+xvdl          202:176   0   10G  0 disk  /var/log
+xvdm          202:192   0    5G  0 disk  /home
+xvdn          202:208   0    8G  0 disk  /tmp
+xvdo          202:224   0   30G  0 disk  /ird/projects
+xvdp          202:240   0  500G  0 disk  /ird/warehouse
+xvdq          202:4096  0  100G  0 disk  /sso/transport
+nvme0n1       259:2     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /cascache
+nvme1n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /cascache
+nvme2n1       259:3     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /cascache
+nvme3n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0  6.9T  0 raid0 /cascache
+
+ird57au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme1n1       259:2    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme2n1       259:3    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme3n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+
+ird58au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme1n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme2n1       259:2    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme3n1       259:3    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+
+ird59au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdd          202:48   0   10G  0 disk  /opt
+xvde          202:64   0  100G  0 disk  /opt/sas
+xvdf          202:80   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdg          202:96   0   80G  0 disk  /sso
+xvdh          202:112  0   20G  0 disk  /sso/monitoring
+xvdi          202:128  0   50G  0 disk  /sso/sfw
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme1n1       259:2    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme2n1       259:3    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+nvme3n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /cascache
+
+ird60au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  500G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird61au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  100G  0 disk /sso/transport
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird66au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   80G  0 disk /sso
+xvdd          202:48   0    8G  0 disk /var
+xvde          202:64   0    5G  0 disk /home
+xvdf          202:80   0    8G  0 disk /tmp
+xvdg          202:96   0  100G  0 disk /sso/sftp
+xvdh          202:112  0   10G  0 disk /var/log
+xvdi          202:128  0   10G  0 disk /var/log/audit
+
+ird67au.vsp.sas.com
+NAME          MAJ:MIN  RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0     0   20G  0 disk  
+├─xvda1       202:1     0  500M  0 part  /boot
+└─xvda2       202:2     0 19.5G  0 part  
+  ├─rhel-root 253:0     0 15.5G  0 lvm   /
+  └─rhel-swap 253:1     0    4G  0 lvm   [SWAP]
+xvdj          202:144   0   10G  0 disk  /opt
+xvdk          202:160   0  500G  0 disk  /opt/sas
+xvdl          202:176   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdm          202:192   0   80G  0 disk  /sso
+xvdn          202:208   0   20G  0 disk  /sso/monitoring
+xvdo          202:224   0   50G  0 disk  /sso/sfw
+xvdp          202:240   0  100G  0 disk  /sso/transport
+xvdq          202:4096  0   20G  0 disk  /var
+xvdr          202:4352  0   50G  0 disk  /var/cache
+xvds          202:4608  0   10G  0 disk  /var/log
+xvdt          202:4864  0    5G  0 disk  /home
+xvdu          202:5120  0    8G  0 disk  /tmp
+xvdv          202:5376  0   30G  0 disk  /ird/projects
+xvdw          202:5632  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:7     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme1n1       259:4     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme2n1       259:3     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme3n1       259:1     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme4n1       259:0     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme5n1       259:2     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme6n1       259:5     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+nvme7n1       259:6     0  1.7T  0 disk  
+└─md127         9:127   0 13.8T  0 raid0 /saswork
+
+ird68au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdc          202:32   0   10G  0 disk  /opt
+xvdd          202:48   0  100G  0 disk  /opt/sas
+xvde          202:64   0   50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0   80G  0 disk  /sso
+xvdg          202:96   0   20G  0 disk  /sso/monitoring
+xvdh          202:112  0   50G  0 disk  /sso/sfw
+xvdi          202:128  0  100G  0 disk  /sso/transport
+xvdj          202:144  0   20G  0 disk  /var
+xvdk          202:160  0   50G  0 disk  /var/cache
+xvdl          202:176  0   10G  0 disk  /var/log
+xvdm          202:192  0    5G  0 disk  /home
+xvdn          202:208  0    8G  0 disk  /tmp
+xvdo          202:224  0   30G  0 disk  /ird/projects
+xvdp          202:240  0  500G  0 disk  /ird/warehouse
+nvme0n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  1.7T  0 raid0 /cascache
+
+ird69au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird70au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  100G  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird71au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  100G  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird72au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    2T  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird73au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    2T  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird74au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0   17G  0 lvm  [SWAP]
+xvdb          202:16   0  2.4T  0 disk /sso/data/oracle/backup
+xvdc          202:32   0  1.5T  0 disk /sso/data/oracle/data01
+xvdd          202:48   0  1.8T  0 disk /sso/data/oracle/flash
+xvde          202:64   0   50G  0 disk /sso/sfw/oracle
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   13G  0 disk 
+└─rhel-swap   253:1    0   17G  0 lvm  [SWAP]
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0   10G  0 disk /var/log/audit
+xvdl          202:176  0   20G  0 disk /sso/data/export_db_shared
+
+ird75au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0  250G  0 disk /saswork
+xvdf          202:80   0   80G  0 disk /sso
+xvdg          202:96   0   20G  0 disk /sso/monitoring
+xvdh          202:112  0   50G  0 disk /sso/sfw
+xvdi          202:128  0  100G  0 disk /sso/transport
+xvdj          202:144  0   20G  0 disk /var
+xvdk          202:160  0   50G  0 disk /var/cache
+xvdl          202:176  0   10G  0 disk /var/log
+xvdm          202:192  0    5G  0 disk /home
+xvdn          202:208  0    8G  0 disk /tmp
+xvdo          202:224  0   30G  0 disk /ird/projects
+xvdp          202:240  0  500G  0 disk /ird/warehouse
+
+ird76au.vsp.sas.com
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0    20G  0 disk  
+├─xvda1       202:1    0   500M  0 part  /boot
+└─xvda2       202:2    0  19.5G  0 part  
+  ├─rhel-root 253:0    0  15.5G  0 lvm   /
+  └─rhel-swap 253:1    0     4G  0 lvm   [SWAP]
+xvdc          202:32   0    10G  0 disk  /opt
+xvdd          202:48   0   100G  0 disk  /opt/sas
+xvde          202:64   0    50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0    80G  0 disk  /sso
+xvdg          202:96   0    20G  0 disk  /sso/monitoring
+xvdh          202:112  0    50G  0 disk  /sso/sfw
+xvdi          202:128  0   100G  0 disk  /sso/transport
+xvdj          202:144  0    20G  0 disk  /var
+xvdk          202:160  0    50G  0 disk  /var/cache
+xvdl          202:176  0    10G  0 disk  /var/log
+xvdm          202:192  0     5G  0 disk  /home
+xvdn          202:208  0     8G  0 disk  /tmp
+xvdo          202:224  0    30G  0 disk  /ird/projects
+xvdp          202:240  0   500G  0 disk  /ird/warehouse
+nvme0n1       259:0    0 884.8G  0 disk  
+└─md127         9:127  0 884.6G  0 raid0 /cascache
+
+ird77au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird78au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0   50G  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird79au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0   50G  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird80au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  500G  0 disk /opt/sas/viya/config/data
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+
+ird81au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0   17G  0 lvm  [SWAP]
+xvdb          202:16   0  800G  0 disk /sso/data/oracle/backup
+xvdc          202:32   0  500G  0 disk /sso/data/oracle/data01
+xvdd          202:48   0  600G  0 disk /sso/data/oracle/flash
+xvde          202:64   0   50G  0 disk /sso/sfw/oracle
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   13G  0 disk 
+└─rhel-swap   253:1    0   17G  0 lvm  [SWAP]
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0   10G  0 disk /var/log/audit
+
+ird82au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   20G  0 disk /saswork
+xvdc          202:32   0  130G  0 disk /sso
+xvdd          202:48   0  100G  0 disk /sso/biconfig
+xvde          202:64   0   20G  0 disk /sso/monitoring
+xvdf          202:80   0  100G  0 disk /sso/sfw
+xvdg          202:96   0    8G  0 disk /var
+xvdh          202:112  0    5G  0 disk /home
+xvdi          202:128  0    8G  0 disk /tmp
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0   10G  0 disk /var/log/audit
+
+ird83au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0   20G  0 disk  
+├─xvda1       202:1    0  500M  0 part  /boot
+└─xvda2       202:2    0 19.5G  0 part  
+  ├─rhel-root 253:0    0 15.5G  0 lvm   /
+  └─rhel-swap 253:1    0    4G  0 lvm   [SWAP]
+xvdc          202:32   0  130G  0 disk  /sso
+xvdd          202:48   0  100G  0 disk  /sso/biconfig
+xvde          202:64   0   20G  0 disk  /sso/monitoring
+xvdf          202:80   0  100G  0 disk  /sso/sfw
+xvdg          202:96   0  100G  0 disk  /sso/transport
+xvdh          202:112  0    8G  0 disk  /var
+xvdi          202:128  0    5G  0 disk  /home
+xvdj          202:144  0    8G  0 disk  /tmp
+xvdk          202:160  0   30G  0 disk  /ird/projects
+xvdl          202:176  0  500G  0 disk  /ird/warehouse
+xvdm          202:192  0   10G  0 disk  /var/log
+xvdn          202:208  0   10G  0 disk  /var/log/audit
+nvme0n1       259:2    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /saswork
+nvme1n1       259:0    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /saswork
+nvme2n1       259:3    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /saswork
+nvme3n1       259:1    0  1.7T  0 disk  
+└─md127         9:127  0  6.9T  0 raid0 /saswork
+
+ird84au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0  130G  0 disk /sso
+xvdc          202:32   0  100G  0 disk /sso/biconfig
+xvdd          202:48   0   20G  0 disk /sso/monitoring
+xvde          202:64   0  100G  0 disk /sso/sfw
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   10G  0 disk /var/log
+xvdj          202:144  0   10G  0 disk /var/log/audit
+
+ird85au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0  130G  0 disk /sso
+xvdc          202:32   0  100G  0 disk /sso/biconfig
+xvdd          202:48   0   20G  0 disk /sso/monitoring
+xvde          202:64   0  100G  0 disk /sso/sfw
+xvdf          202:80   0    8G  0 disk /var
+xvdg          202:96   0    5G  0 disk /home
+xvdh          202:112  0    8G  0 disk /tmp
+xvdi          202:128  0   10G  0 disk /var/log
+xvdj          202:144  0   10G  0 disk /var/log/audit
+
+ird86au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird87au.vsp.sas.com
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0    20G  0 disk  
+├─xvda1       202:1    0   500M  0 part  /boot
+└─xvda2       202:2    0  19.5G  0 part  
+  ├─rhel-root 253:0    0  15.5G  0 lvm   /
+  └─rhel-swap 253:1    0     4G  0 lvm   [SWAP]
+xvdc          202:32   0    10G  0 disk  /opt
+xvdd          202:48   0   100G  0 disk  /opt/sas
+xvde          202:64   0    50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0    80G  0 disk  /sso
+xvdg          202:96   0    20G  0 disk  /sso/monitoring
+xvdh          202:112  0    50G  0 disk  /sso/sfw
+xvdi          202:128  0    20G  0 disk  /var
+xvdj          202:144  0    50G  0 disk  /var/cache
+xvdk          202:160  0    10G  0 disk  /var/log
+xvdl          202:176  0   100G  0 disk  /sso/transport
+xvdm          202:192  0     5G  0 disk  /home
+xvdn          202:208  0     8G  0 disk  /tmp
+xvdo          202:224  0    30G  0 disk  /ird/projects
+xvdp          202:240  0   500G  0 disk  /ird/warehouse
+nvme0n1       259:0    0 884.8G  0 disk  
+└─md127         9:127  0 884.6G  0 raid0 /saswork
+
+ird88au.vsp.sas.com
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0    20G  0 disk  
+├─xvda1       202:1    0   500M  0 part  /boot
+└─xvda2       202:2    0  19.5G  0 part  
+  ├─rhel-root 253:0    0  15.5G  0 lvm   /
+  └─rhel-swap 253:1    0     4G  0 lvm   [SWAP]
+xvdc          202:32   0    10G  0 disk  /opt
+xvdd          202:48   0   100G  0 disk  /opt/sas
+xvde          202:64   0    50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0    80G  0 disk  /sso
+xvdg          202:96   0    20G  0 disk  /sso/monitoring
+xvdh          202:112  0    50G  0 disk  /sso/sfw
+xvdi          202:128  0    20G  0 disk  /var
+xvdj          202:144  0    50G  0 disk  /var/cache
+xvdk          202:160  0    10G  0 disk  /var/log
+xvdl          202:176  0   100G  0 disk  /sso/transport
+xvdm          202:192  0     5G  0 disk  /home
+xvdn          202:208  0     8G  0 disk  /tmp
+xvdo          202:224  0    30G  0 disk  /ird/projects
+xvdp          202:240  0   500G  0 disk  /ird/warehouse
+nvme0n1       259:0    0 884.8G  0 disk  
+└─md127         9:127  0 884.6G  0 raid0 /cascache
+
+ird89au.vsp.sas.com
+NAME          MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
+xvda          202:0    0    20G  0 disk  
+├─xvda1       202:1    0   500M  0 part  /boot
+└─xvda2       202:2    0  19.5G  0 part  
+  ├─rhel-root 253:0    0  15.5G  0 lvm   /
+  └─rhel-swap 253:1    0     4G  0 lvm   [SWAP]
+xvdc          202:32   0    10G  0 disk  /opt
+xvdd          202:48   0   100G  0 disk  /opt/sas
+xvde          202:64   0    50G  0 disk  /opt/sas/viya/config/var/log
+xvdf          202:80   0    80G  0 disk  /sso
+xvdg          202:96   0    20G  0 disk  /sso/monitoring
+xvdh          202:112  0    50G  0 disk  /sso/sfw
+xvdi          202:128  0    20G  0 disk  /var
+xvdj          202:144  0    50G  0 disk  /var/cache
+xvdk          202:160  0    10G  0 disk  /var/log
+xvdl          202:176  0     5G  0 disk  /home
+xvdm          202:192  0     8G  0 disk  /tmp
+nvme0n1       259:0    0 884.8G  0 disk  
+└─md127         9:127  0 884.6G  0 raid0 /cascache
+
+ird90au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0    5G  0 disk /home
+xvdl          202:176  0    8G  0 disk /tmp
+
+ird91au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdc          202:32   0   10G  0 disk /opt
+xvdd          202:48   0  100G  0 disk /opt/sas
+xvde          202:64   0   50G  0 disk /opt/sas/viya/config/var/log
+xvdf          202:80   0   80G  0 disk /sso
+xvdg          202:96   0   20G  0 disk /sso/monitoring
+xvdh          202:112  0   50G  0 disk /sso/sfw
+xvdi          202:128  0   20G  0 disk /var
+xvdj          202:144  0   50G  0 disk /var/cache
+xvdk          202:160  0   10G  0 disk /var/log
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp
+nvme0n1       259:0    0  1.7T  0 disk 
+nvme1n1       259:1    0  1.7T  0 disk 
+
+ird92au.vsp.sas.com
+NAME          MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT
+xvda          202:0    0   20G  0 disk 
+├─xvda1       202:1    0  500M  0 part /boot
+└─xvda2       202:2    0 19.5G  0 part 
+  ├─rhel-root 253:0    0 15.5G  0 lvm  /
+  └─rhel-swap 253:1    0    4G  0 lvm  [SWAP]
+xvdb          202:16   0   10G  0 disk /opt
+xvdc          202:32   0  100G  0 disk /opt/sas
+xvdd          202:48   0   50G  0 disk /opt/sas/viya/config/var/log
+xvde          202:64   0   80G  0 disk /sso
+xvdf          202:80   0   20G  0 disk /sso/monitoring
+xvdg          202:96   0   50G  0 disk /sso/sfw
+xvdh          202:112  0   20G  0 disk /var
+xvdi          202:128  0   50G  0 disk /var/cache
+xvdj          202:144  0   10G  0 disk /var/log
+xvdk          202:160  0  100G  0 disk /sso/transport
+xvdl          202:176  0    5G  0 disk /home
+xvdm          202:192  0    8G  0 disk /tmp

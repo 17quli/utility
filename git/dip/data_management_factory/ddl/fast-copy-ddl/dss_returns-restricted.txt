@@ -1,0 +1,26 @@
+CREATE VIEW lab_fcp_raw_restricted_access.dss_returns
+AS SELECT   
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,	
+z.form_version_no,	
+z.return_category,	
+z.return_source,	
+z.date_processed,	
+z.tax_year,	
+z.date_returned,	
+z.accompanying_payment,	
+z.responsible_officer,	
+z.return_status,	
+z.liability_code,	
+z.return_form_error_code,	
+z.return_error_code,	
+z.`timestamp`	
+ FROM lab_fcp_raw.dss_returns z
+left outer join prod_raw.dss_special_clients_all sc
+on sc.ird_number= z.ird_number
+where nvl(sc.special_classification, 'STD')='STD'
+and nvl( sc.record_active_flag,'Y')='Y'
+and nvl(sc.record_deleted_flag, 'N') = 'N';

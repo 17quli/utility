@@ -1,0 +1,1710 @@
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_crm_text_data (                                                         |
+|   flngcrmkey DOUBLE,                                                                                   |
+|   flngver BIGINT,                                                                                      |
+|   flngverlast BIGINT,                                                                                  |
+|   fstrcrmsource VARCHAR(40),                                                                           |
+|   fstrcrmtype VARCHAR(40),                                                                             |
+|   flngparentcrmkey DOUBLE,                                                                             |
+|   flngcustomerkey BIGINT,                                                                              |
+|   fintprofilenumber DOUBLE,                                                                            |
+|   flngaccountkey DOUBLE,                                                                               |
+|   fstraccounttype VARCHAR(12),                                                                         |
+|   fdtmfilingperiod TIMESTAMP,                                                                          |
+|   flngbillitemkey DOUBLE,                                                                              |
+|   fintbillitem DOUBLE,                                                                                 |
+|   flngfolderkey BIGINT,                                                                                |
+|   fi64sourcekey DOUBLE,                                                                                |
+|   fstrsourceid VARCHAR(100),                                                                           |
+|   fstrsourcetype VARCHAR(60),                                                                          |
+|   fstrsourcedata VARCHAR(510),                                                                         |
+|   fstrdata VARCHAR(32767),                                                                             |
+|   fblnextended DOUBLE,                                                                                 |
+|   fblnprivate DOUBLE,                                                                                  |
+|   fblnhaschildren DOUBLE,                                                                              |
+|   fblnhighimportance DOUBLE,                                                                           |
+|   fblnsystem DOUBLE,                                                                                   |
+|   fstreditedby VARCHAR(20),                                                                            |
+|   fdtmedited TIMESTAMP,                                                                                |
+|   fstrcomment VARCHAR(2000),                                                                           |
+|   fblncommentexists DOUBLE,                                                                            |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   insert_object_run_key BIGINT,                                                                        |
+|   flngvisitkey BIGINT,                                                                                 |
+|   fstrirdnumber VARCHAR(20),                                                                           |
+|   fstrauthirdnumber VARCHAR(20),                                                                       |
+|   flngchildvisitkey BIGINT,                                                                            |
+|   fstrivrpath VARCHAR(4000),                                                                           |
+|   fstrphonenumber VARCHAR(30),                                                                         |
+|   fblnhold INT,                                                                                        |
+|   fstrupdatereason VARCHAR(40),                                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   update_object_run_key BIGINT,                                                                        |
+|   flngdockey BIGINT,                                                                                   |
+|   fstrcallerirdnumber VARCHAR(20),                                                                     |
+|   fstrauthorisedirdnumber VARCHAR(20),                                                                 |
+|   fstrtaxagentname VARCHAR(100),                                                                       |
+|   fstrvoiceenrolstatus VARCHAR(2),                                                                     |
+|   fstrvoiceoptoutstatus VARCHAR(2),                                                                    |
+|   fstrtransferreason VARCHAR(510),                                                                     |
+|   fstrcallerintentcorrect VARCHAR(6),                                                                  |
+|   fstrcorrectedintent VARCHAR(100),                                                                    |
+|   fstrcallqueue VARCHAR(100),                                                                          |
+|   fstrstageonefeedback VARCHAR(24),                                                                    |
+|   fblnvirtualhold INT,                                                                                 |
+|   fblncontactdetailschecked INT,                                                                       |
+|   fstrvisitsource VARCHAR(24),                                                                         |
+|   fstrvisitcategory VARCHAR(24),                                                                       |
+|   fstrvisitsubcategory VARCHAR(24),                                                                    |
+|   fblnunregisteredvisitor INT,                                                                         |
+|   fi64namekey DECIMAL(20,0),                                                                           |
+|   fi64addresskey DECIMAL(20,0),                                                                        |
+|   fstrvisitid VARCHAR(60),                                                                             |
+|   fstrticketid VARCHAR(60),                                                                            |
+|   fstrexternalid VARCHAR(60),                                                                          |
+|   fstridtype VARCHAR(12),                                                                              |
+|   fstrid VARCHAR(60),                                                                                  |
+|   fstrcountry VARCHAR(12),                                                                             |
+|   fintcountrycode INT,                                                                                 |
+|   fstrareacode VARCHAR(10),                                                                            |
+|   fblnvisitorverified INT,                                                                             |
+|   fstrverifydoctype VARCHAR(24),                                                                       |
+|   fintverifydocver INT,                                                                                |
+|   fi64verifydoceditinprogresskey DECIMAL(20,0),                                                        |
+|   flngverifydockey BIGINT,                                                                             |
+|   fstrdoctype VARCHAR(24),                                                                             |
+|   fintdocver INT,                                                                                      |
+|   fi64doceditinprogresskey DECIMAL(20,0),                                                              |
+|   flngxmlkey BIGINT,                                                                                   |
+|   fstrowner VARCHAR(20),                                                                               |
+|   fstrdistrictoffice VARCHAR(12),                                                                      |
+|   fdtmvisitstart TIMESTAMP,                                                                            |
+|   fdtmvisitend TIMESTAMP,                                                                              |
+|   flngduration BIGINT,                                                                                 |
+|   flngwaittime BIGINT,                                                                                 |
+|   filtercustomerlevel VARCHAR(12)                                                                      |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_crm_text_data'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='3937207', 'totalSize'='1359149999') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblaccount (                                                             |
+|   flngaccountkey INT,                                                                                   |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   flngcustomerkey INT,                                                                                  |
+|   fintparentprofilenumber SMALLINT,                                                                     |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fstraccounttype VARCHAR(12),                                                                          |
+|   fstrfiling VARCHAR(12),                                                                               |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fstrstatus VARCHAR(60),                                                                               |
+|   fstrclosurereason VARCHAR(60),                                                                        |
+|   fblnmailform SMALLINT,                                                                                |
+|   flngdockey INT,                                                                                       |
+|   flngfolderkey INT,                                                                                    |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblaccount'                                  |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='29485837', 'totalSize'='1258695913') |
++---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| result                                                                                                   |
++----------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblaccountinfo (                                                          |
+|   flngaccountkey INT,                                                                                    |
+|   fintparentprofilenumber SMALLINT,                                                                      |
+|   fintprofilenumber SMALLINT,                                                                            |
+|   flngcustomerkey INT,                                                                                   |
+|   flngjointcustomerkey INT,                                                                              |
+|   flngjointaccountkey INT,                                                                               |
+|   fblnprime SMALLINT,                                                                                    |
+|   fstraccounttype VARCHAR(12),                                                                           |
+|   flngdockey INT,                                                                                        |
+|   flngfolderkey INT,                                                                                     |
+|   fstrfilingfrq VARCHAR(60),                                                                             |
+|   fdtmcommence TIMESTAMP,                                                                                |
+|   fdtmcease TIMESTAMP,                                                                                   |
+|   fdtmcreated TIMESTAMP,                                                                                 |
+|   fi64namekey BIGINT,                                                                                    |
+|   fintnamekey SMALLINT,                                                                                  |
+|   fstrdisplay VARCHAR(24),                                                                               |
+|   fblnformatted SMALLINT,                                                                                |
+|   fstrnametype VARCHAR(40),                                                                              |
+|   fstrfamilyname VARCHAR(510),                                                                           |
+|   fstrmiddlename VARCHAR(100),                                                                           |
+|   fstrfirstname VARCHAR(100),                                                                            |
+|   fstrnamecontrol VARCHAR(20),                                                                           |
+|   fstrtitle VARCHAR(20),                                                                                 |
+|   fstrsuffix VARCHAR(20),                                                                                |
+|   fstrfreeformatname VARCHAR(510),                                                                       |
+|   fstrlistformatname VARCHAR(510),                                                                       |
+|   fstradditionalname VARCHAR(510),                                                                       |
+|   fstradditionalname2 VARCHAR(510),                                                                      |
+|   fi64addresskey BIGINT,                                                                                 |
+|   fintaddresskey SMALLINT,                                                                               |
+|   fstraddresstype VARCHAR(40),                                                                           |
+|   fstrstreet VARCHAR(510),                                                                               |
+|   fstrstreet2 VARCHAR(510),                                                                              |
+|   fstrunittype VARCHAR(100),                                                                             |
+|   fstrunit VARCHAR(60),                                                                                  |
+|   fstrcity VARCHAR(200),                                                                                 |
+|   fstrcounty VARCHAR(12),                                                                                |
+|   fstrstate VARCHAR(12),                                                                                 |
+|   fstrzip VARCHAR(60),                                                                                   |
+|   fstrdistrictoffice VARCHAR(12),                                                                        |
+|   fstrcountry VARCHAR(12),                                                                               |
+|   fstrattention VARCHAR(510),                                                                            |
+|   fstrlocationcode VARCHAR(60),                                                                          |
+|   fstrurbanization VARCHAR(100),                                                                         |
+|   fstrmunicipality VARCHAR(60),                                                                          |
+|   fstrdistrict VARCHAR(60),                                                                              |
+|   fstrsubdistrict VARCHAR(60),                                                                           |
+|   fstrsubprovince VARCHAR(100),                                                                          |
+|   fstraddressdescription VARCHAR(510),                                                                   |
+|   fstrlistformataddress VARCHAR(510),                                                                    |
+|   flngidkey INT,                                                                                         |
+|   fstridtype VARCHAR(12),                                                                                |
+|   fstrid VARCHAR(60),                                                                                    |
+|   fstrformattedid VARCHAR(60),                                                                           |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                                 |
+|   fstrcollectcity VARCHAR(200),                                                                          |
+|   fstrcustomertype VARCHAR(12),                                                                          |
+|   fstrreviewtype VARCHAR(12),                                                                            |
+|   fstrcustomerlevel VARCHAR(12),                                                                         |
+|   fi64protecteddatasource BIGINT,                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                                  |
+|   record_expiry_timestamp TIMESTAMP,                                                                     |
+|   record_active_flag VARCHAR(1),                                                                         |
+|   record_deleted_flag VARCHAR(1),                                                                        |
+|   insert_object_run_key INT,                                                                             |
+|   update_object_run_key INT,                                                                             |
+|   _c68 STRING                                                                                            |
+| )                                                                                                        |
+| STORED AS PARQUET                                                                                        |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblaccountinfo'                               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='83526605', 'totalSize'='10210936878') |
++----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcrmextendedlog (                                                      |
+|   flngcrmkey INT,                                                                                       |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fstrcrmsource VARCHAR(40),                                                                            |
+|   fstrcrmtype VARCHAR(40),                                                                              |
+|   flngparentcrmkey INT,                                                                                 |
+|   flngcustomerkey INT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   flngaccountkey INT,                                                                                   |
+|   fstraccounttype VARCHAR(12),                                                                          |
+|   fdtmfilingperiod TIMESTAMP,                                                                           |
+|   flngbillitemkey INT,                                                                                  |
+|   fintbillitem SMALLINT,                                                                                |
+|   flngfolderkey INT,                                                                                    |
+|   fi64sourcekey BIGINT,                                                                                 |
+|   fstrsourceid VARCHAR(100),                                                                            |
+|   fstrsourcetype VARCHAR(60),                                                                           |
+|   fstrsourcedata VARCHAR(510),                                                                          |
+|   fstrdata VARCHAR(32767),                                                                              |
+|   fblnextended SMALLINT,                                                                                |
+|   fblnprivate SMALLINT,                                                                                 |
+|   fblnhaschildren SMALLINT,                                                                             |
+|   fblnhighimportance SMALLINT,                                                                          |
+|   fblnsystem SMALLINT,                                                                                  |
+|   fstreditedby VARCHAR(20),                                                                             |
+|   fdtmedited TIMESTAMP,                                                                                 |
+|   fstrcomment VARCHAR(2000),                                                                            |
+|   fblncommentexists SMALLINT,                                                                           |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcrmextendedlog'                           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='35967992', 'totalSize'='4443276571') |
++---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomer (                                                          |
+|   flngcustomerkey INT,                                                                                |
+|   flngver INT,                                                                                        |
+|   flngverlast INT,                                                                                    |
+|   fstrcustomertype VARCHAR(12),                                                                       |
+|   fdtmcommence TIMESTAMP,                                                                             |
+|   fdtmcease TIMESTAMP,                                                                                |
+|   flngcustomerlevel INT,                                                                              |
+|   flngdockey INT,                                                                                     |
+|   flngfolderkey INT,                                                                                  |
+|   flngrefreshver INT,                                                                                 |
+|   flngcustomerversion INT,                                                                            |
+|   flngwebversion INT,                                                                                 |
+|   fdtmwebpublished TIMESTAMP,                                                                         |
+|   fdtmcreated TIMESTAMP,                                                                              |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   record_active_flag VARCHAR(1),                                                                      |
+|   record_deleted_flag VARCHAR(1),                                                                     |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   customerlevelfilter STRING                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomer'                               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9946343', 'totalSize'='416196430') |
++-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+| result                                                                                           |
++--------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomerhistory (                                              |
+|   flngcustomerkey INT,                                                                           |
+|   flngverlast INT,                                                                               |
+|   fstrcustomertypefrom VARCHAR(12),                                                              |
+|   fstrcustomertypeto VARCHAR(12),                                                                |
+|   flngdockeyfrom INT,                                                                            |
+|   flngdockeyto INT,                                                                              |
+|   fstrwho VARCHAR(20),                                                                           |
+|   fdtmwhen TIMESTAMP,                                                                            |
+|   record_effective_timestamp TIMESTAMP,                                                          |
+|   record_expiry_timestamp TIMESTAMP,                                                             |
+|   record_active_flag VARCHAR(1),                                                                 |
+|   record_deleted_flag VARCHAR(1),                                                                |
+|   insert_object_run_key INT,                                                                     |
+|   update_object_run_key INT,                                                                     |
+|   customerlevelfilter STRING                                                                     |
+| )                                                                                                |
+| STORED AS PARQUET                                                                                |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomerhistory'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='29932', 'totalSize'='818321') |
++--------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomerinfo (                                                        |
+|   flngcustomerkey INT,                                                                                  |
+|   flngjointcustomerkey INT,                                                                             |
+|   fblnprime SMALLINT,                                                                                   |
+|   fstrcustomertype VARCHAR(12),                                                                         |
+|   flngdockey INT,                                                                                       |
+|   flngfolderkey INT,                                                                                    |
+|   fblndefault SMALLINT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fi64namekey BIGINT,                                                                                   |
+|   fintnamekey SMALLINT,                                                                                 |
+|   fstrdisplay VARCHAR(24),                                                                              |
+|   fblnformatted SMALLINT,                                                                               |
+|   fstrnametype VARCHAR(40),                                                                             |
+|   fstrfamilyname VARCHAR(510),                                                                          |
+|   fstrmiddlename VARCHAR(100),                                                                          |
+|   fstrfirstname VARCHAR(100),                                                                           |
+|   fstrnamecontrol VARCHAR(20),                                                                          |
+|   fstrtitle VARCHAR(20),                                                                                |
+|   fstrsuffix VARCHAR(20),                                                                               |
+|   fstrfreeformatname VARCHAR(510),                                                                      |
+|   fstrlistformatname VARCHAR(510),                                                                      |
+|   fstradditionalname VARCHAR(510),                                                                      |
+|   fstradditionalname2 VARCHAR(510),                                                                     |
+|   fi64addresskey BIGINT,                                                                                |
+|   fintaddresskey SMALLINT,                                                                              |
+|   fstraddresstype VARCHAR(40),                                                                          |
+|   fstrstreet VARCHAR(510),                                                                              |
+|   fstrstreet2 VARCHAR(510),                                                                             |
+|   fstrunittype VARCHAR(100),                                                                            |
+|   fstrunit VARCHAR(60),                                                                                 |
+|   fstrcity VARCHAR(200),                                                                                |
+|   fstrcounty VARCHAR(12),                                                                               |
+|   fstrstate VARCHAR(12),                                                                                |
+|   fstrzip VARCHAR(60),                                                                                  |
+|   fstrcountry VARCHAR(12),                                                                              |
+|   fstrattention VARCHAR(510),                                                                           |
+|   fstrlocationcode VARCHAR(60),                                                                         |
+|   fstrurbanization VARCHAR(100),                                                                        |
+|   fstrmunicipality VARCHAR(60),                                                                         |
+|   fstrdistrict VARCHAR(60),                                                                             |
+|   fstrsubdistrict VARCHAR(60),                                                                          |
+|   fstrsubprovince VARCHAR(100),                                                                         |
+|   fstraddressdescription VARCHAR(510),                                                                  |
+|   fstrlistformataddress VARCHAR(510),                                                                   |
+|   flngidkey INT,                                                                                        |
+|   fstridtype VARCHAR(12),                                                                               |
+|   fstrid VARCHAR(60),                                                                                   |
+|   fstrformattedid VARCHAR(60),                                                                          |
+|   fstrdistrictoffice VARCHAR(12),                                                                       |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                                |
+|   fstrreviewtype VARCHAR(12),                                                                           |
+|   fstrcustomerlevel VARCHAR(12),                                                                        |
+|   fi64protecteddatasource BIGINT,                                                                       |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomerinfo'                             |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='52558813', 'totalSize'='5199465674') |
++---------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+
+| result                                                                       |
++------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomerlevel (                            |
+|   flngdockey INT,                                                            |
+|   flngcustomerkey INT,                                                       |
+|   fstrcustomerlevel VARCHAR(12),                                             |
+|   fstrwho VARCHAR(20),                                                       |
+|   fdtmwhen TIMESTAMP,                                                        |
+|   record_effective_timestamp TIMESTAMP,                                      |
+|   record_expiry_timestamp TIMESTAMP,                                         |
+|   record_active_flag VARCHAR(1),                                             |
+|   record_deleted_flag VARCHAR(1),                                            |
+|   insert_object_run_key INT,                                                 |
+|   update_object_run_key INT,                                                 |
+|   customerlevelfilter VARCHAR(12)                                            |
+| )                                                                            |
+| STORED AS PARQUET                                                            |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomerlevel' |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true')                      |
++------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomerlevel_ird0dxm_20191206 (                            |
+|   flngdockey INT,                                                                             |
+|   flngcustomerkey INT,                                                                        |
+|   fstrcustomerlevel VARCHAR(12),                                                              |
+|   fstrwho VARCHAR(20),                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                         |
+|   record_effective_timestamp TIMESTAMP,                                                       |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   record_active_flag VARCHAR(1),                                                              |
+|   record_deleted_flag VARCHAR(1),                                                             |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   customerlevelfilter VARCHAR(12)                                                             |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomerlevel_ird0dxm_20191206' |
+|                                                                                               |
++-----------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblcustomerstd (                                                         |
+|   flngdockey INT,                                                                                       |
+|   fdtmdob TIMESTAMP,                                                                                    |
+|   fdtmdod TIMESTAMP,                                                                                    |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblcustomerstd'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='53539843', 'totalSize'='1418049993') |
++---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------------+
+| result                                                                                                   |
++----------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tbldocposttransaction (                                                   |
+|   flngdockey INT,                                                                                        |
+|   fstrfield VARCHAR(200),                                                                                |
+|   flngtablerow INT,                                                                                      |
+|   flngdocverlast INT,                                                                                    |
+|   flngver INT,                                                                                           |
+|   flngverlast INT,                                                                                       |
+|   fintposting SMALLINT,                                                                                  |
+|   fi64sourcekey BIGINT,                                                                                  |
+|   fstrsource VARCHAR(40),                                                                                |
+|   fstridtype VARCHAR(12),                                                                                |
+|   fstrid VARCHAR(60),                                                                                    |
+|   fstrnamecontrol VARCHAR(8),                                                                            |
+|   flngcustomerkey INT,                                                                                   |
+|   flngaccountkey INT,                                                                                    |
+|   fstraccounttype VARCHAR(12),                                                                           |
+|   fdtmfilingperiod TIMESTAMP,                                                                            |
+|   flngbillitemkey INT,                                                                                   |
+|   fstrbilltype VARCHAR(12),                                                                              |
+|   fdtmbilldue TIMESTAMP,                                                                                 |
+|   fstrgroup VARCHAR(24),                                                                                 |
+|   flngtranskey INT,                                                                                      |
+|   fstrtranstype VARCHAR(12),                                                                             |
+|   fdtmeffect TIMESTAMP,                                                                                  |
+|   fdtmreport TIMESTAMP,                                                                                  |
+|   fcuramount DECIMAL(19,4),                                                                              |
+|   fintworkstatus SMALLINT,                                                                               |
+|   fblnprocessed SMALLINT,                                                                                |
+|   fdtmreviewed TIMESTAMP,                                                                                |
+|   fdtmposted TIMESTAMP,                                                                                  |
+|   fdtmreversed TIMESTAMP,                                                                                |
+|   fblnupdateperiod SMALLINT,                                                                             |
+|   fstrwho VARCHAR(20),                                                                                   |
+|   fdtmwhen TIMESTAMP,                                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                                  |
+|   record_expiry_timestamp TIMESTAMP,                                                                     |
+|   record_active_flag VARCHAR(1),                                                                         |
+|   record_deleted_flag VARCHAR(1),                                                                        |
+|   insert_object_run_key INT,                                                                             |
+|   update_object_run_key INT,                                                                             |
+|   customerlevelfilter STRING                                                                             |
+| )                                                                                                        |
+| STORED AS PARQUET                                                                                        |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tbldocposttransaction'                        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='129602640', 'totalSize'='8252443592') |
++----------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblid (                                                                  |
+|   flngidkey INT,                                                                                        |
+|   flngver INT,                                                                                          |
+|   flngcustomerkey INT,                                                                                  |
+|   fstridtype VARCHAR(12),                                                                               |
+|   fstrid VARCHAR(60),                                                                                   |
+|   flngaccountkey INT,                                                                                   |
+|   flngverlast INT,                                                                                      |
+|   fblnvalidated SMALLINT,                                                                               |
+|   fblnactive SMALLINT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fblndefault SMALLINT,                                                                                 |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   flngimagekey INT,                                                                                     |
+|   flngdockey INT,                                                                                       |
+|   flngcrmkey INT,                                                                                       |
+|   fi64protecteddatasource BIGINT,                                                                       |
+|   fintprotectlevel SMALLINT,                                                                            |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblid'                                       |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='62658240', 'totalSize'='2073775485') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblindicator (                                                           |
+|   flngindicatorkey INT,                                                                                 |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fintlevel SMALLINT,                                                                                   |
+|   flngcustomerkey INT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   flngaccountkey INT,                                                                                   |
+|   fstrindicator VARCHAR(12),                                                                            |
+|   fdtmcommence TIMESTAMP,                                                                               |
+|   fdtmfilingperiod TIMESTAMP,                                                                           |
+|   fdtmfilingperiodto TIMESTAMP,                                                                         |
+|   fcuramount DECIMAL(19,4),                                                                             |
+|   fdtmcease TIMESTAMP,                                                                                  |
+|   fstrreason VARCHAR(12),                                                                               |
+|   fdtmcommence1 TIMESTAMP,                                                                              |
+|   fdtmcease1 TIMESTAMP,                                                                                 |
+|   flngcrmkey INT,                                                                                       |
+|   fstrcomment VARCHAR(510),                                                                             |
+|   fstruser VARCHAR(20),                                                                                 |
+|   flngdockey INT,                                                                                       |
+|   fblnactive SMALLINT,                                                                                  |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblindicator'                                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='90450379', 'totalSize'='3990364143') |
++---------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------+
+| result                                                                  |
++-------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tbllead_cas (                            |
+|   flngleadkey INT,                                                      |
+|   flngver INT,                                                          |
+|   flngverlast INT,                                                      |
+|   fstrleadcategory VARCHAR(24),                                         |
+|   fstrleadtype VARCHAR(24),                                             |
+|   fstrleadworkarea VARCHAR(24),                                         |
+|   fstrmanager VARCHAR(20),                                              |
+|   flngcustomerkey INT,                                                  |
+|   flngaccountkey INT,                                                   |
+|   fdtmfilingperiod TIMESTAMP,                                           |
+|   fstraccounttype VARCHAR(12),                                          |
+|   flngsourcediscoverykey INT,                                           |
+|   fstrrecordkey VARCHAR(60),                                            |
+|   flngteamkey INT,                                                      |
+|   flngdockey INT,                                                       |
+|   flngcrmkey INT,                                                       |
+|   fstrnextaction VARCHAR(24),                                           |
+|   flngnextactiontaskkey INT,                                            |
+|   fstrnextactionwho VARCHAR(20),                                        |
+|   fdtmnextactiondue TIMESTAMP,                                          |
+|   fstrnextactionlogentry VARCHAR(510),                                  |
+|   fblnnextactioninerror SMALLINT,                                       |
+|   fstrlastaction VARCHAR(24),                                           |
+|   fstrlastactionoutcome VARCHAR(12),                                    |
+|   fstrlastactionwho VARCHAR(20),                                        |
+|   fdtmlastactiondue TIMESTAMP,                                          |
+|   fdtmlastactionactual TIMESTAMP,                                       |
+|   fdtmcreated TIMESTAMP,                                                |
+|   fdtmexpires TIMESTAMP,                                                |
+|   fstrcreatedwho VARCHAR(20),                                           |
+|   fdtmclosed TIMESTAMP,                                                 |
+|   fstrclosedwho VARCHAR(20),                                            |
+|   fstrclosereason VARCHAR(12),                                          |
+|   fcuramount DECIMAL(19,4),                                             |
+|   fcurprobability DECIMAL(19,4),                                        |
+|   fcurrecoverability DECIMAL(19,4),                                     |
+|   fstridtype VARCHAR(12),                                               |
+|   fstrid VARCHAR(60),                                                   |
+|   fstrformattedid VARCHAR(60),                                          |
+|   fstrname VARCHAR(510),                                                |
+|   fstrfamilyname VARCHAR(510),                                          |
+|   fstrfirstname VARCHAR(100),                                           |
+|   fstrmiddlename VARCHAR(100),                                          |
+|   fstrtitlename VARCHAR(100),                                           |
+|   fstrsuffixname VARCHAR(100),                                          |
+|   fstraddress VARCHAR(510),                                             |
+|   fstrstreet VARCHAR(510),                                              |
+|   fstrstreet2 VARCHAR(510),                                             |
+|   fstrunit VARCHAR(60),                                                 |
+|   fstrunittype VARCHAR(100),                                            |
+|   fstrcity VARCHAR(200),                                                |
+|   fstrcounty VARCHAR(12),                                               |
+|   fstrstate VARCHAR(12),                                                |
+|   fstrzip VARCHAR(60),                                                  |
+|   fstrlocationcode VARCHAR(60),                                         |
+|   fstrmunicipality VARCHAR(60),                                         |
+|   fstrurbanization VARCHAR(100),                                        |
+|   fstrdistrict VARCHAR(60),                                             |
+|   fstrsubdistrict VARCHAR(60),                                          |
+|   fstrsubprovince VARCHAR(100),                                         |
+|   fstraddressdescription VARCHAR(510),                                  |
+|   fstrcountry VARCHAR(12),                                              |
+|   fstrattention VARCHAR(510),                                           |
+|   fstrdistrictoffice VARCHAR(12),                                       |
+|   fi64leadparameterskey BIGINT,                                         |
+|   fstrwho VARCHAR(20),                                                  |
+|   fdtmwhen TIMESTAMP,                                                   |
+|   record_effective_timestamp TIMESTAMP,                                 |
+|   record_expiry_timestamp TIMESTAMP,                                    |
+|   record_active_flag VARCHAR(1),                                        |
+|   record_deleted_flag VARCHAR(1),                                       |
+|   insert_object_run_key INT,                                            |
+|   update_object_run_key INT,                                            |
+|   customerlevelfilter STRING                                            |
+| )                                                                       |
+| STORED AS PARQUET                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tbllead_cas' |
+|                                                                         |
++-------------------------------------------------------------------------+
++--------------------------------------------------------------------------+
+| result                                                                   |
++--------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tbllead_rest (                            |
+|   flngleadkey INT,                                                       |
+|   flngver INT,                                                           |
+|   flngverlast INT,                                                       |
+|   fstrleadcategory VARCHAR(24),                                          |
+|   fstrleadtype VARCHAR(24),                                              |
+|   fstrleadworkarea VARCHAR(24),                                          |
+|   fstrmanager VARCHAR(20),                                               |
+|   flngcustomerkey INT,                                                   |
+|   flngaccountkey INT,                                                    |
+|   fdtmfilingperiod TIMESTAMP,                                            |
+|   fstraccounttype VARCHAR(12),                                           |
+|   flngsourcediscoverykey INT,                                            |
+|   fstrrecordkey VARCHAR(60),                                             |
+|   flngteamkey INT,                                                       |
+|   flngdockey INT,                                                        |
+|   flngcrmkey INT,                                                        |
+|   fstrnextaction VARCHAR(24),                                            |
+|   flngnextactiontaskkey INT,                                             |
+|   fstrnextactionwho VARCHAR(20),                                         |
+|   fdtmnextactiondue TIMESTAMP,                                           |
+|   fstrnextactionlogentry VARCHAR(510),                                   |
+|   fblnnextactioninerror SMALLINT,                                        |
+|   fstrlastaction VARCHAR(24),                                            |
+|   fstrlastactionoutcome VARCHAR(12),                                     |
+|   fstrlastactionwho VARCHAR(20),                                         |
+|   fdtmlastactiondue TIMESTAMP,                                           |
+|   fdtmlastactionactual TIMESTAMP,                                        |
+|   fdtmcreated TIMESTAMP,                                                 |
+|   fdtmexpires TIMESTAMP,                                                 |
+|   fstrcreatedwho VARCHAR(20),                                            |
+|   fdtmclosed TIMESTAMP,                                                  |
+|   fstrclosedwho VARCHAR(20),                                             |
+|   fstrclosereason VARCHAR(12),                                           |
+|   fcuramount DECIMAL(19,4),                                              |
+|   fcurprobability DECIMAL(19,4),                                         |
+|   fcurrecoverability DECIMAL(19,4),                                      |
+|   fstridtype VARCHAR(12),                                                |
+|   fstrid VARCHAR(60),                                                    |
+|   fstrformattedid VARCHAR(60),                                           |
+|   fstrname VARCHAR(510),                                                 |
+|   fstrfamilyname VARCHAR(510),                                           |
+|   fstrfirstname VARCHAR(100),                                            |
+|   fstrmiddlename VARCHAR(100),                                           |
+|   fstrtitlename VARCHAR(100),                                            |
+|   fstrsuffixname VARCHAR(100),                                           |
+|   fstraddress VARCHAR(510),                                              |
+|   fstrstreet VARCHAR(510),                                               |
+|   fstrstreet2 VARCHAR(510),                                              |
+|   fstrunit VARCHAR(60),                                                  |
+|   fstrunittype VARCHAR(100),                                             |
+|   fstrcity VARCHAR(200),                                                 |
+|   fstrcounty VARCHAR(12),                                                |
+|   fstrstate VARCHAR(12),                                                 |
+|   fstrzip VARCHAR(60),                                                   |
+|   fstrlocationcode VARCHAR(60),                                          |
+|   fstrmunicipality VARCHAR(60),                                          |
+|   fstrurbanization VARCHAR(100),                                         |
+|   fstrdistrict VARCHAR(60),                                              |
+|   fstrsubdistrict VARCHAR(60),                                           |
+|   fstrsubprovince VARCHAR(100),                                          |
+|   fstraddressdescription VARCHAR(510),                                   |
+|   fstrcountry VARCHAR(12),                                               |
+|   fstrattention VARCHAR(510),                                            |
+|   fstrdistrictoffice VARCHAR(12),                                        |
+|   fi64leadparameterskey BIGINT,                                          |
+|   fstrwho VARCHAR(20),                                                   |
+|   fdtmwhen TIMESTAMP,                                                    |
+|   record_effective_timestamp TIMESTAMP,                                  |
+|   record_expiry_timestamp TIMESTAMP,                                     |
+|   record_active_flag VARCHAR(1),                                         |
+|   record_deleted_flag VARCHAR(1),                                        |
+|   insert_object_run_key INT,                                             |
+|   update_object_run_key INT                                              |
+| )                                                                        |
+| STORED AS PARQUET                                                        |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tbllead_rest' |
+|                                                                          |
++--------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblmailitem (                                                            |
+|   flngmailitemkey INT,                                                                                  |
+|   flngverlast INT,                                                                                      |
+|   flngmailtypekey INT,                                                                                  |
+|   flngtemplatekey INT,                                                                                  |
+|   flngcrmkey INT,                                                                                       |
+|   fstrrecipientkey VARCHAR(60),                                                                         |
+|   flngnameaddresshash INT,                                                                              |
+|   fstrsortkey VARCHAR(60),                                                                              |
+|   fdtmsortdate TIMESTAMP,                                                                               |
+|   fintmailtypesort SMALLINT,                                                                            |
+|   fstrlanguage VARCHAR(6),                                                                              |
+|   fstraddressblock VARCHAR(4000),                                                                       |
+|   fstremailto VARCHAR(510),                                                                             |
+|   fstrname VARCHAR(510),                                                                                |
+|   fstrdln VARCHAR(60),                                                                                  |
+|   fstrcity VARCHAR(510),                                                                                |
+|   fstrcountry VARCHAR(200),                                                                             |
+|   fstrzip VARCHAR(60),                                                                                  |
+|   fblnvalidaddress SMALLINT,                                                                            |
+|   fdtmcreated TIMESTAMP,                                                                                |
+|   fstrcreatedwho VARCHAR(20),                                                                           |
+|   fdtmbatched TIMESTAMP,                                                                                |
+|   fdtmprinted TIMESTAMP,                                                                                |
+|   fstrprintedwho VARCHAR(20),                                                                           |
+|   fstrprinter VARCHAR(510),                                                                             |
+|   fdtmreprinted TIMESTAMP,                                                                              |
+|   fstrreprintedwho VARCHAR(20),                                                                         |
+|   fstrreprintprinter VARCHAR(510),                                                                      |
+|   fdtmready TIMESTAMP,                                                                                  |
+|   fstrreadywho VARCHAR(20),                                                                             |
+|   fdtmemailedon TIMESTAMP,                                                                              |
+|   flngprintgroupkey INT,                                                                                |
+|   fblnvalid SMALLINT,                                                                                   |
+|   fstrvalidatedwho VARCHAR(20),                                                                         |
+|   fdtmvalidatedwhen TIMESTAMP,                                                                          |
+|   fblnelectroniconly SMALLINT,                                                                          |
+|   fstrrendertype VARCHAR(24),                                                                           |
+|   fstrdatabase VARCHAR(40),                                                                             |
+|   flngimagekey INT,                                                                                     |
+|   fblnlock SMALLINT,                                                                                    |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblmailitem'                                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='38565888', 'totalSize'='5708219730') |
++---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------+
+| result                                                                            |
++-----------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblmailitem_corrected (                            |
+|   flngmailitemkey INT,                                                            |
+|   flngverlast INT,                                                                |
+|   flngmailtypekey INT,                                                            |
+|   flngtemplatekey INT,                                                            |
+|   flngcrmkey INT,                                                                 |
+|   fstrrecipientkey VARCHAR(60),                                                   |
+|   flngnameaddresshash INT,                                                        |
+|   fstrsortkey VARCHAR(60),                                                        |
+|   fdtmsortdate TIMESTAMP,                                                         |
+|   fintmailtypesort SMALLINT,                                                      |
+|   fstrlanguage VARCHAR(6),                                                        |
+|   fstraddressblock VARCHAR(4000),                                                 |
+|   fstremailto VARCHAR(510),                                                       |
+|   fstrname VARCHAR(510),                                                          |
+|   fstrdln VARCHAR(60),                                                            |
+|   fstrcity VARCHAR(510),                                                          |
+|   fstrcountry VARCHAR(200),                                                       |
+|   fstrzip VARCHAR(60),                                                            |
+|   fblnvalidaddress SMALLINT,                                                      |
+|   fdtmcreated TIMESTAMP,                                                          |
+|   fstrcreatedwho VARCHAR(20),                                                     |
+|   fdtmbatched TIMESTAMP,                                                          |
+|   fdtmprinted TIMESTAMP,                                                          |
+|   fstrprintedwho VARCHAR(20),                                                     |
+|   fstrprinter VARCHAR(510),                                                       |
+|   fdtmreprinted TIMESTAMP,                                                        |
+|   fstrreprintedwho VARCHAR(20),                                                   |
+|   fstrreprintprinter VARCHAR(510),                                                |
+|   fdtmready TIMESTAMP,                                                            |
+|   fstrreadywho VARCHAR(20),                                                       |
+|   fdtmemailedon TIMESTAMP,                                                        |
+|   flngprintgroupkey INT,                                                          |
+|   fblnvalid SMALLINT,                                                             |
+|   fstrvalidatedwho VARCHAR(20),                                                   |
+|   fdtmvalidatedwhen TIMESTAMP,                                                    |
+|   fblnelectroniconly SMALLINT,                                                    |
+|   fstrrendertype VARCHAR(24),                                                     |
+|   fstrdatabase VARCHAR(40),                                                       |
+|   flngimagekey INT,                                                               |
+|   fblnlock SMALLINT,                                                              |
+|   fstrwho VARCHAR(20),                                                            |
+|   fdtmwhen TIMESTAMP,                                                             |
+|   record_effective_timestamp TIMESTAMP,                                           |
+|   record_expiry_timestamp TIMESTAMP,                                              |
+|   record_active_flag VARCHAR(1),                                                  |
+|   record_deleted_flag VARCHAR(1),                                                 |
+|   insert_object_run_key INT,                                                      |
+|   update_object_run_key INT,                                                      |
+|   customerlevel STRING                                                            |
+| )                                                                                 |
+| STORED AS PARQUET                                                                 |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblmailitem_corrected' |
+|                                                                                   |
++-----------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------+
+| result                                                                             |
++------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblmailitem_restricted (                            |
+|   flngmailitemkey INT,                                                             |
+|   flngverlast INT,                                                                 |
+|   flngmailtypekey INT,                                                             |
+|   flngtemplatekey INT,                                                             |
+|   flngcrmkey INT,                                                                  |
+|   fstrrecipientkey VARCHAR(60),                                                    |
+|   flngnameaddresshash INT,                                                         |
+|   fstrsortkey VARCHAR(60),                                                         |
+|   fdtmsortdate TIMESTAMP,                                                          |
+|   fintmailtypesort SMALLINT,                                                       |
+|   fstrlanguage VARCHAR(6),                                                         |
+|   fstraddressblock VARCHAR(4000),                                                  |
+|   fstremailto VARCHAR(510),                                                        |
+|   fstrname VARCHAR(510),                                                           |
+|   fstrdln VARCHAR(60),                                                             |
+|   fstrcity VARCHAR(510),                                                           |
+|   fstrcountry VARCHAR(200),                                                        |
+|   fstrzip VARCHAR(60),                                                             |
+|   fblnvalidaddress SMALLINT,                                                       |
+|   fdtmcreated TIMESTAMP,                                                           |
+|   fstrcreatedwho VARCHAR(20),                                                      |
+|   fdtmbatched TIMESTAMP,                                                           |
+|   fdtmprinted TIMESTAMP,                                                           |
+|   fstrprintedwho VARCHAR(20),                                                      |
+|   fstrprinter VARCHAR(510),                                                        |
+|   fdtmreprinted TIMESTAMP,                                                         |
+|   fstrreprintedwho VARCHAR(20),                                                    |
+|   fstrreprintprinter VARCHAR(510),                                                 |
+|   fdtmready TIMESTAMP,                                                             |
+|   fstrreadywho VARCHAR(20),                                                        |
+|   fdtmemailedon TIMESTAMP,                                                         |
+|   flngprintgroupkey INT,                                                           |
+|   fblnvalid SMALLINT,                                                              |
+|   fstrvalidatedwho VARCHAR(20),                                                    |
+|   fdtmvalidatedwhen TIMESTAMP,                                                     |
+|   fblnelectroniconly SMALLINT,                                                     |
+|   fstrrendertype VARCHAR(24),                                                      |
+|   fstrdatabase VARCHAR(40),                                                        |
+|   flngimagekey INT,                                                                |
+|   fblnlock SMALLINT,                                                               |
+|   fstrwho VARCHAR(20),                                                             |
+|   fdtmwhen TIMESTAMP,                                                              |
+|   record_effective_timestamp TIMESTAMP,                                            |
+|   record_expiry_timestamp TIMESTAMP,                                               |
+|   record_active_flag VARCHAR(1),                                                   |
+|   record_deleted_flag VARCHAR(1),                                                  |
+|   insert_object_run_key INT,                                                       |
+|   update_object_run_key INT                                                        |
+| )                                                                                  |
+| STORED AS PARQUET                                                                  |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblmailitem_restricted' |
+|                                                                                    |
++------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnaics (                                                              |
+|   flngnaicskey INT,                                                                                    |
+|   flngver INT,                                                                                         |
+|   flngverlast INT,                                                                                     |
+|   fstrnaicsversion VARCHAR(24),                                                                        |
+|   fstrnaics VARCHAR(60),                                                                               |
+|   fstrlevel1 VARCHAR(60),                                                                              |
+|   fstrlevel2 VARCHAR(60),                                                                              |
+|   fstrlevel3 VARCHAR(60),                                                                              |
+|   fstrlevel4 VARCHAR(60),                                                                              |
+|   fstrlevel5 VARCHAR(60),                                                                              |
+|   fstrlevel6 VARCHAR(60),                                                                              |
+|   flngcustomerkey INT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   flngaccountkey INT,                                                                                  |
+|   fdtmcommence TIMESTAMP,                                                                              |
+|   fdtmcease TIMESTAMP,                                                                                 |
+|   fcurbusinessmakeup DECIMAL(19,4),                                                                    |
+|   fblndefault SMALLINT,                                                                                |
+|   fblnactive SMALLINT,                                                                                 |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   record_active_flag VARCHAR(1),                                                                       |
+|   record_deleted_flag VARCHAR(1),                                                                      |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   customerlevelfilter STRING                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnaics'                                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='20828994', 'totalSize'='700035188') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnamerecord (                                                          |
+|   fi64namekey BIGINT,                                                                                   |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fdtmeffectivefrom TIMESTAMP,                                                                          |
+|   fdtmeffectiveto TIMESTAMP,                                                                            |
+|   fdtmsystemfrom TIMESTAMP,                                                                             |
+|   fdtmsystemto TIMESTAMP,                                                                               |
+|   fstrsource VARCHAR(40),                                                                               |
+|   flngcustomerkey INT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fi64sourcekey BIGINT,                                                                                 |
+|   fstrnametype VARCHAR(40),                                                                             |
+|   fstrdisplay VARCHAR(24),                                                                              |
+|   fblnformatted SMALLINT,                                                                               |
+|   fstrlastname VARCHAR(100),                                                                            |
+|   fintlastmodifier SMALLINT,                                                                            |
+|   fstrfirstname VARCHAR(100),                                                                           |
+|   fintfirstmodifier SMALLINT,                                                                           |
+|   fstrmiddlename VARCHAR(100),                                                                          |
+|   fintmiddlemodifier SMALLINT,                                                                          |
+|   fstrtitle VARCHAR(20),                                                                                |
+|   finttitlemodifier SMALLINT,                                                                           |
+|   fstrsuffix VARCHAR(20),                                                                               |
+|   fintsuffixmodifier SMALLINT,                                                                          |
+|   fstrfreeformatname VARCHAR(510),                                                                      |
+|   fintfreeformatmodifier SMALLINT,                                                                      |
+|   fstradditionalname VARCHAR(510),                                                                      |
+|   fintadditionalmodifier SMALLINT,                                                                      |
+|   fstradditionalname2 VARCHAR(510),                                                                     |
+|   fintadditionalmodifier2 SMALLINT,                                                                     |
+|   fstrlistformatname VARCHAR(510),                                                                      |
+|   fi64protecteddatasource BIGINT,                                                                       |
+|   flngcrmkey INT,                                                                                       |
+|   fblnblank SMALLINT,                                                                                   |
+|   fblncurrent SMALLINT,                                                                                 |
+|   fblnactive SMALLINT,                                                                                  |
+|   fintprotectlevel SMALLINT,                                                                            |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnamerecord'                               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='51328814', 'totalSize'='2740971721') |
++---------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_accidgedu (                                              |
+|   flngdockey INT,                                                                             |
+|   fstreducationprovider VARCHAR(100),                                                         |
+|   fstrwho VARCHAR(20),                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                         |
+|   record_effective_timestamp TIMESTAMP,                                                       |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   record_active_flag VARCHAR(1),                                                              |
+|   record_deleted_flag VARCHAR(1),                                                             |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   customerlevelfilter STRING                                                                  |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_accidgedu'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='590', 'totalSize'='17373') |
++-----------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+| result                                                                                               |
++------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_accidgovr (                                                     |
+|   flngdockey INT,                                                                                    |
+|   fstrissuingcountry VARCHAR(6),                                                                     |
+|   fblntranslationreceived SMALLINT,                                                                  |
+|   flngentrynumber INT,                                                                               |
+|   fstrwho VARCHAR(20),                                                                               |
+|   fdtmwhen TIMESTAMP,                                                                                |
+|   record_effective_timestamp TIMESTAMP,                                                              |
+|   record_expiry_timestamp TIMESTAMP,                                                                 |
+|   record_active_flag VARCHAR(1),                                                                     |
+|   record_deleted_flag VARCHAR(1),                                                                    |
+|   insert_object_run_key INT,                                                                         |
+|   update_object_run_key INT,                                                                         |
+|   customerlevelfilter STRING                                                                         |
+| )                                                                                                    |
+| STORED AS PARQUET                                                                                    |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_accidgovr'                          |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1604526', 'totalSize'='23180643') |
++------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_calllog (                                                         |
+|   flngvisitkey INT,                                                                                    |
+|   flngver INT,                                                                                         |
+|   flngverlast INT,                                                                                     |
+|   fstrirdnumber VARCHAR(20),                                                                           |
+|   fstrauthirdnumber VARCHAR(20),                                                                       |
+|   flngchildvisitkey INT,                                                                               |
+|   fstrupdatereason VARCHAR(40),                                                                        |
+|   fstrivrpath VARCHAR(4000),                                                                           |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   record_active_flag VARCHAR(1),                                                                       |
+|   record_deleted_flag VARCHAR(1),                                                                      |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   customerlevelfilter STRING                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_calllog'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='40361971', 'totalSize'='850755909') |
++--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+| result                                                                              |
++-------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_calllog_check_cas (                            |
+|   flngvisitkey INT,                                                                 |
+|   flngver INT,                                                                      |
+|   flngverlast INT,                                                                  |
+|   fstrirdnumber VARCHAR(20),                                                        |
+|   fstrauthirdnumber VARCHAR(20),                                                    |
+|   flngchildvisitkey INT,                                                            |
+|   fstrupdatereason VARCHAR(40),                                                     |
+|   fstrivrpath VARCHAR(4000),                                                        |
+|   fstrwho VARCHAR(20),                                                              |
+|   fdtmwhen TIMESTAMP,                                                               |
+|   record_effective_timestamp TIMESTAMP,                                             |
+|   record_expiry_timestamp TIMESTAMP,                                                |
+|   record_active_flag VARCHAR(1),                                                    |
+|   record_deleted_flag VARCHAR(1),                                                   |
+|   insert_object_run_key INT,                                                        |
+|   update_object_run_key INT,                                                        |
+|   customerlevelfilter STRING,                                                       |
+|   i1_fstrcustomerlevel STRING,                                                      |
+|   i2_fstrcustomerlevel STRING,                                                      |
+|   cl_fstrcustomerlevel STRING                                                       |
+| )                                                                                   |
+| STORED AS TEXTFILE                                                                  |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_calllog_check_cas' |
+|                                                                                     |
++-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| result                                                                                     |
++--------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_calllog_check_restricted (                            |
+|   flngvisitkey INT,                                                                        |
+|   flngver INT,                                                                             |
+|   flngverlast INT,                                                                         |
+|   fstrirdnumber VARCHAR(20),                                                               |
+|   fstrauthirdnumber VARCHAR(20),                                                           |
+|   flngchildvisitkey INT,                                                                   |
+|   fstrupdatereason VARCHAR(40),                                                            |
+|   fstrivrpath VARCHAR(4000),                                                               |
+|   fstrwho VARCHAR(20),                                                                     |
+|   fdtmwhen TIMESTAMP,                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                    |
+|   record_expiry_timestamp TIMESTAMP,                                                       |
+|   record_active_flag VARCHAR(1),                                                           |
+|   record_deleted_flag VARCHAR(1),                                                          |
+|   insert_object_run_key INT,                                                               |
+|   update_object_run_key INT                                                                |
+| )                                                                                          |
+| STORED AS TEXTFILE                                                                         |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_calllog_check_restricted' |
+|                                                                                            |
++--------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_cstcominfo (                                           |
+|   flngdockey INT,                                                                           |
+|   fstrurl VARCHAR(100),                                                                     |
+|   fblnnilcompany SMALLINT,                                                                  |
+|   fblndonee SMALLINT,                                                                       |
+|   fstrwho VARCHAR(20),                                                                      |
+|   fdtmwhen TIMESTAMP,                                                                       |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   record_active_flag VARCHAR(1),                                                            |
+|   record_deleted_flag VARCHAR(1),                                                           |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   customerlevelfilter STRING                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_cstcominfo'                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='15', 'totalSize'='9646') |
++---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_customerstd (                                                      |
+|   flngdockey INT,                                                                                       |
+|   fstrcustomersubtypeclass VARCHAR(12),                                                                 |
+|   fstrcustomersubtype VARCHAR(12),                                                                      |
+|   fstrcustomersegment VARCHAR(100),                                                                     |
+|   fstrspecialfiletype VARCHAR(12),                                                                      |
+|   fblnspecialtaxresidency SMALLINT,                                                                     |
+|   fstrnonresidenttype VARCHAR(100),                                                                     |
+|   fstrcurrenttaxresidency VARCHAR(100),                                                                 |
+|   fstrclosurereason VARCHAR(12),                                                                        |
+|   fintsmscountrycode SMALLINT,                                                                          |
+|   fstrsmsareacode VARCHAR(10),                                                                          |
+|   fstrsmsphonenumber VARCHAR(30),                                                                       |
+|   fdtmincomebalancedate TIMESTAMP,                                                                      |
+|   fstrcustomerclass VARCHAR(12),                                                                        |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_customerstd'                           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='43024734', 'totalSize'='1132674993') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_custsegmenthist (                                                  |
+|   flngdockey INT,                                                                                       |
+|   flngverlast INT,                                                                                      |
+|   fstrcustomersegment VARCHAR(100),                                                                     |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_custsegmenthist'                       |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='92858783', 'totalSize'='2493214913') |
++---------------------------------------------------------------------------------------------------------+
++----------------------------------------------------------------------------------------------------+
+| result                                                                                             |
++----------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_custtaxresidency (                                            |
+|   flngdockey INT,                                                                                  |
+|   fintseq SMALLINT,                                                                                |
+|   fstrtaxresidency VARCHAR(100),                                                                   |
+|   fdtmresstart TIMESTAMP,                                                                          |
+|   fdtmresend TIMESTAMP,                                                                            |
+|   fblnisfinancial SMALLINT,                                                                        |
+|   fstrwho VARCHAR(20),                                                                             |
+|   fdtmwhen TIMESTAMP,                                                                              |
+|   record_effective_timestamp TIMESTAMP,                                                            |
+|   record_expiry_timestamp TIMESTAMP,                                                               |
+|   record_active_flag VARCHAR(1),                                                                   |
+|   record_deleted_flag VARCHAR(1),                                                                  |
+|   insert_object_run_key INT,                                                                       |
+|   update_object_run_key INT,                                                                       |
+|   customerlevelfilter STRING                                                                       |
+| )                                                                                                  |
+| STORED AS PARQUET                                                                                  |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_custtaxresidency'                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='250226', 'totalSize'='4827028') |
++----------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------+
+| result                                                                              |
++-------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtnattributes_cas (                            |
+|   flngdockey INT,                                                                   |
+|   flngver INT,                                                                      |
+|   flngverlast INT,                                                                  |
+|   flngwebreqkey INT,                                                                |
+|   fstrfilingfrequency VARCHAR(24),                                                  |
+|   fstrsourcetype VARCHAR(24),                                                       |
+|   fstrweblogonid VARCHAR(100),                                                      |
+|   fstrformtypefiled VARCHAR(16),                                                    |
+|   fstrformtypeexpected VARCHAR(16),                                                 |
+|   fstripaddress VARCHAR(100),                                                       |
+|   fstrvendorid VARCHAR(100),                                                        |
+|   fstrsoftwareprovider VARCHAR(100),                                                |
+|   fstrsoftwareplatform VARCHAR(100),                                                |
+|   fstrsoftwarerelease VARCHAR(100),                                                 |
+|   fstrdln VARCHAR(60),                                                              |
+|   fdtmceasedate TIMESTAMP,                                                          |
+|   fstrceaseexplanation VARCHAR(2000),                                               |
+|   fblnamended SMALLINT,                                                             |
+|   fstramendreason VARCHAR(24),                                                      |
+|   fstramendtext VARCHAR(2000),                                                      |
+|   fblnaudited SMALLINT,                                                             |
+|   fblncorrespondence SMALLINT,                                                      |
+|   fblnfutureperiod SMALLINT,                                                        |
+|   fblndiscovery SMALLINT,                                                           |
+|   fblnnilreturn SMALLINT,                                                           |
+|   fblndefault SMALLINT,                                                             |
+|   fblnfinalreturn SMALLINT,                                                         |
+|   fblnprovisional SMALLINT,                                                         |
+|   fcuramountdue DECIMAL(19,4),                                                      |
+|   fdtmpaymentduedate TIMESTAMP,                                                     |
+|   fdtmpaymentduedateextended TIMESTAMP,                                             |
+|   fblnconverted SMALLINT,                                                           |
+|   fblnoriginallyconverted SMALLINT,                                                 |
+|   fcurcredittransferamount DECIMAL(19,4),                                           |
+|   fstrwho VARCHAR(20),                                                              |
+|   fdtmwhen TIMESTAMP,                                                               |
+|   record_effective_timestamp TIMESTAMP,                                             |
+|   record_expiry_timestamp TIMESTAMP,                                                |
+|   record_active_flag VARCHAR(1),                                                    |
+|   record_deleted_flag VARCHAR(1),                                                   |
+|   insert_object_run_key INT,                                                        |
+|   update_object_run_key INT,                                                        |
+|   customerlevelfilter STRING                                                        |
+| )                                                                                   |
+| STORED AS PARQUET                                                                   |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtnattributes_cas' |
+|                                                                                     |
++-------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------+
+| result                                                                               |
++--------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtnattributes_rest (                            |
+|   flngdockey INT,                                                                    |
+|   flngver INT,                                                                       |
+|   flngverlast INT,                                                                   |
+|   flngwebreqkey INT,                                                                 |
+|   fstrfilingfrequency VARCHAR(24),                                                   |
+|   fstrsourcetype VARCHAR(24),                                                        |
+|   fstrweblogonid VARCHAR(100),                                                       |
+|   fstrformtypefiled VARCHAR(16),                                                     |
+|   fstrformtypeexpected VARCHAR(16),                                                  |
+|   fstripaddress VARCHAR(100),                                                        |
+|   fstrvendorid VARCHAR(100),                                                         |
+|   fstrsoftwareprovider VARCHAR(100),                                                 |
+|   fstrsoftwareplatform VARCHAR(100),                                                 |
+|   fstrsoftwarerelease VARCHAR(100),                                                  |
+|   fstrdln VARCHAR(60),                                                               |
+|   fdtmceasedate TIMESTAMP,                                                           |
+|   fstrceaseexplanation VARCHAR(2000),                                                |
+|   fblnamended SMALLINT,                                                              |
+|   fstramendreason VARCHAR(24),                                                       |
+|   fstramendtext VARCHAR(2000),                                                       |
+|   fblnaudited SMALLINT,                                                              |
+|   fblncorrespondence SMALLINT,                                                       |
+|   fblnfutureperiod SMALLINT,                                                         |
+|   fblndiscovery SMALLINT,                                                            |
+|   fblnnilreturn SMALLINT,                                                            |
+|   fblndefault SMALLINT,                                                              |
+|   fblnfinalreturn SMALLINT,                                                          |
+|   fblnprovisional SMALLINT,                                                          |
+|   fcuramountdue DECIMAL(19,4),                                                       |
+|   fdtmpaymentduedate TIMESTAMP,                                                      |
+|   fdtmpaymentduedateextended TIMESTAMP,                                              |
+|   fblnconverted SMALLINT,                                                            |
+|   fblnoriginallyconverted SMALLINT,                                                  |
+|   fcurcredittransferamount DECIMAL(19,4),                                            |
+|   fstrwho VARCHAR(20),                                                               |
+|   fdtmwhen TIMESTAMP,                                                                |
+|   record_effective_timestamp TIMESTAMP,                                              |
+|   record_expiry_timestamp TIMESTAMP,                                                 |
+|   record_active_flag VARCHAR(1),                                                     |
+|   record_deleted_flag VARCHAR(1),                                                    |
+|   insert_object_run_key INT,                                                         |
+|   update_object_run_key INT                                                          |
+| )                                                                                    |
+| STORED AS PARQUET                                                                    |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtnattributes_rest' |
+|                                                                                      |
++--------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------+
+| result                                                                       |
++------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtngst_cas (                            |
+|   flngdockey INT,                                                            |
+|   fstrregistrationno VARCHAR(18),                                            |
+|   fdtmfilingperiod TIMESTAMP,                                                |
+|   fstrfilingfreq VARCHAR(12),                                                |
+|   fstrsourcetype VARCHAR(24),                                                |
+|   fblnnil SMALLINT,                                                          |
+|   fblnfinalreturn SMALLINT,                                                  |
+|   fblnincorrectform SMALLINT,                                                |
+|   fstrformtypefiled VARCHAR(16),                                             |
+|   fstrformtypeexpected VARCHAR(16),                                          |
+|   fblnhospice SMALLINT,                                                      |
+|   fstrhospicetype VARCHAR(24),                                               |
+|   fblnprovisionalfiler SMALLINT,                                             |
+|   fstrprovisionaloption VARCHAR(24),                                         |
+|   fblncompulsory SMALLINT,                                                   |
+|   fblnmultibranchfiler SMALLINT,                                             |
+|   fblntransitionalreturn SMALLINT,                                           |
+|   fblncorrespondence SMALLINT,                                               |
+|   fstrvendorid VARCHAR(100),                                                 |
+|   fstrsoftwareprovider VARCHAR(100),                                         |
+|   fstrweblogonid VARCHAR(100),                                               |
+|   fblnqualifyratio SMALLINT,                                                 |
+|   fcurratio DECIMAL(19,4),                                                   |
+|   fcurgsttotal DECIMAL(19,4),                                                |
+|   fcurtotalsales DECIMAL(19,4),                                              |
+|   fcurp1totalsales DECIMAL(19,4),                                            |
+|   fcurp1zerosupplies DECIMAL(19,4),                                          |
+|   fcurp1incomecalculation DECIMAL(19,4),                                     |
+|   fcurp1gstcollected DECIMAL(19,4),                                          |
+|   fcurp1longtermsales DECIMAL(19,4),                                         |
+|   fcurp1longtermgst DECIMAL(19,4),                                           |
+|   fcurp1hospitalsales DECIMAL(19,4),                                         |
+|   fcurp1hospitalgst DECIMAL(19,4),                                           |
+|   fcurp1salesadjustments DECIMAL(19,4),                                      |
+|   fcurp1netsalesandincome DECIMAL(19,4),                                     |
+|   fcurp1totalexpenses DECIMAL(19,4),                                         |
+|   fcurp1expensescalculation DECIMAL(19,4),                                   |
+|   fcurp1creditadjustments DECIMAL(19,4),                                     |
+|   fcurp1gstcredit DECIMAL(19,4),                                             |
+|   fcurp1totalgst DECIMAL(19,4),                                              |
+|   fcurp2totalsales DECIMAL(19,4),                                            |
+|   fcurp2zerosupplies DECIMAL(19,4),                                          |
+|   fcurp2longtermsales DECIMAL(19,4),                                         |
+|   fcurp2longtermgst DECIMAL(19,4),                                           |
+|   fcurp2hospitalsales DECIMAL(19,4),                                         |
+|   fcurp2hospitalgst DECIMAL(19,4),                                           |
+|   fcurp2salesadjustments DECIMAL(19,4),                                      |
+|   fcurp2totalexpenses DECIMAL(19,4),                                         |
+|   fcurp2creditadjustments DECIMAL(19,4),                                     |
+|   fcurptprevioustotalsales DECIMAL(19,4),                                    |
+|   fcurpttotalbranchsales DECIMAL(19,4),                                      |
+|   fcurptincludebranchestsi DECIMAL(19,4),                                    |
+|   fcurptassetadjustment DECIMAL(19,4),                                       |
+|   fcurptlessassetstsi DECIMAL(19,4),                                         |
+|   fcurptinstalmentdue DECIMAL(19,4),                                         |
+|   fcurptvoluntaryamount DECIMAL(19,4),                                       |
+|   fcurptrefundtransfer DECIMAL(19,4),                                        |
+|   fcurptgsttopay DECIMAL(19,4),                                              |
+|   fcurptprovtaxdue DECIMAL(19,4),                                            |
+|   fcurptpayment DECIMAL(19,4),                                               |
+|   fstrwho VARCHAR(20),                                                       |
+|   fdtmwhen TIMESTAMP,                                                        |
+|   record_effective_timestamp TIMESTAMP,                                      |
+|   record_expiry_timestamp TIMESTAMP,                                         |
+|   record_active_flag VARCHAR(1),                                             |
+|   record_deleted_flag VARCHAR(1),                                            |
+|   insert_object_run_key INT,                                                 |
+|   update_object_run_key INT,                                                 |
+|   customerlevelfilter STRING                                                 |
+| )                                                                            |
+| STORED AS PARQUET                                                            |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtngst_cas' |
+|                                                                              |
++------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------+
+| result                                                                        |
++-------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtngst_rest (                            |
+|   flngdockey INT,                                                             |
+|   fstrregistrationno VARCHAR(18),                                             |
+|   fdtmfilingperiod TIMESTAMP,                                                 |
+|   fstrfilingfreq VARCHAR(12),                                                 |
+|   fstrsourcetype VARCHAR(24),                                                 |
+|   fblnnil SMALLINT,                                                           |
+|   fblnfinalreturn SMALLINT,                                                   |
+|   fblnincorrectform SMALLINT,                                                 |
+|   fstrformtypefiled VARCHAR(16),                                              |
+|   fstrformtypeexpected VARCHAR(16),                                           |
+|   fblnhospice SMALLINT,                                                       |
+|   fstrhospicetype VARCHAR(24),                                                |
+|   fblnprovisionalfiler SMALLINT,                                              |
+|   fstrprovisionaloption VARCHAR(24),                                          |
+|   fblncompulsory SMALLINT,                                                    |
+|   fblnmultibranchfiler SMALLINT,                                              |
+|   fblntransitionalreturn SMALLINT,                                            |
+|   fblncorrespondence SMALLINT,                                                |
+|   fstrvendorid VARCHAR(100),                                                  |
+|   fstrsoftwareprovider VARCHAR(100),                                          |
+|   fstrweblogonid VARCHAR(100),                                                |
+|   fblnqualifyratio SMALLINT,                                                  |
+|   fcurratio DECIMAL(19,4),                                                    |
+|   fcurgsttotal DECIMAL(19,4),                                                 |
+|   fcurtotalsales DECIMAL(19,4),                                               |
+|   fcurp1totalsales DECIMAL(19,4),                                             |
+|   fcurp1zerosupplies DECIMAL(19,4),                                           |
+|   fcurp1incomecalculation DECIMAL(19,4),                                      |
+|   fcurp1gstcollected DECIMAL(19,4),                                           |
+|   fcurp1longtermsales DECIMAL(19,4),                                          |
+|   fcurp1longtermgst DECIMAL(19,4),                                            |
+|   fcurp1hospitalsales DECIMAL(19,4),                                          |
+|   fcurp1hospitalgst DECIMAL(19,4),                                            |
+|   fcurp1salesadjustments DECIMAL(19,4),                                       |
+|   fcurp1netsalesandincome DECIMAL(19,4),                                      |
+|   fcurp1totalexpenses DECIMAL(19,4),                                          |
+|   fcurp1expensescalculation DECIMAL(19,4),                                    |
+|   fcurp1creditadjustments DECIMAL(19,4),                                      |
+|   fcurp1gstcredit DECIMAL(19,4),                                              |
+|   fcurp1totalgst DECIMAL(19,4),                                               |
+|   fcurp2totalsales DECIMAL(19,4),                                             |
+|   fcurp2zerosupplies DECIMAL(19,4),                                           |
+|   fcurp2longtermsales DECIMAL(19,4),                                          |
+|   fcurp2longtermgst DECIMAL(19,4),                                            |
+|   fcurp2hospitalsales DECIMAL(19,4),                                          |
+|   fcurp2hospitalgst DECIMAL(19,4),                                            |
+|   fcurp2salesadjustments DECIMAL(19,4),                                       |
+|   fcurp2totalexpenses DECIMAL(19,4),                                          |
+|   fcurp2creditadjustments DECIMAL(19,4),                                      |
+|   fcurptprevioustotalsales DECIMAL(19,4),                                     |
+|   fcurpttotalbranchsales DECIMAL(19,4),                                       |
+|   fcurptincludebranchestsi DECIMAL(19,4),                                     |
+|   fcurptassetadjustment DECIMAL(19,4),                                        |
+|   fcurptlessassetstsi DECIMAL(19,4),                                          |
+|   fcurptinstalmentdue DECIMAL(19,4),                                          |
+|   fcurptvoluntaryamount DECIMAL(19,4),                                        |
+|   fcurptrefundtransfer DECIMAL(19,4),                                         |
+|   fcurptgsttopay DECIMAL(19,4),                                               |
+|   fcurptprovtaxdue DECIMAL(19,4),                                             |
+|   fcurptpayment DECIMAL(19,4),                                                |
+|   fstrwho VARCHAR(20),                                                        |
+|   fdtmwhen TIMESTAMP,                                                         |
+|   record_effective_timestamp TIMESTAMP,                                       |
+|   record_expiry_timestamp TIMESTAMP,                                          |
+|   record_active_flag VARCHAR(1),                                              |
+|   record_deleted_flag VARCHAR(1),                                             |
+|   insert_object_run_key INT,                                                  |
+|   update_object_run_key INT                                                   |
+| )                                                                             |
+| STORED AS PARQUET                                                             |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtngst_rest' |
+|                                                                               |
++-------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+| result                                                                                    |
++-------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtnpsoemployeeinfo_cast (                            |
+|   flngreturnkey INT,                                                                      |
+|   flngitemnumber INT,                                                                     |
+|   flngrelationshipkey INT,                                                                |
+|   flngver INT,                                                                            |
+|   flngverlast INT,                                                                        |
+|   fblninerror SMALLINT,                                                                   |
+|   fstrirdnumber VARCHAR(18),                                                              |
+|   fblninvalidird SMALLINT,                                                                |
+|   fstremployeename VARCHAR(40),                                                           |
+|   fstrsurname VARCHAR(510),                                                               |
+|   fstrfirstname VARCHAR(510),                                                             |
+|   fstrtaxcode VARCHAR(18),                                                                |
+|   fdtmstart TIMESTAMP,                                                                    |
+|   fdtmfinish TIMESTAMP,                                                                   |
+|   fdtmpayperiodstart TIMESTAMP,                                                           |
+|   fdtmpayperiodend TIMESTAMP,                                                             |
+|   fstrpayfrequency VARCHAR(24),                                                           |
+|   fblnpayment SMALLINT,                                                                   |
+|   fstrcscode VARCHAR(4),                                                                  |
+|   fcurgross DECIMAL(19,4),                                                                |
+|   fcurearnings DECIMAL(19,4),                                                             |
+|   fcurpaye DECIMAL(19,4),                                                                 |
+|   fcurchildsupport DECIMAL(19,4),                                                         |
+|   fcurstudentloan DECIMAL(19,4),                                                          |
+|   fcurkiwisaverdeductions DECIMAL(19,4),                                                  |
+|   fcurkiwisavercontributions DECIMAL(19,4),                                               |
+|   fcurtaxcreditsdonations DECIMAL(19,4),                                                  |
+|   fcuresctdeductions DECIMAL(19,4),                                                       |
+|   fcurtaxcreditsextinguish DECIMAL(19,4),                                                 |
+|   fcuremployercontributionsadj DECIMAL(19,4),                                             |
+|   fcurfamilytaxcredits DECIMAL(19,4),                                                     |
+|   fstrgatewayreferenceid VARCHAR(40),                                                     |
+|   fdtmdeleted TIMESTAMP,                                                                  |
+|   fdtmprocessed TIMESTAMP,                                                                |
+|   fblnduplicateirdtaxcode SMALLINT,                                                       |
+|   fblnoverridekiwisaverdedrule SMALLINT,                                                  |
+|   fstrwho VARCHAR(20),                                                                    |
+|   fdtmwhen TIMESTAMP,                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                   |
+|   record_expiry_timestamp TIMESTAMP,                                                      |
+|   record_active_flag VARCHAR(1),                                                          |
+|   record_deleted_flag VARCHAR(1),                                                         |
+|   insert_object_run_key INT,                                                              |
+|   update_object_run_key INT,                                                              |
+|   customerlevelfilter STRING                                                              |
+| )                                                                                         |
+| STORED AS PARQUET                                                                         |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtnpsoemployeeinfo_cast' |
+|                                                                                           |
++-------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------+
+| result                                                                                    |
++-------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_rtnpsoemployeeinfo_rest (                            |
+|   flngreturnkey INT,                                                                      |
+|   flngitemnumber INT,                                                                     |
+|   flngrelationshipkey INT,                                                                |
+|   flngver INT,                                                                            |
+|   flngverlast INT,                                                                        |
+|   fblninerror SMALLINT,                                                                   |
+|   fstrirdnumber VARCHAR(18),                                                              |
+|   fblninvalidird SMALLINT,                                                                |
+|   fstremployeename VARCHAR(40),                                                           |
+|   fstrsurname VARCHAR(510),                                                               |
+|   fstrfirstname VARCHAR(510),                                                             |
+|   fstrtaxcode VARCHAR(18),                                                                |
+|   fdtmstart TIMESTAMP,                                                                    |
+|   fdtmfinish TIMESTAMP,                                                                   |
+|   fdtmpayperiodstart TIMESTAMP,                                                           |
+|   fdtmpayperiodend TIMESTAMP,                                                             |
+|   fstrpayfrequency VARCHAR(24),                                                           |
+|   fblnpayment SMALLINT,                                                                   |
+|   fstrcscode VARCHAR(4),                                                                  |
+|   fcurgross DECIMAL(19,4),                                                                |
+|   fcurearnings DECIMAL(19,4),                                                             |
+|   fcurpaye DECIMAL(19,4),                                                                 |
+|   fcurchildsupport DECIMAL(19,4),                                                         |
+|   fcurstudentloan DECIMAL(19,4),                                                          |
+|   fcurkiwisaverdeductions DECIMAL(19,4),                                                  |
+|   fcurkiwisavercontributions DECIMAL(19,4),                                               |
+|   fcurtaxcreditsdonations DECIMAL(19,4),                                                  |
+|   fcuresctdeductions DECIMAL(19,4),                                                       |
+|   fcurtaxcreditsextinguish DECIMAL(19,4),                                                 |
+|   fcuremployercontributionsadj DECIMAL(19,4),                                             |
+|   fcurfamilytaxcredits DECIMAL(19,4),                                                     |
+|   fstrgatewayreferenceid VARCHAR(40),                                                     |
+|   fdtmdeleted TIMESTAMP,                                                                  |
+|   fdtmprocessed TIMESTAMP,                                                                |
+|   fblnduplicateirdtaxcode SMALLINT,                                                       |
+|   fblnoverridekiwisaverdedrule SMALLINT,                                                  |
+|   fstrwho VARCHAR(20),                                                                    |
+|   fdtmwhen TIMESTAMP,                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                   |
+|   record_expiry_timestamp TIMESTAMP,                                                      |
+|   record_active_flag VARCHAR(1),                                                          |
+|   record_deleted_flag VARCHAR(1),                                                         |
+|   insert_object_run_key INT,                                                              |
+|   update_object_run_key INT                                                               |
+| )                                                                                         |
+| STORED AS PARQUET                                                                         |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_rtnpsoemployeeinfo_rest' |
+|                                                                                           |
++-------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------+
+| result                                                                                   |
++------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_visitmanagedcall_check (                            |
+|   flngdockey INT,                                                                        |
+|   fstrcallerirdnumber VARCHAR(20),                                                       |
+|   fstrauthorisedirdnumber VARCHAR(20),                                                   |
+|   fstrtaxagentname VARCHAR(100),                                                         |
+|   fstrvoiceenrolstatus VARCHAR(2),                                                       |
+|   fstrvoiceoptoutstatus VARCHAR(2),                                                      |
+|   fstrtransferreason VARCHAR(510),                                                       |
+|   fstrcallerintentcorrect VARCHAR(6),                                                    |
+|   fstrcallerintent VARCHAR(100),                                                         |
+|   fstrcorrectedintent VARCHAR(100),                                                      |
+|   fstrcallqueue VARCHAR(100),                                                            |
+|   fstrstageonefeedback VARCHAR(24),                                                      |
+|   fblnvirtualhold SMALLINT,                                                              |
+|   fblncontactdetailschecked SMALLINT,                                                    |
+|   fstrwho VARCHAR(20),                                                                   |
+|   fdtmwhen TIMESTAMP,                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                  |
+|   record_expiry_timestamp TIMESTAMP,                                                     |
+|   record_active_flag VARCHAR(1),                                                         |
+|   record_deleted_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                             |
+|   update_object_run_key INT,                                                             |
+|   customerlevelfilter STRING                                                             |
+| )                                                                                        |
+| STORED AS PARQUET                                                                        |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_visitmanagedcall_check' |
+|                                                                                          |
++------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblnz_visitmanagedcall_rest (                            |
+|   flngdockey INT,                                                                       |
+|   fstrcallerirdnumber VARCHAR(20),                                                      |
+|   fstrauthorisedirdnumber VARCHAR(20),                                                  |
+|   fstrtaxagentname VARCHAR(100),                                                        |
+|   fstrvoiceenrolstatus VARCHAR(2),                                                      |
+|   fstrvoiceoptoutstatus VARCHAR(2),                                                     |
+|   fstrtransferreason VARCHAR(510),                                                      |
+|   fstrcallerintentcorrect VARCHAR(6),                                                   |
+|   fstrcallerintent VARCHAR(100),                                                        |
+|   fstrcorrectedintent VARCHAR(100),                                                     |
+|   fstrcallqueue VARCHAR(100),                                                           |
+|   fstrstageonefeedback VARCHAR(24),                                                     |
+|   fblnvirtualhold SMALLINT,                                                             |
+|   fblncontactdetailschecked SMALLINT,                                                   |
+|   fstrwho VARCHAR(20),                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   record_active_flag VARCHAR(1),                                                        |
+|   record_deleted_flag VARCHAR(1),                                                       |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblnz_visitmanagedcall_rest' |
+|                                                                                         |
++-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE dev_cas_views.app_tblvisit (                                                               |
+|   flngvisitkey INT,                                                                                     |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fstrvisitsource VARCHAR(24),                                                                          |
+|   fstrvisitcategory VARCHAR(24),                                                                        |
+|   fstrvisitsubcategory VARCHAR(24),                                                                     |
+|   flngfolderkey INT,                                                                                    |
+|   flngcustomerkey INT,                                                                                  |
+|   fblnunregisteredvisitor SMALLINT,                                                                     |
+|   fi64namekey BIGINT,                                                                                   |
+|   fi64addresskey BIGINT,                                                                                |
+|   fstrvisitid VARCHAR(60),                                                                              |
+|   fstrticketid VARCHAR(60),                                                                             |
+|   fstrexternalid VARCHAR(60),                                                                           |
+|   fstridtype VARCHAR(12),                                                                               |
+|   fstrid VARCHAR(60),                                                                                   |
+|   fstrcountry VARCHAR(12),                                                                              |
+|   fintcountrycode SMALLINT,                                                                             |
+|   fstrareacode VARCHAR(10),                                                                             |
+|   fstrphonenumber VARCHAR(30),                                                                          |
+|   fblnvisitorverified SMALLINT,                                                                         |
+|   fstrverifydoctype VARCHAR(24),                                                                        |
+|   fintverifydocver SMALLINT,                                                                            |
+|   fi64verifydoceditinprogresskey BIGINT,                                                                |
+|   flngverifydockey INT,                                                                                 |
+|   fstrdoctype VARCHAR(24),                                                                              |
+|   fintdocver SMALLINT,                                                                                  |
+|   fi64doceditinprogresskey BIGINT,                                                                      |
+|   flngdockey INT,                                                                                       |
+|   flngxmlkey INT,                                                                                       |
+|   fstrowner VARCHAR(20),                                                                                |
+|   fstrdistrictoffice VARCHAR(12),                                                                       |
+|   fblnhold SMALLINT,                                                                                    |
+|   fdtmvisitstart TIMESTAMP,                                                                             |
+|   fdtmvisitend TIMESTAMP,                                                                               |
+|   flngduration INT,                                                                                     |
+|   flngwaittime INT,                                                                                     |
+|   fblnactive SMALLINT,                                                                                  |
+|   fdtmreversed TIMESTAMP,                                                                               |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   record_deleted_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   customerlevelfilter STRING                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/1_dev/hive/cas_views/app_tblvisit'                                    |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='32555463', 'totalSize'='2833478883') |
++---------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| CREATE VIEW dev_cas_views.crm_text_data AS                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| SELECT z.flngcrmkey, z.flngver, z.flngverlast, z.fstrcrmsource, z.fstrcrmtype, z.flngparentcrmkey, z.flngcustomerkey, z.fintprofilenumber, z.flngaccountkey, z.fstraccounttype, z.fdtmfilingperiod, z.flngbillitemkey, z.fintbillitem, z.flngfolderkey, z.fi64sourcekey, z.fstrsourceid, z.fstrsourcetype, z.fstrsourcedata, z.fstrdata, z.fblnextended, z.fblnprivate, z.fblnhaschildren, z.fblnhighimportance, z.fblnsystem, z.fstreditedby, z.fdtmedited, z.fstrcomment, z.fblncommentexists, z.fstrwho, z.fdtmwhen, z.insert_object_run_key, z.flngvisitkey, z.fstrirdnumber, z.fstrauthirdnumber, z.flngchildvisitkey, z.fstrivrpath, z.fstrphonenumber, z.fblnhold, z.fstrupdatereason, z.record_effective_timestamp, z.record_expiry_timestamp, z.update_object_run_key, z.flngdockey, z.fstrcallerirdnumber, z.fstrauthorisedirdnumber, z.fstrtaxagentname, z.fstrvoiceenrolstatus, z.fstrvoiceoptoutstatus, z.fstrtransferreason, z.fstrcallerintentcorrect, z.fstrcorrectedintent, z.fstrcallqueue, z.fstrstageonefeedback, z.fblnvirtualhold, z.fblncontactdetailschecked, z.fstrvisitsource, z.fstrvisitcategory, z.fstrvisitsubcategory, z.fblnunregisteredvisitor, z.fi64namekey, z.fi64addresskey, z.fstrvisitid, z.fstrticketid, z.fstrexternalid, z.fstridtype, z.fstrid, z.fstrcountry, z.fintcountrycode, z.fstrareacode, z.fblnvisitorverified, z.fstrverifydoctype, z.fintverifydocver, z.fi64verifydoceditinprogresskey, z.flngverifydockey, z.fstrdoctype, z.fintdocver, z.fi64doceditinprogresskey, z.flngxmlkey, z.fstrowner, z.fstrdistrictoffice, z.fdtmvisitstart, z.fdtmvisitend, z.flngduration, z.flngwaittime, cl.fstrCustomerLevel filterCustomerLevel FROM dev_raw.crm_text_data z INNER JOIN dev_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey INNER JOIN dev_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey WHERE cl.record_active_flag = 'Y' AND cl.record_deleted_flag = 'N' |
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+

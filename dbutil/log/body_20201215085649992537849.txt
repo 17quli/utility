@@ -1,0 +1,10 @@
+2020-12-15 08:56:49------start /home/ird0qal/dbutil/snapshot.sh prod_refined prod_dw
+2020-12-15 08:56:52------show tables
+2020-12-15 08:56:55------333 tables or views
+2020-12-15 08:56:55------show create table
+2020-12-15 08:57:47------238 tables excluding views
+2020-12-15 08:57:48------drop table
+2020-12-15 08:57:48------0 tables dropped
+2020-12-15 08:57:53------create table
+2020-12-15 09:34:42------238 tables created
+2020-12-15 09:34:47------refresh table

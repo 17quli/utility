@@ -1,0 +1,16 @@
+CREATE VIEW lab_fscp_raw_restricted_access.app_tblnz_rtnreb
+AS SELECT z.flngdockey,
+z.fcurschooldonations,
+z.fcurreligiousdonations,
+z.fcurremainingdonations,
+z.fcurtotalreceipt,
+z.fcurcareandhousepayments,
+z.fcurcareandhousecredits,
+z.fcurfinaltotal,
+z.fstrpartnerird,
+z.fstrtransferird,
+z.fcurtransferamount,
+z.fblnwaitingonincome,
+z.fstrwho,
+z.fdtmwhen
+FROM lab_fcp_raw.tblnz_rtnreb z;

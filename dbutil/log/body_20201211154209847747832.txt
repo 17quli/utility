@@ -1,0 +1,19 @@
+2020-12-11 15:42:09------start ./dbbackup.sh lab_analytics_team dev_dw
+2020-12-11 15:42:10------show tables
+2020-12-11 15:42:19------617 tables or views
+2020-12-11 15:42:19------show create table
+2020-12-11 15:43:06------597 tables excluding views
+2020-12-11 15:43:06------drop table
+2020-12-11 15:43:07------0 tables dropped
+2020-12-11 15:43:12------create table
+2020-12-11 15:43:12------hdfs make directory
+2020-12-11 15:49:58------599 hdfs directories created
+2020-12-11 15:49:58------hdfs copy
+2020-12-11 16:01:30------599 hdfs directories copied
+2020-12-11 17:06:06------597 tables created
+2020-12-11 17:06:11------refresh table
+2020-12-11 17:06:28------597 tables refreshed
+2020-12-11 17:06:28------recover partitions
+2020-12-11 17:06:28------0 table partitions recovered
+2020-12-11 17:06:28------show tables backup expired
+2020-12-11 17:06:51------complete ./dbbackup.sh lab_analytics_team dev_dw

@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.app_tblcustomer AS
+SELECT z.flngcustomerkey, z.flngVer, z.flngVerLast, z.fstrCustomerType, z.fdtmCommence, z.fdtmCease, z.flngCustomerLevel, z.flngDocKey, z.flngFolderKey, z.flngRefreshVer, z.flngCustomerVersion, z.flngWebVersion, z.fdtmWebPublished, z.fdtmCreated, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.app_tblcustomer z;

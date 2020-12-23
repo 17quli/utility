@@ -1,0 +1,16 @@
+2020-09-21 18:00:01------start /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw
+2020-09-21 18:00:02------14 tables to backup
+2020-09-21 18:00:02------show create table
+2020-09-21 18:00:03------drop table
+2020-09-21 18:00:15------create table
+2020-09-21 18:00:15------hdfs make directory
+2020-09-21 18:00:27------12 hdfs directories created
+2020-09-21 18:00:27------hdfs copy
+2020-09-21 18:00:41------12 hdfs directories copied
+2020-09-21 18:00:48------14 tables created
+2020-09-21 18:00:53------refresh table
+2020-09-21 18:00:54------12 tables refreshed
+2020-09-21 18:00:54------recover partitions
+2020-09-21 18:00:55------0 table partitions recovered
+2020-09-21 18:00:55------show tables backup expired
+2020-09-21 18:00:59------complete /home/ird0qal/dbutil/tbsbackup.sh lab_analytics_team prod_dw

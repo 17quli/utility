@@ -1,0 +1,25 @@
+2020-12-18 17:30:14------start ./tbsbackup.sh prod_jnl prod_dw
+2020-12-18 17:30:15------3 tables to backup
+2020-12-18 17:30:15------show create table
+2020-12-18 17:30:15------drop table
+2020-12-18 17:30:21------create table
+2020-12-18 17:30:21------hdfs make directory
+2020-12-18 17:30:28------3 hdfs directories created
+2020-12-18 17:30:28------hdfs copy
+2020-12-18 17:31:02------3 hdfs directories copied
+2020-12-18 17:31:02------3 tables created
+2020-12-18 17:31:07------refresh table
+2020-12-18 17:31:08------3 tables refreshed
+2020-12-18 17:31:08------recover partitions
+2020-12-18 17:31:08------0 table partitions recovered
+2020-12-18 17:31:08------start ./tbsvalidation.sh ./stg/tgttbllist_prod_dw_20201218173014179165190.lst
+"row count of prod_dw.prod_jnl_app_tblnz_rtnkssgvc_20201218 #######################23132349
+"
+"row count of prod_dw.prod_jnl_app_tblnz_accksfinfo_20201218 ######################260
+"
+"row count of prod_dw.prod_jnl_app_tblnz_ksb2bgvcclaiminb_20201218 ################2707353
+"
+2020-12-18 17:31:13------show tables backup expired
+2020-12-18 17:32:04------drop tables backup expired
+2020-12-18 17:39:25------724 expired tables dropped
+2020-12-18 17:39:25------complete ./tbsbackup.sh prod_jnl prod_dw

@@ -1,0 +1,15 @@
+2020-12-18 10:48:20------start ./dbcopy.sh prod_raw test_raw
+2020-12-18 10:48:21------show tables
+2020-12-18 10:48:24------769 tables or views
+2020-12-18 10:48:24------show create table
+2020-12-18 10:48:37------762 tables excluding views
+2020-12-18 10:48:37------drop table
+2020-12-18 12:41:25------create table
+2020-12-18 12:41:25------hdfs copy
+2020-12-18 15:58:34------complete hdfs copy
+2020-12-18 15:58:34------762 tables created
+2020-12-18 15:58:34------recover partitions
+2020-12-18 16:02:47------6 table partitions recovered
+2020-12-18 16:02:47------refresh table
+2020-12-18 16:24:14------756 tables refreshed
+2020-12-18 16:24:14------complete ./dbcopy.sh prod_raw test_raw

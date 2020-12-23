@@ -1,0 +1,17 @@
+2020-12-15 05:14:13------start ./snapshot.sh lab_analytics_team prod_dw
+2020-12-15 05:14:16------show tables
+2020-12-15 05:14:26------617 tables or views
+2020-12-15 05:14:26------show create table
+2020-12-15 05:15:05------600 tables excluding views
+2020-12-15 05:15:05------drop table
+2020-12-15 05:15:13------12 tables dropped
+2020-12-15 05:15:18------create table
+2020-12-15 06:33:59------600 tables created
+2020-12-15 06:34:04------refresh table
+2020-12-15 06:34:48------600 tables refreshed
+2020-12-15 06:34:48------recover partitions
+2020-12-15 06:34:49------0 table partitions recovered
+2020-12-15 06:34:49------show tables backup expired
+2020-12-15 06:35:34------drop tables backup expired
+2020-12-15 06:35:40------12 expired tables dropped
+2020-12-15 06:35:40------complete ./snapshot.sh lab_analytics_team prod_dw

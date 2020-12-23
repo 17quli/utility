@@ -1,0 +1,7 @@
+target_db="test_raw"
+journal_db=test_jnl
+source_db=test_dw
+view_db_full="test_raw_full_access"
+view_db_restricted="test_raw_restricted_access"
+tdw_tbl_list=tdw_tbl_list
+export journal_db target_db source_db view_db_full view_db_restricted tdw_tbl_list

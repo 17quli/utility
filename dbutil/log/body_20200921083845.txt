@@ -1,0 +1,16 @@
+2020-09-21 08:38:45------start ./tbsbackup.sh lab_analytics_team prod_dw
+2020-09-21 08:38:46------14 tables to backup
+2020-09-21 08:38:46------show create table
+2020-09-21 08:39:27------drop table
+2020-09-21 08:39:32------create table
+2020-09-21 08:39:32------hdfs make directory
+2020-09-21 08:39:40------10 hdfs directories created
+2020-09-21 08:39:40------hdfs copy
+2020-09-21 08:39:49------10 hdfs directories copied
+2020-09-21 08:40:05------14 tables created
+2020-09-21 08:40:10------refresh table
+2020-09-21 08:40:10------10 tables refreshed
+2020-09-21 08:40:10------recover partitions
+2020-09-21 08:40:11------0 table partitions recovered
+2020-09-21 08:40:11------show tables backup expired
+2020-09-21 08:40:20------complete ./tbsbackup.sh lab_analytics_team prod_dw

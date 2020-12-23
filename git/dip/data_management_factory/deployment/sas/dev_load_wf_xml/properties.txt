@@ -1,0 +1,13 @@
+cmdPath=H:\sso\sfw\sas_factory\940\
+importProjectFolder=/IRD/DIP Data Management
+importHost=ird10119au.vsp.sas.com
+importPort=8561
+importPkgName=di_export
+importComputeHost=ird10120au.vsp.sas.com
+puttyFolder=C:\Program Files\PuTTY
+batchDeployCmdPath=/sso/sfw/sas/940/SASDataIntegrationStudioServerJARs/4.8
+serverLvDir=/sso/biconfig/940/Lev1
+macroFolder=.\SASMacro
+targetEnv=dev
+importPath=..\..\..\sas9\
+lcfHost=irddev20.vsp.sas.com

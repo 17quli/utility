@@ -1,0 +1,20 @@
+ 
+ CREATE VIEW lab_fcp_raw_restricted_access.app_tblnz_provisionaldetails                                                                             
+AS SELECT                                                                                                                           
+z.flngAccountKey,                                                                                                                   
+z.fdtmFilingPeriod,                                                                                                                 
+z.fdtmDue,                                                                                                                          
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.fcurAmount,                                                                                                                       
+z.fcurFITReduction,                                                                                                                 
+z.fstrMethod,                                                                                                                       
+z.fdtmReversed,                                                                                                                     
+z.fdtmProcessed,                                                                                                                    
+z.flngTransKey,                                                                                                                     
+z.flngReturnKey,                                                                                                                    
+z.flngDocKey,                                                                                                                       
+z.fstrWho,                                                                                                                          
+z.fdtmWhen                                                                                                      
+ FROM lab_fcp_raw.tblnz_provisionaldetails z;      
+ 

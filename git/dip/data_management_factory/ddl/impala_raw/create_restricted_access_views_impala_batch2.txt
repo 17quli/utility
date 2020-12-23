@@ -1,0 +1,2182 @@
+/***********************************************************************************
+25/11/19 ird0sxd initial script from master script in Teams
+26/11/19 ird0sxd updated frd_tblfrdplandata_1336541184 and tblnz_rtniit
+ird0sxd updated frd_tblfrdactions, app_tblnz_accgstinfo, frd_tblfrdplandata_1336541184 post 26/11/19 changes
+
+
+ 
+
+
+************************************************************************************/
+
+
+--account_halts
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_account_halts;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_account_halts
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.RETURN_PERIOD_DATE,
+z.OFFICE_UNIT_CODE,
+z.HALT_TYPE_INDICATOR,
+z.DATE_HALT_START,
+z.DATE_HALT_END,
+z.HALT_REASON_CODE,
+z.MAINFRAME_USER_ID,
+z.HALT_STATUS_INDICATOR,
+z.DATE_APPLIED,
+z.DATE_CEASED,
+z.HALT_LEVEL_INDICATOR,
+z.UPDATED_BY,
+z.DATE_UPDATED,
+z.`TIMESTAMP`,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+FROM ${source_db=Enter the source database name here}.dss_account_halts z
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+
+
+
+--cm_audit_periods
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_cm_audit_periods;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_cm_audit_periods
+AS SELECT 
+z.PERIOD_ROWID,
+z.CASE_IDENTIFIER,
+z.PERIOD_IRD_NUMBER,
+z.PERIOD_LOCATION_NUMBER,
+z.TAX_TYPE,
+z.RETURN_PERIOD_DATE,
+z.CASE_TYPE_DESC,
+z.PERIOD_STATUS_DESC,
+z.OUTCOME_TYPE,
+z.LOSS_ADJUSTMENT_AMOUNT,
+z.ORIGINAL_TAX_AMOUNT,
+z.REASSESSED_TAX_AMOUNT,
+z.SHORTFALL_PENALTY_AMOUNT,
+z.TOTAL_GROSS_DISCREPANCIES_AMT,
+z.TOTAL_AGREED_DISCREPANCIES_AMT,
+z.TOTAL_ESTIM_DISCREPANCIES_AMT,
+z.NOT_AGREED_DISCREPANCIES_AMT,
+z.TOTAL_TAX_ADJUSTMENT_AMOUNT,
+z.UOMI_AMOUNT,
+z.LATE_FILING_PENALTY_AMOUNT,
+z.LATE_PAYMENT_PENALTY_AMOUNT,
+z.RETURN_PERIOD_VALIDATED,
+z.TAXPAYER_ADJUSTMENT_AMOUNT,
+z.PAYMENT_ADJUSTMENT_AMOUNT,
+z.APPROVED_IND,
+z.FORCED_VALIDATION_IND,
+z.CASE_ROWID,
+z.PERIOD_CREATED_DATE,
+z.PERIOD_CREATED_BY,
+z.PERIOD_LAST_UPDATED_DATE,
+z.PERIOD_LAST_UPDATED_BY,
+z.DATE_APPLIED,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.LEGISLATION_ACTS,
+z.BUSINESS_PROCESS,
+z.RECORD_OWNER,
+z.DATE_ALLOCATED,
+z.DUE_DATE,
+z.DIARY_DATE,
+z.DATE_COMPLETED,
+z.HEARING_DATE,
+z.REFERRING_OFFICER,
+z.REFERRING_OFFICE,
+z.COURT_LOCATION,
+z.CTA_STATUS,
+z.NATURE_OF_LITIGATION,
+z.SECTIONS,
+z.COURT_MATTER_NUMBER,
+z.NATIONAL_ADVISOR,
+z.RECORD_SUB_TYPE,
+z.PRIORITY_RATING,
+z.KEYWORDS,
+z.TYPE_OF_ISSUE,
+z.EXPOSURE_DRAFT,
+z.SPS_OS_QWBA,
+z.TS_STATUS,
+z.RECORD_TYPE,
+z.COMMENTS,
+z.ISSUE,
+z.OFFICER_TEAM_LEADER,
+z.TEAM_MEMBER,
+z.LTS_TEAM_LEADER_ID,
+z.SOURCE_OF_WORK,
+z.SOLICITOR_NAME,
+z.TEAM_LEADER_FULL_NAME,
+z.TEAM_MEMBER_FULL_NAME,
+z.CASE_RECORD_TYPE,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_cm_audit_periods z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.PERIOD_IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+--lanaccounttype
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lanaccounttype;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lanaccounttype
+AS SELECT 
+z.fstrLanguage,
+z.fstrAccountType,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDecode3,
+z.fstrDecode4,
+z.fstrDecodeWeb,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lanaccounttype z
+;
+
+
+--lanclosereason
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lanclosereason;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lanclosereason
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRREASON,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lanclosereason z
+;
+
+
+
+--lanfiling
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lanfiling;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lanfiling
+AS SELECT 
+z.fstrLanguage,
+z.fstrFiling,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDecodeWeb1,
+z.fstrDecodeWeb2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lanfiling z
+;
+
+
+
+--lanlistitem
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lanlistitem;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lanlistitem
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRFIELD,
+z.FSTRLISTITEM,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.FSTRDESCRIPTION,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lanlistitem z
+;
+
+
+
+--lannz_employergroup
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lannz_employergroup;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lannz_employergroup
+AS SELECT 
+z.fstrLanguage,
+z.fstrEmployerGroup,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lannz_employergroup z
+;
+
+
+
+
+--lannz_employertype
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lannz_employertype;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lannz_employertype
+AS SELECT 
+z.fstrLanguage,
+z.fstrEmployerType,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lannz_employertype z
+;
+
+
+--lannz_incometaxexemptionreason
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lannz_inctaxexemptionrsn;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lannz_inctaxexemptionrsn
+AS SELECT 
+z.fstrLanguage,
+z.fstrExemptionReason,
+z.fstrDecode1,
+z.fstrDecode2,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lannz_inctaxexemptionrsn z
+;
+
+
+
+--lanprofiletype
+DROP VIEW if exists ${target_db=Enter the target database name here}.ref_lanprofiletype;
+CREATE VIEW ${target_db=Enter the target database name here}.ref_lanprofiletype
+AS SELECT 
+z.FSTRLANGUAGE,
+z.FSTRPROFILETYPE,
+z.FSTRDECODE1,
+z.FSTRDECODE2,
+z.fstrDecodeWeb,
+z.fstrDescription,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.ref_lanprofiletype z
+;
+
+
+
+--tax_cessation_reasons
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_cessation_reasons;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_cessation_reasons
+AS SELECT 
+z.CESSATION_REASON_CODE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.CLIENT_STATUS_IND,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_cessation_reasons z
+;
+
+--tax_exemption_reasons
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_exemption_reasons;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_exemption_reasons
+AS SELECT 
+z.EXEMPTION_REASON_CODE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.CLIENT_TYPE_IND,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_exemption_reasons z;
+
+--tax_filing_frequencies
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_filing_frequencies;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_filing_frequencies
+AS SELECT 
+z.FILING_FREQUENCY,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.ALTERNATE_CODE,
+z.NO_OF_MTHS,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_filing_frequencies z
+;
+
+--tax_gst
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_gst;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_gst
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.TREG_DATE_START,
+z.DATE_APPLIED,
+z.NAT_OF_RGN,
+z.EXP_IND,
+z.EXEMPT_SUPP_IND,
+z.REFUND_LEVEL,
+z.REFUND_LEVEL_DATE,
+z.SELF_INV_IND,
+z.ALT_END_IND,
+z.`TIMESTAMP`,
+z.DATE_CEASED,
+z.ACCOUNTING_BASIS_CODE,
+z.PENDING_FIL_FREQUENCY_TRG_IND,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_gst z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+
+--tax_pay
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_pay;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_pay
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.TREG_DATE_START,
+z.DATE_APPLIED,
+z.PAYE_EMPLOYER_CLASS_CODE,
+z.FILING_FREQUENCY,
+z.`TIMESTAMP`,
+z.DATE_CEASED,
+z.FILING_METHOD_CODE,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_pay z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N';
+;
+
+
+--tax_pie
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_pie;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_pie
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.TREG_DATE_START,
+z.DATE_APPLIED,
+z.PIE_TYPE,
+z.APPROVE_REFUND_LEVEL,
+z.PIE_REPORT_OPTION,
+z.INCOME_ALLOCATION_PERIOD,
+z.FDR_CALCULATION_PERIOD,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_pie z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+
+--tax_registrations
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_registrations;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_registrations
+AS SELECT 
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.TAX_TYPE,
+z.DATE_APPLIED,
+z.TREG_DATE_START,
+z.TREG_DATE_END,
+z.CESSATION_REASON_CODE,
+z.POSTING_IND,
+z.ELECTRONIC_FILING_IND,
+z.CORPORATE_FILING_IND,
+z.HAS_AGENT_IND,
+z.FILING_FREQUENCY,
+z.TREG_STATUS,
+z.EXEMPTION_REASON_CODE,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.ACC_TOLD_INDICATOR,
+z.FILING_METHOD_CODE,
+z.PAYMENT_METHOD_CODE,
+z.OUTPUT_METHOD_IND,
+z.ACCOUNTANT_INDICATOR,
+z.PREVIOUS_EXPERIENCE_INDICATOR,
+z.TAX_LEVEL_DIFFICULTY_CODE,
+z.TAX_ADVISORY_CATEGORY_CODE,
+z.GROUP_FILING_IND,
+z.PAYE_INTERMEDIARY_IND,
+z.DIRECT_CREDIT_IND_CODE,
+z.CLIENT_SECURITY_CODE_IND,
+z.STATEMENT_TYPE_CODE,
+z.STATEMENT_SEQUENCE_NUMBER,
+z.STATEMENT_ISSUE_DATE,
+z.LFP_NOTIFICATION_DATE,
+z.LFP_START_DATE,
+z.EXEMPTION_CODE_ORIGINATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_registrations z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.dss_special_clients_all sc
+ON CAST(z.IRD_NUMBER AS INT) = CAST(sc.IRD_NUMBER as INT) 
+WHERE nvl(sc.special_classification, 'STD')='STD'
+AND nvl( sc.record_active_flag,'Y')='Y'
+AND nvl(sc.record_deleted_flag, 'N') = 'N'
+;
+
+
+--tax_types
+DROP VIEW if exists ${target_db=Enter the target database name here}.dss_tax_types;
+CREATE VIEW ${target_db=Enter the target database name here}.dss_tax_types
+AS SELECT 
+z.TAX_TYPE,
+z.DATE_APPLIED,
+z.DESCRIPTION,
+z.DATE_CEASED,
+z.`TIMESTAMP`,
+z.VALIDATED,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.dss_tax_types z
+;
+
+
+
+--tblacaseall
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblacaseall;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblacaseall
+AS SELECT 
+z.flngCaseKey,
+z.flngVerLast,
+z.flngFolderKey,
+z.flngWIFolderKey,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.fstrExternalId,
+z.fstrCaseType,
+z.fstrCaseCategory,
+z.fstrStage,
+z.fdtmStageDate,
+z.fdtmCreated,
+z.fstrCreatedBy,
+z.fdtmWorkDate,
+z.fdtmReceived,
+z.fdtmAssigned,
+z.fdtmResolved,
+z.fdtmAborted,
+z.fdtmClosed,
+z.fstrCloseReason,
+z.fstrStatus,
+z.fstrOwner,
+z.fstrDescription,
+z.fstrPriority,
+z.flngDocKey,
+z.fi64DocGroupKey,
+z.flngParentCaseKey,
+z.flngTeamKey,
+z.fblnManualUpdate,
+z.fstrId,
+z.fstrIdType,
+z.fi64NameKey,
+z.fstrName,
+z.fstrLastName,
+z.fstrFirstName,
+z.fstrMiddleName,
+z.fstrTitleName,
+z.fstrSuffixName,
+z.fi64AddressKey,
+z.fstrAddress,
+z.fstrStreet,
+z.fstrStreet2,
+z.fstrUnit,
+z.fstrUnitType,
+z.fstrCity,
+z.fstrCounty,
+z.fstrState,
+z.fstrZip,
+z.fstrLocationCode,
+z.fstrMunicipality,
+z.fstrUrbanization,
+z.fstrDistrict,
+z.fstrSubDistrict,
+z.fstrSubProvince,
+z.fstrAddressDescription,
+z.fstrCountry,
+z.fstrAttention,
+z.fstrPrimaryLanguage,
+z.fstrSecondaryLanguage,
+z.fstrProtectType,
+z.fintProtectLevel,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblacaseall z
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}.app_tblcustomerlevel cl 
+ON z.flngcustomerkey = cl.flngcustomerkey
+WHERE 
+  nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+  AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+
+
+--tblallocation
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblallocation;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblallocation
+AS SELECT 
+z.FLNGPAYMENTKEY,
+z.FLNGTRANSKEY,
+z.FINTALLOCATION,
+z.FCURAMOUNT,
+z.FLNGACCOUNTKEY,
+z.FDTMFILINGPERIOD,
+z.FDTMALLOCATED,
+z.FDTMREVERSED,
+z.FSTRBATCHTYPE,
+z.FSTRACCOUNTTYPE,
+z.FSTRTRANSTYPE,
+z.FDTMEFFECT,
+z.FDTMRADAYALLOCATED,
+z.FDTMRADAYREVERSED,
+z.FSTRWHO,
+z.FDTMWHEN,
+z.fstrSourceDepositType,
+z.fstrDestDepositType,
+z.fdtmDepositDate,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblallocation z
+;
+
+
+--tblbankaccountrefund
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblbankaccountrefund;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblbankaccountrefund
+AS SELECT 
+z.flngBankAccountRefundKey,
+z.flngVer,
+z.flngBankAccountKey,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.flngVerLast,
+z.fdtmCommence,
+z.fdtmCease,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblbankaccountrefund z
+;
+
+
+
+--tbldocsetdoc
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tbldocsetdoc;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tbldocsetdoc
+AS SELECT 
+z.fi64DocSetKey,
+z.flngDocKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrDocSetType,
+z.fintDocSetVer,
+z.fintVersion,
+z.fstrDoc,
+z.fintDocSequence,
+z.fstrDocSequenceName,
+z.fstrDocType,
+z.fintDocVer,
+z.fintDocVerLast,
+z.fblnError,
+z.fblnWarning,
+z.fblnInformation,
+z.fblnRevoked,
+z.fdtmReversed,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tbldocsetdoc z
+;
+
+--tblfrdactionresults
+DROP VIEW if exists ${target_db=Enter the target database name here}.frd_tblfrdactionresults;
+CREATE VIEW ${target_db=Enter the target database name here}.frd_tblfrdactionresults
+AS SELECT 
+z.flngFraudPlanKey,
+z.flngReturnKey,
+z.flngDocVerLast,
+z.flngActionKey,
+z.flngVer,
+z.flngVerLast,
+z.fblnReleased,
+z.flngIndicatorKey,
+z.flngWorkKey,
+z.fdtmCreated,
+z.fstrCreatedBy,
+z.fstrResult,
+z.fdtmResult,
+z.fstrResultBy,
+--z.record_effective_timestamp,
+--z.record_expiry_timestamp,
+--z.record_active_flag, 
+--z.record_deleted_flag,
+z.insert_object_run_key,
+--z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.frd_tblfrdactionresults z
+;
+
+
+--tblfrdactions
+DROP VIEW if exists ${target_db=Enter the target database name here}.frd_tblfrdactions;
+CREATE VIEW ${target_db=Enter the target database name here}.frd_tblfrdactions
+AS SELECT 
+z.flngFraudPlanKey,
+z.flngActionKey,
+z.flngVer,
+z.flngVerLast,
+z.flngChangeCounter,
+z.flngOrder,
+z.fstrName,
+z.fstrDisplayName,
+z.fstrDescription,
+z.fblnAutoFinalize,
+z.flngFinalizeFunction,
+z.fblnExceptionAction,
+z.fblnReverseAction,
+z.fstrReverseReason,
+z.fblnReverseOnlyAsFirstAction,
+z.fblnIdentifyAction,
+z.flngMailTypeKey,
+z.fstrIndicator,
+z.fstrWorkType,
+z.fblnPINVerification,
+z.fintDaysAvailable,
+z.fblnOneTimeAction,
+z.fblnFullReprocess,
+z.flngReturnsAvailable,
+z.flngReturnsFinalized,
+z.fblnActive,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.frd_tblfrdactions z
+;
+
+
+
+
+--tblfrdplandata
+DROP VIEW if exists ${target_db=Enter the target database name here}.frd_tblfrdplandata;
+CREATE VIEW ${target_db=Enter the target database name here}.frd_tblfrdplandata
+AS SELECT 
+z.flngReturnKey,
+z.flngFraudPlanKey,
+z.flngVer,
+z.flngVerLast,
+z.flngDocVerLast,
+z.fdtmReceived,
+z.fdtmDataPopulated,
+z.flngFraudPlanChangeCounter,
+z.flngcustomerkey,
+z.flngAccountKey,
+z.fdtmFilingPeriod,
+z.fi64DocSetKey,
+z.flngDockey,
+z.fcurScore,
+z.fcurScoreTotal,
+z.fcurFraudRefundAmount,
+z.fcurFraudOverrideAmount,
+z.fdtmRulesEvaluated,
+z.fdtmActionsEvaluated,
+z.flngActionKey,
+z.flngLastActionKey,
+z.fdtmReleased,
+z.fstrReleasedBy,
+z.fblnReversed,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.frd_tblfrdplandata z
+;
+
+
+
+--tblfrdplandata_1336541184
+DROP VIEW if exists ${target_db=Enter the target database name here}.frd_tblfrdplandata_1336541184;                                 
+CREATE VIEW ${target_db=Enter the target database name here}.frd_tblfrdplandata_1336541184                                          
+AS SELECT                                                                                                                           
+z.flngReturnKey,                                                                                                                    
+z.fblnAccountingBasisChanged,                                                                                                       
+z.fblnAfter15DaysReceived,                                                                                                          
+z.fblnAgentRedList,                                                                                                                 
+z.fblnAmended,                                                                                                                      
+z.fblnAuditAmended,                                                                                                                 
+z.fblnAuditExists,                                                                                                                  
+z.fblnAuditInLast5Years,                                                                                                            
+z.fblnAuditStageUpdCnvReturns,                                                                                                      
+z.fblnBankAccountFlaggedAsFraud,                                                                                                    
+z.fblnBankAccountPrevCleared,                                                                                                       
+z.fblnComComIndicator,                                                                                                              
+z.fblnCreditOriginal,                                                                                                               
+z.fblnCreditTransfer,                                                                                                               
+z.fblnDeceased,                                                                                                                     
+z.fblnDefaultAssessment,                                                                                                            
+z.fblnDifferentFormFiledThenExpe,                                                                                                   
+z.fblnDynamicADLExceedsRefund,                                                                                                      
+z.fblnEarlyFiled,                                                                                                                   
+z.fblnExceedsModelThreshold,                                                                                                        
+z.fblnExcessiveSourceFieldModifi,                                                                                                   
+z.fblnExpExceedIncHasCrdDebAdj,                                                                                                     
+z.fblnExporter,                                                                                                                     
+z.fblnFirstCreditReturn,                                                                                                            
+z.fblnFirstTimeFiler,                                                                                                               
+z.fblnForeignBankAccount,                                                                                                           
+z.fblnGreenList,                                                                                                                    
+z.fblnGSTOnElectronicServices,                                                                                                      
+z.fblnHasICRCase,                                                                                                                   
+z.fblnHasPrisonAddress,                                                                                                             
+z.fblnHasTaxAgent,                                                                                                                  
+z.fblnHighestRefund,                                                                                                                
+z.fblnHighPriorIncomeToExpenses,                                                                                                    
+z.fblnHighRiskSector,                                                                                                               
+z.fblnHospiceFiler,                                                                                                                 
+z.fblnIdenticalExpensesAndCrdGrs,                                                                                                   
+z.fblnIdenticalExpensesAndCredit,                                                                                                   
+z.fblnIdenticalGSTPaidAndCreditA,                                                                                                   
+z.fblnIdenticalSalesAndExpenses,                                                                                                    
+z.fblnIdenticialGSTPaidAndGSTCol,                                                                                                   
+z.fblnIncIncomeToLowForExpenses,                                                                                                    
+z.fblnInsolvent,                                                                                                                    
+z.fblnIPAnonymizerUsed,                                                                                                             
+z.fblnIsNegativeCreditLast6Retur,                                                                                                   
+z.fblnLargeEnterprise,                                                                                                              
+z.fblnLE_SpecialAudit,                                                                                                              
+z.fblnLongStartup,                                                                                                                  
+z.fblnNoCreditReviewInLastYear,                                                                                                     
+z.fblnNoIncomeExpensesAboveZero,                                                                                                    
+z.fblnNoSalesPrior3ExpensesClaim,                                                                                                   
+z.fblnOutOfTradingPattern,                                                                                                          
+z.fblnOverseasAddress,                                                                                                              
+z.fblnPredictedCreditAdjSpikeMid,                                                                                                   
+z.fblnPredictedExpensesSpikeHigh,                                                                                                   
+z.fblnPredictedExpensesSpikeMid,                                                                                                    
+z.fblnPredictedGSTSpikeHigh,                                                                                                        
+z.fblnPredictedGSTSpikeMid,                                                                                                         
+z.fblnPredictedSalesDipHigh,                                                                                                        
+z.fblnPredictedSalesDipMid,                                                                                                         
+z.fblnPredictedZeroSalesSpike,                                                                                                      
+z.fblnPricesIncGST,                                                                                                                 
+z.fblnPriorSalesLTExpCrdAdjGross,                                                                                                   
+z.fblnProsecution,                                                                                                                  
+z.fblnReceivesACC,                                                                                                                  
+z.fblnReceivesMSDBenefit,                                                                                                           
+z.fblnReceivesMSDPension,                                                                                                           
+z.fblnReceivesStudentAllowance,                                                                                                     
+z.fblnRedList,                                                                                                                      
+z.fblnRefundExceedsThreshold,                                                                                                       
+z.fblnRelatedEntityHasIssues,                                                                                                       
+z.fblnRiskyIPCountry,                                                                                                               
+z.fblnSalesLTExpAndCreditAdjGros,                                                                                                   
+z.fblnSelfInvoicing,                                                                                                                
+z.fblnShortfallPenaltyEvasion,                                                                                                      
+z.fblnSpecialAuditWork,                                                                                                             
+z.fblnSpecialTaxResidency,                                                                                                          
+z.fblnSuspiciousSourceFields,                                                                                                       
+z.fblnZeroRatedFinancialServices,                                                                                                   
+z.fcurAutomatedDisbursementLimit,                                                                                                   
+z.fcurCreditAdjustments,                                                                                                            
+z.fcurDynamicADL,                                                                                                                   
+z.fcurDynamicADLToRefundRatio,                                                                                                      
+z.fcurGSTCollected,                                                                                                                 
+z.fcurGSTNegative,                                                                                                                  
+z.fcurGSTPaid_1,                                                                                                                    
+z.fcurGSTPositive,                                                                                                                  
+z.fcurIncIncomeToExpenses,                                                                                                          
+z.fcurIncomeToCreditAdj,                                                                                                            
+z.fcurIncomeToExpenses,                                                                                                             
+z.fcurIncreaseInTaxToPay,                                                                                                           
+z.fcurIncreasingRefundSlope,                                                                                                        
+z.fcurNilReturnRatio,                                                                                                               
+z.fcurPercentCreditReturnsEarlyF,                                                                                                   
+z.fcurPercentReturnsEarlyFiled,                                                                                                     
+z.fcurPredictedCreditAdjDiff,                                                                                                       
+z.fcurPredictedExpensesDiff,                                                                                                        
+z.fcurPredictedGSTDiff,                                                                                                             
+z.fcurPredictedGSTLinearDiff,                                                                                                       
+z.fcurPredictedSalesDiff,                                                                                                           
+z.fcurPredictedZeroSalesDiff,                                                                                                       
+z.fcurPriorIncomeToExpenses,                                                                                                        
+z.fcurPriorIncToExpForMonth,                                                                                                        
+z.fcurPriorSumCreditAdjustments,                                                                                                    
+z.fcurPriorSumExpenses,                                                                                                             
+z.fcurPriorSumGSTDebit,                                                                                                             
+z.fcurPriorSumSales,                                                                                                                
+z.fcurPriorTrendSlope,                                                                                                              
+z.fcurPrivateAssets,                                                                                                                
+z.fcurRefundToTurnoverRatio,                                                                                                        
+z.fcurSize,                                                                                                                         
+z.fcurTaxChangeAbs,                                                                                                                 
+z.fcurTaxDue,                                                                                                                       
+z.fcurTaxDueAbs,                                                                                                                    
+z.fcurTotalExpenses,                                                                                                                
+z.fcurTotalSales,                                                                                                                   
+z.fcurTurnover,                                                                                                                     
+z.fcurZeroRatedSupplies,                                                                                                            
+z.fdblModelScore,                                                                                                                   
+z.fdtmAccountCease,                                                                                                                 
+z.fdtmAccountCommence,                                                                                                              
+z.fdtmAccountReopened,                                                                                                              
+z.fdtmCustomerCease,                                                                                                                
+z.fdtmCustomerCommence,                                                                                                             
+z.fdtmDueDate,                                                                                                                      
+z.fdtmDynamicADLInvalidDate,                                                                                                        
+z.fdtmDynamicADLValidDate,                                                                                                          
+z.fdtmFilingPeriod,                                                                                                                 
+z.fdtmForeignBankAccountUpdated,                                                                                                    
+z.fdtmIntegrityEvaluatedDate,                                                                                                       
+z.fdtmLastReceivedCrdReturn,                                                                                                        
+z.fdtmOriginalDateReceived,                                                                                                         
+z.fdtmReceived,                                                                                                                     
+z.fdtmReleaseOrLetterDate,                                                                                                          
+z.flngAccountKey,                                                                                                                   
+z.flngAmendedCount,                                                                                                                 
+z.flngAnonymousTipCount,                                                                                                            
+z.flngAttachmentCount,                                                                                                              
+z.flngBackdatedDaysCount,                                                                                                           
+z.flngCompanyAge,                                                                                                                   
+z.flngCreditReturnsLateFiled,                                                                                                       
+z.flngCustomerKey,                                                                                                                  
+z.flngDaysEarlyFiled,                                                                                                               
+z.flngIncreasingRefundCount,                                                                                                        
+z.flngIndividualAge,                                                                                                                
+z.flngIndPartnerOver85,                                                                                                             
+z.flngIndPartnerUnder25,                                                                                                            
+z.flngIndShareholderOver85,                                                                                                         
+z.flngIndShareholderUnder25,                                                                                                        
+z.flngOutstandingReturns,                                                                                                           
+z.flngPriorAvgDaysEarlyFiled,                                                                                                       
+z.flngPriorDiscrepancyCount,                                                                                                        
+z.flngPriorNegativeIntegrityActi,                                                                                                   
+z.flngRelatedOnACC,                                                                                                                 
+z.flngRelatedOnBenefit,                                                                                                             
+z.flngRelatedOnPension,                                                                                                             
+z.flngRelatedOnStudentAllowance,                                                                                                    
+z.flngRelatedSuspectedOfFraud,                                                                                                      
+z.flngReopendAfterMonths,                                                                                                           
+z.flngReturnDocVer,                                                                                                                 
+z.flngWebRequestKey,                                                                                                                
+z.fstrAccountingBasisRtn,                                                                                                           
+z.fstrAccountName,                                                                                                                  
+z.fstrAmendReason,                                                                                                                  
+z.fstrBankAccountNumber,                                                                                                            
+z.fstrBankRoutingNumber,                                                                                                            
+z.fstrChangeReason,                                                                                                                 
+z.fstrContributions_ModelData,                                                                                                      
+z.fstrCustomerClass,                                                                                                                
+z.fstrCustomerLevel,                                                                                                                
+z.fstrCustomerType,                                                                                                                 
+z.fstrDistrictOffice,                                                                                                               
+z.fstrEntitySuspectedOfFraud,                                                                                                       
+z.fstrFilingFreq,                                                                                                                   
+z.fstrFormFiled,                                                                                                                    
+z.fstrFormTypeExpected,                                                                                                             
+z.fstrIPAddress,                                                                                                                    
+z.fstrIPCity,                                                                                                                       
+z.fstrIPCountry,                                                                                                                    
+z.fstrIPLatitude,                                                                                                                   
+z.fstrIPLongitude,                                                                                                                  
+z.fstrIPRegion,                                                                                                                     
+z.fstrIRDNumber_1,                                                                                                                  
+z.fstrMissingFields,                                                                                                                
+z.fstrMissingFields_1,                                                                                                              
+z.fstrModelRiskBanding,                                                                                                             
+z.fstrNewBankAccount,                                                                                                               
+z.fstrOnlineFilingMethod,                                                                                                           
+z.fstrSectorDescription,                                                                                                            
+z.fstrSourceType,                                                                                                                   
+z.fcurPredictedGST,                                                                                                                 
+z.fcurPredictedGSTAccuracy,                                                                                                         
+z.fcurPredictedGSTLinear,                                                                                                           
+z.fcurPredictedGSTLinearAccuracy,                                                                                                   
+z.fblnBankChanged,                                                                                                                  
+z.fblnCreditColExceeds3TimesDebi,                                                                                                   
+z.fblnCreditColExceeds4TimesDebi,                                                                                                   
+z.fblnCreditReturnWithPaymentRec,                                                                                                   
+z.fblnCustomerIsChild,                                                                                                              
+z.fblnEmailChanged,                                                                                                                 
+z.fblnExpensesCRAdjSales,                                                                                                           
+z.fblnFinalReturnIndicatedWithCr,                                                                                                   
+z.fblnHasCurrentAnonLead,                                                                                                           
+z.fblnHasPreviousAnonLead,                                                                                                          
+z.fblnHasSuspiciousAmount,                                                                                                          
+z.fblnIncreasingRefundPercentage,                                                                                                   
+z.fblnInitialFiling,                                                                                                                
+z.fblnIsBackdatedRegistration,                                                                                                      
+z.fblnIsBankrupt,                                                                                                                   
+z.fblnIsFirstReturnAndRefund,                                                                                                       
+z.fblnIsNonResidentIndividual,                                                                                                      
+z.fblnIsNZIPAddress,                                                                                                                
+z.fblnIsOnHybridBasis,                                                                                                              
+z.fblnIsOverseasCompany,                                                                                                            
+z.fblnIsStruckOff,                                                                                                                  
+z.fblnModelNegativeResultThresho,                                                                                                   
+z.fblnModelScoreThreshold,                                                                                                          
+z.fblnMultipleBankAccountChanges,                                                                                                   
+z.fblnOnlineGSTKnown,                                                                                                               
+z.fblnOpenAuditOnAccount,                                                                                                           
+z.fblnOutstandingReturnAndCredit,                                                                                                   
+z.fblnPreviousNegativeResult,                                                                                                       
+z.fblnPriorReturnExists,                                                                                                            
+z.fblnRedListAssociated,                                                                                                            
+z.fblnRedListOtherAccounts,                                                                                                         
+z.fblnShortfallPenalty,                                                                                                             
+z.fblnTempRelease,                                                                                                                  
+z.fblnTotalCreditExceeds3TimesDe,                                                                                                   
+z.fblnTotalCreditExceeds4TimesDe,                                                                                                   
+z.fcurDiscrepancyEstimate,                                                                                                          
+z.fcurPercentCreditReturns,                                                                                                         
+z.fcurPriorCreditAmount,                                                                                                            
+z.fcurSuspiciousNumberCreditAdj,                                                                                                    
+z.fcurUpliftPriorYear,                                                                                                              
+z.fcurUpliftPriorYearCredit,                                                                                                        
+z.fdblDiscrepancyLikelihoodNumer,                                                                                                   
+z.fdtmAccountCeasedDate,                                                                                                            
+z.fdtmCustomerCeaseDate,                                                                                                            
+z.fdtmDateOneYearAgo,                                                                                                               
+z.fdtmLastReviewCompleted,                                                                                                          
+z.fdtmPriorCreditPeriod,                                                                                                            
+z.flngConsecRefundIncreaseCount,                                                                                                    
+z.flngCreditReturnCount,                                                                                                            
+z.flngEarlyFileReturnCount,                                                                                                         
+z.flngExpensesCalculationModifie,                                                                                                   
+z.flngExpensesModifiedCount,                                                                                                        
+z.flngHadChangeToAccountingBasis,                                                                                                   
+z.flngNumberReturnsHeldAccount,                                                                                                     
+z.flngSalesModifiedCount,                                                                                                           
+z.flngSusPrcntCreditAdjustments,                                                                                                    
+z.flngSusPrcntExpenses,                                                                                                             
+z.flngSusPrcntGSTCollected,                                                                                                         
+z.flngSusPrcntGSTPaid,                                                                                                              
+z.flngSusPrcntSales,                                                                                                                
+z.flngSusPrcntWeightedTotal,                                                                                                        
+z.flngTotalExpensesModifiedCount,                                                                                                   
+z.flngYearsSinceOriginalFiled,                                                                                                      
+z.flngZeroRatedSuppliesModifiedC,                                                                                                   
+z.fstrModelScore,                                                                                                                   
+z.fstrModelScore2,                                                                                                                  
+z.fstrModelScore3,                                                                                                                  
+z.fstrNegativeResultLikelihood,                                                                                                     
+z.fstrSector,                                                                                                                       
+z.fstrSpike,                                                                                                                        
+z.fstrTaxChangeLikelihood,                                                                                                          
+z.fstrIRDNumber,                                                                                                                    
+z.fblnAccountAuditExists,                                                                                                           
+z.fblnAuditGroupExists,                                                                                                             
+z.fblnCreditAdjSpikeFromZero,                                                                                                       
+z.fblnCreditColExceeds2TimesDebi,                                                                                                   
+z.fblnCreditColExceedsDebitCol,                                                                                                     
+z.fblnCurrentAudit,                                                                                                                 
+z.fblnDifferentFormFiledThanExpe,                                                                                                   
+z.fblnExpensesSpikeFromZero,                                                                                                        
+z.fblnFirstRefundRisky,                                                                                                             
+z.fblnFirstVersionAfterConverted,                                                                                                   
+z.fblnImporter,                                                                                                                     
+z.fblnIsTaxAgent,                                                                                                                   
+z.fblnLastVersionAmended,                                                                                                           
+z.fblnSalesSpikeFromZero,                                                                                                           
+z.fblnSpike1CreditAdjustments,                                                                                                      
+z.fblnSpike1Expenses,                                                                                                               
+z.fblnSpike1GSTCredit,                                                                                                              
+z.fblnSpike1Sales,                                                                                                                  
+z.fblnSpike1ZeroSupplies,                                                                                                           
+z.fblnSpike2CreditAdjustments,                                                                                                      
+z.fblnSpike2Expenses,                                                                                                               
+z.fblnSpike2GSTCredit,                                                                                                              
+z.fblnSpike2Sales,                                                                                                                  
+z.fblnSpike2ZeroSupplies,                                                                                                           
+z.fblnSpike3CreditAdjustments,                                                                                                      
+z.fblnSpike3Expenses,                                                                                                               
+z.fblnSpike3GSTCredit,                                                                                                              
+z.fblnSpike3Sales,                                                                                                                  
+z.fblnSpike3ZeroSupplies,                                                                                                           
+z.fblnSpike4CreditAdjustments,                                                                                                      
+z.fblnSpike4Expenses,                                                                                                               
+z.fblnSpike4GSTCredit,                                                                                                              
+z.fblnSpike4Sales,                                                                                                                  
+z.fblnSpike4ZeroSupplies,                                                                                                           
+z.fblnTotalCreditExceeds2TimesDe,                                                                                                   
+z.fblnTotalCreditExceedsDebit,                                                                                                      
+z.fblnTotalDebitExceeds2TimesCre,                                                                                                   
+z.fblnTotalDebitExceeds3TimesCre,                                                                                                   
+z.fblnTotalDebitExceedsCredits,                                                                                                     
+z.fblnUnpolicedFiler,                                                                                                               
+z.fblnZeroRatedSpikeFromZero,                                                                                                       
+z.fcurConvertedTax,                                                                                                                 
+z.fcurIncomeToCreditAdjChange,                                                                                                      
+z.fcurInitialReturnTotalAmount,                                                                                                     
+z.fcurPriorAvgCreditAdjustments,                                                                                                    
+z.fcurPriorAvgCreditGST,                                                                                                            
+z.fcurPriorAvgExpenses,                                                                                                             
+z.fcurPriorAvgSuspiciousCreditAd,                                                                                                   
+z.fcurPriorAvgSuspiciousExpenses,                                                                                                   
+z.fcurPriorAvgSuspiciousSales,                                                                                                      
+z.fcurPriorAvgSuspiciousZeroSupp,                                                                                                   
+z.fcurPriorAvgTotalSales,                                                                                                           
+z.fcurPriorAvgZeroSupplies,                                                                                                         
+z.fcurPriorIncomeToCreditAdj,                                                                                                       
+z.fcurPriorStdevCreditAdjustme_1,                                                                                                   
+z.fcurPriorStdevCreditAdjustment,                                                                                                   
+z.fcurPriorStdevExpenses,                                                                                                           
+z.fcurPriorStdevExpenses2,                                                                                                          
+z.fcurPriorStdevGSTCredit,                                                                                                          
+z.fcurPriorStdevGSTCredit2,                                                                                                         
+z.fcurPriorStdevSales,                                                                                                              
+z.fcurPriorStdevSales2,                                                                                                             
+z.fcurPriorStdevZeroSupplies,                                                                                                       
+z.fcurPriorStdevZeroSupplies2,                                                                                                      
+z.fcurPriorSumGSTCredit,                                                                                                            
+z.fcurPriorSumGSTCreditCollected,                                                                                                   
+z.fcurPriorSumGSTDebtCollected,                                                                                                     
+z.fcurPriorSumZeroSupplies,                                                                                                         
+z.fcurPriorYearTax,                                                                                                                 
+z.fcurSuspiciousNumberExpenses,                                                                                                     
+z.fcurSuspiciousNumberSales,                                                                                                        
+z.fcurSuspiciousNumberZeroSuppli,                                                                                                   
+z.flngAccountAge,                                                                                                                   
+z.flngDocVerLast,                                                                                                                   
+z.flngIndividualPartnerCount,                                                                                                       
+z.flngIndividualShareholderCount,                                                                                                   
+z.flngNonIndividualPartnerCount,                                                                                                    
+z.flngNonIndividualShareholderCo,                                                                                                   
+z.flngNumberReturnsHeldCustomer,                                                                                                    
+z.flngPreviousReturnDocKey,                                                                                                         
+z.flngPriorCrdRtnRecWithin10Days,                                                                                                   
+z.flngPriorCreditReturnCount,                                                                                                       
+z.flngPriorCreditReturnsEarlyF_1,                                                                                                   
+z.flngPriorCreditReturnsEarlyFil,                                                                                                   
+z.flngPriorNilReturnCount,                                                                                                          
+z.flngPriorNoSalesReturnCount,                                                                                                      
+z.flngPriorReturnCount,                                                                                                             
+z.flngPriorReturnsEarlyFiled,                                                                                                       
+z.flngPriorRtnRecWithin10Days,                                                                                                      
+z.flngReturnsLateFiled,                                                                                                             
+z.flngTaxAgentClientCount,                                                                                                          
+z.fstrForeignBankAccountHash,                                                                                                       
+z.fstrPriorAccountingBasis,                                                                                                         
+z.fstrRegCircumstance,                                                                                                              
+z.fstrSectorLevel1,                                                                                                                 
+z.insert_object_run_key                                                                                                             
+ FROM ${source_db=Enter the the source database name here}.frd_tblfrdplandata_1336541184 z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.app_tblcustomerlevel cl 
+ON cl.flngcustomerkey = z.flngcustomerkey
+WHERE (nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N')
+;
+
+
+
+
+
+--tblnz_accgstinfo
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accgstinfo;                                          
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accgstinfo                                                   
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.fblnPricesIncGST,                                                                                                                 
+z.fblnExemptSupplies,                                                                                                               
+z.fblnImporter,                                                                                                                     
+z.fblnExporter,                                                                                                                     
+z.fstrRegCircumstance,                                                                                                              
+z.fblnUnpolicedFiler,                                                                                                               
+z.fblnSelfInvoicing,                                                                                                                
+z.fblnHospiceFiler,                                                                                                                 
+z.fstrHospiceType,                                                                                                                  
+z.fstrLastAccountingBasis,                                                                                                          
+z.fblnGSTOnElectronicServices,                                                                                                      
+z.fstrGORSType,                                                                                                                     
+z.fblnGSTOnLVIG,                                                                                                                    
+z.fstrLVIGType,                                                                                                                     
+z.fblnLVIG1K,                                                                                                                       
+z.fblnZeroRatedFinancialServices,                                                                                                   
+z.fdtmReopened,                                                                                                                     
+z.fintHeritageProfileNumber,                                                                                                        
+z.fblnNonResBusinessClaimant,                                                                                                       
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${source_db=Enter the the source database name here}.app_tblnz_accgstinfo z;  
+
+
+
+--tblnz_accincome
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accincome;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accincome
+AS SELECT 
+z.flngDockey,
+z.fdtmBalanceDate,
+z.fblnSeasonalEmployee,
+z.fstrExemptionReason,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accincome z
+;
+
+
+--tblnz_accipe
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accipe
+AS SELECT 
+z.flngDockey,
+z.fstrExemptionReason,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accipe z
+;
+
+
+
+--tblnz_accitn
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accitn;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accitn
+AS SELECT 
+z.flngDockey,
+z.fblnTransTasman,
+z.fblnAgentNonResInsurer,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accitn z
+;
+
+
+--tblnz_accountstd
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accountstd;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accountstd
+AS SELECT 
+z.flngDockey,
+z.fblnUnpoliced,
+z.fintSMSCountryCode,
+z.fstrSMSAreaCode,
+z.fstrSMSPhoneNumber,
+z.fblnPublish,
+z.fintHeritageLocationNumber,
+z.fdtmReopened,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accountstd z
+;
+
+
+
+
+--tblnz_accpieinfo
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accpieinfo;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accpieinfo
+AS SELECT 
+z.flngDockey,
+z.fstrPIEType,
+z.fstrFilingOption,
+z.fstrAttributionPeriod,
+z.fstrFDRCalcPeriod,
+z.fblnFilingReqExemption,
+z.fstrWho,
+z.fdtmWhen,
+z.fblnConverted,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accpieinfo z
+;
+
+
+
+--tblnz_accpso
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_accpso;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_accpso
+AS SELECT 
+z.flngDockey,
+z.fblnIR56,
+z.fstrFilingOption,
+z.fblnPayDayFiler,
+z.fstrPayDay,
+z.fstrPayPeriod,
+z.fdtmPayDayFilerStart,
+z.fstrBatchToFIRST,
+z.fblnCSE,
+z.fblnSLE,
+z.fblnKSE,
+z.fblnKSR,
+z.fblnSSC,
+z.fstrEmployerGroup,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_accpso z
+;
+
+--tblnz_casfeedbackcausedetails
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_casfdbkcausedet;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_casfdbkcausedet
+AS SELECT 
+z.flngDockey,
+z.fintSeq,
+z.fstrContactCause,
+z.fstrCauseDetail,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_casfdbkcausedet z
+;
+
+--caspapercorrespnd
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_caspapercorrespnd;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_caspapercorrespnd
+AS SELECT 
+z.flngDockey,
+z.fstrWorkCategory,
+z.fstrDLN,
+z.fdtmLodgementDate,
+z.fblnImageSplit,
+z.fstrwho,
+z.fdtmwhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_caspapercorrespnd z
+;
+
+
+
+--tblnz_gstreg
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_gstreg;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_gstreg
+AS SELECT 
+z.flngDockey,
+z.fi64DocGroupKey,
+z.fblnTurnoverOver60k,
+z.fstrExpectedTurnover,
+z.fstrWhoResponsibleForGST,
+z.fblnNeedsHelp,
+z.fblnNeedsHelpFilingReturns,
+z.fblnNeedsHelpRecordKeeping,
+z.fblnNeedsHelpWhatToClaim,
+z.fdtmCommencementDate,
+z.fblnExporter,
+z.fblnImporter,
+z.fblnMailReturns,
+z.fblnExemptSupplies,
+z.fblnTaxableActivity,
+z.fstrFilingFrequency,
+z.fstrAccountingBasis,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_gstreg z
+;
+
+
+
+
+
+--tblnz_rtnattributes
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnattributes;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnattributes
+AS SELECT 
+z.flngDockey,
+z.flngVer,
+z.flngVerLast,
+z.flngWebReqKey,
+z.fstrFilingFrequency,
+z.fstrSourceType,
+z.fstrWebLogonID,
+z.fstrFormTypeFiled,
+z.fstrFormTypeExpected,
+z.fstrIPAddress,
+z.fstrVendorID,
+z.fstrSoftwareProvider,
+z.fstrSoftwarePlatform,
+z.fstrSoftwareRelease,
+z.fstrDLN,
+z.fdtmCeaseDate,
+z.fstrCeaseExplanation,
+z.fblnAmended,
+z.fstrAmendReason,
+z.fstrAmendText,
+z.fblnAudited,
+z.fblnCorrespondence,
+z.fblnFuturePeriod,
+z.fblnDiscovery,
+z.fblnNilReturn,
+z.fblnDefault,
+z.fblnFinalReturn,
+z.fblnProvisional,
+z.fcurAmountDue,
+z.fdtmPaymentDueDate,
+z.fdtmPaymentDueDateExtended,
+z.fblnConverted,
+z.fblnOriginallyConverted,
+z.fcurCreditTransferAmount,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_rtnattributes z
+WHERE z.flngDocKey IN
+    (SELECT DISTINCT rtn.flngDocKey
+     FROM ${source_db=Enter the source database name here}.app_tblreturn rtn
+     INNER JOIN ${source_db=Enter the source database name here}.app_tblaccount ac
+     ON rtn.flngAccountKey = ac.flngAccountKey
+     INNER JOIN ${source_db=Enter the source database name here}.app_tblcustomerinfo cl ON ac.flngcustomerkey = cl.flngcustomerkey
+     WHERE
+     nvl(ac.record_active_flag, 'Y') = 'Y'
+     AND nvl(ac.record_deleted_flag, 'N') = 'N'
+     AND nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+     AND nvl(cl.record_active_flag, 'Y') = 'Y'
+     AND nvl(cl.record_deleted_flag, 'N') = 'N'
+     )
+;
+
+
+--tblnz_rtngst
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtngst;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtngst
+AS SELECT 
+z.flngDockey,
+z.fstrRegistrationNo,
+z.fdtmFilingPeriod,
+z.fstrFilingFreq,
+z.fstrSourceType,
+z.fblnNil,
+z.fblnFinalReturn,
+z.fblnIncorrectForm,
+z.fstrFormTypeFiled,
+z.fstrFormTypeExpected,
+z.fblnHospice,
+z.fstrHospiceType,
+z.fblnProvisionalFiler,
+z.fstrProvisionalOption,
+z.fblnCompulsory,
+z.fblnMultibranchFiler,
+z.fblnTransitionalReturn,
+z.fblnCorrespondence,
+z.fstrVendorID,
+z.fstrSoftwareProvider,
+z.fstrWebLogonID,
+z.fblnQualifyRatio,
+z.fcurRatio,
+z.fcurGSTTotal,
+z.fcurTotalSales,
+z.fcurP1TotalSales,
+z.fcurP1ZeroSupplies,
+z.fcurP1IncomeCalculation,
+z.fcurP1GSTCollected,
+z.fcurP1LongTermSales,
+z.fcurP1LongTermGST,
+z.fcurP1HospitalSales,
+z.fcurP1HospitalGST,
+z.fcurP1SalesAdjustments,
+z.fcurP1NetSalesAndIncome,
+z.fcurP1TotalExpenses,
+z.fcurP1ExpensesCalculation,
+z.fcurP1CreditAdjustments,
+z.fcurP1GSTCredit,
+z.fcurP1TotalGST,
+z.fcurP2TotalSales,
+z.fcurP2ZeroSupplies,
+z.fcurP2LongTermSales,
+z.fcurP2LongTermGST,
+z.fcurP2HospitalSales,
+z.fcurP2HospitalGST,
+z.fcurP2SalesAdjustments,
+z.fcurP2TotalExpenses,
+z.fcurP2CreditAdjustments,
+z.fcurPTPreviousTotalSales,
+z.fcurPTTotalBranchSales,
+z.fcurPTIncludeBranchesTSI,
+z.fcurPTAssetAdjustment,
+z.fcurPTLessAssetsTSI,
+z.fcurPTInstalmentDue,
+z.fcurPTVoluntaryAmount,
+z.fcurPTRefundTransfer,
+z.fcurPTGSTToPay,
+z.fcurPTProvTaxDue,
+z.fcurPTPayment,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_rtngst z
+WHERE z.flngDockey IN 
+    (SELECT DISTINCT rtn.flngDockey 
+     FROM ${source_db=Enter the source database name here}.app_tblreturn rtn 
+     INNER JOIN ${source_db=Enter the source database name here}.app_tblaccount ac ON rtn.flngAccountKey = ac.flngAccountKey 
+     AND ac.record_deleted_flag = 'N' 
+     AND ac.record_active_flag = 'Y' 
+     inner JOIN ${source_db=Enter the source database name here}.app_tblCustomerLevel cl on 
+ ac.flngcustomerkey=cl.flngcustomerkey 
+ WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+);
+
+
+
+--tblnz_rtniit
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtniit;                                              
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtniit                                                       
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.fblnIR215Attached,                                                                                                                
+z.fcurTotalFamilyTaxCredit,                                                                                                         
+z.fcurTotalPAYEDeducted,                                                                                                            
+z.fcurTotalAdjPAYEDeducted,                                                                                                         
+z.fcurTotalGrossIncome,                                                                                                             
+z.fcurIncomeNotLiableForACC,                                                                                                        
+z.fcurACCEarnerLevy,                                                                                                                
+z.fcurTotalIncomeWithTaxDeducted,                                                                                                   
+z.fcurTotalSchedularPymtTaxDed,                                                                                                     
+z.fcurTotalGrossSchedularPayment,                                                                                                   
+z.fcurExpensesSchedularPayments,                                                                                                    
+z.fcurNetSchedularPayments,                                                                                                         
+z.fcurTotalRWT,                                                                                                                     
+z.fcurTotalGrossInterest,                                                                                                           
+z.fblnIntPshpLTC,                                                                                                                   
+z.fcurTotalImputationCredits,                                                                                                       
+z.fcurTotalDividendRWT,                                                                                                             
+z.fcurTotalGrossDividends,                                                                                                          
+z.fblnDivPshpLTC,                                                                                                                   
+z.fcurTotalMaoriCredits,                                                                                                            
+z.fcurTotalMaoriDistributions,                                                                                                      
+z.fcurTotalTaxPaidByTrustees,                                                                                                       
+z.fcurTotalEstateOrTrusteeIncome,                                                                                                   
+z.fcurTotalTaxableDistributions,                                                                                                    
+z.fcurTotalOverseasTaxPaid,                                                                                                         
+z.fcurTotalOverseasIncome,                                                                                                          
+z.fblnOverseasSuper,                                                                                                                
+z.fcurTotalPartnershipTaxCredits,                                                                                                   
+z.fcurTotalActivePtshpIncome,                                                                                                       
+z.fcurTotalLTCTaxCredits,                                                                                                           
+z.fcurTotalActiveLTCIncome,                                                                                                         
+z.fcurNonAllowableDeductions,                                                                                                       
+z.fcurNonAllowableDedClaimed,                                                                                                       
+z.fcurAdjustedLTCIncome,                                                                                                            
+z.fcurTaxCreditSubtotal,                                                                                                            
+z.fcurIncomeSubtotal,                                                                                                               
+z.fcurShareholderEmployeeSalary,                                                                                                    
+z.fblnFutureShrSalary,                                                                                                              
+z.fblnWithoutPayCloseCompany,                                                                                                       
+z.fcurNetRents,                                                                                                                     
+z.fcurSelfEmployedNetIncome,                                                                                                        
+z.fcurTotalOtherNetIncome,                                                                                                          
+z.fcurSaleOfProperty,                                                                                                               
+z.fcurRLWTCredit,                                                                                                                   
+z.fcurTotalIncome,                                                                                                                  
+z.fcurTotalOtherExpenses,                                                                                                           
+z.fcurIncomeAfterExpenses,                                                                                                          
+z.fcurAmountBroughtForward,                                                                                                         
+z.fcurAmountClaimedThisYear,                                                                                                        
+z.fcurTaxableIncome,                                                                                                                
+z.fblnEligibleForIETC,                                                                                                              
+z.fdtmExOverseasIncomeStart,                                                                                                        
+z.fdtmExcOverseasIncomeEnd,                                                                                                         
+z.fintExcOverseasMonths,                                                                                                            
+z.fcurIETC,                                                                                                                         
+z.fcurAllowableImpCredits,                                                                                                          
+z.fcurExcessImputationCredits,                                                                                                      
+z.fcurTotalExtTCPD,                                                                                                                 
+z.fcurTotalTCPD,                                                                                                                    
+z.fcurTaxOnTaxableIncome,                                                                                                           
+z.fcurResidualIncomeTax,                                                                                                            
+z.fcurTaxCalcResult,                                                                                                                
+z.fcurImputationToCarryForward,                                                                                                     
+z.fblnEarlyPymtDiscount,                                                                                                            
+z.fcurOverpaymentProvRefund,                                                                                                        
+z.fcurRefundAndProvOverpayment,                                                                                                     
+z.fcurRefundCalc,                                                                                                                   
+z.fcurProvisionalTax,                                                                                                               
+z.fcurLossToCarryForward,                                                                                                           
+z.fcurAllowableRLWTCredits,                                                                                                         
+z.fcurProvisionalTaxPaid,                                                                                                           
+z.fcurRefund,                                                                                                                       
+z.fblnDisclosureRequired,                                                                                                           
+z.fstrPTSStatus,                                                                                                                    
+z.flngSelectGroup,                                                                                                                  
+z.fdtmSelectDate,                                                                                                                   
+z.fblnGroup2Suspend,                                                                                                                
+z.fstrResMethod,                                                                                                                    
+z.fcurResIncome,                                                                                                                    
+z.fcurResDeductions,                                                                                                                
+z.fcurResDeductionsPriorYear,                                                                                                       
+z.fcurResDeductionsClaimed,                                                                                                         
+z.fcurResNetIncome,                                                                                                                 
+z.fcurResDeductionsCarriedForwar,                                                                                                   
+z.fcurRDICarryForwardCurrentYear,                                                                                                   
+z.fcurShareholderAIMTaxPaid,                                                                                                        
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${source_db=Enter the the source database name here}.app_tblnz_rtniit z;
+
+
+
+
+--tblnz_rtnpsoemployeeinfo
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_rtnpsoemployeeinfo;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_rtnpsoemployeeinfo
+AS SELECT 
+z.flngReturnKey,
+z.flngItemNumber,
+z.flngRelationshipKey,
+z.flngVer,
+z.flngVerLast,
+z.fblnInError,
+z.fstrIRDNumber,
+z.fblnInvalidIRD,
+z.fstrEmployeeName,
+z.fstrSurname,
+z.fstrFirstName,
+z.fstrTaxCode,
+z.fdtmStart,
+z.fdtmFinish,
+z.fdtmPayPeriodStart,
+z.fdtmPayPeriodEnd,
+z.fstrPayFrequency,
+z.fblnPayment,
+z.fstrCSCode,
+z.fcurGross,
+z.fcurEarnings,
+z.fcurPAYE,
+z.fcurChildSupport,
+z.fcurStudentLoan,
+z.fcurKiwiSaverDeductions,
+z.fcurKiwiSaverContributions,
+z.fcurTaxCreditsDonations,
+z.fcurESCTDeductions,
+z.fcurTaxCreditsExtinguish,
+z.fcurEmployerContributionsAdj,
+z.fcurFamilyTaxCredits,
+z.fstrGatewayReferenceId,
+z.fdtmDeleted,
+z.fdtmProcessed,
+z.fblnDuplicateIRDTaxCode,
+z.fblnOverrideKiwiSaverDedRule,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_rtnpsoemployeeinfo z
+WHERE z.flngReturnKey IN 
+( SELECT DISTINCT rt.flngReturnKey 
+  FROM ${source_db=Enter the source database name here.app_tblreturn rt 
+  INNER JOIN ${source_db=Enter the source database name here.app_tblaccount ac 
+  ON rt.flngAccountKey = ac.flngAccountKey 
+  AND rt.record_deleted_flag = 'N' 
+  AND rt.record_active_flag = 'Y' 
+  AND ac.record_deleted_flag = 'N' 
+  AND ac.record_active_flag = 'Y' 
+  LEFT OUTER JOIN  ${source_db=Enter the source database name here.app_tblCustomerLevel cl on 
+  ac.flngcustomerkey=cl.flngcustomerkey 
+  WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+    AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+   AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+);
+
+
+--tblpayment
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblpayment;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblpayment
+AS SELECT 
+z.flngPaymentKey,
+z.flngVer,
+z.flngVerLast,
+z.fintAllocation,
+z.fstrSource,
+z.fstrPaymentType,
+z.fcurAmount,
+z.fdtmEffect,
+z.fintRetry,
+z.fblnQueued,
+z.fblnUser,
+z.fblnActive,
+z.fblnDirected,
+z.flngDockey,
+z.fstrIdType,
+z.fstrId,
+z.fstrAssociatedId,
+z.fstrAccountType,
+z.fdtmFilingPeriod,
+z.fstrVoucherType,
+z.fstrOvrIdType,
+z.fstrOvrId,
+z.fstrOvrAssociatedId,
+z.fstrOvrAccountType,
+z.fstrOvrVoucherType,
+z.fdtmOvrFilingPeriod,
+z.fstrDetails,
+z.fdtmCreated,
+z.fstrMedia,
+z.fstrEffType,
+z.fstrTraceType,
+z.fstrTrace,
+z.fstrFrgCurrType,
+z.fcurFrgAmount,
+z.fdblFrgRate,
+z.fstrTransitNum,
+z.fstrAccountNum,
+z.flngBatchKey,
+z.fintBatchSeq,
+z.fstrReason,
+z.fintProfile,
+z.fstrStatus,
+z.fstrValidationParms,
+z.fstrUnknown,
+z.fblnSuspended,
+z.fstrPaymentChanel,
+z.fstrDepositType,
+z.fdtmDeposit,
+z.fdtmReceived,
+z.fdtmStatus,
+z.fstrExternalId,
+z.flngCrmKey,
+z.fdtmBankAdjusted,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblpayment z
+;
+
+
+--tblprofile
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblprofile;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblprofile
+AS SELECT 
+z.flngcustomerkey,
+z.fintProfileNumber,
+z.flngVer,
+z.flngVerLast,
+z.fstrProfileType,
+z.fblnDefault,
+z.fintParentProfileNumber,
+z.flngDockey,
+z.fdtmCommence,
+z.fdtmCease,
+z.fdtmCreated,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblprofile z
+;
+
+--tblreturn
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblreturn;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblreturn
+AS SELECT 
+z.flngReturnKey,
+z.flngVer,
+z.flngVerLast,
+z.fi64DocSetKey,
+z.flngDockey,
+z.fintVerLastGood,
+z.flngJointReturnKey,
+z.flngAccountKey,
+z.flngSecondaryAccountKey,
+z.fdtmFilingPeriod,
+z.fstrDocType,
+z.fintDocVer,
+z.fdtmReturnGen,
+z.fdtmDataCapture,
+z.fdtmInAccount,
+z.fdtmReceived,
+z.fdtmDue,
+z.fblnInError,
+z.fstrFilingStatus,
+z.fstrId,
+z.fstrIdType,
+z.fstrNameControl,
+z.fstrSecondaryId,
+z.fstrSecondaryIdType,
+z.fstrSecondaryNameControl,
+z.fstrURI,
+z.fstrURIType,
+z.fstrAccountType,
+z.fstrMedia,
+z.fcurPayment,
+z.fstrStatus,
+z.flngBatchKey,
+z.fintSequence,
+z.fstrRtnBatchId,
+z.fstrReason,
+z.fblnEstimated,
+z.fblnPreliminary,
+z.fblnReceived,
+z.fblnRequired,
+z.flngCrmKey,
+z.flngFolderKey,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblreturn z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.app_tblaccount ac 
+on z.flngaccountkey=ac.flngaccountkey and
+ ac.record_active_flag='Y' 
+LEFT OUTER JOIN  ${source_db=Enter the source database name here}.app_tblCustomerLevel cl on 
+ ac.flngcustomerkey=cl.flngcustomerkey 
+ WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+;
+
+--tbltaskopen
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tbltaskall;                                               
+CREATE VIEW ${target_db=Enter the target database name here}.app_tbltaskall                                                      
+AS SELECT                                                                                                                           
+z.flngKey,                                                                                                                          
+z.fstrTaskSource,                                                                                                                   
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.flngSubTask,                                                                                                                      
+z.fstrCategory,                                                                                                                     
+z.fstrType,                                                                                                                         
+z.fstrStage,                                                                                                                        
+z.flngCustomerKey,                                                                                                                  
+z.fintProfileNumber,                                                                                                                
+z.flngAccountKey,                                                                                                                   
+z.fstrAccountType,                                                                                                                  
+z.fdtmFilingPeriod,                                                                                                                 
+z.flngResponsibilityKey,                                                                                                            
+z.flngQueueKey,                                                                                                                     
+z.flngRuleKey,                                                                                                                      
+z.flngEvaluation,                                                                                                                   
+z.fdtmEvaluation,                                                                                                                   
+z.fstrIdType,                                                                                                                       
+z.fstrFormattedId,                                                                                                                  
+z.fstrListFormatName,                                                                                                               
+z.fcurAmount,                                                                                                                       
+z.fstrExternalId,                                                                                                                   
+z.fdtmWorkDate,                                                                                                                     
+z.fdtmWorkDateTime,                                                                                                                 
+z.fdtmCreated,                                                                                                                      
+z.fdtmSubTaskCreated,                                                                                                               
+z.fstrAssignedTo,                                                                                                                   
+z.fdtmAssigned,   
+z.fdtmAborted,             
+z.fdtmCompleted,                                                                                                               
+z.fdtmHandoff,                                                                                                                      
+z.fdtmAvailable,                                                                                                                    
+z.fdtmDue,                                                                                                                          
+z.fdtmExpire,                                                                                                                       
+z.fdtmUserCompleted,                                                                                                                
+z.fdtmSubTaskCompleted,                                                                                                             
+z.fdtmEverCompleted,                                                                                                                
+z.fdtmAttention,                                                                                                                    
+z.fstrAttention,                                                                                                                    
+z.flngWaitTimeSubTask,                                                                                                              
+z.flngWaitTimeTotal,                                                                                                                
+z.flngAssignedTimeSubTask,                                                                                                          
+z.flngAssignedTimeTotal,                                                                                                            
+z.flngWaitDaysSubTask,                                                                                                              
+z.flngWaitDaysTotal,                                                                                                                
+z.flngAssignedDaysSubTask,                                                                                                          
+z.flngAssignedDaysTotal,                                                                                                            
+z.fblnInteractive,                                                                                                                  
+z.flngWeight,                                                                                                                       
+z.fblnQueueRuleError,                                                                                                               
+z.fstrWho,                                                                                                                          
+z.fdtmWhen,                                                                                                                         
+z.record_effective_timestamp,                                                                                                       
+z.record_expiry_timestamp,                                                                                                          
+z.record_active_flag,                                                                                                               
+z.record_deleted_flag,                                                                                                              
+z.insert_object_run_key,                                                                                                            
+z.update_object_run_key                                                                                                             
+ FROM ${source_db=Enter the source database name here}.app_tbltaskall z 
+LEFT OUTER JOIN 
+${source_db=Enter the source database name here}.app_tblcustomerlevel cl 
+ON z.flngcustomerkey = cl.flngcustomerkey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+ AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+ AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+--tblweblogon
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.wrq_tblweblogon;
+CREATE VIEW ${target_db=Enter the target database name here}.wrq_tblweblogon
+AS SELECT 
+z.flngWebLogonKey,
+z.flngVer,
+z.flngVerLast,
+z.fstrWebLogon,
+z.fstrApplication,
+z.flngcustomerkey,
+z.fstrWebPassword,
+z.fstrAuthorizationCode,
+z.fblnAuthorizationDisabled,
+z.fstrAuthorizationEmail,
+z.fstrAuthorizationPhoneCarrier,
+z.fstrAuthorizationPhoneCountry,
+z.fstrAuthorizationPhoneAreaCode,
+z.fstrAuthorizationPhone,
+z.fdtmAuthorizationCodeInvalid,
+z.fdtmPasswordExpires,
+z.fdtmPasswordInvalid,
+z.fstrEncryptionType,
+z.fstrSalt,
+z.fstrWebName,
+z.fstrEmail,
+z.fdtmOpened,
+z.fdtmClosed,
+z.fdtmLastPublished,
+z.fstrPhoneCountry,
+z.fstrPhoneType,
+z.fstrPhoneAreaCode,
+z.fstrPhoneNumber,
+z.fstrPhoneExtension,
+z.fstrPhoneCountry2,
+z.fstrPhoneType2,
+z.fstrPhoneAreaCode2,
+z.fstrPhoneNumber2,
+z.fstrPhoneExtension2,
+z.fstrSecretQuestion,
+z.fstrSecretAnswer,
+z.fstrSecretEncryptionType,
+z.fstrSecretSalt,
+z.fintFailedAttempts,
+z.fintFailedQuestions,
+z.fstrAccessType,
+z.flngDockey,
+z.fdtmCurrentLogon,
+z.fdtmLastLogon,
+z.flngParentWebLogonKey,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.wrq_tblweblogon z
+LEFT OUTER JOIN ${source_db=Enter the source database name here}.app_tblcustomerlevel cl 
+ON cl.flngcustomerkey = z.flngcustomerkey
+WHERE (nvl(cl.fstrcustomerlevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N')
+;
+
+
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.lcf_object_run;                                  
+CREATE VIEW ${target_db=Enter the target database name here}.lcf_object_run                                           
+AS SELECT                                                                                                                                                                 
+z.object_run_key,    
+z.object_name,       
+z.object_key,           
+z.start_time,           
+z.end_time,             
+z.status,  
+z.status_message,  
+z.records_read,       
+z.records_written,  
+z.object_log_name, 
+z.object_prg_name,                
+z.prev_high_water_mark_value,            
+z.high_water_mark_value,     
+z.load_pattern_name ,           
+z.task1,    
+z.task1_start_time, 
+z.task1_end_time,  
+z.task2,    
+z.task2_start_time, 
+z.task2_end_time,  
+z.task3,    
+z.task3_start_time, 
+z.task3_end_time,  
+z.task4,    
+z.task4_start_time, 
+z.task4_end_time,  
+z.task5,    
+z.task5_start_time, 
+z.task5_end_time,  
+z.task6,    
+z.task6_start_time, 
+z.task6_end_time,  
+z.task7,    
+z.task7_start_time,
+z.task7_end_time,  
+z.task8,    
+z.task9,    
+z.task10,  
+z.task8_start_time, 
+z.task9_start_time, 
+z.task10_start_time,              
+z.task8_end_time,  
+z.task9_end_time,  
+z.task10_end_time, 
+z.record_effective_timestamp,              
+z.record_expiry_timestamp,  
+z.checksum,            
+z.record_active_flag,              
+z.record_deleted_flag,           
+z.insert_object_run_key,        
+z.update_object_run_key       
+FROM ${source_db=Enter the the source database name here}.lcf_object_run z;
+
+DROP VIEW if exists ${target_db=Enter the target database name here}.app_tblnz_income;
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_income
+AS SELECT 
+z.fi64IncomeKey,
+z.flngVer,
+z.flngVerLast,
+z.flngcustomerkey,
+z.fstrIncomeType,
+z.fstrIncomeStatus,
+z.flngSourceAccountKey,
+z.fdtmDate,
+z.fcurAmount,
+z.fcurDeductions,
+z.fstrSource,
+z.fi64SourceKey,
+z.fi64RtnLineItemKey,
+z.fstrSourceName,
+z.fdtmReversed,
+z.fblnManual,
+z.fblnOverride,
+z.fblnActive,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag, 
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${source_db=Enter the source database name here}.app_tblnz_income z
+;
+
+

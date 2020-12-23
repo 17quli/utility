@@ -1,0 +1,231 @@
+/*************************************************************************
+010220 SDZ Script to rebuild object_run table with new columns and reorder the column order
+
+
+*************************************************************************/
+
+--DROP TABLE OBJECT_RUN_NEW;
+CREATE TABLE LCF.OBJECT_RUN_NEW 
+  (OBJECT_RUN_KEY NUMBER(10), 
+  TARGET_OBJECT_NAME VARCHAR2(30), 
+  OBJECT_KEY NUMBER(10), 
+	START_TIME TIMESTAMP (6), 
+	END_TIME TIMESTAMP (6), 
+	STATUS VARCHAR2(512), 
+	STATUS_MESSAGE VARCHAR2(4000), 
+	RECORDS_READ NUMBER(10), 
+	RECORDS_WRITTEN NUMBER(10), 
+	OBJECT_LOG_NAME VARCHAR2(2048), 
+	OBJECT_PRG_NAME VARCHAR2(2048), 
+  INGESTION_MODE VARCHAR2(10),
+	PREV_HIGH_WATER_MARK_VALUE TIMESTAMP, 
+  HIGH_WATER_MARK_VALUE_JNL TIMESTAMP,
+  HIGH_WATER_MARK_VALUE TIMESTAMP, 
+  LOAD_PATTERN_NAME VARCHAR2(30), 
+	TASK1 VARCHAR2(50), 
+	TASK1_START_TIME TIMESTAMP, 
+	TASK1_END_TIME TIMESTAMP, 
+	TASK2 VARCHAR2(50), 
+	TASK2_START_TIME TIMESTAMP, 
+	TASK2_END_TIME TIMESTAMP, 
+	TASK3 VARCHAR2(50), 
+	TASK3_START_TIME TIMESTAMP, 
+	TASK3_END_TIME TIMESTAMP, 
+	TASK4 VARCHAR2(50), 
+	TASK4_START_TIME TIMESTAMP, 
+	TASK4_END_TIME TIMESTAMP, 
+	TASK5 VARCHAR2(50), 
+	TASK5_START_TIME TIMESTAMP, 
+	TASK5_END_TIME TIMESTAMP, 
+	TASK6 VARCHAR2(50), 
+	TASK6_START_TIME TIMESTAMP, 
+	TASK6_END_TIME TIMESTAMP,
+  TASK7 VARCHAR(50),
+  TASK7_START_TIME TIMESTAMP,
+  TASK7_END_TIME TIMESTAMP,
+  TASK8 VARCHAR(50),
+  TASK8_START_TIME TIMESTAMP,
+  TASK8_END_TIME TIMESTAMP,
+  TASK9 VARCHAR(50),
+  TASK9_START_TIME TIMESTAMP,
+  TASK9_END_TIME TIMESTAMP,
+  TASK10 VARCHAR(50),
+  TASK10_START_TIME TIMESTAMP,
+  TASK10_END_TIME TIMESTAMP,
+  TASK11 VARCHAR(50),
+  TASK11_START_TIME TIMESTAMP,
+  TASK11_END_TIME TIMESTAMP  );
+  
+  
+  INSERT INTO LCF.OBJECT_RUN_NEW 
+  SELECT 
+  OBJECT_RUN_KEY                    ,   
+  UPPER(OBJECT_NAME)                ,
+  OBJECT_KEY                        ,   
+  START_TIME                         ,
+  END_TIME                           ,
+  STATUS                      ,
+  STATUS_MESSAGE              ,
+  RECORDS_READ                       ,   
+  RECORDS_WRITTEN                    ,     
+  OBJECT_LOG_NAME                    ,
+  OBJECT_PRG_NAME                    ,
+   NULL                             AS INGESTON_MODE,
+  PREV_HIGH_WATER_MARK_VALUE         ,
+  NULL                              AS HIGH_WATER_MARK_VALUE_JNL ,
+  HIGH_WATER_MARK_VALUE              , 
+  UPPER(LOAD_PATTERN_NAME)           ,  
+  TASK1                       ,
+  TASK1_START_TIME                   ,  
+  TASK1_END_TIME                     ,
+  TASK2                       ,
+  TASK2_START_TIME                   ,
+  TASK2_END_TIME                     ,
+  TASK3                       ,
+  TASK3_START_TIME                   ,
+  TASK3_END_TIME                     , 
+  TASK4                       ,
+  TASK4_START_TIME                   ,
+  TASK4_END_TIME                     ,
+  TASK5                       ,   
+  TASK5_START_TIME                   ,
+  TASK5_END_TIME                     ,
+  TASK6                       , 
+  TASK6_START_TIME                   , 
+  TASK6_END_TIME                     ,
+  TASK7                      ,
+  TASK7_START_TIME                   ,   
+  TASK7_END_TIME                     ,  
+  TASK8                       ,  
+  TASK8_START_TIME                   , 
+  TASK8_END_TIME                     ,
+  TASK9                       ,
+  TASK9_START_TIME                   ,
+  TASK9_END_TIME                     ,
+  TASK10                      , 
+  TASK10_START_TIME                  ,  
+  TASK10_END_TIME,
+  NULL,
+  NULL,
+  NULL      
+  FROM LCF.OBJECT_RUN;
+
+
+COMMIT;
+
+ -- Find any differences between objet_run and object_run_new
+
+ SELECT 
+  OBJECT_RUN_KEY            ,   
+  UPPER(OBJECT_NAME)                ,
+  OBJECT_KEY                        ,   
+  NULL                             AS INGESTON_MODE,
+  START_TIME                         ,
+  END_TIME                           ,
+  UPPER(STATUS)                      ,
+  UPPER(STATUS_MESSAGE)                     ,
+  RECORDS_READ                       ,   
+  RECORDS_WRITTEN                    ,     
+  UPPER(OBJECT_LOG_NAME)             ,
+  UPPER(OBJECT_PRG_NAME)             ,
+  PREV_HIGH_WATER_MARK_VALUE         ,
+  HIGH_WATER_MARK_VALUE              , 
+  NULL                              AS HIGH_WATER_MARK_VALUE_JNL ,
+  UPPER(LOAD_PATTERN_NAME)           ,  
+  UPPER(TASK1)                       ,
+  TASK1_START_TIME                   ,  
+  TASK1_END_TIME                     ,
+  UPPER(TASK2)                       ,
+  TASK2_START_TIME                   ,
+  TASK2_END_TIME                     ,
+  UPPER(TASK3)                       ,
+  TASK3_START_TIME                   ,
+  TASK3_END_TIME                     , 
+  UPPER(TASK4)                       ,
+  TASK4_START_TIME                   ,
+  TASK4_END_TIME                     ,
+  UPPER(TASK5)                       ,   
+  TASK5_START_TIME                   ,
+  TASK5_END_TIME                     ,
+  UPPER(TASK6)                       , 
+  TASK6_START_TIME                   , 
+  TASK6_END_TIME                     ,
+  UPPER(TASK7)                       ,
+  TASK7_START_TIME                   ,   
+  TASK7_END_TIME                     ,  
+  UPPER(TASK8)                       ,  
+  TASK8_START_TIME                   , 
+  TASK8_END_TIME                     ,
+  UPPER(TASK9)                       ,
+  TASK9_START_TIME                   ,
+  TASK9_END_TIME                     ,
+  UPPER(TASK10)                      , 
+  TASK10_START_TIME                  ,  
+  TASK10_END_TIME          
+  FROM LCF.OBJECT_RUN
+  MINUS
+  SELECT 
+  OBJECT_RUN_KEY                     ,   
+  TARGET_OBJECT_NAME                 ,
+  OBJECT_KEY                  ,   
+  INGESTION_MODE                     ,
+  START_TIME                         ,
+  END_TIME                           ,
+  UPPER(STATUS)                      ,
+  UPPER(STATUS_MESSAGE)              ,
+  RECORDS_READ                       ,   
+  RECORDS_WRITTEN                    ,     
+  UPPER(OBJECT_LOG_NAME)             ,
+  UPPER(OBJECT_PRG_NAME)             ,
+  PREV_HIGH_WATER_MARK_VALUE         ,
+  HIGH_WATER_MARK_VALUE              , 
+  HIGH_WATER_MARK_VALUE_JNL          ,
+  UPPER(LOAD_PATTERN_NAME)           ,  
+  UPPER(TASK1)                       ,
+  TASK1_START_TIME                   ,  
+  TASK1_END_TIME                     ,
+  UPPER(TASK2)                       ,
+  TASK2_START_TIME                   ,
+  TASK2_END_TIME                     ,
+  UPPER(TASK3)                       ,
+  TASK3_START_TIME                   ,
+  TASK3_END_TIME                     , 
+  UPPER(TASK4)                       ,
+  TASK4_START_TIME                   ,
+  TASK4_END_TIME                     ,
+  UPPER(TASK5)                       ,   
+  TASK5_START_TIME                   ,
+  TASK5_END_TIME                     ,
+  UPPER(TASK6)                       , 
+  TASK6_START_TIME                   , 
+  TASK6_END_TIME                     ,
+  UPPER(TASK7)                       ,
+  TASK7_START_TIME                   ,   
+  TASK7_END_TIME                     ,  
+  UPPER(TASK8)                       ,  
+  TASK8_START_TIME                   , 
+  TASK8_END_TIME                     ,
+  UPPER(TASK9)                       ,
+  TASK9_START_TIME                   ,
+  TASK9_END_TIME                     ,
+  UPPER(TASK10)                      , 
+  TASK10_START_TIME                  ,  
+  TASK10_END_TIME          
+  FROM LCF.OBJECT_RUN_NEW;
+
+
+
+
+ALTER TABLE LCF.OBJECT_RUN DROP CONSTRAINT OBJECT_RUN_PK;
+RENAME  OBJECT_RUN TO OBJECT_RUN_&today;
+
+
+RENAME OBJECT_RUN_NEW TO OBJECT_RUN;
+
+  
+
+  
+ALTER TABLE LCF.OBJECT_RUN
+ADD CONSTRAINT OBJECT_RUN_PK PRIMARY KEY ( OBJECT_RUN_KEY );
+
+SELECT * FROM OBJECT_RUN;

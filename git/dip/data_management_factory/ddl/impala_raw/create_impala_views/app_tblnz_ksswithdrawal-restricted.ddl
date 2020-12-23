@@ -1,0 +1,25 @@
+CREATE VIEW ${var:view_db}.app_tblnz_ksswithdrawal
+AS SELECT
+z.flngWithdrawalKey,
+z.flngVer,
+z.flngVerLast,
+z.flngMemberCustomerKey,
+z.flngMemberAccountKey,
+z.flngSchemeCustomerKey,
+z.flngSchemeAccountKey,
+z.fstrWithdrawalReason,
+z.fdtmWithdrawal,
+z.fdtmReversed,
+z.fcurWithdrawalAmount,
+z.fcurGovernmentContribution,
+z.fdblMortgageDiversionPercent,
+z.fblnValid,
+z.fstrWho,
+z.fdtmWhen,
+z.record_effective_timestamp,
+z.record_expiry_timestamp,
+z.record_active_flag,
+z.record_deleted_flag,
+z.insert_object_run_key,
+z.update_object_run_key
+ FROM ${var:source_db}.app_tblnz_ksswithdrawal z;

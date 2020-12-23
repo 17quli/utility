@@ -1,0 +1,8 @@
+-- 25022020 ird0sxd add entry to dip_config to setup the email sender
+-- for &env enter dev, test or prod.
+
+
+insert into DIP_CONFIG (KEY,VALUE) values ('DIP_EMAIL_SENDER','dip-factory-'||'&env'||'@sas.com');
+commit;
+
+select * from dip_config;

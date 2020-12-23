@@ -1,0 +1,23 @@
+2020-12-22 10:52:09------start ./tbsbackup.sh test_jnl test_dw
+2020-12-22 10:52:10------4 tables to backup
+2020-12-22 10:52:10------show create table
+2020-12-22 10:52:11------drop table
+2020-12-22 10:52:28------create table
+2020-12-22 10:52:28------hdfs make directory
+2020-12-22 10:52:34------3 hdfs directories created
+2020-12-22 10:52:34------hdfs copy
+2020-12-22 10:53:55------3 hdfs directories copied
+2020-12-22 10:53:55------4 tables created
+2020-12-22 10:54:00------refresh table
+2020-12-22 10:54:00------3 tables refreshed
+2020-12-22 10:54:00------recover partitions
+2020-12-22 10:54:01------0 table partitions recovered
+2020-12-22 10:54:01------start ./tbsvalidation.sh ./stg/tgttbllist_test_dw_20201222105209826034598.lst
+"row count of test_dw.test_jnl_app_tblnz_famiwtc_20201222 #########################3159453
+"
+"row count of test_dw.test_jnl_app_tblnz_ksscontribution_20201222 #################711164650
+"
+"row count of test_dw.test_jnl_app_tblnz_visitmanagedcall_20201222 ################15873989
+"
+2020-12-22 10:54:06------show tables backup expired
+2020-12-22 10:54:11------complete ./tbsbackup.sh test_jnl test_dw

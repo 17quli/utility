@@ -1,0 +1,90 @@
+﻿This was the process for fixing a problem where 
+
+"We had a problem in prod on the 21st April with tblnz_rntattributes when the view stopped working because the fdtmthirtydaystopay column had disappeared from the target table the view referenced. This column was still in the journal table on the 21st and was in both the target and journal table on the previous day (20th). 
+
+The problem was traced to a DI job with incorrect metadata mappings being moved to Prod and overwriting the version of the DI job that had been modified directly in Prod. When the DI job in prod had the table metadata and mappings updated and the backup impala target and journal tables were replaced with the previous day the job ran successfully in overnight batch and the issue didn’t occur again. The DI jobs were then updated/checked in dev and test so the problem didn’t happen again. 
+
+So it seems that the job didn’t generate and error or warning when a field was not in the DI job but in the Target table. Instead the field was removed from the target table when the job ran. Could you please take a look at this. Let me know if you need and more detail."
+
+
+First do a quick check between target table and journal to make sure there are no fields missing in the target.
+For P2’s the target will have 5 extra fields … 6 metadata fields minus 1 for the batch_key in the journal.
+Have executed this already and results showed only app_tblnz_rtnattributes had this issue.
+
+describe prod_raw.wrq_tblnz_employeremployees;
+describe prod_jnl.wrq_tblnz_employeremployees;
+
+describe prod_raw.app_tblnz_rtnpsoemployeeinfo;
+describe prod_jnl.app_tblnz_rtnpsoemployeeinfo;
+
+describe prod_raw.frd_tblfrdplandata_1336541184;
+
+describe prod_raw.app_tblnz_accpso;
+describe prod_jnl.app_tblnz_accpso;
+
+describe prod_raw.app_tblnz_rtnitnshrlineitem;
+describe prod_jnl.app_tblnz_rtnitnshrlineitem;
+
+describe prod_raw.app_tblnz_rtnattributes;
+describe prod_jnl.app_tblnz_rtnattributes;
+
+describe prod_raw.app_tblNZ_RtnIIT;
+describe prod_jnl.app_tblNZ_RtnIIT;
+
+describe prod_raw.app_tblnz_rtnpsoemployeesmry;
+describe prod_jnl.app_tblnz_rtnpsoemployeesmry;
+
+Results showed only app_tblnz_rtnattributes had this issue. Still it’s worth checking Dev and Test as part of 2.2.4 we updated the metadata of a few of these which would have fixed the problem unknowingly.
+
+select count(*) from prod_dw.prod_raw_app_tblnz_rtnattributes_20200420
+union 
+select count(*) from prod_dw.prod_jnl_app_tblnz_rtnattributes_20200420;
+
+150495745
+150496190
+
+First time I've tried this command .
+
+ALTER TABLE prod_raw.app_tblnz_rtnattributes  RENAME TO  prod_dw.prod_raw_app_tblnz_rtnattributes _ird0dxm_20200421;
+
+ALTER TABLE prod_jnl.app_tblnz_rtnattributes  RENAME TO  prod_dw.prod_jnl_app_tblnz_rtnattributes _ird0dxm_20200421;
+
+refresh metadata
+
+create table prod_raw.app_tblnz_rtnattributes stored as parquet as select * from prod_dw.prod_raw_app_tblnz_rtnattributes_20200420;
+compute stats prod_raw.app_tblnz_rtnattributes;
+create table prod_jnl.app_tblnz_rtnattributes stored as parquet as select * from prod_dw.prod_jnl_app_tblnz_rtnattributes_20200420;
+compute stats prod_jnl.app_tblnz_rtnattributes;
+
+refresh metadata
+
+select count(*) from prod_raw.app_tblnz_rtnattributes;
+union 
+select count(*) from prod_jnl.app_tblnz_rtnattribute;
+
+expected results
+
+150495745
+150496190
+
+select count(*) from prod_raw_restricted_access.app_tblnz_rtnattributes
+
+Go to DI studio
+Update metadata for source and target
+Remap all fields
+Save and Deploy job
+
+ended up doing backup different way
+create table prod_dw.prod_raw_app_tblnz_rtnattributes_ird0dxm_20200421
+stored as parquet as select * from prod_raw.app_tblnz_rtnattributes
+
+create table prod_dw.prod_jnl_app_tblnz_rtnattributes_ird0dxm_20200421
+stored as parquet as select * from   prod_jnl.app_tblnz_rtnattributes 
+
+select count(*) from prod_dw.prod_raw_app_tblnz_rtnattributes_ird0dxm_20200421
+union select count(*) from prod_dw.prod_jnl_app_tblnz_rtnattributes_ird0dxm_20200421
+
+drop table prod_raw.app_tblnz_rtnattributes;
+drop table prod_jnl.app_tblnz_rtnattributes;
+
+

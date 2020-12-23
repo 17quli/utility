@@ -1,0 +1,20 @@
+2020-09-10 18:00:01------start ./dbbackup.sh prod_jnl prod_dw
+2020-09-10 18:00:02------show tables
+2020-09-10 18:00:05------615 tables or views
+2020-09-10 18:00:05------show create table
+2020-09-10 18:00:16------615 tables excluding views
+2020-09-10 18:00:16------drop table
+2020-09-10 18:00:24------create table
+2020-09-10 18:00:24------hdfs make directory
+2020-09-10 18:13:06------615 hdfs directories created
+2020-09-10 18:13:06------hdfs copy
+2020-09-10 19:38:10------615 hdfs directories copied
+2020-09-10 19:38:10------615 tables created
+2020-09-10 19:38:15------refresh table
+2020-09-10 19:38:26------615 tables refreshed
+2020-09-10 19:38:26------recover partitions
+2020-09-10 19:38:26------0 table partitions recovered
+2020-09-10 19:38:26------show tables backup expired
+2020-09-10 19:38:42------drop tables backup expired
+2020-09-10 19:43:31------577 expired tables dropped
+2020-09-10 19:43:31------complete ./dbbackup.sh prod_jnl prod_dw

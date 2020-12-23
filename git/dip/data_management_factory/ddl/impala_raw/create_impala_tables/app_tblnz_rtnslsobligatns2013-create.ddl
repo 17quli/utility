@@ -1,0 +1,20 @@
+CREATE TABLE ${var:target_db}.app_tblnz_rtnslsobligatns2013 (                                                                       
+flngDocKey INT,                                                                                                                     
+fcurTotalIncome DECIMAL(19,4),                                                                                                      
+fcurPreviouslyAssessedIncome DECIMAL(19,4),                                                                                         
+fcurNZBAssessment DECIMAL(19,4),                                                                                                    
+fcurOBBInstalmentAmount1 DECIMAL(19,4),                                                                                             
+fcurOBBInstalmentAmount2 DECIMAL(19,4),                                                                                             
+fcurBracket DECIMAL(19,4),                                                                                                          
+fdtmObbBegin2 TIMESTAMP,                                                                                                            
+fcurBracket2 DECIMAL(19,4),                                                                                                         
+fblnCnv SMALLINT,                                                                                                                   
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;  

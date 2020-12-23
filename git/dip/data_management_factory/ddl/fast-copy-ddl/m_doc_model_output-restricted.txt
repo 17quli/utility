@@ -1,0 +1,9 @@
+CREATE VIEW lab_fcp_raw_restricted_access.m_document_model_output 
+	as SELECTz.model_id ,z.run_id ,z.ird_number ,z.location_number ,z.tax_type ,z.return_period_date ,z.expected_value,z.filing_frequency ,z.return_type ,z.est_residual_income_tax ,z.prob_nil_residual_income_tax ,z.est_taxable_income ,z.prob_nil_taxable_income ,z.est_total_shareholder_slr ,z.prob_nil_total_shareholder_slr ,z.est_net_profit ,z.prob_nil_net_profit ,z.est_inc_allocn_to_bnficir ,z.prob_nil_inc_allocn_to_bnficir ,z.est_inc_after_exp ,z.prob_nil_inc_after_exp ,z.est_total_tax_credits ,z.prob_nil_total_tax_credits ,z.date_due ,z.days_late ,z.proboffilinglate ,z.population_no ,z.prob_rit_less_200 ,z.prob_rit_less_500 ,z.prob_shar_slr_less_1500 ,z.prob_shar_slr_less_3000 ,z.est_other_income ,z.prob_nil_other_income ,z.prob_other_inc_less_1000 ,z.prob_other_inc_less_3000 ,z.prob_inc_aft_exp_less_1000 ,z.is_filtered_out ,z.rr_prob_nil_4 ,z.gst_neg_prob ,z.gst_nil_prob ,z.gst_pos_val ,z.gst_neg_val ,z.gst_pos_prob ,z.customer_key ,z.account_key ,z.is_right_return ,z.prob_rit_less_1000  
+ from lab_fcp_raw.m_document_model_output z
+left outer join prod_raw.dss_special_clients_all sc
+on sc.ird_number= z.ird_number
+where nvl(sc.special_classification, 'STD')='STD'
+and nvl( sc.record_active_flag,'Y')='Y'
+and nvl(sc.record_deleted_flag, 'N') = 'N'
+;

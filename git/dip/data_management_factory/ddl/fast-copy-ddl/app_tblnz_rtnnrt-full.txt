@@ -1,0 +1,28 @@
+CREATE VIEW lab_fcp_raw_full_access.app_tblnz_rtnnrt
+AS SELECT z.flngDocKey, 
+       z.fstrPayeeIRDNumber, 
+       z.fdtmPeriod, 
+       z.fdtmDOB, 
+       z.fstrPayeeSurname, 
+       z.fstrPayeeName, 
+       z.fstrPayeeAddress1, 
+       z.fstrPayeeAddress2, 
+       z.fstrPayeeAddress3, 
+       z.fstrPayeeAddress4, 
+       z.fstrPayeeCountryCode, 
+       z.fcurDividendsGross, 
+       z.fcurInterestGross, 
+       z.fcurRoyaltiesGross, 
+       z.fcurOtherGross, 
+       z.fcurDividendsNRWT, 
+       z.fcurInterestNRWT, 
+       z.fcurRoyaltiesNRWT, 
+       z.fcurOtherNRWT, 
+       z.fcurLiableTotal, 
+       z.fcurFDPCredits, 
+       z.fcurNetNRWTPaid, 
+       z.fstrPayerIRDNumber, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblnz_rtnnrt z 
+;

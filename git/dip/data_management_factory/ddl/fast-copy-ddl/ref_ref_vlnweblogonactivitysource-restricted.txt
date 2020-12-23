@@ -1,0 +1,11 @@
+
+CREATE VIEW lab_fcp_raw_restricted_access.ref_vlnweblogonactivitysource                                                                                                   
+AS SELECT                                                                                                                           
+z.fstrLanguage,                                                                                                                     
+z.fstrSource,                                                                                                                       
+z.fstrDecode1,                                                                                                                      
+z.fstrDecode2,                                                                                                                      
+z.fstrDescription,                                                                                                                  
+z.fstrRowSource                                                                                                            
+ FROM lab_fcp_raw.vlnweblogonactivitysource z; 
+ 

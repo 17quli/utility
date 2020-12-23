@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.dss_returns_keypoints_ir680 AS
+SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.RETURN_PERIOD_DATE, z.RETURN_TYPE, z.RETURN_VERSION_NO, z.RETURN_STATUS, z.FORM_VERSION_NO, z.NUMBER_OF_ERROR_ITEMS, z.`TIMESTAMP`, z.GAMING_MACHINE_DUTY_1335, z.GAMING_MACHINE_PROFIT_100476, z.GST_ON_LEVY_100581, z.PROBEM_GAMBLING_LEVY_100580, z.TOTAL_PAYABLE_100579, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.dss_returns_keypoints_ir680 z;

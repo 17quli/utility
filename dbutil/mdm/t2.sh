@@ -1,0 +1,1 @@
+impala-shell --quiet -i ird10139au.vsp.sas.com:25003  -q "select table_ddl from dev_raw.mdm where table_name='app_tblcustomerlevel'" -k --ssl --ca_cert=/sso/hadoop/cloudera-certs/CACerts/sas-hadoop-truststore.pem 

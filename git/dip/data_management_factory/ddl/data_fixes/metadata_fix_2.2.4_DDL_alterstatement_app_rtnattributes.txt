@@ -1,0 +1,7 @@
+alter table raw/jnl.APP_TBLNZ_RTNATTRIBUTES add columns
+(fdtmThirtyDaysToPay timestamp);
+
+describe ${env}_raw.APP_TBLNZ_RTNATTRIBUTES;
+describe ${env}_jnl.APP_TBLNZ_RTNATTRIBUTES;
+describe ${env}_raw_full_access.APP_TBLNZ_RTNATTRIBUTES;
+describe ${env}_raw_restricted_access.APP_TBLNZ_RTNATTRIBUTES;

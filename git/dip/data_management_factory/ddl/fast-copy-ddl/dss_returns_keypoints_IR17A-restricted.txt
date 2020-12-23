@@ -1,0 +1,28 @@
+create view lab_fcp_raw_restricted_access.dss_returns_keypoints_ir17a
+as select
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,
+z.return_status,
+z.form_version_no,
+z.number_of_error_items,
+z.`timestamp`,
+z.dividends_paid_100015,
+z.dividend_paye_payable_100258,
+z.div_not_subject_to_rwt_100256,
+z.pre_encription_check_100018,
+z.pre_encription_ird_no_100019,
+z.pre_encription_loc_no_100020,
+z.std_disclaimer_applies_100045,
+z.total_rwt_on_dividends_100257,
+z.total_tax_credits_100173,
+z.rwt_liability_100582
+ from lab_fcp_raw.returns_keypoints_ir17a z
+left outer join prod_raw.dss_special_clients_all sc
+on sc.ird_number= z.ird_number
+where nvl(sc.special_classification, 'STD')='STD'
+and nvl( sc.record_active_flag,'Y')='Y'
+and nvl(sc.record_deleted_flag, 'N') = 'N'
+;

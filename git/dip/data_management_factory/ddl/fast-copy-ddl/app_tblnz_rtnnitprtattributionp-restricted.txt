@@ -1,0 +1,29 @@
+CREATE VIEW lab_fcp_raw_restricted_access.app_tblnz_rtnnitprtattributionp
+AS SELECT z.flngDocKey, 
+       z.fintSeq, 
+       z.fstrPartnerName, 
+       z.fstrPartnerIRD, 
+       z.fcurPartnerPercentageAttr, 
+       z.fcurPartnerInterest, 
+       z.fcurPartnerDividends, 
+       z.fcurPartnerMaoriDist, 
+       z.fcurPartnerOverseas, 
+       z.fcurPartnerRental, 
+       z.fcurPartnerOtherPassive, 
+       z.fcurPartnerOtherIncome, 
+       z.fcurPartnerTotalIncome, 
+       z.fcurPartnerSumOfIncome, 
+       z.fcurPartnerExtinguishedLosses, 
+       z.fcurPartnerOverseasTax, 
+       z.fcurPartnerImputation, 
+       z.fcurPartnerOtherTaxCredits, 
+       z.fcurPartnerDeduction, 
+       z.fcurPartnerResIncome, 
+       z.fcurPartnerResDeductions, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblnz_rtnnitprtattributionp z 
+LEFT OUTER JOIN dev_raw.app_tblcustomerlevel cl ON z.flngdockey = cl.flngdockey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+  AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N' ;

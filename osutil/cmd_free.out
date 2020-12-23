@@ -1,0 +1,155 @@
+
+ird01au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         25G        1.2G        122M        212G        212G
+Swap:          4.0G         30M        4.0G
+
+ird19au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           119G         11G         96G         51M         11G        107G
+Swap:          4.0G          0B        4.0G
+
+ird20au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           119G        8.6G        101G         53M         10G        110G
+Swap:          4.0G          0B        4.0G
+
+ird21au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           119G        5.0G        106G         43M        8.7G        114G
+Swap:          4.0G          0B        4.0G
+
+ird22au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        1.2G         23G         41M        5.2G         28G
+Swap:          4.0G          0B        4.0G
+
+ird23au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        1.2G         23G         41M        5.2G         28G
+Swap:          4.0G          0B        4.0G
+
+ird24au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        724M         22G        334M        6.3G         28G
+Swap:          4.0G          0B        4.0G
+
+ird25au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        723M         22G        328M        6.4G         28G
+Swap:          4.0G          0B        4.0G
+
+ird26au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            59G         12G         36G        371M         10G         46G
+Swap:          4.0G          0B        4.0G
+
+ird27au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            59G        8.5G         42G         47M        8.7G         50G
+Swap:          4.0G          0B        4.0G
+
+ird28au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         62G         12G        122M        165G        176G
+Swap:          4.0G        156M        3.8G
+
+ird29au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         61G         16G        196M        161G        176G
+Swap:          4.0G        171M        3.8G
+
+ird30au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         67G         10G        108M        161G        171G
+Swap:          4.0G        191M        3.8G
+
+ird31au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         61G         17G        336M        160G        176G
+Swap:          4.0G        324M        3.7G
+
+ird32au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         63G         31G         91M        144G        174G
+Swap:          4.0G        171M        3.8G
+
+ird33au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         62G         28G         90M        149G        176G
+Swap:          4.0G        178M        3.8G
+
+ird34au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           480G        9.2G        313G         46G        157G        422G
+Swap:          4.0G         10M        4.0G
+
+ird10119au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        4.4G         10G         64M         14G         24G
+Swap:          4.0G          0B        4.0G
+
+ird10120au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G        8.6G        186G        263M         45G        229G
+Swap:          4.0G         39M        4.0G
+
+ird54au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         78G         49G        1.0G        112G        158G
+Swap:          4.0G          0B        4.0G
+
+ird55au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           119G         19G         85G        174M         14G         98G
+Swap:          4.0G        123M        3.9G
+
+ird56au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         15G         64G        1.1G        159G        221G
+Swap:          4.0G         11M        4.0G
+
+ird57au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         16G         91G        2.5G        131G        219G
+Swap:          4.0G        945M        3.1G
+
+ird58au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         16G         93G        3.3G        129G        218G
+Swap:          4.0G        119M        3.9G
+
+ird59au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G         17G         92G        3.4G        129G        218G
+Swap:          4.0G        126M        3.9G
+
+ird60au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            59G        9.2G        3.4G         10G         47G         39G
+Swap:          4.0G         22M        4.0G
+
+ird61au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            15G        902M        481M        703M         14G         13G
+Swap:          4.0G         21M        4.0G
+
+ird35au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        3.0G         14G        297M         12G         26G
+Swap:          4.0G          0B        4.0G
+
+ird36au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G        5.0G         28G        719M        205G        233G
+Swap:          8.0G         17M        8.0G
+
+ird82au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:            29G        2.3G         15G        280M         11G         26G
+Swap:          4.0G          0B        4.0G
+
+ird83au.vsp.sas.com
+              total        used        free      shared  buff/cache   available
+Mem:           239G        3.6G        229G        331M        6.6G        234G
+Swap:          4.0G          0B        4.0G

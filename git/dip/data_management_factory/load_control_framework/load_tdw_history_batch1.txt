@@ -1,0 +1,366 @@
+/********************************************************************************************
+30/06/19 ird0sxd  Initial scripts
+23/10/19 ird0sxd  Added tblaccountinfo
+25/10/19 ird0sxd  Added backup instructions and updated create table statements
+30/10/19 ird0nxa  Updated backup scripts to store data as Parquet,
+		  corrected table names etc., added record counts,
+                  app_tblCustomer: added CAST(EFFECTIVE_FROM AS TIMESTAMP) AS fdtmwhen_info,
+		  app_tblNZ_CustomerSTD: updated multiple CAST () statements as they contained incorrect filed names,
+		  removed logic for the backfill days as it is not required.
+04/11/19 ird0nxa  Impala commands for inserting the TDW data - changed the CAST for update_object_run_key from Null to CAST(update_object_run_key AS INT).
+04/11/19 ird0sxd  Added parameters to handle environment name. 
+05/11/19 ird0nxa  Removed all code for tblcustomer as we will not migrate TDW history for this table.
+*********************************************************************************************/
+
+-- Backup existing RAW START tables touched by history migration process
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+create table  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd;
+create table  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+create table  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+create table  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo_ ${current_date=Enter the current date  here};
+
+
+-- Backup existing RAW TDW tables touched by history migration process
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo_ ${current_date=Enter the current date  here};
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo_ ${current_date=Enter the current date  here} stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo_ ${current_date=Enter the current date  here};
+
+
+-- Truncate existing RAW tables for START
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo; 
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+
+
+-- Truncate existing RAW tables for TDW
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo;
+
+
+-- Run Checks on TDW tables and START tables in SAS EG or SAS Studio (Use TDW History Load Check code: History Analysis - STEP 1). Export Results as PDF.
+
+-- Run the Code generated by SAS DI Studio Jobs in SAS EG or SAS Studio to populate the RAW TDW tables. Save the Logs.
+
+-- Check records in RAW TDW tables
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerstd;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountinfo;
+
+
+-- Using Impala commands Load data manually from RAW TDW tables into RAW START tables
+
+INSERT INTO TABLE  ${target_db=Enter the target database name here}_raw.app_tblCustomerSTD
+SELECT
+CAST(FLNGDOCKEY AS INT) AS FLNGDOCKEY,
+CAST(FDTMDOB AS TIMESTAMP) AS FDTMDOB,
+CAST(FDTMDOD AS TIMESTAMP) AS FDTMDOD,
+CAST(FSTRWHO AS VARCHAR(20)) AS FSTRWHO,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerSTD;
+
+
+INSERT INTO TABLE  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD
+SELECT
+CAST(FLNGDOCKEY AS INT) AS flngDocKey,
+CAST(FSTRCUSTOMERSUBTYPECLASS AS VARCHAR(12)) AS fstrCustomerSubTypeClass,
+CAST(FSTRCUSTOMERSUBTYPE AS VARCHAR(12)) AS fstrCustomerSubType,
+CAST(FSTRCUSTOMERSEGMENT AS VARCHAR(100)) AS fstrCustomerSegment,
+CAST(FSTRSPECIALFILETYPE AS VARCHAR(12)) AS fstrSpecialFileType,
+CAST(FBLNSPECIALTAXRESIDENCY AS SMALLINT) AS fblnSpecialTaxResidency,
+CAST(FSTRNONRESIDENTTYPE AS VARCHAR(100)) AS fstrNonResidentType,
+CAST(FSTRCURRENTTAXRESIDENCY AS VARCHAR(100)) AS fstrCurrentTaxResidency,
+CAST(FSTRCLOSUREREASON AS VARCHAR(12)) AS fstrClosureReason,
+CAST(FINTSMSCOUNTRYCODE AS SMALLINT) AS fintSMSCountryCode,
+CAST(FSTRSMSAREACODE AS VARCHAR(10)) AS fstrSMSAreaCode,
+CAST(FSTRSMSPHONENUMBER AS VARCHAR(30)) AS fstrSMSPhoneNumber,
+CAST(FDTMINCOMEBALANCEDATE AS TIMESTAMP) AS fdtmIncomeBalanceDate,
+CAST(FSTRCUSTOMERCLASS AS VARCHAR(12)) AS fstrCustomerClass,
+CAST(FSTRWHO AS VARCHAR(20)) AS fstrWho,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_nz_customerstd;
+
+
+INSERT INTO TABLE  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo 
+SELECT
+CAST(CUSTOMER_KEY AS INT) AS flngCustomerKey,
+CAST(JOINT_CUSTOMER_KEY AS INT) AS flngJointCustomerKey,
+CAST(PRIME_FLAG AS SMALLINT) AS fblnPrime,
+CAST(CUSTOMER_TYPE AS VARCHAR(6)) AS fstrCustomerType,
+CAST(CUSTOMER_DOCUMENT_KEY AS INT) AS flngDocKey,
+CAST(FOLDER_KEY AS INT) AS flngFolderKey,
+CAST(DEFAULT_FLAG AS SMALLINT) AS fblnDefault,
+CAST(PROFILE_NUMBER AS SMALLINT) AS fintProfileNumber,
+CAST(COMMENCE_DATE AS TIMESTAMP) AS fdtmCommence,
+CAST(CEASE_DATE AS TIMESTAMP) AS fdtmCease,
+CAST(CREATED_DATE AS TIMESTAMP) AS fdtmCreated,
+CAST(NAME_KEY AS BIGINT) AS fi64NameKey,
+CAST(NAMEKEYSEQ AS SMALLINT) AS fintNameKey,
+CAST(DISPLAY_FLAG AS VARCHAR(12)) AS fstrDisplay,
+CAST(FORMATTED_FLAG AS SMALLINT) AS fblnFormatted,
+CAST(NAME_TYPE AS VARCHAR(20)) AS fstrNameType,
+CAST(FAMILY_NAME AS VARCHAR(255)) AS fstrFamilyName,
+CAST(MIDDLE_NAME AS VARCHAR(50)) AS fstrMiddleName,
+CAST(FIRST_NAME AS VARCHAR(50)) AS fstrFirstName,
+CAST(NAME_CONTROL AS VARCHAR(10)) AS fstrNameControl,
+CAST(TITLE AS VARCHAR(10)) AS fstrTitle,
+CAST(SUFFIX AS VARCHAR(10)) AS fstrSuffix,
+CAST(FREE_FORMAT_NAME AS VARCHAR(255)) AS fstrFreeFormatName,
+CAST(LIST_FORMAT_NAME AS VARCHAR(255)) AS fstrListFormatName,
+CAST(ADDITIONAL_NAME AS VARCHAR(255)) AS fstrAdditionalName,
+CAST(ADDITIONAL_NAME_2 AS VARCHAR(255)) AS fstrAdditionalName2,
+CAST(ADDRESS_KEY AS BIGINT) AS fi64AddressKey,
+CAST(ADDRESS_KEY_SEQUENCE AS SMALLINT) AS fintAddressKey,
+CAST(ADDRESS_TYPE AS VARCHAR(20)) AS fstrAddressType,
+CAST(STREET_1 AS VARCHAR(255)) AS fstrStreet,
+CAST(STREET_2 AS VARCHAR(255)) AS fstrStreet2,
+CAST(UNIT_TYPE AS VARCHAR(50)) AS fstrUnitType,
+CAST(UNIT AS VARCHAR(30)) AS fstrUnit,
+CAST(CITY AS VARCHAR(100)) AS fstrCity,
+CAST(COUNTY AS VARCHAR(6)) AS fstrCounty,
+CAST(STATE AS VARCHAR(6)) AS fstrState,
+CAST(ZIP AS VARCHAR(30)) AS fstrZip,
+CAST(COUNTRY AS VARCHAR(6)) AS fstrCountry,
+CAST(ATTENTION AS VARCHAR(255)) AS fstrAttention,
+CAST(LOCATIONCODE AS VARCHAR(30)) AS fstrLocationCode,
+CAST(URBANISATION AS VARCHAR(50)) AS fstrUrbanization,
+CAST(MUNICIPALITY AS VARCHAR(30)) AS fstrMunicipality,
+CAST(DISTRICT AS VARCHAR(30)) AS fstrDistrict,
+CAST(SUBDISTRICT AS VARCHAR(30)) AS fstrSubDistrict,
+CAST(SUBPROVINCE AS VARCHAR(50)) AS fstrSubProvince,
+CAST(ADDRESS_DESCRIPTION AS VARCHAR(255)) AS fstrAddressDescription,
+CAST(LIST_FORMAT_ADDRESS AS VARCHAR(255)) AS fstrListFormatAddress,
+CAST(IDKEY AS INT) AS flngIDKey,
+CAST(ID_TYPE AS VARCHAR(6)) AS fstrIDType,
+CAST(IRD_NUMBER AS VARCHAR(30)) AS fstrID,
+CAST(FORMATTED_ID AS VARCHAR(30)) AS fstrFormattedID,
+CAST(DISTRICT_OFFICE AS VARCHAR(6)) AS fstrDistrictOffice,
+CAST(COLLECT_DISTRICT_OFFICE AS VARCHAR(6)) AS fstrCollectDistrictOffice,
+CAST(REVIEW_TYPE AS VARCHAR(6)) AS fstrReviewType,
+CAST(CUSTOMER_LEVEL AS VARCHAR(6)) AS fstrCustomerLevel,
+CAST(PROTECTED_DATA_SOURCE AS BIGINT) AS fi64ProtectedDataSource,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_customerinfo;
+
+
+INSERT INTO  ${target_db=Enter the target database name here}_raw.app_tblAccountInfo
+SELECT
+CAST(ACCOUNT_KEY AS INT) AS flngAccountKey,
+CAST(PARENT_PROFILE_NUMBER AS SMALLINT) AS fintParentProfileNumber,
+CAST(PROFILE_NUMBER AS SMALLINT) AS fintProfileNumber,
+CAST(CUSTOMER_KEY AS INT) AS flngCustomerKey,
+CAST(JOINT_CUSTOMER_KEY AS INT) AS flngJointCustomerKey,
+CAST(JOINT_ACCOUNT_KEY AS INT) AS flngJointAccountKey,
+CAST(PRIME_FLAG AS SMALLINT) AS fblnPrime,
+CAST(ACCOUNTTYPE AS VARCHAR(12)) AS fstrAccountType,
+CAST(ACCOUNT_DOCUMENT_KEY AS INT) AS flngDocKey,
+CAST(FOLDER_KEY AS INT) AS flngFolderKey,
+CAST(FILING_FREQUENCY AS VARCHAR(60)) AS fstrFilingFrq,
+CAST(COMMENCE_DATE AS TIMESTAMP) AS fdtmCommence,
+CAST(CEASE_DATE AS TIMESTAMP) AS fdtmCease,
+CAST(CREATED_DATE AS TIMESTAMP) AS fdtmCreated,
+CAST(NAME_KEY AS BIGINT) AS fi64NameKey,
+CAST(NAME_KEY_SEQ AS SMALLINT) AS fintNameKey,
+CAST(DISPLAY AS VARCHAR(24)) AS fstrDisplay,
+CAST(FORMATTED_FLAG AS SMALLINT) AS fblnFormatted,
+CAST(NAME_TYPE AS VARCHAR(40)) AS fstrNameType,
+CAST(FAMILY_NAME AS VARCHAR(510)) AS fstrFamilyName,
+CAST(MIDDLE_NAME AS VARCHAR(100)) AS fstrMiddleName,
+CAST(FIRST_NAME AS VARCHAR(100)) AS fstrFirstName,
+CAST(NAME_CONTROL AS VARCHAR(20)) AS fstrNameControl,
+CAST(TITLE AS VARCHAR(20)) AS fstrTitle,
+CAST(SUFFIX AS VARCHAR(20)) AS fstrSuffix,
+CAST(FREE_FORMAT_NAME AS VARCHAR(510)) AS fstrFreeFormatName,
+CAST(LIST_FORMAT_NAME AS VARCHAR(510)) AS fstrListFormatName,
+CAST(ADDITIONAL_NAME AS VARCHAR(510)) AS fstrAdditionalName,
+CAST(ADDITIONAL_NAME2 AS VARCHAR(510)) AS fstrAdditionalName2,
+CAST(ADDRESS_KEY AS BIGINT) AS fi64AddressKey,
+CAST(ADDRESS_KEY_SEQUENCE AS SMALLINT) AS fintAddressKey,
+CAST(ADDRESS_TYPE AS VARCHAR(40)) AS fstrAddressType,
+CAST(STREET AS VARCHAR(510)) AS fstrStreet,
+CAST(STREET_2 AS VARCHAR(510)) AS fstrStreet2,
+CAST(UNITTYPE AS VARCHAR(100)) AS fstrUnitType,
+CAST(UNIT AS VARCHAR(60)) AS fstrUnit,
+CAST(CITY AS VARCHAR(200)) AS fstrCity,
+CAST(COUNTY AS VARCHAR(12)) AS fstrCounty,
+CAST(STATE AS VARCHAR(12)) AS fstrState,
+CAST(ZIP AS VARCHAR(60)) AS fstrZip,
+CAST(DISTRICT_OFFICE AS VARCHAR(12)) AS fstrDistrictOffice,
+CAST(COUNTRY AS VARCHAR(12)) AS fstrCountry,
+CAST(ATTENTION AS VARCHAR(510)) AS fstrAttention,
+CAST(LOCATION_CODE AS VARCHAR(60)) AS fstrLocationCode,
+CAST(URBANISATION AS VARCHAR(100)) AS fstrUrbanization,
+CAST(MUNICIPALITY AS VARCHAR(60)) AS fstrMunicipality,
+CAST(DISTRICT AS VARCHAR(60)) AS fstrDistrict,
+CAST(SUB_DISTRICT AS VARCHAR(60)) AS fstrSubDistrict,
+CAST(SUB_PROVINCE AS VARCHAR(100)) AS fstrSubProvince,
+CAST(ADDRESS_DESCRIPTION AS VARCHAR(510)) AS fstrAddressDescription,
+CAST(LIST_FORMAT_ADDRESS AS VARCHAR(510)) AS fstrListFormatAddress,
+CAST(IDKEY AS INT) AS flngIDKey,
+CAST(ID_TYPE AS VARCHAR(12)) AS fstrIDType,
+CAST(ID AS VARCHAR(60)) AS fstrID,
+CAST(FORMATTEDID AS VARCHAR(60)) AS fstrFormattedID,
+CAST(COLLECT_DISTRICT_OFFICE AS VARCHAR(12)) AS fstrCollectDistrictOffice,
+CAST(COLLECT_CITY AS VARCHAR(200)) AS fstrCollectCity,
+CAST(CUSTOMER_TYPE AS VARCHAR(12)) AS fstrCustomerType,
+CAST(REVIEW_TYPE AS VARCHAR(12)) AS fstrReviewType,
+CAST(CUSTOMER_LEVEL AS VARCHAR(12)) AS fstrCustomerLevel,
+CAST(PROTECTED_DATA_SOURCE AS BIGINT) AS fi64ProtectedDataSource,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_accountInfo;
+
+
+-- Run Checks on RAW tables with TDW history loaded in SAS EG or SAS Studio (Use TDW History Load Check code: History Analysis - STEP 2). Export Results as PDF.
+
+-- Check row counts of RAW tables with TDW history loaded:
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where record_expiry_timestamp = '9000-12-31 00:00:00';
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where flngDocKey = 384 order by record_effective_timestamp;
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD where record_expiry_timestamp = '9000-12-31 00:00:00';
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD where flngDocKey = 384 order by record_effective_timestamp;
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+select count(distinct flngCustomerKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo where record_expiry_timestamp = '9000-12-31 00:00:00';
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo where flngCustomerKey = 768 order by record_effective_timestamp;
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+select count(distinct flngAccountKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where record_expiry_timestamp = '9000-12-31 00:00:00';
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where flngAccountKey = 33792 order by record_effective_timestamp;
+
+
+-- Using SAS EG or SAS Studio, run the corresponding RAW START jobs to load data to:
+-- app_tblcustomerstd, app_tblnz_customerstd, app_tblcustomerinfo, app_tblaccountinfo.
+-- This will be our first incremental job to load data on top of the data from TDW.
+-- Verify jobs complete ok
+
+-- Check the tables after Raw Incrmental load is completed
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_CustomerSTD;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo;
+
+-- Run Checks on RAW tables in SAS EG or SAS Studio (Use TDW History Load Check code: History Analysis - STEP 2 and History Analysis - STEP 3). Export Results as PDF.
+
+
+-- Conduct sanity checks for individual keys
+
+--  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd  where flngDocKey in (59968, 70272, 967968, 1089072, 1244224, 1315456, 1383424, 1608576, 1680448, 1765888) order by flngDocKey, record_effective_timestamp;
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9129 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd  where flngDocKey in (1524313940) order by flngDocKey, record_effective_timestamp;
+
+select min(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108;
+select max(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108;
+select min(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where update_object_run_key = 9108 and insert_object_run_key <> 9108;
+select max(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where update_object_run_key = 9108 and insert_object_run_key <> 9108;
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where flngDocKey in (815991536, 886685568) order by flngDocKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd  where flngDocKey in (59968, 70272, 967968, 1089072, 1244224, 1315456, 1383424, 1608576, 1680448, 1765888) order by flngDocKey, record_effective_timestamp;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd  where flngDocKey in (1524313940) order by flngDocKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo where insert_object_run_key = 9181 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (5777152, 39900288, 44143744, 115102848, 135332992, 147155712, 161778816, 168857344, 169112704, 193991808) order by flngCustomerKey, record_effective_timestamp;
+-- Check that for a new key from Incremental load record_effective_timestamp is not set to Low Date
+select flngCustomerKey, count(*) FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (select distinct flngCustomerKey FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where insert_object_run_key = 9181) group by flngCustomerKey;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (1155011712, 529740928, 1634744448) order by flngCustomerKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo
+select * from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where insert_object_run_key = 9267 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo  where flngAccountKey in (8194048, 14341632, 25444672, 27012480, 53782592, 56807488, 64181248, 107406336, 118866496, 126327936) order by flngAccountKey, record_effective_timestamp;
+-- Check that for a new key from Incremental load record_effective_timestamp is not set to Low Date
+select flngAccountKey, count(*) as records_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where flngAccountKey in (select flngAccountKey from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where insert_object_run_key = 9267)  group by flngaccountkey having records_count = 1;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo  where flngAccountKey in (757599552) order by flngAccountKey, record_effective_timestamp;
+
+

@@ -1,0 +1,1148 @@
+2020-04-12 10:09:07------start getting json file from 2020-03-30T18:09:06Z to 2020-03-30T19:09:06Z offset 0
+2020-04-12 10:09:08------start converting 0 queries from json to text file 20200331080906_0.txt
+2020-04-12 10:09:08------load from staging into mquery
+2020-04-12 10:09:08------start getting json file from 2020-03-30T19:09:06Z to 2020-03-30T20:09:06Z offset 0
+2020-04-12 10:09:09------start converting 0 queries from json to text file 20200331090906_0.txt
+2020-04-12 10:09:09------load from staging into mquery
+2020-04-12 10:09:10------start getting json file from 2020-03-30T20:09:06Z to 2020-03-30T21:09:06Z offset 0
+2020-04-12 10:09:11------start converting 0 queries from json to text file 20200331100906_0.txt
+2020-04-12 10:09:11------load from staging into mquery
+2020-04-12 10:09:11------start getting json file from 2020-03-30T21:09:06Z to 2020-03-30T22:09:06Z offset 0
+2020-04-12 10:09:12------start converting 0 queries from json to text file 20200331110906_0.txt
+2020-04-12 10:09:12------load from staging into mquery
+2020-04-12 10:09:13------start getting json file from 2020-03-30T22:09:06Z to 2020-03-30T23:09:06Z offset 0
+2020-04-12 10:09:14------start converting 0 queries from json to text file 20200331120906_0.txt
+2020-04-12 10:09:14------load from staging into mquery
+2020-04-12 10:09:14------start getting json file from 2020-03-30T23:09:06Z to 2020-03-31T00:09:06Z offset 0
+2020-04-12 10:09:15------start converting 0 queries from json to text file 20200331130906_0.txt
+2020-04-12 10:09:15------load from staging into mquery
+2020-04-12 10:09:16------start getting json file from 2020-03-31T00:09:06Z to 2020-03-31T01:09:06Z offset 0
+2020-04-12 10:09:17------start converting 0 queries from json to text file 20200331140906_0.txt
+2020-04-12 10:09:17------load from staging into mquery
+2020-04-12 10:09:17------start getting json file from 2020-03-31T01:09:06Z to 2020-03-31T02:09:06Z offset 0
+2020-04-12 10:09:18------start converting 0 queries from json to text file 20200331150906_0.txt
+2020-04-12 10:09:18------load from staging into mquery
+2020-04-12 10:09:19------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 0
+2020-04-12 10:09:20------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 1000
+2020-04-12 10:09:20------start converting 1000 queries from json to text file 20200331160906_0.txt
+2020-04-12 10:09:22------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 2000
+2020-04-12 10:09:22------start converting 1000 queries from json to text file 20200331160906_1000.txt
+2020-04-12 10:09:23------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 3000
+2020-04-12 10:09:24------start converting 1000 queries from json to text file 20200331160906_2000.txt
+2020-04-12 10:09:25------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 4000
+2020-04-12 10:09:25------start converting 1000 queries from json to text file 20200331160906_3000.txt
+2020-04-12 10:09:27------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 5000
+2020-04-12 10:09:27------start converting 1000 queries from json to text file 20200331160906_4000.txt
+2020-04-12 10:09:28------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 6000
+2020-04-12 10:09:29------start converting 1000 queries from json to text file 20200331160906_5000.txt
+2020-04-12 10:09:30------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 7000
+2020-04-12 10:09:30------start converting 1000 queries from json to text file 20200331160906_6000.txt
+2020-04-12 10:09:32------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 8000
+2020-04-12 10:09:32------start converting 1000 queries from json to text file 20200331160906_7000.txt
+2020-04-12 10:09:34------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 9000
+2020-04-12 10:09:34------start converting 1000 queries from json to text file 20200331160906_8000.txt
+2020-04-12 10:09:35------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 10000
+2020-04-12 10:09:36------start converting 1000 queries from json to text file 20200331160906_9000.txt
+2020-04-12 10:09:37------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 11000
+2020-04-12 10:09:38------start converting 1000 queries from json to text file 20200331160906_10000.txt
+2020-04-12 10:09:39------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 12000
+2020-04-12 10:09:39------start converting 1000 queries from json to text file 20200331160906_11000.txt
+2020-04-12 10:09:41------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 13000
+2020-04-12 10:09:41------start converting 1000 queries from json to text file 20200331160906_12000.txt
+2020-04-12 10:09:42------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 14000
+2020-04-12 10:09:43------start converting 1000 queries from json to text file 20200331160906_13000.txt
+2020-04-12 10:09:44------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 15000
+2020-04-12 10:09:45------start converting 1000 queries from json to text file 20200331160906_14000.txt
+2020-04-12 10:09:46------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 16000
+2020-04-12 10:09:47------start converting 1000 queries from json to text file 20200331160906_15000.txt
+2020-04-12 10:09:48------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 17000
+2020-04-12 10:09:49------start converting 1000 queries from json to text file 20200331160906_16000.txt
+2020-04-12 10:09:50------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 18000
+2020-04-12 10:09:50------start converting 1000 queries from json to text file 20200331160906_17000.txt
+2020-04-12 10:09:52------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 19000
+2020-04-12 10:09:52------start converting 1000 queries from json to text file 20200331160906_18000.txt
+2020-04-12 10:09:54------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 20000
+2020-04-12 10:09:54------start converting 1000 queries from json to text file 20200331160906_19000.txt
+2020-04-12 10:09:56------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 21000
+2020-04-12 10:09:56------start converting 1000 queries from json to text file 20200331160906_20000.txt
+2020-04-12 10:09:57------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 22000
+2020-04-12 10:09:58------start converting 1000 queries from json to text file 20200331160906_21000.txt
+2020-04-12 10:09:59------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 23000
+2020-04-12 10:10:00------start converting 1000 queries from json to text file 20200331160906_22000.txt
+2020-04-12 10:10:01------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 24000
+2020-04-12 10:10:02------start converting 1000 queries from json to text file 20200331160906_23000.txt
+2020-04-12 10:10:03------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 25000
+2020-04-12 10:10:04------start converting 1000 queries from json to text file 20200331160906_24000.txt
+2020-04-12 10:10:05------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 26000
+2020-04-12 10:10:06------start converting 1000 queries from json to text file 20200331160906_25000.txt
+2020-04-12 10:10:07------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 27000
+2020-04-12 10:10:08------start converting 1000 queries from json to text file 20200331160906_26000.txt
+2020-04-12 10:10:09------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 28000
+2020-04-12 10:10:10------start converting 1000 queries from json to text file 20200331160906_27000.txt
+2020-04-12 10:10:11------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 29000
+2020-04-12 10:10:12------start converting 1000 queries from json to text file 20200331160906_28000.txt
+2020-04-12 10:10:13------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 30000
+2020-04-12 10:10:14------start converting 1000 queries from json to text file 20200331160906_29000.txt
+2020-04-12 10:10:15------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 31000
+2020-04-12 10:10:16------start converting 1000 queries from json to text file 20200331160906_30000.txt
+2020-04-12 10:10:18------start converting 1000 queries from json to text file 20200331160906_31000.txt
+2020-04-12 10:28:52------start uploading text file ./stg/20200331160906_1000.txt to HDFS
+2020-04-12 10:29:10------start uploading text file ./stg/20200331160906_2000.txt to HDFS
+2020-04-12 10:29:10------start uploading text file ./stg/20200331160906_4000.txt to HDFS
+2020-04-12 10:29:15------start uploading text file ./stg/20200331160906_3000.txt to HDFS
+2020-04-12 10:29:19------start uploading text file ./stg/20200331160906_0.txt to HDFS
+2020-04-12 10:29:21------start uploading text file ./stg/20200331160906_8000.txt to HDFS
+2020-04-12 10:29:29------start uploading text file ./stg/20200331160906_7000.txt to HDFS
+2020-04-12 10:29:42------start uploading text file ./stg/20200331160906_5000.txt to HDFS
+2020-04-12 10:29:47------start uploading text file ./stg/20200331160906_6000.txt to HDFS
+2020-04-12 10:29:52------start uploading text file ./stg/20200331160906_9000.txt to HDFS
+2020-04-12 10:30:00------start uploading text file ./stg/20200331160906_13000.txt to HDFS
+2020-04-12 10:30:03------start uploading text file ./stg/20200331160906_10000.txt to HDFS
+2020-04-12 10:30:03------start uploading text file ./stg/20200331160906_18000.txt to HDFS
+2020-04-12 10:30:10------start uploading text file ./stg/20200331160906_17000.txt to HDFS
+2020-04-12 10:30:11------start uploading text file ./stg/20200331160906_16000.txt to HDFS
+2020-04-12 10:30:15------start uploading text file ./stg/20200331160906_11000.txt to HDFS
+2020-04-12 10:30:17------start uploading text file ./stg/20200331160906_26000.txt to HDFS
+2020-04-12 10:30:19------start uploading text file ./stg/20200331160906_27000.txt to HDFS
+2020-04-12 10:30:19------start uploading text file ./stg/20200331160906_12000.txt to HDFS
+2020-04-12 10:30:25------start uploading text file ./stg/20200331160906_14000.txt to HDFS
+2020-04-12 10:30:26------start uploading text file ./stg/20200331160906_15000.txt to HDFS
+2020-04-12 10:30:28------start uploading text file ./stg/20200331160906_23000.txt to HDFS
+2020-04-12 10:30:32------start uploading text file ./stg/20200331160906_20000.txt to HDFS
+2020-04-12 10:30:34------start uploading text file ./stg/20200331160906_22000.txt to HDFS
+2020-04-12 10:30:35------start uploading text file ./stg/20200331160906_24000.txt to HDFS
+2020-04-12 10:30:35------start uploading text file ./stg/20200331160906_19000.txt to HDFS
+2020-04-12 10:30:38------start uploading text file ./stg/20200331160906_21000.txt to HDFS
+2020-04-12 10:30:41------start uploading text file ./stg/20200331160906_25000.txt to HDFS
+2020-04-12 10:30:42------start uploading text file ./stg/20200331160906_29000.txt to HDFS
+2020-04-12 10:30:43------start uploading text file ./stg/20200331160906_31000.txt to HDFS
+2020-04-12 10:30:45------start uploading text file ./stg/20200331160906_28000.txt to HDFS
+2020-04-12 10:30:45------start uploading text file ./stg/20200331160906_30000.txt to HDFS
+2020-04-12 10:30:49------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 32000
+2020-04-12 10:30:51------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 33000
+2020-04-12 10:30:51------start converting 1000 queries from json to text file 20200331160906_32000.txt
+2020-04-12 10:30:53------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 34000
+2020-04-12 10:30:54------start converting 1000 queries from json to text file 20200331160906_33000.txt
+2020-04-12 10:30:55------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 35000
+2020-04-12 10:30:56------start converting 1000 queries from json to text file 20200331160906_34000.txt
+2020-04-12 10:30:57------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 36000
+2020-04-12 10:30:58------start converting 1000 queries from json to text file 20200331160906_35000.txt
+2020-04-12 10:30:59------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 37000
+2020-04-12 10:31:00------start converting 1000 queries from json to text file 20200331160906_36000.txt
+2020-04-12 10:31:01------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 38000
+2020-04-12 10:31:02------start converting 1000 queries from json to text file 20200331160906_37000.txt
+2020-04-12 10:31:03------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 39000
+2020-04-12 10:31:04------start converting 1000 queries from json to text file 20200331160906_38000.txt
+2020-04-12 10:31:06------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 40000
+2020-04-12 10:31:06------start converting 1000 queries from json to text file 20200331160906_39000.txt
+2020-04-12 10:31:08------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 41000
+2020-04-12 10:31:08------start converting 1000 queries from json to text file 20200331160906_40000.txt
+2020-04-12 10:31:10------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 42000
+2020-04-12 10:31:10------start converting 1000 queries from json to text file 20200331160906_41000.txt
+2020-04-12 10:31:12------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 43000
+2020-04-12 10:31:12------start converting 1000 queries from json to text file 20200331160906_42000.txt
+2020-04-12 10:31:14------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 44000
+2020-04-12 10:31:14------start converting 1000 queries from json to text file 20200331160906_43000.txt
+2020-04-12 10:31:16------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 45000
+2020-04-12 10:31:17------start converting 1000 queries from json to text file 20200331160906_44000.txt
+2020-04-12 10:31:18------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 46000
+2020-04-12 10:31:19------start converting 1000 queries from json to text file 20200331160906_45000.txt
+2020-04-12 10:31:21------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 47000
+2020-04-12 10:31:21------start converting 1000 queries from json to text file 20200331160906_46000.txt
+2020-04-12 10:31:23------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 48000
+2020-04-12 10:31:23------start converting 1000 queries from json to text file 20200331160906_47000.txt
+2020-04-12 10:31:25------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 49000
+2020-04-12 10:31:26------start converting 1000 queries from json to text file 20200331160906_48000.txt
+2020-04-12 10:31:27------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 50000
+2020-04-12 10:31:28------start converting 1000 queries from json to text file 20200331160906_49000.txt
+2020-04-12 10:31:29------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 51000
+2020-04-12 10:31:30------start converting 1000 queries from json to text file 20200331160906_50000.txt
+2020-04-12 10:31:32------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 52000
+2020-04-12 10:31:32------start converting 1000 queries from json to text file 20200331160906_51000.txt
+2020-04-12 10:31:34------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 53000
+2020-04-12 10:31:34------start converting 1000 queries from json to text file 20200331160906_52000.txt
+2020-04-12 10:31:36------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 54000
+2020-04-12 10:31:37------start converting 1000 queries from json to text file 20200331160906_53000.txt
+2020-04-12 10:31:38------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 55000
+2020-04-12 10:31:39------start converting 1000 queries from json to text file 20200331160906_54000.txt
+2020-04-12 10:31:41------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 56000
+2020-04-12 10:31:41------start converting 1000 queries from json to text file 20200331160906_55000.txt
+2020-04-12 10:31:43------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 57000
+2020-04-12 10:31:44------start converting 1000 queries from json to text file 20200331160906_56000.txt
+2020-04-12 10:31:45------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 58000
+2020-04-12 10:31:46------start converting 1000 queries from json to text file 20200331160906_57000.txt
+2020-04-12 10:31:48------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 59000
+2020-04-12 10:31:48------start converting 1000 queries from json to text file 20200331160906_58000.txt
+2020-04-12 10:31:50------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 60000
+2020-04-12 10:31:51------start converting 1000 queries from json to text file 20200331160906_59000.txt
+2020-04-12 10:31:53------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 61000
+2020-04-12 10:31:53------start converting 1000 queries from json to text file 20200331160906_60000.txt
+2020-04-12 10:31:55------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 62000
+2020-04-12 10:31:56------start converting 1000 queries from json to text file 20200331160906_61000.txt
+2020-04-12 10:31:57------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 63000
+2020-04-12 10:31:58------start converting 1000 queries from json to text file 20200331160906_62000.txt
+2020-04-12 10:32:01------start converting 1000 queries from json to text file 20200331160906_63000.txt
+2020-04-12 10:49:19------start uploading text file ./stg/20200331160906_32000.txt to HDFS
+2020-04-12 10:49:43------start uploading text file ./stg/20200331160906_35000.txt to HDFS
+2020-04-12 10:49:45------start uploading text file ./stg/20200331160906_36000.txt to HDFS
+2020-04-12 10:49:48------start uploading text file ./stg/20200331160906_33000.txt to HDFS
+2020-04-12 10:50:07------start uploading text file ./stg/20200331160906_34000.txt to HDFS
+2020-04-12 10:50:37------start uploading text file ./stg/20200331160906_38000.txt to HDFS
+2020-04-12 10:50:37------start uploading text file ./stg/20200331160906_37000.txt to HDFS
+2020-04-12 10:50:51------start uploading text file ./stg/20200331160906_41000.txt to HDFS
+2020-04-12 10:50:52------start uploading text file ./stg/20200331160906_40000.txt to HDFS
+2020-04-12 10:50:53------start uploading text file ./stg/20200331160906_39000.txt to HDFS
+2020-04-12 10:50:54------start uploading text file ./stg/20200331160906_45000.txt to HDFS
+2020-04-12 10:50:58------start uploading text file ./stg/20200331160906_44000.txt to HDFS
+2020-04-12 10:51:13------start uploading text file ./stg/20200331160906_42000.txt to HDFS
+2020-04-12 10:51:14------start uploading text file ./stg/20200331160906_43000.txt to HDFS
+2020-04-12 10:51:25------start uploading text file ./stg/20200331160906_50000.txt to HDFS
+2020-04-12 10:51:26------start uploading text file ./stg/20200331160906_53000.txt to HDFS
+2020-04-12 10:51:27------start uploading text file ./stg/20200331160906_54000.txt to HDFS
+2020-04-12 10:51:28------start uploading text file ./stg/20200331160906_47000.txt to HDFS
+2020-04-12 10:51:28------start uploading text file ./stg/20200331160906_46000.txt to HDFS
+2020-04-12 10:51:34------start uploading text file ./stg/20200331160906_49000.txt to HDFS
+2020-04-12 10:51:38------start uploading text file ./stg/20200331160906_48000.txt to HDFS
+2020-04-12 10:51:43------start uploading text file ./stg/20200331160906_52000.txt to HDFS
+2020-04-12 10:51:43------start uploading text file ./stg/20200331160906_62000.txt to HDFS
+2020-04-12 10:51:44------start uploading text file ./stg/20200331160906_51000.txt to HDFS
+2020-04-12 10:51:48------start uploading text file ./stg/20200331160906_56000.txt to HDFS
+2020-04-12 10:51:50------start uploading text file ./stg/20200331160906_59000.txt to HDFS
+2020-04-12 10:51:51------start uploading text file ./stg/20200331160906_61000.txt to HDFS
+2020-04-12 10:51:53------start uploading text file ./stg/20200331160906_55000.txt to HDFS
+2020-04-12 10:51:53------start uploading text file ./stg/20200331160906_58000.txt to HDFS
+2020-04-12 10:51:56------start uploading text file ./stg/20200331160906_57000.txt to HDFS
+2020-04-12 10:51:58------start uploading text file ./stg/20200331160906_63000.txt to HDFS
+2020-04-12 10:51:59------start uploading text file ./stg/20200331160906_60000.txt to HDFS
+2020-04-12 10:52:03------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 64000
+2020-04-12 10:52:06------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 65000
+2020-04-12 10:52:06------start converting 1000 queries from json to text file 20200331160906_64000.txt
+2020-04-12 10:52:08------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 66000
+2020-04-12 10:52:08------start converting 1000 queries from json to text file 20200331160906_65000.txt
+2020-04-12 10:52:10------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 67000
+2020-04-12 10:52:10------start converting 1000 queries from json to text file 20200331160906_66000.txt
+2020-04-12 10:52:13------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 68000
+2020-04-12 10:52:13------start converting 1000 queries from json to text file 20200331160906_67000.txt
+2020-04-12 10:52:15------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 69000
+2020-04-12 10:52:15------start converting 1000 queries from json to text file 20200331160906_68000.txt
+2020-04-12 10:52:18------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 70000
+2020-04-12 10:52:18------start converting 1000 queries from json to text file 20200331160906_69000.txt
+2020-04-12 10:52:20------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 71000
+2020-04-12 10:52:20------start converting 1000 queries from json to text file 20200331160906_70000.txt
+2020-04-12 10:52:22------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 72000
+2020-04-12 10:52:23------start converting 1000 queries from json to text file 20200331160906_71000.txt
+2020-04-12 10:52:25------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 73000
+2020-04-12 10:52:25------start converting 1000 queries from json to text file 20200331160906_72000.txt
+2020-04-12 10:52:27------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 74000
+2020-04-12 10:52:28------start converting 1000 queries from json to text file 20200331160906_73000.txt
+2020-04-12 10:52:30------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 75000
+2020-04-12 10:52:30------start converting 1000 queries from json to text file 20200331160906_74000.txt
+2020-04-12 10:52:32------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 76000
+2020-04-12 10:52:33------start converting 1000 queries from json to text file 20200331160906_75000.txt
+2020-04-12 10:52:35------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 77000
+2020-04-12 10:52:35------start converting 1000 queries from json to text file 20200331160906_76000.txt
+2020-04-12 10:52:37------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 78000
+2020-04-12 10:52:38------start converting 1000 queries from json to text file 20200331160906_77000.txt
+2020-04-12 10:52:40------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 79000
+2020-04-12 10:52:41------start converting 1000 queries from json to text file 20200331160906_78000.txt
+2020-04-12 10:52:43------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 80000
+2020-04-12 10:52:43------start converting 1000 queries from json to text file 20200331160906_79000.txt
+2020-04-12 10:52:45------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 81000
+2020-04-12 10:52:46------start converting 1000 queries from json to text file 20200331160906_80000.txt
+2020-04-12 10:52:48------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 82000
+2020-04-12 10:52:48------start converting 1000 queries from json to text file 20200331160906_81000.txt
+2020-04-12 10:52:50------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 83000
+2020-04-12 10:52:51------start converting 1000 queries from json to text file 20200331160906_82000.txt
+2020-04-12 10:52:53------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 84000
+2020-04-12 10:52:54------start converting 1000 queries from json to text file 20200331160906_83000.txt
+2020-04-12 10:52:56------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 85000
+2020-04-12 10:52:56------start converting 1000 queries from json to text file 20200331160906_84000.txt
+2020-04-12 10:52:59------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 86000
+2020-04-12 10:52:59------start converting 1000 queries from json to text file 20200331160906_85000.txt
+2020-04-12 10:53:01------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 87000
+2020-04-12 10:53:02------start converting 1000 queries from json to text file 20200331160906_86000.txt
+2020-04-12 10:53:04------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 88000
+2020-04-12 10:53:04------start converting 1000 queries from json to text file 20200331160906_87000.txt
+2020-04-12 10:53:06------start getting json file from 2020-03-31T02:09:06Z to 2020-03-31T03:09:06Z offset 89000
+2020-04-12 10:53:07------start converting 613 queries from json to text file 20200331160906_88000.txt
+2020-04-12 10:53:09------start converting 0 queries from json to text file 20200331160906_89000.txt
+2020-04-12 11:02:54------start uploading text file ./stg/20200331160906_88000.txt to HDFS
+2020-04-12 11:06:33------start uploading text file ./stg/20200331160906_64000.txt to HDFS
+2020-04-12 11:06:50------start uploading text file ./stg/20200331160906_65000.txt to HDFS
+2020-04-12 11:06:50------start uploading text file ./stg/20200331160906_67000.txt to HDFS
+2020-04-12 11:07:04------start uploading text file ./stg/20200331160906_66000.txt to HDFS
+2020-04-12 11:07:17------start uploading text file ./stg/20200331160906_71000.txt to HDFS
+2020-04-12 11:07:22------start uploading text file ./stg/20200331160906_68000.txt to HDFS
+2020-04-12 11:07:23------start uploading text file ./stg/20200331160906_70000.txt to HDFS
+2020-04-12 11:07:31------start uploading text file ./stg/20200331160906_69000.txt to HDFS
+2020-04-12 11:07:40------start uploading text file ./stg/20200331160906_79000.txt to HDFS
+2020-04-12 11:07:48------start uploading text file ./stg/20200331160906_72000.txt to HDFS
+2020-04-12 11:07:49------start uploading text file ./stg/20200331160906_73000.txt to HDFS
+2020-04-12 11:07:53------start uploading text file ./stg/20200331160906_76000.txt to HDFS
+2020-04-12 11:07:56------start uploading text file ./stg/20200331160906_75000.txt to HDFS
+2020-04-12 11:07:58------start uploading text file ./stg/20200331160906_74000.txt to HDFS
+2020-04-12 11:08:06------start uploading text file ./stg/20200331160906_77000.txt to HDFS
+2020-04-12 11:08:06------start uploading text file ./stg/20200331160906_78000.txt to HDFS
+2020-04-12 11:08:07------start uploading text file ./stg/20200331160906_87000.txt to HDFS
+2020-04-12 11:08:10------start uploading text file ./stg/20200331160906_84000.txt to HDFS
+2020-04-12 11:08:12------start uploading text file ./stg/20200331160906_81000.txt to HDFS
+2020-04-12 11:08:13------start uploading text file ./stg/20200331160906_80000.txt to HDFS
+2020-04-12 11:08:15------start uploading text file ./stg/20200331160906_82000.txt to HDFS
+2020-04-12 11:08:18------start uploading text file ./stg/20200331160906_83000.txt to HDFS
+2020-04-12 11:08:19------start uploading text file ./stg/20200331160906_85000.txt to HDFS
+2020-04-12 11:08:20------start uploading text file ./stg/20200331160906_86000.txt to HDFS
+2020-04-12 11:08:24------load from staging into mquery
+2020-04-12 11:08:26------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 0
+2020-04-12 11:08:28------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 1000
+2020-04-12 11:08:28------start converting 1000 queries from json to text file 20200331170906_0.txt
+2020-04-12 11:08:29------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 2000
+2020-04-12 11:08:29------start converting 1000 queries from json to text file 20200331170906_1000.txt
+2020-04-12 11:08:30------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 3000
+2020-04-12 11:08:30------start converting 1000 queries from json to text file 20200331170906_2000.txt
+2020-04-12 11:08:32------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 4000
+2020-04-12 11:08:32------start converting 1000 queries from json to text file 20200331170906_3000.txt
+2020-04-12 11:08:33------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 5000
+2020-04-12 11:08:33------start converting 1000 queries from json to text file 20200331170906_4000.txt
+2020-04-12 11:08:34------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 6000
+2020-04-12 11:08:35------start converting 1000 queries from json to text file 20200331170906_5000.txt
+2020-04-12 11:08:36------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 7000
+2020-04-12 11:08:36------start converting 1000 queries from json to text file 20200331170906_6000.txt
+2020-04-12 11:08:37------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 8000
+2020-04-12 11:08:38------start converting 1000 queries from json to text file 20200331170906_7000.txt
+2020-04-12 11:08:39------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 9000
+2020-04-12 11:08:39------start converting 1000 queries from json to text file 20200331170906_8000.txt
+2020-04-12 11:08:40------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 10000
+2020-04-12 11:08:41------start converting 1000 queries from json to text file 20200331170906_9000.txt
+2020-04-12 11:08:42------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 11000
+2020-04-12 11:08:42------start converting 1000 queries from json to text file 20200331170906_10000.txt
+2020-04-12 11:08:43------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 12000
+2020-04-12 11:08:44------start converting 1000 queries from json to text file 20200331170906_11000.txt
+2020-04-12 11:08:45------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 13000
+2020-04-12 11:08:45------start converting 1000 queries from json to text file 20200331170906_12000.txt
+2020-04-12 11:08:46------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 14000
+2020-04-12 11:08:47------start converting 1000 queries from json to text file 20200331170906_13000.txt
+2020-04-12 11:08:48------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 15000
+2020-04-12 11:08:48------start converting 1000 queries from json to text file 20200331170906_14000.txt
+2020-04-12 11:08:49------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 16000
+2020-04-12 11:08:50------start converting 1000 queries from json to text file 20200331170906_15000.txt
+2020-04-12 11:08:51------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 17000
+2020-04-12 11:08:51------start converting 1000 queries from json to text file 20200331170906_16000.txt
+2020-04-12 11:08:53------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 18000
+2020-04-12 11:08:53------start converting 1000 queries from json to text file 20200331170906_17000.txt
+2020-04-12 11:08:54------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 19000
+2020-04-12 11:08:55------start converting 1000 queries from json to text file 20200331170906_18000.txt
+2020-04-12 11:08:56------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 20000
+2020-04-12 11:08:56------start converting 1000 queries from json to text file 20200331170906_19000.txt
+2020-04-12 11:08:57------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 21000
+2020-04-12 11:08:58------start converting 1000 queries from json to text file 20200331170906_20000.txt
+2020-04-12 11:08:59------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 22000
+2020-04-12 11:09:00------start converting 1000 queries from json to text file 20200331170906_21000.txt
+2020-04-12 11:09:01------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 23000
+2020-04-12 11:09:02------start converting 1000 queries from json to text file 20200331170906_22000.txt
+2020-04-12 11:09:03------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 24000
+2020-04-12 11:09:03------start converting 1000 queries from json to text file 20200331170906_23000.txt
+2020-04-12 11:09:04------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 25000
+2020-04-12 11:09:05------start converting 1000 queries from json to text file 20200331170906_24000.txt
+2020-04-12 11:09:06------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 26000
+2020-04-12 11:09:07------start converting 1000 queries from json to text file 20200331170906_25000.txt
+2020-04-12 11:09:08------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 27000
+2020-04-12 11:09:09------start converting 1000 queries from json to text file 20200331170906_26000.txt
+2020-04-12 11:09:10------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 28000
+2020-04-12 11:09:10------start converting 1000 queries from json to text file 20200331170906_27000.txt
+2020-04-12 11:09:11------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 29000
+2020-04-12 11:09:12------start converting 1000 queries from json to text file 20200331170906_28000.txt
+2020-04-12 11:09:13------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 30000
+2020-04-12 11:09:14------start converting 1000 queries from json to text file 20200331170906_29000.txt
+2020-04-12 11:09:15------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 31000
+2020-04-12 11:09:16------start converting 1000 queries from json to text file 20200331170906_30000.txt
+2020-04-12 11:09:18------start converting 1000 queries from json to text file 20200331170906_31000.txt
+2020-04-12 11:29:27------start uploading text file ./stg/20200331170906_3000.txt to HDFS
+2020-04-12 11:29:32------start uploading text file ./stg/20200331170906_2000.txt to HDFS
+2020-04-12 11:29:32------start uploading text file ./stg/20200331170906_1000.txt to HDFS
+2020-04-12 11:29:49------start uploading text file ./stg/20200331170906_0.txt to HDFS
+2020-04-12 11:29:56------start uploading text file ./stg/20200331170906_4000.txt to HDFS
+2020-04-12 11:29:58------start uploading text file ./stg/20200331170906_8000.txt to HDFS
+2020-04-12 11:30:00------start uploading text file ./stg/20200331170906_7000.txt to HDFS
+2020-04-12 11:30:03------start uploading text file ./stg/20200331170906_5000.txt to HDFS
+2020-04-12 11:30:08------start uploading text file ./stg/20200331170906_6000.txt to HDFS
+2020-04-12 11:30:09------start uploading text file ./stg/20200331170906_9000.txt to HDFS
+2020-04-12 11:30:14------start uploading text file ./stg/20200331170906_10000.txt to HDFS
+2020-04-12 11:30:31------start uploading text file ./stg/20200331170906_23000.txt to HDFS
+2020-04-12 11:30:32------start uploading text file ./stg/20200331170906_12000.txt to HDFS
+2020-04-12 11:30:32------start uploading text file ./stg/20200331170906_17000.txt to HDFS
+2020-04-12 11:30:35------start uploading text file ./stg/20200331170906_11000.txt to HDFS
+2020-04-12 11:30:39------start uploading text file ./stg/20200331170906_21000.txt to HDFS
+2020-04-12 11:30:40------start uploading text file ./stg/20200331170906_16000.txt to HDFS
+2020-04-12 11:30:40------start uploading text file ./stg/20200331170906_13000.txt to HDFS
+20/04/12 11:30:41 WARN hdfs.DFSClient: Caught exception 
+java.lang.InterruptedException
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Thread.join(Thread.java:1252)
+	at java.lang.Thread.join(Thread.java:1326)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.closeResponder(DFSOutputStream.java:969)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.endBlock(DFSOutputStream.java:707)
+	at org.apache.hadoop.hdfs.DFSOutputStream$DataStreamer.run(DFSOutputStream.java:896)
+2020-04-12 11:30:45------start uploading text file ./stg/20200331170906_14000.txt to HDFS
+2020-04-12 11:30:47------start uploading text file ./stg/20200331170906_15000.txt to HDFS
+2020-04-12 11:30:50------start uploading text file ./stg/20200331170906_22000.txt to HDFS
+2020-04-12 11:30:53------start uploading text file ./stg/20200331170906_18000.txt to HDFS
+2020-04-12 11:30:53------start uploading text file ./stg/20200331170906_19000.txt to HDFS
+2020-04-12 11:30:57------start uploading text file ./stg/20200331170906_20000.txt to HDFS
+2020-04-12 11:30:58------start uploading text file ./stg/20200331170906_30000.txt to HDFS
+2020-04-12 11:31:01------start uploading text file ./stg/20200331170906_26000.txt to HDFS
+2020-04-12 11:31:03------start uploading text file ./stg/20200331170906_25000.txt to HDFS
+2020-04-12 11:31:03------start uploading text file ./stg/20200331170906_29000.txt to HDFS
+2020-04-12 11:31:03------start uploading text file ./stg/20200331170906_24000.txt to HDFS
+2020-04-12 11:31:06------start uploading text file ./stg/20200331170906_28000.txt to HDFS
+2020-04-12 11:31:07------start uploading text file ./stg/20200331170906_27000.txt to HDFS
+2020-04-12 11:31:09------start uploading text file ./stg/20200331170906_31000.txt to HDFS
+2020-04-12 11:31:13------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 32000
+2020-04-12 11:31:14------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 33000
+2020-04-12 11:31:14------start converting 1000 queries from json to text file 20200331170906_32000.txt
+2020-04-12 11:31:16------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 34000
+2020-04-12 11:31:16------start converting 1000 queries from json to text file 20200331170906_33000.txt
+2020-04-12 11:31:18------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 35000
+2020-04-12 11:31:18------start converting 1000 queries from json to text file 20200331170906_34000.txt
+2020-04-12 11:31:20------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 36000
+2020-04-12 11:31:20------start converting 1000 queries from json to text file 20200331170906_35000.txt
+2020-04-12 11:31:22------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 37000
+2020-04-12 11:31:22------start converting 1000 queries from json to text file 20200331170906_36000.txt
+2020-04-12 11:31:23------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 38000
+2020-04-12 11:31:24------start converting 1000 queries from json to text file 20200331170906_37000.txt
+2020-04-12 11:31:25------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 39000
+2020-04-12 11:31:26------start converting 1000 queries from json to text file 20200331170906_38000.txt
+2020-04-12 11:31:27------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 40000
+2020-04-12 11:31:27------start converting 1000 queries from json to text file 20200331170906_39000.txt
+2020-04-12 11:31:29------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 41000
+2020-04-12 11:31:29------start converting 1000 queries from json to text file 20200331170906_40000.txt
+2020-04-12 11:31:31------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 42000
+2020-04-12 11:31:31------start converting 1000 queries from json to text file 20200331170906_41000.txt
+2020-04-12 11:31:33------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 43000
+2020-04-12 11:31:33------start converting 1000 queries from json to text file 20200331170906_42000.txt
+2020-04-12 11:31:35------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 44000
+2020-04-12 11:31:35------start converting 1000 queries from json to text file 20200331170906_43000.txt
+2020-04-12 11:31:37------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 45000
+2020-04-12 11:31:37------start converting 1000 queries from json to text file 20200331170906_44000.txt
+2020-04-12 11:31:39------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 46000
+2020-04-12 11:31:39------start converting 1000 queries from json to text file 20200331170906_45000.txt
+2020-04-12 11:31:40------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 47000
+2020-04-12 11:31:41------start converting 1000 queries from json to text file 20200331170906_46000.txt
+2020-04-12 11:31:42------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 48000
+2020-04-12 11:31:43------start converting 1000 queries from json to text file 20200331170906_47000.txt
+2020-04-12 11:31:44------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 49000
+2020-04-12 11:31:45------start converting 1000 queries from json to text file 20200331170906_48000.txt
+2020-04-12 11:31:46------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 50000
+2020-04-12 11:31:47------start converting 1000 queries from json to text file 20200331170906_49000.txt
+2020-04-12 11:31:48------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 51000
+2020-04-12 11:31:49------start converting 1000 queries from json to text file 20200331170906_50000.txt
+2020-04-12 11:31:50------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 52000
+2020-04-12 11:31:51------start converting 1000 queries from json to text file 20200331170906_51000.txt
+2020-04-12 11:31:53------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 53000
+2020-04-12 11:31:53------start converting 1000 queries from json to text file 20200331170906_52000.txt
+2020-04-12 11:31:55------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 54000
+2020-04-12 11:31:55------start converting 1000 queries from json to text file 20200331170906_53000.txt
+2020-04-12 11:31:57------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 55000
+2020-04-12 11:31:57------start converting 1000 queries from json to text file 20200331170906_54000.txt
+2020-04-12 11:31:59------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 56000
+2020-04-12 11:32:00------start converting 1000 queries from json to text file 20200331170906_55000.txt
+2020-04-12 11:32:01------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 57000
+2020-04-12 11:32:02------start converting 1000 queries from json to text file 20200331170906_56000.txt
+2020-04-12 11:32:03------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 58000
+2020-04-12 11:32:04------start converting 1000 queries from json to text file 20200331170906_57000.txt
+2020-04-12 11:32:05------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 59000
+2020-04-12 11:32:06------start converting 1000 queries from json to text file 20200331170906_58000.txt
+2020-04-12 11:32:07------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 60000
+2020-04-12 11:32:08------start converting 1000 queries from json to text file 20200331170906_59000.txt
+2020-04-12 11:32:10------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 61000
+2020-04-12 11:32:11------start converting 1000 queries from json to text file 20200331170906_60000.txt
+2020-04-12 11:32:12------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 62000
+2020-04-12 11:32:13------start converting 1000 queries from json to text file 20200331170906_61000.txt
+2020-04-12 11:32:14------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 63000
+2020-04-12 11:32:15------start converting 1000 queries from json to text file 20200331170906_62000.txt
+2020-04-12 11:32:17------start converting 1000 queries from json to text file 20200331170906_63000.txt
+2020-04-12 11:52:03------start uploading text file ./stg/20200331170906_32000.txt to HDFS
+2020-04-12 11:52:09------start uploading text file ./stg/20200331170906_36000.txt to HDFS
+2020-04-12 11:52:12------start uploading text file ./stg/20200331170906_34000.txt to HDFS
+2020-04-12 11:52:18------start uploading text file ./stg/20200331170906_33000.txt to HDFS
+2020-04-12 11:52:28------start uploading text file ./stg/20200331170906_35000.txt to HDFS
+2020-04-12 11:53:04------start uploading text file ./stg/20200331170906_37000.txt to HDFS
+2020-04-12 11:53:10------start uploading text file ./stg/20200331170906_39000.txt to HDFS
+2020-04-12 11:53:13------start uploading text file ./stg/20200331170906_38000.txt to HDFS
+2020-04-12 11:53:25------start uploading text file ./stg/20200331170906_40000.txt to HDFS
+2020-04-12 11:53:28------start uploading text file ./stg/20200331170906_43000.txt to HDFS
+2020-04-12 11:53:31------start uploading text file ./stg/20200331170906_41000.txt to HDFS
+2020-04-12 11:53:33------start uploading text file ./stg/20200331170906_42000.txt to HDFS
+2020-04-12 11:53:35------start uploading text file ./stg/20200331170906_48000.txt to HDFS
+2020-04-12 11:53:40------start uploading text file ./stg/20200331170906_49000.txt to HDFS
+2020-04-12 11:53:42------start uploading text file ./stg/20200331170906_44000.txt to HDFS
+2020-04-12 11:53:52------start uploading text file ./stg/20200331170906_45000.txt to HDFS
+2020-04-12 11:53:53------start uploading text file ./stg/20200331170906_46000.txt to HDFS
+2020-04-12 11:53:55------start uploading text file ./stg/20200331170906_50000.txt to HDFS
+2020-04-12 11:53:58------start uploading text file ./stg/20200331170906_47000.txt to HDFS
+2020-04-12 11:54:04------start uploading text file ./stg/20200331170906_52000.txt to HDFS
+2020-04-12 11:54:05------start uploading text file ./stg/20200331170906_57000.txt to HDFS
+2020-04-12 11:54:06------start uploading text file ./stg/20200331170906_51000.txt to HDFS
+2020-04-12 11:54:08------start uploading text file ./stg/20200331170906_62000.txt to HDFS
+2020-04-12 11:54:08------start uploading text file ./stg/20200331170906_53000.txt to HDFS
+2020-04-12 11:54:10------start uploading text file ./stg/20200331170906_61000.txt to HDFS
+2020-04-12 11:54:11------start uploading text file ./stg/20200331170906_56000.txt to HDFS
+2020-04-12 11:54:13------start uploading text file ./stg/20200331170906_54000.txt to HDFS
+2020-04-12 11:54:14------start uploading text file ./stg/20200331170906_55000.txt to HDFS
+2020-04-12 11:54:16------start uploading text file ./stg/20200331170906_63000.txt to HDFS
+2020-04-12 11:54:19------start uploading text file ./stg/20200331170906_58000.txt to HDFS
+2020-04-12 11:54:21------start uploading text file ./stg/20200331170906_59000.txt to HDFS
+2020-04-12 11:54:22------start uploading text file ./stg/20200331170906_60000.txt to HDFS
+2020-04-12 11:54:26------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 64000
+2020-04-12 11:54:28------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 65000
+2020-04-12 11:54:28------start converting 1000 queries from json to text file 20200331170906_64000.txt
+2020-04-12 11:54:30------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 66000
+2020-04-12 11:54:30------start converting 1000 queries from json to text file 20200331170906_65000.txt
+2020-04-12 11:54:32------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 67000
+2020-04-12 11:54:32------start converting 1000 queries from json to text file 20200331170906_66000.txt
+2020-04-12 11:54:34------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 68000
+2020-04-12 11:54:35------start converting 1000 queries from json to text file 20200331170906_67000.txt
+2020-04-12 11:54:37------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 69000
+2020-04-12 11:54:37------start converting 1000 queries from json to text file 20200331170906_68000.txt
+2020-04-12 11:54:39------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 70000
+2020-04-12 11:54:39------start converting 1000 queries from json to text file 20200331170906_69000.txt
+2020-04-12 11:54:41------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 71000
+2020-04-12 11:54:41------start converting 1000 queries from json to text file 20200331170906_70000.txt
+2020-04-12 11:54:43------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 72000
+2020-04-12 11:54:44------start converting 1000 queries from json to text file 20200331170906_71000.txt
+2020-04-12 11:54:46------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 73000
+2020-04-12 11:54:46------start converting 1000 queries from json to text file 20200331170906_72000.txt
+2020-04-12 11:54:48------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 74000
+2020-04-12 11:54:48------start converting 1000 queries from json to text file 20200331170906_73000.txt
+2020-04-12 11:54:50------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 75000
+2020-04-12 11:54:51------start converting 1000 queries from json to text file 20200331170906_74000.txt
+2020-04-12 11:54:53------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 76000
+2020-04-12 11:54:53------start converting 1000 queries from json to text file 20200331170906_75000.txt
+2020-04-12 11:54:55------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 77000
+2020-04-12 11:54:56------start converting 1000 queries from json to text file 20200331170906_76000.txt
+2020-04-12 11:54:57------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 78000
+2020-04-12 11:54:58------start converting 1000 queries from json to text file 20200331170906_77000.txt
+2020-04-12 11:55:00------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 79000
+2020-04-12 11:55:00------start converting 1000 queries from json to text file 20200331170906_78000.txt
+2020-04-12 11:55:02------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 80000
+2020-04-12 11:55:03------start converting 1000 queries from json to text file 20200331170906_79000.txt
+2020-04-12 11:55:05------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 81000
+2020-04-12 11:55:05------start converting 1000 queries from json to text file 20200331170906_80000.txt
+2020-04-12 11:55:07------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 82000
+2020-04-12 11:55:08------start converting 1000 queries from json to text file 20200331170906_81000.txt
+2020-04-12 11:55:10------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 83000
+2020-04-12 11:55:10------start converting 1000 queries from json to text file 20200331170906_82000.txt
+2020-04-12 11:55:12------start getting json file from 2020-03-31T03:09:06Z to 2020-03-31T04:09:06Z offset 84000
+2020-04-12 11:55:12------start converting 549 queries from json to text file 20200331170906_83000.txt
+2020-04-12 11:55:14------start converting 0 queries from json to text file 20200331170906_84000.txt
+2020-04-12 12:02:37------start uploading text file ./stg/20200331170906_83000.txt to HDFS
+2020-04-12 12:07:14------start uploading text file ./stg/20200331170906_64000.txt to HDFS
+2020-04-12 12:07:18------start uploading text file ./stg/20200331170906_65000.txt to HDFS
+2020-04-12 12:07:28------start uploading text file ./stg/20200331170906_66000.txt to HDFS
+2020-04-12 12:07:39------start uploading text file ./stg/20200331170906_67000.txt to HDFS
+2020-04-12 12:07:47------start uploading text file ./stg/20200331170906_69000.txt to HDFS
+2020-04-12 12:07:47------start uploading text file ./stg/20200331170906_70000.txt to HDFS
+2020-04-12 12:07:48------start uploading text file ./stg/20200331170906_68000.txt to HDFS
+2020-04-12 12:08:02------start uploading text file ./stg/20200331170906_74000.txt to HDFS
+2020-04-12 12:08:02------start uploading text file ./stg/20200331170906_71000.txt to HDFS
+2020-04-12 12:08:03------start uploading text file ./stg/20200331170906_75000.txt to HDFS
+2020-04-12 12:08:07------start uploading text file ./stg/20200331170906_72000.txt to HDFS
+2020-04-12 12:08:10------start uploading text file ./stg/20200331170906_73000.txt to HDFS
+2020-04-12 12:08:13------start uploading text file ./stg/20200331170906_76000.txt to HDFS
+2020-04-12 12:08:17------start uploading text file ./stg/20200331170906_78000.txt to HDFS
+2020-04-12 12:08:18------start uploading text file ./stg/20200331170906_77000.txt to HDFS
+2020-04-12 12:08:20------start uploading text file ./stg/20200331170906_79000.txt to HDFS
+2020-04-12 12:08:22------start uploading text file ./stg/20200331170906_82000.txt to HDFS
+2020-04-12 12:08:22------start uploading text file ./stg/20200331170906_80000.txt to HDFS
+2020-04-12 12:08:24------start uploading text file ./stg/20200331170906_81000.txt to HDFS
+2020-04-12 12:08:28------load from staging into mquery
+2020-04-12 12:08:30------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 0
+2020-04-12 12:08:33------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 1000
+2020-04-12 12:08:33------start converting 1000 queries from json to text file 20200331180906_0.txt
+2020-04-12 12:08:35------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 2000
+2020-04-12 12:08:35------start converting 1000 queries from json to text file 20200331180906_1000.txt
+2020-04-12 12:08:38------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 3000
+2020-04-12 12:08:38------start converting 1000 queries from json to text file 20200331180906_2000.txt
+2020-04-12 12:08:41------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 4000
+2020-04-12 12:08:41------start converting 1000 queries from json to text file 20200331180906_3000.txt
+2020-04-12 12:08:43------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 5000
+2020-04-12 12:08:43------start converting 1000 queries from json to text file 20200331180906_4000.txt
+2020-04-12 12:08:46------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 6000
+2020-04-12 12:08:46------start converting 1000 queries from json to text file 20200331180906_5000.txt
+2020-04-12 12:08:49------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 7000
+2020-04-12 12:08:49------start converting 1000 queries from json to text file 20200331180906_6000.txt
+2020-04-12 12:08:51------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 8000
+2020-04-12 12:08:52------start converting 1000 queries from json to text file 20200331180906_7000.txt
+2020-04-12 12:08:54------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 9000
+2020-04-12 12:08:54------start converting 1000 queries from json to text file 20200331180906_8000.txt
+2020-04-12 12:08:57------start getting json file from 2020-03-31T04:09:06Z to 2020-03-31T05:09:06Z offset 10000
+2020-04-12 12:08:57------start converting 212 queries from json to text file 20200331180906_9000.txt
+2020-04-12 12:08:59------start converting 0 queries from json to text file 20200331180906_10000.txt
+2020-04-12 12:10:25------start uploading text file ./stg/20200331180906_9000.txt to HDFS
+2020-04-12 12:14:59------start uploading text file ./stg/20200331180906_1000.txt to HDFS
+2020-04-12 12:15:02------start uploading text file ./stg/20200331180906_0.txt to HDFS
+2020-04-12 12:15:02------start uploading text file ./stg/20200331180906_2000.txt to HDFS
+2020-04-12 12:15:10------start uploading text file ./stg/20200331180906_3000.txt to HDFS
+2020-04-12 12:15:12------start uploading text file ./stg/20200331180906_4000.txt to HDFS
+2020-04-12 12:15:13------start uploading text file ./stg/20200331180906_5000.txt to HDFS
+2020-04-12 12:15:15------start uploading text file ./stg/20200331180906_6000.txt to HDFS
+2020-04-12 12:15:15------start uploading text file ./stg/20200331180906_7000.txt to HDFS
+2020-04-12 12:15:22------start uploading text file ./stg/20200331180906_8000.txt to HDFS
+2020-04-12 12:15:25------load from staging into mquery
+2020-04-12 12:15:27------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 0
+2020-04-12 12:15:29------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 1000
+2020-04-12 12:15:29------start converting 1000 queries from json to text file 20200331190906_0.txt
+2020-04-12 12:15:31------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 2000
+2020-04-12 12:15:31------start converting 1000 queries from json to text file 20200331190906_1000.txt
+2020-04-12 12:15:33------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 3000
+2020-04-12 12:15:33------start converting 1000 queries from json to text file 20200331190906_2000.txt
+2020-04-12 12:15:35------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 4000
+2020-04-12 12:15:36------start converting 1000 queries from json to text file 20200331190906_3000.txt
+2020-04-12 12:15:38------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 5000
+2020-04-12 12:15:38------start converting 1000 queries from json to text file 20200331190906_4000.txt
+2020-04-12 12:15:40------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 6000
+2020-04-12 12:15:40------start converting 1000 queries from json to text file 20200331190906_5000.txt
+2020-04-12 12:15:42------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 7000
+2020-04-12 12:15:42------start converting 1000 queries from json to text file 20200331190906_6000.txt
+2020-04-12 12:15:45------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 8000
+2020-04-12 12:15:45------start converting 1000 queries from json to text file 20200331190906_7000.txt
+2020-04-12 12:15:47------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 9000
+2020-04-12 12:15:47------start converting 1000 queries from json to text file 20200331190906_8000.txt
+2020-04-12 12:15:49------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 10000
+2020-04-12 12:15:50------start converting 1000 queries from json to text file 20200331190906_9000.txt
+2020-04-12 12:15:52------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 11000
+2020-04-12 12:15:52------start converting 1000 queries from json to text file 20200331190906_10000.txt
+2020-04-12 12:15:54------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 12000
+2020-04-12 12:15:54------start converting 1000 queries from json to text file 20200331190906_11000.txt
+2020-04-12 12:15:56------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 13000
+2020-04-12 12:15:57------start converting 1000 queries from json to text file 20200331190906_12000.txt
+2020-04-12 12:15:59------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 14000
+2020-04-12 12:15:59------start converting 1000 queries from json to text file 20200331190906_13000.txt
+2020-04-12 12:16:01------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 15000
+2020-04-12 12:16:02------start converting 1000 queries from json to text file 20200331190906_14000.txt
+2020-04-12 12:16:03------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 16000
+2020-04-12 12:16:04------start converting 1000 queries from json to text file 20200331190906_15000.txt
+2020-04-12 12:16:06------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 17000
+2020-04-12 12:16:06------start converting 1000 queries from json to text file 20200331190906_16000.txt
+2020-04-12 12:16:08------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 18000
+2020-04-12 12:16:09------start converting 1000 queries from json to text file 20200331190906_17000.txt
+2020-04-12 12:16:11------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 19000
+2020-04-12 12:16:12------start converting 1000 queries from json to text file 20200331190906_18000.txt
+2020-04-12 12:16:13------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 20000
+2020-04-12 12:16:14------start converting 1000 queries from json to text file 20200331190906_19000.txt
+2020-04-12 12:16:16------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 21000
+2020-04-12 12:16:16------start converting 1000 queries from json to text file 20200331190906_20000.txt
+2020-04-12 12:16:18------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 22000
+2020-04-12 12:16:19------start converting 1000 queries from json to text file 20200331190906_21000.txt
+2020-04-12 12:16:21------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 23000
+2020-04-12 12:16:21------start converting 1000 queries from json to text file 20200331190906_22000.txt
+2020-04-12 12:16:23------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 24000
+2020-04-12 12:16:24------start converting 1000 queries from json to text file 20200331190906_23000.txt
+2020-04-12 12:16:26------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 25000
+2020-04-12 12:16:27------start converting 1000 queries from json to text file 20200331190906_24000.txt
+2020-04-12 12:16:29------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 26000
+2020-04-12 12:16:29------start converting 1000 queries from json to text file 20200331190906_25000.txt
+2020-04-12 12:16:31------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 27000
+2020-04-12 12:16:32------start converting 1000 queries from json to text file 20200331190906_26000.txt
+2020-04-12 12:16:34------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 28000
+2020-04-12 12:16:34------start converting 1000 queries from json to text file 20200331190906_27000.txt
+2020-04-12 12:16:36------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 29000
+2020-04-12 12:16:37------start converting 1000 queries from json to text file 20200331190906_28000.txt
+2020-04-12 12:16:39------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 30000
+2020-04-12 12:16:40------start converting 1000 queries from json to text file 20200331190906_29000.txt
+2020-04-12 12:16:42------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 31000
+2020-04-12 12:16:42------start converting 1000 queries from json to text file 20200331190906_30000.txt
+2020-04-12 12:16:45------start converting 1000 queries from json to text file 20200331190906_31000.txt
+2020-04-12 12:36:14------start uploading text file ./stg/20200331190906_3000.txt to HDFS
+2020-04-12 12:36:18------start uploading text file ./stg/20200331190906_1000.txt to HDFS
+2020-04-12 12:36:20------start uploading text file ./stg/20200331190906_0.txt to HDFS
+2020-04-12 12:36:20------start uploading text file ./stg/20200331190906_2000.txt to HDFS
+2020-04-12 12:36:40------start uploading text file ./stg/20200331190906_5000.txt to HDFS
+2020-04-12 12:36:47------start uploading text file ./stg/20200331190906_4000.txt to HDFS
+2020-04-12 12:37:21------start uploading text file ./stg/20200331190906_6000.txt to HDFS
+2020-04-12 12:37:29------start uploading text file ./stg/20200331190906_8000.txt to HDFS
+2020-04-12 12:37:30------start uploading text file ./stg/20200331190906_7000.txt to HDFS
+2020-04-12 12:37:41------start uploading text file ./stg/20200331190906_12000.txt to HDFS
+2020-04-12 12:37:42------start uploading text file ./stg/20200331190906_9000.txt to HDFS
+2020-04-12 12:37:44------start uploading text file ./stg/20200331190906_11000.txt to HDFS
+2020-04-12 12:37:51------start uploading text file ./stg/20200331190906_10000.txt to HDFS
+2020-04-12 12:37:52------start uploading text file ./stg/20200331190906_20000.txt to HDFS
+2020-04-12 12:38:01------start uploading text file ./stg/20200331190906_13000.txt to HDFS
+2020-04-12 12:38:02------start uploading text file ./stg/20200331190906_16000.txt to HDFS
+2020-04-12 12:38:05------start uploading text file ./stg/20200331190906_19000.txt to HDFS
+2020-04-12 12:38:06------start uploading text file ./stg/20200331190906_14000.txt to HDFS
+2020-04-12 12:38:08------start uploading text file ./stg/20200331190906_18000.txt to HDFS
+2020-04-12 12:38:09------start uploading text file ./stg/20200331190906_15000.txt to HDFS
+2020-04-12 12:38:11------start uploading text file ./stg/20200331190906_17000.txt to HDFS
+2020-04-12 12:38:18------start uploading text file ./stg/20200331190906_28000.txt to HDFS
+2020-04-12 12:38:19------start uploading text file ./stg/20200331190906_23000.txt to HDFS
+2020-04-12 12:38:20------start uploading text file ./stg/20200331190906_27000.txt to HDFS
+2020-04-12 12:38:20------start uploading text file ./stg/20200331190906_26000.txt to HDFS
+2020-04-12 12:38:21------start uploading text file ./stg/20200331190906_25000.txt to HDFS
+2020-04-12 12:38:25------start uploading text file ./stg/20200331190906_21000.txt to HDFS
+2020-04-12 12:38:27------start uploading text file ./stg/20200331190906_24000.txt to HDFS
+2020-04-12 12:38:27------start uploading text file ./stg/20200331190906_22000.txt to HDFS
+2020-04-12 12:38:32------start uploading text file ./stg/20200331190906_29000.txt to HDFS
+2020-04-12 12:38:33------start uploading text file ./stg/20200331190906_31000.txt to HDFS
+2020-04-12 12:38:34------start uploading text file ./stg/20200331190906_30000.txt to HDFS
+2020-04-12 12:38:38------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 32000
+2020-04-12 12:38:40------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 33000
+2020-04-12 12:38:40------start converting 1000 queries from json to text file 20200331190906_32000.txt
+2020-04-12 12:38:43------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 34000
+2020-04-12 12:38:43------start converting 1000 queries from json to text file 20200331190906_33000.txt
+2020-04-12 12:38:46------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 35000
+2020-04-12 12:38:46------start converting 1000 queries from json to text file 20200331190906_34000.txt
+2020-04-12 12:38:48------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 36000
+2020-04-12 12:38:48------start converting 1000 queries from json to text file 20200331190906_35000.txt
+2020-04-12 12:38:51------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 37000
+2020-04-12 12:38:51------start converting 1000 queries from json to text file 20200331190906_36000.txt
+2020-04-12 12:38:54------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 38000
+2020-04-12 12:38:54------start converting 1000 queries from json to text file 20200331190906_37000.txt
+2020-04-12 12:38:56------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 39000
+2020-04-12 12:38:57------start converting 1000 queries from json to text file 20200331190906_38000.txt
+2020-04-12 12:38:59------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 40000
+2020-04-12 12:38:59------start converting 1000 queries from json to text file 20200331190906_39000.txt
+2020-04-12 12:39:02------start getting json file from 2020-03-31T05:09:06Z to 2020-03-31T06:09:06Z offset 41000
+2020-04-12 12:39:02------start converting 983 queries from json to text file 20200331190906_40000.txt
+2020-04-12 12:39:04------start converting 0 queries from json to text file 20200331190906_41000.txt
+2020-04-12 12:45:06------start uploading text file ./stg/20200331190906_32000.txt to HDFS
+2020-04-12 12:45:13------start uploading text file ./stg/20200331190906_33000.txt to HDFS
+2020-04-12 12:45:19------start uploading text file ./stg/20200331190906_34000.txt to HDFS
+2020-04-12 12:45:22------start uploading text file ./stg/20200331190906_35000.txt to HDFS
+2020-04-12 12:45:23------start uploading text file ./stg/20200331190906_36000.txt to HDFS
+2020-04-12 12:45:29------start uploading text file ./stg/20200331190906_40000.txt to HDFS
+2020-04-12 12:45:31------start uploading text file ./stg/20200331190906_37000.txt to HDFS
+2020-04-12 12:45:34------start uploading text file ./stg/20200331190906_38000.txt to HDFS
+2020-04-12 12:45:36------start uploading text file ./stg/20200331190906_39000.txt to HDFS
+2020-04-12 12:45:39------load from staging into mquery
+2020-04-12 12:45:41------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 0
+2020-04-12 12:45:43------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 1000
+2020-04-12 12:45:43------start converting 1000 queries from json to text file 20200331200906_0.txt
+2020-04-12 12:45:45------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 2000
+2020-04-12 12:45:45------start converting 1000 queries from json to text file 20200331200906_1000.txt
+2020-04-12 12:45:47------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 3000
+2020-04-12 12:45:47------start converting 1000 queries from json to text file 20200331200906_2000.txt
+2020-04-12 12:45:50------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 4000
+2020-04-12 12:45:50------start converting 1000 queries from json to text file 20200331200906_3000.txt
+2020-04-12 12:45:52------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 5000
+2020-04-12 12:45:52------start converting 1000 queries from json to text file 20200331200906_4000.txt
+2020-04-12 12:45:54------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 6000
+2020-04-12 12:45:54------start converting 1000 queries from json to text file 20200331200906_5000.txt
+2020-04-12 12:45:57------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 7000
+2020-04-12 12:45:57------start converting 1000 queries from json to text file 20200331200906_6000.txt
+2020-04-12 12:45:59------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 8000
+2020-04-12 12:45:59------start converting 1000 queries from json to text file 20200331200906_7000.txt
+2020-04-12 12:46:01------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 9000
+2020-04-12 12:46:02------start converting 1000 queries from json to text file 20200331200906_8000.txt
+2020-04-12 12:46:04------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 10000
+2020-04-12 12:46:04------start converting 1000 queries from json to text file 20200331200906_9000.txt
+2020-04-12 12:46:06------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 11000
+2020-04-12 12:46:07------start converting 1000 queries from json to text file 20200331200906_10000.txt
+2020-04-12 12:46:09------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 12000
+2020-04-12 12:46:09------start converting 1000 queries from json to text file 20200331200906_11000.txt
+2020-04-12 12:46:11------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 13000
+2020-04-12 12:46:11------start converting 1000 queries from json to text file 20200331200906_12000.txt
+2020-04-12 12:46:13------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 14000
+2020-04-12 12:46:14------start converting 1000 queries from json to text file 20200331200906_13000.txt
+2020-04-12 12:46:16------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 15000
+2020-04-12 12:46:16------start converting 1000 queries from json to text file 20200331200906_14000.txt
+2020-04-12 12:46:18------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 16000
+2020-04-12 12:46:19------start converting 1000 queries from json to text file 20200331200906_15000.txt
+2020-04-12 12:46:21------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 17000
+2020-04-12 12:46:21------start converting 1000 queries from json to text file 20200331200906_16000.txt
+2020-04-12 12:46:23------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 18000
+2020-04-12 12:46:24------start converting 1000 queries from json to text file 20200331200906_17000.txt
+2020-04-12 12:46:26------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 19000
+2020-04-12 12:46:27------start converting 1000 queries from json to text file 20200331200906_18000.txt
+2020-04-12 12:46:28------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 20000
+2020-04-12 12:46:29------start converting 1000 queries from json to text file 20200331200906_19000.txt
+2020-04-12 12:46:31------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 21000
+2020-04-12 12:46:32------start converting 1000 queries from json to text file 20200331200906_20000.txt
+2020-04-12 12:46:33------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 22000
+2020-04-12 12:46:34------start converting 1000 queries from json to text file 20200331200906_21000.txt
+2020-04-12 12:46:36------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 23000
+2020-04-12 12:46:37------start converting 1000 queries from json to text file 20200331200906_22000.txt
+2020-04-12 12:46:39------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 24000
+2020-04-12 12:46:39------start converting 1000 queries from json to text file 20200331200906_23000.txt
+2020-04-12 12:46:41------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 25000
+2020-04-12 12:46:42------start converting 1000 queries from json to text file 20200331200906_24000.txt
+2020-04-12 12:46:44------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 26000
+2020-04-12 12:46:45------start converting 1000 queries from json to text file 20200331200906_25000.txt
+2020-04-12 12:46:47------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 27000
+2020-04-12 12:46:47------start converting 1000 queries from json to text file 20200331200906_26000.txt
+2020-04-12 12:46:49------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 28000
+2020-04-12 12:46:50------start converting 1000 queries from json to text file 20200331200906_27000.txt
+2020-04-12 12:46:52------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 29000
+2020-04-12 12:46:53------start converting 1000 queries from json to text file 20200331200906_28000.txt
+2020-04-12 12:46:55------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 30000
+2020-04-12 12:46:56------start converting 1000 queries from json to text file 20200331200906_29000.txt
+2020-04-12 12:46:58------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 31000
+2020-04-12 12:46:58------start converting 1000 queries from json to text file 20200331200906_30000.txt
+2020-04-12 12:47:01------start converting 1000 queries from json to text file 20200331200906_31000.txt
+2020-04-12 13:06:18------start uploading text file ./stg/20200331200906_4000.txt to HDFS
+2020-04-12 13:06:29------start uploading text file ./stg/20200331200906_1000.txt to HDFS
+2020-04-12 13:06:35------start uploading text file ./stg/20200331200906_0.txt to HDFS
+2020-04-12 13:06:48------start uploading text file ./stg/20200331200906_2000.txt to HDFS
+2020-04-12 13:06:53------start uploading text file ./stg/20200331200906_3000.txt to HDFS
+2020-04-12 13:07:13------start uploading text file ./stg/20200331200906_5000.txt to HDFS
+2020-04-12 13:07:20------start uploading text file ./stg/20200331200906_9000.txt to HDFS
+2020-04-12 13:07:22------start uploading text file ./stg/20200331200906_8000.txt to HDFS
+2020-04-12 13:07:22------start uploading text file ./stg/20200331200906_7000.txt to HDFS
+2020-04-12 13:07:35------start uploading text file ./stg/20200331200906_6000.txt to HDFS
+2020-04-12 13:07:54------start uploading text file ./stg/20200331200906_12000.txt to HDFS
+2020-04-12 13:07:54------start uploading text file ./stg/20200331200906_17000.txt to HDFS
+2020-04-12 13:07:57------start uploading text file ./stg/20200331200906_10000.txt to HDFS
+2020-04-12 13:08:02------start uploading text file ./stg/20200331200906_15000.txt to HDFS
+2020-04-12 13:08:04------start uploading text file ./stg/20200331200906_16000.txt to HDFS
+2020-04-12 13:08:04------start uploading text file ./stg/20200331200906_14000.txt to HDFS
+2020-04-12 13:08:05------start uploading text file ./stg/20200331200906_11000.txt to HDFS
+2020-04-12 13:08:13------start uploading text file ./stg/20200331200906_13000.txt to HDFS
+2020-04-12 13:08:26------start uploading text file ./stg/20200331200906_20000.txt to HDFS
+2020-04-12 13:08:27------start uploading text file ./stg/20200331200906_18000.txt to HDFS
+2020-04-12 13:08:27------start uploading text file ./stg/20200331200906_24000.txt to HDFS
+2020-04-12 13:08:28------start uploading text file ./stg/20200331200906_19000.txt to HDFS
+2020-04-12 13:08:31------start uploading text file ./stg/20200331200906_21000.txt to HDFS
+2020-04-12 13:08:33------start uploading text file ./stg/20200331200906_22000.txt to HDFS
+2020-04-12 13:08:34------start uploading text file ./stg/20200331200906_29000.txt to HDFS
+2020-04-12 13:08:36------start uploading text file ./stg/20200331200906_25000.txt to HDFS
+2020-04-12 13:08:37------start uploading text file ./stg/20200331200906_23000.txt to HDFS
+2020-04-12 13:08:41------start uploading text file ./stg/20200331200906_26000.txt to HDFS
+2020-04-12 13:08:42------start uploading text file ./stg/20200331200906_27000.txt to HDFS
+2020-04-12 13:08:43------start uploading text file ./stg/20200331200906_28000.txt to HDFS
+2020-04-12 13:08:45------start uploading text file ./stg/20200331200906_30000.txt to HDFS
+2020-04-12 13:08:46------start uploading text file ./stg/20200331200906_31000.txt to HDFS
+2020-04-12 13:08:50------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 32000
+2020-04-12 13:08:52------start getting json file from 2020-03-31T06:09:06Z to 2020-03-31T07:09:06Z offset 33000
+2020-04-12 13:08:53------start converting 344 queries from json to text file 20200331200906_32000.txt
+2020-04-12 13:08:55------start converting 0 queries from json to text file 20200331200906_33000.txt
+2020-04-12 13:09:58------start uploading text file ./stg/20200331200906_32000.txt to HDFS
+2020-04-12 13:10:01------load from staging into mquery
+2020-04-12 13:10:02------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 0
+2020-04-12 13:10:05------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 1000
+2020-04-12 13:10:05------start converting 1000 queries from json to text file 20200331210906_0.txt
+2020-04-12 13:10:07------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 2000
+2020-04-12 13:10:07------start converting 1000 queries from json to text file 20200331210906_1000.txt
+2020-04-12 13:10:09------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 3000
+2020-04-12 13:10:09------start converting 1000 queries from json to text file 20200331210906_2000.txt
+2020-04-12 13:10:11------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 4000
+2020-04-12 13:10:11------start converting 1000 queries from json to text file 20200331210906_3000.txt
+2020-04-12 13:10:13------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 5000
+2020-04-12 13:10:13------start converting 1000 queries from json to text file 20200331210906_4000.txt
+2020-04-12 13:10:15------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 6000
+2020-04-12 13:10:15------start converting 1000 queries from json to text file 20200331210906_5000.txt
+2020-04-12 13:10:17------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 7000
+2020-04-12 13:10:18------start converting 1000 queries from json to text file 20200331210906_6000.txt
+2020-04-12 13:10:19------start getting json file from 2020-03-31T07:09:06Z to 2020-03-31T08:09:06Z offset 8000
+2020-04-12 13:10:19------start converting 177 queries from json to text file 20200331210906_7000.txt
+2020-04-12 13:10:22------start converting 0 queries from json to text file 20200331210906_8000.txt
+2020-04-12 13:11:05------start uploading text file ./stg/20200331210906_7000.txt to HDFS
+2020-04-12 13:14:27------start uploading text file ./stg/20200331210906_6000.txt to HDFS
+2020-04-12 13:14:35------start uploading text file ./stg/20200331210906_5000.txt to HDFS
+2020-04-12 13:14:39------start uploading text file ./stg/20200331210906_3000.txt to HDFS
+2020-04-12 13:14:40------start uploading text file ./stg/20200331210906_2000.txt to HDFS
+2020-04-12 13:14:46------start uploading text file ./stg/20200331210906_1000.txt to HDFS
+2020-04-12 13:14:48------start uploading text file ./stg/20200331210906_4000.txt to HDFS
+2020-04-12 13:15:08------start uploading text file ./stg/20200331210906_0.txt to HDFS
+2020-04-12 13:15:11------load from staging into mquery
+2020-04-12 13:15:12------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 0
+2020-04-12 13:15:14------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 1000
+2020-04-12 13:15:14------start converting 1000 queries from json to text file 20200331220906_0.txt
+2020-04-12 13:15:16------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 2000
+2020-04-12 13:15:16------start converting 1000 queries from json to text file 20200331220906_1000.txt
+2020-04-12 13:15:17------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 3000
+2020-04-12 13:15:17------start converting 1000 queries from json to text file 20200331220906_2000.txt
+2020-04-12 13:15:19------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 4000
+2020-04-12 13:15:19------start converting 1000 queries from json to text file 20200331220906_3000.txt
+2020-04-12 13:15:21------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 5000
+2020-04-12 13:15:21------start converting 1000 queries from json to text file 20200331220906_4000.txt
+2020-04-12 13:15:23------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 6000
+2020-04-12 13:15:23------start converting 1000 queries from json to text file 20200331220906_5000.txt
+2020-04-12 13:15:24------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 7000
+2020-04-12 13:15:25------start converting 1000 queries from json to text file 20200331220906_6000.txt
+2020-04-12 13:15:26------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 8000
+2020-04-12 13:15:27------start converting 1000 queries from json to text file 20200331220906_7000.txt
+2020-04-12 13:15:28------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 9000
+2020-04-12 13:15:28------start converting 1000 queries from json to text file 20200331220906_8000.txt
+2020-04-12 13:15:30------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 10000
+2020-04-12 13:15:31------start converting 1000 queries from json to text file 20200331220906_9000.txt
+2020-04-12 13:15:32------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 11000
+2020-04-12 13:15:32------start converting 1000 queries from json to text file 20200331220906_10000.txt
+2020-04-12 13:15:34------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 12000
+2020-04-12 13:15:34------start converting 1000 queries from json to text file 20200331220906_11000.txt
+2020-04-12 13:15:36------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 13000
+2020-04-12 13:15:36------start converting 1000 queries from json to text file 20200331220906_12000.txt
+2020-04-12 13:15:37------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 14000
+2020-04-12 13:15:38------start converting 1000 queries from json to text file 20200331220906_13000.txt
+2020-04-12 13:15:39------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 15000
+2020-04-12 13:15:40------start converting 1000 queries from json to text file 20200331220906_14000.txt
+2020-04-12 13:15:41------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 16000
+2020-04-12 13:15:42------start converting 1000 queries from json to text file 20200331220906_15000.txt
+2020-04-12 13:15:43------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 17000
+2020-04-12 13:15:44------start converting 1000 queries from json to text file 20200331220906_16000.txt
+2020-04-12 13:15:45------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 18000
+2020-04-12 13:15:46------start converting 1000 queries from json to text file 20200331220906_17000.txt
+2020-04-12 13:15:47------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 19000
+2020-04-12 13:15:48------start converting 1000 queries from json to text file 20200331220906_18000.txt
+2020-04-12 13:15:49------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 20000
+2020-04-12 13:15:50------start converting 1000 queries from json to text file 20200331220906_19000.txt
+2020-04-12 13:15:51------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 21000
+2020-04-12 13:15:52------start converting 1000 queries from json to text file 20200331220906_20000.txt
+2020-04-12 13:15:53------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 22000
+2020-04-12 13:15:54------start converting 1000 queries from json to text file 20200331220906_21000.txt
+2020-04-12 13:15:55------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 23000
+2020-04-12 13:15:55------start converting 1000 queries from json to text file 20200331220906_22000.txt
+2020-04-12 13:15:57------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 24000
+2020-04-12 13:15:57------start converting 1000 queries from json to text file 20200331220906_23000.txt
+2020-04-12 13:15:59------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 25000
+2020-04-12 13:16:00------start converting 1000 queries from json to text file 20200331220906_24000.txt
+2020-04-12 13:16:01------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 26000
+2020-04-12 13:16:02------start converting 1000 queries from json to text file 20200331220906_25000.txt
+2020-04-12 13:16:03------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 27000
+2020-04-12 13:16:04------start converting 1000 queries from json to text file 20200331220906_26000.txt
+2020-04-12 13:16:05------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 28000
+2020-04-12 13:16:06------start converting 1000 queries from json to text file 20200331220906_27000.txt
+2020-04-12 13:16:07------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 29000
+2020-04-12 13:16:08------start converting 1000 queries from json to text file 20200331220906_28000.txt
+2020-04-12 13:16:09------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 30000
+2020-04-12 13:16:10------start converting 1000 queries from json to text file 20200331220906_29000.txt
+2020-04-12 13:16:11------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 31000
+2020-04-12 13:16:12------start converting 1000 queries from json to text file 20200331220906_30000.txt
+2020-04-12 13:16:14------start converting 1000 queries from json to text file 20200331220906_31000.txt
+2020-04-12 13:36:03------start uploading text file ./stg/20200331220906_1000.txt to HDFS
+2020-04-12 13:36:06------start uploading text file ./stg/20200331220906_2000.txt to HDFS
+2020-04-12 13:36:08------start uploading text file ./stg/20200331220906_3000.txt to HDFS
+2020-04-12 13:36:25------start uploading text file ./stg/20200331220906_0.txt to HDFS
+2020-04-12 13:36:30------start uploading text file ./stg/20200331220906_6000.txt to HDFS
+2020-04-12 13:36:32------start uploading text file ./stg/20200331220906_7000.txt to HDFS
+2020-04-12 13:36:36------start uploading text file ./stg/20200331220906_4000.txt to HDFS
+2020-04-12 13:36:44------start uploading text file ./stg/20200331220906_5000.txt to HDFS
+2020-04-12 13:36:50------start uploading text file ./stg/20200331220906_8000.txt to HDFS
+2020-04-12 13:36:51------start uploading text file ./stg/20200331220906_9000.txt to HDFS
+2020-04-12 13:37:15------start uploading text file ./stg/20200331220906_10000.txt to HDFS
+2020-04-12 13:37:16------start uploading text file ./stg/20200331220906_21000.txt to HDFS
+2020-04-12 13:37:19------start uploading text file ./stg/20200331220906_11000.txt to HDFS
+2020-04-12 13:37:21------start uploading text file ./stg/20200331220906_12000.txt to HDFS
+2020-04-12 13:37:22------start uploading text file ./stg/20200331220906_16000.txt to HDFS
+2020-04-12 13:37:26------start uploading text file ./stg/20200331220906_19000.txt to HDFS
+2020-04-12 13:37:28------start uploading text file ./stg/20200331220906_13000.txt to HDFS
+2020-04-12 13:37:29------start uploading text file ./stg/20200331220906_15000.txt to HDFS
+2020-04-12 13:37:30------start uploading text file ./stg/20200331220906_20000.txt to HDFS
+2020-04-12 13:37:32------start uploading text file ./stg/20200331220906_14000.txt to HDFS
+2020-04-12 13:37:40------start uploading text file ./stg/20200331220906_17000.txt to HDFS
+2020-04-12 13:37:43------start uploading text file ./stg/20200331220906_18000.txt to HDFS
+2020-04-12 13:37:47------start uploading text file ./stg/20200331220906_24000.txt to HDFS
+2020-04-12 13:37:47------start uploading text file ./stg/20200331220906_28000.txt to HDFS
+2020-04-12 13:37:47------start uploading text file ./stg/20200331220906_31000.txt to HDFS
+2020-04-12 13:37:48------start uploading text file ./stg/20200331220906_22000.txt to HDFS
+2020-04-12 13:37:50------start uploading text file ./stg/20200331220906_23000.txt to HDFS
+2020-04-12 13:37:53------start uploading text file ./stg/20200331220906_25000.txt to HDFS
+2020-04-12 13:37:54------start uploading text file ./stg/20200331220906_27000.txt to HDFS
+2020-04-12 13:37:55------start uploading text file ./stg/20200331220906_26000.txt to HDFS
+2020-04-12 13:37:55------start uploading text file ./stg/20200331220906_29000.txt to HDFS
+2020-04-12 13:37:59------start uploading text file ./stg/20200331220906_30000.txt to HDFS
+2020-04-12 13:38:02------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 32000
+2020-04-12 13:38:05------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 33000
+2020-04-12 13:38:05------start converting 1000 queries from json to text file 20200331220906_32000.txt
+2020-04-12 13:38:07------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 34000
+2020-04-12 13:38:07------start converting 1000 queries from json to text file 20200331220906_33000.txt
+2020-04-12 13:38:09------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 35000
+2020-04-12 13:38:09------start converting 1000 queries from json to text file 20200331220906_34000.txt
+2020-04-12 13:38:11------start getting json file from 2020-03-31T08:09:06Z to 2020-03-31T09:09:06Z offset 36000
+2020-04-12 13:38:11------start converting 50 queries from json to text file 20200331220906_35000.txt
+2020-04-12 13:38:13------start converting 0 queries from json to text file 20200331220906_36000.txt
+2020-04-12 13:38:22------start uploading text file ./stg/20200331220906_35000.txt to HDFS
+2020-04-12 13:41:33------start uploading text file ./stg/20200331220906_32000.txt to HDFS
+2020-04-12 13:41:36------start uploading text file ./stg/20200331220906_33000.txt to HDFS
+2020-04-12 13:41:38------start uploading text file ./stg/20200331220906_34000.txt to HDFS
+2020-04-12 13:41:41------load from staging into mquery
+2020-04-12 13:41:43------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 0
+2020-04-12 13:41:44------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 1000
+2020-04-12 13:41:44------start converting 1000 queries from json to text file 20200331230906_0.txt
+2020-04-12 13:41:46------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 2000
+2020-04-12 13:41:46------start converting 1000 queries from json to text file 20200331230906_1000.txt
+2020-04-12 13:41:47------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 3000
+2020-04-12 13:41:47------start converting 1000 queries from json to text file 20200331230906_2000.txt
+2020-04-12 13:41:48------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 4000
+2020-04-12 13:41:48------start converting 1000 queries from json to text file 20200331230906_3000.txt
+2020-04-12 13:41:50------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 5000
+2020-04-12 13:41:50------start converting 1000 queries from json to text file 20200331230906_4000.txt
+2020-04-12 13:41:51------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 6000
+2020-04-12 13:41:51------start converting 1000 queries from json to text file 20200331230906_5000.txt
+2020-04-12 13:41:52------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 7000
+2020-04-12 13:41:53------start converting 1000 queries from json to text file 20200331230906_6000.txt
+2020-04-12 13:41:54------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 8000
+2020-04-12 13:41:54------start converting 1000 queries from json to text file 20200331230906_7000.txt
+2020-04-12 13:41:55------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 9000
+2020-04-12 13:41:56------start converting 1000 queries from json to text file 20200331230906_8000.txt
+2020-04-12 13:41:57------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 10000
+2020-04-12 13:41:57------start converting 1000 queries from json to text file 20200331230906_9000.txt
+2020-04-12 13:41:58------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 11000
+2020-04-12 13:41:58------start converting 1000 queries from json to text file 20200331230906_10000.txt
+2020-04-12 13:41:59------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 12000
+2020-04-12 13:42:00------start converting 1000 queries from json to text file 20200331230906_11000.txt
+2020-04-12 13:42:01------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 13000
+2020-04-12 13:42:01------start converting 1000 queries from json to text file 20200331230906_12000.txt
+2020-04-12 13:42:02------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 14000
+2020-04-12 13:42:03------start converting 1000 queries from json to text file 20200331230906_13000.txt
+2020-04-12 13:42:04------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 15000
+2020-04-12 13:42:04------start converting 1000 queries from json to text file 20200331230906_14000.txt
+2020-04-12 13:42:05------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 16000
+2020-04-12 13:42:06------start converting 1000 queries from json to text file 20200331230906_15000.txt
+2020-04-12 13:42:07------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 17000
+2020-04-12 13:42:07------start converting 1000 queries from json to text file 20200331230906_16000.txt
+2020-04-12 13:42:08------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 18000
+2020-04-12 13:42:09------start converting 1000 queries from json to text file 20200331230906_17000.txt
+2020-04-12 13:42:10------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 19000
+2020-04-12 13:42:11------start converting 1000 queries from json to text file 20200331230906_18000.txt
+2020-04-12 13:42:11------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 20000
+2020-04-12 13:42:12------start converting 1000 queries from json to text file 20200331230906_19000.txt
+2020-04-12 13:42:13------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 21000
+2020-04-12 13:42:14------start converting 1000 queries from json to text file 20200331230906_20000.txt
+2020-04-12 13:42:15------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 22000
+2020-04-12 13:42:16------start converting 1000 queries from json to text file 20200331230906_21000.txt
+2020-04-12 13:42:17------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 23000
+2020-04-12 13:42:17------start converting 1000 queries from json to text file 20200331230906_22000.txt
+2020-04-12 13:42:18------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 24000
+2020-04-12 13:42:19------start converting 1000 queries from json to text file 20200331230906_23000.txt
+2020-04-12 13:42:20------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 25000
+2020-04-12 13:42:21------start converting 1000 queries from json to text file 20200331230906_24000.txt
+2020-04-12 13:42:21------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 26000
+2020-04-12 13:42:22------start converting 1000 queries from json to text file 20200331230906_25000.txt
+2020-04-12 13:42:23------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 27000
+2020-04-12 13:42:24------start converting 1000 queries from json to text file 20200331230906_26000.txt
+2020-04-12 13:42:25------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 28000
+2020-04-12 13:42:26------start converting 1000 queries from json to text file 20200331230906_27000.txt
+2020-04-12 13:42:27------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 29000
+2020-04-12 13:42:27------start converting 1000 queries from json to text file 20200331230906_28000.txt
+2020-04-12 13:42:29------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 30000
+2020-04-12 13:42:29------start converting 1000 queries from json to text file 20200331230906_29000.txt
+2020-04-12 13:42:30------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 31000
+2020-04-12 13:42:31------start converting 1000 queries from json to text file 20200331230906_30000.txt
+2020-04-12 13:42:33------start converting 1000 queries from json to text file 20200331230906_31000.txt
+2020-04-12 14:02:34------start uploading text file ./stg/20200331230906_3000.txt to HDFS
+2020-04-12 14:02:45------start uploading text file ./stg/20200331230906_2000.txt to HDFS
+2020-04-12 14:03:02------start uploading text file ./stg/20200331230906_1000.txt to HDFS
+2020-04-12 14:03:19------start uploading text file ./stg/20200331230906_8000.txt to HDFS
+2020-04-12 14:03:21------start uploading text file ./stg/20200331230906_5000.txt to HDFS
+2020-04-12 14:03:23------start uploading text file ./stg/20200331230906_0.txt to HDFS
+2020-04-12 14:03:34------start uploading text file ./stg/20200331230906_10000.txt to HDFS
+2020-04-12 14:03:34------start uploading text file ./stg/20200331230906_7000.txt to HDFS
+2020-04-12 14:03:35------start uploading text file ./stg/20200331230906_4000.txt to HDFS
+2020-04-12 14:03:39------start uploading text file ./stg/20200331230906_6000.txt to HDFS
+2020-04-12 14:03:49------start uploading text file ./stg/20200331230906_9000.txt to HDFS
+2020-04-12 14:03:51------start uploading text file ./stg/20200331230906_21000.txt to HDFS
+2020-04-12 14:04:05------start uploading text file ./stg/20200331230906_17000.txt to HDFS
+2020-04-12 14:04:05------start uploading text file ./stg/20200331230906_11000.txt to HDFS
+2020-04-12 14:04:06------start uploading text file ./stg/20200331230906_13000.txt to HDFS
+2020-04-12 14:04:07------start uploading text file ./stg/20200331230906_20000.txt to HDFS
+2020-04-12 14:04:08------start uploading text file ./stg/20200331230906_28000.txt to HDFS
+2020-04-12 14:04:10------start uploading text file ./stg/20200331230906_12000.txt to HDFS
+2020-04-12 14:04:16------start uploading text file ./stg/20200331230906_14000.txt to HDFS
+2020-04-12 14:04:17------start uploading text file ./stg/20200331230906_16000.txt to HDFS
+2020-04-12 14:04:17------start uploading text file ./stg/20200331230906_26000.txt to HDFS
+2020-04-12 14:04:19------start uploading text file ./stg/20200331230906_23000.txt to HDFS
+2020-04-12 14:04:20------start uploading text file ./stg/20200331230906_15000.txt to HDFS
+2020-04-12 14:04:22------start uploading text file ./stg/20200331230906_27000.txt to HDFS
+2020-04-12 14:04:25------start uploading text file ./stg/20200331230906_25000.txt to HDFS
+2020-04-12 14:04:27------start uploading text file ./stg/20200331230906_18000.txt to HDFS
+2020-04-12 14:04:27------start uploading text file ./stg/20200331230906_19000.txt to HDFS
+2020-04-12 14:04:28------start uploading text file ./stg/20200331230906_22000.txt to HDFS
+2020-04-12 14:04:32------start uploading text file ./stg/20200331230906_24000.txt to HDFS
+2020-04-12 14:04:33------start uploading text file ./stg/20200331230906_31000.txt to HDFS
+2020-04-12 14:04:35------start uploading text file ./stg/20200331230906_29000.txt to HDFS
+2020-04-12 14:04:35------start uploading text file ./stg/20200331230906_30000.txt to HDFS
+2020-04-12 14:04:39------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 32000
+2020-04-12 14:04:41------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 33000
+2020-04-12 14:04:41------start converting 1000 queries from json to text file 20200331230906_32000.txt
+2020-04-12 14:04:43------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 34000
+2020-04-12 14:04:43------start converting 1000 queries from json to text file 20200331230906_33000.txt
+2020-04-12 14:04:45------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 35000
+2020-04-12 14:04:45------start converting 1000 queries from json to text file 20200331230906_34000.txt
+2020-04-12 14:04:46------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 36000
+2020-04-12 14:04:46------start converting 1000 queries from json to text file 20200331230906_35000.txt
+2020-04-12 14:04:48------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 37000
+2020-04-12 14:04:48------start converting 1000 queries from json to text file 20200331230906_36000.txt
+2020-04-12 14:04:50------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 38000
+2020-04-12 14:04:50------start converting 1000 queries from json to text file 20200331230906_37000.txt
+2020-04-12 14:04:52------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 39000
+2020-04-12 14:04:52------start converting 1000 queries from json to text file 20200331230906_38000.txt
+2020-04-12 14:04:53------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 40000
+2020-04-12 14:04:54------start converting 1000 queries from json to text file 20200331230906_39000.txt
+2020-04-12 14:04:55------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 41000
+2020-04-12 14:04:55------start converting 1000 queries from json to text file 20200331230906_40000.txt
+2020-04-12 14:04:57------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 42000
+2020-04-12 14:04:57------start converting 1000 queries from json to text file 20200331230906_41000.txt
+2020-04-12 14:04:58------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 43000
+2020-04-12 14:04:59------start converting 1000 queries from json to text file 20200331230906_42000.txt
+2020-04-12 14:05:00------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 44000
+2020-04-12 14:05:01------start converting 1000 queries from json to text file 20200331230906_43000.txt
+2020-04-12 14:05:02------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 45000
+2020-04-12 14:05:03------start converting 1000 queries from json to text file 20200331230906_44000.txt
+2020-04-12 14:05:04------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 46000
+2020-04-12 14:05:05------start converting 1000 queries from json to text file 20200331230906_45000.txt
+2020-04-12 14:05:06------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 47000
+2020-04-12 14:05:07------start converting 1000 queries from json to text file 20200331230906_46000.txt
+2020-04-12 14:05:08------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 48000
+2020-04-12 14:05:08------start converting 1000 queries from json to text file 20200331230906_47000.txt
+2020-04-12 14:05:10------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 49000
+2020-04-12 14:05:10------start converting 1000 queries from json to text file 20200331230906_48000.txt
+2020-04-12 14:05:12------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 50000
+2020-04-12 14:05:12------start converting 1000 queries from json to text file 20200331230906_49000.txt
+2020-04-12 14:05:14------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 51000
+2020-04-12 14:05:15------start converting 1000 queries from json to text file 20200331230906_50000.txt
+2020-04-12 14:05:16------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 52000
+2020-04-12 14:05:17------start converting 1000 queries from json to text file 20200331230906_51000.txt
+2020-04-12 14:05:18------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 53000
+2020-04-12 14:05:19------start converting 1000 queries from json to text file 20200331230906_52000.txt
+2020-04-12 14:05:20------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 54000
+2020-04-12 14:05:21------start converting 1000 queries from json to text file 20200331230906_53000.txt
+2020-04-12 14:05:22------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 55000
+2020-04-12 14:05:23------start converting 1000 queries from json to text file 20200331230906_54000.txt
+2020-04-12 14:05:24------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 56000
+2020-04-12 14:05:25------start converting 1000 queries from json to text file 20200331230906_55000.txt
+2020-04-12 14:05:26------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 57000
+2020-04-12 14:05:27------start converting 1000 queries from json to text file 20200331230906_56000.txt
+2020-04-12 14:05:28------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 58000
+2020-04-12 14:05:29------start converting 1000 queries from json to text file 20200331230906_57000.txt
+2020-04-12 14:05:30------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 59000
+2020-04-12 14:05:31------start converting 1000 queries from json to text file 20200331230906_58000.txt
+2020-04-12 14:05:32------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 60000
+2020-04-12 14:05:33------start converting 1000 queries from json to text file 20200331230906_59000.txt
+2020-04-12 14:05:34------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 61000
+2020-04-12 14:05:35------start converting 1000 queries from json to text file 20200331230906_60000.txt
+2020-04-12 14:05:37------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 62000
+2020-04-12 14:05:37------start converting 1000 queries from json to text file 20200331230906_61000.txt
+2020-04-12 14:05:39------start getting json file from 2020-03-31T09:09:06Z to 2020-03-31T10:09:06Z offset 63000
+2020-04-12 14:05:40------start converting 1000 queries from json to text file 20200331230906_62000.txt
+2020-04-12 14:05:42------start converting 1000 queries from json to text file 20200331230906_63000.txt
+2020-04-12 14:25:20------start uploading text file ./stg/20200331230906_32000.txt to HDFS
+2020-04-12 14:25:34------start uploading text file ./stg/20200331230906_33000.txt to HDFS
+2020-04-12 14:25:39------start uploading text file ./stg/20200331230906_35000.txt to HDFS
+2020-04-12 14:25:41------start uploading text file ./stg/20200331230906_34000.txt to HDFS
+2020-04-12 14:25:56------start uploading text file ./stg/20200331230906_39000.txt to HDFS
+2020-04-12 14:25:59------start uploading text file ./stg/20200331230906_36000.txt to HDFS
+2020-04-12 14:26:05------start uploading text file ./stg/20200331230906_38000.txt to HDFS
+2020-04-12 14:26:10------start uploading text file ./stg/20200331230906_40000.txt to HDFS
+2020-04-12 14:26:15------start uploading text file ./stg/20200331230906_37000.txt to HDFS
+2020-04-12 14:26:30------start uploading text file ./stg/20200331230906_41000.txt to HDFS
+2020-04-12 14:26:32------start uploading text file ./stg/20200331230906_45000.txt to HDFS
+2020-04-12 14:26:33------start uploading text file ./stg/20200331230906_44000.txt to HDFS
+2020-04-12 14:26:36------start uploading text file ./stg/20200331230906_42000.txt to HDFS
+2020-04-12 14:26:37------start uploading text file ./stg/20200331230906_43000.txt to HDFS
+2020-04-12 14:26:38------start uploading text file ./stg/20200331230906_46000.txt to HDFS
+2020-04-12 14:26:51------start uploading text file ./stg/20200331230906_47000.txt to HDFS
+2020-04-12 14:26:53------start uploading text file ./stg/20200331230906_57000.txt to HDFS
+2020-04-12 14:27:00------start uploading text file ./stg/20200331230906_58000.txt to HDFS
+2020-04-12 14:27:01------start uploading text file ./stg/20200331230906_49000.txt to HDFS
+2020-04-12 14:27:01------start uploading text file ./stg/20200331230906_48000.txt to HDFS
+2020-04-12 14:27:04------start uploading text file ./stg/20200331230906_54000.txt to HDFS
+2020-04-12 14:27:07------start uploading text file ./stg/20200331230906_50000.txt to HDFS
+2020-04-12 14:27:09------start uploading text file ./stg/20200331230906_53000.txt to HDFS
+2020-04-12 14:27:11------start uploading text file ./stg/20200331230906_51000.txt to HDFS
+2020-04-12 14:27:11------start uploading text file ./stg/20200331230906_52000.txt to HDFS
+2020-04-12 14:27:12------start uploading text file ./stg/20200331230906_62000.txt to HDFS
+2020-04-12 14:27:13------start uploading text file ./stg/20200331230906_63000.txt to HDFS
+2020-04-12 14:27:14------start uploading text file ./stg/20200331230906_56000.txt to HDFS
+2020-04-12 14:27:18------start uploading text file ./stg/20200331230906_61000.txt to HDFS
+2020-04-12 14:27:18------start uploading text file ./stg/20200331230906_55000.txt to HDFS
+2020-04-12 14:27:19------start uploading text file ./stg/20200331230906_59000.txt to HDFS
+2020-04-12 14:27:20------start uploading text file ./stg/20200331230906_60000.txt to HDFS

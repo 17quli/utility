@@ -1,0 +1,1 @@
+ssh $1 /home/ird0qal/osutil/load.sh

@@ -1,0 +1,30 @@
+create view lab_fcp_raw_restricted_access.dss_returns_keypoints_ir421
+as select 
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,
+z.return_status,
+z.form_version_no,
+z.number_of_error_items,
+z.`timestamp`,
+z.assessment_amount_604,
+z.fbt_to_pay_100462,
+z.category_a_1300,
+z.category_b_1301,
+z.category_c_1302,
+z.category_d_1303,
+z.required_for_edits_100459,
+z.required_for_edits_100460,
+z.tot_tax_value_of_bens_100461,
+z.fbt_rate_64_or_multi_100560,
+z.required_for_edits_100559,
+z.gst_on_fringe_benefits_1205
+ from lab_fcp_raw.returns_keypoints_ir421 z
+left outer join prod_raw.dss_special_clients_all sc
+on sc.ird_number= z.ird_number
+where nvl(sc.special_classification, 'STD')='STD'
+and nvl( sc.record_active_flag,'Y')='Y'
+and nvl(sc.record_deleted_flag, 'N') = 'N'
+;

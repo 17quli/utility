@@ -1,0 +1,4 @@
+alter table raw/jnl.app_tblnz_rtnslsoblobb
+add columns (
+fcurbalancebracketbased decimal(19,4),
+fdtmperioddeterminingbracket timestamp)

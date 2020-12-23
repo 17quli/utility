@@ -1,0 +1,28 @@
+CREATE TABLE ${var:target_db}.app_tblnz_rtnpropertysale (                                                                           
+flngDocKey INT,                                                                                                                     
+fblnBrightLineTest SMALLINT,                                                                                                        
+fstrPropertyTitleNumber VARCHAR(100),                                                                                               
+fstrAddressLine1 VARCHAR(120),                                                                                                      
+fstrAddressLine2 VARCHAR(120),                                                                                                      
+fstrSuburb VARCHAR(100),                                                                                                            
+fstrCity VARCHAR(100),                                                                                                              
+fstrPostCode VARCHAR(100),                                                                                                          
+fdtmDateOfPurchase TIMESTAMP,                                                                                                       
+fdtmDateOfSale TIMESTAMP,                                                                                                           
+fcurSalePrice DECIMAL(19,4),                                                                                                        
+fcurPurchasePrice DECIMAL(19,4),                                                                                                    
+fcurDeductibleCosts DECIMAL(19,4),                                                                                                  
+fcurTotalCosts DECIMAL(19,4),                                                                                                       
+fcurNetProfitLoss DECIMAL(19,4),                                                                                                    
+fdblPercentageOwnership DOUBLE,                                                                                                     
+fcurShareOfNetProfitLoss DECIMAL(19,4),                                                                                             
+fdtmWhen TIMESTAMP,                                                                                                                 
+fstrWho VARCHAR(20),                                                                                                                
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;                                                                                                               
+                           

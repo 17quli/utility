@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblnz_rtnmacamafdp (                                                                              
+flngDocKey INT,                                                                                                                     
+fcurFdpOpeningBalance DECIMAL(19,4),                                                                                                
+fcurFdpPaid DECIMAL(19,4),                                                                                                          
+fcurFdpCreditsRec DECIMAL(19,4),                                                                                                    
+fcurFdpTotalCredits DECIMAL(19,4),                                                                                                  
+fcurFdpCreditsPaid DECIMAL(19,4),                                                                                                   
+fcurFdpRefunded DECIMAL(19,4),                                                                                                      
+fcurFdpOtherDebits DECIMAL(19,4),                                                                                                   
+fcurFdpTotalDebits DECIMAL(19,4),                                                                                                   
+fcurFdpClosingBalance DECIMAL(19,4),                                                                                                
+fcurFdpImpPenaltyTax DECIMAL(19,4),                                                                                                 
+fcurFdpTotalPayable DECIMAL(19,4),                                                                                                  
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;

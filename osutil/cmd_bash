@@ -1,0 +1,1 @@
+ssh $1 "echo '/bin/bash' >>/home/ird0qal/.zshrc"

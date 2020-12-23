@@ -1,0 +1,8 @@
+target_db=prod_raw
+journal_db=prod_jnl
+source_db=prod_dw
+view_db_full=prod_raw_full_access
+view_db_restricted=prod_raw_restricted_access
+tdw_tbl_list="../tdw_tbl_list"
+environment=prod
+export environment journal_db target_db source_db view_db_full view_db_restricted tdw_tbl_list

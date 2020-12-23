@@ -1,0 +1,5 @@
+target_db=prod_raw
+source_db=lab_nzsr4_raw
+view_db_full=lab_nzsr4_raw_full_access
+view_db_restricted=lab_nzsr4_raw_restricted_access
+db_env=lab

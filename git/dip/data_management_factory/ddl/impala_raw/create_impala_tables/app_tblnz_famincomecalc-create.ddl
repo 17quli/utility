@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblnz_famincomecalc (                                                                             
+flngFAMEntitlementKey INT,                                                                                                          
+flngVer INT,                                                                                                                        
+flngVerLast INT,                                                                                                                    
+fintRelationshipPeriod SMALLINT,                                                                                                    
+fdtmStart TIMESTAMP,                                                                                                                
+fdtmStop TIMESTAMP,                                                                                                                 
+fcurIncome DECIMAL(19,4),                                                                                                           
+fcurChildSupportPaid DECIMAL(19,4),                                                                                                 
+fcurChildSupportReceived DECIMAL(19,4),                                                                                             
+fcurAdjustments DECIMAL(19,4),                                                                                                      
+fcurGrossed DECIMAL(19,4),                                                                                                          
+fblnActive SMALLINT,                                                                                                                
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET; 

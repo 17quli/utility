@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--XML Jobflow definition -->
+<!--This file has been generated with Process Manager. 
+    Modify at your own risk.  Changes may render the definition unusable.   
+    The definition format may change in future versions of Process Manager.    -->
+<!DOCTYPE JobFlowReq SYSTEM "JobFlowDef30.dtd"><JobFlowReq  DTDVersion="3.0"  MainEntry="irdrun:Sample_jobs_for_Testing"  EndBehaviour="FlowStop"  FlowStateMailWhen="None"  ExitCodeRule="FromSumOfItems"  ClientVersion="9.12"  Description=""  Exclusive="No"  APP_AUTH="8fU15PiJ4Q+/qtU7uqx/UT51QJqDL40KnT0prmXv7+Wu+Wy8PBFE7UX2krywpCAIlOiOChDRoOI="  Operation="Schedule" >
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblaccount_P2H2">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblaccount_P2H2_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblaccount_P2H2.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblcustomerstd_P2H2">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblcustomerstd_P2H2_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblcustomerstd_P2H2.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblid_P2H1">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblid_P2H1_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblid_P2H1.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblindicator_P2H1">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblindicator_P2H1_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblindicator_P2H1.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblnamerecord_P4">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblnamerecord_P4_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblnamerecord_P4.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblnz_custtaxresidency_P2H4">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblnz_custtaxresidency_P2H4_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblnz_custtaxresidency_P2H4.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblperiodbillitem_P2H2">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblperiodbillitem_P2H2_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblperiodbillitem_P2H2.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tbltransaction_P3">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tbltransaction_P3_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tbltransaction_P3.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:app_tblvisit_P2H1">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_app_tblvisit_P2H1_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/app_tblvisit_P2H1.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:dss_clients_P2H3">
+  <ExclusiveExec  Value="No"/>
+  <OnHold  Value="Yes"/>
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_dss_clients_P2H3_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/dss_clients_P2H3.sas"/>
+  <StderrOverride  Value="No"/>
+  <CreateStderr  Value="No"/>
+  <CreateStdout  Value="No"/>
+  <UserName  Value="irdrun"/>
+  <Rerunable  Value="No"/>
+  <StdoutOverride  Value="No"/>
+  <SubmissionCmd  Value="bsub"/>
+  <MinMaxCPU  Value="1,1"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:dss_customers_P2H3">
+  <ExclusiveExec  Value="No"/>
+  <OnHold  Value="Yes"/>
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_dss_customers_P2H3_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/dss_customers_P2H3.sas"/>
+  <StderrOverride  Value="No"/>
+  <CreateStderr  Value="No"/>
+  <CreateStdout  Value="No"/>
+  <UserName  Value="irdrun"/>
+  <Rerunable  Value="No"/>
+  <StdoutOverride  Value="No"/>
+  <SubmissionCmd  Value="bsub"/>
+  <MinMaxCPU  Value="1,1"/>
+</JobDef>
+<JobDef ExecutionType="lsf" Name="irdrun:Sample_jobs_for_Testing:frd_tblfrdactionresults_P1">
+  <JobCmdLine  Value="/sso/biconfig/940/Lev1/SASApp/BatchServer/sasbatch.sh -log /sso/biconfig/940/Lev1/Logs/Sample_jobs_for_Testing_frd_tblfrdactionresults_P1_#Y.#m.#d_#H.#M.#s.log  -batch -noterminal -logparm &quot;rollover=session&quot;  -sysin /sso/biconfig/940/Lev1/SASApp/SASEnvironment/SASCode/Jobs/frd_tblfrdactionresults_P1.sas"/>
+  <UserName  Value="irdrun"/>
+</JobDef>
+<JobFlowDef  Name="irdrun:Sample_jobs_for_Testing"><Events CombinationType="And"><Event GeneratorType="CalendarTime_v1"  ClientTZoffset="43200"  TimeZone="GMT+12:00"  TimeZoneType="3" >Wednesdays:6:00%1+Pacific/Auckland@Sys</Event></Events>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblaccount_P2H2" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblcustomerstd_P2H2" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblid_P2H1" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblindicator_P2H1" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblnamerecord_P4" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblnz_custtaxresidency_P2H4" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblperiodbillitem_P2H2" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tbltransaction_P3" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:app_tblvisit_P2H1" Description="null" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:dss_clients_P2H3" Description="" OnHold="Yes" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:dss_customers_P2H3" Description="" OnHold="Yes" ><Exceptions></Exceptions></ActivityDef>
+  <ActivityDef  Name=""  ImplementType="Job"  ImplementRefer="irdrun:Sample_jobs_for_Testing:frd_tblfrdactionresults_P1" Description="null" ><Exceptions></Exceptions></ActivityDef>
+</JobFlowDef>
+</JobFlowReq>

@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.dss_client_names AS
+SELECT z.IRD_NUMBER, z.LOCATION_NUMBER, z.CLIENT_NAME_TYPE, z.SEQUENCE_NUMBER, z.DATE_APPLIED, z.FIRST_NAMES, z.SURNAME, z.TITLE, z.ORGANISATION_NAME, z.DATE_CEASED, z.`TIMESTAMP`, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.dss_client_names z;

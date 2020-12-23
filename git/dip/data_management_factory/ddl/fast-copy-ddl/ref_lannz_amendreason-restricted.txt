@@ -1,0 +1,8 @@
+create view lab_fcp_raw_restricted_access.ref_lannz_amendreason
+as SELECT z.fstrlanguage,
+z.fstramendreason,
+z.fstrdecode1,
+z.fstrdecode2,
+z.fstrdecodeweb,
+z.fstrdescription
+FROM lab_fcp_raw.lannz_amendreason z;

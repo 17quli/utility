@@ -1,0 +1,22 @@
+create table ${var:target_db}.dss_addresses (
+ird_number int,
+location_number int,
+tax_type varchar(6),
+address_type varchar(2),
+main_address_indicator varchar(2),
+date_applied timestamp,
+address_line_1 varchar(60),
+address_line_2 varchar(60),
+address_line_3 varchar(60),
+post_code varchar(12),
+mesh_block int,
+address_status varchar(2),
+date_ceased timestamp,
+`timestamp` timestamp,
+record_effective_timestamp timestamp,
+record_expiry_timestamp timestamp,
+record_active_flag varchar(1),
+record_deleted_flag varchar(1),
+insert_object_run_key int,
+update_object_run_key int
+ ) stored as parquet;

@@ -1,0 +1,14 @@
+2020-06-09 10:29:52------start ./tbsrestore.sh prod_dw prod_raw prefix prod_raw_ suffix _20200608 tbllist t2.lst
+2020-06-09 10:29:57------75 tables or views
+2020-06-09 10:29:57------show create table
+2020-06-09 10:29:58------75 tables to be restored
+2020-06-09 10:29:58------drop table
+2020-06-09 10:30:16------create table
+2020-06-09 10:30:28------75 tables created
+2020-06-09 10:30:28------hdfs copy
+2020-06-09 10:54:44------complete hdfs copy
+2020-06-09 10:54:44------refresh table
+2020-06-09 11:01:32------75 tables refreshed
+2020-06-09 11:01:32------recover partitions
+2020-06-09 11:01:32------0 table partitions recovered
+2020-06-09 11:01:32------complete ./tbsrestore.sh prod_dw prod_raw

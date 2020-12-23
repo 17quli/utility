@@ -1,0 +1,1176 @@
+﻿/************************************************************************************************
+
+
+03072019 sdz - Create hive tables
+
+
+
+************************************************************************************************/
+--tblcustomer
+
+CREATE TABLE prod_raw.APP_tblCUSTOMER 
+(  flngCustomerKey INT,
+   flngVer INT,
+   flngVerLast INT,
+   fstrCustomerType VARCHAR(6),
+   fdtmCommence TIMESTAMP,
+   fdtmCease TIMESTAMP,
+   flngCustomerLevel INT,
+   flngDocKey INT,
+   flngFolderKey INT,
+   flngRefreshVer INT,
+   flngCustomerVersion INT,
+   flngWebVersion INT,
+   fdtmWebPublished TIMESTAMP,
+   fdtmCreated TIMESTAMP,
+   fstrWho VARCHAR(10),
+   fdtmWhen TIMESTAMP, 
+   HWM TIMESTAMP, 
+   record_effective_timestamp TIMESTAMP,  
+   record_expiry_timestamp TIMESTAMP,  
+   record_active_flag VARCHAR(1),  
+   record_deleted_flag VARCHAR(1),  
+   insert_object_run_key BIGINT,  
+   update_object_run_key BIGINT) STORED AS PARQUET;
+
+
+
+
+--tblcustomerstd
+CREATE TABLE prod_raw.APP_tblCustomerSTD 
+(FLNGDOCKEY INT,
+FDTMDOB TIMESTAMP,
+FDTMDOD TIMESTAMP,
+FSTRWHO VARCHAR(10),
+FDTMWHEN TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) STORED AS PARQUET;
+
+
+
+
+-- tblCustomerLevel
+CREATE TABLE prod_Raw.APP_tblCustomerLevel 
+( flngDocKey INT,
+ fstrCustomerLevel VARCHAR(6),
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP,  
+ record_effective_timestamp TIMESTAMP,  
+ record_expiry_timestamp TIMESTAMP,
+ record_active_flag VARCHAR(1),
+ record_deleted_flag VARCHAR(1), 
+ insert_object_run_key BIGINT,  
+ update_object_run_key BIGINT)
+ STORED AS PARQUET;
+
+
+--tblNameRecord
+CREATE TABLE prod_raw.app_tblNameRecord 
+( fi64NameKey BIGINT, 
+flngVer INT, 
+flngVerLast INT, 
+fdtmEffectiveFrom TIMESTAMP, 
+fdtmEffectiveTo TIMESTAMP, 
+fdtmSystemFrom TIMESTAMP, 
+fdtmSystemTo TIMESTAMP, 
+fstrSource VARCHAR(20), 
+flngCustomerKey INT, 
+fintProfileNumber SMALLINT, 
+fi64SourceKey BIGINT, 
+fstrNameType VARCHAR(20), 
+fstrDisplay VARCHAR(12), 
+fblnFormatted SMALLINT, 
+fstrLastName VARCHAR(50), 
+fintLastModifier SMALLINT, 
+fstrFirstName VARCHAR(50), 
+fintFirstModifier SMALLINT, 
+fstrMiddleName VARCHAR(50), 
+fintMiddleModifier SMALLINT, 
+fstrTitle VARCHAR(10), 
+fintTitleModifier SMALLINT, 
+fstrSuffix VARCHAR(10),
+fintSuffixModifier SMALLINT,
+fstrFreeFormatName VARCHAR(255), 
+fintFreeFormatModifier SMALLINT, 
+fstrAdditionalName VARCHAR(255), 
+fintAdditionalModifier SMALLINT, 
+fstrAdditionalName2 VARCHAR(255), 
+fintAdditionalModifier2 SMALLINT, 
+fstrListFormatName VARCHAR(255), 
+fi64ProtectedDataSource BIGINT, 
+flngCrmKey INT, fblnBlank SMALLINT, 
+fblnCurrent SMALLINT, 
+fblnActive SMALLINT, 
+fintProtectLevel SMALLINT, 
+fstrWho VARCHAR(10), 
+fdtmWhen TIMESTAMP, 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) STORED AS PARQUET;  
+
+
+  
+
+
+--tblAccount
+
+CREATE TABLE prod_raw.APP_tblACCOUNT
+ (flngAccountKey INT,
+ flngVer INT,
+ flngVerLast INT,
+ flngCustomerKey INT,
+ fintParentProfileNumber SMALLINT,
+ fintProfileNumber SMALLINT,
+ fstrAccountType VARCHAR(6),
+ fstrFiling VARCHAR(6),
+ fdtmCommence TIMESTAMP,
+ fdtmCease TIMESTAMP,
+ fstrStatus VARCHAR(30),
+ fstrClosureReason VARCHAR(30),
+ fblnMailForm SMALLINT,
+ flngDocKey INT,
+ flngFolderKey INT,
+ fdtmCreated TIMESTAMP,
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP,  
+ HWM TIMESTAMP, 
+ record_effective_timestamp TIMESTAMP,  
+ record_expiry_timestamp TIMESTAMP,  
+ record_active_flag VARCHAR(1), 
+ record_deleted_flag VARCHAR(1),  
+ insert_object_run_key BIGINT, 
+ update_object_run_key BIGINT) STORED AS PARQUET;
+
+
+
+
+--tblid
+
+CREATE TABLE prod_raw.app_tblID 
+(FLNGIDKEY INT,
+FLNGVER INT,
+FLNGCUSTOMERKEY INT,
+FSTRIDTYPE VARCHAR(6),
+FSTRID VARCHAR(30),
+FLNGACCOUNTKEY INT,
+FLNGVERLAST INT,
+FBLNVALIDATED SMALLINT,
+FBLNACTIVE SMALLINT,
+FINTPROFILENUMBER SMALLINT,
+FBLNDEFAULT SMALLINT,
+fdtmCommence TIMESTAMP,
+fdtmCease TIMESTAMP,
+flngImageKey INT,
+flngDocKey INT,
+flngCrmKey INT,
+fi64ProtectedDataSource BIGINT,
+fintProtectLevel SMALLINT,
+FSTRWHO VARCHAR(10),
+FDTMWHEN TIMESTAMP, 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) STORED AS PARQUET;
+
+
+
+
+--tblindicator
+CREATE TABLE prod_raw.APP_tblINDICATOR 
+(  
+FLNGINDICATORKEY INT,
+FLNGVER INT,
+FLNGVERLAST INT,
+FINTLEVEL SMALLINT,
+FLNGCUSTOMERKEY INT,
+FINTPROFILENUMBER SMALLINT,
+FLNGACCOUNTKEY INT,
+FSTRINDICATOR VARCHAR(6),
+FDTMCOMMENCE TIMESTAMP,
+FDTMFILINGPERIOD TIMESTAMP,
+FDTMFILINGPERIODTO TIMESTAMP,
+FCURAMOUNT DECIMAL(19,4),
+FDTMCEASE TIMESTAMP,
+FSTRREASON VARCHAR(6),
+FDTMCOMMENCE1 TIMESTAMP,
+FDTMCEASE1 TIMESTAMP,
+flngCrmKey INT,
+FSTRCOMMENT VARCHAR(255),
+FSTRUSER VARCHAR(10),
+flngDocKey INT,
+fblnActive SMALLINT,
+FSTRWHO VARCHAR(10),
+FDTMWHEN TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) STORED AS PARQUET;
+
+
+
+
+
+
+--tblnaics
+CREATE TABLE prod_raw.app_tblNAICS 
+(flngNAICSKey INT,
+ flngVer INT,
+ flngVerLast INT,
+ fstrNAICSVersion VARCHAR(12),
+ fstrNAICS VARCHAR(30),
+ fstrLevel1 VARCHAR(30),
+ fstrLevel2 VARCHAR(30),
+ fstrLevel3 VARCHAR(30),
+ fstrLevel4 VARCHAR(30),
+ fstrLevel5 VARCHAR(30),
+ fstrLevel6 VARCHAR(30),
+ flngCustomerKey INT,
+ fintProfileNumber SMALLINT,
+ flngAccountKey INT,
+ fdtmCommence TIMESTAMP,
+ fdtmCease TIMESTAMP,
+ fcurBusinessMakeup DECIMAL(19,4),
+ fblnDefault SMALLINT,
+ fblnActive SMALLINT,
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP, 
+ record_effective_timestamp TIMESTAMP,
+ record_expiry_timestamp TIMESTAMP,
+ record_active_flag VARCHAR(1),
+ record_deleted_flag VARCHAR(1),
+ insert_object_run_key BIGINT,
+ update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+
+--tblnz_accidgovr
+CREATE TABLE prod_raw.app_tblNZ_ACCIDGOVR 
+(flngDocKey INT,
+fstrIssuingCountry VARCHAR(3),
+fblnTranslationReceived SMALLINT,
+flngEntryNumber INT,fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP, 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+
+
+--tblNZ_AccIDGEdu
+CREATE TABLE prod_raw.app_tblnz_ACCIDGEDU 
+(
+flngDocKey INT,
+fstrEducationProvider VARCHAR(50),
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+--tblnz_cstcominfo
+
+CREATE TABLE prod_Raw.APP_tblCustomerInfo 
+( 
+flngCustomerKey INT,
+flngJointCustomerKey INT,
+blnPrime SMALLINT,
+fstrCustomerType VARCHAR(6),
+flngDocKey INT,
+flngFolderKey INT,
+fblnDefault SMALLINT,
+fintProfileNumber SMALLINT,
+fdtmCommence TIMESTAMP,
+fdtmCease TIMESTAMP,
+fdtmCreated TIMESTAMP,
+fi64NameKey BIGINT,
+fintNameKey SMALLINT,
+fstrDisplay VARCHAR(12),
+fblnFormatted SMALLINT,
+fstrNameType VARCHAR(20),
+fstrFamilyName VARCHAR(255),
+fstrMiddleName VARCHAR(50),
+fstrFirstName VARCHAR(50),
+fstrNameControl VARCHAR(10),
+fstrTitle VARCHAR(10),
+fstrSuffix VARCHAR(10),
+fstrFreeFormatName VARCHAR(255),
+fstrListFormatName VARCHAR(255),
+fstrAdditionalName VARCHAR(255),
+fstrAdditionalName2 VARCHAR(255),
+fi64AddressKey BIGINT,
+fintAddressKey SMALLINT,
+fstrAddressType VARCHAR(20),
+fstrStreet VARCHAR(255),
+fstrStreet2 VARCHAR(255),
+fstrUnitType VARCHAR(50),
+fstrUnit VARCHAR(30),
+fstrCity VARCHAR(100),
+fstrCounty VARCHAR(6),
+fstrState VARCHAR(6),
+fstrZip VARCHAR(30),
+fstrCountry VARCHAR(6),
+fstrAttention VARCHAR(255),
+fstrLocationCode VARCHAR(30),
+fstrUrbanization VARCHAR(50),
+fstrMunicipality VARCHAR(30),
+fstrDistrict VARCHAR(30),
+fstrSubDistrict VARCHAR(30),
+fstrSubProvince VARCHAR(50),
+fstrAddressDescription VARCHAR(255),
+fstrListFormatAddress VARCHAR(255),
+flngIDKey INT,fstrIDType VARCHAR(6),
+fstrID VARCHAR(30),
+fstrFormattedID VARCHAR(30),
+fstrDistrictOffice VARCHAR(6),
+fstrCollectDistrictOffice VARCHAR(6),
+fstrReviewType VARCHAR(6),
+fstrCustomerLevel VARCHAR(6),
+fi64ProtectedDataSource BIGINT,
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP, 
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) 
+STORED AS PARQUET;
+
+
+
+
+--tblnz_customerstd
+
+CREATE TABLE prod_raw.APP_tblNZ_CustomerStd 
+(  flngDocKey INT,
+   fstrCustomerSubTypeClass VARCHAR(6),
+   fstrCustomerSubType VARCHAR(6),
+   fstrCustomerSegment VARCHAR(50),
+   fstrSpecialFileType VARCHAR(6),
+   fblnSpecialTaxResidency SMALLINT,
+   fstrNonResidentType VARCHAR(50),
+   fstrCurrentTaxResidency VARCHAR(50),
+   fstrClosureReason VARCHAR(6),
+   fintSMSCountryCode SMALLINT,
+   fstrSMSAreaCode VARCHAR(5),
+   fstrSMSPhoneNumber VARCHAR(15),
+   fdtmIncomeBalanceDate TIMESTAMP,
+   fstrCustomerClass VARCHAR(6),
+   fstrWho VARCHAR(10),
+   fdtmWhen TIMESTAMP,  
+   record_effective_timestamp TIMESTAMP,  
+   record_expiry_timestamp TIMESTAMP,  
+   record_active_flag VARCHAR(1),  
+   record_deleted_flag VARCHAR(1),  
+   insert_object_run_key BIGINT,  
+   update_object_run_key BIGINT) 
+   STORED AS PARQUET;
+
+
+
+--tblnz_customertaxresidency
+CREATE TABLE prod_raw.app_tblnz_CUSTTAXRESIDENCY 
+(flngDocKey INT,
+fintSeq SMALLINT,
+fstrTaxResidency VARCHAR(50),
+fdtmResStart TIMESTAMP,
+fdtmResEnd TIMESTAMP,
+fblnIsFinancial SMALLINT,
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP, 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT )
+STORED AS PARQUET;
+
+
+
+
+--lancustomertype
+
+CREATE TABLE prod_raw.ref_lanCustomerType
+ (fstrLanguage VARCHAR(3),
+ fstrCustomerType VARCHAR(6),
+ fstrDecode1 VARCHAR(30),
+ fstrDecode2 VARCHAR(255),
+ fstrDecodeWeb VARCHAR(255),
+ FSTRDESCRIPTION VARCHAR(1000), 
+ record_effective_timestamp TIMESTAMP,
+ ecord_expiry_timestamp TIMESTAMP,
+ checksum VARCHAR(32),
+ record_active_flag VARCHAR(1), 
+ record_deleted_flag VARCHAR(1),
+ insert_object_run_key BIGINT,
+ update_object_run_key BIGINT ) 
+ STORED AS PARQUET;
+
+
+
+
+--lancustomerlevel
+
+CREATE TABLE prod_raw.ref_lanCustomerLevel 
+(FSTRLANGUAGE VARCHAR(3),
+FSTRCUSTOMERLEVEL VARCHAR(6),
+FSTRDECODE1 VARCHAR(30),
+FSTRDECODE2 VARCHAR(255),
+fstrDescription VARCHAR(1000), 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+checksum VARCHAR(32),
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+--lancustomersubtype
+
+CREATE TABLE prod_raw.ref_lanCustomerSubType 
+(fstrLanguage VARCHAR(3),
+ fstrCustomerSubType VARCHAR(6),
+ fstrDecode1 VARCHAR(30),
+ fstrDecode2 VARCHAR(255),
+ fstrDescription VARCHAR(1000),
+ fstrDecodeWeb VARCHAR(255), 
+ record_effective_timestamp TIMESTAMP,
+ record_expiry_timestamp TIMESTAMP,
+ checksum VARCHAR(32),
+ record_active_flag VARCHAR(1), 
+ record_deleted_flag VARCHAR(1),
+ insert_object_run_key BIGINT,
+ update_object_run_key BIGINT ) 
+ STORED AS PARQUET;
+
+
+
+
+--lannz_customerclass
+
+CREATE TABLE prod_raw.ref_lanNZ_CustomerClass 
+(fstrLanguage VARCHAR(3),
+fstrCustomerClass VARCHAR(6),
+fstrDecode1 VARCHAR(12),
+fstrDecode2 VARCHAR(30),
+fstrDescription VARCHAR(255), 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+checksum VARCHAR(32),
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+
+
+
+--Lannz_customersegments
+
+
+CREATE TABLE prod_raw.ref_lanNZ_CustomerSegments (
+fstrSegment VARCHAR(3),
+fstrLanguage VARCHAR(3),
+fstrDecode1 VARCHAR(30),
+fstrDecode2 VARCHAR(255),
+fstrDescription VARCHAR(1000), 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+checksum VARCHAR(32),
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) STORED AS PARQUET;
+
+
+
+--lanofficelocation
+CREATE TABLE prod_raw.ref_lanOfficeLocation 
+(FSTRLANGUAGE VARCHAR(3),
+FSTRDISTRICTOFFICE VARCHAR(6),
+FSTRDECODE1 VARCHAR(30),
+FSTRDECODE2 VARCHAR(255),
+fstrDescription VARCHAR(1000), 
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+checksum VARCHAR(32),
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+--lancountry
+
+CREATE TABLE prod_raw.ref_lanCountry 
+(fstrLanguage VARCHAR(3),
+fstrCountry VARCHAR(6),
+fstrDecode1 VARCHAR(30),
+fstrDecode2 VARCHAR(255),
+fstrDecode3 VARCHAR(255),
+fstrDescription VARCHAR(1000),
+fstrStateDecode VARCHAR(255),
+fstrPhoneError VARCHAR(255),
+fstrNationality VARCHAR(255),
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+checksum VARCHAR(32),
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) 
+STORED AS PARQUET;
+
+
+
+--tblAccountInfo 
+
+
+CREATE TABLE prod_raw.APP_tblAccountInfo 
+( flngAccountKey INT,
+fintParentProfileNumber SMALLINT,
+fintProfileNumber SMALLINT,
+flngCustomerKey INT,
+flngJointCustomerKey INT,
+flngJointAccountKey INT,
+fblnPrime SMALLINT
+fstrAccountType VARCHAR(6),
+flngDocKey INT,
+flngFolderKey INT,
+fstrFilingFrq VARCHAR(30),
+fdtmCommence TIMESTAMP,
+fdtmCease TIMESTAMP,
+fdtmCreated TIMESTAMP,
+fi64NameKey BIGINT,
+fintNameKey SMALLINT,
+fstrDisplay VARCHAR(12),
+fblnFormatted SMALLINT,
+fstrNameType VARCHAR(20),
+fstrFamilyName VARCHAR(255),
+fstrMiddleName VARCHAR(50),
+fstrFirstName VARCHAR(50),
+fstrNameControl VARCHAR(10),
+fstrTitle VARCHAR(10),
+fstrSuffix VARCHAR(10),
+fstrFreeFormatName VARCHAR(255),
+fstrListFormatName VARCHAR(255),
+fstrAdditionalName VARCHAR(255),
+fstrAdditionalName2 VARCHAR(255),
+fi64AddressKey BIGINT,
+fintAddressKey SMALLINT,
+fstrAddressType VARCHAR(20),
+fstrStreet VARCHAR(255),
+fstrStreet2 VARCHAR(255),
+fstrUnitType VARCHAR(50),
+fstrUnit VARCHAR(30),
+fstrCity VARCHAR(100),
+fstrCounty VARCHAR(6),
+fstrState VARCHAR(6),
+fstrZip VARCHAR(30),
+fstrDistrictOffice VARCHAR(6),
+fstrCountry VARCHAR(6),
+fstrAttention VARCHAR(255),
+fstrLocationCode VARCHAR(30),
+fstrUrbanization VARCHAR(50),
+fstrMunicipality VARCHAR(30),
+fstrDistrict VARCHAR(30),
+fstrSubDistrict VARCHAR(30),
+fstrSubProvince VARCHAR(50),
+fstrAddressDescription VARCHAR(255),
+fstrListFormatAddress VARCHAR(255),
+flngIDKey INT,fstrIDType VARCHAR(6),
+fstrID VARCHAR(30),
+fstrFormattedID VARCHAR(30),
+fstrCollectDistrictOffice VARCHAR(6),
+fstrCollectCity VARCHAR(100),
+fstrCustomerType VARCHAR(6),
+fstrReviewType VARCHAR(6),
+fstrCustomerLevel VARCHAR(6),
+fi64ProtectedDataSource BIGINT,
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP, 
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) 
+STORED AS PARQUET;
+
+
+/*------------------------------------------------------------------------------------------------------*/
+--TBLNZ_VISITMANAGEDCALL
+
+CREATE TABLE prod_Raw.APP_tblNZ_VisitManagedCall 
+(  
+flngDocKey INT,
+fstrCallerIrdNumber VARCHAR(9),
+fstrAuthorisedIrdNumber VARCHAR(9),
+fstrTaxAgentName VARCHAR(50),
+fstrVoiceEnrolStatus VARCHAR(1),
+fstrVoiceOptOutStatus VARCHAR(1),
+fstrTransferReason VARCHAR(255),
+fstrCallerIntentCorrect VARCHAR(3),
+fstrCallerIntent VARCHAR(50),
+fstrCorrectedIntent VARCHAR(50),
+fstrCallQueue VARCHAR(50),
+fstrStageOneFeedback VARCHAR(12),
+fblnVirtualHold SMALLINT,
+fblnContactDetailsChecked SMALLINT,
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) 
+STORED AS PARQUET;
+
+
+
+
+--TBLMAILITEM
+
+CREATE TABLE prod_Raw.APP_tblMailItem 
+(flngMailItemKey INT,
+flngVerLast INT,
+flngMailTypeKey INT,
+flngTemplateKey INT,
+flngCRMKey INT,
+fstrRecipientKey VARCHAR(30),
+flngNameAddressHash INT,
+fstrSortKey VARCHAR(30),
+fdtmSortDate TIMESTAMP,
+fintMailTypeSort SMALLINT,
+fstrLanguage VARCHAR(3),
+fstrAddressBlock VARCHAR(2000)
+fstrEmailTo VARCHAR(255),
+fstrName VARCHAR(255),
+fstrDLN VARCHAR(30),
+fstrCity VARCHAR(255),
+fstrCountry VARCHAR(100),
+fstrZip VARCHAR(30),
+fblnValidAddress SMALLINT,
+fdtmCreated TIMESTAMP,
+fstrCreatedWho VARCHAR(10),
+dtmBatched TIMESTAMP,
+fdtmPrinted TIMESTAMP,
+fstrPrintedWho VARCHAR(10),
+fstrPrinter VARCHAR(255),
+fdtmRePrinted TIMESTAMP,
+fstrReprintedWho VARCHAR(10),
+fstrRePrintPrinter VARCHAR(255),
+fdtmReady TIMESTAMP,fstrReadyWho VARCHAR(10),
+fdtmEmailedOn TIMESTAMP,
+flngPrintGroupKey INT,
+fblnValid SMALLINT,
+fstrValidatedWho VARCHAR(10),
+fdtmValidatedWhen TIMESTAMP,
+fblnElectronicOnly SMALLINT,
+fstrRenderType VARCHAR(12),
+fstrDatabase VARCHAR(20),
+flngImageKey INT,
+fblnLock SMALLINT,
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT, 
+update_object_run_key BIGINT) STORED AS PARQUET;
+
+
+
+
+
+
+--TBLDOCPOSTTRANSACTION
+
+
+CREATE TABLE prod_Raw.APP_tblDocPostTransaction 
+(flngDocKey INT,fstrField VARCHAR(100),
+flngTableRow INT,flngDocVerLast INT,
+flngVer INT,flngVerLast INT,
+fintPosting SMALLINT,
+fi64SourceKey BIGINT,
+fstrSource VARCHAR(20),
+fstrIdType VARCHAR(6),
+fstrId VARCHAR(30),
+fstrNameControl VARCHAR(4),
+flngCustomerKey INT,
+flngAccountKey INT,
+fstrAccountType VARCHAR(6),
+fdtmFilingPeriod TIMESTAMP,
+flngBillItemKey INT,
+fstrBillType VARCHAR(6),
+fdtmBillDue TIMESTAMP,
+fstrGroup VARCHAR(12),
+flngTransKey INT,
+fstrTransType VARCHAR(6),
+fdtmEffect TIMESTAMP,
+fdtmReport TIMESTAMP,
+fcurAmount DECIMAL(19,4),
+fintWorkStatus SMALLINT,
+fblnProcessed SMALLINT,
+fdtmReviewed TIMESTAMP,
+fdtmPosted TIMESTAMP,
+fdtmReversed TIMESTAMP,
+fblnUpdatePeriod SMALLINT,
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP, 
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) 
+STORED AS PARQUET;
+
+
+
+
+--TBLCRMLOG
+
+CREATE TABLE prod_Raw.APP_tblCRMExtendedLog 
+( 
+ flngCrmKey INT,
+ flngVer INT,
+ flngVerLast INT,
+ fstrCrmSource VARCHAR(20),
+ strCrmType VARCHAR(20),
+ flngParentCrmKey INT,
+ flngCustomerKey INT,
+ fintProfileNumber SMALLINT,
+ flngAccountKey INT,
+ fstrAccountType VARCHAR(6),
+ fdtmFilingPeriod TIMESTAMP,
+ flngBillItemKey INT,
+ fintBillItem SMALLINT,
+ flngFolderKey INT,
+ fi64SourceKey BIGINT,
+ fstrSourceId VARCHAR(50),
+ fstrSourceType VARCHAR(30),
+ fstrSourceData VARCHAR(255),
+ fstrData  VARCHAR(32767), 
+ fblnExtended SMALLINT,
+ fblnPrivate SMALLINT,
+ fblnHasChildren SMALLINT,
+ fblnHighImportance SMALLINT,
+ fblnSystem SMALLINT,
+ fstrEditedBy VARCHAR(10),
+ fdtmEdited TIMESTAMP,
+ fstrComment VARCHAR(1000),
+ fblnCommentExists SMALLINT,
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP,  
+ insert_object_run_key BIGINT) 
+ STORED AS PARQUET;
+
+
+-- TBLCRMEXTENDEDLOG
+
+CREATE VIEW prod_Raw_full_access.APP_TBLCRMEXTENDEDLOG
+ AS SELECT r.`FLNGCRMKEY`,
+ r.`FLNGVER`,
+ r.`FLNGVERLAST`,
+ r.`FSTRCRMSOURCE`,
+ r.`FSTRCRMTYPE`,
+ r.`FLNGPARENTCRMKEY`,
+ r.`FLNGCUSTOMERKEY`,
+ r.`FINTPROFILENUMBER`,
+ r.`FLNGACCOUNTKEY`,
+ r.`FSTRACCOUNTTYPE`,
+ r.`FDTMFILINGPERIOD`,
+ r.`FLNGBILLITEMKEY`,
+ r.`FINTBILLITEM`,
+ r.`FLNGFOLDERKEY`,
+ r.`FI64SOURCEKEY`,
+ r.`FSTRSOURCEID`,
+ r.`FSTRSOURCETYPE`,
+ r.`FSTRSOURCEDATA`,
+ r.`FSTRDATA`,
+ r.`FBLNEXTENDED`,
+ r.`FBLNPRIVATE`,
+ r.`FBLNHASCHILDREN`,
+ r.`FBLNHIGHIMPORTANCE`,
+ r.`FBLNSYSTEM`,
+ r.`FSTREDITEDBY`,
+ r.`FDTMEDITED`,
+ r.`FSTRCOMMENT`,
+ r.`FBLNCOMMENTEXISTS`,
+ r.`FSTRWHO`,
+ r.`FDTMWHEN`,
+ r.insert_object_run_key  
+ FROM prod_Raw.APP_TBLCRMEXTENDEDLOG r; 
+
+
+-- tblAccountInfo
+
+CREATE TABLE prod_Raw.APP_tblAccountInfo 
+(
+  flngAccountKey INT,
+  fintParentProfileNumber SMALLINT,
+  fintProfileNumber SMALLINT,
+  flngCustomerKey INT,
+  flngJointCustomerKey INT,
+  flngJointAccountKey INT,
+  fblnPrime SMALLINT,
+  fstrAccountType VARCHAR(6),
+  flngDocKey INT,
+  flngFolderKey INT,
+  fstrFilingFrq VARCHAR(30),
+  fdtmCommence TIMESTAMP,
+  fdtmCease TIMESTAMP,
+  fdtmCreated TIMESTAMP,
+  fi64NameKey BIGINT,
+  fintNameKey SMALLINT,
+  fstrDisplay VARCHAR(12),
+  fblnFormatted SMALLINT,
+  fstrNameType VARCHAR(20),
+  fstrFamilyName VARCHAR(255),
+  fstrMiddleName VARCHAR(50),
+  fstrFirstName VARCHAR(50),
+  fstrNameControl VARCHAR(10),
+  fstrTitle VARCHAR(10),
+  fstrSuffix VARCHAR(10)  ,
+  fstrFreeFormatName VARCHAR(255),
+  fstrListFormatName VARCHAR(255),
+  fstrAdditionalName VARCHAR(255),
+  fstrAdditionalName2 VARCHAR(255),
+  fi64AddressKey BIGINT,
+  fintAddressKey SMALLINT,
+  fstrAddressType VARCHAR(20),
+  fstrStreet VARCHAR(255),
+  fstrStreet2 VARCHAR(255),
+  fstrUnitType VARCHAR(50),
+  fstrUnit VARCHAR(30),
+  fstrCity VARCHAR(100),
+  fstrCounty VARCHAR(6),
+  fstrState VARCHAR(6),
+  fstrZip VARCHAR(30),
+  fstrDistrictOffice VARCHAR(6),
+  fstrCountry VARCHAR(6),
+  fstrAttention VARCHAR(255),
+  fstrLocationCode VARCHAR(30),
+  fstrUrbanization VARCHAR(50),
+  fstrMunicipality VARCHAR(30),
+  fstrDistrict VARCHAR(30),
+  fstrSubDistrict VARCHAR(30),
+  fstrSubProvince VARCHAR(50),
+  fstrAddressDescription VARCHAR(255),
+  fstrListFormatAddress VARCHAR(255),
+  flngIDKey INT,fstrIDType VARCHAR(6),
+  fstrID VARCHAR(30),
+  fstrFormattedID VARCHAR(30),
+  fstrCollectDistrictOffice VARCHAR(6),
+  fstrCollectCity VARCHAR(100),
+  fstrCustomerType VARCHAR(6),
+  fstrReviewType VARCHAR(6),
+  fstrCustomerLevel VARCHAR(6),
+  fi64ProtectedDataSource BIGINT,
+  fdtmWhen TIMESTAMP,  
+  record_effective_timestamp TIMESTAMP,  
+  record_expiry_timestamp TIMESTAMP,  
+  record_active_flag VARCHAR(1),  
+  record_deleted_flag VARCHAR(1),  
+  insert_object_run_key BIGINT,  
+  update_object_run_key BIGINT) 
+  STORED AS PARQUET;
+
+
+
+
+
+--TBLCUSTOMERINFO
+
+CREATE TABLE prod_Raw.APP_tblCustomerInfo
+ (  flngCustomerKey INT,
+ flngJointCustomerKey INT,
+ fblnPrime SMALLINT,
+ fstrCustomerType VARCHAR(6),
+ flngDocKey INT,
+ flngFolderKey INT,
+ fblnDefault SMALLINT,
+ fintProfileNumber SMALLINT,
+ fdtmCommence TIMESTAMP,
+ fdtmCease TIMESTAMP,fdtmCreated TIMESTAMP,
+ fi64NameKey BIGINT,
+ fintNameKey SMALLINT,
+ fstrDisplay VARCHAR(12),
+ fblnFormatted SMALLINT,
+ fstrNameType VARCHAR(20),
+ fstrFamilyName VARCHAR(255),
+ fstrMiddleName VARCHAR(50),
+ fstrFirstName VARCHAR(50),
+ fstrNameControl VARCHAR(10),
+ fstrTitle VARCHAR(10),
+ fstrSuffix VARCHAR(10),
+ fstrFreeFormatName VARCHAR(255),
+ fstrListFormatName VARCHAR(255),
+ fstrAdditionalName VARCHAR(255),
+ fstrAdditionalName2 VARCHAR(255),
+ fi64AddressKey BIGINT,
+ fintAddressKey SMALLINT,
+ fstrAddressType VARCHAR(20),
+ fstrStreet VARCHAR(255)
+,fstrStreet2 VARCHAR(255),
+fstrUnitType VARCHAR(50),
+fstrUnit VARCHAR(30),
+fstrCity VARCHAR(100),
+fstrCounty VARCHAR(6),
+fstrState VARCHAR(6),
+fstrZip VARCHAR(30),fstrCountry VARCHAR(6),
+fstrAttention VARCHAR(255),
+fstrLocationCode VARCHAR(30),
+fstrUrbanization VARCHAR(50),
+fstrMunicipality VARCHAR(30),
+fstrDistrict VARCHAR(30),
+fstrSubDistrict VARCHAR(30),
+fstrSubProvince VARCHAR(50),
+fstrAddressDescription VARCHAR(255),
+fstrListFormatAddress VARCHAR(255),
+flngIDKey INT,fstrIDType VARCHAR(6),
+fstrID VARCHAR(30),
+fstrFormattedID VARCHAR(30),
+fstrDistrictOffice VARCHAR(6),
+fstrCollectDistrictOffice VARCHAR(6),
+fstrReviewType VARCHAR(6),
+fstrCustomerLevel VARCHAR(6),
+fi64ProtectedDataSource BIGINT,
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1),  
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT)
+STORED AS PARQUET;
+
+
+--TBLVISIT
+
+
+CREATE TABLE prod_Raw.APP_tblVisit ( 
+ flngVisitKey INT,
+ flngVer INT,
+ flngVerLast INT,
+ fstrVisitSource VARCHAR(12),
+ fstrVisitCategory VARCHAR(12),
+ fstrVisitSubCategory VARCHAR(12),
+ flngFolderKey INT,flngCustomerKey INT,
+ fblnUnregisteredVisitor SMALLINT,
+ fi64NameKey BIGINT,fi64AddressKey BIGINT,
+ fstrVisitId VARCHAR(30),
+ fstrTicketId VARCHAR(30),
+ strExternalId VARCHAR(30),
+ fstrIdType VARCHAR(6),
+ fstrId VARCHAR(30),
+ fstrCountry VARCHAR(6),
+ fintCountryCode SMALLINT,
+ fstrAreaCode VARCHAR(5),
+ fstrPhoneNumber VARCHAR(15),
+ fblnVisitorVerified SMALLINT,
+ fstrVerifyDocType VARCHAR(12),
+ fintVerifyDocVer SMALLINT,
+ fi64VerifyDocEditInProgressKey 
+ BIGINT,flngVerifyDocKey INT,f
+ strDocType VARCHAR(12),
+ fintDocVer SMALLINT,
+ fi64DocEditInProgressKey BIGINT,
+ flngDocKey INT,
+ flngXmlKey INT,
+ fstrOwner VARCHAR(10),
+ fstrDistrictOffice VARCHAR(6),
+ fblnHold SMALLINT,
+ fdtmVisitStart TIMESTAMP,
+ fdtmVisitEnd TIMESTAMP,
+ flngDuration INT,
+ flngWaitTime INT,
+ fblnActive SMALLINT,
+ fdtmReversed TIMESTAMP,
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP,  
+ record_effective_timestamp TIMESTAMP, 
+ record_expiry_timestamp TIMESTAMP,  
+ record_active_flag VARCHAR(1),  
+ record_deleted_flag VARCHAR(1), 
+ insert_object_run_key BIGINT, 
+ update_object_run_key BIGINT) 
+ STORED AS PARQUET;
+
+
+
+--TBLNZ_CALLLOG
+
+CREATE TABLE prod_Raw.APP_tblNZ_CallLog 
+( 
+ flngVisitKey INT,
+ flngVer INT,
+ flngVerLast INT,
+ fstrIrdNumber VARCHAR(10),
+ fstrAuthIrdNumber VARCHAR(10),
+ flngChildVisitKey INT,
+ fdblWaitTime DOUBLE,
+ fstrCallerIntent VARCHAR(50),
+ fstrIvrPath VARCHAR(2000),
+ fblnBiometricsValidation SMALLINT,
+ fstrPhoneNumber VARCHAR(50),
+ fstrTransferNotes VARCHAR(500),
+ fblnHold SMALLINT,
+ fstrNewPhone VARCHAR(50),
+ fblnBiometricsAttempted SMALLINT,
+ fstrBiometricsFailReason VARCHAR(50),
+ fstrBiometricsLevel VARCHAR(12),
+ fblnBiometricsLiveness SMALLINT,
+ fstrBiometricsReenrol VARCHAR(20),
+ fstrUpdateReason VARCHAR(50),
+ fstrWho VARCHAR(10),
+ fdtmWhen TIMESTAMP,  
+ record_effective_timestamp TIMESTAMP,  
+ record_expiry_timestamp TIMESTAMP,  
+ record_active_flag VARCHAR(1), 
+ record_deleted_flag VARCHAR(1),  
+ insert_object_run_key BIGINT, 
+ update_object_run_key BIGINT) 
+ STORED AS PARQUET;
+
+
+
+
+
+--TBLWEBNOTICE
+
+
+CREATE TABLE prod_Raw.WRQ_tblWebNotice 
+(  
+flngWebNoticeKey INT,
+flngVer INT,
+flngVerLast INT,
+fstrWebNoticeArea VARCHAR(12),
+fstrWebNoticeCategory VARCHAR(12),
+fstrWebNoticeType VARCHAR(12),
+fstrWebNoticeSubType VARCHAR(12),
+fstrWebNoticeReason VARCHAR(12),
+fstrApplication VARCHAR(20),
+flngCustomerKey INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+flngWebLogonKey INT,
+flngParentNoticeKey INT,
+flngWebReqKey INT,
+fstrSubject VARCHAR(255),
+fstrMessage STRING,
+fstrAdditionalInfo VARCHAR(255),
+fblnUrgent SMALLINT,
+fblnUser SMALLINT,
+fblnPrivate SMALLINT,
+fstrLanguage VARCHAR(3),
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1), 
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT) 
+STORED AS PARQUET;
+
+
+CREATE TABLE prod_Raw.APP_tblCustomerMail
+(flngMailItemKey INT,
+fstrFormat VARCHAR(6),
+flngMailCategoryKey INT,
+flngCustomerKey INT,
+flngAccountKey INT,
+fintAddressKey SMALLINT,
+fintAddressProfile SMALLINT,
+fintNameKey SMALLINT,
+fintNameProfile SMALLINT,
+flngBillItemKey INT,
+fdtmFilingPeriod TIMESTAMP,
+flngMailItemTypeKey INT,
+flngTemplateKey INT,
+fstrLetterId VARCHAR(30),
+fstrMailType VARCHAR(12),
+fdtmRequest TIMESTAMP,
+fdtmReady TIMESTAMP,
+fdtmPrinted TIMESTAMP,
+fdtmRePrinted TIMESTAMP,
+fdtmResend TIMESTAMP,
+dtmEmailed TIMESTAMP,
+fblnValid SMALLINT,
+fstrWho VARCHAR(10),
+fdtmWhen TIMESTAMP,  
+record_effective_timestamp TIMESTAMP,  
+record_expiry_timestamp TIMESTAMP,  
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),  
+insert_object_run_key BIGINT,  
+update_object_run_key BIGINT)
+STORED AS PARQUET;
+
+-- dev_raw.frd_tblFrdPlanData 
+CREATE TABLE dev_raw.frd_tblFrdPlanData 
+(flngReturnKey INT,flngFraudPlanKey INT
+,flngVer INT,flngVerLast INT,
+flngDocVerLast INT,
+fdtmReceived TIMESTAMP,
+fdtmDataPopulated TIMESTAMP
+,flngFraudPlanChangeCounter INT,
+flngCustomerKey INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP
+,fi64DocSetKey BIGINT,
+flngDocKey INT,
+fcurScore DECIMAL(19,4),
+fcurScoreTotal DECIMAL(19,4),
+fcurFraudRefundAmount DECIMAL(19,4)
+,fcurFraudOverrideAmount DECIMAL(19,4),
+fdtmRulesEvaluated TIMESTAMP,
+fdtmActionsEvaluated TIMESTAMP,
+flngActionKey INT,
+flngLastActionKey INT
+,fdtmReleased TIMESTAMP,
+fstrReleasedBy VARCHAR(10),fblnReversed SMALLINT,
+fstrWho VARCHAR(10),fdtmWhen TIMESTAMP,
+ record_effective_timestamp TIMESTAMP
+,record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key BIGINT,
+update_object_run_key BIGINT ) STORED AS PARQUET;
+

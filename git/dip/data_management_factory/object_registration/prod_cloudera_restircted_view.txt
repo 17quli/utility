@@ -1,0 +1,973 @@
+﻿/************************************************************************************************
+
+
+03072019 sdz - Script to create security views
+04072019 sdz - Amend where clause to include missing flngdocKey from tblCustomerLevel when joining to tblcustomer
+
+
+
+************************************************************************************************/
+
+--1
+CREATE VIEW prod_raw_restricted_access.app_tblaccount
+AS 
+SELECT z.FLNGACCOUNTKEY, 
+       z.FLNGVER, 
+       z.FLNGVERLAST, 
+       z.FLNGCUSTOMERKEY, 
+       z.FINTPARENTPROFILENUMBER, 
+       z.FINTPROFILENUMBER, 
+       z.FSTRACCOUNTTYPE, 
+       z.FSTRFILING, 
+       z.FDTMCOMMENCE, 
+       z.FDTMCEASE, 
+       z.FSTRSTATUS, 
+       z.FSTRCLOSUREREASON, 
+       z.FBLNMAILFORM, 
+       z.FLNGDOCKEY, 
+       z.FLNGFOLDERKEY, 
+       z.FDTMCREATED, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.HWM, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblaccount z ;
+
+-- 2
+CREATE VIEW prod_raw_restricted_access.app_tblaccountinfo 
+AS
+SELECT z.FLNGACCOUNTKEY,
+       z.FINTPARENTPROFILENUMBER,
+       z.FINTPROFILENUMBER,
+       z.FLNGCUSTOMERKEY,
+       z.FLNGJOINTCUSTOMERKEY,
+       z.FLNGJOINTACCOUNTKEY,
+       z.FBLNPRIME,
+       z.FSTRACCOUNTTYPE,
+       z.FLNGDOCKEY,
+       z.FLNGFOLDERKEY,
+       z.FSTRFILINGFRQ,
+       z.FDTMCOMMENCE,
+       z.FDTMCEASE,
+       z.FDTMCREATED,
+       z.FI64NAMEKEY,
+       z.FINTNAMEKEY,
+       z.FSTRDISPLAY,
+       z.FBLNFORMATTED,
+       z.FSTRNAMETYPE,
+       z.FSTRFAMILYNAME,
+       z.FSTRMIDDLENAME,
+       z.FSTRFIRSTNAME,
+       z.FSTRNAMECONTROL,
+       z.FSTRTITLE,
+       z.FSTRSUFFIX,
+       z.FSTRFREEFORMATNAME,
+       z.FSTRLISTFORMATNAME,
+       z.FSTRADDITIONALNAME,
+       z.FSTRADDITIONALNAME2,
+       z.FI64ADDRESSKEY,
+       z.FINTADDRESSKEY,
+       z.FSTRADDRESSTYPE,
+       z.FSTRSTREET,
+       z.FSTRSTREET2,
+       z.FSTRUNITTYPE,
+       z.FSTRUNIT,
+       z.FSTRCITY,
+       z.FSTRCOUNTY,
+       z.FSTRSTATE,
+       z.FSTRZIP,
+       z.FSTRDISTRICTOFFICE,
+       z.FSTRCOUNTRY,
+       z.FSTRATTENTION,
+       z.FSTRLOCATIONCODE,
+       z.FSTRURBANIZATION,
+       z.FSTRMUNICIPALITY,
+       z.FSTRDISTRICT,
+       z.FSTRSUBDISTRICT,
+       z.FSTRSUBPROVINCE,
+       z.FSTRADDRESSDESCRIPTION,
+       z.FSTRLISTFORMATADDRESS,
+       z.FLNGIDKEY,
+       z.FSTRIDTYPE,
+       z.FSTRID,
+       z.FSTRFORMATTEDID,
+       z.FSTRCOLLECTDISTRICTOFFICE,
+       z.FSTRCOLLECTCITY,
+       z.FSTRCUSTOMERTYPE,
+       z.FSTRREVIEWTYPE,
+       z.FSTRCUSTOMERLEVEL,
+       z.FI64PROTECTEDDATASOURCE,
+       z.FDTMWHEN,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tblaccountinfo z
+WHERE z.fstrCustomerLevel = 'STD'
+
+--3
+CREATE VIEW prod_raw_restricted_access.app_tblcrmextendedlog 
+AS
+SELECT z.FLNGCRMKEY,
+       z.FLNGVER,
+       z.FLNGVERLAST,
+       z.FSTRCRMSOURCE,
+       z.FSTRCRMTYPE,
+       z.FLNGPARENTCRMKEY,
+       z.FLNGCUSTOMERKEY,
+       z.FINTPROFILENUMBER,
+       z.FLNGACCOUNTKEY,
+       z.FSTRACCOUNTTYPE,
+       z.FDTMFILINGPERIOD,
+       z.FLNGBILLITEMKEY,
+       z.FINTBILLITEM,
+       z.FLNGFOLDERKEY,
+       z.FI64SOURCEKEY,
+       z.FSTRSOURCEID,
+       z.FSTRSOURCETYPE,
+       z.FSTRSOURCEDATA,
+       z.FSTRDATA,
+       z.FBLNEXTENDED,
+       z.FBLNPRIVATE,
+       z.FBLNHASCHILDREN,
+       z.FBLNHIGHIMPORTANCE,
+       z.FBLNSYSTEM,
+       z.FSTREDITEDBY,
+       z.FDTMEDITED,
+       z.FSTRCOMMENT,
+       z.FBLNCOMMENTEXISTS,
+       z.FSTRWHO,
+       z.FDTMWHEN,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tblcrmextendedlog z
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey
+AND c.record_active_flag = 'Y'
+AND c.record_deleted_flag = 'N'
+AND c.flngVer = 0
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON c.flngdockey = cl.flngdockey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+
+--4
+CREATE VIEW prod_raw_restricted_access.app_tblcustomer 
+AS
+SELECT z.FLNGCUSTOMERKEY, 
+       z.FLNGVER, 
+       z.FLNGVERLAST, 
+       z.FSTRCUSTOMERTYPE, 
+       z.FDTMCOMMENCE, 
+       z.FDTMCEASE, 
+       z.FLNGCUSTOMERLEVEL, 
+       z.FLNGDOCKEY, 
+       z.FLNGFOLDERKEY, 
+       z.FLNGREFRESHVER, 
+       z.FLNGCUSTOMERVERSION, 
+       z.FLNGWEBVERSION, 
+       z.FDTMWEBPUBLISHED, 
+       z.FDTMCREATED, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.HWM, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblcustomer z 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = z.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+  
+  
+
+--5
+CREATE VIEW  prod_raw_restricted_access.app_tblcustomerinfo 
+AS
+SELECT z.FLNGCUSTOMERKEY, 
+       z.FLNGJOINTCUSTOMERKEY, 
+       z.FBLNPRIME, 
+       z.FSTRCUSTOMERTYPE, 
+       z.FLNGDOCKEY, 
+       z.FLNGFOLDERKEY, 
+       z.FBLNDEFAULT, 
+       z.FINTPROFILENUMBER, 
+       z.FDTMCOMMENCE, 
+       z.FDTMCEASE, 
+       z.FDTMCREATED, 
+       z.FI64NAMEKEY, 
+       z.FINTNAMEKEY, 
+       z.FSTRDISPLAY, 
+       z.FBLNFORMATTED, 
+       z.FSTRNAMETYPE, 
+       z.FSTRFAMILYNAME, 
+       z.FSTRMIDDLENAME, 
+       z.FSTRFIRSTNAME, 
+       z.FSTRNAMECONTROL, 
+       z.FSTRTITLE, 
+       z.FSTRSUFFIX, 
+       z.FSTRFREEFORMATNAME, 
+       z.FSTRLISTFORMATNAME, 
+       z.FSTRADDITIONALNAME, 
+       z.FSTRADDITIONALNAME2, 
+       z.FI64ADDRESSKEY, 
+       z.FINTADDRESSKEY, 
+       z.FSTRADDRESSTYPE, 
+       z.FSTRSTREET, 
+       z.FSTRSTREET2, 
+       z.FSTRUNITTYPE, 
+       z.FSTRUNIT, 
+       z.FSTRCITY, 
+       z.FSTRCOUNTY, 
+       z.FSTRSTATE, 
+       z.FSTRZIP, 
+       z.FSTRCOUNTRY, 
+       z.FSTRATTENTION, 
+       z.FSTRLOCATIONCODE, 
+       z.FSTRURBANIZATION, 
+       z.FSTRMUNICIPALITY, 
+       z.FSTRDISTRICT, 
+       z.FSTRSUBDISTRICT, 
+       z.FSTRSUBPROVINCE, 
+       z.FSTRADDRESSDESCRIPTION, 
+       z.FSTRLISTFORMATADDRESS, 
+       z.FLNGIDKEY, 
+       z.FSTRIDTYPE, 
+       z.FSTRID, 
+       z.FSTRFORMATTEDID, 
+       z.FSTRDISTRICTOFFICE, 
+       z.FSTRCOLLECTDISTRICTOFFICE, 
+       z.FSTRREVIEWTYPE, 
+       z.FSTRCUSTOMERLEVEL, 
+       z.FI64PROTECTEDDATASOURCE, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblcustomerinfo z 
+WHERE z.fstrCustomerLevel = 'STD' ;
+
+--6
+CREATE VIEW  prod_raw_restricted_access.app_tblcustomermail 
+AS
+SELECT z.FLNGDOCKEY,
+       z.FDTMDOB,
+       z.FDTMDOD,
+       z.FSTRWHO,
+       z.FDTMWHEN,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tblcustomerstd z
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON z.flngDocKey = cl.flngDocKey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'
+  AND nvl(cl.record_active_flag, 'Y') = 'Y'
+  AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+--7
+CREATE VIEW prod_raw_restricted_access.app_tblcustomerstd 
+AS
+SELECT z.FLNGDOCKEY, 
+       z.FDTMDOB, 
+       z.FDTMDOD, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblcustomerstd z 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON z.flngDocKey = cl.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+  AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+  AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+
+
+
+-- 8
+CREATE VIEW prod_raw_restricted_access.app_tbldocposttransaction 
+AS SELECT z.flngDocKey,
+       z.fstrField,
+       z.flngTableRow,
+       z.flngDocVerLast,
+       z.flngVer,
+       z.flngVerLast,
+       z.fintPosting,
+       z.fi64SourceKey,
+       z.fstrSource,
+       z.fstrIdType,
+       z.fstrId,
+       z.fstrNameControl,
+       z.flngCustomerKey,
+       z.flngAccountKey,
+       z.fstrAccountType,
+       z.fdtmFilingPeriod,
+       z.flngBillItemKey,
+       z.fstrBillType,
+       z.fdtmBillDue,
+       z.fstrGroup,
+       z.flngTransKey,
+       z.fstrTransType,
+       z.fdtmEffect,
+       z.fdtmReport,
+       z.fcurAmount,
+       z.fintWorkStatus,
+       z.fblnProcessed,
+       z.fdtmReviewed,
+       z.fdtmPosted,
+       z.fdtmReversed,
+       z.fblnUpdatePeriod,
+       z.fstrWho,
+       z.fdtmWhen,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tbldocposttransaction z
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey
+AND c.record_active_flag = 'Y'
+AND c.record_deleted_flag = 'N'
+AND c.flngVer = 0
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngdockey = c.flngdockey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+
+
+-- 9
+CREATE VIEW prod_raw_restricted_access.app_tblid 
+AS SELECT z.FLNGIDKEY, 
+       z.FLNGVER, 
+       z.FLNGCUSTOMERKEY, 
+       z.FSTRIDTYPE, 
+       z.FSTRID, 
+       z.FLNGACCOUNTKEY, 
+       z.FLNGVERLAST, 
+       z.FBLNVALIDATED, 
+       z.FBLNACTIVE, 
+       z.FINTPROFILENUMBER, 
+       z.FBLNDEFAULT, 
+       z.fdtmCommence, 
+       z.fdtmCease, 
+       z.flngImageKey, 
+       z.flngDocKey, 
+       z.flngCrmKey, 
+       z.fi64ProtectedDataSource, 
+       z.fintProtectLevel, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblid z 
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey 
+AND c.record_active_flag = 'Y' 
+AND c.record_deleted_flag = 'N' 
+AND c.flngVer = 0 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+
+
+
+
+
+
+
+-- 10
+CREATE VIEW prod_raw_restricted_access.app_tblindicator 
+AS SELECT z.FLNGINDICATORKEY, 
+       z.FLNGVER, 
+       z.FLNGVERLAST, 
+       z.FINTLEVEL, 
+       z.FLNGCUSTOMERKEY, 
+       z.FINTPROFILENUMBER, 
+       z.FLNGACCOUNTKEY, 
+       z.FSTRINDICATOR, 
+       z.FDTMCOMMENCE, 
+       z.FDTMFILINGPERIOD, 
+       z.FDTMFILINGPERIODTO, 
+       z.FCURAMOUNT, 
+       z.FDTMCEASE, 
+       z.FSTRREASON, 
+       z.FDTMCOMMENCE1, 
+       z.FDTMCEASE1, 
+       z.FLNGCRMKEY, 
+       z.FSTRCOMMENT, 
+       z.FSTRUSER, 
+       z.FLNGDOCKEY, 
+       z.FBLNACTIVE, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblindicator z 
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey 
+AND c.record_active_flag = 'Y' 
+AND c.record_deleted_flag = 'N' 
+AND c.flngVer = 0 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+  
+  
+  
+--11
+CREATE VIEW prod_raw_restricted_access.app_tblmailitem 
+AS
+SELECT z.FLNGINDICATORKEY, 
+       z.FLNGVER, 
+       z.FLNGVERLAST, 
+       z.FINTLEVEL, 
+       z.FLNGCUSTOMERKEY, 
+       z.FINTPROFILENUMBER, 
+       z.FLNGACCOUNTKEY, 
+       z.FSTRINDICATOR, 
+       z.FDTMCOMMENCE, 
+       z.FDTMFILINGPERIOD, 
+       z.FDTMFILINGPERIODTO, 
+       z.FCURAMOUNT, 
+       z.FDTMCEASE, 
+       z.FSTRREASON, 
+       z.FDTMCOMMENCE1, 
+       z.FDTMCEASE1, 
+       z.FLNGCRMKEY, 
+       z.FSTRCOMMENT, 
+       z.FSTRUSER, 
+       z.FLNGDOCKEY, 
+       z.FBLNACTIVE, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblindicator z 
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey 
+AND c.record_active_flag = 'Y' 
+AND c.record_deleted_flag = 'N' 
+AND c.flngVer = 0 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+  
+  
+  
+ --12
+CREATE VIEW prod_raw_restricted_access.app_tblnaics 
+AS
+SELECT z.flngNAICSKey, 
+       z.flngVer, 
+       z.flngVerLast, 
+       z.fstrNAICSVersion, 
+       z.fstrNAICS, 
+       z.fstrLevel1, 
+       z.fstrLevel2, 
+       z.fstrLevel3, 
+       z.fstrLevel4, 
+       z.fstrLevel5, 
+       z.fstrLevel6, 
+       z.flngCustomerKey, 
+       z.fintProfileNumber, 
+       z.flngAccountKey, 
+       z.fdtmCommence, 
+       z.fdtmCease, 
+       z.fcurBusinessMakeup, 
+       z.fblnDefault, 
+       z.fblnActive, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnaics z ;
+
+
+--13
+CREATE VIEW prod_raw_restricted_access.app_tblnamerecord 
+AS SELECT z.fi64NameKey,
+       z.flngVer,
+       z.flngVerLast,
+       z.fdtmEffectiveFrom,
+       z.fdtmEffectiveTo,
+       z.fdtmSystemFrom,
+       z.fdtmSystemTo,
+       z.fstrSource,
+       z.flngCustomerKey,
+       z.fintProfileNumber,
+       z.fi64SourceKey,
+       z.fstrNameType,
+       z.fstrDisplay,
+       z.fblnFormatted,
+       z.fstrLastName,
+       z.fintLastModifier,
+       z.fstrFirstName,
+       z.fintFirstModifier,
+       z.fstrMiddleName,
+       z.fintMiddleModifier,
+       z.fstrTitle,
+       z.fintTitleModifier,
+       z.fstrSuffix,
+       z.fintSuffixModifier,
+       z.fstrFreeFormatName,
+       z.fintFreeFormatModifier,
+       z.fstrAdditionalName,
+       z.fintAdditionalModifier,
+       z.fstrAdditionalName2,
+       z.fintAdditionalModifier2,
+       z.fstrListFormatName,
+       z.fi64ProtectedDataSource,
+       z.flngCrmKey,
+       z.fblnBlank,
+       z.fblnCurrent,
+       z.fblnActive,
+       z.fintProtectLevel,
+       z.fstrWho,
+       z.fdtmWhen,
+       z.insert_object_run_key
+FROM prod_raw.app_tblnamerecord z
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey
+AND c.record_active_flag = 'Y'
+AND c.record_deleted_flag = 'N'
+AND c.flngVer = 0
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'
+AND nvl(cl.record_active_flag, 'Y') = 'Y'
+AND nvl(cl.record_deleted_flag, 'N') = 'N'
+  
+  
+  
+--14
+CREATE VIEW prod_raw_restricted_access.app_tblnz_accidgedu 
+AS SELECT z.flngDocKey, 
+       z.fstrEducationProvider, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key F 
+FROM prod_raw.app_tblnz_accidgedu z ;
+
+
+
+--15
+CREATE VIEW prod_raw_restricted_access.app_tblnz_accidgovr 
+SELECT z.flngDocKey, 
+       z.fstrIssuingCountry, 
+       z.fblnTranslationReceived, 
+       z.flngEntryNumber, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_accidgovr z ;
+
+--16
+CREATE VIEW prod_raw_restricted_access.app_tblnz_cstcominfo 
+AS SELECT z.flngDocKey,
+       z.fstrURL,
+       z.fblnNilCompany,
+       z.fblnDonee,
+       z.fstrWho,
+       z.fdtmWhen,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tblnz_cstcominfo z;
+
+
+--17
+CREATE VIEW prod_raw_restricted_access.app_tblnz_customerstd 
+AS
+SELECT z.FLNGDOCKEY, 
+       z.FSTRCUSTOMERSUBTYPECLASS, 
+       z.FSTRCUSTOMERSUBTYPE, 
+       z.FSTRCUSTOMERSEGMENT, 
+       z.FSTRSPECIALFILETYPE, 
+       z.FBLNSPECIALTAXRESIDENCY, 
+       z.FSTRNONRESIDENTTYPE, 
+       z.FSTRCURRENTTAXRESIDENCY, 
+       z.FSTRCLOSUREREASON, 
+       z.FINTSMSCOUNTRYCODE, 
+       z.FSTRSMSAREACODE, 
+       z.FSTRSMSPHONENUMBER, 
+       z.FDTMINCOMEBALANCEDATE, 
+       z.FSTRCUSTOMERCLASS, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_customerstd z 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = z.flngDocKey 
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+ 
+
+--18
+CREATE VIEW prod_raw_restricted_access.app_tblnz_custtaxresidency 
+AS
+SELECT z.flngDocKey, 
+       z.fintSeq, 
+       z.fstrTaxResidency, 
+       z.fdtmResStart, 
+       z.fdtmResEnd, 
+       z.fblnIsFinancial, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_custtaxresidency z ;
+
+--19
+CREATE VIEW prod_raw_restricted_access.app_tblnz_visitmanagedcall 
+AS
+SELECT z.FLNGDOCKEY, 
+       z.FSTRCALLERIRDNUMBER, 
+       z.FSTRAUTHORISEDIRDNUMBER, 
+       z.FSTRTAXAGENTNAME, 
+       z.FSTRVOICEENROLSTATUS, 
+       z.FSTRVOICEOPTOUTSTATUS, 
+       z.FSTRTRANSFERREASON, 
+       z.FSTRCALLERINTENTCORRECT, 
+       z.FSTRCALLERINTENT, 
+       z.FSTRCORRECTEDINTENT, 
+       z.FSTRCALLQUEUE, 
+       z.FSTRSTAGEONEFEEDBACK, 
+       z.FBLNVIRTUALHOLD, 
+       z.FBLNCONTACTDETAILSCHECKED, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_visitmanagedcall z 
+LEFT OUTER JOIN prod_raw.app_tblcustomerinfo i ON i.fstrID = z.fstrCallerIRDNumber 
+AND i.fstrIDType = 'IRD' 
+AND i.record_active_flag = 'Y' 
+AND i.record_deleted_flag = 'N' 
+WHERE (i.fstrCustomerLevel = 'STD' 
+       OR i.fstrCustomerLevel IS NULL) ;
+
+
+--20
+CREATE VIEW  prod_raw_restricted_access.app_tblvisit 
+AS
+SELECT z.FLNGVISITKEY,
+       z.FLNGVER,
+       z.FLNGVERLAST,
+       z.FSTRVISITSOURCE,
+       z.FSTRVISITCATEGORY,
+       z.FSTRVISITSUBCATEGORY,
+       z.FLNGFOLDERKEY,
+       z.FLNGCUSTOMERKEY,
+       z.FBLNUNREGISTEREDVISITOR,
+       z.FI64NAMEKEY,
+       z.FI64ADDRESSKEY,
+       z.FSTRVISITID,
+       z.FSTRTICKETID,
+       z.FSTREXTERNALID,
+       z.FSTRIDTYPE,
+       z.FSTRID,
+       z.FSTRCOUNTRY,
+       z.FINTCOUNTRYCODE,
+       z.FSTRAREACODE,
+       z.FSTRPHONENUMBER,
+       z.FBLNVISITORVERIFIED,
+       z.FSTRVERIFYDOCTYPE,
+       z.FINTVERIFYDOCVER,
+       z.FI64VERIFYDOCEDITINPROGRESSKEY,
+       z.FLNGVERIFYDOCKEY,
+       z.FSTRDOCTYPE,
+       z.FINTDOCVER,
+       z.FI64DOCEDITINPROGRESSKEY,
+       z.FLNGDOCKEY,
+       z.FLNGXMLKEY,
+       z.FSTROWNER,
+       z.FSTRDISTRICTOFFICE,
+       z.FBLNHOLD,
+       z.FDTMVISITSTART,
+       z.FDTMVISITEND,
+       z.FLNGDURATION,
+       z.FLNGWAITTIME,
+       z.FBLNACTIVE,
+       z.FDTMREVERSED,
+       z.FSTRWHO,
+       z.FDTMWHEN,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.app_tblvisit z
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON z.flngCustomerKey = c.flngCustomerKey
+AND c.record_active_flag = 'Y'
+AND c.record_deleted_flag = 'N'
+AND c.flngVer = 0
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey
+WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD'
+  AND nvl(cl.record_active_flag, 'Y') = 'Y'
+  AND nvl(cl.record_deleted_flag, 'N') = 'N';
+
+
+--21
+CREATE VIEW prod_raw_restricted_access.ref_lancountry 
+AS
+SELECT z.fstrLanguage, 
+       z.fstrCountry, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDecode3, 
+       z.fstrDescription, 
+       z.fstrStateDecode, 
+       z.fstrPhoneError, 
+       z.fstrNationality, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancountry z ;
+
+--22
+CREATE VIEW  prod_raw_restricted_access.ref_lancustomerlevel
+AS
+SELECT z.FSTRLANGUAGE,
+       z.FSTRCUSTOMERLEVEL,
+       z.FSTRDECODE1,
+       z.FSTRDECODE2,
+       z.fstrDescription,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.ref_lancustomerlevel z;
+
+--23
+CREATE VIEW  prod_raw_restricted_access.ref_lancustomersubtype 
+AS
+SELECT z.fstrLanguage, 
+       z.fstrCustomerSubType, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDescription, 
+       z.fstrDecodeWeb, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancustomersubtype z ;
+
+--24
+CREATE VIEW prod_raw_restricted_access.ref_lancustomertype 
+AS
+SELECT z.fstrLanguage, 
+       z.fstrCustomerType, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDecodeWeb, 
+       z.FSTRDESCRIPTION, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lancustomertype z ;
+
+
+--25
+CREAT VIEW prod_raw_restricted_access.ref_lannz_customerclass 
+AS
+SELECT z.fstrLanguage,
+       z.fstrCustomerClass,
+       z.fstrDecode1,
+       z.fstrDecode2,
+       z.fstrDescription,
+       z.record_effective_timestamp,
+       z.record_expiry_timestamp,
+       z.record_active_flag,
+       z.record_deleted_flag,
+       z.insert_object_run_key,
+       z.update_object_run_key
+FROM prod_raw.ref_lannz_customerclass z;
+
+--26
+CREATE VOEW prod_raw_restricted_access.ref_lannz_customersegments 
+AS
+SELECT z.fstrSegment, 
+       z.fstrLanguage, 
+       z.fstrDecode1, 
+       z.fstrDecode2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lannz_customersegments z ;
+
+--27
+CREATE VIEW prod_raw_restricted_access.ref_lanofficelocation 
+AS
+SELECT z.FSTRLANGUAGE, 
+       z.FSTRDISTRICTOFFICE, 
+       z.FSTRDECODE1, 
+       z.FSTRDECODE2, 
+       z.fstrDescription, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.ref_lanofficelocation z ;
+
+--28
+CREATE VIEW prod_raw_restricted_access.tblnz_calllog 
+AS
+SELECT z.flngVisitKey, 
+       z.flngVer, 
+       z.flngVerLast, 
+       z.fstrIrdNumber, 
+       z.fstrAuthIRDNumber, 
+       z.flngChildVisitKey, 
+       z.fstrUpdateReason, 
+       z.fstrIvrPath, 
+       z.fstrWho, 
+       z.fdtmWhen, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.app_tblnz_calllog z 
+LEFT OUTER JOIN prod_raw.app_tblvisit v ON z.flngVisitKey = v.flngVisitKey 
+AND v.record_active_flag = 'Y' 
+AND v.record_deleted_flag = 'N' 
+AND v.flngVer = 0 
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON v.flngCustomerKey = c.flngCustomerKey 
+AND c.record_active_flag = 'Y' 
+AND c.record_deleted_flag = 'N' 
+AND c.flngVer = 0 
+INNER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey 
+AND nvl(cl.fstrCustomerlevel, 'STD') = 'STD' 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' ;
+
+
+--29
+CREATE VIEW prod_raw_restricted_access.wrq_tblwebnotice
+AS
+SELECT z.FLNGWEBNOTICEKEY, 
+       z.FLNGVER, 
+       z.FLNGVERLAST, 
+       z.FSTRWEBNOTICEAREA, 
+       z.FSTRWEBNOTICECATEGORY, 
+       z.FSTRWEBNOTICETYPE, 
+       z.FSTRWEBNOTICESUBTYPE, 
+       z.FSTRWEBNOTICEREASON, 
+       z.FSTRAPPLICATION, 
+       z.FLNGCUSTOMERKEY, 
+       z.FLNGACCOUNTKEY, 
+       z.FDTMFILINGPERIOD, 
+       z.FLNGWEBLOGONKEY, 
+       z.FLNGPARENTNOTICEKEY, 
+       z.FLNGWEBREQKEY, 
+       z.FSTRSUBJECT, 
+       z.FSTRMESSAGE, 
+       z.FSTRADDITIONALINFO, 
+       z.FBLNURGENT, 
+       z.FBLNUSER, 
+       z.FBLNPRIVATE, 
+       z.FSTRLANGUAGE, 
+       z.FSTRWHO, 
+       z.FDTMWHEN, 
+       z.record_effective_timestamp, 
+       z.record_expiry_timestamp, 
+       z.record_active_flag, 
+       z.record_deleted_flag, 
+       z.insert_object_run_key, 
+       z.update_object_run_key 
+FROM prod_raw.wrq_tblwebnotice z 
+LEFT OUTER JOIN prod_raw.app_tblcustomer c ON c.flngCustomerKey = z.flngCustomerKey 
+AND c.record_active_flag = 'Y' 
+AND c.record_deleted_flag = 'N' 
+AND c.flngVer = 0 
+LEFT OUTER JOIN prod_raw.app_tblcustomerlevel cl ON cl.flngDocKey = c.flngDocKey 
+AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+WHERE (nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+       OR z.flngCustomerKey = 0) ;
+
+

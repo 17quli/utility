@@ -1,0 +1,26 @@
+CREATE TABLE ${var:target_db}.app_tblnz_efilepts (                                                                                  
+`flngFileKey` INT,                                                                                                                  
+`flngSequence` INT,                                                                                                                 
+`fdtmFileOut` TIMESTAMP,                                                                                                            
+`fstrAgentIRDNumber` VARCHAR(18),                                                                                                   
+`fintAgentLocationNumber` SMALLINT,                                                                                                 
+`fstrClientIRDNumber` VARCHAR(18),                                                                                                  
+`fintClientLocationNumber` SMALLINT,                                                                                                
+`flngRecordNumber` INT,                                                                                                             
+`fdtmProcessDate` TIMESTAMP,                                                                                                        
+`fstrErrorType` VARCHAR(2),                                                                                                         
+`fstrRequestType` VARCHAR(2),                                                                                                       
+`fdtmRequestDate` TIMESTAMP,                                                                                                        
+`flngErrorCode` INT,                                                                                                                
+`fstrDLN` VARCHAR(24),                                                                                                              
+`fblnProcessed` SMALLINT,                                                                                                           
+`fstrWho` VARCHAR(20),                                                                                                              
+`fdtmWhen` TIMESTAMP,                                                                                                               
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ )                                                                                                                                  
+  STORED AS PARQUET;  

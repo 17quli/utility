@@ -1,0 +1,175 @@
+/*---------------------------------------------------------------
+
+ird0sxd 22/06/20 initial script to create new trigger TRG_OBJECT_POPULATE_DEFAULTS and delete triggers not required
+
+---------------------------------------------------------------*/
+
+ALTER TABLE OBJECT MODIFY HISTORY_LOADED_FROM_TDW VARCHAR2(2);
+ALTER TABLE OBJECT_HIST MODIFY HISTORY_LOADED_FROM_TDW VARCHAR2(2);
+/***********************************************************************************************/
+--TRG_OBJECT_POPULATE_DEFAULTS  - Change the target object_name generation logic. it applies only to raw tables
+/***********************************************************************************************/
+CREATE OR REPLACE TRIGGER LCF.TRG_OBJECT_POPULATE_DEFAULTS
+BEFORE INSERT OR UPDATE
+   ON LCF.OBJECT
+FOR EACH ROW
+
+DECLARE
+   v_prefix varchar2(3);
+   
+
+BEGIN
+IF INSERTING THEN 
+   SELECT schema_prefix INTO v_prefix
+   FROM SRC_TGT_SCHEMA
+   WHERE SYSTEM_SCHEMA_KEY=:new.SYSTEM_SCHEMA_KEY;
+   IF :new.LAYER='RAW' THEN 
+   :new.TARGET_OBJECT_NAME := v_prefix||'_'||nvl(:new.OBJECT_SHORT_NAME,:new.SOURCE_OBJECT_NAME);
+   END IF;
+END IF;
+IF UPDATING THEN 
+    SELECT schema_prefix INTO v_prefix
+   FROM SRC_TGT_SCHEMA
+   WHERE SYSTEM_SCHEMA_KEY=:new.SYSTEM_SCHEMA_KEY;
+   IF :new.LAYER='RAW' THEN 
+   :new.TARGET_OBJECT_NAME := v_prefix||'_'||nvl(:new.OBJECT_SHORT_NAME,:new.SOURCE_OBJECT_NAME);
+   END IF;
+END IF;
+END;
+
+/
+
+/***********************************************************************************************/
+--DEVELOPER_TASKS  - Developer tasks
+/***********************************************************************************************/
+
+
+
+CREATE TABLE LCF.DEVELOPER_TASKS 
+   (	
+  TASK_KEY NUMBER(10,0), 
+	TASK_STATUS VARCHAR2(10), 
+	DATABASE VARCHAR2(10 BYTE), 
+	SCHEMA VARCHAR2(20 BYTE), 
+	SOURCE_OBJECT_NAME VARCHAR2(50), 
+	TARGET_OBJECT_NAME VARCHAR2(30), 
+	TASK_TYPE VARCHAR2(15), 
+	DESCRIPTION VARCHAR2(200), 
+	START_DATE DATE, 
+	END_DATE DATE, 
+	BATCH_NUM NUMBER(5,0), 
+	DEVELOPER_FSCP VARCHAR2(20), 
+	FSCP_CMPLTD VARCHAR2(3 ), 
+	DEVELOPER_DIS VARCHAR2(20 ), 
+	DEV_CMPLTD VARCHAR2(2), 
+	DEV_PRIORITY NUMBER(3,0), 
+	DEV_VALIDATION_CMPLTD VARCHAR2(2), 
+	PEER_REVIEWER VARCHAR2(20 ), 
+	PEER_REVIEW_CMPLTD VARCHAR2(1 ), 
+	DEVELOPER_TDWHIST VARCHAR2(20 ), 
+	TDW_HISTORY_ANALYSIS_CMPLTD VARCHAR2(2 ), 
+	TDW_HISTORY_MIGRATION_CMPLTD VARCHAR2(2 ), 
+	MIGRATED_TO_TEST VARCHAR2(2 ), 
+	FULL_TEST_RUN_CMPLTD VARCHAR2(2 ), 
+	MIGRATED_TO_PROD VARCHAR2(2 ), 
+	PROD_JOB_SCHEDULED VARCHAR2(2 ), 
+	COMMENTS CLOB, 
+	CREATED_BY VARCHAR2(10 BYTE) DEFAULT SYS_CONTEXT( 'USERENV', 'OS_USER' ), 
+	CREATED_ON TIMESTAMP (6) DEFAULT SYSDATE, 
+	UPDATED_BY VARCHAR2(10), 
+	UPDATED_ON TIMESTAMP (6), 
+  CONSTRAINT DEVELOPER_TASKS_PK PRIMARY KEY (TASK_KEY));
+   
+/***********************************************************************************************/
+--TRG_DEVELOPER_TASK_PRE_INSERT - Generate new sequence
+/***********************************************************************************************/
+DROP TRIGGER TRG_DEVELOPER_TASKS_PRE_INSERT;
+
+
+CREATE SEQUENCE seq_DEVELOPER_TASKS_KEY START WITH 1 ;
+
+CREATE OR REPLACE EDITIONABLE TRIGGER LCF.TRG_DEVELOPER_TASKS_PRE_INSERT 
+BEFORE INSERT ON LCF.DEVELOPER_TASKS
+FOR EACH ROW
+DECLARE  
+   
+BEGIN
+  
+	SELECT seq_DEVELOPER_TASKS_KEY.nextval
+		INTO :NEW.TASK_KEY
+		FROM DUAL;
+
+ 
+END;
+/
+ALTER TRIGGER LCF.TRG_DEVELOPER_TASKS_PRE_INSERT ENABLE;
+DROP TRIGGER LCF.TRG_TASK_PRE_UPDATE;
+
+
+/***********************************************************************************************/
+--TRG_OBJECT_CONTROL_LOAD 
+/***********************************************************************************************/
+
+
+CREATE OR REPLACE EDITIONABLE TRIGGER LCF.TRG_OBJECT_CONTROL_LOAD 
+AFTER  
+INSERT OR UPDATE ON LCF.OBJECT
+ 
+FOR EACH ROW 
+BEGIN
+IF INSERTING THEN 
+INSERT INTO LCF.OBJECT_CONTROL
+( SYSTEM_SCHEMA_KEY      ,  
+  OBJECT_KEY,
+  TARGET_OBJECT_NAME  )
+VALUES
+  (
+:new.SYSTEM_SCHEMA_KEY      ,  
+:new.OBJECT_KEY,
+:new.TARGET_OBJECT_NAME   );
+END IF;
+IF UPDATING THEN 
+      UPDATE LCF.OBJECT_CONTROL
+       SET TARGET_OBJECT_NAME=:new.TARGET_OBJECT_NAME
+       WHERE :old.OBJECT_KEY=OBJECT_CONTROL.OBJECT_KEY;
+END IF;
+
+END;
+/
+ALTER TRIGGER LCF.TRG_OBJECT_CONTROL_LOAD ENABLE;
+
+
+
+--------------------------------------------------------
+--  DDL for Table ALL_SOURCE_COLUMNS
+--------------------------------------------------------
+
+  CREATE TABLE LCF.ALL_SOURCE_COLUMNS 
+   (	SYSTEM_SCHEMA_KEY NUMBER(10,0), 
+	SYSTEM_TYPE VARCHAR2(30 BYTE), 
+	TABLE_CATALOG VARCHAR2(800 BYTE), 
+	TABLE_NAME VARCHAR2(500 BYTE), 
+	COLUMN_NAME VARCHAR2(500 BYTE), 
+	DATA_TYPE VARCHAR2(500 BYTE), 
+	CHARACTER_MAXIMUM_LENGTH NUMBER(20,0), 
+	NUMERIC_PRECISION NUMBER(10,0), 
+	NUMERIC_SCALE NUMBER(20,0), 
+	IS_NULLABLE VARCHAR2(5 BYTE), 
+	ORDINAL_POSITION NUMBER(20,0), 
+	PK_FLAG VARCHAR2(1 BYTE), 
+	DATABASE VARCHAR2(10 BYTE), 
+	SCHEMA VARCHAR2(15 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE LOAD_CONTROL_DATA   NO INMEMORY ;
+
+
+ /***********************************************************************************************/
+--The End
+/***********************************************************************************************/
+
+ 

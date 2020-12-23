@@ -1,0 +1,15 @@
+2020-10-30 15:53:59------start ./snapshot.sh test_dw test_dw
+2020-10-30 15:54:03------show tables
+2020-10-30 15:54:07------418 tables or views
+2020-10-30 15:54:07------show create table
+2020-10-30 15:54:25------278 tables excluding views
+2020-10-30 15:54:25------drop table
+2020-10-30 15:54:26------0 tables dropped
+2020-10-30 15:54:31------create table
+2020-10-30 15:55:04------278 tables created
+2020-10-30 15:55:09------refresh table
+2020-10-30 15:55:11------275 tables refreshed
+2020-10-30 15:55:11------recover partitions
+2020-10-30 15:55:12------3 table partitions recovered
+2020-10-30 15:55:12------show tables backup expired
+2020-10-30 15:55:17------complete ./snapshot.sh test_dw test_dw

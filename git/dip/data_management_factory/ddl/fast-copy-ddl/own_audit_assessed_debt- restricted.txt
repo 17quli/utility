@@ -1,0 +1,65 @@
+CREATE VIEW ${target_db=Enter the target database name here}.own_audit_assessed_debt
+AS SELECT 
+z.YEAR_MONTH,
+z.AAD_CATEGORY,
+z.AUDIT_CASE_KEY,
+z.AUDIT_CASE_IRD_NUMBER,
+z.AUDIT_CASE_LOCATION_NUMBER,
+z.AUDIT_CASE_TYPE,
+z.AUDIT_CASE_NUMBER,
+z.AUDIT_DATE_END,
+z.AUDIT_CASE_CATEGORY,
+z.AUDIT_UNIT,
+z.AUDIT_PROJECT_ID,
+z.AUDIT_TEAM_LEADER_ID,
+z.DEBT_CASE_KEY,
+z.DEBT_CASE_CATEGORY,
+z.DEBT_CASE_NUMBER,
+z.DEBT_CASE_DATE_START,
+z.DEBT_CASE_DATE_END,
+z.DEBT_CASE_ACTION_TYPE_CODE,
+z.DEBT_LAST_ACTION_DATE,
+z.DEBT_LAST_ACTION_USER_ID,
+z.DEBT_DISTRICT_OFFICE,
+z.DEBT_SERVICE_CENTRE,
+z.ELEMENT_DATE_START,
+z.ELEMENT_DATE_END,
+z.AUDIT_PERIOD_END,
+z.RTN_PRD_IRD_NUMBER,
+z.RTN_PRD_LOCATION_NUMBER,
+z.TAX_TYPE,
+z.RETURN_PERIOD_DATE,
+z.AUDIT_PHASE_NUMBER,
+z.AUDIT_VERSION_NUMBER,
+z.AUDIT_ATTRIB_DISCREP_AMOUNT,
+z.AUDIT_REASSESSMENT_AMOUNT,
+z.ELEMENT_ASSESSMENT_AMOUNT,
+z.ELEMENT_P_AND_I_AMOUNT,
+z.FT_SHORTFALL_PENALTY,
+z.FT_WRITE_OFF,
+z.FT_LATE_PAYMENT_PENALTY,
+z.FT_INTEREST,
+z.FT_REMISSION,
+z.ELEMENT_BALANCE,
+z.ELEMENT_DA_INDICATOR,
+z.ELEMENT_ARRANGMENT_INDICATOR,
+z.AGE_OF_DEBT,
+z.CM_CASE_ROWID
+ FROM ${source_db=Enter the source database name here}.AUDIT_ASSESSED_DEBT z
+
+left outer join 
+${source_db1}.app_tblcustomerinfo ci1
+on cast(ci1.fstrid  as INT)= cast(z.AUDIT_CASE_IRD_NUMBER as INT)
+left outer join 
+${source_db1}.app_tblcustomerinfo ci2
+on cast(ci2.fstrid  as INT)= cast(z.RTN_PRD_IRD_NUMBER as INT)
+where 
+  ci1.fstridtype = 'IRD'
+  and ci1.record_active_flag = 'Y'
+  and ci1.record_deleted_flag = 'N'
+  and nvl(ci1.fstrCustomerLevel, 'STD') = 'STD'
+  and ci2.fstridtype = 'IRD'
+  and ci2.record_active_flag = 'Y'
+  and ci2.record_deleted_flag = 'N'
+  and nvl(ci2.fstrCustomerLevel, 'STD') = 'STD'
+  ;

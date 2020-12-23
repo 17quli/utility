@@ -1,0 +1,23 @@
+ 
+CREATE VIEW ${target_db=Enter the target database name here}.app_tblnz_tpaschedule
+AS SELECT 
+z.flngTPAKey,
+z.flngSequence,
+z.flngCustomerKey,
+z.fstrName,
+z.fstrIRDNumber,
+z.fcurAmount,
+z.fdtmDeleted,
+z.fstrWho,
+z.fdtmWhen
+ FROM ${source_db=Enter the source database name here}.TBLNZ_TPASCHEDULE z
+ left outer join 
+dev_raw.app_tblcustomerlevel cl 
+on z.flngcustomerkey = cl.flngcustomerkey
+where nvl(cl.fstrcustomerlevel, 'STD') = 'STD' 
+  and nvl(cl.record_active_flag, 'Y') = 'Y' 
+  and nvl(cl.record_deleted_flag, 'N') = 'N'
+
+;
+
+ 

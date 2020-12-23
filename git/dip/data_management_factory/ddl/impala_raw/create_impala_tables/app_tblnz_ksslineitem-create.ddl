@@ -1,0 +1,26 @@
+CREATE TABLE ${var:target_db}.app_tblnz_ksslineitem (
+flngReturnKey INT,
+flngItemNumber INT,
+flngAccountKey INT,
+fdtmFilingPeriod TIMESTAMP,
+fdtmPayDayPeriod TIMESTAMP,
+fi64KSEContributionKey BIGINT,
+fi64KSRContributionKey BIGINT,
+fblnReversed SMALLINT,
+fblnKSEConverted SMALLINT,
+fblnKSRConverted SMALLINT,
+fstrCnvIRDNumber VARCHAR(18),
+fstrCnvEmployeeName VARCHAR(510),
+fstrCnvTaxCode VARCHAR(18),
+fcurCnvKiwiSaverDeductions DECIMAL(19,4),
+fcurCnvKiwiSaverContributions DECIMAL(19,4),
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

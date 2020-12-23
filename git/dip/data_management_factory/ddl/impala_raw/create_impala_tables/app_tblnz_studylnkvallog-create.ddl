@@ -1,0 +1,27 @@
+CREATE TABLE ${var:target_db}.app_tblnz_studylnkvallog (
+fi64ValidateLogKey BIGINT,
+flngDocKey INT,
+flngCustomerKey INT,
+fstrCorrelationID VARCHAR(510),
+fstrIRDNumber VARCHAR(18),
+fstrFamilyName VARCHAR(100),
+fstrMiddleName VARCHAR(100),
+fstrFirstName VARCHAR(100),
+fdtmApplicationDate TIMESTAMP,
+fdtmDOB TIMESTAMP,
+fstrAccountType VARCHAR(12),
+fintValidateIRD SMALLINT,
+fintValidateDOB SMALLINT,
+fintValidateName SMALLINT,
+fintValidateDebt SMALLINT,
+fblnPassedValidation SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

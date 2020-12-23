@@ -1,0 +1,4 @@
+select decode(rc_s3-rc_local,0,'passed','failed') result,* from (select count(1) rc_s3 from dev_dw.lab_analytics_team_cmp_master_20201209) s3 join (select count(1) rc_local from prod_dw.lab_analytics_team_cmp_master_20201209) l;
+select decode(rc_s3-rc_local,0,'passed','failed') result,* from (select count(1) rc_s3 from dev_dw.lab_analytics_team_cmp_master_20201210) s3 join (select count(1) rc_local from prod_dw.lab_analytics_team_cmp_master_20201210) l;
+select decode(rc_s3-rc_local,0,'passed','failed') result,* from (select count(1) rc_s3 from dev_dw.lab_analytics_team_cmp_master_20201211) s3 join (select count(1) rc_local from prod_dw.lab_analytics_team_cmp_master_20201211) l;
+select decode(rc_s3-rc_local,0,'passed','failed') result,* from (select count(1) rc_s3 from dev_dw.lab_analytics_team_cmp_master_20201212) s3 join (select count(1) rc_local from prod_dw.lab_analytics_team_cmp_master_20201212) l;

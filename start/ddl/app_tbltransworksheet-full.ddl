@@ -1,0 +1,2 @@
+CREATE VIEW ${var:view_db}.app_tbltransworksheet AS
+SELECT z.flngDocKey, z.flngVer, z.flngVerLast, z.fstrTransWorkSheet, z.fstrDocType, z.fintDocVer, z.fstrAccountType, z.flngAccountKey, z.fdtmFilingPeriod, z.flngBillItemKey, z.fdtmEffect, z.fdtmCreated, z.fstrCreatedBy, z.fdtmReversed, z.fstrReversedBy, z.flngCrmKey, z.fstrWho, z.fdtmWhen, z.record_effective_timestamp, z.record_expiry_timestamp, z.record_active_flag, z.record_deleted_flag, z.insert_object_run_key, z.update_object_run_key FROM ${var:source_db}.app_tbltransworksheet z;

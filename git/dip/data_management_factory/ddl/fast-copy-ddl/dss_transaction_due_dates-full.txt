@@ -1,0 +1,20 @@
+CREATE VIEW lab_fcp_raw.dss_transaction_due_dates
+AS SELECT z.ird_number,	
+z.location_number,	
+z.tax_type,	
+z.return_period_date,
+z.seq_no,
+z.date_due,	
+z.date_due_number,	
+z.date_applied,
+z.due_amount,	
+z.user_id,
+z.penalty_and_interest_amount,	
+z.balance,	
+z.transaction_code,	
+z.due_date_reason_code,	
+z.date_updated,
+z.date_ceased,	
+z.timestamp,	
+z.latest_indicator
+from lab_fcp_raw.transaction_due_dates z;

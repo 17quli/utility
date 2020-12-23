@@ -1,0 +1,1 @@
+alter table <environment>_raw/jnl.APP_TBLNZ_KSEMPLOYRCHSNSCHMS add columns (fstrinvalidationreason varchar(100));

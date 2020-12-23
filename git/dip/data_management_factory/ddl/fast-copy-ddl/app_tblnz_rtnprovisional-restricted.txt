@@ -1,0 +1,11 @@
+CREATE VIEW lab_fcp_raw_restricted_access.tblnz_rtnprovisional
+AS SELECT z.flngDocKey, 
+       z.fcurLossToCarryForward, 
+       z.fcurResidualIncomeTax, 
+       z.fcurTerminalTax, 
+       z.fcurFurtherIncomeTax, 
+       z.fcurPriorYearRIT, 
+       z.fblnVoluntaryProv, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblnz_rtnprovisional z ;

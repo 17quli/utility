@@ -1,0 +1,4 @@
+app_tblnz_famabatements
+app_tblnz_famincomecalc
+app_tblnz_famincomedetails
+app_tblnz_famrelperiods

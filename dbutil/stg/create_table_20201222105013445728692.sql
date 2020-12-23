@@ -1,0 +1,4 @@
+create table test_raw_app_tblnz_famiwtc_20201222 like test_raw.app_tblnz_famiwtc;
+create table test_raw_app_tblnz_ksscontribution_20201222 like test_raw.app_tblnz_ksscontribution;
+create table test_raw_app_tblnz_visitmanagedcall_20201222 like test_raw.app_tblnz_visitmanagedcall;
+create table test_raw_frd_tblfrdplandata_1336541184_20201222 like test_raw.frd_tblfrdplandata_1336541184;

@@ -1,0 +1,41 @@
+CREATE VIEW lab_fcp_raw_restricted_access.app_tblnz_rtnprs                                                                                         
+AS SELECT                                                                                                                           
+z.flngReturnKey,                                                                                                                    
+z.flngItemNumber,                                                                                                                   
+z.flngVer,                                                                                                                          
+z.flngVerLast,                                                                                                                      
+z.fblnInError,                                                                                                                      
+z.fstrEmployerIRD,                                                                                                                  
+z.fstrEmployerName,                                                                                                                 
+z.fstrEmployeeIRD,                                                                                                                  
+z.fstrEmployeeName,                                                                                                                 
+z.flngTimesPaid,                                                                                                                    
+z.fblnOverrideValidation,                                                                                                           
+z.fblnInvalidFilingHistory,                                                                                                         
+z.fblnDuplicate,                                                                                                                    
+z.fblnInvalidNumberEmployees,                                                                                                       
+z.fblnNoPILink,                                                                                                                     
+z.fblnNoReturn,                                                                                                                     
+z.fblnNoPayment,                                                                                                                    
+z.fblnLateReturn,                                                                                                                   
+z.fblnLargeEmployer,                                                                                                                
+z.fdtmDeleted,                                                                                                                      
+z.fdtmProcessed,                                                                                                                    
+z.fstrWho,                                                                                                                          
+z.fdtmWhen                                                                                                            
+FROM lab_fcp_raw.tblnz_rtnprs z
+WHERE z.flngReturnKey IN 
+( SELECT DISTINCT rt.flngReturnKey 
+  FROM dev_raw.app_tblreturn rt 
+  INNER JOIN dev_raw.app_tblaccount ac 
+  ON rt.flngAccountKey = ac.flngAccountKey 
+  AND rt.record_deleted_flag = 'N' 
+  AND rt.record_active_flag = 'Y' 
+  AND ac.record_deleted_flag = 'N' 
+  AND ac.record_active_flag = 'Y' 
+  LEFT OUTER JOIN  dev_raw.app_tblCustomerLevel cl on 
+  ac.flngcustomerkey=cl.flngcustomerkey 
+  WHERE nvl(cl.fstrCustomerLevel, 'STD') = 'STD' 
+    AND nvl(cl.record_active_flag, 'Y') = 'Y' 
+   AND nvl(cl.record_deleted_flag, 'N') = 'N' 
+);

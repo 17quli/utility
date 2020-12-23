@@ -1,0 +1,18 @@
+create view lab_fcp_raw_full_access.dss_returns_keypoints_ir15p
+as select 
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,
+z.return_status,
+z.form_version_no,
+z.number_of_error_items,
+z.`timestamp`,
+z.pre_encription_check_100018,
+z.pre_encription_ird_no_100019,
+z.pre_encription_loc_no_100020,
+z.resident_withholding_tax_1106,
+z.std_disclaimer_applies_100045
+ from lab_fcp_raw.returns_keypoints_ir15p z
+;

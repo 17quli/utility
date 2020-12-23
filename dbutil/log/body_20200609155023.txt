@@ -1,0 +1,16 @@
+2020-06-09 15:50:23------start ./dbbackup.sh lab_nzsr4_raw_cas_views prod_dw
+2020-06-09 15:50:24------show tables
+2020-06-09 15:50:25------75 tables or views
+2020-06-09 15:50:25------show create table
+2020-06-09 15:50:27------75 tables excluding views
+2020-06-09 15:50:27------drop table
+2020-06-09 15:50:33------create table
+2020-06-09 15:50:45------75 tables created
+2020-06-09 15:50:45------hdfs copy
+2020-06-09 16:16:19------75 hdfs directories copied
+2020-06-09 16:16:19------refresh table
+2020-06-09 16:16:20------75 tables refreshed
+2020-06-09 16:16:20------recover partitions
+2020-06-09 16:16:21------0 table partitions recovered
+2020-06-09 16:16:21------show tables backup expired
+2020-06-09 16:16:22------complete ./dbbackup.sh lab_nzsr4_raw_cas_views prod_dw

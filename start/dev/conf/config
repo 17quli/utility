@@ -1,0 +1,8 @@
+source_db=dev_dw
+target_db=dev_raw
+lab_db=dev_dw
+journal_db=dev_jnl
+backup_db=dev_dw
+view_db_full=dev_raw_full_access
+view_db_restricted=dev_raw_restricted_access
+db_env=dev

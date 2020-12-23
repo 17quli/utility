@@ -1,0 +1,445 @@
+ /********************************************************************************************
+21/11/19 ird0sxd  Updated batch1 scripts with batch2 tables.Added tables tblALLOCATION,tblNZ_AccIncome,tblNZ_AccPIEInfo,tblNZ_RtnGST,tblNZ_RtnIIT. 
+                  Removed references to tblNZ_accPSO,tblNZ_AccGSTInfo 
+22/11/19 ird0nxa  Corrections to table names, key names and Impala Insert scripts
+27/11/19 ird0sxr1 Corrections to Impala Insert script for tblNZ_RtnIIT only as suddenly 10 new columns got added in NZO. Corrected the order as welll after it failed data validation in TEST.
+28/11/19 ird0sxr1 Found that table app_tblNZ_AccPIEInfo was accidentally truncated in Prod on 27-nov-2019 after completing the end-to-end run. 
+                  I have re-run TDW migration for app_tblNZ_AccPIEInfo today(28-Nov-2019). Please ignore the stats in object_run from 27-nov-2019 run.
+
+
+*********************************************************************************************/
+
+-- Backup existing RAW START tables touched by history migration process
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblallocation;
+create table  ${target_db=Enter the target database name here}_raw.app_tblallocation_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblallocation;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblallocation_20191122;
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+create table  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome_20191122;
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+create table  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo_20191122;
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+create table  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST_20191122;
+
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+create table  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+select count(*) as backup_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT_20191122;
+
+
+
+-- Backup existing RAW TDW tables touched by history migration process
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation_20191122;
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome_20191122;
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo_20191122;
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST_20191122;
+
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+create table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT_20191122 stored as parquet
+as select * from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+select count(*) as raw_tdw_backup_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT_20191122;
+
+
+
+-- Truncate existing RAW tables for START
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION;
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome; 
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+
+truncate table  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+select count(*) as raw_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+
+
+
+-- Truncate existing RAW tables for TDW
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+
+truncate table  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+
+
+
+-- Run Checks on TDW tables and START tables in SAS EG or SAS Studio (Use TDW History Load Check code: History Analysis - STEP 1). Export Results as PDF.
+
+-- Run the Code generated by SAS DI Studio Jobs in SAS EG or SAS Studio to populate the RAW TDW tables. Save the Logs.
+
+-- Check records in RAW TDW tables
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+select count(*) as raw_tdw_count from  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+
+
+-- Using Impala commands Load data manually from RAW TDW tables into RAW START tables
+
+INSERT INTO TABLE  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION
+SELECT
+CAST(FLNGPAYMENTKEY AS INT) AS FLNGPAYMENTKEY,
+CAST(FLNGTRANSKEY AS INT) AS FLNGTRANSKEY,
+CAST(FINTALLOCATION AS SMALLINT) AS FINTALLOCATION,
+CAST(FCURAMOUNT AS DECIMAL(19,4)) AS FCURAMOUNT,
+CAST(FLNGACCOUNTKEY AS INT) AS FLNGACCOUNTKEY,
+CAST(FDTMFILINGPERIOD AS TIMESTAMP) AS FDTMFILINGPERIOD,
+CAST(FDTMALLOCATED AS TIMESTAMP) AS FDTMALLOCATED,
+CAST(FDTMREVERSED AS TIMESTAMP) AS FDTMREVERSED,
+CAST(FSTRBATCHTYPE AS VARCHAR(12)) AS FSTRBATCHTYPE,
+CAST(FSTRACCOUNTTYPE AS VARCHAR(12)) AS FSTRACCOUNTTYPE,
+CAST(FSTRTRANSTYPE AS VARCHAR(12)) AS FSTRTRANSTYPE,
+CAST(FDTMEFFECT AS TIMESTAMP) AS FDTMEFFECT,
+CAST(FDTMRADAYALLOCATED AS TIMESTAMP) AS FDTMRADAYALLOCATED,
+CAST(FDTMRADAYREVERSED AS TIMESTAMP) AS FDTMRADAYREVERSED,
+CAST(FSTRWHO AS VARCHAR(20)) AS FSTRWHO,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(FSTRSOURCEDEPOSITTYPE AS VARCHAR(12)) AS fstrSourceDepositType,
+CAST(FSTRDESTDEPOSITTYPE AS VARCHAR(12)) AS fstrDestDepositType,
+CAST(FDTMDEPOSITDATE AS TIMESTAMP) AS fdtmDepositDate,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_allocation;
+
+
+INSERT INTO TABLE  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome
+SELECT
+CAST(FLNGDOCKEY AS INT) AS flngDocKey,
+CAST(FDTMBALANCEDATE AS TIMESTAMP) AS fdtmBalanceDate,
+CAST(FBLNSEASONALEMPLOYEE AS SMALLINT) AS fblnSeasonalEmployee,
+CAST(FSTREXEMPTIONREASON AS VARCHAR(100)) AS fstrExemptionReason,
+CAST(FSTRWHO AS VARCHAR(20)) AS fstrWho,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccIncome;
+
+
+INSERT INTO  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo
+SELECT
+CAST(FLNGDOCKEY AS INT) AS flngDocKey,
+CAST(FSTRPIETYPE AS VARCHAR(100)) AS fstrPIEType,
+CAST(FSTRFILINGOPTION AS VARCHAR(100)) AS fstrFilingOption,
+CAST(FSTRATTRIBUTIONPERIOD AS VARCHAR(100)) AS fstrAttributionPeriod,
+CAST(FSTRFDRCALCPERIOD AS VARCHAR(100)) AS fstrFDRCalcPeriod,
+CAST(FBLNFILINGREQEXEMPTION AS SMALLINT) AS fblnFilingReqExemption,
+CAST(FSTRWHO AS VARCHAR(20)) AS fstrWho,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(FBLNCONVERTED AS SMALLINT) AS fblnConverted,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_AccPIEInfo;
+
+
+INSERT INTO  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST
+SELECT
+CAST(FLNGDOCKEY AS INT) AS flngDocKey,
+CAST(FSTRREGISTRATIONNO AS VARCHAR(18)) AS fstrRegistrationNo,
+CAST(FDTMFILINGPERIOD AS TIMESTAMP) AS fdtmFilingPeriod,
+CAST(FSTRFILINGFREQ AS VARCHAR(12)) AS fstrFilingFreq,
+CAST(FSTRSOURCETYPE AS VARCHAR(24)) AS fstrSourceType,
+CAST(FBLNNIL AS SMALLINT) AS fblnNil,
+CAST(FBLNFINALRETURN AS SMALLINT) AS fblnFinalReturn,
+CAST(FBLNINCORRECTFORM AS SMALLINT) AS fblnIncorrectForm,
+CAST(FSTRFORMTYPEFILED AS VARCHAR(16)) AS fstrFormTypeFiled,
+CAST(FSTRFORMTYPEEXPECTED AS VARCHAR(16)) AS fstrFormTypeExpected,
+CAST(FBLNHOSPICE AS SMALLINT) AS fblnHospice,
+CAST(FSTRHOSPICETYPE AS VARCHAR(24)) AS fstrHospiceType,
+CAST(FBLNPROVISIONALFILER AS SMALLINT) AS fblnProvisionalFiler,
+CAST(FSTRPROVISIONALOPTION AS VARCHAR(24)) AS fstrProvisionalOption,
+CAST(FBLNCOMPULSORY AS SMALLINT) AS fblnCompulsory,
+CAST(FBLNMULTIBRANCHFILER AS SMALLINT) AS fblnMultibranchFiler,
+CAST(FBLNTRANSITIONALRETURN AS SMALLINT) AS fblnTransitionalReturn,
+CAST(FBLNCORRESPONDENCE AS SMALLINT) AS fblnCorrespondence,
+CAST(FSTRVENDORID AS VARCHAR(100)) AS fstrVendorID,
+CAST(FSTRSOFTWAREPROVIDER AS VARCHAR(100)) AS fstrSoftwareProvider,
+CAST(FSTRWEBLOGONID AS VARCHAR(100)) AS fstrWebLogonID,
+CAST(FBLNQUALIFYRATIO AS SMALLINT) AS fblnQualifyRatio,
+CAST(FCURRATIO AS DECIMAL(19,4)) AS fcurRatio,
+CAST(FCURGSTTOTAL AS DECIMAL(19,4)) AS fcurGSTTotal,
+CAST(FCURTOTALSALES AS DECIMAL(19,4)) AS fcurTotalSales,
+CAST(FCURP1TOTALSALES AS DECIMAL(19,4)) AS fcurP1TotalSales,
+CAST(FCURP1ZEROSUPPLIES AS DECIMAL(19,4)) AS fcurP1ZeroSupplies,
+CAST(FCURP1INCOMECALCULATION AS DECIMAL(19,4)) AS fcurP1IncomeCalculation,
+CAST(FCURP1GSTCOLLECTED AS DECIMAL(19,4)) AS fcurP1GSTCollected,
+CAST(FCURP1LONGTERMSALES AS DECIMAL(19,4)) AS fcurP1LongTermSales,
+CAST(FCURP1LONGTERMGST AS DECIMAL(19,4)) AS fcurP1LongTermGST,
+CAST(FCURP1HOSPITALSALES AS DECIMAL(19,4)) AS fcurP1HospitalSales,
+CAST(FCURP1HOSPITALGST AS DECIMAL(19,4)) AS fcurP1HospitalGST,
+CAST(FCURP1SALESADJUSTMENTS AS DECIMAL(19,4)) AS fcurP1SalesAdjustments,
+CAST(FCURP1NETSALESANDINCOME AS DECIMAL(19,4)) AS fcurP1NetSalesAndIncome,
+CAST(FCURP1TOTALEXPENSES AS DECIMAL(19,4)) AS fcurP1TotalExpenses,
+CAST(FCURP1EXPENSESCALCULATION AS DECIMAL(19,4)) AS fcurP1ExpensesCalculation,
+CAST(FCURP1CREDITADJUSTMENTS AS DECIMAL(19,4)) AS fcurP1CreditAdjustments,
+CAST(FCURP1GSTCREDIT AS DECIMAL(19,4)) AS fcurP1GSTCredit,
+CAST(FCURP1TOTALGST AS DECIMAL(19,4)) AS fcurP1TotalGST,
+CAST(FCURP2TOTALSALES AS DECIMAL(19,4)) AS fcurP2TotalSales,
+CAST(FCURP2ZEROSUPPLIES AS DECIMAL(19,4)) AS fcurP2ZeroSupplies,
+CAST(FCURP2LONGTERMSALES AS DECIMAL(19,4)) AS fcurP2LongTermSales,
+CAST(FCURP2LONGTERMGST AS DECIMAL(19,4)) AS fcurP2LongTermGST,
+CAST(FCURP2HOSPITALSALES AS DECIMAL(19,4)) AS fcurP2HospitalSales,
+CAST(FCURP2HOSPITALGST AS DECIMAL(19,4)) AS fcurP2HospitalGST,
+CAST(FCURP2SALESADJUSTMENTS AS DECIMAL(19,4)) AS fcurP2SalesAdjustments,
+CAST(FCURP2TOTALEXPENSES AS DECIMAL(19,4)) AS fcurP2TotalExpenses,
+CAST(FCURP2CREDITADJUSTMENTS AS DECIMAL(19,4)) AS fcurP2CreditAdjustments,
+CAST(FCURPTPREVIOUSTOTALSALES AS DECIMAL(19,4)) AS fcurPTPreviousTotalSales,
+CAST(FCURPTTOTALBRANCHSALES AS DECIMAL(19,4)) AS fcurPTTotalBranchSales,
+CAST(FCURPTINCLUDEBRANCHESTSI AS DECIMAL(19,4)) AS fcurPTIncludeBranchesTSI,
+CAST(FCURPTASSETADJUSTMENT AS DECIMAL(19,4)) AS fcurPTAssetAdjustment,
+CAST(FCURPTLESSASSETSTSI AS DECIMAL(19,4)) AS fcurPTLessAssetsTSI,
+CAST(FCURPTINSTALMENTDUE AS DECIMAL(19,4)) AS fcurPTInstalmentDue,
+CAST(FCURPTVOLUNTARYAMOUNT AS DECIMAL(19,4)) AS fcurPTVoluntaryAmount,
+CAST(FCURPTREFUNDTRANSFER AS DECIMAL(19,4)) AS fcurPTRefundTransfer,
+CAST(FCURPTGSTTOPAY AS DECIMAL(19,4)) AS fcurPTGSTToPay,
+CAST(FCURPTPROVTAXDUE AS DECIMAL(19,4)) AS fcurPTProvTaxDue,
+CAST(FCURPTPAYMENT AS DECIMAL(19,4)) AS fcurPTPayment,
+CAST(FSTRWHO AS VARCHAR(20)) AS fstrWho,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnGST;
+
+
+/*New - Should be RUN*/
+INSERT INTO  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT
+SELECT
+CAST(FLNGDOCKEY AS INT) AS flngDocKey,
+CAST(FBLNIR215ATTACHED AS SMALLINT) AS fblnIR215Attached,
+CAST(FCURTOTALFAMILYTAXCREDIT AS DECIMAL(19,4)) AS fcurTotalFamilyTaxCredit,
+CAST(FCURTOTALPAYEDEDUCTED AS DECIMAL(19,4)) AS fcurTotalPAYEDeducted,
+CAST(FCURTOTALADJPAYEDEDUCTED AS DECIMAL(19,4)) AS fcurTotalAdjPAYEDeducted,
+CAST(FCURTOTALGROSSINCOME AS DECIMAL(19,4)) AS fcurTotalGrossIncome,
+CAST(FCURINCOMENOTLIABLEFORACC AS DECIMAL(19,4)) AS fcurIncomeNotLiableForACC,
+CAST(FCURACCEARNERLEVY AS DECIMAL(19,4)) AS fcurACCEarnerLevy,
+CAST(FCURTOTALINCOMEWITHTAXDEDUCTED AS DECIMAL(19,4)) AS fcurTotalIncomeWithTaxDeducted,
+CAST(FCURTOTALSCHEDULARPYMTTAXDED AS DECIMAL(19,4)) AS fcurTotalSchedularPymtTaxDed,
+CAST(FCURTOTALGROSSSCHEDULARPAYMENT AS DECIMAL(19,4)) AS fcurTotalGrossSchedularPayment,
+CAST(FCUREXPENSESSCHEDULARPAYMENTS AS DECIMAL(19,4)) AS fcurExpensesSchedularPayments,
+CAST(FCURNETSCHEDULARPAYMENTS AS DECIMAL(19,4)) AS fcurNetSchedularPayments,
+CAST(FCURTOTALRWT AS DECIMAL(19,4)) AS fcurTotalRWT,
+CAST(FCURTOTALGROSSINTEREST AS DECIMAL(19,4)) AS fcurTotalGrossInterest,
+CAST(FBLNINTPSHPLTC AS SMALLINT) AS fblnIntPshpLTC,
+CAST(FCURTOTALIMPUTATIONCREDITS AS DECIMAL(19,4)) AS fcurTotalImputationCredits,
+CAST(FCURTOTALDIVIDENDRWT AS DECIMAL(19,4)) AS fcurTotalDividendRWT,
+CAST(FCURTOTALGROSSDIVIDENDS AS DECIMAL(19,4)) AS fcurTotalGrossDividends,
+CAST(FBLNDIVPSHPLTC AS SMALLINT) AS fblnDivPshpLTC,
+CAST(FCURTOTALMAORICREDITS AS DECIMAL(19,4)) AS fcurTotalMaoriCredits,
+CAST(FCURTOTALMAORIDISTRIBUTIONS AS DECIMAL(19,4)) AS fcurTotalMaoriDistributions,
+CAST(FCURTOTALTAXPAIDBYTRUSTEES AS DECIMAL(19,4)) AS fcurTotalTaxPaidByTrustees,
+CAST(FCURTOTALESTATEORTRUSTEEINCOME AS DECIMAL(19,4)) AS fcurTotalEstateOrTrusteeIncome,
+CAST(FCURTOTALTAXABLEDISTRIBUTIONS AS DECIMAL(19,4)) AS fcurTotalTaxableDistributions,
+CAST(FCURTOTALOVERSEASTAXPAID AS DECIMAL(19,4)) AS fcurTotalOverseasTaxPaid,
+CAST(FCURTOTALOVERSEASINCOME AS DECIMAL(19,4)) AS fcurTotalOverseasIncome,
+CAST(FBLNOVERSEASSUPER AS SMALLINT) AS fblnOverseasSuper,
+CAST(FCURTOTALPARTNERSHIPTAXCREDITS AS DECIMAL(19,4)) AS fcurTotalPartnershipTaxCredits,
+CAST(FCURTOTALACTIVEPTSHPINCOME AS DECIMAL(19,4)) AS fcurTotalActivePtshpIncome,
+CAST(FCURTOTALLTCTAXCREDITS AS DECIMAL(19,4)) AS fcurTotalLTCTaxCredits,
+CAST(FCURTOTALACTIVELTCINCOME AS DECIMAL(19,4)) AS fcurTotalActiveLTCIncome,
+CAST(FCURNONALLOWABLEDEDUCTIONS AS DECIMAL(19,4)) AS fcurNonAllowableDeductions,
+CAST(FCURNONALLOWABLEDEDCLAIMED AS DECIMAL(19,4)) AS fcurNonAllowableDedClaimed,
+CAST(FCURADJUSTEDLTCINCOME AS DECIMAL(19,4)) AS fcurAdjustedLTCIncome,
+CAST(FCURTAXCREDITSUBTOTAL AS DECIMAL(19,4)) AS fcurTaxCreditSubtotal,
+CAST(FCURINCOMESUBTOTAL AS DECIMAL(19,4)) AS fcurIncomeSubtotal,
+CAST(FCURSHAREHOLDEREMPLOYEESALARY AS DECIMAL(19,4)) AS fcurShareholderEmployeeSalary,
+CAST(FBLNFUTURESHRSALARY AS SMALLINT) AS fblnFutureShrSalary,
+CAST(FBLNWITHOUTPAYCLOSECOMPANY AS SMALLINT) AS fblnWithoutPayCloseCompany,
+CAST(FCURNETRENTS AS DECIMAL(19,4)) AS fcurNetRents,
+CAST(FCURSELFEMPLOYEDNETINCOME AS DECIMAL(19,4)) AS fcurSelfEmployedNetIncome,
+CAST(FCURTOTALOTHERNETINCOME AS DECIMAL(19,4)) AS fcurTotalOtherNetIncome,
+NULL AS fcurSaleOfProperty,
+CAST(FCURRLWTCREDIT AS DECIMAL(19,4)) AS fcurRLWTCredit,
+CAST(FCURTOTALINCOME AS DECIMAL(19,4)) AS fcurTotalIncome,
+CAST(FCURTOTALOTHEREXPENSES AS DECIMAL(19,4)) AS fcurTotalOtherExpenses,
+CAST(FCURINCOMEAFTEREXPENSES AS DECIMAL(19,4)) AS fcurIncomeAfterExpenses,
+CAST(FCURAMOUNTBROUGHTFORWARD AS DECIMAL(19,4)) AS fcurAmountBroughtForward,
+CAST(FCURAMOUNTCLAIMEDTHISYEAR AS DECIMAL(19,4)) AS fcurAmountClaimedThisYear,
+CAST(FCURTAXABLEINCOME AS DECIMAL(19,4)) AS fcurTaxableIncome,
+CAST(FBLNELIGIBLEFORIETC AS SMALLINT) AS fblnEligibleForIETC,
+CAST(FDTMEXOVERSEASINCOMESTART AS TIMESTAMP) AS fdtmExOverseasIncomeStart,
+CAST(FDTMEXCOVERSEASINCOMEEND AS TIMESTAMP) AS fdtmExcOverseasIncomeEnd,
+CAST(FINTEXCOVERSEASMONTHS AS SMALLINT) AS fintExcOverseasMonths,
+CAST(FCURIETC AS DECIMAL(19,4)) AS fcurIETC,
+CAST(FCURALLOWABLEIMPCREDITS AS DECIMAL(19,4)) AS fcurAllowableImpCredits,
+CAST(FCUREXCESSIMPUTATIONCREDITS AS DECIMAL(19,4)) AS fcurExcessImputationCredits,
+CAST(FCURTOTALEXTTCPD AS DECIMAL(19,4)) AS fcurTotalExtTCPD,
+CAST(FCURTOTALTCPD AS DECIMAL(19,4)) AS fcurTotalTCPD,
+CAST(FCURTAXONTAXABLEINCOME AS DECIMAL(19,4)) AS fcurTaxOnTaxableIncome,
+CAST(FCURRESIDUALINCOMETAX AS DECIMAL(19,4)) AS fcurResidualIncomeTax,
+CAST(FCURTAXCALCRESULT AS DECIMAL(19,4)) AS fcurTaxCalcResult,
+CAST(FCURIMPUTATIONTOCARRYFORWARD AS DECIMAL(19,4)) AS fcurImputationToCarryForward,
+CAST(FBLNEARLYPYMTDISCOUNT AS SMALLINT) AS fblnEarlyPymtDiscount,
+CAST(FCUROVERPAYMENTPROVREFUND AS DECIMAL(19,4)) AS fcurOverpaymentProvRefund,
+CAST(FCURREFUNDANDPROVOVERPAYMENT AS DECIMAL(19,4)) AS fcurRefundAndProvOverpayment,
+CAST(FCURREFUNDCALC AS DECIMAL(19,4)) AS fcurRefundCalc,
+CAST(FCURPROVISIONALTAX AS DECIMAL(19,4)) AS fcurProvisionalTax,
+CAST(FCURLOSSTOCARRYFORWARD AS DECIMAL(19,4)) AS fcurLossToCarryForward,
+CAST(FCURALLOWABLERLWTCREDITS AS DECIMAL(19,4)) AS fcurAllowableRLWTCredits,
+CAST(FCURPROVISIONALTAXPAID AS DECIMAL(19,4)) AS fcurProvisionalTaxPaid,
+CAST(FCURREFUND AS DECIMAL(19,4)) AS fcurRefund,
+CAST(FBLNDISCLOSUREREQUIRED AS SMALLINT) AS fblnDisclosureRequired,
+CAST(FSTRPTSSTATUS AS VARCHAR(12)) AS fstrPTSStatus,
+CAST(FLNGSELECTGROUP AS INT) AS flngSelectGroup,
+CAST(FDTMSELECTDATE AS TIMESTAMP) AS fdtmSelectDate,
+CAST(FBLNGROUP2SUSPEND AS SMALLINT) AS fblnGroup2Suspend,
+NULL AS fstrResMethod,
+NULL AS fcurResIncome,
+NULL AS fcurResDeductions,
+NULL AS fcurResDeductionsPriorYear,
+NULL AS fcurResDeductionsClaimed,
+NULL AS fcurResNetIncome,
+NULL AS fcurResDeductionsCarriedForwar,
+NULL AS fcurRDICarryForwardCurrentYear,
+NULL AS fcurShareholderAIMTaxPaid,
+CAST(FSTRWHO AS VARCHAR(20)) AS fstrWho,
+CAST(EFFECTIVE_FROM AS TIMESTAMP) AS FDTMWHEN,
+CAST(record_effective_timestamp AS TIMESTAMP) AS record_effective_timestamp,
+CAST(record_expiry_timestamp AS TIMESTAMP) AS record_expiry_timestamp,
+CAST(CURRENT_REC_FLAG AS VARCHAR(1)) AS record_active_flag,
+CAST('N' AS VARCHAR(1)) AS record_deleted_flag,
+CAST(insert_object_run_key AS INT) AS insert_object_run_key,
+CAST(update_object_run_key AS INT) AS update_object_run_key
+FROM  ${target_db=Enter the target database name here}_raw.tdw_tbl_NZ_RtnIIT;
+
+
+-- Check row counts of RAW tables with TDW history loaded:
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION;
+select count(distinct FLNGPAYMENTKEY, FLNGTRANSKEY, FLNGACCOUNTKEY, FDTMFILINGPERIOD) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION where record_expiry_timestamp = '9000-12-31 00:00:00';
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome where record_expiry_timestamp = '9000-12-31 00:00:00';
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo where record_expiry_timestamp = '9000-12-31 00:00:00';
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST where record_expiry_timestamp = '9000-12-31 00:00:00';
+
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+select count(distinct flngDocKey) as distinct_keys_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+select count(*) as low_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT where record_effective_timestamp = '1800-01-01 00:00:00';
+select count(*) as high_date_count FROM  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT where record_expiry_timestamp = '9000-12-31 00:00:00';
+
+
+-- Using SAS EG or SAS Studio, run the corresponding RAW START jobs to load data to:
+-- app_tblALLOCATION, app_tblNZ_AccIncome, app_tblNZ_AccPIEInfo, app_tblNZ_RtnGST, app_tblNZ_RtnIIT.
+-- This will be our first incremental job to load data on top of the data from TDW.
+-- Verify jobs complete ok
+
+-- Check the tables after Raw Incrmental load is completed
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblALLOCATION;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccIncome;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_AccPIEInfo;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnGST;
+select count(*) as raw_new_count from  ${target_db=Enter the target database name here}_raw.app_tblNZ_RtnIIT;
+
+
+-- Run Checks on RAW tables in SAS EG or SAS Studio (Use TDW History Load Check code: History Analysis - STEP 2 and History Analysis - STEP 3). Export Results as PDF.
+
+
+--Satish to update as required
+######################################################################################################################################################################################333
+
+-- Conduct sanity checks for individual keys
+
+--  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd  where flngDocKey in (59968, 70272, 967968, 1089072, 1244224, 1315456, 1383424, 1608576, 1680448, 1765888) order by flngDocKey, record_effective_timestamp;
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9129 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd  where flngDocKey in (1524313940) order by flngDocKey, record_effective_timestamp;
+
+select min(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108;
+select max(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where insert_object_run_key = 9108;
+select min(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where update_object_run_key = 9108 and insert_object_run_key <> 9108;
+select max(fdtmwhen) from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where update_object_run_key = 9108 and insert_object_run_key <> 9108;
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerstd where flngDocKey in (815991536, 886685568) order by flngDocKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd  where flngDocKey in (59968, 70272, 967968, 1089072, 1244224, 1315456, 1383424, 1608576, 1680448, 1765888) order by flngDocKey, record_effective_timestamp;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblnz_customerstd  where flngDocKey in (1524313940) order by flngDocKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo
+select * from  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo where insert_object_run_key = 9181 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (5777152, 39900288, 44143744, 115102848, 135332992, 147155712, 161778816, 168857344, 169112704, 193991808) order by flngCustomerKey, record_effective_timestamp;
+-- Check that for a new key from Incremental load record_effective_timestamp is not set to Low Date
+select flngCustomerKey, count(*) FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (select distinct flngCustomerKey FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where insert_object_run_key = 9181) group by flngCustomerKey;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblcustomerinfo  where flngCustomerKey in (1155011712, 529740928, 1634744448) order by flngCustomerKey, record_effective_timestamp;
+
+
+--  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo
+select * from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where insert_object_run_key = 9267 limit 100;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo  where flngAccountKey in (8194048, 14341632, 25444672, 27012480, 53782592, 56807488, 64181248, 107406336, 118866496, 126327936) order by flngAccountKey, record_effective_timestamp;
+-- Check that for a new key from Incremental load record_effective_timestamp is not set to Low Date
+select flngAccountKey, count(*) as records_count from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where flngAccountKey in (select flngAccountKey from  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo where insert_object_run_key = 9267)  group by flngaccountkey having records_count = 1;
+select * FROM  ${target_db=Enter the target database name here}_raw.app_tblaccountinfo  where flngAccountKey in (757599552) order by flngAccountKey, record_effective_timestamp;
+
+

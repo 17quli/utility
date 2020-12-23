@@ -1,0 +1,3 @@
+2020-04-12 21:14:34------start getting json file from 2020-04-12T02:14:34Z to 2020-04-12T03:14:34Z offset 0
+2020-04-12 21:14:35------start converting 861 queries from json to text file 20200412151434_0.txt
+2020-04-12 21:16:36------start uploading text file ./stg/20200412151434_0.txt to HDFS

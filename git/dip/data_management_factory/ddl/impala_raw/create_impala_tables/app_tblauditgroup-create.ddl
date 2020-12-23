@@ -1,0 +1,23 @@
+CREATE TABLE ${var:target_db}.app_tblauditgroup (
+flngAuditGroupKey INT,
+fstrAuditGroupId VARCHAR(60),
+fstrAuditGroupType VARCHAR(24),
+flngCustomerKey INT,
+flngFolderKey INT,
+flngDocKey INT,
+flngTeamKey INT,
+fstrApprovedBy VARCHAR(20),
+fdtmApprovedWhen TIMESTAMP,
+fdtmCreatedWhen TIMESTAMP,
+fstrCreatedBy VARCHAR(20),
+fdtmClosedWhen TIMESTAMP,
+fstrClosedby VARCHAR(20),
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+ ) STORED AS PARQUET;

@@ -1,0 +1,1926 @@
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.app_tblnamerecord_active (                                                       |
+|   fi64namekey BIGINT,                                                                                   |
+|   flngver INT,                                                                                          |
+|   flngverlast INT,                                                                                      |
+|   fdtmeffectivefrom TIMESTAMP,                                                                          |
+|   fdtmeffectiveto TIMESTAMP,                                                                            |
+|   fdtmsystemfrom TIMESTAMP,                                                                             |
+|   fdtmsystemto TIMESTAMP,                                                                               |
+|   fstrsource VARCHAR(40),                                                                               |
+|   flngcustomerkey INT,                                                                                  |
+|   fintprofilenumber SMALLINT,                                                                           |
+|   fi64sourcekey BIGINT,                                                                                 |
+|   fstrnametype VARCHAR(40),                                                                             |
+|   fstrdisplay VARCHAR(24),                                                                              |
+|   fblnformatted SMALLINT,                                                                               |
+|   fstrlastname VARCHAR(100),                                                                            |
+|   fintlastmodifier SMALLINT,                                                                            |
+|   fstrfirstname VARCHAR(100),                                                                           |
+|   fintfirstmodifier SMALLINT,                                                                           |
+|   fstrmiddlename VARCHAR(100),                                                                          |
+|   fintmiddlemodifier SMALLINT,                                                                          |
+|   fstrtitle VARCHAR(20),                                                                                |
+|   finttitlemodifier SMALLINT,                                                                           |
+|   fstrsuffix VARCHAR(20),                                                                               |
+|   fintsuffixmodifier SMALLINT,                                                                          |
+|   fstrfreeformatname VARCHAR(510),                                                                      |
+|   fintfreeformatmodifier SMALLINT,                                                                      |
+|   fstradditionalname VARCHAR(510),                                                                      |
+|   fintadditionalmodifier SMALLINT,                                                                      |
+|   fstradditionalname2 VARCHAR(510),                                                                     |
+|   fintadditionalmodifier2 SMALLINT,                                                                     |
+|   fstrlistformatname VARCHAR(510),                                                                      |
+|   fi64protecteddatasource BIGINT,                                                                       |
+|   flngcrmkey INT,                                                                                       |
+|   fblnblank SMALLINT,                                                                                   |
+|   fblncurrent SMALLINT,                                                                                 |
+|   fblnactive SMALLINT,                                                                                  |
+|   fintprotectlevel SMALLINT,                                                                            |
+|   fstrwho VARCHAR(20),                                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP                                                                     |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/app_tblnamerecord_active'                            |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='58200052', 'totalSize'='3140436678') |
++---------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+| result                                                                                           |
++--------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_client_codes_am_d (                                                |
+|   ird_number INT,                                                                                |
+|   location_number INT,                                                                           |
+|   tax_type VARCHAR(6),                                                                           |
+|   client_code_type VARCHAR(6),                                                                   |
+|   client_code_value VARCHAR(6),                                                                  |
+|   date_start TIMESTAMP,                                                                          |
+|   date_applied TIMESTAMP,                                                                        |
+|   date_end TIMESTAMP,                                                                            |
+|   date_ceased TIMESTAMP,                                                                         |
+|   timestamp TIMESTAMP,                                                                           |
+|   user_id VARCHAR(16),                                                                           |
+|   date_processed TIMESTAMP,                                                                      |
+|   client_code_key INT,                                                                           |
+|   begin_change_reason_code VARCHAR(8),                                                           |
+|   end_change_reason_code VARCHAR(8),                                                             |
+|   inbound_doc_lodge_nbr_prefix INT,                                                              |
+|   inbound_doc_lodge_nbr INT,                                                                     |
+|   outbound_doc_lodge_nbr_prefix INT,                                                             |
+|   outbound_doc_lodge_nbr INT,                                                                    |
+|   active_flag SMALLINT,                                                                          |
+|   record_effective_timestamp TIMESTAMP,                                                          |
+|   record_expiry_timestamp TIMESTAMP,                                                             |
+|   insert_object_run_key INT,                                                                     |
+|   update_object_run_key INT,                                                                     |
+|   record_active_flag CHAR(1)                                                                     |
+| )                                                                                                |
+| STORED AS PARQUET                                                                                |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_client_codes_am_d'                     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='18481', 'totalSize'='629982') |
++--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------+
+| result                                                                                           |
++--------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_client_codes_am_f (                                                |
+|   ird_number INT,                                                                                |
+|   location_number INT,                                                                           |
+|   tax_type VARCHAR(6),                                                                           |
+|   client_code_type VARCHAR(6),                                                                   |
+|   client_code_value VARCHAR(6),                                                                  |
+|   date_start TIMESTAMP,                                                                          |
+|   date_applied TIMESTAMP,                                                                        |
+|   date_end TIMESTAMP,                                                                            |
+|   date_ceased TIMESTAMP,                                                                         |
+|   timestamp TIMESTAMP,                                                                           |
+|   user_id VARCHAR(16),                                                                           |
+|   date_processed TIMESTAMP,                                                                      |
+|   client_code_key INT,                                                                           |
+|   begin_change_reason_code VARCHAR(8),                                                           |
+|   end_change_reason_code VARCHAR(8),                                                             |
+|   inbound_doc_lodge_nbr_prefix INT,                                                              |
+|   inbound_doc_lodge_nbr INT,                                                                     |
+|   outbound_doc_lodge_nbr_prefix INT,                                                             |
+|   outbound_doc_lodge_nbr INT,                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                          |
+|   record_expiry_timestamp TIMESTAMP,                                                             |
+|   record_active_flag VARCHAR(1),                                                                 |
+|   insert_object_run_key INT,                                                                     |
+|   update_object_run_key INT,                                                                     |
+|   active_flag SMALLINT,                                                                          |
+|   number_of_valid_seconds TINYINT                                                                |
+| )                                                                                                |
+| STORED AS PARQUET                                                                                |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_client_codes_am_f'                     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='18562', 'totalSize'='618624') |
++--------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_client_names_d (                                                         |
+|   ird_number INT,                                                                                      |
+|   location_number INT,                                                                                 |
+|   client_name_type VARCHAR(4),                                                                         |
+|   sequence_number INT,                                                                                 |
+|   first_names VARCHAR(74),                                                                             |
+|   surname VARCHAR(62),                                                                                 |
+|   title VARCHAR(12),                                                                                   |
+|   organisation_name VARCHAR(148),                                                                      |
+|   timestamp TIMESTAMP,                                                                                 |
+|   date_applied TIMESTAMP,                                                                              |
+|   date_ceased TIMESTAMP,                                                                               |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_client_names_d'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='14668974', 'totalSize'='564526104') |
++--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_client_names_f (                                                         |
+|   ird_number INT,                                                                                      |
+|   location_number INT,                                                                                 |
+|   client_name_type VARCHAR(4),                                                                         |
+|   sequence_number INT,                                                                                 |
+|   first_names VARCHAR(74),                                                                             |
+|   surname VARCHAR(62),                                                                                 |
+|   title VARCHAR(12),                                                                                   |
+|   organisation_name VARCHAR(148),                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   timestamp TIMESTAMP,                                                                                 |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag VARCHAR(1),                                                                       |
+|   date_applied TIMESTAMP,                                                                              |
+|   date_ceased TIMESTAMP                                                                                |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_client_names_f'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='15809610', 'totalSize'='583389456') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_clients_d (                                                               |
+|   ird_number INT,                                                                                       |
+|   entity_type VARCHAR(2),                                                                               |
+|   date_applied TIMESTAMP,                                                                               |
+|   entity_class VARCHAR(4),                                                                              |
+|   cust_type VARCHAR(6),                                                                                 |
+|   master_location INT,                                                                                  |
+|   date_created TIMESTAMP,                                                                               |
+|   date_of_birth TIMESTAMP,                                                                              |
+|   org_commencement_date TIMESTAMP,                                                                      |
+|   client_status VARCHAR(2),                                                                             |
+|   resident_ind VARCHAR(2),                                                                              |
+|   sic_source VARCHAR(2),                                                                                |
+|   loan_ind VARCHAR(2),                                                                                  |
+|   secure_ind VARCHAR(2),                                                                                |
+|   client_password VARCHAR(20),                                                                          |
+|   rwt_rate INT,                                                                                         |
+|   identification_type_code VARCHAR(2),                                                                  |
+|   id_serial_number VARCHAR(40),                                                                         |
+|   phone_number VARCHAR(48),                                                                             |
+|   work_phone_number VARCHAR(48),                                                                        |
+|   cell_phone_number VARCHAR(48),                                                                        |
+|   date_ceased TIMESTAMP,                                                                                |
+|   timestamp TIMESTAMP,                                                                                  |
+|   gender VARCHAR(2),                                                                                    |
+|   nominated_gst_ird_number INT,                                                                         |
+|   nominated_gst_location_number INT,                                                                    |
+|   latest_inc_period_assessed TIMESTAMP,                                                                 |
+|   balance_date INT,                                                                                     |
+|   provisional_ind_code INT,                                                                             |
+|   ratio_percentage DECIMAL(8,2),                                                                        |
+|   ratio_status_code VARCHAR(6),                                                                         |
+|   ratio_base_period_date TIMESTAMP,                                                                     |
+|   current_cal_ratio_start_date TIMESTAMP,                                                               |
+|   ratio_pending_indicator VARCHAR(2),                                                                   |
+|   interview_required_ind VARCHAR(2),                                                                    |
+|   nz_citizen_ind VARCHAR(2),                                                                            |
+|   verifier_organisation_id VARCHAR(6),                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT,                                                                            |
+|   record_active_flag CHAR(1)                                                                            |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_clients_d'                                    |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='20646527', 'totalSize'='1071776793') |
++---------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------+
+| result                                                                                                  |
++---------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_clients_f (                                                               |
+|   ird_number INT,                                                                                       |
+|   entity_type VARCHAR(2),                                                                               |
+|   date_applied TIMESTAMP,                                                                               |
+|   entity_class VARCHAR(4),                                                                              |
+|   cust_type VARCHAR(6),                                                                                 |
+|   master_location INT,                                                                                  |
+|   date_created TIMESTAMP,                                                                               |
+|   date_of_birth TIMESTAMP,                                                                              |
+|   org_commencement_date TIMESTAMP,                                                                      |
+|   client_status VARCHAR(2),                                                                             |
+|   resident_ind VARCHAR(2),                                                                              |
+|   sic_source VARCHAR(2),                                                                                |
+|   loan_ind VARCHAR(2),                                                                                  |
+|   secure_ind VARCHAR(2),                                                                                |
+|   client_password VARCHAR(20),                                                                          |
+|   rwt_rate INT,                                                                                         |
+|   identification_type_code VARCHAR(2),                                                                  |
+|   id_serial_number VARCHAR(40),                                                                         |
+|   phone_number VARCHAR(48),                                                                             |
+|   work_phone_number VARCHAR(48),                                                                        |
+|   cell_phone_number VARCHAR(48),                                                                        |
+|   date_ceased TIMESTAMP,                                                                                |
+|   timestamp TIMESTAMP,                                                                                  |
+|   gender VARCHAR(2),                                                                                    |
+|   nominated_gst_ird_number INT,                                                                         |
+|   nominated_gst_location_number INT,                                                                    |
+|   latest_inc_period_assessed TIMESTAMP,                                                                 |
+|   balance_date INT,                                                                                     |
+|   provisional_ind_code INT,                                                                             |
+|   ratio_percentage DECIMAL(8,2),                                                                        |
+|   ratio_status_code VARCHAR(6),                                                                         |
+|   ratio_base_period_date TIMESTAMP,                                                                     |
+|   current_cal_ratio_start_date TIMESTAMP,                                                               |
+|   ratio_pending_indicator VARCHAR(2),                                                                   |
+|   interview_required_ind VARCHAR(2),                                                                    |
+|   nz_citizen_ind VARCHAR(2),                                                                            |
+|   verifier_organisation_id VARCHAR(6),                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                                    |
+|   record_active_flag VARCHAR(1),                                                                        |
+|   insert_object_run_key INT,                                                                            |
+|   update_object_run_key INT                                                                             |
+| )                                                                                                       |
+| STORED AS PARQUET                                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_clients_f'                                    |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='57548141', 'totalSize'='3453373256') |
++---------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_customers_d (                                                            |
+|   ird_number INT,                                                                                      |
+|   location_number INT,                                                                                 |
+|   entity_type VARCHAR(2),                                                                              |
+|   entity_class VARCHAR(4),                                                                             |
+|   client_status VARCHAR(2),                                                                            |
+|   segment_id VARCHAR(40),                                                                              |
+|   micro_segment VARCHAR(40),                                                                           |
+|   district_office VARCHAR(40),                                                                         |
+|   service_centre VARCHAR(40),                                                                          |
+|   date_applied TIMESTAMP,                                                                              |
+|   date_ceased TIMESTAMP,                                                                               |
+|   date_of_birth TIMESTAMP,                                                                             |
+|   org_commencement_date TIMESTAMP,                                                                     |
+|   loan_indicator VARCHAR(2),                                                                           |
+|   resident_indicator VARCHAR(2),                                                                       |
+|   sic_code VARCHAR(16),                                                                                |
+|   date_advisory_visit TIMESTAMP,                                                                       |
+|   address_status VARCHAR(2),                                                                           |
+|   cust_type VARCHAR(6),                                                                                |
+|   date_created TIMESTAMP,                                                                              |
+|   sic_source VARCHAR(2),                                                                               |
+|   identification_type_code VARCHAR(2),                                                                 |
+|   id_serial_number VARCHAR(40),                                                                        |
+|   phone_number VARCHAR(48),                                                                            |
+|   work_phone_number VARCHAR(48),                                                                       |
+|   cell_phone_number VARCHAR(48),                                                                       |
+|   nature_of_business VARCHAR(100),                                                                     |
+|   mesh_block INT,                                                                                      |
+|   gender VARCHAR(2),                                                                                   |
+|   interview_required_ind VARCHAR(2),                                                                   |
+|   nz_citizen_ind VARCHAR(2),                                                                           |
+|   verifier_organisation_id VARCHAR(6),                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_customers_d'                                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='11719722', 'totalSize'='473660362') |
++--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_customers_f (                                                            |
+|   ird_number INT,                                                                                      |
+|   location_number INT,                                                                                 |
+|   entity_type VARCHAR(2),                                                                              |
+|   entity_class VARCHAR(4),                                                                             |
+|   client_status VARCHAR(2),                                                                            |
+|   segment_id VARCHAR(40),                                                                              |
+|   micro_segment VARCHAR(40),                                                                           |
+|   district_office VARCHAR(40),                                                                         |
+|   service_centre VARCHAR(40),                                                                          |
+|   date_applied TIMESTAMP,                                                                              |
+|   date_ceased TIMESTAMP,                                                                               |
+|   date_of_birth TIMESTAMP,                                                                             |
+|   org_commencement_date TIMESTAMP,                                                                     |
+|   loan_indicator VARCHAR(2),                                                                           |
+|   resident_indicator VARCHAR(2),                                                                       |
+|   sic_code VARCHAR(16),                                                                                |
+|   date_advisory_visit TIMESTAMP,                                                                       |
+|   address_status VARCHAR(2),                                                                           |
+|   cust_type VARCHAR(6),                                                                                |
+|   date_created TIMESTAMP,                                                                              |
+|   sic_source VARCHAR(2),                                                                               |
+|   identification_type_code VARCHAR(2),                                                                 |
+|   id_serial_number VARCHAR(40),                                                                        |
+|   phone_number VARCHAR(48),                                                                            |
+|   work_phone_number VARCHAR(48),                                                                       |
+|   cell_phone_number VARCHAR(48),                                                                       |
+|   nature_of_business VARCHAR(100),                                                                     |
+|   mesh_block INT,                                                                                      |
+|   gender VARCHAR(2),                                                                                   |
+|   interview_required_ind VARCHAR(2),                                                                   |
+|   nz_citizen_ind VARCHAR(2),                                                                           |
+|   verifier_organisation_id VARCHAR(6),                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   record_active_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT                                                                            |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_customers_f'                                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='12196173', 'totalSize'='521583592') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_entity_classes_d (                                            |
+|   entity_class_code VARCHAR(4),                                                             |
+|   date_applied TIMESTAMP,                                                                   |
+|   description VARCHAR(120),                                                                 |
+|   date_ceased TIMESTAMP,                                                                    |
+|   timestamp TIMESTAMP,                                                                      |
+|   validated VARCHAR(2),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_entity_classes_d'                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='68', 'totalSize'='4869') |
++---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_entity_classes_f (                                            |
+|   entity_class_code VARCHAR(4),                                                             |
+|   date_applied TIMESTAMP,                                                                   |
+|   description VARCHAR(120),                                                                 |
+|   date_ceased TIMESTAMP,                                                                    |
+|   timestamp TIMESTAMP,                                                                      |
+|   validated VARCHAR(2),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   record_active_flag VARCHAR(1),                                                            |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT                                                                 |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_entity_classes_f'                 |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='68', 'totalSize'='4873') |
++---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_entity_types_d (                                              |
+|   entity_type_code VARCHAR(2),                                                              |
+|   date_applied TIMESTAMP,                                                                   |
+|   description VARCHAR(120),                                                                 |
+|   date_ceased TIMESTAMP,                                                                    |
+|   timestamp TIMESTAMP,                                                                      |
+|   validated VARCHAR(2),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_entity_types_d'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='15', 'totalSize'='3250') |
++---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_entity_types_f (                                              |
+|   entity_type_code VARCHAR(2),                                                              |
+|   date_applied TIMESTAMP,                                                                   |
+|   description VARCHAR(120),                                                                 |
+|   date_ceased TIMESTAMP,                                                                    |
+|   timestamp TIMESTAMP,                                                                      |
+|   validated VARCHAR(2),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   record_active_flag VARCHAR(1),                                                            |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT                                                                 |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_entity_types_f'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='15', 'totalSize'='3250') |
++---------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_external_references_d (                                                 |
+|   ird_number INT,                                                                                     |
+|   location_number INT,                                                                                |
+|   external_org_code VARCHAR(6),                                                                       |
+|   external_id VARCHAR(40),                                                                            |
+|   date_start TIMESTAMP,                                                                               |
+|   date_applied TIMESTAMP,                                                                             |
+|   date_end TIMESTAMP,                                                                                 |
+|   date_ceased TIMESTAMP,                                                                              |
+|   timestamp TIMESTAMP,                                                                                |
+|   country_code VARCHAR(6),                                                                            |
+|   active_flag SMALLINT,                                                                               |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_external_references_d'                      |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='6220479', 'totalSize'='152106854') |
++-------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_external_references_f (                                                 |
+|   ird_number INT,                                                                                     |
+|   location_number INT,                                                                                |
+|   external_org_code VARCHAR(6),                                                                       |
+|   external_id VARCHAR(40),                                                                            |
+|   date_start TIMESTAMP,                                                                               |
+|   date_applied TIMESTAMP,                                                                             |
+|   date_end TIMESTAMP,                                                                                 |
+|   date_ceased TIMESTAMP,                                                                              |
+|   timestamp TIMESTAMP,                                                                                |
+|   country_code VARCHAR(6),                                                                            |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   record_active_flag VARCHAR(1),                                                                      |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   active_flag SMALLINT,                                                                               |
+|   number_of_valid_seconds TINYINT                                                                     |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_external_references_f'                      |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='6295479', 'totalSize'='150809281') |
++-------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_offices_d (                                                   |
+|   office_code VARCHAR(4),                                                                   |
+|   description VARCHAR(60),                                                                  |
+|   service_centre_code VARCHAR(6),                                                           |
+|   date_applied TIMESTAMP,                                                                   |
+|   date_ceased TIMESTAMP,                                                                    |
+|   validated VARCHAR(2),                                                                     |
+|   timestamp TIMESTAMP,                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_offices_d'                        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='81', 'totalSize'='5219') |
++---------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_offices_f (                                                   |
+|   office_code VARCHAR(4),                                                                   |
+|   description VARCHAR(60),                                                                  |
+|   service_centre_code VARCHAR(6),                                                           |
+|   date_applied TIMESTAMP,                                                                   |
+|   date_ceased TIMESTAMP,                                                                    |
+|   validated VARCHAR(2),                                                                     |
+|   timestamp TIMESTAMP,                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   record_active_flag VARCHAR(1),                                                            |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT                                                                 |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_offices_f'                        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='81', 'totalSize'='5219') |
++---------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_special_clients_all_d (                                                  |
+|   ird_number INT,                                                                                      |
+|   special_classification VARCHAR(20),                                                                  |
+|   checksum VARCHAR(32),                                                                                |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_special_clients_all_d'                       |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='11669712', 'totalSize'='427769670') |
++--------------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_pe_special_clients_all_f (                                                  |
+|   ird_number INT,                                                                                      |
+|   special_classification VARCHAR(20),                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   checksum VARCHAR(32),                                                                                |
+|   record_active_flag VARCHAR(1),                                                                       |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT                                                                            |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_pe_special_clients_all_f'                       |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='11669752', 'totalSize'='427639611') |
++--------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lan_indicator_d (                                               |
+|   fstrlanguage VARCHAR(6),                                                                    |
+|   fstrindicator VARCHAR(12),                                                                  |
+|   fstrdecode1 VARCHAR(60),                                                                    |
+|   fstrdecode2 VARCHAR(510),                                                                   |
+|   fstrdescription VARCHAR(2000),                                                              |
+|   checksum VARCHAR(32),                                                                       |
+|   record_effective_timestamp TIMESTAMP,                                                       |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   record_active_flag CHAR(1)                                                                  |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lan_indicator_d'                    |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='244', 'totalSize'='37180') |
++-----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lan_indicator_f (                                         |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrindicator VARCHAR(12),                                                            |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lan_indicator_f'              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| result                                                                                     |
++--------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomerlevel_d (                                         |
+|   fstrlanguage VARCHAR(6),                                                                 |
+|   fstrcustomerlevel VARCHAR(12),                                                           |
+|   fstrdecode1 VARCHAR(60),                                                                 |
+|   fstrdecode2 VARCHAR(510),                                                                |
+|   fstrdescription VARCHAR(2000),                                                           |
+|   checksum VARCHAR(32),                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                    |
+|   record_expiry_timestamp TIMESTAMP,                                                       |
+|   insert_object_run_key INT,                                                               |
+|   update_object_run_key INT,                                                               |
+|   record_active_flag CHAR(1)                                                               |
+| )                                                                                          |
+| STORED AS PARQUET                                                                          |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomerlevel_d'              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='6', 'totalSize'='3392') |
++--------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomerlevel_f (                                      |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrcustomerlevel VARCHAR(12),                                                        |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomerlevel_f'           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomersubtype_d (                                        |
+|   fstrlanguage VARCHAR(6),                                                                  |
+|   fstrcustomersubtype VARCHAR(12),                                                          |
+|   fstrdecode1 VARCHAR(60),                                                                  |
+|   fstrdecode2 VARCHAR(510),                                                                 |
+|   fstrdescription VARCHAR(2000),                                                            |
+|   fstrdecodeweb VARCHAR(510),                                                               |
+|   checksum VARCHAR(32),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomersubtype_d'             |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='19', 'totalSize'='4870') |
++---------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomersubtype_f (                                    |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrcustomersubtype VARCHAR(12),                                                      |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   fstrdecodeweb VARCHAR(510),                                                           |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomersubtype_f'         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| result                                                                                     |
++--------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomertype_d (                                          |
+|   fstrlanguage VARCHAR(6),                                                                 |
+|   fstrcustomertype VARCHAR(12),                                                            |
+|   fstrdecode1 VARCHAR(60),                                                                 |
+|   fstrdecode2 VARCHAR(510),                                                                |
+|   fstrdecodeweb VARCHAR(510),                                                              |
+|   fstrdescription VARCHAR(2000),                                                           |
+|   checksum VARCHAR(32),                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                    |
+|   record_expiry_timestamp TIMESTAMP,                                                       |
+|   insert_object_run_key INT,                                                               |
+|   update_object_run_key INT,                                                               |
+|   record_active_flag CHAR(1)                                                               |
+| )                                                                                          |
+| STORED AS PARQUET                                                                          |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomertype_d'               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='5', 'totalSize'='3661') |
++--------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lancustomertype_f (                                       |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrcustomertype VARCHAR(12),                                                         |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdecodeweb VARCHAR(510),                                                           |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lancustomertype_f'            |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lannz_customerclass_d (                                       |
+|   fstrlanguage VARCHAR(6),                                                                  |
+|   fstrcustomerclass VARCHAR(12),                                                            |
+|   fstrdecode1 VARCHAR(24),                                                                  |
+|   fstrdecode2 VARCHAR(60),                                                                  |
+|   fstrdescription VARCHAR(510),                                                             |
+|   checksum VARCHAR(32),                                                                     |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lannz_customerclass_d'            |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='59', 'totalSize'='9878') |
++---------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lannz_customerclass_f (                                   |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrcustomerclass VARCHAR(12),                                                        |
+|   fstrdecode1 VARCHAR(24),                                                              |
+|   fstrdecode2 VARCHAR(60),                                                              |
+|   fstrdescription VARCHAR(510),                                                         |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lannz_customerclass_f'        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| result                                                                                     |
++--------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lannz_customersegments_d (                                   |
+|   fstrsegment VARCHAR(6),                                                                  |
+|   fstrlanguage VARCHAR(6),                                                                 |
+|   fstrdecode1 VARCHAR(60),                                                                 |
+|   fstrdecode2 VARCHAR(510),                                                                |
+|   fstrdescription VARCHAR(2000),                                                           |
+|   checksum VARCHAR(32),                                                                    |
+|   record_effective_timestamp TIMESTAMP,                                                    |
+|   record_expiry_timestamp TIMESTAMP,                                                       |
+|   insert_object_run_key INT,                                                               |
+|   update_object_run_key INT,                                                               |
+|   record_active_flag CHAR(1)                                                               |
+| )                                                                                          |
+| STORED AS PARQUET                                                                          |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lannz_customersegments_d'        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='5', 'totalSize'='3509') |
++--------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lannz_customersegments_f (                                |
+|   fstrsegment VARCHAR(6),                                                               |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lannz_customersegments_f'     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lanofficelocation_d (                                           |
+|   fstrlanguage VARCHAR(6),                                                                    |
+|   fstrdistrictoffice VARCHAR(12),                                                             |
+|   fstrdecode1 VARCHAR(60),                                                                    |
+|   fstrdecode2 VARCHAR(510),                                                                   |
+|   fstrdescription VARCHAR(2000),                                                              |
+|   checksum VARCHAR(32),                                                                       |
+|   record_effective_timestamp TIMESTAMP,                                                       |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   record_active_flag CHAR(1)                                                                  |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lanofficelocation_d'                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='115', 'totalSize'='13021') |
++-----------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_lanofficelocation_f (                                     |
+|   fstrlanguage VARCHAR(6),                                                              |
+|   fstrdistrictoffice VARCHAR(12),                                                       |
+|   fstrdecode1 VARCHAR(60),                                                              |
+|   fstrdecode2 VARCHAR(510),                                                             |
+|   fstrdescription VARCHAR(2000),                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   checksum VARCHAR(32),                                                                 |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_lanofficelocation_f'          |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomer_d (                                                         |
+|   flngcustomerkey INT,                                                                                |
+|   flngver INT,                                                                                        |
+|   flngverlast INT,                                                                                    |
+|   fstrcustomertype VARCHAR(12),                                                                       |
+|   fdtmcommence TIMESTAMP,                                                                             |
+|   fdtmcease TIMESTAMP,                                                                                |
+|   flngcustomerlevel INT,                                                                              |
+|   flngdockey INT,                                                                                     |
+|   flngfolderkey INT,                                                                                  |
+|   flngrefreshver INT,                                                                                 |
+|   flngcustomerversion INT,                                                                            |
+|   flngwebversion INT,                                                                                 |
+|   fdtmwebpublished TIMESTAMP,                                                                         |
+|   fdtmcreated TIMESTAMP,                                                                              |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   fdtmwhen_info TIMESTAMP,                                                                            |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomer_d'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9880469', 'totalSize'='543558686') |
++-------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+| result                                                                                            |
++---------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomer_f (                                                     |
+|   flngcustomerkey INT,                                                                            |
+|   flngver INT,                                                                                    |
+|   flngverlast INT,                                                                                |
+|   fstrcustomertype VARCHAR(12),                                                                   |
+|   fdtmcommence TIMESTAMP,                                                                         |
+|   fdtmcease TIMESTAMP,                                                                            |
+|   flngcustomerlevel INT,                                                                          |
+|   flngdockey INT,                                                                                 |
+|   flngfolderkey INT,                                                                              |
+|   flngrefreshver INT,                                                                             |
+|   flngcustomerversion INT,                                                                        |
+|   flngwebversion INT,                                                                             |
+|   fdtmwebpublished TIMESTAMP,                                                                     |
+|   fdtmcreated TIMESTAMP,                                                                          |
+|   fstrwho VARCHAR(20),                                                                            |
+|   fdtmwhen TIMESTAMP,                                                                             |
+|   record_expiry_timestamp TIMESTAMP,                                                              |
+|   record_active_flag VARCHAR(1),                                                                  |
+|   insert_object_run_key INT,                                                                      |
+|   update_object_run_key INT,                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                           |
+|   fdtmwhen_info TIMESTAMP                                                                         |
+| )                                                                                                 |
+| STORED AS PARQUET                                                                                 |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomer_f'                          |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='34761', 'totalSize'='2595368') |
++---------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerinfo_d (                                                      |
+|   flngcustomerkey INT,                                                                                 |
+|   flngjointcustomerkey INT,                                                                            |
+|   fblnprime SMALLINT,                                                                                  |
+|   fstrcustomertype VARCHAR(12),                                                                        |
+|   flngdockey INT,                                                                                      |
+|   flngfolderkey INT,                                                                                   |
+|   fblndefault SMALLINT,                                                                                |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   fdtmcommence TIMESTAMP,                                                                              |
+|   fdtmcease TIMESTAMP,                                                                                 |
+|   fdtmcreated TIMESTAMP,                                                                               |
+|   fi64namekey BIGINT,                                                                                  |
+|   fintnamekey SMALLINT,                                                                                |
+|   fstrdisplay VARCHAR(24),                                                                             |
+|   fblnformatted SMALLINT,                                                                              |
+|   fstrnametype VARCHAR(40),                                                                            |
+|   fstrfamilyname VARCHAR(510),                                                                         |
+|   fstrmiddlename VARCHAR(100),                                                                         |
+|   fstrfirstname VARCHAR(100),                                                                          |
+|   fstrnamecontrol VARCHAR(20),                                                                         |
+|   fstrtitle VARCHAR(20),                                                                               |
+|   fstrsuffix VARCHAR(20),                                                                              |
+|   fstrfreeformatname VARCHAR(510),                                                                     |
+|   fstrlistformatname VARCHAR(510),                                                                     |
+|   fstradditionalname VARCHAR(510),                                                                     |
+|   fstradditionalname2 VARCHAR(510),                                                                    |
+|   fi64addresskey BIGINT,                                                                               |
+|   fintaddresskey SMALLINT,                                                                             |
+|   fstraddresstype VARCHAR(40),                                                                         |
+|   fstrstreet VARCHAR(510),                                                                             |
+|   fstrstreet2 VARCHAR(510),                                                                            |
+|   fstrunittype VARCHAR(100),                                                                           |
+|   fstrunit VARCHAR(60),                                                                                |
+|   fstrcity VARCHAR(200),                                                                               |
+|   fstrcounty VARCHAR(12),                                                                              |
+|   fstrstate VARCHAR(12),                                                                               |
+|   fstrzip VARCHAR(60),                                                                                 |
+|   fstrcountry VARCHAR(12),                                                                             |
+|   fstrattention VARCHAR(510),                                                                          |
+|   fstrlocationcode VARCHAR(60),                                                                        |
+|   fstrurbanization VARCHAR(100),                                                                       |
+|   fstrmunicipality VARCHAR(60),                                                                        |
+|   fstrdistrict VARCHAR(60),                                                                            |
+|   fstrsubdistrict VARCHAR(60),                                                                         |
+|   fstrsubprovince VARCHAR(100),                                                                        |
+|   fstraddressdescription VARCHAR(510),                                                                 |
+|   fstrlistformataddress VARCHAR(510),                                                                  |
+|   flngidkey INT,                                                                                       |
+|   fstridtype VARCHAR(12),                                                                              |
+|   fstrid VARCHAR(60),                                                                                  |
+|   fstrformattedid VARCHAR(60),                                                                         |
+|   fstrdistrictoffice VARCHAR(12),                                                                      |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                               |
+|   fstrreviewtype VARCHAR(12),                                                                          |
+|   fstrcustomerlevel VARCHAR(12),                                                                       |
+|   fi64protecteddatasource BIGINT,                                                                      |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerinfo_d'                           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9881537', 'totalSize'='1595303422') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+| result                                                                                            |
++---------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerinfo_f (                                                 |
+|   flngcustomerkey INT,                                                                            |
+|   flngjointcustomerkey INT,                                                                       |
+|   fblnprime SMALLINT,                                                                             |
+|   fstrcustomertype VARCHAR(12),                                                                   |
+|   flngdockey INT,                                                                                 |
+|   flngfolderkey INT,                                                                              |
+|   fblndefault SMALLINT,                                                                           |
+|   fintprofilenumber SMALLINT,                                                                     |
+|   fdtmcommence TIMESTAMP,                                                                         |
+|   fdtmcease TIMESTAMP,                                                                            |
+|   fdtmcreated TIMESTAMP,                                                                          |
+|   fi64namekey BIGINT,                                                                             |
+|   fintnamekey SMALLINT,                                                                           |
+|   fstrdisplay VARCHAR(24),                                                                        |
+|   fblnformatted SMALLINT,                                                                         |
+|   fstrnametype VARCHAR(40),                                                                       |
+|   fstrfamilyname VARCHAR(510),                                                                    |
+|   fstrmiddlename VARCHAR(100),                                                                    |
+|   fstrfirstname VARCHAR(100),                                                                     |
+|   fstrnamecontrol VARCHAR(20),                                                                    |
+|   fstrtitle VARCHAR(20),                                                                          |
+|   fstrsuffix VARCHAR(20),                                                                         |
+|   fstrfreeformatname VARCHAR(510),                                                                |
+|   fstrlistformatname VARCHAR(510),                                                                |
+|   fstradditionalname VARCHAR(510),                                                                |
+|   fstradditionalname2 VARCHAR(510),                                                               |
+|   fi64addresskey BIGINT,                                                                          |
+|   fintaddresskey SMALLINT,                                                                        |
+|   fstraddresstype VARCHAR(40),                                                                    |
+|   fstrstreet VARCHAR(510),                                                                        |
+|   fstrstreet2 VARCHAR(510),                                                                       |
+|   fstrunittype VARCHAR(100),                                                                      |
+|   fstrunit VARCHAR(60),                                                                           |
+|   fstrcity VARCHAR(200),                                                                          |
+|   fstrcounty VARCHAR(12),                                                                         |
+|   fstrstate VARCHAR(12),                                                                          |
+|   fstrzip VARCHAR(60),                                                                            |
+|   fstrcountry VARCHAR(12),                                                                        |
+|   fstrattention VARCHAR(510),                                                                     |
+|   fstrlocationcode VARCHAR(60),                                                                   |
+|   fstrurbanization VARCHAR(100),                                                                  |
+|   fstrmunicipality VARCHAR(60),                                                                   |
+|   fstrdistrict VARCHAR(60),                                                                       |
+|   fstrsubdistrict VARCHAR(60),                                                                    |
+|   fstrsubprovince VARCHAR(100),                                                                   |
+|   fstraddressdescription VARCHAR(510),                                                            |
+|   fstrlistformataddress VARCHAR(510),                                                             |
+|   flngidkey INT,                                                                                  |
+|   fstridtype VARCHAR(12),                                                                         |
+|   fstrid VARCHAR(60),                                                                             |
+|   fstrformattedid VARCHAR(60),                                                                    |
+|   fstrdistrictoffice VARCHAR(12),                                                                 |
+|   fstrcollectdistrictoffice VARCHAR(12),                                                          |
+|   fstrreviewtype VARCHAR(12),                                                                     |
+|   fstrcustomerlevel VARCHAR(12),                                                                  |
+|   fi64protecteddatasource BIGINT,                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                             |
+|   record_effective_timestamp TIMESTAMP,                                                           |
+|   record_expiry_timestamp TIMESTAMP,                                                              |
+|   record_active_flag VARCHAR(1),                                                                  |
+|   insert_object_run_key INT,                                                                      |
+|   update_object_run_key INT                                                                       |
+| )                                                                                                 |
+| STORED AS PARQUET                                                                                 |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerinfo_f'                      |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='34760', 'totalSize'='6540474') |
++---------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerlevel_d (                                                    |
+|   flngdockey INT,                                                                                     |
+|   flngcustomerkey INT,                                                                                |
+|   fstrcustomerlevel VARCHAR(12),                                                                      |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerlevel_d'                         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9879610', 'totalSize'='169608383') |
++-------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+| result                                                                                            |
++---------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerlevel_f (                                                |
+|   flngdockey INT,                                                                                 |
+|   flngcustomerkey INT,                                                                            |
+|   fstrcustomerlevel VARCHAR(12),                                                                  |
+|   fstrwho VARCHAR(20),                                                                            |
+|   fdtmwhen TIMESTAMP,                                                                             |
+|   record_effective_timestamp TIMESTAMP,                                                           |
+|   record_expiry_timestamp TIMESTAMP,                                                              |
+|   record_active_flag VARCHAR(1),                                                                  |
+|   insert_object_run_key INT,                                                                      |
+|   update_object_run_key INT                                                                       |
+| )                                                                                                 |
+| STORED AS PARQUET                                                                                 |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerlevel_f'                     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='35604', 'totalSize'='1053046') |
++---------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerstd_d (                                                      |
+|   flngdockey INT,                                                                                     |
+|   fdtmdob TIMESTAMP,                                                                                  |
+|   fdtmdod TIMESTAMP,                                                                                  |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerstd_d'                           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9909704', 'totalSize'='171737254') |
++-------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblcustomerstd_f (                                                |
+|   flngdockey INT,                                                                               |
+|   fdtmdob TIMESTAMP,                                                                            |
+|   fdtmdod TIMESTAMP,                                                                            |
+|   fstrwho VARCHAR(20),                                                                          |
+|   fdtmwhen TIMESTAMP,                                                                           |
+|   record_effective_timestamp TIMESTAMP,                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   record_active_flag VARCHAR(1),                                                                |
+|   insert_object_run_key INT,                                                                    |
+|   update_object_run_key INT                                                                     |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblcustomerstd_f'                     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='4236', 'totalSize'='106492') |
++-------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblid_d (                                                                |
+|   flngidkey INT,                                                                                       |
+|   flngver INT,                                                                                         |
+|   flngcustomerkey INT,                                                                                 |
+|   fstridtype VARCHAR(12),                                                                              |
+|   fstrid VARCHAR(60),                                                                                  |
+|   flngaccountkey INT,                                                                                  |
+|   flngverlast INT,                                                                                     |
+|   fblnvalidated SMALLINT,                                                                              |
+|   fblnactive SMALLINT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   fblndefault SMALLINT,                                                                                |
+|   fdtmcommence TIMESTAMP,                                                                              |
+|   fdtmcease TIMESTAMP,                                                                                 |
+|   flngimagekey INT,                                                                                    |
+|   flngdockey INT,                                                                                      |
+|   flngcrmkey INT,                                                                                      |
+|   fi64protecteddatasource BIGINT,                                                                      |
+|   fintprotectlevel SMALLINT,                                                                           |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblid_d'                                     |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='18037084', 'totalSize'='526592353') |
++--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblid_f (                                                         |
+|   flngidkey INT,                                                                                |
+|   flngver INT,                                                                                  |
+|   fstrid VARCHAR(60),                                                                           |
+|   flngaccountkey INT,                                                                           |
+|   flngverlast INT,                                                                              |
+|   fblnvalidated SMALLINT,                                                                       |
+|   fblnactive SMALLINT,                                                                          |
+|   fintprofilenumber SMALLINT,                                                                   |
+|   fblndefault SMALLINT,                                                                         |
+|   fdtmcommence TIMESTAMP,                                                                       |
+|   fdtmcease TIMESTAMP,                                                                          |
+|   flngimagekey INT,                                                                             |
+|   flngdockey INT,                                                                               |
+|   flngcrmkey INT,                                                                               |
+|   fi64protecteddatasource BIGINT,                                                               |
+|   fintprotectlevel SMALLINT,                                                                    |
+|   fstrwho VARCHAR(20),                                                                          |
+|   fdtmwhen TIMESTAMP,                                                                           |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   record_active_flag VARCHAR(1),                                                                |
+|   record_deleted_flag VARCHAR(1),                                                               |
+|   insert_object_run_key INT,                                                                    |
+|   update_object_run_key INT,                                                                    |
+|   number_of_valid_seconds TINYINT,                                                              |
+|   flngcustomerkey INT,                                                                          |
+|   fstridtype VARCHAR(12),                                                                       |
+|   record_effective_timestamp TIMESTAMP                                                          |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblid_f'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='3788', 'totalSize'='209680') |
++-------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblid_ird_d (                                                           |
+|   flngidkey INT,                                                                                      |
+|   flngver INT,                                                                                        |
+|   flngcustomerkey INT,                                                                                |
+|   fstridtype VARCHAR(12),                                                                             |
+|   fstrid VARCHAR(60),                                                                                 |
+|   flngaccountkey INT,                                                                                 |
+|   flngverlast INT,                                                                                    |
+|   fblnvalidated SMALLINT,                                                                             |
+|   fblnactive SMALLINT,                                                                                |
+|   fintprofilenumber SMALLINT,                                                                         |
+|   fblndefault SMALLINT,                                                                               |
+|   fdtmcommence TIMESTAMP,                                                                             |
+|   fdtmcease TIMESTAMP,                                                                                |
+|   flngimagekey INT,                                                                                   |
+|   flngdockey INT,                                                                                     |
+|   flngcrmkey INT,                                                                                     |
+|   fi64protecteddatasource BIGINT,                                                                     |
+|   fintprotectlevel SMALLINT,                                                                          |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblid_ird_d'                                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9837829', 'totalSize'='253646496') |
++-------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+| result                                                                                         |
++------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblid_ird_f (                                                    |
+|   flngidkey INT,                                                                               |
+|   flngver INT,                                                                                 |
+|   fstridtype VARCHAR(12),                                                                      |
+|   fstrid VARCHAR(60),                                                                          |
+|   flngaccountkey INT,                                                                          |
+|   flngverlast INT,                                                                             |
+|   fblnvalidated SMALLINT,                                                                      |
+|   fblnactive SMALLINT,                                                                         |
+|   fintprofilenumber SMALLINT,                                                                  |
+|   fblndefault SMALLINT,                                                                        |
+|   fdtmcommence TIMESTAMP,                                                                      |
+|   fdtmcease TIMESTAMP,                                                                         |
+|   flngimagekey INT,                                                                            |
+|   flngdockey INT,                                                                              |
+|   flngcrmkey INT,                                                                              |
+|   fi64protecteddatasource BIGINT,                                                              |
+|   fintprotectlevel SMALLINT,                                                                   |
+|   fstrwho VARCHAR(20),                                                                         |
+|   fdtmwhen TIMESTAMP,                                                                          |
+|   record_expiry_timestamp TIMESTAMP,                                                           |
+|   record_active_flag VARCHAR(1),                                                               |
+|   insert_object_run_key INT,                                                                   |
+|   update_object_run_key INT,                                                                   |
+|   number_of_valid_seconds TINYINT,                                                             |
+|   flngcustomerkey INT,                                                                         |
+|   record_effective_timestamp TIMESTAMP                                                         |
+| )                                                                                              |
+| STORED AS PARQUET                                                                              |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblid_ird_f'                         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1602', 'totalSize'='98404') |
++------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_d (                                                         |
+|   flngindicatorkey INT,                                                                                |
+|   flngver INT,                                                                                         |
+|   flngverlast INT,                                                                                     |
+|   fintlevel SMALLINT,                                                                                  |
+|   flngcustomerkey INT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   flngaccountkey INT,                                                                                  |
+|   fstrindicator VARCHAR(12),                                                                           |
+|   fdtmcommence TIMESTAMP,                                                                              |
+|   fdtmfilingperiod TIMESTAMP,                                                                          |
+|   fdtmfilingperiodto TIMESTAMP,                                                                        |
+|   fcuramount DECIMAL(19,4),                                                                            |
+|   fdtmcease TIMESTAMP,                                                                                 |
+|   fstrreason VARCHAR(12),                                                                              |
+|   fdtmcommence1 TIMESTAMP,                                                                             |
+|   fdtmcease1 TIMESTAMP,                                                                                |
+|   flngcrmkey INT,                                                                                      |
+|   fstrcomment VARCHAR(510),                                                                            |
+|   fstruser VARCHAR(20),                                                                                |
+|   flngdockey INT,                                                                                      |
+|   fblnactive SMALLINT,                                                                                 |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_d'                              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='13835440', 'totalSize'='493942475') |
++--------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+| result                                                                                            |
++---------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_f (                                                    |
+|   flngindicatorkey INT,                                                                           |
+|   flngver INT,                                                                                    |
+|   flngverlast INT,                                                                                |
+|   fintlevel SMALLINT,                                                                             |
+|   fintprofilenumber SMALLINT,                                                                     |
+|   flngaccountkey INT,                                                                             |
+|   fdtmcommence TIMESTAMP,                                                                         |
+|   fdtmfilingperiod TIMESTAMP,                                                                     |
+|   fdtmfilingperiodto TIMESTAMP,                                                                   |
+|   fcuramount DECIMAL(19,4),                                                                       |
+|   fdtmcease TIMESTAMP,                                                                            |
+|   fstrreason VARCHAR(12),                                                                         |
+|   fdtmcommence1 TIMESTAMP,                                                                        |
+|   fdtmcease1 TIMESTAMP,                                                                           |
+|   flngcrmkey INT,                                                                                 |
+|   fstrcomment VARCHAR(510),                                                                       |
+|   fstruser VARCHAR(20),                                                                           |
+|   flngdockey INT,                                                                                 |
+|   fblnactive SMALLINT,                                                                            |
+|   fstrwho VARCHAR(20),                                                                            |
+|   record_expiry_timestamp TIMESTAMP,                                                              |
+|   record_active_flag VARCHAR(1),                                                                  |
+|   insert_object_run_key INT,                                                                      |
+|   update_object_run_key INT,                                                                      |
+|   fdtmwhen TIMESTAMP,                                                                             |
+|   number_of_valid_seconds TINYINT,                                                                |
+|   flngcustomerkey INT,                                                                            |
+|   fstrindicator VARCHAR(12),                                                                      |
+|   record_effective_timestamp TIMESTAMP                                                            |
+| )                                                                                                 |
+| STORED AS PARQUET                                                                                 |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_f'                         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='20313', 'totalSize'='1050113') |
++---------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------+
+| result                                                                                            |
++---------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_insolv_d (                                             |
+|   flngindicatorkey INT,                                                                           |
+|   flngver INT,                                                                                    |
+|   flngverlast INT,                                                                                |
+|   fintlevel SMALLINT,                                                                             |
+|   flngcustomerkey INT,                                                                            |
+|   fintprofilenumber SMALLINT,                                                                     |
+|   flngaccountkey INT,                                                                             |
+|   fstrindicator VARCHAR(12),                                                                      |
+|   fdtmcommence TIMESTAMP,                                                                         |
+|   fdtmfilingperiod TIMESTAMP,                                                                     |
+|   fdtmfilingperiodto TIMESTAMP,                                                                   |
+|   fcuramount DECIMAL(19,4),                                                                       |
+|   fdtmcease TIMESTAMP,                                                                            |
+|   fstrreason VARCHAR(12),                                                                         |
+|   fdtmcommence1 TIMESTAMP,                                                                        |
+|   fdtmcease1 TIMESTAMP,                                                                           |
+|   flngcrmkey INT,                                                                                 |
+|   fstrcomment VARCHAR(510),                                                                       |
+|   fstruser VARCHAR(20),                                                                           |
+|   flngdockey INT,                                                                                 |
+|   fblnactive SMALLINT,                                                                            |
+|   fstrwho VARCHAR(20),                                                                            |
+|   fdtmwhen TIMESTAMP,                                                                             |
+|   insolvency_level INT,                                                                           |
+|   record_effective_timestamp TIMESTAMP,                                                           |
+|   record_expiry_timestamp TIMESTAMP,                                                              |
+|   insert_object_run_key INT,                                                                      |
+|   update_object_run_key INT,                                                                      |
+|   record_active_flag CHAR(1)                                                                      |
+| )                                                                                                 |
+| STORED AS PARQUET                                                                                 |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_insolv_d'                  |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='88262', 'totalSize'='4158744') |
++---------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_insolv_f (                                         |
+|   flngindicatorkey INT,                                                                       |
+|   flngver INT,                                                                                |
+|   flngverlast INT,                                                                            |
+|   fintlevel SMALLINT,                                                                         |
+|   fintprofilenumber SMALLINT,                                                                 |
+|   flngaccountkey INT,                                                                         |
+|   fstrindicator VARCHAR(12),                                                                  |
+|   fdtmcommence TIMESTAMP,                                                                     |
+|   fdtmfilingperiod TIMESTAMP,                                                                 |
+|   fdtmfilingperiodto TIMESTAMP,                                                               |
+|   fcuramount DECIMAL(19,4),                                                                   |
+|   fdtmcease TIMESTAMP,                                                                        |
+|   fstrreason VARCHAR(12),                                                                     |
+|   fdtmcommence1 TIMESTAMP,                                                                    |
+|   fdtmcease1 TIMESTAMP,                                                                       |
+|   flngcrmkey INT,                                                                             |
+|   fstrcomment VARCHAR(510),                                                                   |
+|   fstruser VARCHAR(20),                                                                       |
+|   flngdockey INT,                                                                             |
+|   fblnactive SMALLINT,                                                                        |
+|   fstrwho VARCHAR(20),                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   record_active_flag VARCHAR(1),                                                              |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   insolvency_level INT,                                                                       |
+|   number_of_valid_seconds TINYINT,                                                            |
+|   flngcustomerkey INT,                                                                        |
+|   record_effective_timestamp TIMESTAMP                                                        |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_insolv_f'              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='220', 'totalSize'='54314') |
++-----------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_sec_d (                                              |
+|   flngindicatorkey INT,                                                                         |
+|   flngver INT,                                                                                  |
+|   flngverlast INT,                                                                              |
+|   fintlevel SMALLINT,                                                                           |
+|   flngcustomerkey INT,                                                                          |
+|   fintprofilenumber SMALLINT,                                                                   |
+|   flngaccountkey INT,                                                                           |
+|   fstrindicator VARCHAR(12),                                                                    |
+|   fdtmcommence TIMESTAMP,                                                                       |
+|   fdtmfilingperiod TIMESTAMP,                                                                   |
+|   fdtmfilingperiodto TIMESTAMP,                                                                 |
+|   fcuramount DECIMAL(19,4),                                                                     |
+|   fdtmcease TIMESTAMP,                                                                          |
+|   fstrreason VARCHAR(12),                                                                       |
+|   fdtmcommence1 TIMESTAMP,                                                                      |
+|   fdtmcease1 TIMESTAMP,                                                                         |
+|   flngcrmkey INT,                                                                               |
+|   fstrcomment VARCHAR(510),                                                                     |
+|   fstruser VARCHAR(20),                                                                         |
+|   flngdockey INT,                                                                               |
+|   fblnactive SMALLINT,                                                                          |
+|   fstrwho VARCHAR(20),                                                                          |
+|   fdtmwhen TIMESTAMP,                                                                           |
+|   safety_risk_level INT,                                                                        |
+|   record_effective_timestamp TIMESTAMP,                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   insert_object_run_key INT,                                                                    |
+|   update_object_run_key INT,                                                                    |
+|   record_active_flag CHAR(1)                                                                    |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_sec_d'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1802', 'totalSize'='109679') |
++-------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblindicator_sec_f (                                      |
+|   flngindicatorkey INT,                                                                 |
+|   flngver INT,                                                                          |
+|   flngverlast INT,                                                                      |
+|   fintlevel SMALLINT,                                                                   |
+|   fintprofilenumber SMALLINT,                                                           |
+|   flngaccountkey INT,                                                                   |
+|   fstrindicator VARCHAR(12),                                                            |
+|   fdtmcommence TIMESTAMP,                                                               |
+|   fdtmfilingperiod TIMESTAMP,                                                           |
+|   fdtmfilingperiodto TIMESTAMP,                                                         |
+|   fcuramount DECIMAL(19,4),                                                             |
+|   fdtmcease TIMESTAMP,                                                                  |
+|   fstrreason VARCHAR(12),                                                               |
+|   fdtmcommence1 TIMESTAMP,                                                              |
+|   fdtmcease1 TIMESTAMP,                                                                 |
+|   flngcrmkey INT,                                                                       |
+|   fstrcomment VARCHAR(510),                                                             |
+|   fstruser VARCHAR(20),                                                                 |
+|   flngdockey INT,                                                                       |
+|   fblnactive SMALLINT,                                                                  |
+|   fstrwho VARCHAR(20),                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                   |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT,                                                            |
+|   safety_risk_level INT,                                                                |
+|   number_of_valid_seconds TINYINT,                                                      |
+|   flngcustomerkey INT,                                                                  |
+|   record_effective_timestamp TIMESTAMP                                                  |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblindicator_sec_f'           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+| result                                                                                               |
++------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnaics_d (                                                           |
+|   flngnaicskey INT,                                                                                  |
+|   flngver INT,                                                                                       |
+|   flngverlast INT,                                                                                   |
+|   fstrnaicsversion VARCHAR(24),                                                                      |
+|   fstrnaics VARCHAR(60),                                                                             |
+|   fstrlevel1 VARCHAR(60),                                                                            |
+|   fstrlevel2 VARCHAR(60),                                                                            |
+|   fstrlevel3 VARCHAR(60),                                                                            |
+|   fstrlevel4 VARCHAR(60),                                                                            |
+|   fstrlevel5 VARCHAR(60),                                                                            |
+|   fstrlevel6 VARCHAR(60),                                                                            |
+|   flngcustomerkey INT,                                                                               |
+|   fintprofilenumber SMALLINT,                                                                        |
+|   flngaccountkey INT,                                                                                |
+|   fdtmcommence TIMESTAMP,                                                                            |
+|   fdtmcease TIMESTAMP,                                                                               |
+|   fcurbusinessmakeup DECIMAL(19,4),                                                                  |
+|   fblndefault SMALLINT,                                                                              |
+|   fblnactive SMALLINT,                                                                               |
+|   fstrwho VARCHAR(20),                                                                               |
+|   fdtmwhen TIMESTAMP,                                                                                |
+|   record_effective_timestamp TIMESTAMP,                                                              |
+|   record_expiry_timestamp TIMESTAMP,                                                                 |
+|   insert_object_run_key INT,                                                                         |
+|   update_object_run_key INT,                                                                         |
+|   record_active_flag CHAR(1)                                                                         |
+| )                                                                                                    |
+| STORED AS PARQUET                                                                                    |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnaics_d'                                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='2239053', 'totalSize'='75963471') |
++------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------+
+| result                                                                                        |
++-----------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnaics_f (                                                    |
+|   flngnaicskey INT,                                                                           |
+|   flngver INT,                                                                                |
+|   flngverlast INT,                                                                            |
+|   fstrnaicsversion VARCHAR(24),                                                               |
+|   fstrnaics VARCHAR(60),                                                                      |
+|   fstrlevel1 VARCHAR(60),                                                                     |
+|   fstrlevel2 VARCHAR(60),                                                                     |
+|   fstrlevel3 VARCHAR(60),                                                                     |
+|   fstrlevel4 VARCHAR(60),                                                                     |
+|   fstrlevel5 VARCHAR(60),                                                                     |
+|   fstrlevel6 VARCHAR(60),                                                                     |
+|   fintprofilenumber SMALLINT,                                                                 |
+|   flngaccountkey INT,                                                                         |
+|   fdtmcommence TIMESTAMP,                                                                     |
+|   fdtmcease TIMESTAMP,                                                                        |
+|   fcurbusinessmakeup DECIMAL(19,4),                                                           |
+|   fblndefault SMALLINT,                                                                       |
+|   fblnactive SMALLINT,                                                                        |
+|   fstrwho VARCHAR(20),                                                                        |
+|   fdtmwhen TIMESTAMP,                                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                          |
+|   record_active_flag VARCHAR(1),                                                              |
+|   insert_object_run_key INT,                                                                  |
+|   update_object_run_key INT,                                                                  |
+|   number_of_valid_seconds TINYINT,                                                            |
+|   flngcustomerkey INT,                                                                        |
+|   record_effective_timestamp TIMESTAMP                                                        |
+| )                                                                                             |
+| STORED AS PARQUET                                                                             |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnaics_f'                         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='641', 'totalSize'='59045') |
++-----------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnamerecord_d (                                                        |
+|   fi64namekey BIGINT,                                                                                  |
+|   flngver INT,                                                                                         |
+|   flngverlast INT,                                                                                     |
+|   fdtmeffectivefrom TIMESTAMP,                                                                         |
+|   fdtmeffectiveto TIMESTAMP,                                                                           |
+|   fdtmsystemfrom TIMESTAMP,                                                                            |
+|   fdtmsystemto TIMESTAMP,                                                                              |
+|   fstrsource VARCHAR(40),                                                                              |
+|   flngcustomerkey INT,                                                                                 |
+|   fintprofilenumber SMALLINT,                                                                          |
+|   fi64sourcekey BIGINT,                                                                                |
+|   fstrnametype VARCHAR(40),                                                                            |
+|   fstrdisplay VARCHAR(24),                                                                             |
+|   fblnformatted SMALLINT,                                                                              |
+|   fstrlastname VARCHAR(100),                                                                           |
+|   fintlastmodifier SMALLINT,                                                                           |
+|   fstrfirstname VARCHAR(100),                                                                          |
+|   fintfirstmodifier SMALLINT,                                                                          |
+|   fstrmiddlename VARCHAR(100),                                                                         |
+|   fintmiddlemodifier SMALLINT,                                                                         |
+|   fstrtitle VARCHAR(20),                                                                               |
+|   finttitlemodifier SMALLINT,                                                                          |
+|   fstrsuffix VARCHAR(20),                                                                              |
+|   fintsuffixmodifier SMALLINT,                                                                         |
+|   fstrfreeformatname VARCHAR(510),                                                                     |
+|   fintfreeformatmodifier SMALLINT,                                                                     |
+|   fstradditionalname VARCHAR(510),                                                                     |
+|   fintadditionalmodifier SMALLINT,                                                                     |
+|   fstradditionalname2 VARCHAR(510),                                                                    |
+|   fintadditionalmodifier2 SMALLINT,                                                                    |
+|   fstrlistformatname VARCHAR(510),                                                                     |
+|   fi64protecteddatasource BIGINT,                                                                      |
+|   flngcrmkey INT,                                                                                      |
+|   fblnblank SMALLINT,                                                                                  |
+|   fblncurrent SMALLINT,                                                                                |
+|   fblnactive SMALLINT,                                                                                 |
+|   fintprotectlevel SMALLINT,                                                                           |
+|   fstrwho VARCHAR(20),                                                                                 |
+|   fdtmwhen TIMESTAMP,                                                                                  |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1)                                                                           |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnamerecord_d'                             |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='10714300', 'totalSize'='733059360') |
++--------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnamerecord_f (                                                 |
+|   fi64namekey BIGINT,                                                                           |
+|   flngver INT,                                                                                  |
+|   flngverlast INT,                                                                              |
+|   fdtmeffectivefrom TIMESTAMP,                                                                  |
+|   fdtmeffectiveto TIMESTAMP,                                                                    |
+|   fdtmsystemfrom TIMESTAMP,                                                                     |
+|   fdtmsystemto TIMESTAMP,                                                                       |
+|   fstrsource VARCHAR(40),                                                                       |
+|   fintprofilenumber SMALLINT,                                                                   |
+|   fi64sourcekey BIGINT,                                                                         |
+|   fstrdisplay VARCHAR(24),                                                                      |
+|   fblnformatted SMALLINT,                                                                       |
+|   fstrlastname VARCHAR(100),                                                                    |
+|   fintlastmodifier SMALLINT,                                                                    |
+|   fstrfirstname VARCHAR(100),                                                                   |
+|   fintfirstmodifier SMALLINT,                                                                   |
+|   fstrmiddlename VARCHAR(100),                                                                  |
+|   fintmiddlemodifier SMALLINT,                                                                  |
+|   fstrtitle VARCHAR(20),                                                                        |
+|   finttitlemodifier SMALLINT,                                                                   |
+|   fstrsuffix VARCHAR(20),                                                                       |
+|   fintsuffixmodifier SMALLINT,                                                                  |
+|   fstrfreeformatname VARCHAR(510),                                                              |
+|   fintfreeformatmodifier SMALLINT,                                                              |
+|   fstradditionalname VARCHAR(510),                                                              |
+|   fintadditionalmodifier SMALLINT,                                                              |
+|   fstradditionalname2 VARCHAR(510),                                                             |
+|   fintadditionalmodifier2 SMALLINT,                                                             |
+|   fstrlistformatname VARCHAR(510),                                                              |
+|   fi64protecteddatasource BIGINT,                                                               |
+|   flngcrmkey INT,                                                                               |
+|   fblnblank SMALLINT,                                                                           |
+|   fblncurrent SMALLINT,                                                                         |
+|   fblnactive SMALLINT,                                                                          |
+|   fintprotectlevel SMALLINT,                                                                    |
+|   fstrwho VARCHAR(20),                                                                          |
+|   fdtmwhen TIMESTAMP,                                                                           |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   flngcustomerkey INT,                                                                          |
+|   fstrnametype VARCHAR(40),                                                                     |
+|   record_effective_timestamp TIMESTAMP                                                          |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnamerecord_f'                      |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='2278', 'totalSize'='280891') |
++-------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+| result                                                                                         |
++------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_accidgedu_d (                                              |
+|   flngdockey INT,                                                                              |
+|   fstreducationprovider VARCHAR(100),                                                          |
+|   fstrwho VARCHAR(20),                                                                         |
+|   fdtmwhen TIMESTAMP,                                                                          |
+|   record_effective_timestamp TIMESTAMP,                                                        |
+|   record_expiry_timestamp TIMESTAMP,                                                           |
+|   insert_object_run_key INT,                                                                   |
+|   update_object_run_key INT,                                                                   |
+|   record_active_flag CHAR(1)                                                                   |
+| )                                                                                              |
+| STORED AS PARQUET                                                                              |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_accidgedu_d'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1336', 'totalSize'='51024') |
++------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------+
+| result                                                                                     |
++--------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_accidgedu_f (                                          |
+|   flngdockey INT,                                                                          |
+|   fstreducationprovider VARCHAR(100),                                                      |
+|   fstrwho VARCHAR(20),                                                                     |
+|   fdtmwhen TIMESTAMP,                                                                      |
+|   record_effective_timestamp TIMESTAMP,                                                    |
+|   record_expiry_timestamp TIMESTAMP,                                                       |
+|   record_active_flag VARCHAR(1),                                                           |
+|   insert_object_run_key INT,                                                               |
+|   update_object_run_key INT                                                                |
+| )                                                                                          |
+| STORED AS PARQUET                                                                          |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_accidgedu_f'               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='8', 'totalSize'='7073') |
++--------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+| result                                                                                               |
++------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_accidgovr_d (                                                    |
+|   flngdockey INT,                                                                                    |
+|   fstrissuingcountry VARCHAR(6),                                                                     |
+|   fblntranslationreceived SMALLINT,                                                                  |
+|   flngentrynumber INT,                                                                               |
+|   fstrwho VARCHAR(20),                                                                               |
+|   fdtmwhen TIMESTAMP,                                                                                |
+|   record_effective_timestamp TIMESTAMP,                                                              |
+|   record_expiry_timestamp TIMESTAMP,                                                                 |
+|   insert_object_run_key INT,                                                                         |
+|   update_object_run_key INT,                                                                         |
+|   record_active_flag CHAR(1)                                                                         |
+| )                                                                                                    |
+| STORED AS PARQUET                                                                                    |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_accidgovr_d'                         |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1672340', 'totalSize'='25941620') |
++------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+| result                                                                                         |
++------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_accidgovr_f (                                              |
+|   flngdockey INT,                                                                              |
+|   fstrissuingcountry VARCHAR(6),                                                               |
+|   fblntranslationreceived SMALLINT,                                                            |
+|   flngentrynumber INT,                                                                         |
+|   fstrwho VARCHAR(20),                                                                         |
+|   fdtmwhen TIMESTAMP,                                                                          |
+|   record_effective_timestamp TIMESTAMP,                                                        |
+|   record_expiry_timestamp TIMESTAMP,                                                           |
+|   record_active_flag VARCHAR(1),                                                               |
+|   insert_object_run_key INT,                                                                   |
+|   update_object_run_key INT                                                                    |
+| )                                                                                              |
+| STORED AS PARQUET                                                                              |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_accidgovr_f'                   |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='1122', 'totalSize'='43423') |
++------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------+
+| result                                                                                      |
++---------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_cstcominfo_d (                                          |
+|   flngdockey INT,                                                                           |
+|   fstrurl VARCHAR(100),                                                                     |
+|   fblnnilcompany SMALLINT,                                                                  |
+|   fblndonee SMALLINT,                                                                       |
+|   fstrwho VARCHAR(20),                                                                      |
+|   fdtmwhen TIMESTAMP,                                                                       |
+|   record_effective_timestamp TIMESTAMP,                                                     |
+|   record_expiry_timestamp TIMESTAMP,                                                        |
+|   insert_object_run_key INT,                                                                |
+|   update_object_run_key INT,                                                                |
+|   record_active_flag CHAR(1)                                                                |
+| )                                                                                           |
+| STORED AS PARQUET                                                                           |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_cstcominfo_d'               |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='13', 'totalSize'='2881') |
++---------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+| result                                                                                  |
++-----------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_cstcominfo_f (                                      |
+|   flngdockey INT,                                                                       |
+|   fstrurl VARCHAR(100),                                                                 |
+|   fblnnilcompany SMALLINT,                                                              |
+|   fblndonee SMALLINT,                                                                   |
+|   fstrwho VARCHAR(20),                                                                  |
+|   fdtmwhen TIMESTAMP,                                                                   |
+|   record_effective_timestamp TIMESTAMP,                                                 |
+|   record_expiry_timestamp TIMESTAMP,                                                    |
+|   record_active_flag VARCHAR(1),                                                        |
+|   insert_object_run_key INT,                                                            |
+|   update_object_run_key INT                                                             |
+| )                                                                                       |
+| STORED AS PARQUET                                                                       |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_cstcominfo_f'           |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='0', 'totalSize'='0') |
++-----------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_customerstd_d (                                                   |
+|   flngdockey INT,                                                                                     |
+|   fstrcustomersubtypeclass VARCHAR(12),                                                               |
+|   fstrcustomersubtype VARCHAR(12),                                                                    |
+|   fstrcustomersegment VARCHAR(100),                                                                   |
+|   fstrspecialfiletype VARCHAR(12),                                                                    |
+|   fblnspecialtaxresidency SMALLINT,                                                                   |
+|   fstrnonresidenttype VARCHAR(100),                                                                   |
+|   fstrcurrenttaxresidency VARCHAR(100),                                                               |
+|   fstrclosurereason VARCHAR(12),                                                                      |
+|   fintsmscountrycode SMALLINT,                                                                        |
+|   fstrsmsareacode VARCHAR(10),                                                                        |
+|   fstrsmsphonenumber VARCHAR(30),                                                                     |
+|   fdtmincomebalancedate TIMESTAMP,                                                                    |
+|   fstrcustomerclass VARCHAR(12),                                                                      |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_customerstd_d'                        |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9909076', 'totalSize'='167929713') |
++-------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_customerstd_f (                                             |
+|   flngdockey INT,                                                                               |
+|   fstrcustomersubtypeclass VARCHAR(12),                                                         |
+|   fstrcustomersubtype VARCHAR(12),                                                              |
+|   fstrcustomersegment VARCHAR(100),                                                             |
+|   fstrspecialfiletype VARCHAR(12),                                                              |
+|   fblnspecialtaxresidency SMALLINT,                                                             |
+|   fstrnonresidenttype VARCHAR(100),                                                             |
+|   fstrcurrenttaxresidency VARCHAR(100),                                                         |
+|   fstrclosurereason VARCHAR(12),                                                                |
+|   fintsmscountrycode SMALLINT,                                                                  |
+|   fstrsmsareacode VARCHAR(10),                                                                  |
+|   fstrsmsphonenumber VARCHAR(30),                                                               |
+|   fdtmincomebalancedate TIMESTAMP,                                                              |
+|   fstrcustomerclass VARCHAR(12),                                                                |
+|   fstrwho VARCHAR(20),                                                                          |
+|   record_effective_timestamp TIMESTAMP,                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   record_active_flag VARCHAR(1),                                                                |
+|   insert_object_run_key INT,                                                                    |
+|   update_object_run_key INT,                                                                    |
+|   fdtmwhen TIMESTAMP                                                                            |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_customerstd_f'                  |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='4236', 'totalSize'='112941') |
++-------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------------+
+| result                                                                                                |
++-------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_custsegmenthist_d (                                               |
+|   flngdockey INT,                                                                                     |
+|   flngverlast INT,                                                                                    |
+|   fstrcustomersegment VARCHAR(100),                                                                   |
+|   fstrwho VARCHAR(20),                                                                                |
+|   fdtmwhen TIMESTAMP,                                                                                 |
+|   record_effective_timestamp TIMESTAMP,                                                               |
+|   record_expiry_timestamp TIMESTAMP,                                                                  |
+|   insert_object_run_key INT,                                                                          |
+|   update_object_run_key INT,                                                                          |
+|   record_active_flag CHAR(1)                                                                          |
+| )                                                                                                     |
+| STORED AS PARQUET                                                                                     |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_custsegmenthist_d'                    |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9912681', 'totalSize'='210980947') |
++-------------------------------------------------------------------------------------------------------+
++-------------------------------------------------------------------------------------------------+
+| result                                                                                          |
++-------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.crw_ps_tblnz_custsegmenthist_f (                                         |
+|   flngdockey INT,                                                                               |
+|   flngverlast INT,                                                                              |
+|   fstrcustomersegment VARCHAR(100),                                                             |
+|   fstrwho VARCHAR(20),                                                                          |
+|   fdtmwhen TIMESTAMP,                                                                           |
+|   record_effective_timestamp TIMESTAMP,                                                         |
+|   record_expiry_timestamp TIMESTAMP,                                                            |
+|   record_active_flag VARCHAR(1),                                                                |
+|   insert_object_run_key INT,                                                                    |
+|   update_object_run_key INT                                                                     |
+| )                                                                                               |
+| STORED AS PARQUET                                                                               |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/crw_ps_tblnz_custsegmenthist_f'              |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='5595', 'totalSize'='134401') |
++-------------------------------------------------------------------------------------------------+
++--------------------------------------------------------------------------------------------------------+
+| result                                                                                                 |
++--------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.rfn_pe_timeline_d (                                                             |
+|   ird_no INT,                                                                                          |
+|   dip_party_id VARCHAR(30),                                                                            |
+|   start_customer_key INT,                                                                              |
+|   record_effective_timestamp TIMESTAMP,                                                                |
+|   record_expiry_timestamp TIMESTAMP,                                                                   |
+|   insert_object_run_key INT,                                                                           |
+|   update_object_run_key INT,                                                                           |
+|   record_active_flag CHAR(1),                                                                          |
+|   lower_cutoff TIMESTAMP,                                                                              |
+|   upper_cutoff TIMESTAMP                                                                               |
+| )                                                                                                      |
+| STORED AS PARQUET                                                                                      |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/rfn_pe_timeline_d'                                  |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='27557844', 'totalSize'='577080711') |
++--------------------------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------+
+| result                                                                                               |
++------------------------------------------------------------------------------------------------------+
+| CREATE TABLE prod_work.rfn_ps_timeline_d (                                                           |
+|   flngcustomerkey INT,                                                                               |
+|   record_effective_timestamp TIMESTAMP,                                                              |
+|   record_expiry_timestamp TIMESTAMP,                                                                 |
+|   insert_object_run_key INT,                                                                         |
+|   update_object_run_key INT,                                                                         |
+|   record_active_flag CHAR(1),                                                                        |
+|   lower_cutoff TIMESTAMP,                                                                            |
+|   upper_cutoff TIMESTAMP                                                                             |
+| )                                                                                                    |
+| STORED AS PARQUET                                                                                    |
+| LOCATION 'hdfs://nameservice1/env/3_prod/hive/work/rfn_ps_timeline_d'                                |
+| TBLPROPERTIES ('STATS_GENERATED_VIA_STATS_TASK'='true', 'numRows'='9889688', 'totalSize'='76186866') |
++------------------------------------------------------------------------------------------------------+

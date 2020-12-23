@@ -1,0 +1,15 @@
+2020-06-11 10:18:07------start ./dbrestore.sh prod_dw test_raw prefix prod_raw_ suffix _20200610
+2020-06-11 10:18:07------show tables  like 'prod_raw_*_20200610'
+2020-06-11 10:18:07------402 tables or views
+2020-06-11 10:18:07------show create table
+2020-06-11 10:18:13------402 tables to be restored
+2020-06-11 10:18:13------drop table
+2020-06-11 10:19:26------create table
+2020-06-11 10:20:26------402 tables created
+2020-06-11 10:20:26------hdfs copy
+2020-06-11 11:12:22------complete hdfs copy
+2020-06-11 11:12:22------refresh table
+2020-06-11 11:24:33------402 tables refreshed
+2020-06-11 11:24:33------recover partitions
+2020-06-11 11:24:33------0 table partitions recovered
+2020-06-11 11:24:33------complete ./dbrestore.sh prod_dw test_raw

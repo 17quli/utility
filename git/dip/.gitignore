@@ -1,0 +1,6 @@
+data_management_factory/LSF/LSF-logTrawler/logs/
+data_management_factory/deployment/impala_automation/impala_ddl_deployer/logs
+data_management_factory/deployment/impala_automation/impala_ddl_batcher/logs/
+data_management_factory/deployment/impala_automation/impala_ddl_deployer/staging
+data_management_factory/deployment/impala_automation/impala_ddl_deployer/config/deploy.properties
+**/*.log

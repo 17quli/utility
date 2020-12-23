@@ -1,0 +1,15 @@
+CREATE VIEW lab_fcp_raw_full_access.app_tblnz_rtnrwt                                                                                         
+AS SELECT                                                                                                                           
+z.flngDocKey,                                                                                                                       
+z.fstrPayeeIRDNumber,                                                                                                               
+z.fdtmPeriod,                                                                                                                       
+z.fblnJointOwnership,                                                                                                               
+z.fcurGrossDividends,                                                                                                               
+z.fcurImputationCredits,                                                                                                            
+z.fcurFDPCredits,                                                                                                                   
+z.fcurRWTDeducted,                                                                                                                  
+z.fstrPayerIRDNumber,                                                                                                               
+z.fstrWho,                                                                                                                          
+z.fdtmWhen
+from lab_fcp_raw.tblnz_rtnrwt z
+;

@@ -1,0 +1,3 @@
+alter table <environment>_raw/jnl.APP_TBLNZ_ACCPSO ADD COLUMNS
+(fstrIR56Activity varchar(12),
+fstrIR56ActivityOther varchar(200))

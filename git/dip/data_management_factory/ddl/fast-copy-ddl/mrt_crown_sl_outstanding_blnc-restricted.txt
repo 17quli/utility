@@ -1,0 +1,22 @@
+ 
+CREATE VIEW ${target_db=Enter the target database name here}.mrt_crown_sl_outstanding_blnc
+AS SELECT 
+z.YEAR_MONTH,
+z.IRD_NUMBER,
+z.LOCATION_NUMBER,
+z.CAL_LOAN_BALANCE_AMOUNT,
+z.CAB_PERIOD_BALANCE_AMOUNT,
+z.CURRENT_INTEREST_AMOUNT,
+z.ACCRUING_INTEREST_WRITEOFF_AMT,
+z.TOTAL_LOAN_BALANCE_AMOUNT,
+z.FIRST_EXTRACTION_DATE,
+z.EDW_LOAD_DATE
+ FROM ${source_db=Enter the source database name here}.CROWN_SL_OUTSTANDING_BALANCES z
+left outer join 
+${source_db1}.app_tblcustomerinfo ci
+on cast(ci.fstrid  as INT)= cast(z.IRD_NUMBER as INT)
+ where 
+  ci.fstridtype = 'IRD'
+  and ci.record_active_flag = 'Y'
+  and ci.record_deleted_flag = 'N'
+  and nvl(ci.fstrCustomerLevel, 'STD') = 'STD' ;

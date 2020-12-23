@@ -1,0 +1,4 @@
+CREATE VIEW lab_fcp_raw_full_access.m_model 
+as SELECTz.model_id ,z.model_name ,z.model_owner ,z.model_customer 
+from lab_fcp_raw.m_model z
+;

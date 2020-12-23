@@ -1,0 +1,14 @@
+	where name not like '%_old'
+	and name not like '%_new'
+	and name not like 'tdw_%'
+	and ((name not like '%0'
+	and name not like '%1'
+	and name not like '%2'
+	and name not like '%3'
+	and name not like '%4'
+	and name not like '%5'
+	and name not like '%6'
+	and name not like '%7'
+	and name not like '%8'
+	and name not like '%9')
+	or name like 'frd_tblfrdplandata%')

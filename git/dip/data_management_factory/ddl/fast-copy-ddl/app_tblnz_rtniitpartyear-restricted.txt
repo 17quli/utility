@@ -1,0 +1,8 @@
+ CREATE  VIEW lab_fcp_raw_restricted_access.app_tblnz_rtniitpartyear
+ as SELECT z.flngDocKey, 
+       z.fstrSituation, 
+       z.fdtmFrom, 
+       z.fdtmTo, 
+       z.fstrWho, 
+       z.fdtmWhen 
+FROM lab_fcp_raw.tblnz_rtniitpartyear z ;

@@ -1,0 +1,9 @@
+flngdockey,
+fstrpayeeirdnumber,
+fdtmperiod,
+fblnjointownership,
+fcurgrossdividends,
+fcurimputationcredits,
+fcurfdpcredits,
+fcurrwtdeducted,
+fstrpayerirdnumber

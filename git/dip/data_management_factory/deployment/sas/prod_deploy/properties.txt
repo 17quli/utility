@@ -1,0 +1,15 @@
+cmdPath=H:\sso\sfw\sas\940\
+importProjectFolder=/IRD/DIP Data Management
+importHost=ird35au.vsp.sas.com
+importPort=8562
+importPkgName=di_export
+importComputeHost=ird36au.vsp.sas.com
+puttyFolder=C:\Program Files\PuTTY
+batchDeployCmdPath=/sso/sfw/sas_factory/940/SASDataIntegrationStudioServerJARs/4.8
+serverLvDir=/sso/biconfig/940/Lev1
+macroFolder=.\SASMacro
+targetEnv=prod
+importPath=..\..\..\sas9\
+lcfHost=irdprd20.vsp.sas.com
+importHostKey=6f:0d:b8:db:4e:78:99:83:59:da:b3:1e:a2:6c:63:b6
+categories=raw_ingestion=Y,party=Y,account=Y,relationships=N,silver=Y,cas_upload=Y,workflow_monitoring=Y,schedule=Y

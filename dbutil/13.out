@@ -1,0 +1,13 @@
+0	5	72.79GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_ksslineitem
+0	4	59.48GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblreturn
+0	4	59.34GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblperiod
+0	3	37.14GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_rtnattributes
+0	3	21.77GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblpayment
+0	3	13.67GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tbldoctrn
+0	3	9.38GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_bankfile
+0	3	9.01GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tbldocsource
+0	1	8.62GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_rtnpsoemployeesummary
+0	1	9.26GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblrecoveryamount
+0	1	3.62GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblvisitaction
+0	1	1.74GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_rtnprovisional
+0	1	1.03GB	NOT CACHED	NOT CACHED	TEXT	false	hdfs://ird-prd-002/env/1_dev/hive/raw/sqoop_tblnz_rtnnrteincomeinfo

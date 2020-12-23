@@ -1,0 +1,16 @@
+2020-06-09 15:48:26------start ./dbbackup.sh lab_fcp_raw_cas_views prod_dw
+2020-06-09 15:48:27------show tables
+2020-06-09 15:48:27------75 tables or views
+2020-06-09 15:48:27------show create table
+2020-06-09 15:48:29------75 tables excluding views
+2020-06-09 15:48:29------drop table
+2020-06-09 15:48:35------create table
+2020-06-09 15:48:46------75 tables created
+2020-06-09 15:48:46------hdfs copy
+2020-06-09 16:17:53------75 hdfs directories copied
+2020-06-09 16:17:53------refresh table
+2020-06-09 16:17:54------75 tables refreshed
+2020-06-09 16:17:54------recover partitions
+2020-06-09 16:17:55------0 table partitions recovered
+2020-06-09 16:17:55------show tables backup expired
+2020-06-09 16:17:56------complete ./dbbackup.sh lab_fcp_raw_cas_views prod_dw

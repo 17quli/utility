@@ -1,0 +1,1 @@
+ssh ird10119au.vsp.sas.com ps -axo pid,%cpu,user:20,command |sort -k2 -n|tail -n 50

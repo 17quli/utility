@@ -1,0 +1,7 @@
+[Connections: Other Server]
+OtherServer[1].SourceName=DIP Oracle Management Dev
+OtherServer[1].TargetName=DIP Oracle Management Test
+
+[Connections: Scheduling Server]
+SchedulingServer[1].SourceName=Platform Process Manager - ird10120au
+SchedulingServer[1].TargetName=Platform Process Manager - ird10149au

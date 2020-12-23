@@ -1,0 +1,33 @@
+create view lab_fcp_raw_full_access.dss_returns_keypoints_ir15s
+as select 
+z.ird_number,
+z.location_number,
+z.return_period_date,
+z.return_type,
+z.return_version_no,
+z.return_status,
+z.form_version_no,
+z.number_of_error_items,
+z.`timestamp`,
+z.certs_filed_by_tape_disk_303,
+z.date_certificates_keyed_814,
+z.halex_interest__1102,
+z.halex_no_of_certs_att_815,
+z.halex_rwt_1104,
+z.nett_rwt_1006,
+z.number_of_certs_attd_1118,
+z.over_under_payment_1120,
+z.pre_encription_check_100018,
+z.pre_encription_ird_no_100019,
+z.pre_encription_loc_no_100020,
+z.total_interest_paid_100235,
+z.total_rwt_payable_1103,
+z.tot_forgn_witholding_tax_1105,
+z.tot_int_24_cents_dollar_1100,
+z.tot_int_33_cents_dollar_1101,
+z.tot_int_no_rwt_ded_100236,
+z.tot_rwt_for_certs_att_1117,
+z.tot_rwt_no_certs_att_1119,
+z.not_used_100024
+ from lab_fcp_raw.returns_keypoints_ir15s z
+;

@@ -1,0 +1,2 @@
+alter table raw/jnl.APP_TBLNZ_RTNITNSHRLINEITEM add columns
+(fcurAIMShareholderTaxCredits DECIMAL(19,4));

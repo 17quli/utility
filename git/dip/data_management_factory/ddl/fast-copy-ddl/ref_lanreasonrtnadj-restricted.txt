@@ -1,0 +1,7 @@
+create view lab_fcp_raw_restricted_access.ref_lanreasonrtnadj
+as SELECT z.fstrlanguage, 
+       z.fstrreason, 
+       fstrdecode1, 
+       fstrdecode2, 
+       fstrdescription 
+FROM lab_fcp_raw.lanreasonrtnadj z;

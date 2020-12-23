@@ -1,0 +1,28 @@
+CREATE TABLE ${var:target_db}.app_tblcollectstagetostage (
+flngCollectKey INT,
+fintStage SMALLINT,
+fstrCollectType VARCHAR(12),
+fintSequence SMALLINT,
+fstrStageFlow VARCHAR(12),
+fstrStagedFrom VARCHAR(12),
+fstrStagedTo VARCHAR(12),
+fdtmStagedOn TIMESTAMP,
+fstrStageAction VARCHAR(12),
+fcurTaxBalance DECIMAL(19,4),
+fcurPenaltyBalance DECIMAL(19,4),
+fcurInterestBalance DECIMAL(19,4),
+fcurBalance DECIMAL(19,4),
+fblnAutomated SMALLINT,
+fdtmCompleted TIMESTAMP,
+fstrCompletedWho VARCHAR(20),
+flngCrmKey INT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

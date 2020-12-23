@@ -1,0 +1,22 @@
+CREATE TABLE ${var:target_db}.app_tblnz_msdwagesubsidy (                                                                            
+fi64FileLoadItemKey BIGINT,                                                                                                         
+flngVer INT,                                                                                                                        
+flngVerLast INT,                                                                                                                    
+fstrIRDNumber VARCHAR(18),                                                                                                          
+fstrName VARCHAR(510),                                                                                                              
+fcurTotalAmountPaid DECIMAL(19,4),                                                                                                  
+fdtmApplicationDate TIMESTAMP,                                                                                                      
+fcurTotalAmountRecovered DECIMAL(19,4),                                                                                             
+fstrRecoveryReason VARCHAR(510),                                                                                                    
+fdtmRefundDate TIMESTAMP,                                                                                                           
+fcurWageSubsidy DECIMAL(19,4),                                                                                                      
+fstrRecordType VARCHAR(6),                                                                                                          
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET; 

@@ -1,0 +1,1 @@
+select count (*) as ${VAR:view_name} from ${VAR:view_name}

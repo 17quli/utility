@@ -1,0 +1,5 @@
+connect="jdbc:sqlserver://10.239.250.80:14343;databaseName=NZP_GTAPP"
+username="svc_start_prod_dip_ai_2"
+mappers=1
+parallel=4
+database_type=mssql

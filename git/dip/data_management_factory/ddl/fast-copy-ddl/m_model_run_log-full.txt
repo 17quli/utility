@@ -1,0 +1,13 @@
+CREATE VIEW lab_fcp_raw_full_access.m_model_run_log 
+as SELECT
+z.run_id ,
+z.model_id ,
+z.model_version ,
+z.start_time ,
+z.end_time ,
+z.status ,
+z.num_records ,
+z.workspace_size ,
+z.log_details 
+from lab_fcp_raw.m_model_run_log z
+;

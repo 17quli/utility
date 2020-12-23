@@ -1,0 +1,18 @@
+table_name:#_of_files:file_size:avg_file_size
+app_tblcrmextendedlog:44:10476333301:238098484
+app_tblcustomerstd:11:811115479:73737770
+app_tblindicator:18:3210121052:178340058
+app_tblnamerecord:31:6944410654:224013246
+app_tblnz_casfdbkcausedet_jnl_0214:6:626739:104456
+app_tblnz_custtaxresidency:5:10844610:2168922
+app_tblnz_custtaxresidency_jnl_0214:6:5180518:863419
+app_tblvisit:14:2793333063:199523790
+dss_cross_references:10:753856604:75385660
+dss_customers:11:994552657:90413877
+dss_special_clients_all:4:430581780:107645445
+ref_lanindicator:2:35563:17781
+ref_lanlistitem:3:175605:58535
+# of tables:	13
+total # of files:	165
+total file size:	24GB
+avg file size:	152MB

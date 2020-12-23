@@ -1,0 +1,84 @@
+2020-04-12 14:45:47------start getting json file from 2020-03-29T22:45:47Z to 2020-03-29T23:45:47Z offset 0
+2020-04-12 14:45:48------start converting 0 queries from json to text file 20200330124547_0.txt
+2020-04-12 14:45:48------load from staging into mquery
+2020-04-12 14:45:49------start getting json file from 2020-03-29T23:45:47Z to 2020-03-30T00:45:47Z offset 0
+2020-04-12 14:45:49------start converting 0 queries from json to text file 20200330134547_0.txt
+2020-04-12 14:45:49------load from staging into mquery
+2020-04-12 14:45:50------start getting json file from 2020-03-30T00:45:47Z to 2020-03-30T01:45:47Z offset 0
+2020-04-12 14:45:51------start converting 0 queries from json to text file 20200330144547_0.txt
+2020-04-12 14:45:51------load from staging into mquery
+2020-04-12 14:45:52------start getting json file from 2020-03-30T01:45:47Z to 2020-03-30T02:45:47Z offset 0
+2020-04-12 14:45:52------start converting 0 queries from json to text file 20200330154547_0.txt
+2020-04-12 14:45:52------load from staging into mquery
+2020-04-12 14:45:53------start getting json file from 2020-03-30T02:45:47Z to 2020-03-30T03:45:47Z offset 0
+2020-04-12 14:45:54------start converting 0 queries from json to text file 20200330164547_0.txt
+2020-04-12 14:45:54------load from staging into mquery
+2020-04-12 14:45:55------start getting json file from 2020-03-30T03:45:47Z to 2020-03-30T04:45:47Z offset 0
+2020-04-12 14:45:55------start converting 0 queries from json to text file 20200330174547_0.txt
+2020-04-12 14:45:55------load from staging into mquery
+2020-04-12 14:45:56------start getting json file from 2020-03-30T04:45:47Z to 2020-03-30T05:45:47Z offset 0
+2020-04-12 14:45:57------start converting 0 queries from json to text file 20200330184547_0.txt
+2020-04-12 14:45:57------load from staging into mquery
+2020-04-12 14:45:57------start getting json file from 2020-03-30T05:45:47Z to 2020-03-30T06:45:47Z offset 0
+2020-04-12 14:45:58------start converting 0 queries from json to text file 20200330194547_0.txt
+2020-04-12 14:45:58------load from staging into mquery
+2020-04-12 14:45:59------start getting json file from 2020-03-30T06:45:47Z to 2020-03-30T07:45:47Z offset 0
+2020-04-12 14:46:00------start converting 0 queries from json to text file 20200330204547_0.txt
+2020-04-12 14:46:00------load from staging into mquery
+2020-04-12 14:46:00------start getting json file from 2020-03-30T07:45:47Z to 2020-03-30T08:45:47Z offset 0
+2020-04-12 14:46:01------start converting 0 queries from json to text file 20200330214547_0.txt
+2020-04-12 14:46:01------load from staging into mquery
+2020-04-12 14:46:02------start getting json file from 2020-03-30T08:45:47Z to 2020-03-30T09:45:47Z offset 0
+2020-04-12 14:46:03------start converting 0 queries from json to text file 20200330224547_0.txt
+2020-04-12 14:46:03------load from staging into mquery
+2020-04-12 14:46:03------start getting json file from 2020-03-30T09:45:47Z to 2020-03-30T10:45:47Z offset 0
+2020-04-12 14:46:04------start converting 0 queries from json to text file 20200330234547_0.txt
+2020-04-12 14:46:04------load from staging into mquery
+2020-04-12 14:46:05------start getting json file from 2020-03-30T10:45:47Z to 2020-03-30T11:45:47Z offset 0
+2020-04-12 14:46:06------start converting 0 queries from json to text file 20200331004547_0.txt
+2020-04-12 14:46:06------load from staging into mquery
+2020-04-12 14:46:06------start getting json file from 2020-03-30T11:45:47Z to 2020-03-30T12:45:47Z offset 0
+2020-04-12 14:46:07------start converting 0 queries from json to text file 20200331014547_0.txt
+2020-04-12 14:46:07------load from staging into mquery
+2020-04-12 14:46:08------start getting json file from 2020-03-30T12:45:47Z to 2020-03-30T13:45:47Z offset 0
+2020-04-12 14:46:08------start converting 0 queries from json to text file 20200331024547_0.txt
+2020-04-12 14:46:08------load from staging into mquery
+2020-04-12 14:46:09------start getting json file from 2020-03-30T13:45:47Z to 2020-03-30T14:45:47Z offset 0
+2020-04-12 14:46:10------start converting 0 queries from json to text file 20200331034547_0.txt
+2020-04-12 14:46:10------load from staging into mquery
+2020-04-12 14:46:11------start getting json file from 2020-03-30T14:45:47Z to 2020-03-30T15:45:47Z offset 0
+2020-04-12 14:46:11------start converting 0 queries from json to text file 20200331044547_0.txt
+2020-04-12 14:46:11------load from staging into mquery
+2020-04-12 14:46:12------start getting json file from 2020-03-30T15:45:47Z to 2020-03-30T16:45:47Z offset 0
+2020-04-12 14:46:13------start converting 0 queries from json to text file 20200331054547_0.txt
+2020-04-12 14:46:13------load from staging into mquery
+2020-04-12 14:46:14------start getting json file from 2020-03-30T16:45:47Z to 2020-03-30T17:45:47Z offset 0
+2020-04-12 14:46:14------start converting 0 queries from json to text file 20200331064547_0.txt
+2020-04-12 14:46:14------load from staging into mquery
+2020-04-12 14:46:15------start getting json file from 2020-03-30T17:45:47Z to 2020-03-30T18:45:47Z offset 0
+2020-04-12 14:46:16------start converting 0 queries from json to text file 20200331074547_0.txt
+2020-04-12 14:46:16------load from staging into mquery
+2020-04-12 14:46:16------start getting json file from 2020-03-30T18:45:47Z to 2020-03-30T19:45:47Z offset 0
+2020-04-12 14:46:17------start converting 0 queries from json to text file 20200331084547_0.txt
+2020-04-12 14:46:17------load from staging into mquery
+2020-04-12 14:46:18------start getting json file from 2020-03-30T19:45:47Z to 2020-03-30T20:45:47Z offset 0
+2020-04-12 14:46:19------start converting 0 queries from json to text file 20200331094547_0.txt
+2020-04-12 14:46:19------load from staging into mquery
+2020-04-12 14:46:19------start getting json file from 2020-03-30T20:45:47Z to 2020-03-30T21:45:47Z offset 0
+2020-04-12 14:46:20------start converting 0 queries from json to text file 20200331104547_0.txt
+2020-04-12 14:46:20------load from staging into mquery
+2020-04-12 14:46:21------start getting json file from 2020-03-30T21:45:47Z to 2020-03-30T22:45:47Z offset 0
+2020-04-12 14:46:21------start converting 0 queries from json to text file 20200331114547_0.txt
+2020-04-12 14:46:21------load from staging into mquery
+2020-04-12 14:46:22------start getting json file from 2020-03-30T22:45:47Z to 2020-03-30T23:45:47Z offset 0
+2020-04-12 14:46:23------start converting 0 queries from json to text file 20200331124547_0.txt
+2020-04-12 14:46:23------load from staging into mquery
+2020-04-12 14:46:24------start getting json file from 2020-03-30T23:45:47Z to 2020-03-31T00:45:47Z offset 0
+2020-04-12 14:46:24------start converting 0 queries from json to text file 20200331134547_0.txt
+2020-04-12 14:46:24------load from staging into mquery
+2020-04-12 14:46:25------start getting json file from 2020-03-31T00:45:47Z to 2020-03-31T01:45:47Z offset 0
+2020-04-12 14:46:26------start converting 0 queries from json to text file 20200331144547_0.txt
+2020-04-12 14:46:26------load from staging into mquery
+2020-04-12 14:46:27------start getting json file from 2020-03-31T01:45:47Z to 2020-03-31T02:45:47Z offset 0
+2020-04-12 14:46:29------start converting 110 queries from json to text file 20200331154547_0.txt
+2020-04-12 14:46:59------start uploading text file ./stg/20200331154547_0.txt to HDFS

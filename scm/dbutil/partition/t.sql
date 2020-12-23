@@ -1,0 +1,26 @@
+ird_number              int
+location_number         int
+return_period_date      timestamp
+seq_no                  int
+account_no              int
+amount                  decimal(16,2)
+transaction_code        varchar(8)
+transaction_type        varchar(6)
+transaction_status_code varchar(4)
+payment_method_code     varchar(4)
+transaction_reason_code varchar(8)
+return_type             varchar(10)
+user_id                 varchar(16)
+date_effective          timestamp
+date_processed          timestamp
+date_reversed           timestamp
+account_key_link        int
+transaction_seq_link    int
+office_number           int
+office_type             varchar(4)
+timestamp               timestamp
+txn_return_period_year  int
+tax_type                varchar(6)
+txn_return_period_year  int
+tax_type                varchar(6)
+

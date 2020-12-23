@@ -1,0 +1,28 @@
+CREATE TABLE ${var:target_db}.app_tblnz_kssresidual (
+flngReturnKey INT,
+flngItemNumber INT,
+fstrContributionType VARCHAR(12),
+fcurContributionAmount DECIMAL(19,4),
+fdtmPayDayPeriod TIMESTAMP,
+fi64ContributionKey BIGINT,
+flngMemberAccountKey INT,
+fstrMemberIRD VARCHAR(18),
+flngRelationshipKey INT,
+flngEmployerCustomerKey INT,
+flngEmployerAccountKey INT,
+fblnRegister SMALLINT,
+flngCaseKey INT,
+fblnWorkItem SMALLINT,
+flngWorkKey INT,
+fblnPartialOptOut SMALLINT,
+fblnComplete SMALLINT,
+fstrWho VARCHAR(20),
+fdtmWhen TIMESTAMP,
+record_effective_timestamp TIMESTAMP,
+record_expiry_timestamp TIMESTAMP,
+record_active_flag VARCHAR(1),
+record_deleted_flag VARCHAR(1),
+insert_object_run_key INT,
+update_object_run_key INT
+
+ ) STORED AS PARQUET;

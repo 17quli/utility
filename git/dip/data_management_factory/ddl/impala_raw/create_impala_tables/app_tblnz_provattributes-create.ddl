@@ -1,0 +1,20 @@
+CREATE TABLE ${var:target_db}.app_tblnz_provattributes (                                                                            
+flngDocKey INT,                                                                                                                     
+flngCustomerKey INT,                                                                                                                
+fstrCustomerType VARCHAR(12),                                                                                                       
+fblnProvFiler SMALLINT,                                                                                                             
+fstrNominatedIRD VARCHAR(18),                                                                                                       
+flngNominatedCustomerKey INT,                                                                                                       
+fintNominatedProfileNumber SMALLINT,                                                                                                
+fstrOpenProvMethod VARCHAR(12),                                                                                                     
+fdtmIncomeBalance TIMESTAMP,                                                                                                        
+fintIncomeBalanceMonth SMALLINT,                                                                                                    
+fstrWho VARCHAR(20),                                                                                                                
+fdtmWhen TIMESTAMP,                                                                                                                 
+record_effective_timestamp TIMESTAMP,                                                                                               
+record_expiry_timestamp TIMESTAMP,                                                                                                  
+record_active_flag VARCHAR(1),                                                                                                      
+record_deleted_flag VARCHAR(1),                                                                                                     
+insert_object_run_key INT,                                                                                                          
+update_object_run_key INT                                                                                                           
+ ) STORED AS PARQUET;
